@@ -1,0 +1,74 @@
+
+//THIS HOLDS THE CONTENT IN THE HTML MARKUP SO IT CAN BE LOADED BY THE JAVASCRIPT
+.tooltips--content-placeholder{
+	display: none;
+}
+
+[class*='tooltip_']{
+	position: absolute;
+	width: $tooltip-icon-size;
+	height: $tooltip-icon-size;
+
+	img{
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+.tooltip{
+	&_ne{
+		top: -$tooltip-icon-size/2;
+		right: -$tooltip-icon-size/2;
+	}
+
+	&_se{
+		bottom: 15px;
+		right: 5px;
+	}
+
+	&_e{
+		right: -$tooltip-icon-size - 3;
+	    top: 50%;
+	    transform: translateY(-50%);
+	}
+}
+
+.ritchie-tooltips {
+	border-radius: 0; 
+	border: 1px solid $black;
+	box-shadow: $ritchie-shadow;
+	background: $white;
+	color: $black;
+	max-width: 300px;
+}
+
+/* Use this next selector to style things like font-size and line-height: */
+.ritchie-tooltips .tooltipster-content {
+	font-size: 1rem;
+	padding: $default-margin/2 $default-margin;
+	overflow: visible;
+
+	p{
+		margin: 0;
+	}
+
+	p + p{
+		margin-top: $default-margin;
+	}
+
+	ul{
+		padding-left: $default-margin;
+		padding-top: $default-margin;
+	}
+
+	li{
+		line-height: 1;
+		font-size: $default-text-size;
+		margin-bottom: 10px;
+		display: block;
+	}
+
+	a{
+		color: $link-colour;
+	}
+}

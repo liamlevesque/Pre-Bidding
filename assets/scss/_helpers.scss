@@ -1,0 +1,126 @@
+/*******************
+	HELPER CLASSES
+********************/
+	.h-overflow{
+		overflow: hidden;
+	}
+	
+	.h-t-xs{
+		font-size: 0.6rem;
+	}
+
+	.h-t-l{
+		font-size: 1.5rem;
+	}
+
+	.h-ta-center{
+		text-align: center;
+	}
+
+	.h-ta-right{
+		text-align: right;
+	}
+
+	.h-tt-uppercase{
+		text-transform: uppercase;
+	}
+	
+	.h-mt-80{
+		margin-top: 10px;
+	}
+
+	.h-mt-100{
+		margin-top: $default-margin;
+	}
+
+	.h-mb-100{
+		margin-bottom: $default-margin;
+	}
+
+	.h-mb-50{
+		margin-bottom: $default-margin/2;	
+	}
+
+	.h-mb-0{
+		margin-bottom: 0;
+	}
+
+	.h-mr-100{
+		margin-right: $default-margin;
+	}
+
+	.h-pt-100{
+		padding-top: $default-margin;
+	}
+
+	.h-pb-100{
+		padding-bottom: $default-margin;
+	}
+
+	.h-p-0{
+		padding: 0;
+	}
+
+	.h-d-table{
+		@include tableLayout;
+	}
+
+	.h-d-block{
+		display: block;
+	}
+
+	.h-d-inline-block{
+		display: inline-block;
+	}
+	
+	.h-pos-relative{
+		position: relative;
+	}
+
+	.h-pos-center{
+		position: absolute;
+		top: 20px;
+		left: 50%;
+		transform: translateX(-50%);
+
+		text-align: center;
+	}
+
+	.h-mw-400{
+		max-width: 430px;
+    	margin: 0 auto;
+	}
+
+	.h-f-right{
+		position: absolute;
+		top: $default-margin;
+		right: $default-margin;
+		text-align: right;
+	}
+
+	.h-va-super{
+		vertical-align: super;
+	}
+
+	.h-ws-nowrap{
+		white-space: nowrap;
+	}
+
+/*******************
+	COLOUR OVERRIDES
+********************/
+
+.c-price{color: $money-color;}
+.c-finance{color: $finance-color;}
+.c-brand{color: $brand-color;}
+
+.c-link{color: $link-colour;}
+
+.c-grey{color: $grey-500;}
+.c-grey-700{color: $grey-700};
+.c-white{color: $white;}
+.c-black{color: $black;}
+
+.bg-finance{background-color: $finance-tint;}
+.bg-brand{background-color: $brand-color;} 
+.bg-grey{background-color: $grey-100;}

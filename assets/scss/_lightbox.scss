@@ -1,0 +1,291 @@
+.lb{
+	position: fixed;
+	top: 100%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 9000;
+	overflow-y: hidden;
+	transition: top $transition-time_2 $transition-function $transition-time_1;
+
+	&.s-open{
+		top: 0;
+		//overflow-y: auto;
+		transition: top $transition-time_2 $transition-function;
+
+		.lb-window{
+			opacity: 1;
+			transform: translateX(-50%) translateY(0);
+			transition: opacity $transition-time_2 $transition-function $transition-time_1, transform $transition-time_2 $transition-function $transition-time_1;
+		}
+	}
+}
+
+.lb-background{
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba($black,0.6);
+}
+
+.lb-window-scroll{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow-y: auto;
+}
+
+.lb-window{
+	position: relative;
+	//overflow: hidden;
+	width: 600px;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%) translateY(50%);
+	opacity: 0;
+	transition: opacity $transition-time_2 $transition-function, transform $transition-time_2 $transition-function;
+	
+	margin: 90px 0;
+	
+}
+	
+	.lb-window-close{
+		position: absolute;
+		right: 0;
+		top: 0;
+		background-color: transparent;
+		padding: $default-margin;
+
+		z-index: 500;
+	}
+
+	.lb-content{
+		padding: 2 * $default-margin;
+		text-align: center;
+
+		img{
+			//margin-bottom: $default-margin;
+		}
+	}
+
+	.lb-action-area{
+		padding: $default-margin;
+		background-color: $grey-100;
+		position: relative;
+		overflow: hidden;
+		text-align: center;
+		border-radius: 0 0 $default-border-radius $default-border-radius;
+
+		button{
+			display: inline-block;
+		}
+
+		&--secondary{
+			@extend .grey-link;
+			display: inline-block;
+		}
+	}
+
+	$top-img-size: 130px;
+
+	.lb-wizard--top-img{
+		position: relative;
+	    display: inline-block;
+
+		border-radius: $top-img-size;
+		width: $top-img-size;
+	    padding: 5px;
+	    margin: 0;
+	    background-color: #e9e9e9;
+	    @include transition(background-color);
+
+	    img{
+	    	max-width: 100%;
+	    	width: 100%;
+	    }
+
+	    .img-2{
+			position: absolute;
+			top: 0;
+			left: 0;
+	    }
+	}
+
+	.lb-wizard--step{
+		overflow-y: hidden;
+		@include transition(max-height);
+	}
+
+	.lb-airplane--hiding-message{
+		max-height: 100px;
+		@include transition(max-height, transform);
+		overflow-y: hidden;
+	}
+
+	.lb-wizard{
+		position: relative;
+		border-radius: 5px;
+		background-color: $white;
+		box-shadow: $ritchie-shadow;
+
+		&.s-step-1{
+			.step-1{
+				max-height: 1000px;
+
+				.step-content{
+					transform: translateY(0);
+					opacity: 1;
+					@include transition(opacity, transform);
+				}
+			}
+
+			.step-2{
+				background-color: $grey-100;
+				border-radius: 0 0 $default-border-radius $default-border-radius;
+			}
+
+			.step-2a{
+				max-height: 50px;
+			}
+
+			.step-2b{
+				max-height: 0;
+				margin-top: 0px;
+
+				.step-content{
+					transform: translateY(50%);
+					opacity: 0;
+				}
+
+				.img-2{
+			    	display: none;
+			    }
+			}
+
+			.step-3{
+				max-height: 0;
+
+				.step-content{
+					transform: translateY(50%);
+					opacity: 0;
+				}
+			}
+		}
+
+		&.s-step-2{
+			.step-1{
+				max-height: 0;
+
+				.step-content{
+					transform: translateY(-50%);
+					opacity: 0;
+					@include transition(opacity, transform);
+				}
+			}
+
+			.step-2{
+				background-color: $grey-100;
+				border-radius: $default-border-radius;
+			}
+
+			.step-2a{
+				max-height: 0;
+			}
+			.step-2b{
+				max-height: 300px;
+				margin-top: -$top-img-size/2;
+				@include transition(max-height, margin-top);
+
+				.step-content{
+					opacity: 1;
+					transform: translateY(0);
+				}
+
+				.img-2{
+			    	display: none;
+			    }
+			}
+
+			.step-3{
+				max-height: 0;
+
+				.step-content{
+					transform: translateY(50%);
+					opacity: 0;
+				}
+			}
+		}
+
+		&.s-step-3{
+			.step-1{
+				max-height: 0;
+			}
+
+			.step-2{
+				background-color: $white;
+				border-radius: $default-border-radius;
+
+				.lb-content{
+					padding-bottom: 0;
+				}
+			}
+
+			.step-2a{
+				max-height: 0;
+			}
+			.step-2b{
+				max-height: 300px;
+				margin-top: -$top-img-size/2;
+				
+				.lb-airplane--hiding-message{
+					max-height: 0;
+					transform: translateY(-50%);
+				}
+
+				.step-content{
+					opacity: 1;
+					transform: translateY(0);
+				}
+
+				.lb-wizard--top-img{
+					background-color: $white;
+				}
+
+				.img-2{
+			    	display: block;
+			    }
+			}
+
+			.step-3{
+				max-height: 1000px;
+
+				.step-content{
+					transform: translateY(0);
+					opacity: 1;
+				} 
+			}
+		}
+	}
+
+	.step-2{
+		@include transition(background-color);
+		
+		.lb-content{
+			padding: $default-margin $default-margin * 2;
+		}
+
+		.step-2b{
+			transition: margin-top $transition-time_2 $transition-function;
+		}
+	}
+
+	.step-content{
+		@include transition-delayed($transition-time_1, opacity, transform);
+	}
+
+

@@ -1,0 +1,116 @@
+//COLOURS
+
+$brand-color: #E87722;
+$finance-color: #24532B;
+$finance-tint: #D3E8CB;
+$finance-dabled: #F3FFF8;
+$money-color: #20579E;
+
+$error-colour: #c4483a;
+$error-colour-light: #F3BFBF;
+$warning-colour: #FCD748;
+$active-colour: #20579E;
+$link-colour: #1478BC;
+
+$black: #000000;
+$white: #ffffff;
+
+$grey-50: #e8e6e2;
+$grey-100: #E9E9E9;
+$grey-300: #bfc0be;
+$grey-500: #959595;
+$grey-700: #585858;
+
+$border-color: #bdbdbd;
+$border-active: #E35530;
+
+//GRADIENTS
+$button-gradient: linear-gradient(#FAB558, #F69731);
+$button-gradient_hover: linear-gradient(#F58D31, #EB6D30);
+
+//BOX SHADOW
+$ritchie-shadow: 0 1px 5px 0 rgba(0,0,0,0.5);
+$ritchie-shadow_inner: inset 1px 1px 5px 0 rgba(0, 0, 0, 0.15);
+
+//TEXT SIZES
+$default-text-size: 0.9rem;
+
+//MEASUREMENTS
+
+$default-border-radius: 5px;
+$default-margin: 15px;
+$input-height: 30px;
+$toggle-height: 14px;
+$toggle-padding: 40px; //THIS IS HOW MUCH THE MONEY
+$tooltip-icon-size: 24px;
+
+//TRANSITIONS
+$transition-time_1: .2s;
+$transition-time_2: .35s;
+$transition-function: cubic-bezier(0.630, 0.005, 0.365, 1.000);//cubic-bezier(0.95, 0.05, 0.795, 0.035);
+
+$transition: $transition-time_1 $transition-function;
+
+@mixin transition($properties...){
+  transition-property: $properties;
+  transition-duration: $transition-time_2;
+  transition-timing-function: $transition-function;
+}
+
+@mixin transition-delayed($delay, $properties...){
+  transition-property: $properties;
+  transition-duration: $transition-time_2;
+  transition-timing-function: $transition-function;
+  transition-delay: $delay;
+}
+
+@mixin tableLayout(){
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+@mixin line-clamp(){
+  //IF THIS BROWSER SUPPORTS LINE CLAMPING, THEN USE IT. IF NOT, JUST LET IT OVERFLOW.
+  @supports (-webkit-line-clamp: 1)
+  {
+    display            : -webkit-box;
+    -webkit-box-orient : vertical;
+    overflow           : hidden;
+    text-overflow      : ellipsis;
+    -webkit-line-clamp : 2;
+  }
+}
+
+//BREAKPOINTS
+
+@mixin breakpoint($point) {
+  @if $point == large {
+    @media (min-width: 80em) { @content; }
+  }
+  @if $point == largemax {
+    @media (max-width: 80em) { @content; }
+  }
+  @if $point == med-large {
+    @media (min-width: 80em) { @content; }
+  }
+  @if $point == med-med-large {
+    @media (min-width: 64em) { @content; }
+  }
+  @else if $point == med-to-medlarge {
+    @media (min-width: 48em) and (max-width: 64em) { @content; }
+  }
+  @else if $point == medium {
+    @media (min-width: 48em) { @content; }
+  }
+  @else if $point == medmax {
+    @media (max-width: 800px) { @content; }
+  }
+  @else if $point == small {
+    @media (min-width: 30.0625em)  { @content; }
+  }
+  @else if $point == smallmax {
+    @media (max-width: 30.0625em)  { @content; }
+  }
+}
+

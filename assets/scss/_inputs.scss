@@ -1,0 +1,206 @@
+%field{
+  width: 100%;
+  height: $input-height;
+  border: 1px solid $grey-300;
+  background-color: $white;
+  border-radius: 0;
+  appearance: none;
+  box-sizing: border-box;
+  padding: 2px 8px;
+  outline: none;
+  position: relative;
+  font-family: 'Trebuchet MS', Verdana, sans-serif;
+  font-size: 1rem;
+  
+  &.invalid{
+    background-color: $error-colour-light;
+  }
+
+  &:hover{
+    border: 1px solid $border-active;
+  }
+
+  &:focus{
+    border: 1px solid $border-active;
+  }
+}
+
+%field--text{
+  @extend %field;
+
+  &:read-only{
+    border-width: 0 !important;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+}
+
+.field--text{
+  @extend %field--text;
+}
+
+.field--w-modifier{
+  position: relative;
+  display: inline-block;
+  
+  button{
+    width: $input-height - 2;
+    padding: 0; 
+    position: absolute;
+    border-radius: 0;
+    display: block;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    line-height: 1;
+
+    &:last-child{
+      right: $input-height + 1;
+    }
+  }
+}
+
+
+//HIDE INPUT SPINNERS ON NUMBER INPUTS (WE HAVE OUR OWN)
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+%field--select{
+  @extend %field;
+  background: url("../img/select-arrow.png") no-repeat right 0;
+  cursor: pointer;
+  
+  &.invalid{
+    border-color: $error-colour;
+  }
+
+  &:hover{
+    background-position: right -33px;
+  }
+}
+
+.field--select{
+  @extend %field--select;
+}
+
+
+
+.field--toggle{
+
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  
+   .toggle-control{
+      transition: $transition;
+      width: $toggle-height*1.5;
+      height: $toggle-height;
+      display: block;
+      border: 2px solid $finance-color;
+      border-radius: $toggle-height;
+      background-color: $finance-color;
+      position: relative;
+      
+      &:after{
+        transition: $transition;
+        content: "";
+        width: $toggle-height;
+        height: $toggle-height;
+        display: block;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: $toggle-height / 2;
+      }
+   }
+   
+  input{
+    display: none;
+    &:checked + .toggle-control{
+      border-color: $grey-700;
+      background-color: rgba($black,0.3);
+      &:after{
+        left: 0;
+      }
+    }
+  }
+  
+  .toggle_input{
+   
+  }
+  
+}
+
+.field--toggle_vertical{
+
+    cursor: pointer;
+    position: absolute;
+    right: $default-margin;
+    top: 50%;
+    transform: translateY(-50%);
+  
+   .toggle-control{
+      transition: $transition;
+      width: $toggle-height;
+      height: $toggle-height * 2;
+      display: block;
+      border: 2px solid $finance-color;
+      border-radius: $toggle-height;
+      background-color: $finance-color;
+      position: relative;
+
+      &:before{
+        //content: "ON";
+        font-size: 0.4rem;
+        color: rgba(white,0.5);
+        position: absolute;
+        bottom: 1px;
+        left:1px;
+      }
+      
+      &:after{
+        transition: $transition;
+        content: "";
+        width: $toggle-height;
+        height: $toggle-height;
+        display: block;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+   }
+   
+  input{
+    display: none;
+    &:checked + .toggle-control{
+      border-color: $error-colour;
+      background-color: $error-colour;
+      &:after{
+        top: $toggle-height;
+      }
+      &:before{
+        bottom: auto;
+        top: 1px;
+        left: 0;
+        //content: 'OFF';
+      }
+    }
+  }
+  
+  .toggle_input{
+   
+  }
+  
+}
+
+
+

@@ -1,0 +1,71 @@
+body{
+
+	&.s-no-scroll{
+		overflow-y: hidden;
+	}
+
+	&.s-no-purchases{
+
+		.no-purchases--hide{
+			display: none;
+		}
+
+		.no-purcahses--full{
+			width: 100%;
+			text-align: center;
+		}
+
+		.no-purchases--show{
+			display: block;
+		}
+
+		.no-purchases--show_cell{
+			display: table-cell !important;
+		}
+
+		.no-purchases--fill-height{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+	}
+
+	&.s-no-financing{
+		.no-finance--hide{
+			display: none;
+		}
+
+		.no-finance--full{
+			width: 100%;
+			text-align: center;
+		}
+
+		.col-2{
+			width: 64%;
+		}
+
+		.col-4{
+			width: 0 !important;
+			display: none;
+		}
+	}
+
+	&.s-no-financing.s-no-purchases{
+		.no-purchases--show{
+			display: block;
+		}
+		.no-finance--hide{
+			display: none;
+		}
+	}
+}
+
+	.no-purchases--show, .no-purchases--show_cell{
+		display: none;
+	}
+
+	.g-display-table .no-purchases--show_cell{
+		display: none;
+	}

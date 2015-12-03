@@ -1,0 +1,922 @@
+
+
+/*******************
+	RESETS
+*******************/
+
+body{
+	font-family: 'Trebuchet MS', Verdana, sans-serif;
+	font-size: 18px;
+	margin: 0;
+	padding: 0;
+}
+
+
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4 {
+	margin-top: 0;
+	color: $brand-color;
+}
+
+h1{
+	font-size: 1.9rem;
+	margin-bottom: 3px;
+}
+
+h2{
+	font-size: 1.7rem;
+	margin-bottom: $default-margin;
+}
+
+h3{
+	font-size: 1.3rem;
+	margin-bottom: $default-margin/2;
+}
+
+p{
+	font-size: $default-text-size;
+	line-height: 1.4rem;
+	margin-top: 0;
+}
+	
+	.p-100{
+		font-size: 1rem;
+		line-height: 1.6rem;
+	}
+
+a{
+	color: inherit;
+	text-decoration: none;
+	outline: none;
+
+	&:hover{
+		text-decoration: underline;
+		outline: none;
+	}
+
+	&:active, &:focus{
+		outline: none;
+	}
+
+	&.a--img{
+		line-height: 0;
+		display: inline-block;
+		max-width: 100%;
+
+		img{
+			max-width: 100%;
+		}
+	}
+}
+
+/**********************
+	TEXT FORMATTING
+**********************/
+@mixin smalltext{
+	font-size: 0.7rem;
+	font-weight: 700;
+	line-height: 0.9rem;
+}
+
+	.smalltext{
+		@include smalltext;
+		text-transform: uppercase;
+	}
+
+@mixin boldtext{
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+
+label, .label{
+	@include smalltext;
+	text-transform: uppercase;
+	
+	display: inline-block;
+
+	color: $grey-500; 
+}
+
+.grey-link{
+	color: $grey-500;
+	font-size: 0.8rem;
+	cursor: pointer;
+
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
+.phone-link{
+	@include boldtext;
+	margin-bottom: $default-margin;
+
+	a{
+		color: $money-color;
+	}
+}
+
+.phone-cta{
+	padding: 3px 0;
+    display: inline-block;
+    border: 1px solid #aaa;
+    border-width: 1px 0;
+    color: $grey-500;
+}
+
+/**********************
+	BUTTONS
+**********************/
+%button{
+	position: relative;
+	display: inline-block;
+	
+	padding: 8px $default-margin;
+	color: $black;
+	border-radius: $default-border-radius;
+	font-size: 1rem;
+	font-weight: 700;
+	outline: none;
+	cursor: pointer;
+	user-select: none;
+
+
+	&:disabled{
+		opacity: 0.4;
+		cursor: normal;
+		pointer-events: none;
+	}
+}
+
+	button, .button{
+		@extend %button;
+		@include transition(padding-left);
+
+		background-color: $brand-color;
+		background-image: $button-gradient;
+		border: 1px solid $brand-color;
+
+		&:hover{
+			background-color: darken($brand-color,10%);
+			background-image: $button-gradient_hover;
+			color: $white;
+		}
+
+		&.icon{
+			background-color: transparent;
+			background-image: none;
+			border: 0;
+
+			img{
+				width: 15px;
+			}
+			
+			&.icon_plain{
+				padding: 0 5px;
+				vertical-align: middle;
+			}
+		}
+
+		&.icon_100{
+			img{
+				width: 10px;
+			}
+		}
+
+		&.s-success{
+			padding-left: 36px;
+
+			&:before{
+				content: " ";
+				background: url('../img/check_small.png') no-repeat 0 0;
+				position: absolute;
+				width:20px;
+				height:20px;
+				left: 8px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+
+	.button_secondary{
+		@extend %button;
+
+		box-shadow: $ritchie-shadow_inner;
+		background-color: $grey-300;
+		background-image: none;
+		border: 0;
+		color: $black;
+
+		&:hover{
+			background-color: darken($grey-300,30%);
+			box-shadow: none;
+			color: $white;
+			text-decoration: none;
+		}
+	}
+
+/**********************
+	CONTAINERS
+**********************/
+	.box--warning{
+		border: 1px solid $grey-300;
+		//background-color: $grey-100;
+		padding: $default-margin;
+		padding-left: 32 + (3*$default-margin);
+		margin-top: $default-margin;
+
+		position: relative;
+		text-align: left;
+		font-size: 0.8rem;
+		line-height: 1.2rem;
+
+		&:before{
+			content: " ";
+			display: inline-block;
+			background: url('../img/attention.png') no-repeat 0 center;
+			border-right: 1px solid $grey-300;
+			position: absolute;
+			left: $default-margin;
+			top: $default-margin;
+			bottom: $default-margin;
+			width: 32 + $default-margin;
+		}
+	}
+
+	.box-bordered{
+		border: 1px solid $grey-500;
+		padding: $default-margin;
+		position: relative;
+
+		&_greybg{
+			background-color: darken($grey-100, 5%);
+			padding: $default-margin;
+			margin-top: $default-margin;
+		}
+
+		&_black{
+			border: 1px solid $black;
+			padding: $default-margin;
+			position: relative;
+		}
+	}
+
+
+
+	.box--header, .box--divider{
+		padding: $default-margin/2 $default-margin;
+		margin: (-$default-margin) (-$default-margin) $default-margin;
+		background-color: $black;
+
+		h3{
+			margin: 0;
+		}
+	}
+
+	.box--divider{
+		margin: 0 (-$default-margin) $default-margin;
+	}
+
+	.box--footer{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: darken($grey-100,10%);
+		border-top: 1px solid $grey-500;
+		vertical-align: bottom;
+	}
+
+	.box--money-summary{
+		background-color: rgba($money-color, 0.15);
+		text-align: center;
+		margin-bottom: 0;
+		padding: $default-margin;
+	}
+
+	[class*="box-money"]{
+		text-align: right;
+		padding: $default-margin; 
+	}
+
+	.box-money{
+		color: $money-color;
+
+		&_finance{
+			background-color: $finance-tint;
+			color: $finance-color;
+			transition: $transition;
+			position: relative;
+			
+			&.s-finance-inactive{
+				background-color: $finance-dabled;
+				color: $grey-500;
+				text-decoration: line-through;		
+			}
+		}
+
+		&_total{
+			border: 1px solid $finance-color;
+		}
+
+		&_finance-total{
+			background-color: $finance-tint;
+			color: $finance-color;
+			position: relative;
+		}
+	}
+
+/*******************
+	HEADER
+*******************/
+
+	header{
+		padding: $default-margin 0;
+		overflow: hidden;
+		position: relative;
+
+		.home-link{
+			font-size: 0.8rem;
+			
+			img{
+				height: 8px;
+			}
+		}
+	}
+
+	.logo{
+		display: inline-block;
+		width: 200px;
+    	height: 46px;
+    	margin: 10px 0 20px;
+	}
+
+	.top-section{
+		background-color: $grey-50;
+	}
+
+	.timestamp{
+		position: absolute;
+		left: 50%;
+		top: 0;
+		transform: translateX(-50%);
+	}
+
+	.actions{
+		position: absolute;
+		top: $default-margin;
+		right: -$default-margin;
+		text-align: right;
+	}
+
+	.action{
+		vertical-align: bottom;
+		text-align: center;
+		padding: $default-margin;
+		//@extend .g-third;
+		display: inline-block;
+
+		.action-icon{
+			display: inline-block;
+			margin-bottom: 9px;
+			width: 24px;  
+		}
+
+		.action-label{
+			display: block;
+			@include smalltext;
+			text-transform: uppercase;
+		}
+	}
+
+	.content--center{
+		max-width: 990px;
+		margin: 0 auto;
+		//overflow: hidden;
+		position: relative;
+
+		@include breakpoint(medmax){
+			padding: 0 15px;
+		}
+	}
+
+
+/*******************
+	GENERAL LAYOUT
+*******************/
+
+	[class^="col"]{
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		height: 100%;
+	}
+
+	.col{
+		&-0{
+			width: 10%;
+		}
+		&-1{
+			width: 5%;
+		}
+		&-2{
+			width: 48%;
+		}
+		&-3{
+			width: 19%;
+		}
+		&-4{
+			width: 16%;
+		}
+	}
+
+	//BOTTOM APPLY FOR FINANCING SECTION - MATCH WIDTH OF LAST TWO COLUMNS IN THE TABLE ABOVE
+	.g-custom-35{
+		display: table-cell;
+		vertical-align: top;
+		width: 35%;
+	}
+	.g-custom-65{
+		display: table-cell;
+		vertical-align: top;
+		width: 65%;	
+	}
+	
+
+	//LIST ITEMS IN THE FINANCING CALCULATOR
+	.slim-table{
+		margin-left: 25px;
+	    font-size: 0.9rem;
+	    list-style-type: disc;
+	    margin-top: 7px;
+
+	    li{
+	    	margin-bottom: 5px;
+
+	    	&:last-of-type{
+	    		margin-bottom: 0;
+	    	}
+	    }
+	}
+
+/**********************
+	METADATA
+**********************/
+
+	.details-table{
+		label{
+			display: inline-block;
+			width: 40%;
+			text-align: right;
+			margin-right: 2%;
+			vertical-align: middle;
+
+			&.label_narrow{
+				width: 120px;
+			}
+
+			@include breakpoint(medmax){
+				display: block;
+				width: 100%;
+				text-align: left;
+			}
+		}
+ 
+		.long-field{
+			display: inline-block;
+		    overflow: hidden;
+		    white-space: nowrap;
+		    text-overflow: ellipsis;
+		    max-width: 70%;
+		    vertical-align: middle;
+
+		    @include breakpoint(medmax){
+				max-width: 100%;
+		    } 
+		}
+
+		.calculation{
+			display: block;
+			position: relative;
+			margin-bottom: 10px;
+
+			&>div{
+				display: inline-block;
+				vertical-align: top;
+				box-sizing: border-box;
+				width: 55%;
+
+				@include breakpoint(medmax){
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+	}
+		.details--entry{
+			display: block;
+	    	text-align: left;
+	    	padding: 10px 0;
+	    	border-bottom: 1px dotted $grey-500;
+
+	    	&:last-of-type{
+	    		border-bottom-width: 0;
+	    		padding-bottom: 0;
+	    	}
+	    }
+
+
+
+/**********************
+	FINANCING
+**********************/
+
+	$shadow-height: 10px;
+
+	.pinned-section{
+		background-color: $grey-50;
+		border-bottom: 1px solid $grey-500;
+		z-index: 1000;
+		position: relative;
+
+		&:after{
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -$shadow-height;
+			height: $shadow-height - 1;
+			
+			background-image: radial-gradient(ellipse farthest-side at center top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+			opacity: 0;
+			transition: opacity 0.5s linear; 
+		}
+
+		&.s-stuck{
+			position: fixed;
+			top: 0;
+			width: 100%;
+			
+			&:after{
+				
+				opacity: 1;
+
+			}
+
+			.financing.s-hidden{
+				display: none;
+			}
+
+			.finance--collapse{
+				right: -25px;
+			}
+		}
+	}
+
+	.js--sticky-wrapper{
+		transition: height $transition-time_1 $transition-function;
+	}
+
+	.financing{
+		background-color: $white;
+		border: 1px solid $finance-color;
+		overflow: hidden;
+
+		z-index: 2;
+		position: relative;
+
+		@include tableLayout;
+
+		.g-third, .g-half{
+			padding: $default-margin;
+		}
+
+		p{
+			margin-bottom: 0;
+		}
+	}
+
+	.finance--collapse{
+		position: absolute;
+		top: $default-margin;
+		right: 0;
+		transition: right $transition-time_1 $transition-function;
+		z-index: 1;
+	}
+
+
+/**********************
+	PURCHASES
+**********************/
+
+.table--header{
+	padding: 8px 0 6px;
+	text-align: center;
+	font-size: 0.9rem;
+	@include tableLayout;
+}
+
+.purchases{
+	ul{
+		@include tableLayout;
+	}
+	
+	&.s-hidden{
+		display: none;
+	}
+
+	&_empty{
+		padding: 60px $default-margin 130px;
+		text-align: center;
+	}
+}
+
+.purchase{
+	padding: 10px 0;
+	display: table-row;
+
+	[class^="col"]{
+		display: table-cell;
+		padding: $default-margin 0;
+		vertical-align: top;
+		border-bottom: 1px dotted $border-color;
+
+		&[class*="box-money"]{
+			padding: $default-margin;
+			font-size: 1.2rem;
+		}
+
+		&.box-money_finance{
+			padding-right: $toggle-padding;
+		}
+	}
+
+	img{
+		max-width: 100%;
+	}
+
+	.col-1, .col-3, .col-4{
+		vertical-align: middle;
+	}
+
+	.col-3, .col-4{
+		padding-right: 30px;
+	}
+
+	.col-1{
+		color: $brand-color;
+		text-align: center;
+	}
+
+	.col-2{
+		position: relative;
+	}
+
+}
+	.description{
+		display: block;
+		font-size: 1.1rem;
+		height: 2.4em;
+    	overflow: hidden;
+
+    	@include line-clamp();
+	}
+
+	.description-footer{
+		//position: absolute;
+		//bottom: 0;
+		margin-top: $default-margin;
+	}
+
+	.unit-pill{
+		background-color: $grey-100;
+		border-radius: 10px;
+		color: $grey-700;
+		display: inline-block;
+		@include smalltext;
+		line-height: 0.8rem;
+		margin-right: $default-margin;
+		font-size: 0.75rem;
+		
+		div{
+			display: inline-block;
+		}
+
+		.unit--quantity{
+			border-radius: 10px 0 0 10px;
+			background-color: $money-color;
+			color: $white;
+			padding: 5px 10px;
+
+			&:after{
+				content: "x";
+			}
+		}
+
+		.unit--price{
+			padding: 5px 15px 5px 5px;
+			color: $money-color;
+			
+			&:before{
+				//content: "$"; //THIS WILL BE HANDLED BY THE UNIVERSAL MONEY SYMBOL CLASS
+			}
+			&:after{
+				//content: " ea";
+			}
+		}
+	}
+
+	.purchase-meta{
+		display: inline-block;
+	}
+
+
+/********************************
+	TOTALS AND FINANCING FOOTER
+********************************/
+
+.purchases--totals{
+	position: relative;
+	margin-bottom: $default-margin;
+	display: table-row;
+
+	[class^='col']{
+		display: table-cell;
+		padding: $default-margin;
+	}
+
+	.col-3, .col-4{
+		text-align: center;
+	}
+
+	.col-3{
+		padding-right: 25px;
+	}
+}
+
+$or-circle-size: 24px;
+ 
+.totals--or{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateX(-50%) translateY(-50%);
+	background-color: $grey-700;
+	border-radius: $or-circle-size;
+	line-height: $or-circle-size;
+	width: $or-circle-size;
+	height: $or-circle-size;
+	text-align: center; 
+	display: inline-block;
+	color: $white;
+	font-size: 0.6rem;
+}
+
+.finance-confirmation{
+	border: 1px solid $finance-color;
+	padding: $default-margin;
+	text-align: center;
+}
+
+/***********************
+	FOOTER
+************************/
+
+	footer{
+		@extend .content--center;
+
+		padding-bottom: 50px;
+
+	}
+
+		.disclaimers{
+			@include smalltext;
+			color: $grey-500;
+		}
+
+
+
+/**********************
+	CURRENCY FORMATTING
+**********************/
+
+
+[class^="dollars"]:before, .currency-symbol:before{
+	
+	.CAD &{ 
+		content: '$';	
+	}
+
+	.GBP &{
+		content: '\00A3';
+	}
+
+	.CNY &{
+		content: '\00A5';
+	}
+
+	.EUR &{
+		content: '\20AC';
+	}
+	
+}
+
+.dollars{	
+	&_200{
+		font-size: 1.1rem;
+	}
+
+	&_400{
+		font-size: 1.4rem;
+	}
+
+	&_700{
+		font-size: 1.8rem;
+	}
+}
+
+[class^="cents"]{
+	vertical-align: top;
+	display: inline-block;
+	//display: none; //UNCOMMENT TO HIDE CENTS EVERYWHERE ON THE PAGE
+	margin-left: -5px;
+	margin-top: 2px;
+
+	&:before{
+		content: '.';
+	}
+	&:empty{
+		&:after{
+			content: '.00';
+		}
+		visibility: hidden;
+	}
+}
+
+.cents{
+	&_200{
+		font-size: 0.7rem;
+		margin-top: 0px;
+	}
+
+	&_400{
+		font-size: 0.8rem;
+	}
+
+	&_700{
+		font-size: 0.9rem;
+	}
+}
+
+
+/*************************
+	COLLAPSIBLE ELEMENTS
+*************************/
+
+.collapsible{
+
+	.default-hidden{
+		display: none;
+	}
+
+	&.s-expanded{
+		.default-shown{
+			display: none;
+		}
+		.default-hidden{
+			display: block;
+		}
+	}
+}
+
+
+
+
+
+.demo-controls{
+	background-color: $grey-300;
+	padding: 30px;
+	position: relative;
+	display: inline-block;
+	left: 50%;
+	transform: translateX(-50%);
+	color: $black;
+
+	li{
+		position: relative;
+	    width: 200px;
+	    margin-bottom: 10px;
+	}
+
+	.toggle-currency{
+		cursor: pointer;
+		user-select: none;
+	}
+}
