@@ -1,0 +1,141 @@
+/**********************
+	BUTTONS
+**********************/
+%button{
+	position: relative;
+	display: inline-block;
+	
+	padding: 8px $default-margin;
+	color: $black;
+	border-radius: $default-border-radius;
+	font-size: 1rem;
+	font-weight: 700;
+	outline: none;
+	cursor: pointer;
+	user-select: none;
+
+
+	&:disabled{
+		opacity: 0.4;
+		cursor: normal;
+		pointer-events: none;
+	}
+
+	&:focus{
+		outline: none;
+		border-color: lighten($brand-color,20%);
+	}
+}
+
+	.button{
+		@extend %button;
+		@include transition(padding-left);
+
+		background-color: $brand-color;
+		background-image: $button-gradient;
+		border: 1px solid $brand-color;
+
+		&:hover{
+			background-color: darken($brand-color,10%);
+			background-image: $button-gradient_hover;
+			color: $white;
+		}
+
+		&.icon{
+			background-color: transparent;
+			background-image: none;
+			border: 0;
+
+			img{
+				width: 15px;
+			}
+			
+			&.icon_plain{
+				padding: 0 5px;
+				vertical-align: middle;
+			}
+		}
+
+		&.icon_100{
+			img{
+				width: 10px;
+			}
+		}
+
+		&.s-success{
+			padding-left: 36px;
+
+			&:before{
+				content: " ";
+				background: url('../img/check_small.png') no-repeat 0 0;
+				position: absolute;
+				width:20px;
+				height:20px;
+				left: 8px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+
+	.button_secondary{
+		@extend %button;
+
+		box-shadow: $ritchie-shadow_inner;
+		background-color: $grey-300;
+		background-image: none;
+		border: 0;
+		color: $black;
+
+		&:hover{
+			background-color: darken($grey-300,30%);
+			box-shadow: none;
+			color: $white;
+			text-decoration: none;
+		}
+	}
+
+	.button_positive, .button_two-state{
+		@extend %button;
+		
+		background-color: $finance-color;
+		background-image: none;
+		border: none;
+		color: white;
+	}
+
+	.button_negative, .button_two-state.s-negative{
+		@extend %button;
+
+		background-color: $error-colour;
+		background-image: none;
+		border: none;
+		color: white;
+	}
+
+
+.button--unbound{
+	border: 0;
+	background-color: transparent;
+	font-size: 1rem;
+	cursor: pointer;
+
+	label{
+		margin-right: 15px;
+		vertical-align: top;
+		color: inherit;
+		cursor: pointer;
+	}
+
+	&:hover{
+		color: $active-colour;
+	}
+}
+
+
+
+
+
+
+
+

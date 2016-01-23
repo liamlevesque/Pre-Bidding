@@ -1,11 +1,20 @@
 @import 'mixins';
 @import 'inputs';
 @import 'grid';
+@import 'icons';
 @import 'base';
 @import 'lightbox';
-@import 'icons';
+@import 'buttons';
+
+@import 'header';
+@import 'bidding';
+@import 'ccy-converter';
+@import 'lot-info-section';
+
+@import 'lot-table';
 
 @import '../../bower_components/tooltipster/css/tooltipster.css';
+@import '../../bower_components/swiper/dist/css/swiper.min.css';
 @import 'tooltip';
 @import 'states';
 @import 'helpers';

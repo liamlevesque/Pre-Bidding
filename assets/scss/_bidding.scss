@@ -1,0 +1,236 @@
+.lot-bidding{
+	display: inline-block;
+	width: 39%;
+	vertical-align: top;
+	background-color: white;
+	box-shadow: $ritchie-shadow;
+}
+
+	.bidding--header{
+		background-color: $grey-300;
+		padding: $default-margin;
+	}
+
+	.bidding--content{
+		padding: $default-margin;
+	}
+
+
+		.bid-field{
+			padding: $default-margin 0;
+			border-bottom: $ritchie-border;
+			text-align: right;
+
+			&:last-of-type{
+				border-bottom: none;
+			}
+
+			label{
+				float: left;
+			}
+		}	
+
+		.bid-action{
+			
+			@include default-font;
+			border: none;
+			background-color: transparent;
+			text-decoration: underline;
+			padding: 10px 0;
+			outline: none;
+			cursor: pointer;
+
+			.bid-action--active-text{
+				display: none;
+			}
+
+			&.s-active{
+				.bid-action--default-text{
+					display: none;
+				}
+				.bid-action--active-text{
+					display: block;
+				}
+			}
+
+		}
+
+
+		.bidding--activate{
+			position: relative;
+
+			margin-bottom: $default-margin;
+			background-color: $brand-color;
+			padding: 5px;
+			color: white;
+			text-align: center;
+			@include default-font;
+
+			label{
+				color: white;
+				font-size: 0.9rem;
+			}
+
+			&:after{
+				display: block;
+				content: " ";
+				width: 15px;
+				height: 15px;
+
+				position: absolute;
+				bottom: -7px;
+				left: 50%;
+				transform: translateX(-50%) rotate(45deg);
+				
+				background-color: $brand-color;
+			}
+
+			&.s-bounce{
+				animation-duration: 0.4s;
+			    animation-name: bounce;
+			    animation-iteration-count: 1;
+			    animation-timing-function: ease;
+			}
+		}
+
+			@keyframes bounce{
+			    from{
+			      transform: translateY(0);
+			    }
+			    12%{
+			      transform: translateY(-25%);
+			    }
+			    25%{
+			      transform: translateY(0);
+			    }
+			    37%{
+			      transform: translateY(25%);
+			    }
+			    50%{
+			      transform: translateY(0);
+			    }
+			    62%{
+			      transform: translateY(-25%);
+			    }
+			    75%{
+			      transform: translateY(0);
+			    }
+			    87%{
+			      transform: translateY(25%);
+			    }
+			    to{
+			      transform: translateY(0);
+			    }
+			}
+
+		.bidding--bid-button{
+			@extend .button;
+			color: $black;
+			background-image: none;
+			background-color: white;
+			
+			width: 100%;
+
+			&:hover{
+				color: black;
+				background-image: none;
+				background-color: white;
+			}
+			
+			.bidder--option{
+				display: none;
+			}
+
+			&.s-disabled{
+				opacity: 0.5;
+				background-image: $button-gradient;
+
+				.bidder--disabled{
+					display: block;
+					font-size: 1.2rem;
+
+					&:before{
+						content: "ASK PRICE: ";
+						font-size: 0.9rem;
+						display: block;
+					}
+				}
+			}
+
+			&.s-active{
+				background-image: $button-gradient;
+
+				&:hover{
+					background-image: $button-gradient_hover;
+					color: black;
+				}
+
+				.bidder--active{
+					display: block;
+					font-size: 1.2rem;
+
+					&:before{
+						content: "BID ";
+						font-size: 0.9rem;
+						display: block;
+					}
+				}
+			}
+
+			&.s-waiting{
+				border: 2px solid $grey-300;
+
+				.bidder--waiting{
+					display: block;
+				}
+			}
+
+			&.s-accepted{
+				border: 2px solid $finance-color;
+
+				.bidder--accepted{
+					display: block;
+				}	
+			}
+
+			&.s-sold-won{
+				border: 2px solid $finance-color;
+
+				.bidder--won{
+					display: block;
+				}	
+			}
+
+			&.s-sold-lost{
+				border: 2px solid $grey-300;
+
+				.bidder--lost{
+					display: block;
+				}	
+			}
+
+			
+		}
+
+		.bidding--outbit{
+			max-height: 0;
+			overflow: hidden;
+
+			transition: $transition;
+
+			&.s-visible{
+				max-height: 300px;
+			}
+		}
+
+
+
+
+		
+
+
+
+
+
+
+

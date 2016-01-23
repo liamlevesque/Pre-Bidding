@@ -11,6 +11,9 @@ body{
 	padding: 0;
 }
 
+*{
+	box-sizing: border-box;
+}
 
 ul{
 	list-style-type: none;
@@ -18,7 +21,7 @@ ul{
 	padding: 0;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
 	margin-top: 0;
 	color: $brand-color;
 }
@@ -36,6 +39,15 @@ h2{
 h3{
 	font-size: 1.3rem;
 	margin-bottom: $default-margin/2;
+}
+
+h4{
+	margin-bottom: $default-margin/2;
+}
+
+h5{
+	color: inherit;
+	margin-bottom: $default-margin/3;
 }
 
 p{
@@ -74,6 +86,13 @@ a{
 	}
 }
 
+
+hr{
+	height: 0;
+	border: none;
+	border-bottom: $ritchie-border;
+}
+
 /**********************
 	TEXT FORMATTING
 **********************/
@@ -93,7 +112,7 @@ a{
 	font-weight: 700;
 }
 
-label, .label{
+label, .label, %label{
 	@include smalltext;
 	text-transform: uppercase;
 	
@@ -129,97 +148,66 @@ label, .label{
     color: $grey-500;
 }
 
-/**********************
-	BUTTONS
-**********************/
-%button{
+/************************
+	MESSAGE BOXES
+************************/
+
+
+*[class^="message-box"]{
+	border: 1px solid $grey-300;
+	//background-color: $grey-100;
+	padding: $default-margin;
+	padding-left: 32 + (3*$default-margin);
+	margin-top: $default-margin;
+
 	position: relative;
-	display: inline-block;
-	
-	padding: 8px $default-margin;
-	color: $black;
-	border-radius: $default-border-radius;
-	font-size: 1rem;
-	font-weight: 700;
-	outline: none;
-	cursor: pointer;
-	user-select: none;
+	text-align: left;
+	font-size: 0.8rem;
+	line-height: 1.2rem;
 
+	&:before{
+		display: inline-block;
+		position: absolute;
+		left: $default-margin;
+		top: 50%;
+		transform: translateY(-50%);
+		padding-right: $default-margin;
 
-	&:disabled{
-		opacity: 0.4;
-		cursor: normal;
-		pointer-events: none;
+		border-right: 1px solid $grey-300;
+		@include icon-font;
+		font-size: 24px;
 	}
 }
 
-	button, .button{
-		@extend %button;
-		@include transition(padding-left);
+.message-box--error{
+	border-color: $error-colour;
+	@extend .icon-warning;
 
-		background-color: $brand-color;
-		background-image: $button-gradient;
-		border: 1px solid $brand-color;
-
-		&:hover{
-			background-color: darken($brand-color,10%);
-			background-image: $button-gradient_hover;
-			color: $white;
-		}
-
-		&.icon{
-			background-color: transparent;
-			background-image: none;
-			border: 0;
-
-			img{
-				width: 15px;
-			}
-			
-			&.icon_plain{
-				padding: 0 5px;
-				vertical-align: middle;
-			}
-		}
-
-		&.icon_100{
-			img{
-				width: 10px;
-			}
-		}
-
-		&.s-success{
-			padding-left: 36px;
-
-			&:before{
-				content: " ";
-				background: url('../img/check_small.png') no-repeat 0 0;
-				position: absolute;
-				width:20px;
-				height:20px;
-				left: 8px;
-				top: 50%;
-				transform: translateY(-50%);
-			}
-		}
+	&:before{
+		color: $error-colour;
 	}
+}
 
-	.button_secondary{
-		@extend %button;
+.message-box--warning{
+	border-color: $warning-colour;
+	background-color: lighten($warning-colour, 30%);
+	@extend .icon-warning;
 
-		box-shadow: $ritchie-shadow_inner;
-		background-color: $grey-300;
-		background-image: none;
-		border: 0;
-		color: $black;
-
-		&:hover{
-			background-color: darken($grey-300,30%);
-			box-shadow: none;
-			color: $white;
-			text-decoration: none;
-		}
+	&:before{
+		color: darken($warning-colour,15%);
+		border-right-color: darken($warning-colour,15%);
 	}
+}
+
+.message-box--success{
+	border-color: $finance-color;
+	@extend .icon-check;
+
+	&:before{
+		color: $finance-color;
+	}
+}
+
 
 /**********************
 	CONTAINERS
@@ -412,28 +400,35 @@ label, .label{
 *******************/
 
 	[class^="col"]{
-		display: inline-block;
+		display: table-cell;
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
 		height: 100%;
+		
 	}
 
 	.col{
 		&-0{
-			width: 10%;
+			width: 3%;
 		}
 		&-1{
-			width: 5%;
+			width: 4%;
+		}
+		&-1and2{
+			width: 56%;
 		}
 		&-2{
 			width: 48%;
 		}
 		&-3{
-			width: 19%;
+			width: 8%;
 		}
 		&-4{
-			width: 16%;
+			width: 8%;
+		}
+		&-5{
+			width: 8%;
 		}
 	}
 
@@ -661,23 +656,8 @@ label, .label{
 	img{
 		max-width: 100%;
 	}
-
-	.col-1, .col-3, .col-4{
-		vertical-align: middle;
-	}
-
-	.col-3, .col-4{
-		padding-right: 30px;
-	}
-
-	.col-1{
-		color: $brand-color;
-		text-align: center;
-	}
-
-	.col-2{
-		position: relative;
-	}
+	
+	
 
 }
 	.description{

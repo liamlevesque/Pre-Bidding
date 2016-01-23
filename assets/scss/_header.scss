@@ -1,0 +1,70 @@
+header{
+	@include center-content;
+}
+
+	.header--left{
+		float: left;
+	}
+
+	.header--right{
+		float: right;
+		display: table-row;
+	}
+
+	.header--section{
+		border-right: 1px solid $border-color;
+		padding: 0 $default-margin;
+		display: table-cell;
+		vertical-align: top;
+
+		&:last-child{
+			border-right: none;
+		}
+	}
+
+	.cart-icon{
+		display: inline-block;
+		position: relative;
+		margin-right: $default-margin;
+		vertical-align: top;
+
+		i{
+			position: relative;
+			top: 11px;
+			font-size: 1.8rem;
+			z-index: 2;
+		}
+
+		.cart-count{
+			position: absolute;
+			display: block;
+			top: 0;
+
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+			
+			background-color: $brand-color;
+			transform: rotate(15deg) translateX(4px);
+			color: white;
+			font-size: 0.8rem;
+		}
+	}
+
+	.header--price{
+		label{
+			display: inline-block; 
+			width: 65px;
+			text-align: right;
+		}
+	}
+
+		.header--price-readout{
+			@extend .label;
+			color: inherit;
+			font-size: 0.9rem;
+			margin-left: $default-margin;
+		}
+
+

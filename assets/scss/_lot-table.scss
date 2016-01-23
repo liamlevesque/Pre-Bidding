@@ -1,0 +1,167 @@
+.lot-tables{
+	@include center-content;
+	margin-bottom: 100px;
+	@include default-font;
+
+	box-shadow: $ritchie-shadow;
+
+}
+
+	.lot-tables--header{
+		background-color: $grey-100;
+		padding: 0;
+	}
+
+		.lot-tables--tabs{
+
+			display: inline-block;
+			
+			.tab{
+				cursor: pointer;
+				display: inline-block;
+				margin-right: 10px;
+				padding: 10px $default-margin;
+
+				&.s-active{
+					color: $brand-color;
+				}
+				
+				$counter-radius: 20px;
+
+				.tab--counter{
+					background-color: darken($grey-100,20%);
+					color: white;
+					border-radius: $counter-radius;
+					display: inline-block;
+					width: $counter-radius;
+					height: $counter-radius;
+					text-align: center;
+					line-height: $counter-radius;
+					font-size: 0.7rem;
+				}
+			}
+		}
+
+		.lot-tables--column-headers{
+			@extend %label;
+			width: 100%;
+			padding: 0 $default-margin;
+			display: table;
+   			margin-bottom: 10px;
+
+   			.col-3, .col-4, .col-5{
+				text-align: center;
+				
+			}
+		}
+
+		.lot-tables--search{
+			float: right;
+			margin-right: $default-margin;
+			margin-top: 5px;
+		}
+
+		
+		.lot-table{
+			@include tableLayout;
+		}
+
+			.lot{
+				display: table-row;
+				font-size: 0.85rem;
+				
+				[class^="col"]{
+					border-bottom: $ritchie-border;
+				}
+
+				.col-0, .col-3, .col-4, .col-5{
+					text-align: center;
+					vertical-align: middle;
+				}
+
+				.col-0, .col-3{
+					color: $brand-color;
+				}
+
+				.col-2{
+					padding: 5px 10px;
+					vertical-align: top;
+				}
+
+				.col-3{
+					font-size: 1.2rem;
+				}
+
+				
+				.col-4{
+					cursor: pointer;
+					.bid{ text-decoration: underline; }
+
+					&:hover{
+						color: $money-color;
+					}
+				}
+
+
+				/**************
+				STATES FOR LOTS
+				***************/
+
+				&.s-sold{
+					opacity: 0.7;
+
+					.col-0{
+						color: $grey-300;
+					}
+				}
+
+				&.s-currentLot{
+					background-color: rgba($money-color,0.1);
+	
+					.col-0{
+						color: $money-color;
+					}
+
+				}
+
+			}
+ 
+				.lot--photo{
+					width: 100%;
+					max-width: 100%;
+					display: block;
+					margin: 2px 0;
+				}
+
+				.lot--name{
+					font-weight: 700;					
+				}
+
+				.lot--details{
+					margin-top: 3px;
+
+					.lot--value{
+						margin-right: 10px;
+					}
+				}
+
+				.lot--watching{
+					opacity: 0.25;
+					cursor: pointer;
+
+					&:hover{
+						color: $money-color;
+						opacity: 0.8;
+					}
+
+					&.s-active{
+						color: $money-color;
+						opacity: 1;
+					}
+				}
+
+
+
+
+
+

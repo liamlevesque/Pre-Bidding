@@ -49,6 +49,10 @@
 		margin-right: $default-margin;
 	}
 
+	.h-mr-50{
+		margin-right: $default-margin/2;
+	}
+
 	.h-pt-100{
 		padding-top: $default-margin;
 	}
@@ -113,6 +117,7 @@
 .c-price{color: $money-color;}
 .c-finance{color: $finance-color;}
 .c-brand{color: $brand-color;}
+.c-active{ color: $finance-color; } 
 
 .c-link{color: $link-colour;}
 

@@ -1,0 +1,80 @@
+.client--upper{
+	@include center-content;
+}
+
+.lot-info{
+	width: 60%;
+	display: inline-block;
+}
+
+	.lot--photos{
+		display: inline-block;
+		width: 60%;
+
+		img{
+			width: 100%;
+    		min-width: 100%;
+    		vertical-align: bottom;
+		}
+
+		&:after{
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			z-index: 2;
+			right: 0;
+			height: 100px;
+			background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
+		}
+
+		.swiper-pagination-bullet{
+			background: white;
+			opacity: 0.5;
+			transition: $transition;
+			
+			&.swiper-pagination-bullet-active{
+				background: $brand-color;
+				opacity: 1;
+				transform: scale(1.2);
+			}
+		}
+
+		.swiper-button-prev{
+			//TODO: REPLACE WITH AN ICON
+		}
+	}
+
+	.lot--fields{
+		display: inline-block;
+		width: 39%;
+		float: right;
+		padding: 0 2*$default-margin 0 $default-margin;
+		@include default-font;
+	}
+
+		.lot--field, .lot--field_half, .lot--field_warranty{
+			label{
+				display: block;
+				margin-bottom: $default-margin/2;
+			}
+			
+			padding-top: $default-margin;
+			padding-bottom: $default-margin;
+			border-bottom: $ritchie-border;
+		}
+
+		.lot--field_warranty{
+			border-bottom: none;
+		}
+
+		.lot--field_half{
+			display: inline-block;
+			width: 49%;
+		}
+
+
+
+
+

@@ -24,6 +24,8 @@ $grey-700: #585858;
 $border-color: #bdbdbd;
 $border-active: #E35530;
 
+$ritchie-border: 1px dotted $border-color;
+
 //GRADIENTS
 $button-gradient: linear-gradient(#FAB558, #F69731);
 $button-gradient_hover: linear-gradient(#F58D31, #EB6D30);
@@ -35,6 +37,11 @@ $ritchie-shadow_inner: inset 1px 1px 5px 0 rgba(0, 0, 0, 0.15);
 //TEXT SIZES
 $default-text-size: 0.9rem;
 
+@mixin default-font{
+  font-size: $default-text-size;
+  line-height: 1.4rem;
+}
+
 //MEASUREMENTS
 
 $default-border-radius: 5px;
@@ -43,6 +50,17 @@ $input-height: 30px;
 $toggle-height: 14px;
 $toggle-padding: 40px; //THIS IS HOW MUCH THE MONEY
 $tooltip-icon-size: 24px;
+
+@mixin center-content(){
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@mixin tableLayout(){
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
 
 //TRANSITIONS
 $transition-time_1: .2s;
