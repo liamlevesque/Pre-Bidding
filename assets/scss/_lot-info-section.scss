@@ -1,11 +1,44 @@
+.middle-section{
+	margin-bottom: 2 * $default-margin;
+	position: relative;
+
+	&:before{
+		content: " ";
+		background-color: $brand-color;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 60px;
+		z-index: 0;
+	}
+}
+
 .client--upper{
 	@include center-content;
+	position: relative;
+	z-index: 2;
+	padding: 10px;
 }
 
 .lot-info{
 	width: 60%;
 	display: inline-block;
 }
+
+	.lot--number{
+		color: rgba(white,0.8);
+		text-transform: uppercase;
+		font-weight: 700;
+		margin-bottom: 0;
+	}
+
+	.lot--title{
+		color: white;
+		font-size: 1.4rem;
+		margin-bottom: 20px;
+		@include ellipsize;
+	}
 
 	.lot--photos{
 		display: inline-block;
@@ -41,8 +74,14 @@
 			}
 		}
 
-		.swiper-button-prev{
-			//TODO: REPLACE WITH AN ICON
+		.swiper-button-prev,
+		.swiper-container-rtl .swiper-button-next {
+  			background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+  		}
+
+  		.swiper-button-next,
+		.swiper-container-rtl .swiper-button-prev {
+		  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
 		}
 	}
 
@@ -65,6 +104,10 @@
 			border-bottom: $ritchie-border;
 		}
 
+		.lot--field:first-of-type{
+			padding-top: 0;
+		}
+
 		.lot--field_warranty{
 			border-bottom: none;
 		}
@@ -72,6 +115,8 @@
 		.lot--field_half{
 			display: inline-block;
 			width: 49%;
+			border-bottom: none;
+			padding: 0;
 		}
 
 

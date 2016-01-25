@@ -1,14 +1,21 @@
 .lot-bidding{
 	display: inline-block;
 	width: 39%;
+	float: right;
+	
 	vertical-align: top;
 	background-color: white;
 	box-shadow: $ritchie-shadow;
+	margin-top: 13px;
+
 }
 
 	.bidding--header{
 		background-color: $grey-300;
-		padding: $default-margin;
+		padding: 10px $default-margin 5px;
+		@include default-font;
+		font-weight: 700;
+		text-transform: uppercase;
 	}
 
 	.bidding--content{
@@ -27,6 +34,10 @@
 
 			label{
 				float: left;
+			}
+
+			.bid-value:empty:before{
+				content: "waiting...";
 			}
 		}	
 

@@ -124,11 +124,7 @@ function buildLotsTable(data){
     lotTable.biddingCount = bids.length;
     lotTable.watchingCount = watching.length;
 
-    //INITIALIZE THE 1ST LOT BEING ACTIVE
-    lotTable.currentLot = 1;
-    
-    lotInfo.currentLot = 0; 
-
+    initializeLot(0);
 	
 }
 

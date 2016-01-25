@@ -73,87 +73,96 @@
     </header>
 
     <!--BIDDING SECTION-->
-    <section class="client--upper">
-        <div class="lot-info js--lot-info" rv-currentlot="lotInfo.currentLot">
-        </div>
-        <div class="lot-bidding">
-            <div class="bidding--header">
-                <h4>Lot <span class="js--current-lot"></span> Bidding</h4>
+    <div class="middle-section">
+        <section class="client--upper">
+            <div class="lot-info js--lot-info" rv-currentlot="lotInfo.currentLot">
             </div>
-            <div class="bidding--content js--bidding-area">
-                <ul class="bidding--info">
-                    <!--TODO ADD SOCKET.IO AND/OR REACT.JS-->
-                    <li class="bid-field">
-                        <label>High Bid:</label>
-                        <span class="bid-value js--high-bid" rv-text="saleItem.highBid"></span>
-                    </li>
-                    <li class="bid-field">
-                        <label>High Bidder:</label>
-                        <span class="bid-value js--high-bidder" rv-text="saleItem.bidder"></span>
-                        <!-- <button rv-on-click="controller.onOutBid">Outbid me!</button> -->
-                    </li>
-                    <li class="bid-field">
-                        <label>Ask Price</label>
-                        <span class="bid-value js--ask-price" rv-text="saleItem.price"></span>
-                        
-                        <div class="js--converter-output">
-                            <button class="bid-action c-price js--convert-ccy" rv-addclass="ccyconversion.active"> 
-                                <span class="bid-action--default-text">Convert Currency</span>
-                                <span class="bid-action--active-text" rv-text="ccyconversion.conversion | priceWithCCY"></span>
-                            </button>
+            <div class="lot-bidding">
+                <div class="bidding--header">
+                    Lot <span class="js--current-lot"></span> Bidding
+                </div>
+                <div class="bidding--content js--bidding-area">
+                    <ul class="bidding--info">
+                        <!--TODO ADD SOCKET.IO AND/OR REACT.JS-->
+                        <li class="bid-field">
+                            <label>High Bid:</label>
+                            <span class="bid-value js--high-bid" rv-text="saleItem.highBid"></span>
+                        </li>
+                        <li class="bid-field">
+                            <label>High Bidder:</label>
+                            <span class="bid-value js--high-bidder" rv-text="saleItem.bidder"></span>
+                            <!-- <button rv-on-click="controller.onOutBid">Outbid me!</button> -->
+                        </li>
+                        <li class="bid-field">
+                            <label>Ask Price</label>
+                            <span class="bid-value js--ask-price" rv-text="saleItem.price"></span>
+                            
+                            <div class="js--converter-output">
+                                <button class="bid-action c-price js--convert-ccy" rv-addclass="ccyconversion.active"> 
+                                    <span class="bid-action--default-text">Convert Currency</span>
+                                    <span class="bid-action--active-text" rv-text="ccyconversion.conversion | priceWithCCY"></span>
+                                </button>
+                            </div>
+                            
+                            <div class="js--calculator-output">
+                                <button class="bid-action c-finance js--calc-financing" rv-addclass="finance.active">
+                                    <span class="bid-action--default-text">Calculate Financing</span>
+                                    <span class="bid-action--active-text" rv-text="finance.payment | convertedPrice < finance.ccy"></span>
+                                </button>
+                            </div>
+
+                            <button rv-on-click="controller.onSellClick">Sell Now</button>
+                        </li>
+                    </ul>
+                    <div class="bidding">
+                        <div class="bidding--activate js--activate-container">
+                            <label><input type="checkbox" class="js--bidding-active" rv-on-click="controller.onActivateClick" rv-checked="saleItem.bidactive"/> Activate bidding for lot 2</label>
                         </div>
-                        
-                        <div class="js--calculator-output">
-                            <button class="bid-action c-finance js--calc-financing" rv-addclass="finance.active">
-                                <span class="bid-action--default-text">Calculate Financing</span>
-                                <span class="bid-action--active-text" rv-text="finance.payment | convertedPrice < finance.ccy"></span>
+                        <div class="bidding--controls">
+                            <button class="bidding--bid-button" rv-bidstate="saleItem.bidstatus" rv-on-click="controller.onBidClick" rv-hide="saleItem.prebid">
+                                <span class="bidder--option bidder--disabled">
+                                    <span class="dollars js--dolars" rv-text="saleItem.price"></span>
+                                </span>
+                                <span class="bidder--option bidder--active">
+                                    <span class="dollars js--dolars" rv-text="saleItem.price"></span>
+                                </span>
+                            
+                                <span class="bidder--option bidder--waiting">
+                                    Bid submitted!
+                                    <br/>Waiting for acceptance.
+                                </span>
+                                
+                                <span class="bidder--option bidder--accepted">
+                                   Bid Accepted!<br/>You're on!
+                                </span>
+                                
+                                <span class="bidder--option bidder--won">
+                                    Sold!
+                                    <br/>You won this lot!
+                                </span>
+                                
+                                <span class="bidder--option bidder--lost">
+                                    Sold
+                                    <br/>Bidder <span rv-text="saleItem.bidder"></span> won this lot
+                                </span>
                             </button>
+                            <div class="bidding--bid-button" rv-show="saleItem.prebid">
+                                Pre-Bidding up to
+                                <br/><span rv-text="saleItem.prebid"></span>
+                            </div>
                         </div>
-                    </li>
-                </ul>
-                <div class="bidding">
-                    <div class="bidding--activate js--activate-container">
-                        <label><input type="checkbox" class="js--bidding-active" rv-on-click="controller.onActivateClick"/> Activate bidding for lot 2</label>
-                    </div>
-                    <div class="bidding--controls">
-                        <button class="bidding--bid-button" rv-bidstate="saleItem.bidstatus" rv-on-click="controller.onBidClick">
-                            <span class="bidder--option bidder--disabled">
-                                <span class="dollars js--dolars" rv-text="saleItem.price"></span>
-                            </span>
-                            <span class="bidder--option bidder--active">
-                                <span class="dollars js--dolars" rv-text="saleItem.price"></span>
-                            </span>
-                        
-                            <span class="bidder--option bidder--waiting">
-                                Bid submitted!
-                                <br/>Waiting for acceptance.
-                            </span>
-                            
-                            <span class="bidder--option bidder--accepted">
-                               Bid Accepted!<br/>You're on!
-                            </span>
-                            
-                            <span class="bidder--option bidder--won">
-                                Sold!
-                                <br/>You won this lot!
-                            </span>
-                            
-                            <span class="bidder--option bidder--lost">
-                                Sold
-                                <br/>Bidder <span class="js--winning-bidder">10005</span> won this lot
-                            </span>
-                        </button>
-                    </div>
-                    <div class="bidding--outbit js--outbid">
-                        <div class="message-box--warning">
-                            You've been outbid.<br/>
-                            Bid again.
+                        <div class="bidding--outbit js--outbid">
+                            <div class="message-box--warning">
+                                You've been outbid.<br/>
+                                Bid again.
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
+
     <!--FOOTER SECTION-->
     <div class="client--bottom">
         <!--LOT TABLE SECTION-->
@@ -204,8 +213,11 @@
                         <i class="icon-warranty" rv-show="lot.warranty"></i>
                     </div>
                     <div class="col-4 js--prebid-click" rv-data-lot="lot.lot">
-                        <i class="icon-plus" rv-hide="lot.bid"></i>
-                        <div class="bid js--pre-bid" rv-show="lot.bid" rv-text="lot.bid"></div>
+                        <div rv-hide="lot.soldPrice">
+                            <i class="icon-plus" rv-hide="lot.bid"></i>
+                            <div class="bid js--pre-bid" rv-show="lot.bid" rv-text="lot.bid"></div>
+                        </div>
+                        <div rv-show="lot.soldPrice" rv-text="lot.soldPrice"></div>
                     </div>
                     <div class="col-5" rv-on-click="tablecontroller.onWatchClick"  rv-data-lot="lot.lot">
                         <i class="icon-eye lot--watching" rv-addClass="lot.watching"></i>
@@ -229,8 +241,11 @@
                         <i class="icon-warranty" rv-show="bidded.warranty"></i>
                     </div>
                     <div class="col-4 js--prebid-click" rv-data-lot="bidded.lot">
-                        <i class="icon-plus" rv-hide="bidded.bid"></i>
-                        <div class="bid js--pre-bid" rv-show="bidded.bid" rv-text="bidded.bid"></div>
+                         <div rv-hide="bidded.soldPrice">
+                            <i class="icon-plus" rv-hide="bidded.bid"></i>
+                            <div class="bid js--pre-bid" rv-show="bidded.bid" rv-text="bidded.bid"></div>
+                        </div>
+                        <div rv-show="lot.soldPrice" rv-text="lot.soldPrice"></div>
                     </div>
                     <div class="col-5" rv-on-click="tablecontroller.onWatchClick" rv-data-lot="bidded.lot">
                         <i class="icon-eye lot--watching" rv-addClass="bidded.watching"></i> 
@@ -254,8 +269,11 @@
                         <i class="icon-warranty" rv-show="watched.warranty"></i>
                     </div>
                     <div class="col-4 js--prebid-click" rv-data-lot="watched.lot">
-                        <i class="icon-plus" rv-hide="watched.bid"></i>
-                        <div class="bid js--pre-bid" rv-show="watched.bid" rv-text="watched.bid"></div>
+                         <div rv-hide="watched.soldPrice">
+                            <i class="icon-plus" rv-hide="watched.bid"></i>
+                            <div class="bid js--pre-bid" rv-show="watched.bid" rv-text="watched.bid"></div>
+                        </div>
+                        <div rv-show="lot.soldPrice" rv-text="lot.soldPrice"></div>
                     </div>
                     <div class="col-5" rv-on-click="tablecontroller.onWatchClick" rv-data-lot="watched.lot">
                         <i class="icon-eye lot--watching" rv-addClass="watched.watching"></i>
@@ -365,7 +383,7 @@
     <script type="text/javascript" src="assets/js/main-min.js"></script>
     
     <script id="currentlot" type="x-tmpl-mustache">
-        <h5 class="">Lot {{ lot }}</h5>
+        <h5 class="lot--number">Lot {{ lot }}</h5>
         <h2 class="lot--title">{{ name }}</h2>
 
         <div class="lot--photos swiper-container">
@@ -385,13 +403,15 @@
             
         </div>
         <div class="lot--fields">
-            <div class="lot--field_half">
-                <label>Serial Number / VIN</label>
-                <span class="">{{ serial }}</span>
-            </div>
-            <div class="lot--field_half">
-                <label>Meter</label>
-                <span class="">{{ meter }}</span>
+            <div class="lot--field">
+                <div class="lot--field_half">
+                    <label>Serial Number / VIN</label>
+                    <span class="">{{ serial }}</span>
+                </div>
+                <div class="lot--field_half">
+                    <label>Meter</label>
+                    <span class="">{{ meter }}</span>
+                </div>
             </div>
             <div class="lot--field">
                 <label>Comes With</label>

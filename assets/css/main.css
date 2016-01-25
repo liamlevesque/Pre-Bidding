@@ -556,21 +556,6 @@ label, .label, .header--price-readout, .lot-tables--column-headers {
 /*******************
 	HEADER
 *******************/
-header {
-  padding: 15px 0;
-  overflow: hidden;
-  position: relative; }
-  header .home-link {
-    font-size: 0.8rem; }
-    header .home-link img {
-      height: 8px; }
-
-.logo {
-  display: inline-block;
-  width: 200px;
-  height: 46px;
-  margin: 10px 0 20px; }
-
 .top-section {
   background-color: #e8e6e2; }
 
@@ -1334,14 +1319,28 @@ footer {
 
 header {
   max-width: 1400px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 5px 0;
+  overflow: hidden;
+  position: relative; }
+  header .home-link {
+    font-size: 0.8rem; }
+    header .home-link img {
+      height: 8px; }
+
+.logo {
+  display: inline-block;
+  width: 200px;
+  height: 46px;
+  margin: 10px 0 20px; }
 
 .header--left {
   float: left; }
 
 .header--right {
   float: right;
-  display: table-row; }
+  display: table-row;
+  margin-top: 5px; }
 
 .header--section {
   border-right: 1px solid #bdbdbd;
@@ -1389,13 +1388,19 @@ header {
 .lot-bidding {
   display: inline-block;
   width: 39%;
+  float: right;
   vertical-align: top;
   background-color: white;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  margin-top: 13px; }
 
 .bidding--header {
   background-color: #bfc0be;
-  padding: 15px; }
+  padding: 10px 15px 5px;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase; }
 
 .bidding--content {
   padding: 15px; }
@@ -1408,6 +1413,8 @@ header {
     border-bottom: none; }
   .bid-field label {
     float: left; }
+  .bid-field .bid-value:empty:before {
+    content: "waiting..."; }
 
 .bid-action {
   font-size: 0.9rem;
@@ -1577,13 +1584,43 @@ header {
   .bidding--outbit.s-visible {
     max-height: 300px; }
 
+.middle-section {
+  margin-bottom: 30px;
+  position: relative; }
+  .middle-section:before {
+    content: " ";
+    background-color: #E87722;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    z-index: 0; }
+
 .client--upper {
   max-width: 1400px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  padding: 10px; }
 
 .lot-info {
   width: 60%;
   display: inline-block; }
+
+.lot--number {
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0; }
+
+.lot--title {
+  color: white;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
 
 .lot--photos {
   display: inline-block;
@@ -1614,6 +1651,12 @@ header {
       -webkit-transform: scale(1.2);
           -ms-transform: scale(1.2);
               transform: scale(1.2); }
+  .lot--photos .swiper-button-prev,
+  .lot--photos .swiper-container-rtl .swiper-button-next {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E"); }
+  .lot--photos .swiper-button-next,
+  .lot--photos .swiper-container-rtl .swiper-button-prev {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E"); }
 
 .lot--fields {
   display: inline-block;
@@ -1631,12 +1674,17 @@ header {
     display: block;
     margin-bottom: 7.5px; }
 
+.lot--field:first-of-type {
+  padding-top: 0; }
+
 .lot--field_warranty {
   border-bottom: none; }
 
 .lot--field_half {
   display: inline-block;
-  width: 49%; }
+  width: 49%;
+  border-bottom: none;
+  padding: 0; }
 
 .lot-tables {
   max-width: 1400px;
@@ -1716,10 +1764,20 @@ header {
     opacity: 0.7; }
     .lot.s-sold .col-0 {
       color: #bfc0be; }
+    .lot.s-sold .col-4 {
+      pointer-events: none; }
+    .lot.s-sold .icon-plus {
+      display: none; }
   .lot.s-currentLot {
     background-color: rgba(32, 87, 158, 0.1); }
     .lot.s-currentLot .col-0 {
       color: #20579E; }
+    .lot.s-currentLot .col-4 {
+      pointer-events: none; }
+      .lot.s-currentLot .col-4 .bid {
+        text-decoration: none; }
+    .lot.s-currentLot .icon-plus {
+      display: none; }
 
 .lot--photo {
   width: 100%;

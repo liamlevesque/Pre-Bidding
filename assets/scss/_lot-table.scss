@@ -113,6 +113,14 @@
 					.col-0{
 						color: $grey-300;
 					}
+					
+					.col-4{
+						pointer-events: none;
+					}
+
+					.icon-plus{
+						display: none;
+					}
 				}
 
 				&.s-currentLot{
@@ -120,6 +128,15 @@
 	
 					.col-0{
 						color: $money-color;
+					}
+
+					.col-4{
+						pointer-events: none;
+						.bid{ text-decoration: none; }
+					}
+
+					.icon-plus{
+						display: none;
 					}
 
 				}

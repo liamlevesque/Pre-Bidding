@@ -1,6 +1,25 @@
 header{
 	@include center-content;
+
+	padding: 5px 0;
+	overflow: hidden;
+	position: relative;
+
+	.home-link{
+		font-size: 0.8rem;
+		
+		img{
+			height: 8px;
+		}
+	}
 }
+
+	.logo{
+		display: inline-block;
+		width: 200px;
+    	height: 46px;
+    	margin: 10px 0 20px;
+	}
 
 	.header--left{
 		float: left;
@@ -9,6 +28,7 @@ header{
 	.header--right{
 		float: right;
 		display: table-row;
+		margin-top: 5px;
 	}
 
 	.header--section{

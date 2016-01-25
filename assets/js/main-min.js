@@ -85,22 +85,57 @@ rivets.bind($('.js--header'),{
 var intercom = Intercom.getInstance();
 
 intercom.on('newbid', function(data) {
-	//IF I WAS THE HIGH BIDDER AND THE NEW BIDDER ISN'T ME, SHOW OUTBID NOTIFICATION
-	if(saleItem.bidder === user.bidder && data.bidder != user.bidder) outBid();
+	
+	//IF A BID COMES IN, BUT I HAVE A HIGHER PREBID
+	if(saleItem.prebid >= data.price && data.bidder != user.bidder){ 
+		//UPDATE THE ITEM WITH THE HIGH BID SUBMITTED BY THE OTHER BIDDER
+		saleItem.highBid = data.highBid;
+		saleItem.price = data.price;
+		
+		//THEN PLACE MY COUNTER BID AUTOMATICALLY
+		controller.placeBid();
+		return;
+	}
+
+	//ELSE IF I WAS THE HIGH BIDDER AND THE NEW BIDDER ISN'T ME, SHOW OUTBID NOTIFICATION
+	else if(saleItem.bidder === user.bidder && data.bidder != user.bidder) outBid();
 	
     //IF I'M BIDDING AND I'M IN ANOTHER STATE (WAITING, ETC)
     if(saleItem.bidstatus != 'disabled' && user.bidder != data.bidder) saleItem.bidstatus = 'active';
 	
+	//SET THE BIDDER TO THE NEW BID VALUES
 	saleItem.bidder = data.bidder;
 	saleItem.highBid = data.highBid;
 	saleItem.price = data.price;
-
+	
 	controller.updatePrice();
+});
+
+intercom.on('sold',function(data){
+	if(saleItem.bidder === user.bidder) return;
+	
+	controller.sellItem();
 });
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
+
+
+
+/********************************
+	SWITCH WHICH LOT IS ACTIVE
+*********************************/
+
+function initializeLot(index){
+	lotTable.currentLot = index + 1;
+    
+    lotInfo.currentLot = index; 
+
+    controller.initSaleItem();
+}
+
+
 
 $(function(){
 
@@ -117,9 +152,11 @@ function outBid(){
 	if(saleItem.bidder === user.bidder){
 		saleItem.bidstatus = 'active';
 		notifyOutbid();
-	} 
+	}
 
-	controller.updatePrice(saleItem);
+	saleItem.prebid = 0;
+
+	controller.updatePrice();
 }
 
 function notifyOutbid(){
@@ -133,14 +170,39 @@ var saleItem = {
 		"price" : 25500,
 		"highBid" : 25000,
 		"bidder" : '10005',
+		"prebid" : 0,
 		"financeRate" : 5,
 		"financePeriod" : 48,
 		"payment" : 100,
 		"bidactive" : false,
-		"bidstatus" : 'disabled'
+		"bidstatus" : 'disabled',
 	},
 
 	controller = {
+		initSaleItem: function(){
+			var currentItem = lotTable.lotList[lotTable.currentLot-1];
+			
+			saleItem.price = currentItem.openPrice;
+			saleItem.highBid = null;
+			saleItem.bidder = null;
+			saleItem.bidactive = false;
+			saleItem.bidstatus = 'disabled';
+			saleItem.prebid = 0;
+			
+			//IF YOU'VE PLACED A PREBID ON THIS, THEN DON'T ALLOW TO BID UNTIL AMT PASSED
+			if(currentItem.bid > 0 && currentItem.bid > currentItem.openPrice){
+				saleItem.prebid = currentItem.bid;
+				saleItem.bidactive = true;
+				saleItem.bidstatus = 'active';
+				saleItem.bidder = user.bidder;
+				saleItem.highBid = saleItem.price;
+				saleItem.price += 500;
+
+				controller.emitBid();
+			}
+
+			//console.log(saleItem.price);
+		},
 
 		onActivateClick: function(e, model) {
 			model.saleItem.bidactive = !model.saleItem.bidactive;
@@ -159,21 +221,11 @@ var saleItem = {
 	    	switch (model.saleItem.bidstatus){
 	    		case 'active':
 					model.saleItem.bidstatus = 'waiting';
-					model.saleItem.bidder = user.bidder;
-					model.saleItem.highBid = model.saleItem.price;
-					model.saleItem.price += 500;
 
-					intercom.emit('newbid', {
-						price: model.saleItem.price,
-						bidder: model.saleItem.bidder,
-						highBid: model.saleItem.highBid
-					});
-					
 					setTimeout(function(){
 						model.saleItem.bidstatus = 'accepted';
+						controller.placeBid();
 					},1000);
-
-					controller.updatePrice(model.saleItem);
 
 					break;
 
@@ -199,6 +251,28 @@ var saleItem = {
 
 	    },
 
+	    placeBid: function(){
+	    	saleItem.bidder = user.bidder;
+			saleItem.highBid = saleItem.price;
+			saleItem.price += 500;
+
+			controller.emitBid();
+
+			controller.updatePrice();
+
+			//console.log(saleItem.price);
+	    },
+
+	    emitBid: function(){
+	    	console.log(saleItem.price);
+
+	    	intercom.emit('newbid', {
+				price: saleItem.price,
+				bidder: saleItem.bidder,
+				highBid: saleItem.highBid
+			});
+	    },
+
 	    onOutBid: function(e, model){
 	    	outBid();
 	    },
@@ -206,6 +280,23 @@ var saleItem = {
 	    updatePrice: function(){
 	    	ccyconversion.conversion = saleItem.price * ccyconversion.rate;
 	    	finance.payment = financingCalculation();
+	    },
+
+	    onSellClick: function(){
+	    	intercom.emit('sold', {});
+	    	//IF YOU WON THE LOT, SHOW THE RIGHT MESSAGE
+	    	controller.sellItem();
+	    },
+
+	    sellItem: function(){
+	    	saleItem.bidstatus = (saleItem.bidder === user.bidder)? 'soldYou': 'soldOther';
+
+			lotTable.lotList[lotTable.currentLot-1].soldPrice = saleItem.price;
+
+			setTimeout(function(){
+				//MOVE ON TO THE NEXT LOT AFTER 2 SECONDS
+				initializeLot(lotTable.currentLot++);
+			},2000);
 	    }
 
 	};
@@ -648,11 +739,7 @@ function buildLotsTable(data){
     lotTable.biddingCount = bids.length;
     lotTable.watchingCount = watching.length;
 
-    //INITIALIZE THE 1ST LOT BEING ACTIVE
-    lotTable.currentLot = 1;
-    
-    lotInfo.currentLot = 0; 
-
+    initializeLot(0);
 	
 }
 
