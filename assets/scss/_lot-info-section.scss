@@ -117,6 +117,10 @@
 			width: 49%;
 			border-bottom: none;
 			padding: 0;
+
+			&:last-of-type{
+				text-align: right;
+			}
 		}
 
 

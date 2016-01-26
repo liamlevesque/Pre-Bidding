@@ -2,6 +2,7 @@
 	display: inline-block;
 	width: 39%;
 	float: right;
+	position: relative;
 	
 	vertical-align: top;
 	background-color: white;
@@ -20,6 +21,12 @@
 
 	.bidding--content{
 		padding: $default-margin;
+
+		&.s-group-active{
+			display: inline-block;
+			width: 50%;
+			float: right;	
+		}
 	}
 
 
@@ -30,6 +37,10 @@
 
 			&:last-of-type{
 				border-bottom: none;
+			}
+
+			&:first-of-type{
+				padding-top: 0;
 			}
 
 			label{
@@ -66,6 +77,34 @@
 
 		}
 
+		.bidding--activate_group{
+			margin-bottom: $default-margin;
+			margin-left: 12px;
+			padding: 4px 0;
+			background-color: $brand-color;
+			color: white;
+			text-align: center;
+			@include default-font;
+			position: relative;
+
+			span{
+				position: relative;
+				z-index: 2;
+			}
+
+			&:before{
+				content: " ";
+				background-color: $brand-color;
+				display: block;
+				position: absolute;
+				left: -12px;
+				top: 4px;
+				width: 22px;
+				height: 22px;
+				transform: rotate(45deg);
+				z-index: 1;
+			}
+		}
 
 		.bidding--activate{
 			position: relative;

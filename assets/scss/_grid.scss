@@ -116,3 +116,11 @@ GRID
 		}
 	}
 }
+
+.g-three-quarters{
+	@extend %g-cell;
+	@include breakpoint(medium){
+		width: 74%;
+		margin-right: 1%;
+	}
+}

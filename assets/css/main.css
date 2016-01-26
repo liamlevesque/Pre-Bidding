@@ -150,18 +150,18 @@ input[type=number]::-webkit-outer-spin-button {
 /*****************
 GRID
 ******************/
-.g-quarter, .g-third, .g-two-thirds, .g-half {
+.g-quarter, .g-third, .g-two-thirds, .g-half, .g-three-quarters {
   box-sizing: border-box;
   position: relative;
   vertical-align: top; }
   @media (min-width: 48em) {
-    .g-quarter, .g-third, .g-two-thirds, .g-half {
+    .g-quarter, .g-third, .g-two-thirds, .g-half, .g-three-quarters {
       display: inline-block;
       vertical-align: top; }
-      .g-quarter:last-of-type, .g-third:last-of-type, .g-two-thirds:last-of-type, .g-half:last-of-type {
+      .g-quarter:last-of-type, .g-third:last-of-type, .g-two-thirds:last-of-type, .g-half:last-of-type, .g-three-quarters:last-of-type {
         float: right;
         margin-right: 0; } }
-  .g-no-space.g-quarter, .g-no-space.g-third, .g-no-space.g-two-thirds, .g-no-space.g-half {
+  .g-no-space.g-quarter, .g-no-space.g-third, .g-no-space.g-two-thirds, .g-no-space.g-half, .g-no-space.g-three-quarters {
     margin: 0; }
 
 .g-display-table {
@@ -228,6 +228,11 @@ GRID
       width: 50%;
       float: none;
       margin-right: 0; } }
+
+@media (min-width: 48em) {
+  .g-three-quarters {
+    width: 74%;
+    margin-right: 1%; } }
 
 @font-face {
   font-family: 'ritchie-icons';
@@ -880,41 +885,29 @@ footer {
 /**********************
 	CURRENCY FORMATTING
 **********************/
-.CAD [class^="dollars"]:before, .CAD .currency-symbol:before {
+.CAD [class*="dollars"]:before, .CAD .currency-symbol:before {
   content: '$'; }
-.GBP [class^="dollars"]:before, .GBP .currency-symbol:before {
+.GBP [class*="dollars"]:before, .GBP .currency-symbol:before {
   content: '\00A3'; }
-.CNY [class^="dollars"]:before, .CNY .currency-symbol:before {
+.CNY [class*="dollars"]:before, .CNY .currency-symbol:before {
   content: '\00A5'; }
-.EUR [class^="dollars"]:before, .EUR .currency-symbol:before {
+.EUR [class*="dollars"]:before, .EUR .currency-symbol:before {
   content: '\20AC'; }
 
-.dollars_200 {
-  font-size: 1.1rem; }
-.dollars_400 {
-  font-size: 1.4rem; }
-.dollars_700 {
-  font-size: 1.8rem; }
-
-[class^="cents"] {
+[class*="cents"] {
   vertical-align: top;
   display: inline-block;
   margin-left: -5px;
   margin-top: 2px; }
-  [class^="cents"]:before {
+  [class*="cents"]:before {
     content: '.'; }
-  [class^="cents"]:empty {
+  [class*="cents"]:empty {
     visibility: hidden; }
-    [class^="cents"]:empty:after {
+    [class*="cents"]:empty:after {
       content: '.00'; }
 
-.cents_200 {
-  font-size: 0.7rem;
-  margin-top: 0px; }
-.cents_400 {
-  font-size: 0.8rem; }
-.cents_700 {
-  font-size: 0.9rem; }
+.divider:before {
+  content: ","; }
 
 /*************************
 	COLLAPSIBLE ELEMENTS
@@ -1321,8 +1314,8 @@ header {
   max-width: 1400px;
   margin: 0 auto;
   padding: 5px 0;
-  overflow: hidden;
-  position: relative; }
+  position: relative;
+  z-index: 10; }
   header .home-link {
     font-size: 0.8rem; }
     header .home-link img {
@@ -1334,13 +1327,11 @@ header {
   height: 46px;
   margin: 10px 0 20px; }
 
-.header--left {
-  float: left; }
-
 .header--right {
-  float: right;
-  display: table-row;
-  margin-top: 5px; }
+  position: absolute;
+  right: 0;
+  top: 5px;
+  display: table-row; }
 
 .header--section {
   border-right: 1px solid #bdbdbd;
@@ -1383,12 +1374,41 @@ header {
 .header--price-readout {
   color: inherit;
   font-size: 0.9rem;
-  margin-left: 15px; }
+  margin-left: 7.5px; }
+
+.auctioneers-message {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+  background-color: #c4483a;
+  text-align: center;
+  padding: 5px;
+  color: white;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+  .auctioneers-message button {
+    float: right;
+    color: white; }
+  .auctioneers-message.s-active {
+    opacity: 1;
+    pointer-events: all;
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0); }
 
 .lot-bidding {
   display: inline-block;
   width: 39%;
   float: right;
+  position: relative;
   vertical-align: top;
   background-color: white;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
@@ -1404,6 +1424,10 @@ header {
 
 .bidding--content {
   padding: 15px; }
+  .bidding--content.s-group-active {
+    display: inline-block;
+    width: 50%;
+    float: right; }
 
 .bid-field {
   padding: 15px 0;
@@ -1411,6 +1435,8 @@ header {
   text-align: right; }
   .bid-field:last-of-type {
     border-bottom: none; }
+  .bid-field:first-of-type {
+    padding-top: 0; }
   .bid-field label {
     float: left; }
   .bid-field .bid-value:empty:before {
@@ -1431,6 +1457,33 @@ header {
     display: none; }
   .bid-action.s-active .bid-action--active-text {
     display: block; }
+
+.bidding--activate_group {
+  margin-bottom: 15px;
+  margin-left: 12px;
+  padding: 4px 0;
+  background-color: #E87722;
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  position: relative; }
+  .bidding--activate_group span {
+    position: relative;
+    z-index: 2; }
+  .bidding--activate_group:before {
+    content: " ";
+    background-color: #E87722;
+    display: block;
+    position: absolute;
+    left: -12px;
+    top: 4px;
+    width: 22px;
+    height: 22px;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    z-index: 1; }
 
 .bidding--activate {
   position: relative;
@@ -1584,6 +1637,32 @@ header {
   .bidding--outbit.s-visible {
     max-height: 300px; }
 
+.bidding--group {
+  overflow-y: auto;
+  width: 50%;
+  position: absolute;
+  top: 37px;
+  bottom: 0;
+  background-color: #E9E9E9; }
+
+.group--lot {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  overflow: hidden;
+  padding: 2px 5px;
+  border-bottom: 1px dotted #bdbdbd; }
+  .group--lot .lot--name, .group--lot .lot--details {
+    line-height: 0.9rem; }
+  .group--lot .lot--details {
+    color: #959595; }
+  .group--lot .lot--selector {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%); }
+
 .middle-section {
   margin-bottom: 30px;
   position: relative; }
@@ -1685,6 +1764,8 @@ header {
   width: 49%;
   border-bottom: none;
   padding: 0; }
+  .lot--field_half:last-of-type {
+    text-align: right; }
 
 .lot-tables {
   max-width: 1400px;
@@ -1696,7 +1777,8 @@ header {
 
 .lot-tables--header {
   background-color: #E9E9E9;
-  padding: 0; }
+  padding: 0;
+  overflow: hidden; }
 
 .lot-tables--tabs {
   display: inline-block; }

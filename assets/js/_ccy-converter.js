@@ -64,13 +64,6 @@ var ccys = {
 	    }
 	};
 
-
-
-rivets.binders.addclass = function(el, value) {
-	if(value) $(el).addClass('s-active');
-	else $(el).removeClass('s-active');
-}
-
 rivets.formatters.priceWithCCY = function(value){
 	var val = parseFloat(value); 
 		val = val * ccyconversion.rate;

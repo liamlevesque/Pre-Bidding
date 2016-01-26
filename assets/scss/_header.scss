@@ -2,8 +2,9 @@ header{
 	@include center-content;
 
 	padding: 5px 0;
-	overflow: hidden;
 	position: relative;
+	z-index: 10;
+
 
 	.home-link{
 		font-size: 0.8rem;
@@ -22,13 +23,14 @@ header{
 	}
 
 	.header--left{
-		float: left;
+		
 	}
 
 	.header--right{
-		float: right;
+		position: absolute;
+		right: 0;
+		top: 5px;
 		display: table-row;
-		margin-top: 5px;
 	}
 
 	.header--section{
@@ -84,7 +86,35 @@ header{
 			@extend .label;
 			color: inherit;
 			font-size: 0.9rem;
-			margin-left: $default-margin;
+			margin-left: $default-margin/2;
 		}
 
+	.auctioneers-message{
+		position: absolute;
+		bottom: -25px;
+		left: 0;
+		right: 0;
+		border-radius: 5px;
+		background-color: $error-colour;
+		text-align: center;
+		padding: 5px;
+		color: white;
+		box-shadow: $ritchie-shadow;
 
+		opacity: 0;
+		pointer-events: none;
+		transform: translateY(-100%);
+		transition: $transition;
+
+		button{
+			float: right;
+			color: white;
+		}
+
+		&.s-active{
+			opacity: 1;
+			pointer-events: all;
+			transform: translateY(0);
+		}
+
+	}

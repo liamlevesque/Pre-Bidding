@@ -767,7 +767,7 @@ $or-circle-size: 24px;
 **********************/
 
 
-[class^="dollars"]:before, .currency-symbol:before{
+[class*="dollars"]:before, .currency-symbol:before{
 	
 	.CAD &{ 
 		content: '$';	
@@ -787,21 +787,8 @@ $or-circle-size: 24px;
 	
 }
 
-.dollars{	
-	&_200{
-		font-size: 1.1rem;
-	}
 
-	&_400{
-		font-size: 1.4rem;
-	}
-
-	&_700{
-		font-size: 1.8rem;
-	}
-}
-
-[class^="cents"]{
+[class*="cents"]{
 	vertical-align: top;
 	display: inline-block;
 	//display: none; //UNCOMMENT TO HIDE CENTS EVERYWHERE ON THE PAGE
@@ -819,19 +806,8 @@ $or-circle-size: 24px;
 	}
 }
 
-.cents{
-	&_200{
-		font-size: 0.7rem;
-		margin-top: 0px;
-	}
-
-	&_400{
-		font-size: 0.8rem;
-	}
-
-	&_700{
-		font-size: 0.9rem;
-	}
+.divider:before{
+	content: ",";
 }
 
 

@@ -71,11 +71,46 @@ $(function(){
 });
 
 var user = {
-		bidder : "v7005"
+		bidder : "v7005",
+		limit: 1000000,
+		spent: 65000,
+		bid: 48500,
+		message: '',
+	},
+	headerController = {
+
+		onDismissMSGClick: function(e, model){
+			model.user.message = "";
+		},
+
+		generateMessage: function(msg){
+			user.message = msg;
+		}
+
 	};
 
+rivets.binders.addclass = function(el, value) {
+	if(value) $(el).addClass('s-active');
+	else $(el).removeClass('s-active');
+}
+
+rivets.formatters.price = function(value){
+
+	var price;
+
+	if(!value) return null;
+	
+	if($('#js--body').hasClass('INR')) 
+		price = value.toString().replace(/(\d)(?=(\d\d)+\d$)/g, '$1<span class="divider"></span>');
+	else 
+		price = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '<span class="divider"></span>');
+	
+	return price;
+}
+
 rivets.bind($('.js--header'),{
-	user: user
+	user: user,
+	headerController: headerController
 });
 
 
@@ -107,7 +142,7 @@ intercom.on('newbid', function(data) {
 	saleItem.bidder = data.bidder;
 	saleItem.highBid = data.highBid;
 	saleItem.price = data.price;
-	
+
 	controller.updatePrice();
 });
 
@@ -131,6 +166,8 @@ function initializeLot(index){
 	lotTable.currentLot = index + 1;
     
     lotInfo.currentLot = index; 
+
+    saleItem.currentLot = index;
 
     controller.initSaleItem();
 }
@@ -167,8 +204,8 @@ function notifyOutbid(){
 }
 
 var saleItem = {
-		"price" : 25500,
-		"highBid" : 25000,
+		"price" : null,
+		"highBid" : null,
 		"bidder" : '10005',
 		"prebid" : 0,
 		"financeRate" : 5,
@@ -176,18 +213,41 @@ var saleItem = {
 		"payment" : 100,
 		"bidactive" : false,
 		"bidstatus" : 'disabled',
+		"currentLot" : null,
+		"isgroup":false
 	},
 
 	controller = {
 		initSaleItem: function(){
-			var currentItem = lotTable.lotList[lotTable.currentLot-1];
+			var currentItem = lotTable.lotList[lotTable.currentLot-1],
+				currentGroup = currentItem.group;
 			
+			saleItem.currentLot = lotTable.currentLot;
 			saleItem.price = currentItem.openPrice;
 			saleItem.highBid = null;
 			saleItem.bidder = null;
 			saleItem.bidactive = false;
 			saleItem.bidstatus = 'disabled';
 			saleItem.prebid = 0;
+			
+			//IF THIS IS PART OF A BIDDING GROUP AND WE'VE NOT INITIALIZED THIS GROUP, INITALIZE THAT
+			if(currentGroup > 0 && group.groupnumber != currentGroup){
+				saleItem.isgroup = true;
+
+				var groupLots = [];
+
+				for(var i=lotTable.currentLot-1; i<lotTable.lotList.length; i++){
+					if(lotTable.lotList[i].group === currentGroup) groupLots.push(lotTable.lotList[i]);
+				}
+				group.groupnumber = currentGroup;
+				group.lotList = groupLots;
+			}
+			else if(currentGroup === 0){ 
+				saleItem.isgroup = false;
+
+				group.groupnumber = 0;
+				group.lotList = [];
+			}
 			
 			//IF YOU'VE PLACED A PREBID ON THIS, THEN DON'T ALLOW TO BID UNTIL AMT PASSED
 			if(currentItem.bid > 0 && currentItem.bid > currentItem.openPrice){
@@ -200,8 +260,6 @@ var saleItem = {
 
 				controller.emitBid();
 			}
-
-			//console.log(saleItem.price);
 		},
 
 		onActivateClick: function(e, model) {
@@ -259,8 +317,6 @@ var saleItem = {
 			controller.emitBid();
 
 			controller.updatePrice();
-
-			//console.log(saleItem.price);
 	    },
 
 	    emitBid: function(){
@@ -331,6 +387,11 @@ rivets.binders.bidstate = function(el, value) {
 	}
 }
 
+rivets.binders.isgroupbidding = function(el, value){
+	if(value > 0) $(el).addClass('s-group-active');
+	else $(el).removeClass('s-group-active');
+}
+
 rivets.bind($('.js--bidding-area'),{
 	saleItem: saleItem,
 	controller: controller
@@ -341,6 +402,21 @@ rivets.bind($('.js--bidding-area'),{
 
 
 
+
+var group = {
+		groupnumber: 0,
+		lotList: {}
+	},
+	groupController = {
+
+		
+
+	};
+
+rivets.bind($('.js--group-area'),{
+	group: group,
+	groupController: groupController
+});
 
 $(function(){
 
@@ -407,13 +483,6 @@ var ccys = {
 			finance.ccy = data.currentCCY;
 	    }
 	};
-
-
-
-rivets.binders.addclass = function(el, value) {
-	if(value) $(el).addClass('s-active');
-	else $(el).removeClass('s-active');
-}
 
 rivets.formatters.priceWithCCY = function(value){
 	var val = parseFloat(value); 

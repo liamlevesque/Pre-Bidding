@@ -7,11 +7,46 @@ $(function(){
 });
 
 var user = {
-		bidder : "v7005"
+		bidder : "v7005",
+		limit: 1000000,
+		spent: 65000,
+		bid: 48500,
+		message: '',
+	},
+	headerController = {
+
+		onDismissMSGClick: function(e, model){
+			model.user.message = "";
+		},
+
+		generateMessage: function(msg){
+			user.message = msg;
+		}
+
 	};
 
+rivets.binders.addclass = function(el, value) {
+	if(value) $(el).addClass('s-active');
+	else $(el).removeClass('s-active');
+}
+
+rivets.formatters.price = function(value){
+
+	var price;
+
+	if(!value) return null;
+	
+	if($('#js--body').hasClass('INR')) 
+		price = value.toString().replace(/(\d)(?=(\d\d)+\d$)/g, '$1<span class="divider"></span>');
+	else 
+		price = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '<span class="divider"></span>');
+	
+	return price;
+}
+
 rivets.bind($('.js--header'),{
-	user: user
+	user: user,
+	headerController: headerController
 });
 
 
@@ -43,7 +78,7 @@ intercom.on('newbid', function(data) {
 	saleItem.bidder = data.bidder;
 	saleItem.highBid = data.highBid;
 	saleItem.price = data.price;
-	
+
 	controller.updatePrice();
 });
 
@@ -67,6 +102,8 @@ function initializeLot(index){
 	lotTable.currentLot = index + 1;
     
     lotInfo.currentLot = index; 
+
+    saleItem.currentLot = index;
 
     controller.initSaleItem();
 }

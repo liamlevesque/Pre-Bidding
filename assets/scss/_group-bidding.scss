@@ -1,0 +1,32 @@
+.bidding--group {
+	overflow-y: auto;
+	width: 50%;
+	position: absolute;
+	top: 37px;
+	bottom: 0;
+
+	background-color: $grey-100;
+
+}
+
+	.group--lot{
+		@include default-font;
+		overflow: hidden;
+		padding: 2px 5px;
+		border-bottom: $ritchie-border;
+
+		.lot--name, .lot--details{
+			line-height: 0.9rem;
+		}
+
+		.lot--details{
+			color: $grey-500;
+		}
+
+		.lot--selector{
+			position: absolute;
+		    right: 0;
+		    top: 50%;
+		    transform: translateY(-50%);
+		}
+	}

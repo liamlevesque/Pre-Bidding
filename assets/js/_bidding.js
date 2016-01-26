@@ -28,8 +28,8 @@ function notifyOutbid(){
 }
 
 var saleItem = {
-		"price" : 25500,
-		"highBid" : 25000,
+		"price" : null,
+		"highBid" : null,
 		"bidder" : '10005',
 		"prebid" : 0,
 		"financeRate" : 5,
@@ -37,18 +37,41 @@ var saleItem = {
 		"payment" : 100,
 		"bidactive" : false,
 		"bidstatus" : 'disabled',
+		"currentLot" : null,
+		"isgroup":false
 	},
 
 	controller = {
 		initSaleItem: function(){
-			var currentItem = lotTable.lotList[lotTable.currentLot-1];
+			var currentItem = lotTable.lotList[lotTable.currentLot-1],
+				currentGroup = currentItem.group;
 			
+			saleItem.currentLot = lotTable.currentLot;
 			saleItem.price = currentItem.openPrice;
 			saleItem.highBid = null;
 			saleItem.bidder = null;
 			saleItem.bidactive = false;
 			saleItem.bidstatus = 'disabled';
 			saleItem.prebid = 0;
+			
+			//IF THIS IS PART OF A BIDDING GROUP AND WE'VE NOT INITIALIZED THIS GROUP, INITALIZE THAT
+			if(currentGroup > 0 && group.groupnumber != currentGroup){
+				saleItem.isgroup = true;
+
+				var groupLots = [];
+
+				for(var i=lotTable.currentLot-1; i<lotTable.lotList.length; i++){
+					if(lotTable.lotList[i].group === currentGroup) groupLots.push(lotTable.lotList[i]);
+				}
+				group.groupnumber = currentGroup;
+				group.lotList = groupLots;
+			}
+			else if(currentGroup === 0){ 
+				saleItem.isgroup = false;
+
+				group.groupnumber = 0;
+				group.lotList = [];
+			}
 			
 			//IF YOU'VE PLACED A PREBID ON THIS, THEN DON'T ALLOW TO BID UNTIL AMT PASSED
 			if(currentItem.bid > 0 && currentItem.bid > currentItem.openPrice){
@@ -61,8 +84,6 @@ var saleItem = {
 
 				controller.emitBid();
 			}
-
-			//console.log(saleItem.price);
 		},
 
 		onActivateClick: function(e, model) {
@@ -120,8 +141,6 @@ var saleItem = {
 			controller.emitBid();
 
 			controller.updatePrice();
-
-			//console.log(saleItem.price);
 	    },
 
 	    emitBid: function(){
@@ -190,6 +209,11 @@ rivets.binders.bidstate = function(el, value) {
 			$(el).addClass('s-active');
 			break;
 	}
+}
+
+rivets.binders.isgroupbidding = function(el, value){
+	if(value > 0) $(el).addClass('s-group-active');
+	else $(el).removeClass('s-group-active');
 }
 
 rivets.bind($('.js--bidding-area'),{
