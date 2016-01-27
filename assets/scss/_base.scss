@@ -148,66 +148,6 @@ label, .label, %label{
     color: $grey-500;
 }
 
-/************************
-	MESSAGE BOXES
-************************/
-
-
-*[class^="message-box"]{
-	border: 1px solid $grey-300;
-	//background-color: $grey-100;
-	padding: $default-margin;
-	padding-left: 32 + (3*$default-margin);
-	margin-top: $default-margin;
-
-	position: relative;
-	text-align: left;
-	font-size: 0.8rem;
-	line-height: 1.2rem;
-
-	&:before{
-		display: inline-block;
-		position: absolute;
-		left: $default-margin;
-		top: 50%;
-		transform: translateY(-50%);
-		padding-right: $default-margin;
-
-		border-right: 1px solid $grey-300;
-		@include icon-font;
-		font-size: 24px;
-	}
-}
-
-.message-box--error{
-	border-color: $error-colour;
-	@extend .icon-warning;
-
-	&:before{
-		color: $error-colour;
-	}
-}
-
-.message-box--warning{
-	border-color: $warning-colour;
-	background-color: lighten($warning-colour, 30%);
-	@extend .icon-warning;
-
-	&:before{
-		color: darken($warning-colour,15%);
-		border-right-color: darken($warning-colour,15%);
-	}
-}
-
-.message-box--success{
-	border-color: $finance-color;
-	@extend .icon-check;
-
-	&:before{
-		color: $finance-color;
-	}
-}
-
 
 /**********************
 	CONTAINERS

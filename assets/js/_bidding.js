@@ -38,7 +38,8 @@ var saleItem = {
 		"bidactive" : false,
 		"bidstatus" : 'disabled',
 		"currentLot" : null,
-		"isgroup":false
+		"isgroup":false,
+		"openOffersList": []
 	},
 
 	controller = {
@@ -65,6 +66,7 @@ var saleItem = {
 				}
 				group.groupnumber = currentGroup;
 				group.lotList = groupLots;
+				group.length = groupLots.length;
 			}
 			else if(currentGroup === 0){ 
 				saleItem.isgroup = false;
@@ -87,10 +89,14 @@ var saleItem = {
 		},
 
 		onActivateClick: function(e, model) {
-			model.saleItem.bidactive = !model.saleItem.bidactive;
-			if(model.saleItem.bidactive) model.saleItem.bidstatus = "active";
-			else model.saleItem.bidstatus = "disabled";
+			if(model.saleItem.bidactive) controller.activateBidding(model.saleItem.currentLot, false);
+			else controller.activateBidding(model.saleItem.currentLot, true);
+	    },
 
+	    activateBidding: function(targetLot, status){
+	    	saleItem.currentLot = targetLot;
+	    	saleItem.bidactive = status;
+			saleItem.bidstatus = (status)? "active" : "disabled";
 	    },
 
 	    onBidClick: function(e, model){
@@ -101,6 +107,7 @@ var saleItem = {
 	    	}
 
 	    	switch (model.saleItem.bidstatus){
+	    		case 'open-offer':
 	    		case 'active':
 					model.saleItem.bidstatus = 'waiting';
 
@@ -171,12 +178,27 @@ var saleItem = {
 	    sellItem: function(){
 	    	saleItem.bidstatus = (saleItem.bidder === user.bidder)? 'soldYou': 'soldOther';
 
-			lotTable.lotList[lotTable.currentLot-1].soldPrice = saleItem.price;
+	    	//IF THIS LOT WAS PART OF A GROUP
+			if(saleItem.isgroup){
+				group.lotList[findLot(group.lotList,saleItem.currentLot)].soldPrice = saleItem.price;
 
-			setTimeout(function(){
-				//MOVE ON TO THE NEXT LOT AFTER 2 SECONDS
-				initializeLot(lotTable.currentLot++);
-			},2000);
+				setTimeout(function(){
+					//MOVE ON TO THE NEXT LOT AFTER 2 SECONDS
+					//initializeLot(lotTable.currentLot++);
+					groupController.activateOpenOffers();
+				},2000);
+			}
+
+			//NON GROUP LOTS
+			else{
+				lotTable.lotList[lotTable.currentLot-1].soldPrice = saleItem.price;
+
+				setTimeout(function(){
+					//MOVE ON TO THE NEXT LOT AFTER 2 SECONDS
+					initializeLot(lotTable.currentLot++);
+				},2000);
+			}
+			
 	    }
 
 	};
@@ -205,6 +227,10 @@ rivets.binders.bidstate = function(el, value) {
 			$(el).addClass('s-sold-lost');
 			break;
 
+		case 'open-offer':
+			$(el).addClass('s-open-offer');
+			break;
+
 		default:
 			$(el).addClass('s-active');
 			break;
@@ -214,6 +240,12 @@ rivets.binders.bidstate = function(el, value) {
 rivets.binders.isgroupbidding = function(el, value){
 	if(value > 0) $(el).addClass('s-group-active');
 	else $(el).removeClass('s-group-active');
+}
+
+rivets.binders.oogroupsize = function(el, value){
+	if(value.length === 0) $(el).html(" ");
+	else if(value.length === 1) $(el).html("1 lot");
+	else $(el).html(value.length + " lots");
 }
 
 rivets.bind($('.js--bidding-area'),{

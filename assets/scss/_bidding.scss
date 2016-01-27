@@ -5,11 +5,35 @@
 	position: relative;
 	
 	vertical-align: top;
-	background-color: white;
-	box-shadow: $ritchie-shadow;
 	margin-top: 13px;
-
+	height: 450px;
+	
 }
+
+	.bidding--background{
+		background-color: white;
+		box-shadow: $ritchie-shadow;
+		z-index: 2;
+    	position: relative;
+    	overflow: hidden;
+    	height: 100%;
+	}
+
+	.bidding--area{
+		position: relative;
+		height: 100%;
+		width: 100%;
+		float: right;
+		background-color: white;
+
+		transition: $transition;
+
+		&.s-group-active{
+			display: inline-block;
+			width: 50%;
+				
+		}
+	}
 
 	.bidding--header{
 		background-color: $grey-300;
@@ -21,12 +45,6 @@
 
 	.bidding--content{
 		padding: $default-margin;
-
-		&.s-group-active{
-			display: inline-block;
-			width: 50%;
-			float: right;	
-		}
 	}
 
 
@@ -50,7 +68,14 @@
 			.bid-value:empty:before{
 				content: "waiting...";
 			}
-		}	
+		}
+
+		.bidding{
+			position: absolute;
+			bottom: $default-margin;
+			left: $default-margin;
+			right: $default-margin;
+		}
 
 		.bid-action{
 			
@@ -181,6 +206,10 @@
 			
 			width: 100%;
 
+			label{
+				color: black; 
+			}
+
 			&:hover{
 				color: black;
 				background-image: none;
@@ -207,24 +236,29 @@
 				}
 			}
 
-			&.s-active{
+			&.s-active, &.s-open-offer{
 				background-image: $button-gradient;
 
 				&:hover{
 					background-image: $button-gradient_hover;
 					color: black;
 				}
+			}
+			
+			&.s-active .bidder--active{
+				display: block;
+				font-size: 1.2rem;
 
-				.bidder--active{
+				&:before{
+					content: "BID ";
+					font-size: 0.9rem;
 					display: block;
-					font-size: 1.2rem;
-
-					&:before{
-						content: "BID ";
-						font-size: 0.9rem;
-						display: block;
-					}
 				}
+			}
+			
+			&.s-open-offer .bidder--open-offer{
+				display: block;
+				font-size: 1.2rem;
 			}
 
 			&.s-waiting{
@@ -262,16 +296,99 @@
 			
 		}
 
-		.bidding--outbit{
-			max-height: 0;
-			overflow: hidden;
-
-			transition: $transition;
-
-			&.s-visible{
-				max-height: 300px;
-			}
+		.bidding--messages{
+			position: relative;
+			top: -19px;
+			z-index: 1;
+			padding: 0 $default-margin;
 		}
+
+			.bidding--outbid, .bidding--open-offer{
+				position: absolute;
+				left: $default-margin;
+				right: $default-margin;
+
+				transform: translateY(-150%);
+				transition: $transition;
+
+				&.s-visible{
+					transform: translateY(0);
+				}
+			}
+
+			/************************
+				MESSAGE BOXES
+			************************/
+
+
+			*[class^="message-box"]{
+				border: 1px solid $grey-300;
+				//background-color: $grey-100;
+				padding: 10px $default-margin;
+				padding-left: 32 + (3*$default-margin);
+				margin-top: $default-margin;
+				font-weight: 700;
+
+				position: relative;
+				text-align: left;
+				font-size: 0.8rem;
+				line-height: 1.2rem;
+
+				&:before{
+					display: inline-block;
+					position: absolute;
+					left: $default-margin;
+					top: 50%;
+					transform: translateY(-50%);
+					padding-right: $default-margin;
+
+					border-right: 1px solid $grey-300;
+					@include icon-font;
+					font-size: 24px;
+				}
+			}
+
+			.message-box--error{
+				border-color: $error-colour;
+				@extend .icon-warning;
+
+				&:before{
+					color: $error-colour;
+				}
+			}
+
+			.message-box--warning{
+				border: none;
+				background-color: lighten($warning-colour, 10%);
+				color: $grey-700;
+				@extend .icon-warning;
+
+				&:before{
+					color: darken($warning-colour,25%);
+					border-right-color: darken($warning-colour,25%);
+				}
+			}
+
+			.message-box--open-offer{
+				border: none;
+				background-color: lighten($error-colour, 10%);
+				color: white;
+				@extend .icon-sale;
+
+				&:before{
+					color: darken($error-colour,25%);
+					border-right-color: darken($error-colour,25%);
+				}
+			}
+
+			.message-box--success{
+				border-color: $finance-color;
+				@extend .icon-check;
+
+				&:before{
+					color: $finance-color;
+				}
+			}
 
 
 

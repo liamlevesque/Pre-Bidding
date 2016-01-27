@@ -70,11 +70,6 @@ rivets.formatters.priceWithCCY = function(value){
 	return "roughly " + ccyconversion.currentCCY + " " + val.toFixed(2);
 }
 
-rivets.formatters.activeToButtonText = function(value){
-	if(!value) return "Turn On";
-	else return "Turn Off";
-}
-
 rivets.bind($('.js--converter-output'),{
 	ccyconversion: ccyconversion,
 	ccycontroller: ccycontroller

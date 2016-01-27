@@ -25,24 +25,8 @@ var user = {
 
 	};
 
-rivets.binders.addclass = function(el, value) {
-	if(value) $(el).addClass('s-active');
-	else $(el).removeClass('s-active');
-}
 
-rivets.formatters.price = function(value){
 
-	var price;
-
-	if(!value) return null;
-	
-	if($('#js--body').hasClass('INR')) 
-		price = value.toString().replace(/(\d)(?=(\d\d)+\d$)/g, '$1<span class="divider"></span>');
-	else 
-		price = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '<span class="divider"></span>');
-	
-	return price;
-}
 
 rivets.bind($('.js--header'),{
 	user: user,
