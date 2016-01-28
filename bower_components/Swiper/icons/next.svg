@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="79px" viewBox="0 0 20 79" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Workflow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Group-Bidding-6" sketch:type="MSArtboardGroup" transform="translate(-458.000000, -284.000000)" fill="#FFFFFF">
+            <g id="Lot-Details" sketch:type="MSLayerGroup" transform="translate(18.000000, 80.000000)">
+                <g id="Photo-Controls" transform="translate(0.000000, 68.000000)" sketch:type="MSShapeGroup">
+                    <path d="M440.685624,138.79824 L457.095532,175.058523 L457.083385,173.849192 L440.673477,212.13907 C440.347144,212.900515 440.699872,213.782333 441.461317,214.108665 C442.222762,214.434998 443.10458,214.08227 443.430913,213.320825 L459.840821,175.030947 C460.006658,174.643993 460.00225,174.20516 459.828673,173.821616 L443.418766,137.561333 C443.077203,136.806597 442.188478,136.471653 441.433742,136.813216 C440.679005,137.154778 440.344062,138.043504 440.685624,138.79824 L440.685624,138.79824 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
