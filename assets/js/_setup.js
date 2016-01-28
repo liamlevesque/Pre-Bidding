@@ -8,7 +8,7 @@ $(function(){
 
 var user = {
 		bidder : "v7005",
-		limit: 1000000,
+		limit: 1000000, 
 		spent: 65000,
 		bid: 48500,
 		message: '',

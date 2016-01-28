@@ -4364,25 +4364,25 @@
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/bower_components\/tooltipster\/js\/jquery.tooltipster.min.js",
+			"linkedFileAbbreviatedPath": "\/bower_components\/Swiper\/dist\/js\/swiper.jquery.min.js",
 			"position": 1,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/bower_components\/waypoints\/lib\/jquery.waypoints.min.js",
+			"linkedFileAbbreviatedPath": "\/bower_components\/tooltipster\/js\/jquery.tooltipster.min.js",
 			"position": 2,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/bower_components\/mustache.js\/mustache.min.js",
+			"linkedFileAbbreviatedPath": "\/bower_components\/waypoints\/lib\/jquery.waypoints.min.js",
 			"position": 3,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/bower_components\/Swiper\/dist\/js\/swiper.jquery.min.js",
+			"linkedFileAbbreviatedPath": "\/bower_components\/mustache.js\/mustache.min.js",
 			"position": 4,
 			"type": 0
 			},
