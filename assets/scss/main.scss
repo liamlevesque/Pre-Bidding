@@ -14,8 +14,8 @@
 
 @import 'lot-table';
 
-@import '../../bower_components/tooltipster/css/tooltipster.css';
-@import '../../bower_components/swiper/dist/css/swiper.min.css';
+@import 'swiper';
+@import 'tooltipster';
 @import 'tooltip';
 @import 'states';
-@import 'helpers';
+@import 'helpers'; 
