@@ -1,5 +1,4 @@
 .bidding--group {
-	overflow-y: auto;
 	width: 50%;
 	position: absolute;
 	top: 0;
@@ -11,7 +10,40 @@
 		padding: 10px 5px 5px;
 	}
 
+	&.s-open-offers{
+		background-color: rgba($error-colour, 0.2);
+
+		.group--body{
+			bottom: 40px;
+		}
+
+		.group--footer{
+			display: block;
+		}
+	}
+
 }
+
+	.group--body{
+		overflow-y: auto;
+		position: absolute;
+		top: 37px;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 5px;
+	}
+
+	.group--footer{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 40px;
+		display: none;
+
+		text-align: center;
+	}
 
 	.group--lot{
 		@include default-font;
@@ -78,8 +110,17 @@
 		    }
 		}
 
-		&.s-active-lot{
+		&.s-preview{
 			background-color: rgba($money-color,0.1);
+
+			.lot--watching{
+				color: $money-color;
+				opacity: 1;
+			}
+		}
+
+		&.s-active-lot{
+			background-color: rgba($brand-color,0.1);
 		}
 
 		&.s-disabled .lot--selector{
@@ -102,6 +143,441 @@
 			}
 
 			.lot--selector{
+				display: none;
+			}
+		}
+	}
+
+
+	//ITERATION 1
+	.group--lot_a{
+		@include default-font;
+		overflow: hidden;
+		padding: 2px 10px;
+		border-bottom: $ritchie-border;
+		cursor: pointer;
+		position: relative;
+
+
+		.lot--watching{
+			vertical-align: middle;
+			margin-right: 5px;
+		}
+
+		.lot--photo{
+			position: relative;
+			width: 70px;
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 5px;
+		}
+
+		.lot--name{
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.lot--selector{
+			position: absolute;
+		    right: 15px;
+		    top: 50%;
+		    transform: translateY(-50%);
+
+		    appearance: none;
+		    width: 20px;
+		    height: 20px;
+		    background-color: $grey-300;
+			border-radius: 20px;
+			outline: none;
+			cursor: pointer;
+			transition: $transition;
+
+			&:after{
+				@include icon-font;
+				content: "\e904";
+				font-size: 20px;
+				opacity: 0.1;
+
+				transition: $transition;
+			}
+
+			&:hover{
+				background-color: white;
+				
+				&:after{
+					opacity: 0.3;
+				}
+			}
+
+		    &:checked{
+				background-color: white;
+
+				&:after{
+					color: $brand-color;
+					opacity: 1;
+				}
+		    }
+		}
+
+		
+		&.s-disabled .lot--selector{
+			display: none;
+		}
+
+		&.s-preview{
+			background-color: rgba($money-color,0.1);
+
+			.lot--watching{
+				color: $money-color;
+				opacity: 1;
+			}
+		}
+
+		&.s-active-lot{
+			background-color: rgba($brand-color,0.1);
+		}
+
+		&.s-sold{
+			.g-quarter:after{
+				content: "SOLD";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				background-color: rgba($error-colour, 0.5);
+				text-align: center;
+				color: white;
+				font-weight: 700;
+				vertical-align: middle;
+			}
+
+			.lot--selector{
+				display: none;
+			}
+		}
+	}
+
+
+	//ITERATION 1
+	.group--lot_b{
+		@include default-font;
+		overflow: hidden;
+		border-bottom: $ritchie-border;
+		cursor: pointer;
+		position: relative;
+		display: inline-block;
+		width: 28%;
+		margin: 2%;
+		border: 2px solid transparent;
+		box-shadow: $ritchie-shadow;
+		border-radius: 10px;
+		background-color: white;
+		text-align: center;
+
+		transition: $transition;
+
+		.lot--watching{
+			position: absolute;
+			left: 50%;
+			top: 40%;
+			transform: translate(-50%,-50%);
+			margin-right: 5px;
+			color: white;
+			opacity: 0;
+			z-index: 1;
+
+			transition: $transition;
+
+		}
+
+		.lot--photo{
+			position: relative;
+			width: 100%;
+			display: inline-block;
+			margin: 0;
+			vertical-align: middle;
+		}
+
+		.lot--name{
+			display: inline-block;
+			font-size: 0.7rem;
+			vertical-align: middle;
+			
+			span{
+				font-size: 1rem;
+			}
+		}
+
+		.lot--selector{
+			position: absolute;
+		    
+		    appearance: none;
+		    right: 0;
+		    top: 0;
+		    width: 20px;
+		    height: 20px;
+		    box-shadow: $ritchie-shadow-inner;
+		    background-color: rgba(black,0.2);
+			border-radius: 20px;
+			outline: none;
+
+			cursor: pointer;
+			transition: $transition;
+
+			&:after{
+				@include icon-font;
+				content: "\e904";
+				font-size: 20px;
+				opacity: 0.9;
+				color: white;
+
+				transition: $transition;
+			}
+
+			&:hover{
+				background-color: $brand-color;
+				
+				&:after{
+					opacity: 0.9;
+				}
+			}
+
+		    &:checked{
+				background-color: white;
+
+				&:after{
+					color: $brand-color;
+					opacity: 1;
+				}
+		    }
+		}
+		
+		&:hover{
+			.lot--watching{
+				opacity: 0.7;
+			}
+		}
+		
+		&.s-disabled .lot--selector{
+			display: none;
+		}
+
+		&.s-preview{
+			border: 2px solid $money-color;
+
+			.lot--watching{
+				opacity: 1;
+			}
+		}
+
+		&.s-active-lot{
+			border: 2px solid $brand-color;
+		}
+
+		&.s-sold{
+			&:after{
+				content: "SOLD";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				background-color: rgba($error-colour, 0.5);
+				text-align: center;
+				color: white;
+				font-weight: 700;
+				vertical-align: middle;
+				line-height: 60px;
+			}
+
+			.lot--selector{
+				display: none;
+			}
+
+			.lot--watching{
+				display: none;
+			}
+		}
+	}
+
+
+
+	//WHOLE TILE CLICKING VERSION
+
+	.bidding--group.s-lot-selected .group--lot_c:not(.s-active-lot){
+		opacity: 0.75;
+		cursor: default;
+
+		.lot--selector{
+			display: none;
+		}
+	}
+
+	.bidding--group.s-open-offers .group--lot_c .lot--selector{
+		width: 30px;
+		
+		&:after{
+			content: 'BUY';
+		}
+	}
+
+	.group--lot_c{
+		@include default-font;
+		overflow: hidden;
+		border-bottom: $ritchie-border;
+		cursor: pointer;
+		position: relative;
+		display: inline-block;
+		width: 28%;
+		margin: 2px 2%;
+		border: 2px solid transparent;
+		//box-shadow: $ritchie-shadow;
+		border-radius: 5px;
+		background-color: $grey-900;
+		text-align: center;
+
+		transition: $transition;
+
+		.lot--watching{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 27px;
+			height: 21px;
+			margin-right: 5px;
+			border-radius: 5px 0 0 0;
+			background-color: $money-color;
+			color: white;
+			opacity: 0;
+			z-index: 1;
+			font-size: 10px;
+			line-height: 21px;
+
+			transition: $transition;
+
+			&:hover{
+				color: white;
+			}
+
+		}
+
+		.lot--photo{
+			position: relative;
+			width: 100%;
+			display: inline-block;
+			margin: 0;
+			vertical-align: middle;
+		}
+
+		.lot--name{
+			display: inline-block;
+			font-size: 0.7rem;
+			vertical-align: middle;
+			color: white;
+			
+			span{
+				font-size: 1rem;
+			}
+		}
+
+		.lot--selector{
+			position: absolute;
+			pointer-events: none;
+		    
+		    appearance: none;
+		    
+			top: -5px;
+			right: -5px;
+			width: 27px;
+			height: 21px;
+			background-color: $grey-900;
+			border-radius: 0 5px 0 0;
+
+			cursor: pointer;
+			transition: $transition;
+
+			&:after{
+				@include icon-font;
+				content: "BID";
+				font-size: 12px;
+				font-weight: 700;
+				line-height: 21px;
+				padding-left:2px;
+				opacity: 0.9;
+				color: white;
+
+				transition: $transition;
+			}
+
+			&:hover{
+				background-color: $brand-color;
+
+				&:after{
+					color: white;
+				}
+			}
+
+		    &:checked{
+				background-color: $brand-color;
+
+				&:after{
+					color: white;
+					opacity: 1;
+				}
+		    }
+		}
+		
+		&:hover{
+			.lot--watching{
+				opacity: 0.7;
+			}
+		}
+		
+		&.s-disabled .lot--selector{
+			display: none;
+		}
+
+		&.s-preview{
+			border: 2px solid $money-color;
+
+			.lot--watching{
+				opacity: 1;
+			}
+		}
+
+		&.s-active-lot{
+			border: 2px solid $brand-color;
+
+			.lot--selector{
+				background-color: $brand-color;
+			}
+		}
+
+		&.s-sold{
+			opacity: 0.6;
+			pointer-events: none;
+
+			&:after{
+				content: "SOLD";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				background-color: rgba($error-colour, 0.8);
+				text-align: center;
+				color: white;
+				font-weight: 700;
+				vertical-align: middle;
+				line-height: 60px;
+			}
+
+			.lot--selector{
+				display: none;
+			}
+
+			.lot--watching{
 				display: none;
 			}
 		}

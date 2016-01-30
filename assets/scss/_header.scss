@@ -20,6 +20,14 @@ header{
 		width: 200px;
     	height: 46px;
     	margin: 10px 0 20px;
+
+    	@include breakpoint(med-lg-max){
+    		width: 46px; 
+
+    		.logo-hide-small{
+    			display: none;
+    		}
+    	}
 	}
 
 	.header--left{
@@ -41,14 +49,30 @@ header{
 
 		&:last-child{
 			border-right: none;
+			padding-right: 0;
 		}
 	}
+
+		.header--full-height{
+			height: 100%;
+		    position: relative;
+		    vertical-align: top;
+		    display: inline-block;
+		}
 
 	.cart-icon{
 		display: inline-block;
 		position: relative;
-		margin-right: $default-margin;
+		margin-right: 5px;
 		vertical-align: top;
+		cursor: pointer;
+		height: 100%;
+
+		&:hover{
+			.cart-count{
+				transform: rotate(0) translate(2px, -3px);
+			}
+		}
 
 		i{
 			position: relative;
@@ -66,6 +90,8 @@ header{
 			height: 20px;
 			line-height: 20px;
 			text-align: center;
+
+			transition: $transition;
 			
 			background-color: $brand-color;
 			transform: rotate(15deg) translateX(4px);
@@ -118,3 +144,122 @@ header{
 		}
 
 	}
+
+.header--confirmation{
+	position: absolute;
+	top: 80px;
+	right: 0;
+	background-color: white;
+	width: 350px;
+	box-shadow: $ritchie-shadow;
+
+	@include default-font;
+
+	transform: translateX(100%);
+	opacity: 0;
+
+	transition: $transition;
+
+	&.s-active{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+	.message-header{
+		padding: $default-margin;
+		background-color: $finance-color;
+		color: white;
+		font-size: 1rem;
+		font-weight: 700;
+	}
+
+	.message-body{
+		padding: $default-margin;
+	}
+
+
+
+.header--cart{
+	position: absolute;
+	top: 80px;
+	right: 0;
+	background-color: white;
+	padding: $default-margin;
+	padding-top: 5px;
+	width: 350px;
+	box-shadow: $ritchie-shadow;
+
+	@include default-font;
+	transform: translateY(-150%);
+	opacity: 0;
+
+	transition: $transition;
+
+	&.s-visible{
+		opacity: 1;
+		transform: translateY(0);
+	}
+	
+}
+
+	.cart--empty{
+		text-align: center;
+		font-size: 1rem;
+	}
+
+	.cart--items{
+		max-height: calc(100vh - 285px);
+		overflow-y: scroll;
+	}
+
+	.cart--item{
+		line-height: 1rem;
+		overflow: hidden;
+		padding: 10px 0;
+
+		&:not(:last-of-type){
+			border-bottom: $ritchie-border;
+		}
+
+		.lot--number{
+			color: $brand-color;
+
+			&:before{
+				content: "Lot ";
+			}
+		}
+
+		.lot--sold-price{
+			text-align: right;
+			font-size: 1.2rem;
+		}
+	}
+
+	.cart--footer{
+		
+		background-color: white;
+		padding-top: $default-margin;
+		text-align: center;
+
+		border-top: $ritchie-border;
+	}
+
+	.cart--summary{
+		overflow: hidden;
+		text-align: right;
+
+		label{
+			float: left;
+		}
+	}
+
+	
+
+
+
+
+
+
+
+

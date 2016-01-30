@@ -90,6 +90,12 @@
 		text-align: center;
 	}
 
+	.h-va-center{
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
 	.h-mw-400{
 		max-width: 430px;
     	margin: 0 auto;

@@ -11,6 +11,8 @@
 		background-color: $grey-100;
 		padding: 0;
 		overflow: hidden;
+		
+		z-index: auto;
 	}
 
 		.lot-tables--tabs{
@@ -60,6 +62,17 @@
 			float: right;
 			margin-right: $default-margin;
 			margin-top: 5px;
+		}
+
+		.lot-tables--follow{
+			float: right;
+			margin-right: $default-margin;
+			margin-top: 5px;
+			
+			button{
+				color: $grey-300;
+				font-size: 20px;
+			}
 		}
 
 		
@@ -128,7 +141,21 @@
 					background-color: rgba($money-color,0.1);
 	
 					.col-0{
-						color: $money-color;
+						color: white;
+						font-weight: 700;
+						position: relative;
+
+						&:before{
+							@include icon-font;
+							content: "\e902";
+							color: $money-color;
+							position: absolute;
+							left: 51%;
+							top: 51%;
+							transform: translate(-50%,-50%);
+							z-index: -1;
+							font-size: 35px;
+						}
 					}
 
 					.col-4{

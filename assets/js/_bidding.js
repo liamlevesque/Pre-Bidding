@@ -54,25 +54,17 @@ var saleItem = {
 			saleItem.bidactive = false;
 			saleItem.bidstatus = 'disabled';
 			saleItem.prebid = 0;
-			
+
 			//IF THIS IS PART OF A BIDDING GROUP AND WE'VE NOT INITIALIZED THIS GROUP, INITALIZE THAT
 			if(currentGroup > 0 && group.groupnumber != currentGroup){
+				
+				groupController.initializeGroup(currentGroup);
 				saleItem.isgroup = true;
 
-				var groupLots = [];
-
-				for(var i=lotTable.currentLot-1; i<lotTable.lotList.length; i++){
-					if(lotTable.lotList[i].group === currentGroup) groupLots.push(lotTable.lotList[i]);
-				}
-				group.groupnumber = currentGroup;
-				group.lotList = groupLots;
-				group.length = groupLots.length;
 			}
 			else if(currentGroup === 0){ 
 				saleItem.isgroup = false;
-
-				group.groupnumber = 0;
-				group.lotList = [];
+				groupController.destroyGroup();
 			}
 			
 			//IF YOU'VE PLACED A PREBID ON THIS, THEN DON'T ALLOW TO BID UNTIL AMT PASSED
@@ -108,6 +100,14 @@ var saleItem = {
 
 	    	switch (model.saleItem.bidstatus){
 	    		case 'open-offer':
+	    			model.saleItem.bidstatus = 'waiting';
+
+					setTimeout(function(){
+						model.saleItem.bidstatus = 'soldYou';
+						controller.sellItem();
+					},1000);
+	    			break;
+
 	    		case 'active':
 					model.saleItem.bidstatus = 'waiting';
 
@@ -151,8 +151,6 @@ var saleItem = {
 	    },
 
 	    emitBid: function(){
-	    	console.log(saleItem.price);
-
 	    	intercom.emit('newbid', {
 				price: saleItem.price,
 				bidder: saleItem.bidder,
@@ -178,20 +176,67 @@ var saleItem = {
 	    sellItem: function(){
 	    	saleItem.bidstatus = (saleItem.bidder === user.bidder)? 'soldYou': 'soldOther';
 
-	    	//IF THIS LOT WAS PART OF A GROUP
-			if(saleItem.isgroup){
-				group.lotList[findLot(group.lotList,saleItem.currentLot)].soldPrice = saleItem.price;
+	    	//IF WE WERE IN OPEN OFFERS
+			if(saleItem.isgroup && saleItem.openOffersList.length > 0){
+	    		var allSold = true;
 
-				setTimeout(function(){
+	    		//SET SOLD PRICE FOR LOTS PURCHASED AND ADD TO CART
+	    		for(var i =0; i < saleItem.openOffersList.length; i++){ 
+	    			var soldLot = findLot(lotTable.lotList,saleItem.openOffersList[i]);
+	    			
+	    			lotTable.lotList[soldLot].soldPrice = saleItem.highBid;
+	    			headerController.addToCart(lotTable.lotList[soldLot]);
+	    		}
+
+	    		headerController.alertWon(saleItem.openOffersList);
+				
+				//SET ALL LOTS IN GROUP TO INACTIVE
+				for(var j = 0; j < group.lotList.length; j++){ 
+					group.lotList[j].isActive = false;
+					if(group.lotList[j].soldPrice === 0) allSold = false;
+				}
+	    		
+	    		//RESET THE OPEN OFFERS LIST
+	    		saleItem.openOffersList = [];
+
+	    		//MOVE ON TO THE NEXT LOT AFTER 2 SECONDS
+	    		if(allSold){
+		    		setTimeout(function(){
+						initializeLot(group.lotList[group.lotList.length-1].lot);
+						$('.js--open-offer').removeClass('s-visible');
+					},2000);
+				}
+				//OR RESUME OPEN OFFER IF NOT ALL SOLD
+				else{
+					setTimeout(function(){
+						groupController.activateOpenOffers();
+
+					},2000);
+				}
+
+	    	}
+
+	    	//IF THIS LOT WAS PART OF A GROUP
+		    else if(saleItem.isgroup){
+
+	    		group.lotList[findLot(group.lotList,saleItem.currentLot)].soldPrice = saleItem.highBid;
+
+	    		headerController.addToCart(lotTable.lotList[saleItem.currentLot - 1]);
+				headerController.alertWon(lotTable.lotList[saleItem.currentLot - 1]);
+
+	    		setTimeout(function(){
 					//MOVE ON TO THE NEXT LOT AFTER 2 SECONDS
-					//initializeLot(lotTable.currentLot++);
 					groupController.activateOpenOffers();
 				},2000);
+				
 			}
 
 			//NON GROUP LOTS
 			else{
-				lotTable.lotList[lotTable.currentLot-1].soldPrice = saleItem.price;
+				lotTable.lotList[lotTable.currentLot-1].soldPrice = saleItem.highBid;
+
+				headerController.addToCart(lotTable.lotList[lotTable.currentLot-1]);
+				headerController.alertWon(lotTable.lotList[lotTable.currentLot-1]);
 
 				setTimeout(function(){
 					//MOVE ON TO THE NEXT LOT AFTER 2 SECONDS
@@ -229,6 +274,10 @@ rivets.binders.bidstate = function(el, value) {
 
 		case 'open-offer':
 			$(el).addClass('s-open-offer');
+			break;
+
+		case 'open-offer_disabled':
+			$(el).addClass('s-open-offer_disabled');
 			break;
 
 		default:

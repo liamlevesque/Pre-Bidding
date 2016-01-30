@@ -31,22 +31,33 @@
         </div>
         <div class="header--right">
             <div class="header--section h-ta-right">
-                <button class="button--unbound"><label>Audio On</label><i class="icon-audio"></i></button><br/>
-                <button class="button--unbound"><label>Photos On</label><i class="icon-Photos"></i></button>
+                <label class="toggle_icon toggle_icon_header">
+                    <input type="checkbox" rv-checked="user.audio">
+                    <span rv-text="user.audio | booltotext 'Audio'"></span><i class="icon-audio"></i>
+                </label>
+                <label class="toggle_icon toggle_icon_header">
+                    <input type="checkbox" rv-checked="user.photos">
+                    <span rv-text="user.photos | booltotext 'Photos'"></span><i class="icon-Photos"></i>
+                </label>
             </div>
             <div class="header--section">
-                <div class="">
-                    <i class="icon-user"></i>
-                    <span rv-text="user.bidder">v7004</span>
-                </div>
-                <div class="">
-                    <label class="c-active">Connected</label>
+                <div class="header--full-height">
+                    <div class="h-va-center">
+                        <i class="icon-user"></i>
+                        <span rv-text="user.bidder">v7004</span>
+                    
+                        <div class="">
+                            <label class="c-active">Connected</label>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="header--section">
-                <div class="cart-icon">
-                    <i class="icon-cart"></i>
-                    <div class="cart-count">1</div>
+                <div class="cart-icon" rv-on-click="headerController.onToggleCartClick">
+                    <div class="h-va-center">
+                        <i class="icon-cart"></i>
+                        <div class="cart-count" rv-text="user.cart | lengthtoquantity"></div>
+                    </div>
                 </div>
                 <div class="h-d-inline-block">
                     <div class="header--price">
@@ -54,18 +65,18 @@
                     <div class="header--price">
                         <label>Bid:</label><span class="header--price-readout dollars" rv-html="user.bid | price"></span></div>
                     <div class="header--price">
-                        <label>Remaining:</label><span class="header--price-readout dollars c-active" rv-html="user.limit | price"></span></div>
+                        <label>Remaining:</label><span class="header--price-readout dollars c-active" rv-html="user.limit | limitprice user.spent user.bid"></span></div>
                 </div>
             </div>
             <div class="header--section">
                 <button class="button--unbound">
                     <i class="icon-help"></i>
-                    <label>HELP</label>
+                    <!-- <label>HELP</label> -->
                 </button> 
                 <br/>
                 <button class="button--unbound">
                     <i class="icon-close"></i>
-                    <label>EXIT</label>
+                   <!--  <label>EXIT</label> -->
                 </button>
             </div>
             
@@ -74,6 +85,45 @@
         <div class="auctioneers-message" rv-addclass="user.message">
             <span rv-text="user.message"></span>
             <button class="button--unbound" rv-on-click="headerController.onDismissMSGClick"><i class="icon-close"></i></button>
+        </div>
+
+        <div class="header--cart js--cart">
+            <label>Lots you won (<span rv-text="user.cart | lengthtoquantity"></span>)</label>
+            <hr/>
+            <div class="cart--empty" rv-hide="user.cart | lengthtoquantity">
+                You haven't won any lots yet :(
+                <img src="assets/img/empty.png">
+
+            </div>
+            <ul class="cart--items">
+                <li class="cart--item" rv-each-cartitem="user.cart">
+                    <div class="g-quarter">
+                        <img class="lot--photo" rv-src="cartitem.photo | lotPhotoDirectory"/>
+                    </div>
+                    <div class="g-three-quarters">
+                        <div>
+                            <div class="lot--number h-d-inline-block" rv-text="cartitem.lot"></div>
+                            <div class="lot--name h-d-inline-block" rv-text="cartitem.name"></div>
+                        </div>
+                        <div class="lot--details" rv-text="cartitem.serial"></div>
+
+                        <div class="lot--sold-price dollars" rv-html="cartitem.soldPrice | price"></div>
+                    </div>
+                </li>
+            </ul>
+            <div class="cart--footer" >
+                <div class="cart--summary">
+                    <label> Total Purchases</label><span class="dollars" rv-html="user.spent | price"></span>
+                </div>
+                <div class="cart--summary">
+                    <label> Total Pre-Bids</label><span class="dollars" rv-html="user.bid | price"></span>
+                </div>
+                <div class="cart--summary">
+                    <label> Available Balance</label><span class="dollars" rv-html="user.limit | limitprice user.spent user.bid"></span>
+                </div>
+                <br/>
+                <a href="http://liamlevesque.github.io/VPP-Prototype2/" class="button_positive" target="_blank">Show Purchase Summary</a>
+            </div>
         </div>
     </header>
 
@@ -86,25 +136,47 @@
             <div class="lot-bidding">
                 <div class="bidding--background">
                 
-                    <div class="bidding--group js--group-area" rv-isgroupbidding="group.groupnumber" rv-show="group.groupnumber">
+                    <div class="bidding--group js--group-area" rv-isgroupbidding="group.groupnumber" rv-isopenoffers="group.isOpenOffers" rv-show="group.groupnumber" rv-disableothers="group.currentLot">
                         <div class="bidding--header">
-                            Group (<span rv-text="group.length"></span> Lots)
-                            <span class="h-float-right">Select All</span>
+                            Choice of <span rv-text="group.length"></span>
                         </div>
-                        
-                        <ul>
-                            <li class="group--lot" rv-each-grouplot="group.lotList" rv-itemsold="grouplot.soldPrice" rv-data-lot="grouplot.lot" rv-itemactive="group.currentLot" rv-on-click="groupController.onPreviewClick">
-                                <div class="g-quarter">
+                        <div class="group--body">
+                            <ul>
+                                <!-- OPTION 1 -->
+                                <!-- <li class="group--lot js--group-lot" rv-each-grouplot="group.lotList" rv-itemsold="grouplot.soldPrice" rv-data-lot="grouplot.lot" rv-itemactive="group.currentLot" rv-itempreview="group.previewLot" rv-on-click="groupController.onPreviewClick">
+                                    <div class="g-quarter">
+                                        <img class="lot--photo" rv-src="grouplot.photo | lotPhotoDirectory"/>
+                                    </div>
+                                    <div class="g-three-quarters">
+                                        <div class="lot--name">LOT <span rv-text="grouplot.lot"></span></div>
+                                        <div class="lot--details" rv-text="grouplot.serial"></div>
+                                        <div class="lot--details" rv-text="grouplot.meter"></div>
+                                        <input class="lot--selector" type="checkbox" rv-data-lot="grouplot.lot" rv-on-click="groupController.onActivateClick"/>
+                                    </div>
+                                </li> -->
+
+                                <!-- OPTION 2 -->
+                                <!-- <li class="group--lot_a js--group-lot" rv-each-grouplot="group.lotList" rv-itemsold="grouplot.soldPrice" rv-data-lot="grouplot.lot" rv-itemactive="group.currentLot" rv-itempreview="group.previewLot" rv-on-click="groupController.onPreviewClick">
+                                    <i class="lot--watching icon-eye"></i>
                                     <img class="lot--photo" rv-src="grouplot.photo | lotPhotoDirectory"/>
-                                </div>
-                                <div class="g-three-quarters">
                                     <div class="lot--name">LOT <span rv-text="grouplot.lot"></span></div>
-                                    <div class="lot--details" rv-text="grouplot.serial"></div>
-                                    <div class="lot--details" rv-text="grouplot.meter"></div>
                                     <input class="lot--selector" type="checkbox" rv-data-lot="grouplot.lot" rv-on-click="groupController.onActivateClick"/>
-                                </div>
-                            </li>
-                        </ul>
+                                    
+                                </li> -->
+
+                                <!-- OPTION 3 -->
+                                <li class="group--lot_c js--group-lot" rv-each-grouplot="group.lotList" rv-itemsold="grouplot.soldPrice" rv-data-lot="grouplot.lot" rv-itemactive="grouplot.isActive" rv-itempreview="group.previewLot" rv-on-click="groupController.onActivateClick">
+                                    <i class="lot--watching icon-eye" rv-data-lot="grouplot.lot" rv-on-click="groupController.onPreviewClick"></i>
+                                    <img class="lot--photo" rv-src="grouplot.photo | lotPhotoDirectory"/>
+                                    <div class="lot--name">LOT <span rv-text="grouplot.lot"></span></div>
+                                    <input class="lot--selector" type="checkbox" />
+                                    
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="group--footer">
+                            <button class="button_select-all" rv-show="group.isOpenOffers" rv-on-click="groupController.onSelectAllClick">Select All Remaining Lots</button>
+                        </div>
                     </div>
                     <div class="bidding--area js--bidding-area" rv-isgroupbidding="saleItem.isgroup">
                         <div class="bidding--header">
@@ -161,7 +233,12 @@
                                         
                                         <span class="bidder--option bidder--open-offer">
                                             Buy <span rv-oogroupsize="saleItem.openOffersList"></span> @
-                                            <br/><span class="dollars" rv-html="saleItem.price | price"></span> each
+                                            <br/><span class="dollars" rv-html="saleItem.highBid | price"></span> each
+                                            <br/><label rv-show="saleItem.openOffersList">Total <span class="dollars" rv-html="saleItem.openOffersList | pricelist"></span></label>
+                                        </span>
+
+                                        <span class="bidder--option bidder--open-offer_disabled">
+                                            <span class="dollars" rv-html="saleItem.highBid | price"></span> each
                                             <br/><label rv-show="saleItem.openOffersList">Total <span class="dollars" rv-html="saleItem.openOffersList | pricelist"></span></label>
                                         </span>
                                         
@@ -239,6 +316,14 @@
                     </ul>
                     <div class="lot-tables--search">
                         <input type="text" class="field--text" placeholder="search" />
+                    </div>
+                    <div class="lot-tables--follow">
+                        <label class="field--toggle">
+                            <input type="checkbox" class="toggle_input" rv-checked="lotTable.followCurrentLot"/>
+                            <span>Follow Current Lot</span>
+                            <div class="toggle-control"></div>
+                        </label>
+                        
                     </div>
                 </div>
                 <div class="lot-tables--column-headers">
@@ -345,6 +430,36 @@
 
     <div class="tooltips--content-placeholder">
 
+        <div class="js--confirmation-content">
+            <div class="header--confirmation js-confirm-object">
+                <div class="message-header">
+                    Success!
+                    <div rv-show="wonItems.listlength">You won <span rv-text="wonItems.listlength"></span> items!</div>
+                    <div rv-hide="wonItems.listlength">You won lot <span rv-text="wonItems.wonItem.lot"></span></div>
+                </div>
+                
+                <!-- SHOW IF YOU DIDN'T WIN MULTIPLES -->
+                <div class="message-body" rv-hide="wonItems.listlength">
+                    <div class="cart--item">
+                        <div class="g-quarter">
+                            <img class="lot--photo" rv-src="wonItems.wonItem.photo | lotPhotoDirectory"/>
+                        </div>
+                        <div class="g-three-quarters">
+                            <div>
+                                <div class="lot--number h-d-inline-block" rv-text="wonItems.wonItem.lot"></div>
+                                <div class="lot--name h-d-inline-block" rv-text="wonItems.wonItem.name"></div>
+                            </div>
+                            <div class="lot--details" rv-text="wonItems.wonItem.serial"></div>
+
+                            <div class="lot--sold-price dollars" rv-html="wonItems.wonItem.soldPrice | price"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
         <!-- CONVERT CURRENCY -->
         <div class="ccy-converter-control js--convert-ccy--content">
             <div class="js-ccy-object">
@@ -439,21 +554,28 @@
         <h5 class="lot--number">Lot {{ lot }}</h5>
         <h2 class="lot--title">{{ name }}</h2>
 
-        <div class="lot--photos swiper-container">
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                {{#photos}}
-                <div class="swiper-slide">
-                    <img src="assets/js/data/{{ . }}" />
+        <div class="lot--photos">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    {{#photos}}
+                    <div class="swiper-slide">
+                        <img src="assets/js/data/{{ . }}" />
+                    </div>
+                    {{/photos}}
                 </div>
-                {{/photos}}
+                
+                <div class="swiper-pagination"></div>
+                
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                
             </div>
-            
-            <div class="swiper-pagination"></div>
-            
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-            
+            <div class="lot--bottom">
+                <button class="button--unbound">
+                    <i class="icon-dei"></i><label>View Detailed Equipment Information</label>
+                </button>
+            </div>
         </div>
         <div class="lot--fields">
             <div class="lot--field">

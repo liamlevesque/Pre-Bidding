@@ -66,6 +66,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/img\/empty.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7264,
+		"inputAbbreviatedPath": "\/assets\/img\/empty.png",
+		"outputAbbreviatedPath": "\/assets\/img\/empty.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/img\/printer.png": {
 		"fileType": 32768,
 		"ignore": 0,

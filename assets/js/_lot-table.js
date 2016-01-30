@@ -25,7 +25,8 @@ var lotTable = {
 		lotList : {},
 		biddingList: {},
 		watchingList: {},
-		currentLot: null
+		currentLot: null,
+		followCurrentLot: true
 	},
 
 	tablecontroller = {

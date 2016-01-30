@@ -95,6 +95,22 @@
 		}
 	}
 
+	.button_select-all{
+		@extend %button;
+
+		background-image: none;
+		background-color: $grey-900;
+		color: white;
+		border: 0;
+		box-shadow: none;
+
+		&:hover{
+			background-image: none;
+			background-color: darken($grey-900,5%);
+			color: white;
+		}
+	}
+
 	.button_positive, .button_two-state{
 		@extend %button;
 		
@@ -121,7 +137,7 @@
 	cursor: pointer;
 
 	label{
-		margin-right: 15px;
+		margin: 0 15px;
 		vertical-align: top;
 		color: inherit;
 		cursor: pointer;
@@ -130,6 +146,91 @@
 	&:hover{
 		color: $active-colour;
 	}
+}
+
+
+
+.toggle_icon{
+	color: $grey-500;
+	font-size: 0.8rem;
+	cursor: pointer;
+
+	i{
+		margin: 10px;
+		font-size: 20px;
+		vertical-align: middle;
+	}
+
+	span{
+		vertical-align: middle;
+	}
+
+	input[type=checkbox]{
+		display: none;
+
+		&:checked ~ *{
+			color: $money-color;
+		}
+	}
+
+	&.toggle_icon_header{
+		padding: 8px 0;
+		display: block;
+	}
+}
+
+	
+
+.field--toggle{
+
+    cursor: pointer;
+    position: relative;
+    
+   .toggle-control{
+      transition: $transition;
+      width: $toggle-height*1.5;
+      height: $toggle-height;
+      display: inline-block;
+      border: 2px solid $grey-700;
+      background-color: rgba($black,0.3);
+      border-radius: $toggle-height;
+      position: relative;
+      vertical-align: middle;
+      
+      &:after{
+        transition: $transition;
+        content: "";
+        width: $toggle-height - 4;
+        height: $toggle-height - 4;
+        display: block;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+   }
+
+   span{
+   	margin-right: 4px;
+   	vertical-align: middle;
+   }
+   
+  input{
+    display: none;
+    &:checked ~ .toggle-control{
+      border-color: $finance-color;
+      background-color: $finance-color;
+      &:after{
+        left: $toggle-height / 2;
+      }
+    }
+  }
+  
+  .toggle_input{
+   
+  }
+  
 }
 
 

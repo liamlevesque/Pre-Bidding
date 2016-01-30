@@ -19,12 +19,20 @@
 	position: relative;
 	z-index: 2;
 	padding: 10px;
-	height: 500px;
+
+	@include breakpoint(large){
+		height: 500px;	
+	}
+	
 }
 
 .lot-info{
-	width: 60%;
 	display: inline-block;
+	width: 50%;
+
+	@include breakpoint(med-large){
+		width: 60%;	
+	}
 }
 
 	.lot--number{
@@ -42,9 +50,25 @@
 	}
 
 	.lot--photos{
-		display: inline-block;
-		width: 60%;
+		
+		@include breakpoint(med-large){
+			display: inline-block;
+			width: 50%;
+		}
 
+		@include breakpoint(large){
+			width: 60%;	
+		}
+	}
+
+		.lot--bottom{
+			margin-top: $default-margin;
+			@include default-font;
+			text-align: center;
+		}
+
+	.swiper-container{
+		
 		img{
 			width: 100%;
     		min-width: 100%;
@@ -87,11 +111,18 @@
 	}
 
 	.lot--fields{
-		display: inline-block;
-		width: 39%;
-		float: right;
 		padding: 0 2*$default-margin 0 $default-margin;
 		@include default-font;
+
+		@include breakpoint(med-large){
+			display: inline-block;
+			width: 49%;
+			float: right;
+		}
+
+		@include breakpoint(large){
+			width: 39%;	
+		}
 	}
 
 		.lot--field, .lot--field_half, .lot--field_warranty{

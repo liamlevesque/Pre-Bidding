@@ -1,7 +1,13 @@
 .lot-bidding{
 	display: inline-block;
-	width: 39%;
 	float: right;
+	width: 49%;
+
+	@include breakpoint(med-large){
+		
+		width: 39%;
+	}
+
 	position: relative;
 	
 	vertical-align: top;
@@ -259,6 +265,16 @@
 			&.s-open-offer .bidder--open-offer{
 				display: block;
 				font-size: 1.2rem;
+			}
+
+			&.s-open-offer_disabled{
+				opacity: 0.5;
+				pointer-events: none;
+				
+				.bidder--open-offer_disabled{
+					display: block;
+					font-size: 1.2rem;
+				}
 			}
 
 			&.s-waiting{

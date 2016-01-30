@@ -1,32 +1,33 @@
 rivets.formatters.price = function(value){
-
-	var price;
-
-	if(!value) return null;
-	
-	if($('#js--body').hasClass('INR')) 
-		price = value.toString().replace(/(\d)(?=(\d\d)+\d$)/g, '$1<span class="divider"></span>');
-	else 
-		price = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '<span class="divider"></span>');
-	
-	return price;
+	return formatprice(value);
 }
 
 rivets.formatters.pricelist = function(value){
-	
-	var price,
-		val = value.length * saleItem.price;
+	var val = value.length * saleItem.highBid;
 
-	if(!value) return null;
-	
-	if($('#js--body').hasClass('INR')) 
-		price = val.toString().replace(/(\d)(?=(\d\d)+\d$)/g, '$1<span class="divider"></span>');
-	else 
-		price = val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '<span class="divider"></span>');
-	
-	return price;
+	return formatprice(val);
 }
 
+rivets.formatters.limitprice = function(value, spent, bid){
+	var val = value - (spent + bid);
+
+	return formatprice(val);
+}
+
+
+function formatprice(amt){
+	if(amt === 0) return 0;
+	else if(!amt) return null;
+
+	var price;
+
+	if($('#js--body').hasClass('INR')) 
+		price = amt.toString().replace(/(\d)(?=(\d\d)+\d$)/g, '$1<span class="divider"></span>');
+	else 
+		price = amt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '<span class="divider"></span>');
+
+	return price;
+}
 
 
 rivets.formatters.zeroToFalse = function(value){
@@ -43,9 +44,15 @@ rivets.formatters.activeToButtonText = function(value){
 	else return "Turn Off";
 }
 
+rivets.formatters.booltotext = function(value, text){
+	if(value) return text + " On";
+	else return text + " Off";
+}
 
-
-
+rivets.formatters.lengthtoquantity = function(value){
+	
+	return value.length;
+}
 
 /********************************
 GENERIC BINDERS USED THROUGHOUT
