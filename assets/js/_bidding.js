@@ -55,6 +55,17 @@ var saleItem = {
 			saleItem.bidstatus = 'disabled';
 			saleItem.prebid = 0;
 
+			var newBid = {
+				lot: saleItem.currentLot,
+				price: saleItem.price,
+				bidder: saleItem.bidder,
+				highBid: saleItem.highBid,
+				sold: false
+			};
+			//});
+
+			submitBid(newBid);
+
 			//IF THIS IS PART OF A BIDDING GROUP AND WE'VE NOT INITIALIZED THIS GROUP, INITALIZE THAT
 			if(currentGroup > 0 && group.groupnumber != currentGroup){
 				
@@ -151,11 +162,18 @@ var saleItem = {
 	    },
 
 	    emitBid: function(){
-	    	intercom.emit('newbid', {
+	    	//intercom.emit('newbid', {
+			
+			var newBid = {
+				lot: saleItem.currentLot,
 				price: saleItem.price,
 				bidder: saleItem.bidder,
-				highBid: saleItem.highBid
-			});
+				highBid: saleItem.highBid,
+				sold: false
+			};
+			//});
+
+			submitBid(newBid);
 	    },
 
 	    onOutBid: function(e, model){
@@ -168,13 +186,24 @@ var saleItem = {
 	    },
 
 	    onSellClick: function(){
-	    	intercom.emit('sold', {});
+	    	//intercom.emit('sold', {});
+	    	var newBid = {
+	    		lot: saleItem.currentLot,
+				price: saleItem.price,
+				bidder: saleItem.bidder,
+				highBid: saleItem.highBid,
+				sold: true
+			};
+			console.log(newBid);
+			submitBid(newBid);
 	    	//IF YOU WON THE LOT, SHOW THE RIGHT MESSAGE
 	    	controller.sellItem();
 	    },
 
 	    sellItem: function(){
-	    	saleItem.bidstatus = (saleItem.bidder === user.bidder)? 'soldYou': 'soldOther';
+	    	var youwin = (saleItem.bidder === user.bidder)? true : false;
+
+	    	saleItem.bidstatus = (youwin)? 'soldYou': 'soldOther';
 
 	    	//IF WE WERE IN OPEN OFFERS
 			if(saleItem.isgroup && saleItem.openOffersList.length > 0){
@@ -221,8 +250,10 @@ var saleItem = {
 
 	    		group.lotList[findLot(group.lotList,saleItem.currentLot)].soldPrice = saleItem.highBid;
 
-	    		headerController.addToCart(lotTable.lotList[saleItem.currentLot - 1]);
-				headerController.alertWon(lotTable.lotList[saleItem.currentLot - 1]);
+	    		if(youwin){
+		    		headerController.addToCart(lotTable.lotList[saleItem.currentLot - 1]);
+					headerController.alertWon(lotTable.lotList[saleItem.currentLot - 1]);
+				}
 
 	    		setTimeout(function(){
 					//MOVE ON TO THE NEXT LOT AFTER 2 SECONDS
@@ -235,8 +266,10 @@ var saleItem = {
 			else{
 				lotTable.lotList[lotTable.currentLot-1].soldPrice = saleItem.highBid;
 
-				headerController.addToCart(lotTable.lotList[lotTable.currentLot-1]);
-				headerController.alertWon(lotTable.lotList[lotTable.currentLot-1]);
+				if(youwin){
+					headerController.addToCart(lotTable.lotList[lotTable.currentLot-1]);
+					headerController.alertWon(lotTable.lotList[lotTable.currentLot-1]);
+				}
 
 				setTimeout(function(){
 					//MOVE ON TO THE NEXT LOT AFTER 2 SECONDS

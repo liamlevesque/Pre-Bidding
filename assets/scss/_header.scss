@@ -210,7 +210,7 @@ header{
 
 	.cart--items{
 		max-height: calc(100vh - 285px);
-		overflow-y: scroll;
+		overflow-y: auto;
 	}
 
 	.cart--item{
