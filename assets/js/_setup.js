@@ -111,6 +111,7 @@ var firebaseBids = new Firebase("https://sizzling-inferno-6912.firebaseio.com/bi
 function submitBid(bid){
 
 	firebaseBids.update({
+		source: bid.source,
 		lot: bid.lot,
 		price: bid.price,
 		bidder: bid.bidder,
@@ -127,8 +128,7 @@ firebaseBids.on("value", function(snapshot) {
 
 	//IF THIS LOT SOLD
 	if(bid.sold){
-		
-		if(saleItem.bidder === user.bidder) return;
+		if(bid.source === user.bidder) return;
 		controller.sellItem();
 	}
 
@@ -207,18 +207,4 @@ function getRandomInt(min, max) {
 }
 
 
-
-/********************************
-	SWITCH WHICH LOT IS ACTIVE
-*********************************/
-
-function initializeLot(index){
-	lotTable.currentLot = index + 1;
-    
-    lotInfo.currentLot = index; 
-
-    saleItem.currentLot = index;
-
-    controller.initSaleItem();
-}
 

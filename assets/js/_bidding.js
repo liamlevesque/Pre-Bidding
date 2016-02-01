@@ -27,6 +27,22 @@ function notifyOutbid(){
 	},5000);
 }
 
+/********************************
+	SWITCH WHICH LOT IS ACTIVE
+*********************************/
+
+function initializeLot(index){
+	lotTable.currentLot = index + 1;
+    
+    lotInfo.currentLot = index; 
+
+    saleItem.currentLot = index;
+
+    controller.initSaleItem();
+}
+
+
+
 var saleItem = {
 		"price" : null,
 		"highBid" : null,
@@ -56,13 +72,13 @@ var saleItem = {
 			saleItem.prebid = 0;
 
 			var newBid = {
+				source: user.bidder,
 				lot: saleItem.currentLot,
 				price: saleItem.price,
 				bidder: saleItem.bidder,
 				highBid: saleItem.highBid,
 				sold: false
 			};
-			//});
 
 			submitBid(newBid);
 
@@ -165,6 +181,7 @@ var saleItem = {
 	    	//intercom.emit('newbid', {
 			
 			var newBid = {
+				source: user.bidder,
 				lot: saleItem.currentLot,
 				price: saleItem.price,
 				bidder: saleItem.bidder,
@@ -188,13 +205,14 @@ var saleItem = {
 	    onSellClick: function(){
 	    	//intercom.emit('sold', {});
 	    	var newBid = {
+	    		source: user.bidder,
 	    		lot: saleItem.currentLot,
 				price: saleItem.price,
 				bidder: saleItem.bidder,
 				highBid: saleItem.highBid,
 				sold: true
 			};
-			console.log(newBid);
+			
 			submitBid(newBid);
 	    	//IF YOU WON THE LOT, SHOW THE RIGHT MESSAGE
 	    	controller.sellItem();
@@ -244,7 +262,7 @@ var saleItem = {
 				}
 
 	    	}
-
+ 
 	    	//IF THIS LOT WAS PART OF A GROUP
 		    else if(saleItem.isgroup){
 
@@ -273,7 +291,7 @@ var saleItem = {
 
 				setTimeout(function(){
 					//MOVE ON TO THE NEXT LOT AFTER 2 SECONDS
-					initializeLot(lotTable.currentLot++);
+					initializeLot(lotTable.currentLot);
 				},2000);
 			}
 			
