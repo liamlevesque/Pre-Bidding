@@ -157,7 +157,7 @@
 
                                 <!-- OPTION 2 -->
                                 <!-- <li class="group--lot_a js--group-lot" rv-each-grouplot="group.lotList" rv-itemsold="grouplot.soldPrice" rv-data-lot="grouplot.lot" rv-itemactive="group.currentLot" rv-itempreview="group.previewLot" rv-on-click="groupController.onPreviewClick">
-                                    <i class="lot--watching icon-eye"></i>
+                                    <i class="lot--watching icon-info"></i>
                                     <img class="lot--photo" rv-src="grouplot.photo | lotPhotoDirectory"/>
                                     <div class="lot--name">LOT <span rv-text="grouplot.lot"></span></div>
                                     <input class="lot--selector" type="checkbox" rv-data-lot="grouplot.lot" rv-on-click="groupController.onActivateClick"/>
@@ -166,7 +166,7 @@
 
                                 <!-- OPTION 3 -->
                                 <li class="group--lot_c js--group-lot" rv-each-grouplot="group.lotList" rv-itemsold="grouplot.soldPrice" rv-data-lot="grouplot.lot" rv-itemactive="grouplot.isActive" rv-itempreview="group.previewLot" rv-on-click="groupController.onActivateClick">
-                                    <i class="lot--watching icon-eye" rv-data-lot="grouplot.lot" rv-on-click="groupController.onPreviewClick"></i>
+                                    <i class="lot--watching icon-info" rv-data-lot="grouplot.lot" rv-on-click="groupController.onPreviewClick"></i>
                                     <img class="lot--photo" rv-src="grouplot.photo | lotPhotoDirectory"/>
                                     <div class="lot--name">LOT <span rv-text="grouplot.lot"></span></div>
                                     <input class="lot--selector" type="checkbox" />
@@ -187,28 +187,35 @@
                                 <!--TODO ADD SOCKET.IO AND/OR REACT.JS-->
                                 <li class="bid-field">
                                     <label>High Bid:</label>
-                                    <span class="bid-value dollars" rv-html="saleItem.highBid | price"></span>
+                                    <span class="c-brand">
+                                        <span class="CCY"></span>
+                                        <span class="bid-value dollars" rv-html="saleItem.highBid | price"></span>
+                                    </span>
                                 </li>
                                 <li class="bid-field">
                                     <label>High Bidder:</label>
-                                    <span class="bid-value" rv-text="saleItem.bidder"></span>
+                                    <span class="bid-value" rv-text="saleItem.bidder | bidderoryou"></span>
                                     <!-- <button rv-on-click="controller.onOutBid">Outbid me!</button> -->
                                 </li>
                                 <li class="bid-field">
                                     <label>Ask Price</label>
-                                    <span class="bid-value dollars" rv-html="saleItem.price | price"></span>
+
+                                    <span class="h-t-large">
+                                        <span class="CCY"></span>
+                                        <span class="bid-value dollars" rv-html="saleItem.price | price"></span>
+                                    </span>
                                     
                                     <div class="js--converter-output">
                                         <button class="bid-action c-price js--convert-ccy" rv-addclass="ccyconversion.active"> 
                                             <span class="bid-action--default-text">Convert Currency</span>
-                                            <span class="bid-action--active-text" rv-text="ccyconversion.conversion | priceWithCCY"></span>
+                                            <span class="bid-action--active-text" rv-html="ccyconversion.conversion | priceWithCCY"></span>
                                         </button>
                                     </div>
                                     
                                     <div class="js--calculator-output">
                                         <button class="bid-action c-finance js--calc-financing" rv-addclass="finance.active">
                                             <span class="bid-action--default-text">Calculate Financing</span>
-                                            <span class="bid-action--active-text" rv-text="finance.payment | convertedPrice < finance.ccy"></span>
+                                            <span class="bid-action--active-text" rv-html="finance.payment | convertedPrice < finance.ccy"></span>
                                         </button>
                                     </div>
 
@@ -218,7 +225,7 @@
                             <div class="bidding">
                                 
                                 <div class="bidding--activate js--activate-container" rv-hide="saleItem.isgroup">
-                                    <label><input type="checkbox" class="js--bidding-active" rv-on-click="controller.onActivateClick" rv-checked="saleItem.bidactive"/> Activate bidding for lot <span rv-text="saleItem.currentLot"></span></label>
+                                    <label class="input--circle-check"><input type="checkbox" class="js--bidding-active" rv-on-click="controller.onActivateClick" rv-checked="saleItem.bidactive"/> Activate bidding for lot <span rv-text="saleItem.currentLot"></span></label>
                                 </div>
                                 <div class="bidding--activate_group" rv-show="saleItem.isgroup">
                                     <span rv-hide="saleItem.bidactive">Choose a lot to activate bidding</span>
@@ -228,22 +235,22 @@
                                 <div class="bidding--controls">
                                     <button class="bidding--bid-button" rv-bidstate="saleItem.bidstatus" rv-on-click="controller.onBidClick" rv-hide="saleItem.prebid">
                                         <span class="bidder--option bidder--disabled">
-                                            <span class="dollars" rv-html="saleItem.price | price"></span>
+                                            <span class="CCY"></span><span class="dollars" rv-html="saleItem.price | price"></span>
                                         </span>
                                         
                                         <span class="bidder--option bidder--open-offer">
                                             Buy <span rv-oogroupsize="saleItem.openOffersList"></span> @
-                                            <br/><span class="dollars" rv-html="saleItem.highBid | price"></span> each
-                                            <br/><label rv-show="saleItem.openOffersList">Total <span class="dollars" rv-html="saleItem.openOffersList | pricelist"></span></label>
+                                            <br/><span class="CCY"></span><span class="dollars" rv-html="saleItem.highBid | price"></span> each
+                                            <br/><label rv-show="saleItem.openOffersList">Total <span class="CCY"></span><span class="dollars" rv-html="saleItem.openOffersList | pricelist"></span></label>
                                         </span>
 
                                         <span class="bidder--option bidder--open-offer_disabled">
-                                            <span class="dollars" rv-html="saleItem.highBid | price"></span> each
-                                            <br/><label rv-show="saleItem.openOffersList">Total <span class="dollars" rv-html="saleItem.openOffersList | pricelist"></span></label>
+                                            <span class="CCY"></span><span class="dollars" rv-html="saleItem.highBid | price"></span> each
+                                            <br/><label rv-show="saleItem.openOffersList">Total <span class="CCY"></span><span class="dollars" rv-html="saleItem.openOffersList | pricelist"></span></label>
                                         </span>
                                         
                                         <span class="bidder--option bidder--active">
-                                            <span class="dollars" rv-html="saleItem.price | price"></span>
+                                            <span class="CCY"></span><span class="dollars" rv-html="saleItem.price | price"></span>
                                         </span>
                                     
                                         <span class="bidder--option bidder--waiting">
@@ -265,9 +272,8 @@
                                             <br/>Bidder <span rv-text="saleItem.bidder"></span> won this lot
                                         </span>
                                     </button>
-                                    <div class="bidding--bid-button" rv-show="saleItem.prebid">
-                                        Pre-Bidding up to
-                                        <br/><span rv-text="saleItem.prebid"></span>
+                                    <div class="bidding--bid-button pre-bid" rv-show="saleItem.prebid">
+                                        Pre-Bidding up to <span class="CCY"></span><span class="dollars" rv-html="saleItem.prebid | price"></span>
                                     </div>
                                 </div>
                             </div>
@@ -335,7 +341,7 @@
                 </div>
             </header>
             <div class="lot-table lots_all js--lots-all"  rv-show="lotTable.allActive">
-                <div class="lot" rv-each-lot="lotTable.lotList" rv-data-lot="lot.lot" rv-lotstatus="lotTable.currentLot" >
+                <div class="lot" rv-each-lot="lotTable.lotList" rv-data-lot="lot.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="lot.bidder">
                     <div class="col-0" rv-text="lot.lot"></div>
                     <div class="col-1"><img class="lot--photo" rv-src="lot.photo | lotPhotoDirectory"/></div>
                     <div class="col-2">
@@ -465,6 +471,7 @@
             <div class="js-ccy-object">
                 <p>Convert prices to your preferred currency</p>
                 <hr>
+                 
                 <ul>
                     <li class="bid-field">
                         <label>Auction Currency</label>
@@ -491,8 +498,15 @@
                             </select>
                         </div>
                     </li>
+                    <li class="bid-field">
+                        <label class="field--toggle">
+                            <input type="checkbox" class="toggle_input" rv-checked="ccyconversion.active" rv-on-change="ccycontroller.onToggleClick"/>
+                            <span rv-text="ccyconversion.active | activeToButtonText"></span>
+                            <div class="toggle-control"></div>
+                        </label>
+                    </li>
                 </ul>
-                <button class="button_two-state" rv-on-click="ccycontroller.onToggleClick" rv-text="ccyconversion.active | activeToButtonText"></button>
+                <!-- <button class="button_two-state" rv-on-click="ccycontroller.onToggleClick" rv-text="ccyconversion.active | activeToButtonText"></button> -->
             </div>
         </div>
 
@@ -525,8 +539,15 @@
                             </select>
                         </div>
                     </li>
+                    <li class="bid-field">
+                        <label class="field--toggle">
+                            <input type="checkbox" class="toggle_input" rv-checked="finance.active" rv-on-change="calccontroller.onToggleClick"/>
+                            <span rv-text="finance.active | activeToButtonText"></span>
+                            <div class="toggle-control"></div>
+                        </label>
+                    </li>
                 </ul>
-                <button class="button_two-state" rv-on-click="calccontroller.onToggleClick" rv-text="finance.active | activeToButtonText"></button>
+                <!-- <button class="button_two-state" rv-on-click="calccontroller.onToggleClick" rv-text="finance.active | activeToButtonText"></button> -->
             </div>
         </div>
 

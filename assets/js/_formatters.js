@@ -40,8 +40,8 @@ rivets.formatters.lotPhotoDirectory = function(value){
 } 
 
 rivets.formatters.activeToButtonText = function(value){
-	if(!value) return "Turn On";
-	else return "Turn Off";
+	if(!value) return "Off";
+	else return "On";
 }
 
 rivets.formatters.booltotext = function(value, text){
@@ -53,6 +53,15 @@ rivets.formatters.lengthtoquantity = function(value){
 	
 	return value.length;
 }
+
+rivets.formatters.bidderoryou = function(value){
+	if(value === user.bidder) return 'You!'
+	return value;
+}
+
+
+
+
 
 /********************************
 GENERIC BINDERS USED THROUGHOUT

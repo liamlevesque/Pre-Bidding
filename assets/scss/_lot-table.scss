@@ -130,10 +130,26 @@
 					
 					.col-4{
 						pointer-events: none;
+						
+						&:before{
+							content: "Sold:";
+							font-size: 0.7rem;
+							text-transform: uppercase;
+							color: $money-color;
+						}
 					}
 
 					.icon-plus{
 						display: none;
+					}
+
+					&.s-youwon{
+						background-color: rgba($finance-color,0.2);
+
+						.col-4:before{
+							color: $finance-color;
+							content: 'You Won!';
+						}
 					}
 				}
 
@@ -161,6 +177,12 @@
 					.col-4{
 						pointer-events: none;
 						.bid{ text-decoration: none; }
+						&:before{
+							content: "Bidding Now";
+							font-size: 0.7rem;
+							text-transform: uppercase;
+							color: $money-color;
+						}
 					}
 
 					.icon-plus{

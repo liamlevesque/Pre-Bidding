@@ -58,6 +58,16 @@
 			padding: $default-margin 0;
 			border-bottom: $ritchie-border;
 			text-align: right;
+			line-height: 1;
+			overflow: hidden;
+
+			.field--select, .field--w-modifier{
+				width: 50%;
+			}
+
+			.field--toggle{
+				float: right;
+			}
 
 			&:last-of-type{
 				border-bottom: none;
@@ -311,6 +321,10 @@
 
 			
 		}
+			.pre-bid{
+				text-align: center;
+				padding: 20px 0;
+			}
 
 		.bidding--messages{
 			position: relative;

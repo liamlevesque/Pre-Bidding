@@ -66,20 +66,23 @@ var	finance = {
 			var val = parseFloat($(e.currentTarget).val());
 			updateInterest(val);
 			cleanupInterestInput();
+			finance.active = true;
 		},
 
 		onInterestIncrement: function(e, model){
 			incrementInterest($(e.currentTarget).data('increment'));
 			cleanupInterestInput();
+			finance.active = true;
 		},
 
 		onPeriodUpdate: function(e, model){
 			model.finance.financePeriod = $(e.currentTarget).val();
 			model.finance.payment = financingCalculation();
+			finance.active = true;
 		},
 		
 		onToggleClick: function(e, model){
-	    	model.finance.active = !model.finance.active;
+	    	//model.finance.active = !model.finance.active;
 	    }
 
 	};
@@ -93,8 +96,8 @@ var	finance = {
 rivets.formatters.convertedPrice = function(value){
 	var tempVal = parseFloat(value),
 		convertedVal = tempVal * ccyconversion.rate;
-	if(ccyconversion.active) return ccyconversion.currentCCY + " " + convertedVal.toFixed(2) + " per month";
-	else return ccyconversion.currentCCY + " " + tempVal.toFixed(2) + " per month";
+	if(ccyconversion.active) return ccyconversion.currentCCY + " <span class='dollars'>" + formatprice(convertedVal) + "</span> per month";
+	else return ccyconversion.currentCCY + " <span class='dollars'>" + formatprice(tempVal) + "</span> per month";
 }
 
 rivets.bind($('.js--calculator-output'),{finance: finance});

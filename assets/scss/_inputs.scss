@@ -88,4 +88,39 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
+$circle-checkmark-size: 18px;
+
+.input--circle-check{
+    
+
+  input{
+    appearance: none;
+
+    background-color: $grey-300;
+    width: $circle-checkmark-size;
+    height: $circle-checkmark-size;
+    border-radius: $circle-checkmark-size;
+
+    outline: none;
+    vertical-align: middle;
+
+    transition: $transition;
+
+    &:after{
+      @include icon-font;
+      content: "\e904";
+      color: white;
+      font-size: $circle-checkmark-size;
+    }
+
+    &:checked{
+      background-color: $brand-color;
+    }
+
+  }
+}
+
+
+
+
 

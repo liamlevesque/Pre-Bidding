@@ -73,6 +73,7 @@ var lotTable = {
 
 //WHEN WE CHANGE CURRENT LOT, CHECK THE STATUS OF ALL OF THE LOTS AND MAKE SURE THEY'RE RIGHT (SOLD,CURRENT...)
 rivets.binders.lotstatus = function(el, value) {
+	if($(el).data('bidder') === user.bidder) $(el).addClass('s-youwon');
 	if( value > $(el).data('lot') ) $(el).addClass('s-sold').removeClass('s-currentLot');
 	else if( value == $(el).data('lot') ) $(el).addClass('s-currentLot').removeClass('s-sold');
 	else $(el).removeClass().addClass('lot');

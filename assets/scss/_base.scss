@@ -728,6 +728,27 @@ $or-circle-size: 24px;
 	
 }
 
+.CCY:before{
+	font-size: 0.8em;
+
+	.CAD &{ 
+		content: 'CAD';	
+	}
+
+	.GBP &{
+		content: 'GBP';
+	}
+
+	.CNY &{
+		content: 'CNY';
+	}
+
+	.EUR &{
+		content: 'EUR';
+	}
+
+}
+
 
 [class*="cents"]{
 	vertical-align: top;

@@ -15,11 +15,12 @@
 			],
 			"warranty": true,
 			"bid": 0,
-			"watching": true,
+			"watching": false,
 			"comeswith": "Cummins ISX, 500 hp, eng brake, Eaton Fuller RTLO18918B, dbl diff lock, 8 bag A/R susp, 13200 lb frt, D46-170HP rears, 238 in. WB, 48 in. sleeper, wet kit, PAS",
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
 			"soldPrice": 0,
+			"bidder": null,
 			"group":0
 		},
 		{
@@ -40,6 +41,7 @@
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
 			"soldPrice": 0,
+			"bidder": null,
 			"group":0
 		},
 		{
@@ -60,6 +62,7 @@
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
 			"soldPrice": 0,
+			"bidder": null,
 			"group":0
 		},
 		{
@@ -74,12 +77,13 @@
 				"8709802_3.jpg"
 			],
 			"warranty": true,
-			"bid":22000,
+			"bid":0,
 			"watching": false,
 			"comeswith": "Cummins ISX, 500 hp, eng brake, Eaton Fuller RTLO18918B, dbl diff lock, 8 bag A/R susp, 13200 lb frt, D46-170HP rears, 238 in. WB, 48 in. sleeper, wet kit, PAS",
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
 			"soldPrice": 0,
+			"bidder": null,
 			"group":0
 		},
 		{
@@ -100,6 +104,7 @@
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
 			"soldPrice": 0,
+			"bidder": null,
 			"group":0
 		},
 		{
@@ -120,6 +125,7 @@
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
 			"soldPrice": 0,
+			"bidder": null,
 			"group":0
 		},
 		{
@@ -134,12 +140,13 @@
 				"8709802_3.jpg"
 			],
 			"warranty": false,
-			"bid":26500,
+			"bid":0,
 			"watching": false,
 			"comeswith": "Cummins ISX, 500 hp, eng brake, Eaton Fuller RTLO18918B, dbl diff lock, 8 bag A/R susp, 13200 lb frt, D46-170HP rears, 238 in. WB, 48 in. sleeper, wet kit, PAS",
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
 			"soldPrice": 0,
+			"bidder": null,
 			"group":0
 		},
 		{
@@ -160,6 +167,7 @@
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
 			"soldPrice": 0,
+			"bidder": null,
 			"group":0
 		},
 		{
@@ -180,6 +188,7 @@
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
 			"soldPrice": 0,
+			"bidder": null,
 			"group":0
 		},
 		{
@@ -200,6 +209,7 @@
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
 			"soldPrice": 0,
+			"bidder": null,
 			"group":1
 		},
 		{
@@ -220,6 +230,7 @@
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
 			"soldPrice": 0,
+			"bidder": null,
 			"group":1
 		},
 		{
@@ -240,6 +251,7 @@
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
 			"soldPrice": 0,
+			"bidder": null,
 			"group":1
 		},
 		{
@@ -260,6 +272,7 @@
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
 			"soldPrice": 0,
+			"bidder": null,
 			"group":1
 		},
 		{
@@ -280,6 +293,7 @@
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
 			"soldPrice": 0,
+			"bidder": null,
 			"group":1
 		},
 		{
@@ -300,6 +314,7 @@
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
 			"soldPrice": 0,
+			"bidder": null,
 			"group":1
 		},
 		{
@@ -320,6 +335,7 @@
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
 			"soldPrice": 0,
+			"bidder": null,
 			"group":1
 		},
 		{
@@ -340,6 +356,7 @@
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
 			"soldPrice": 0,
+			"bidder": null,
 			"group":1
 		},
 		{
@@ -360,6 +377,7 @@
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
 			"soldPrice": 0,
+			"bidder": null,
 			"group":0
 		}
 	]

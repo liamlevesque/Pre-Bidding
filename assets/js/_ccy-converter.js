@@ -49,10 +49,11 @@ var ccys = {
 		onCCYChange: function(e, model) {			
 			model.ccyconversion.currentCCY = $(e.currentTarget).val();
 			ccycontroller.update(model.ccyconversion);
+			model.ccyconversion.active = true;
 	    },
 
 	    onToggleClick: function(e, model){
-	    	model.ccyconversion.active = !model.ccyconversion.active;
+	    	//model.ccyconversion.active = !model.ccyconversion.active;
 	    	ccycontroller.update(model.ccyconversion);
 	    },
 	    
@@ -67,7 +68,7 @@ var ccys = {
 rivets.formatters.priceWithCCY = function(value){
 	var val = parseFloat(value); 
 		val = val * ccyconversion.rate;
-	return "roughly " + ccyconversion.currentCCY + " " + val.toFixed(2);
+	return "roughly " + ccyconversion.currentCCY + " <span class='dollars'>" + formatprice(val) + '</span>';
 }
 
 rivets.bind($('.js--converter-output'),{

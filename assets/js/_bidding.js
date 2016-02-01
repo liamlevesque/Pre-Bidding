@@ -251,7 +251,7 @@ var saleItem = {
 		    		setTimeout(function(){
 						initializeLot(group.lotList[group.lotList.length-1].lot);
 						$('.js--open-offer').removeClass('s-visible');
-					},2000);
+					},5000);
 				}
 				//OR RESUME OPEN OFFER IF NOT ALL SOLD
 				else{
@@ -283,6 +283,7 @@ var saleItem = {
 			//NON GROUP LOTS
 			else{
 				lotTable.lotList[lotTable.currentLot-1].soldPrice = saleItem.highBid;
+				lotTable.lotList[lotTable.currentLot-1].bidder = saleItem.bidder;
 
 				if(youwin){
 					headerController.addToCart(lotTable.lotList[lotTable.currentLot-1]);
@@ -292,7 +293,7 @@ var saleItem = {
 				setTimeout(function(){
 					//MOVE ON TO THE NEXT LOT AFTER 2 SECONDS
 					initializeLot(lotTable.currentLot);
-				},2000);
+				},5000);
 			}
 			
 	    }

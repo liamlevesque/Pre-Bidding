@@ -383,8 +383,8 @@ rivets.formatters.lotPhotoDirectory = function(value){
 } 
 
 rivets.formatters.activeToButtonText = function(value){
-	if(!value) return "Turn On";
-	else return "Turn Off";
+	if(!value) return "Off";
+	else return "On";
 }
 
 rivets.formatters.booltotext = function(value, text){
@@ -396,6 +396,15 @@ rivets.formatters.lengthtoquantity = function(value){
 	
 	return value.length;
 }
+
+rivets.formatters.bidderoryou = function(value){
+	if(value === user.bidder) return 'You!'
+	return value;
+}
+
+
+
+
 
 /********************************
 GENERIC BINDERS USED THROUGHOUT
@@ -871,7 +880,7 @@ var saleItem = {
 		    		setTimeout(function(){
 						initializeLot(group.lotList[group.lotList.length-1].lot);
 						$('.js--open-offer').removeClass('s-visible');
-					},2000);
+					},5000);
 				}
 				//OR RESUME OPEN OFFER IF NOT ALL SOLD
 				else{
@@ -903,6 +912,7 @@ var saleItem = {
 			//NON GROUP LOTS
 			else{
 				lotTable.lotList[lotTable.currentLot-1].soldPrice = saleItem.highBid;
+				lotTable.lotList[lotTable.currentLot-1].bidder = saleItem.bidder;
 
 				if(youwin){
 					headerController.addToCart(lotTable.lotList[lotTable.currentLot-1]);
@@ -912,7 +922,7 @@ var saleItem = {
 				setTimeout(function(){
 					//MOVE ON TO THE NEXT LOT AFTER 2 SECONDS
 					initializeLot(lotTable.currentLot);
-				},2000);
+				},5000);
 			}
 			
 	    }
@@ -1215,10 +1225,11 @@ var ccys = {
 		onCCYChange: function(e, model) {			
 			model.ccyconversion.currentCCY = $(e.currentTarget).val();
 			ccycontroller.update(model.ccyconversion);
+			model.ccyconversion.active = true;
 	    },
 
 	    onToggleClick: function(e, model){
-	    	model.ccyconversion.active = !model.ccyconversion.active;
+	    	//model.ccyconversion.active = !model.ccyconversion.active;
 	    	ccycontroller.update(model.ccyconversion);
 	    },
 	    
@@ -1233,7 +1244,7 @@ var ccys = {
 rivets.formatters.priceWithCCY = function(value){
 	var val = parseFloat(value); 
 		val = val * ccyconversion.rate;
-	return "roughly " + ccyconversion.currentCCY + " " + val.toFixed(2);
+	return "roughly " + ccyconversion.currentCCY + " <span class='dollars'>" + formatprice(val) + '</span>';
 }
 
 rivets.bind($('.js--converter-output'),{
@@ -1330,20 +1341,23 @@ var	finance = {
 			var val = parseFloat($(e.currentTarget).val());
 			updateInterest(val);
 			cleanupInterestInput();
+			finance.active = true;
 		},
 
 		onInterestIncrement: function(e, model){
 			incrementInterest($(e.currentTarget).data('increment'));
 			cleanupInterestInput();
+			finance.active = true;
 		},
 
 		onPeriodUpdate: function(e, model){
 			model.finance.financePeriod = $(e.currentTarget).val();
 			model.finance.payment = financingCalculation();
+			finance.active = true;
 		},
 		
 		onToggleClick: function(e, model){
-	    	model.finance.active = !model.finance.active;
+	    	//model.finance.active = !model.finance.active;
 	    }
 
 	};
@@ -1357,8 +1371,8 @@ var	finance = {
 rivets.formatters.convertedPrice = function(value){
 	var tempVal = parseFloat(value),
 		convertedVal = tempVal * ccyconversion.rate;
-	if(ccyconversion.active) return ccyconversion.currentCCY + " " + convertedVal.toFixed(2) + " per month";
-	else return ccyconversion.currentCCY + " " + tempVal.toFixed(2) + " per month";
+	if(ccyconversion.active) return ccyconversion.currentCCY + " <span class='dollars'>" + formatprice(convertedVal) + "</span> per month";
+	else return ccyconversion.currentCCY + " <span class='dollars'>" + formatprice(tempVal) + "</span> per month";
 }
 
 rivets.bind($('.js--calculator-output'),{finance: finance});
@@ -1498,6 +1512,7 @@ var lotTable = {
 
 //WHEN WE CHANGE CURRENT LOT, CHECK THE STATUS OF ALL OF THE LOTS AND MAKE SURE THEY'RE RIGHT (SOLD,CURRENT...)
 rivets.binders.lotstatus = function(el, value) {
+	if($(el).data('bidder') === user.bidder) $(el).addClass('s-youwon');
 	if( value > $(el).data('lot') ) $(el).addClass('s-sold').removeClass('s-currentLot');
 	else if( value == $(el).data('lot') ) $(el).addClass('s-currentLot').removeClass('s-sold');
 	else $(el).removeClass().addClass('lot');

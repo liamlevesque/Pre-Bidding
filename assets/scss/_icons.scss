@@ -36,6 +36,12 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-check-inner:before {
+    content: "\e915";
+}
+.icon-info:before {
+    content: "\e916";
+}
 .icon-popout:before {
     content: "\e90b";
 }
