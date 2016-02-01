@@ -1306,6 +1306,9 @@ header {
       .logo .logo-hide-small {
         display: none; } }
 
+.header--left {
+  padding-left: 5px; }
+
 .header--right {
   position: absolute;
   right: 0;
