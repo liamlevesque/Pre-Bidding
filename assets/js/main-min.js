@@ -737,8 +737,7 @@ var saleItem = {
 		},
 
 		onActivateClick: function(e, model) {
-			if(model.saleItem.bidactive) controller.activateBidding(model.saleItem.currentLot, false);
-			else controller.activateBidding(model.saleItem.currentLot, true);
+			controller.activateBidding(model.saleItem.currentLot, model.saleItem.bidactive);
 	    },
 
 	    activateBidding: function(targetLot, status){

@@ -225,7 +225,10 @@
                             <div class="bidding">
                                 
                                 <div class="bidding--activate js--activate-container" rv-hide="saleItem.isgroup">
-                                    <label class="input--circle-check"><input type="checkbox" class="js--bidding-active" rv-on-click="controller.onActivateClick" rv-checked="saleItem.bidactive"/> Activate bidding for lot <span rv-text="saleItem.currentLot"></span></label>
+                                    <label class="input--circle-check">
+                                        <input type="checkbox" class="js--bidding-active" rv-checked="saleItem.bidactive" rv-on-change="controller.onActivateClick"/> 
+                                        <span>Activate bidding for lot <span rv-text="saleItem.currentLot"></span></span>
+                                    </label>
                                 </div>
                                 <div class="bidding--activate_group" rv-show="saleItem.isgroup">
                                     <span rv-hide="saleItem.bidactive">Choose a lot to activate bidding</span>
