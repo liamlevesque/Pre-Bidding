@@ -29,6 +29,20 @@ function formatprice(amt){
 	return price;
 }
 
+function formatpriceInput(amt){
+	if(amt === 0) return 0;
+	else if(!amt) return 0;
+
+	var price;
+
+	if($('#js--body').hasClass('INR')) 
+		price = amt.toString().replace(/(\d)(?=(\d\d)+\d$)/g, '$1,');
+	else 
+		price = amt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+	return price;
+}
+
 
 rivets.formatters.zeroToFalse = function(value){
 	if(value > 0) return false;

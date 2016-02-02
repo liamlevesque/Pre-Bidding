@@ -197,7 +197,7 @@ var saleItem = {
 	    },
 
 	    updatePrice: function(){
-	    	ccyconversion.conversion = saleItem.price * ccyconversion.rate;
+	    	ccyconversion.conversion = saleItem.price;
 	    	finance.payment = financingCalculation();
 	    },
 

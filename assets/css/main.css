@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*****************
 GRID
 ******************/
@@ -238,7 +239,7 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: #bfc0be;
+  background-color: white;
   width: 18px;
   height: 18px;
   border-radius: 18px;
@@ -261,6 +262,15 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 18px; }
   .input--circle-check input:checked {
     background-color: #E87722; }
+
+.input--money {
+  position: relative; }
+  .input--money .symbols {
+    display: inline-block;
+    vertical-align: middle; }
+  .input--money input {
+    width: 160px;
+    vertical-align: middle; }
 
 /*******************
 	RESETS
@@ -779,44 +789,6 @@ footer {
   line-height: 0.9rem;
   color: #959595; }
 
-/**********************
-	CURRENCY FORMATTING
-**********************/
-.CAD [class*="dollars"]:before, .CAD .currency-symbol:before {
-  content: '$'; }
-.GBP [class*="dollars"]:before, .GBP .currency-symbol:before {
-  content: '\00A3'; }
-.CNY [class*="dollars"]:before, .CNY .currency-symbol:before {
-  content: '\00A5'; }
-.EUR [class*="dollars"]:before, .EUR .currency-symbol:before {
-  content: '\20AC'; }
-
-.CCY:before {
-  font-size: 0.8em; }
-  .CAD .CCY:before {
-    content: 'CAD'; }
-  .GBP .CCY:before {
-    content: 'GBP'; }
-  .CNY .CCY:before {
-    content: 'CNY'; }
-  .EUR .CCY:before {
-    content: 'EUR'; }
-
-[class*="cents"] {
-  vertical-align: top;
-  display: inline-block;
-  margin-left: -5px;
-  margin-top: 2px; }
-  [class*="cents"]:before {
-    content: '.'; }
-  [class*="cents"]:empty {
-    visibility: hidden; }
-    [class*="cents"]:empty:after {
-      content: '.00'; }
-
-.divider:before {
-  content: ","; }
-
 /*************************
 	COLLAPSIBLE ELEMENTS
 *************************/
@@ -1284,6 +1256,194 @@ footer {
       .field--toggle input:checked ~ .toggle-control:after {
         left: 10px; }
 
+.CAD .divider:before {
+  content: ","; }
+
+.CAD .dollars:before {
+  content: "$"; }
+
+.CAD .dollars:after {
+  content: "";
+  margin-left: 3px; }
+
+.CAD .CCY:before {
+  content: "CAD"; }
+
+.USD .divider:before {
+  content: ","; }
+
+.USD .dollars:before {
+  content: "$"; }
+
+.USD .dollars:after {
+  content: "";
+  margin-left: 3px; }
+
+.USD .CCY:before {
+  content: "USD"; }
+
+.SGD .divider:before {
+  content: ","; }
+
+.SGD .dollars:before {
+  content: "$"; }
+
+.SGD .dollars:after {
+  content: "";
+  margin-left: 3px; }
+
+.SGD .CCY:before {
+  content: "SGD"; }
+
+.NZD .divider:before {
+  content: ","; }
+
+.NZD .dollars:before {
+  content: "$"; }
+
+.NZD .dollars:after {
+  content: "";
+  margin-left: 3px; }
+
+.NZD .CCY:before {
+  content: "NZD"; }
+
+.AUD .divider:before {
+  content: ","; }
+
+.AUD .dollars:before {
+  content: "$"; }
+
+.AUD .dollars:after {
+  content: "";
+  margin-left: 3px; }
+
+.AUD .CCY:before {
+  content: "AUD"; }
+
+.MXN .divider:before {
+  content: ","; }
+
+.MXN .dollars:before {
+  content: "$"; }
+
+.MXN .dollars:after {
+  content: "";
+  margin-left: 3px; }
+
+.MXN .CCY:before {
+  content: "MXN"; }
+
+.ZAR .divider:before {
+  content: ","; }
+
+.ZAR .dollars:before {
+  content: "R"; }
+
+.ZAR .dollars:after {
+  content: "";
+  margin-left: 3px; }
+
+.ZAR .CCY:before {
+  content: "ZAR"; }
+
+.PLN .divider:before {
+  content: " "; }
+
+.PLN .dollars:before {
+  content: ""; }
+
+.PLN .dollars:after {
+  content: "zł";
+  margin-left: 3px; }
+
+.PLN .CCY:before {
+  content: "PLN"; }
+
+.GBP .divider:before {
+  content: ","; }
+
+.GBP .dollars:before {
+  content: "£"; }
+
+.GBP .dollars:after {
+  content: "";
+  margin-left: 3px; }
+
+.GBP .CCY:before {
+  content: "GBP"; }
+
+.EUR .divider:before {
+  content: " "; }
+
+.EUR .dollars:before {
+  content: "€"; }
+
+.EUR .dollars:after {
+  content: "";
+  margin-left: 3px; }
+
+.EUR .CCY:before {
+  content: "EUR"; }
+
+.CNY .divider:before {
+  content: ","; }
+
+.CNY .dollars:before {
+  content: "¥"; }
+
+.CNY .dollars:after {
+  content: "";
+  margin-left: 3px; }
+
+.CNY .CCY:before {
+  content: "CNY"; }
+
+.JPY .divider:before {
+  content: ","; }
+
+.JPY .dollars:before {
+  content: "¥"; }
+
+.JPY .dollars:after {
+  content: "";
+  margin-left: 3px; }
+
+.JPY .CCY:before {
+  content: "JPY"; }
+
+.INR .divider:before {
+  content: ","; }
+
+.INR .dollars:before {
+  content: " ₹"; }
+
+.INR .dollars:after {
+  content: "";
+  margin-left: 3px; }
+
+.INR .CCY:before {
+  content: "INR"; }
+
+.AED .divider:before {
+  content: ","; }
+
+.AED .dollars:before {
+  content: ""; }
+
+.AED .dollars:after {
+  content: "د.إ";
+  margin-left: 3px; }
+
+.AED .CCY:before {
+  content: "AED"; }
+
+.convertCCY {
+  font-size: 0.8em; }
+
+.CCY:before {
+  font-size: 0.8em; }
+
 header {
   max-width: 1400px;
   margin: 0 auto;
@@ -1608,10 +1768,14 @@ header {
   color: white;
   text-align: center;
   font-size: 0.9rem;
-  line-height: 1.4rem; }
+  line-height: 1.4rem;
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   .bidding--activate label {
     color: white;
     font-size: 0.9rem; }
+  .bidding--activate.s-active {
+    opacity: 0.5; }
   .bidding--activate:after {
     display: block;
     content: " ";
@@ -2471,6 +2635,8 @@ header {
 .lot {
   display: table-row;
   font-size: 0.85rem;
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   /**************
   STATES FOR LOTS
   ***************/ }
@@ -2510,6 +2676,8 @@ header {
       .lot.s-sold.s-youwon .col-4:before {
         color: #24532B;
         content: 'You Won!'; }
+  .lot.s-active-prebid {
+    background-color: rgba(232, 119, 34, 0.2); }
   .lot.s-currentLot {
     background-color: rgba(32, 87, 158, 0.1); }
     .lot.s-currentLot .col-0 {
@@ -2571,6 +2739,10 @@ header {
   .lot--watching.s-active {
     color: #20579E;
     opacity: 1; }
+
+.prebid--conversion {
+  color: #959595;
+  line-height: 1; }
 
 /**
  * Swiper 3.3.0
@@ -3234,19 +3406,23 @@ button.swiper-pagination-bullet {
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   background: #ffffff;
   color: #000000;
-  max-width: 300px; }
+  max-width: 400px; }
 
 /* Use this next selector to style things like font-size and line-height: */
 .ritchie-tooltips .tooltipster-content {
   font-size: 1rem;
   padding: 7.5px 15px;
-  overflow: visible; }
+  overflow: visible;
+  min-width: 350px; }
   .ritchie-tooltips .tooltipster-content p {
     margin: 0; }
   .ritchie-tooltips .tooltipster-content p + p {
     margin-top: 15px; }
   .ritchie-tooltips .tooltipster-content a {
     color: #1478BC; }
+
+.tooltip--footer {
+  padding: 10px 0; }
 
 body.s-no-scroll {
   overflow-y: hidden; }

@@ -56,7 +56,7 @@ var	finance = {
 
 		        default: 
 
-		        	if(e.which != 46 && e.which != 190 && e.which > 31 && (e.which < 48 || e.which > 57)) return false;
+		        	if(e.which != 46 && e.which != 190 && e.which != 188 && e.which > 31 && (e.which < 48 || e.which > 57)) return false;
 		        	else return true; // exit this handler for other keys
 		    }
 		    e.preventDefault();
@@ -96,7 +96,7 @@ var	finance = {
 rivets.formatters.convertedPrice = function(value){
 	var tempVal = parseFloat(value),
 		convertedVal = tempVal * ccyconversion.rate;
-	if(ccyconversion.active) return ccyconversion.currentCCY + " <span class='dollars'>" + formatprice(convertedVal.toFixed(2)) + "</span> per month";
+	if(ccyconversion.active) return "<span class='"+ ccyconversion.currentCCY +"'><span class='CCY'></span><span class='dollars'>" + formatprice(convertedVal.toFixed(2)) + "</span> per month</span>";
 	else return ccyconversion.currentCCY + " <span class='dollars'>" + formatprice(tempVal.toFixed(2)) + "</span> per month";
 }
 

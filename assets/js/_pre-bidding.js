@@ -9,6 +9,8 @@ $(function(){
 function createPrebidPopup(el){
 	var index = $(el).data('lot');
 
+	$(el).parent().addClass('s-active-prebid');
+
 	$(el).tooltipster({
 		content: $($('.js--prebid-toggle--content').html()),
 		theme: 'ritchie-tooltips',
@@ -23,9 +25,14 @@ function createPrebidPopup(el){
 		functionAfter: function(origin){
 			origin.tooltipster('destroy');
 			prebidModal.unbind();
+			$('.s-active-prebid').removeClass('s-active-prebid');
 		}
 	});
 	
+}
+
+function killPrebidModal(){
+	$('.s-active-prebid').removeClass('s-active-prebid').find('.tooltipstered').tooltipster('destroy');
 }
 
 var prebidModal,
@@ -33,7 +40,9 @@ var prebidModal,
 	prebid = {
 		bid: 0,
 		index: 0,
-		bidActive: false
+		bidActive: false,
+		conversionActive: false,
+		conversion: 0
 	},
 
 	prebidController = {
@@ -52,6 +61,7 @@ var prebidModal,
 			lotTable.lotList[model.prebid.index].bid = model.prebid.bid;
 			model.prebid.bidActive = (model.prebid.bid > 0) ? true : false;
 			
+			killPrebidModal();
 		},
 
 		delete: function(e, model){
@@ -65,6 +75,8 @@ var prebidModal,
 
 			//UPDATE THE COUNT AFTERWARDS
 			lotTable.biddingCount = lotTable.biddingList.length;
+
+			killPrebidModal();
 		},
 
 		onKeyPress: function(e, model){
@@ -90,13 +102,23 @@ var prebidModal,
 		}
 	};
 
+rivets.formatters.convertedPrebid = function(value){
+	var tempVal = parseFloat(value),
+		convertedVal = tempVal * ccyconversion.rate;
+	
+	return "<span class='" + ccyconversion.currentCCY + "'><span class='convertCCY'>" + ccyconversion.currentCCY + "</span> <span class='dollars'>" + formatprice(convertedVal.toFixed(0)) + "</span></span>";
+}
+
 function loadPreBidTooltip(index){
 	prebidModal = rivets.bind($('.js--pre-bid-object'),{
 		prebid: prebid,
 		prebidController : prebidController
 	});
 
+	prebid.conversionActive = ccyconversion.active;
+	prebid.conversion = ccyconversion.rate;
 	prebid.index = index - 1;
 	prebid.bid = lotTable.lotList[index-1].bid;
 	prebid.bidActive = (prebid.bid > 0)? true : false;
+
 }

@@ -224,7 +224,7 @@
                             </ul>
                             <div class="bidding">
                                 
-                                <div class="bidding--activate js--activate-container" rv-hide="saleItem.isgroup">
+                                <div class="bidding--activate js--activate-container" rv-hide="saleItem.isgroup" rv-addclass="saleItem.bidactive">
                                     <label class="input--circle-check">
                                         <input type="checkbox" class="js--bidding-active" rv-checked="saleItem.bidactive" rv-on-change="controller.onActivateClick"/> 
                                         <span>Activate bidding for lot <span rv-text="saleItem.currentLot"></span></span>
@@ -372,7 +372,7 @@
                 </div>
             </div> 
             <div class="lot-table lots_bidding js--lots-bidding" rv-show="lotTable.biddingActive">
-                <div class="lot" rv-each-bidded="lotTable.biddingList" rv-data-lot="bidded.lot" rv-lotstatus="lotTable.currentLot" >
+                <div class="lot" rv-each-bidded="lotTable.biddingList" rv-data-lot="bidded.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="bidded.bidder">
                     <div class="col-0" rv-text="bidded.lot"></div>
                     <div class="col-1"><img class="lot--photo" rv-src="bidded.photo | lotPhotoDirectory"/></div>
                     <div class="col-2">
@@ -400,7 +400,7 @@
                 </div>
             </div>
             <div class="lot-table lots_watching js--lots-watching" rv-show="lotTable.watchingActive">
-                <div class="lot" rv-each-watched="lotTable.watchingList" rv-data-lot="watched.lot" rv-lotstatus="lotTable.currentLot" >
+                <div class="lot" rv-each-watched="lotTable.watchingList" rv-data-lot="watched.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="watched.bidder">
                     <div class="col-0" rv-text="watched.lot"></div>
                     <div class="col-1"><img class="lot--photo" rv-src="watched.photo | lotPhotoDirectory"/></div>
                     <div class="col-2">
@@ -556,16 +556,32 @@
 
 
         <div class="js--prebid-toggle--content">
-            <div class="js--pre-bid-object">
+            <div class="h-overflow js--pre-bid-object">
                 <p>Place a Pre-bid</p>
                 <hr>
                 <ul>
                     <li class="bid-field">
-                        <input type="text" class="field--text" rv-value="prebid.bid" rv-on-keypress="prebidController.onKeyPress"/>
-                        <button class="button" rv-on-click="prebidController.bid">Place Bid</button>
+                        <label>Max Bid</label>
+                        <div class="input--money">
+                            <div class="symbols">
+                                <span class="CCY"></span> <span class="dollars"></span>
+                            </div>
+                            <input type="text" class="field--text" rv-value="prebid.bid" rv-on-keypress="prebidController.onKeyPress"/>
+                        </div>
+                    </li>
+                    <li class="bid-field" rv-show="prebid.conversionActive">
+                        <label>Local currency</label>
+                        <span rv-html="prebid.bid | convertedPrebid"></span>
                     </li>
                 </ul>
-                <button class="button_negative" rv-on-click="prebidController.delete" rv-show="prebid.bidActive">Cancel Bid</button>
+                <div class="prebid--conversion">
+                    
+                </div>
+                <div class="tooltip--footer">
+                    <button class="button_negative" rv-on-click="prebidController.delete" rv-show="prebid.bidActive">Cancel Bid</button>
+                    <button class="button h-float-right" rv-on-click="prebidController.bid">Place Bid</button>
+                </div>
+                
             </div>
         </div>
 

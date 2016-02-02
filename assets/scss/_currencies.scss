@@ -1,0 +1,50 @@
+$ccys: 	"CAD" "$" "" "," "." true,
+		"USD" "$" "" "," "." true,
+		"SGD" "$" "" "," "." true,
+		"NZD" "$" "" "," "." true,
+		"AUD" "$" "" "," "." true,
+		"MXN" "$" "" "," "." true,
+		"ZAR" "R" "" "," "." true,
+		"PLN" "" "z\0142" " " "," true,
+		"GBP" "\00A3" "" "," "." true,
+		"EUR" "\20AC" "" " " "," true,
+		"CNY" "\00A5" "" "," "." true,
+		"JPY" "\00A5" "" "," "." false,
+		"INR" " \20B9" "" "," "." true,
+		"AED" "" "د.إ" "," "." true;
+
+
+@each $ccy in $ccys{
+	
+	.divider:before{
+		.#{nth($ccy,1)} & {
+			content: "#{nth($ccy,4)}";
+		}
+	}
+	.dollars:before{
+		.#{nth($ccy,1)} & {
+			content: "#{nth($ccy,2)}";
+		}
+	}
+	.dollars:after{
+		.#{nth($ccy,1)} & {
+			content: "#{nth($ccy,3)}";
+			margin-left: 3px;
+		}
+	}
+	.CCY:before{
+		.#{nth($ccy,1)} & {
+			content: "#{nth($ccy,1)}";
+		}
+	}
+}
+
+
+
+.convertCCY{
+	font-size: 0.8em;
+}
+
+.CCY:before{
+	font-size: 0.8em;
+}

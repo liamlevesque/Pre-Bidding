@@ -372,6 +372,20 @@ function formatprice(amt){
 	return price;
 }
 
+function formatpriceInput(amt){
+	if(amt === 0) return 0;
+	else if(!amt) return 0;
+
+	var price;
+
+	if($('#js--body').hasClass('INR')) 
+		price = amt.toString().replace(/(\d)(?=(\d\d)+\d$)/g, '$1,');
+	else 
+		price = amt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+	return price;
+}
+
 
 rivets.formatters.zeroToFalse = function(value){
 	if(value > 0) return false;
@@ -826,7 +840,7 @@ var saleItem = {
 	    },
 
 	    updatePrice: function(){
-	    	ccyconversion.conversion = saleItem.price * ccyconversion.rate;
+	    	ccyconversion.conversion = saleItem.price;
 	    	finance.payment = financingCalculation();
 	    },
 
@@ -1241,9 +1255,8 @@ var ccys = {
 	};
 
 rivets.formatters.priceWithCCY = function(value){
-	var val = parseFloat(value); 
-		val = val * ccyconversion.rate;
-	return "roughly " + ccyconversion.currentCCY + " <span class='dollars'>" + formatprice(val) + '</span>';
+	var val = saleItem.price * ccyconversion.rate;
+	return "<span class='" + ccyconversion.currentCCY + "'>roughly " + ccyconversion.currentCCY + " <span class='dollars'>" + formatprice(val.toFixed(0)) + '</span></span>';
 }
 
 rivets.bind($('.js--converter-output'),{
@@ -1330,7 +1343,7 @@ var	finance = {
 
 		        default: 
 
-		        	if(e.which != 46 && e.which != 190 && e.which > 31 && (e.which < 48 || e.which > 57)) return false;
+		        	if(e.which != 46 && e.which != 190 && e.which != 188 && e.which > 31 && (e.which < 48 || e.which > 57)) return false;
 		        	else return true; // exit this handler for other keys
 		    }
 		    e.preventDefault();
@@ -1370,7 +1383,7 @@ var	finance = {
 rivets.formatters.convertedPrice = function(value){
 	var tempVal = parseFloat(value),
 		convertedVal = tempVal * ccyconversion.rate;
-	if(ccyconversion.active) return ccyconversion.currentCCY + " <span class='dollars'>" + formatprice(convertedVal.toFixed(2)) + "</span> per month";
+	if(ccyconversion.active) return "<span class='"+ ccyconversion.currentCCY +"'><span class='CCY'></span><span class='dollars'>" + formatprice(convertedVal.toFixed(2)) + "</span> per month</span>";
 	else return ccyconversion.currentCCY + " <span class='dollars'>" + formatprice(tempVal.toFixed(2)) + "</span> per month";
 }
 
@@ -1584,6 +1597,8 @@ $(function(){
 function createPrebidPopup(el){
 	var index = $(el).data('lot');
 
+	$(el).parent().addClass('s-active-prebid');
+
 	$(el).tooltipster({
 		content: $($('.js--prebid-toggle--content').html()),
 		theme: 'ritchie-tooltips',
@@ -1598,9 +1613,14 @@ function createPrebidPopup(el){
 		functionAfter: function(origin){
 			origin.tooltipster('destroy');
 			prebidModal.unbind();
+			$('.s-active-prebid').removeClass('s-active-prebid');
 		}
 	});
 	
+}
+
+function killPrebidModal(){
+	$('.s-active-prebid').removeClass('s-active-prebid').find('.tooltipstered').tooltipster('destroy');
 }
 
 var prebidModal,
@@ -1608,7 +1628,9 @@ var prebidModal,
 	prebid = {
 		bid: 0,
 		index: 0,
-		bidActive: false
+		bidActive: false,
+		conversionActive: false,
+		conversion: 0
 	},
 
 	prebidController = {
@@ -1627,6 +1649,7 @@ var prebidModal,
 			lotTable.lotList[model.prebid.index].bid = model.prebid.bid;
 			model.prebid.bidActive = (model.prebid.bid > 0) ? true : false;
 			
+			killPrebidModal();
 		},
 
 		delete: function(e, model){
@@ -1640,6 +1663,8 @@ var prebidModal,
 
 			//UPDATE THE COUNT AFTERWARDS
 			lotTable.biddingCount = lotTable.biddingList.length;
+
+			killPrebidModal();
 		},
 
 		onKeyPress: function(e, model){
@@ -1665,15 +1690,25 @@ var prebidModal,
 		}
 	};
 
+rivets.formatters.convertedPrebid = function(value){
+	var tempVal = parseFloat(value),
+		convertedVal = tempVal * ccyconversion.rate;
+	
+	return "<span class='" + ccyconversion.currentCCY + "'><span class='convertCCY'>" + ccyconversion.currentCCY + "</span> <span class='dollars'>" + formatprice(convertedVal.toFixed(0)) + "</span></span>";
+}
+
 function loadPreBidTooltip(index){
 	prebidModal = rivets.bind($('.js--pre-bid-object'),{
 		prebid: prebid,
 		prebidController : prebidController
 	});
 
+	prebid.conversionActive = ccyconversion.active;
+	prebid.conversion = ccyconversion.rate;
 	prebid.index = index - 1;
 	prebid.bid = lotTable.lotList[index-1].bid;
 	prebid.bidActive = (prebid.bid > 0)? true : false;
+
 }
 
 var lotInfo = {

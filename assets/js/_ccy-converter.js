@@ -66,9 +66,8 @@ var ccys = {
 	};
 
 rivets.formatters.priceWithCCY = function(value){
-	var val = parseFloat(value); 
-		val = val * ccyconversion.rate;
-	return "roughly " + ccyconversion.currentCCY + " <span class='dollars'>" + formatprice(val) + '</span>';
+	var val = saleItem.price * ccyconversion.rate;
+	return "<span class='" + ccyconversion.currentCCY + "'>roughly " + ccyconversion.currentCCY + " <span class='dollars'>" + formatprice(val.toFixed(0)) + '</span></span>';
 }
 
 rivets.bind($('.js--converter-output'),{

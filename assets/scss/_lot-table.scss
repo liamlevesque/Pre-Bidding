@@ -83,6 +83,7 @@
 			.lot{
 				display: table-row;
 				font-size: 0.85rem;
+				transition: $transition;
 				
 				[class^="col"]{
 					border-bottom: $ritchie-border;
@@ -151,6 +152,11 @@
 							content: 'You Won!';
 						}
 					}
+
+				}
+
+				&.s-active-prebid{
+					background-color: rgba($brand-color, 0.2);
 				}
 
 				&.s-currentLot{
@@ -229,6 +235,10 @@
 
 
 
+	.prebid--conversion{
+		color: $grey-500;
+		line-height: 1;
+	}
 
 
 

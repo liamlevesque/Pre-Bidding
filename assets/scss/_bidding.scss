@@ -156,10 +156,15 @@
 			color: white;
 			text-align: center;
 			@include default-font;
+			transition: $transition;
 
 			label{
 				color: white;
 				font-size: 0.9rem;
+			}
+
+			&.s-active{
+				opacity: 0.5;
 			}
 
 			&:after{

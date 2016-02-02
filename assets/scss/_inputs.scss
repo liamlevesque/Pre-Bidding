@@ -96,7 +96,7 @@ $circle-checkmark-size: 18px;
   input{
     appearance: none;
 
-    background-color: $grey-300;
+    background-color: white;
     width: $circle-checkmark-size;
     height: $circle-checkmark-size;
     border-radius: $circle-checkmark-size;
@@ -117,6 +117,21 @@ $circle-checkmark-size: 18px;
       background-color: $brand-color;
     }
 
+  }
+}
+
+
+.input--money{
+  position: relative;
+
+  .symbols{
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  input{
+    width: 160px;
+    vertical-align: middle;
   }
 }
 

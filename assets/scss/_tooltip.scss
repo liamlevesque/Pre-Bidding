@@ -39,7 +39,7 @@
 	box-shadow: $ritchie-shadow;
 	background: $white;
 	color: $black;
-	max-width: 300px;
+	max-width: 400px;
 }
 
 /* Use this next selector to style things like font-size and line-height: */
@@ -47,6 +47,7 @@
 	font-size: 1rem;
 	padding: $default-margin/2 $default-margin;
 	overflow: visible;
+	min-width: 350px;
 
 	p{
 		margin: 0;
@@ -68,3 +69,7 @@
 		color: $link-colour;
 	}
 }
+
+	.tooltip--footer{
+		padding: 10px 0;
+	}
