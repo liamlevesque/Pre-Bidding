@@ -94,6 +94,41 @@ hr{
 	border-bottom: $ritchie-border;
 }
 
+.main-body{
+	display: block;
+
+	@include breakpoint(smallmax){
+		display: none;
+	}
+}
+
+
+.counter-bidder{
+	display: none;
+
+	@include breakpoint(smallmax){
+		display: block;
+	}
+
+	button{
+		width: 100%;
+	}
+
+	.counter--lots, .counter--bidding{
+		background-color: $finance-tint;
+		padding: $default-margin;
+		margin: $default-margin;
+		border-radius: 5px;
+	}
+
+	.counter--bidding{
+		background-color: $grey-100;
+	}
+}
+
+
+
+
 /**********************
 	TEXT FORMATTING
 **********************/

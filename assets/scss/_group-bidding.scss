@@ -32,6 +32,10 @@
 		left: 0;
 		right: 0;
 		padding: 5px;
+
+		&.group--body_b{
+			padding: 0;
+		}
 	}
 
 	.group--footer{
@@ -404,6 +408,16 @@
 
 
 	//WHOLE TILE CLICKING VERSION
+
+
+	.bidding--group.s-lot-selected .group--lot_a:not(.s-active-lot){
+		opacity: 0.75;
+		cursor: default;
+
+		.lot--selector{
+			display: none;
+		}
+	}
 
 	.bidding--group.s-lot-selected .group--lot_c:not(.s-active-lot){
 		opacity: 0.75;

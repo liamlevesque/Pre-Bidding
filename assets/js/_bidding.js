@@ -79,7 +79,7 @@ var saleItem = {
 				highBid: saleItem.highBid,
 				sold: false
 			};
-
+			console.log('poop');
 			submitBid(newBid);
 
 			//IF THIS IS PART OF A BIDDING GROUP AND WE'VE NOT INITIALIZED THIS GROUP, INITALIZE THAT
@@ -273,7 +273,7 @@ var saleItem = {
 				}
 
 	    		setTimeout(function(){
-					//MOVE ON TO THE NEXT LOT AFTER 2 SECONDS
+					//MOVE ON TO OPEN OFFERS AFTER 2 SECONDS
 					groupController.activateOpenOffers();
 				},2000);
 				

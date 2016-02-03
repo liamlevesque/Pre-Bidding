@@ -435,7 +435,7 @@ $(function(){
 	user.bidder = "v" + getRandomInt(7000, 8000);
 	user.spent = 0;
 
-
+	submitLotChange({lot: 0,source: user.bidder});
 
 });
 
@@ -443,7 +443,7 @@ var user = {
 		bidder : "v7005",
 		limit: 1000000, 
 		spent: 0,
-		bid: 48500,
+		bid: 0,
 		message: '',
 		audio: true,
 		photos: true,
@@ -528,7 +528,7 @@ function loadConfirmModal(){
 	setTimeout(function(){
 		$('.js--header .js-confirm-object').removeClass('s-active');
 		confirmationController.destroyConfirmation();
-	},5000);
+	},2000);
 }
 
 
@@ -539,7 +539,11 @@ function loadConfirmModal(){
 
 var firebaseBids = new Firebase("https://sizzling-inferno-6912.firebaseio.com/bids");
 
+
 function submitBid(bid){
+
+	if(!bid.highBid) bid.highBid = null;
+	console.log('love');
 
 	firebaseBids.update({
 		source: bid.source,
@@ -552,8 +556,26 @@ function submitBid(bid){
 	
 }
 
+var firebaseLot = new Firebase("https://sizzling-inferno-6912.firebaseio.com/lot");
+
+function submitLotChange(newlot){
+	firebaseLot.update({
+		lot: newlot.lot,
+		source: newlot.source
+	}) 
+}
+
+firebaseLot.on("value", function(snapshot) {
+
+	var lotchange = snapshot.val();
+	if(lotchange.source === user.bidder) return;
+	initializeLot(lotchange.lot);
+});
+
 
 firebaseBids.on("value", function(snapshot) {
+
+	if(group.isOpenOffers) return;
 
 	var bid = snapshot.val();
 
@@ -562,6 +584,7 @@ firebaseBids.on("value", function(snapshot) {
 		if(bid.source === user.bidder) return;
 		controller.sellItem();
 	}
+
 
 	//OTHERWISE
 	else{
@@ -589,6 +612,9 @@ firebaseBids.on("value", function(snapshot) {
 		saleItem.price = bid.price;
 
 		controller.updatePrice();
+
+		//COUNTER BIDDER
+		counterbidderData.price = bid.price;
 	}
 
 });
@@ -722,7 +748,7 @@ var saleItem = {
 				highBid: saleItem.highBid,
 				sold: false
 			};
-
+			console.log('poop');
 			submitBid(newBid);
 
 			//IF THIS IS PART OF A BIDDING GROUP AND WE'VE NOT INITIALIZED THIS GROUP, INITALIZE THAT
@@ -916,7 +942,7 @@ var saleItem = {
 				}
 
 	    		setTimeout(function(){
-					//MOVE ON TO THE NEXT LOT AFTER 2 SECONDS
+					//MOVE ON TO OPEN OFFERS AFTER 2 SECONDS
 					groupController.activateOpenOffers();
 				},2000);
 				
@@ -1744,4 +1770,53 @@ function buildCurrentLot(index){
       autoHeight: true
     })
 }
+
+var counterbidderData = {
+	    currentLot: null,
+	    price: saleItem.price
+	},
+	counterbidder = {
+		onBidClick: function(e, model){
+			if(!saleItem.highBid) saleItem.highBid = 9500;
+
+			var newBid = {
+				source: '10005',
+				lot: saleItem.currentLot,
+				price: saleItem.price + 500,
+				bidder: '10005',
+				highBid: saleItem.highBid + 500,
+				sold: false
+			};
+			console.log(newBid);
+			submitBid(newBid);
+		},
+
+		onLotClick: function(e, model){
+			var newlot = {
+				lot: $(e.currentTarget).data('lot'),
+				source: user.bidder
+			}
+
+			submitLotChange(newlot);
+		},
+
+		onSellClick: function(e, model){
+			var newBid = {
+				source: '10005',
+				lot: saleItem.currentLot,
+				price: saleItem.price,
+				bidder: saleItem.bidder,
+				highBid: saleItem.highBid,
+				sold: true
+			};
+			//console.log(newBid);
+			submitBid(newBid);
+		}
+
+	}
+
+rivets.bind($('.js--counter-bidder'),{
+  counterbidderData: counterbidderData,
+  counterbidder: counterbidder
+});  
 

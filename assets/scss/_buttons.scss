@@ -111,6 +111,25 @@
 		}
 	}
 
+	.button_hollow{
+		@extend %button;
+		@extend .label;
+
+		background-image: none;
+		background-color: white;
+		color: $brand-color;
+		box-shadow: none;
+		border: 1px solid $brand-color;
+		font-size: 0.8rem;
+		padding: 5px;
+
+		&:hover{
+			background-image: none;
+			background-color: $brand-color;
+			color: white;
+		}
+	}
+
 	.button_positive, .button_two-state{
 		@extend %button;
 		

@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>Purchase Summary</title>
-    <link href="assets/img/favicon.ico" rel="Shortcut Icon">
-    <link type="text/css" rel="stylesheet" href="assets/css/main.css">
-</head>
+	<head>
+	    <title>Purchase Summary</title>
+	    <link href="assets/img/favicon.ico" rel="Shortcut Icon">
+	    <link type="text/css" rel="stylesheet" href="assets/css/main.css">
 
-<body>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
 
-	<button class="button" rv-on-click="controller.bid">Bid!</button>
+	<body class="js--counter-bidder">
 
+		<button class="button" rv-on-click="counterbidder.onBidClick">Bid Against</button>
 
-	<script type="text/javascript" src="assets/js/counter-min.js"></script>
+		<button class="button_positive" rv-on-click="counterbidder.onSellClick">Sell</button>
+		
+		<div>
+			<div class="g-thrid"><button class="button_hollow" rv-on-click="counterbidder.onLotClick" data-lot="0">Lot 1</button></div>
+			<div class="g-thrid"><button class="button_hollow" rv-on-click="counterbidder.onLotClick" data-lot="5">Lot 6</button></div>
+			<div class="g-thrid"><button class="button_hollow" rv-on-click="counterbidder.onLotClick" data-lot="9">Lot 10</button></div>
+		</div>
 
-</body>
+		<script type="text/javascript" src="assets/js/main-min.js"></script>
+
+	</body>
+
 </html>

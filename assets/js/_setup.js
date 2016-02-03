@@ -4,7 +4,7 @@ $(function(){
 	user.bidder = "v" + getRandomInt(7000, 8000);
 	user.spent = 0;
 
-
+	submitLotChange({lot: 0,source: user.bidder});
 
 });
 
@@ -12,7 +12,7 @@ var user = {
 		bidder : "v7005",
 		limit: 1000000, 
 		spent: 0,
-		bid: 48500,
+		bid: 0,
 		message: '',
 		audio: true,
 		photos: true,
@@ -97,7 +97,7 @@ function loadConfirmModal(){
 	setTimeout(function(){
 		$('.js--header .js-confirm-object').removeClass('s-active');
 		confirmationController.destroyConfirmation();
-	},5000);
+	},2000);
 }
 
 
@@ -108,7 +108,11 @@ function loadConfirmModal(){
 
 var firebaseBids = new Firebase("https://sizzling-inferno-6912.firebaseio.com/bids");
 
+
 function submitBid(bid){
+
+	if(!bid.highBid) bid.highBid = null;
+	console.log('love');
 
 	firebaseBids.update({
 		source: bid.source,
@@ -121,8 +125,26 @@ function submitBid(bid){
 	
 }
 
+var firebaseLot = new Firebase("https://sizzling-inferno-6912.firebaseio.com/lot");
+
+function submitLotChange(newlot){
+	firebaseLot.update({
+		lot: newlot.lot,
+		source: newlot.source
+	}) 
+}
+
+firebaseLot.on("value", function(snapshot) {
+
+	var lotchange = snapshot.val();
+	if(lotchange.source === user.bidder) return;
+	initializeLot(lotchange.lot);
+});
+
 
 firebaseBids.on("value", function(snapshot) {
+
+	if(group.isOpenOffers) return;
 
 	var bid = snapshot.val();
 
@@ -131,6 +153,7 @@ firebaseBids.on("value", function(snapshot) {
 		if(bid.source === user.bidder) return;
 		controller.sellItem();
 	}
+
 
 	//OTHERWISE
 	else{
@@ -158,6 +181,9 @@ firebaseBids.on("value", function(snapshot) {
 		saleItem.price = bid.price;
 
 		controller.updatePrice();
+
+		//COUNTER BIDDER
+		counterbidderData.price = bid.price;
 	}
 
 });
