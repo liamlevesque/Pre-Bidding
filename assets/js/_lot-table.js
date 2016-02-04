@@ -76,7 +76,7 @@ rivets.binders.lotstatus = function(el, value) {
 	if($(el).data('bidder') === user.bidder) $(el).addClass('s-youwon');
 	if( value > $(el).data('lot') ) $(el).addClass('s-sold').removeClass('s-currentLot');
 	else if( value == $(el).data('lot') ) $(el).addClass('s-currentLot').removeClass('s-sold');
-	else $(el).removeClass().addClass('lot');
+	else $(el).removeClass().addClass('lot js--prebid-click');
 	return;
 }
 

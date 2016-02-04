@@ -151,15 +151,15 @@
 			position: relative;
 
 			margin-bottom: $default-margin;
-			background-color: $brand-color;
+			background-color: black;
 			padding: 5px;
-			color: white;
+			color: darken(white,10%);
 			text-align: center;
 			@include default-font;
 			transition: $transition;
 
 			label{
-				color: white;
+				color: darken(white,20%);
 				font-size: 0.9rem;
 			}
 
@@ -178,7 +178,7 @@
 				left: 50%;
 				transform: translateX(-50%) rotate(45deg);
 				
-				background-color: $brand-color;
+				background-color: black;
 			}
 
 			&.s-bounce{

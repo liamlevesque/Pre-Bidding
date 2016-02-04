@@ -33,7 +33,7 @@
 	}
 }
 
-.ritchie-tooltips {
+.ritchie-tooltips, .ritchie-tooltips-footed {
 	border-radius: 0; 
 	border: 1px solid $black;
 	box-shadow: $ritchie-shadow;
@@ -70,6 +70,18 @@
 	}
 }
 
+.ritchie-tooltips-footed .tooltipster-content{
+	padding: 0;
+
+	.tooltip-content{
+		padding: $default-margin/2 $default-margin;
+		font-size: 0.9rem;
+	    line-height: 1.4rem;
+	}
+}
+
 	.tooltip--footer{
-		padding: 10px 0;
+		padding: $default-margin $default-margin 0;
+		overflow: hidden;
+		background: $grey-100;
 	}

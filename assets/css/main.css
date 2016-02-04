@@ -1791,16 +1791,16 @@ header {
 .bidding--activate {
   position: relative;
   margin-bottom: 15px;
-  background-color: #E87722;
+  background-color: black;
   padding: 5px;
-  color: white;
+  color: #e6e6e6;
   text-align: center;
   font-size: 0.9rem;
   line-height: 1.4rem;
   -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   .bidding--activate label {
-    color: white;
+    color: #cccccc;
     font-size: 0.9rem; }
   .bidding--activate.s-active {
     opacity: 0.5; }
@@ -1815,7 +1815,7 @@ header {
     -webkit-transform: translateX(-50%) rotate(45deg);
         -ms-transform: translateX(-50%) rotate(45deg);
             transform: translateX(-50%) rotate(45deg);
-    background-color: #E87722; }
+    background-color: black; }
   .bidding--activate.s-bounce {
     -webkit-animation-duration: 0.4s;
             animation-duration: 0.4s;
@@ -2596,6 +2596,9 @@ header {
 
 .lot--field:first-of-type {
   padding-top: 0; }
+
+.lot--field:last-of-type {
+  border-bottom: none; }
 
 .lot--field_warranty {
   border-bottom: none; }
@@ -3436,7 +3439,7 @@ button.swiper-pagination-bullet {
       -ms-transform: translateY(-50%);
           transform: translateY(-50%); }
 
-.ritchie-tooltips {
+.ritchie-tooltips, .ritchie-tooltips-footed {
   border-radius: 0;
   border: 1px solid #000000;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
@@ -3457,8 +3460,17 @@ button.swiper-pagination-bullet {
   .ritchie-tooltips .tooltipster-content a {
     color: #1478BC; }
 
+.ritchie-tooltips-footed .tooltipster-content {
+  padding: 0; }
+  .ritchie-tooltips-footed .tooltipster-content .tooltip-content {
+    padding: 7.5px 15px;
+    font-size: 0.9rem;
+    line-height: 1.4rem; }
+
 .tooltip--footer {
-  padding: 10px 0; }
+  padding: 15px 15px 0;
+  overflow: hidden;
+  background: #E9E9E9; }
 
 body.s-no-scroll {
   overflow-y: hidden; }

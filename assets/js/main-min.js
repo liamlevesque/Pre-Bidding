@@ -1553,7 +1553,7 @@ rivets.binders.lotstatus = function(el, value) {
 	if($(el).data('bidder') === user.bidder) $(el).addClass('s-youwon');
 	if( value > $(el).data('lot') ) $(el).addClass('s-sold').removeClass('s-currentLot');
 	else if( value == $(el).data('lot') ) $(el).addClass('s-currentLot').removeClass('s-sold');
-	else $(el).removeClass().addClass('lot');
+	else $(el).removeClass().addClass('lot js--prebid-click');
 	return;
 }
 
@@ -1616,6 +1616,7 @@ $(function(){
 
 	$(document).on('mouseup','.js--prebid-click',function(e){
 		createPrebidPopup($(e.currentTarget));
+		console.log('hat');
 	});
 
 });
@@ -1627,14 +1628,14 @@ function createPrebidPopup(el){
 
 	$(el).tooltipster({
 		content: $($('.js--prebid-toggle--content').html()),
-		theme: 'ritchie-tooltips',
+		theme: 'ritchie-tooltips-footed',
 		interactive: true,
 		trigger: "click",
 		position: 'top',
 		functionBefore: function(origin, continueTooltip){
 			continueTooltip();
 			loadPreBidTooltip(index);
-			$(origin.tooltipster('elementTooltip')).find('input').focus();
+			//$(origin.tooltipster('elementTooltip')).find('input').focus();
 		},
 		functionAfter: function(origin){
 			origin.tooltipster('destroy');
@@ -1652,6 +1653,7 @@ function killPrebidModal(){
 var prebidModal,
 
 	prebid = {
+		lot: {},
 		bid: 0,
 		index: 0,
 		bidActive: false,
@@ -1693,6 +1695,15 @@ var prebidModal,
 			killPrebidModal();
 		},
 
+		onFocus: function(e, model){
+			$(e.currentTarget)
+				.one('mouseup', function () {
+            		$(this).select();
+            		return false;
+        		})
+        		.select();
+		},
+
 		onKeyPress: function(e, model){
 			switch(e.which) {
 		    	case 9://tab
@@ -1729,6 +1740,7 @@ function loadPreBidTooltip(index){
 		prebidController : prebidController
 	});
 
+	prebid.lot = lotTable.lotList[findLot(lotTable.lotList, index)];
 	prebid.conversionActive = ccyconversion.active;
 	prebid.conversion = ccyconversion.rate;
 	prebid.index = index - 1;
