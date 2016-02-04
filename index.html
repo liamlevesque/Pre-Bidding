@@ -571,60 +571,68 @@
         <div class="js--prebid-toggle--content">
             <div class="h-overflow js--pre-bid-object">
                 <div class="tooltip-content ">
-                    <ul>
-                        <li class="lot--field">
-                           <div class="g-quarter">
-                                <img class="lot--photo" rv-src="prebid.lot.photo | lotPhotoDirectory"/>
-                            </div>
-                            <div class="g-three-quarters">
-                                <div>
-                                    <span class="c-brand" >Lot <span rv-text="prebid.lot.lot"></span></span>
-                                    <div class="lot--name" rv-text="prebid.lot.name"></div>
+                    <div class="g-half">
+                        <ul>
+                            <li class="lot--field">
+                               <div class="g-quarter">
+                                    <img class="lot--photo" rv-src="prebid.lot.photo | lotPhotoDirectory"/>
                                 </div>
-                            </div> 
-                        </li>
-                        <li class="lot--field">
-                            <div class="lot--field_half">
-                                <label>Serial</label>
-                                <span rv-text="prebid.lot.serial"></span>
-                            </div>
-                            <div class="lot--field_half"> 
-                                <label>Meter</label>
-                                <span rv-text="prebid.lot.meter"></span>
-                            </div> 
-                        </li>
-                        <li class="lot--field" rv-show="prebid.lot.comeswith">
-                            <label>Comes With</label>
-                            <p rv-text="prebid.lot.comeswith"></p>
-                        </li>
-                        <li class="lot--field" rv-show="prebid.lot.catnotes">
-                            <label>Catalog Notes</label>
-                            <p rv-text="prebid.lot.catnotes"></p>
-                        </li>
+                                <div class="g-three-quarters">
+                                    <div>
+                                        <span class="c-brand" >Lot <span rv-text="prebid.lot.lot"></span></span>
+                                        <div class="lot--name" rv-text="prebid.lot.name"></div>
+                                    </div>
+                                </div> 
+                            </li>
+                            <li class="lot--field">
+                                <div class="lot--field_half">
+                                    <label>Serial</label>
+                                    <span rv-text="prebid.lot.serial"></span>
+                                </div>
+                                <div class="lot--field_half"> 
+                                    <label>Meter</label>
+                                    <span rv-text="prebid.lot.meter"></span>
+                                </div> 
+                            </li>
+                        </ul>
+                        <ul class="bordered-area">
+                             <li class="bid-field">
+                                <label>Max Bid</label>
+                                <div class="input--money">
+                                    <div class="symbols">
+                                        <span class="CCY"></span> <span class="dollars"></span>
+                                    </div>
+                                    <input type="text" class="field--text" rv-value="prebid.bid" rv-on-focus="prebidController.onFocus" rv-on-keypress="prebidController.onKeyPress"/>
+                                </div>
+                            </li>
+                            <li class="bid-field" rv-show="prebid.conversionActive">
+                                <label>Local currency</label>
+                                <span rv-html="prebid.bid | convertedPrebid"></span>
+                            </li>
+                        
+                            <li class="bid-field">
+                                <button class="button_negative" rv-on-click="prebidController.delete" rv-show="prebid.bidActive">Cancel Bid</button>
+                                <button class="button h-float-right" rv-on-click="prebidController.bid">Place Bid</button>
+                            </li>
+                        </ul>
+                    </div>
+                
+                    <div class="g-half">
+                        <ul>
+                            
+                             <li class="lot--field" rv-show="prebid.lot.comeswith">
+                                <label>Comes With</label>
+                                <p rv-text="prebid.lot.comeswith"></p>
+                            </li>
+                            <li class="lot--field" rv-show="prebid.lot.catnotes">
+                                <label>Catalog Notes</label>
+                                <p rv-text="prebid.lot.catnotes"></p>
+                            </li>
 
-                    </ul>
-                </div>
-                <div class="tooltip--footer">
-                    <ul>
-                        <li class="bid-field">
-                            <label>Max Bid</label>
-                            <div class="input--money">
-                                <div class="symbols">
-                                    <span class="CCY"></span> <span class="dollars"></span>
-                                </div>
-                                <input type="text" class="field--text" rv-value="prebid.bid" rv-on-focus="prebidController.onFocus" rv-on-keypress="prebidController.onKeyPress"/>
-                            </div>
-                        </li>
-                        <li class="bid-field" rv-show="prebid.conversionActive">
-                            <label>Local currency</label>
-                            <span rv-html="prebid.bid | convertedPrebid"></span>
-                        </li>
-                    
-                        <li class="bid-field">
-                            <button class="button_negative" rv-on-click="prebidController.delete" rv-show="prebid.bidActive">Cancel Bid</button>
-                            <button class="button h-float-right" rv-on-click="prebidController.bid">Place Bid</button>
-                        </li>
-                    </ul>
+
+                           
+                        </ul>
+                    </div>
                 </div>
                 
             </div>

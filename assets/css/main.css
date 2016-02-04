@@ -3460,12 +3460,19 @@ button.swiper-pagination-bullet {
   .ritchie-tooltips .tooltipster-content a {
     color: #1478BC; }
 
-.ritchie-tooltips-footed .tooltipster-content {
-  padding: 0; }
-  .ritchie-tooltips-footed .tooltipster-content .tooltip-content {
-    padding: 7.5px 15px;
-    font-size: 0.9rem;
-    line-height: 1.4rem; }
+.ritchie-tooltips-footed {
+  max-width: 800px; }
+  .ritchie-tooltips-footed .tooltipster-content {
+    padding: 0; }
+    .ritchie-tooltips-footed .tooltipster-content .tooltip-content {
+      padding: 15px 15px;
+      font-size: 0.9rem;
+      line-height: 1.4rem; }
+  .ritchie-tooltips-footed .bordered-area {
+    padding: 15px 15px 0;
+    overflow: hidden;
+    background: #E9E9E9;
+    border-radius: 10px; }
 
 .tooltip--footer {
   padding: 15px 15px 0;

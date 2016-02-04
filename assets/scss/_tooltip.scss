@@ -70,13 +70,27 @@
 	}
 }
 
-.ritchie-tooltips-footed .tooltipster-content{
-	padding: 0;
 
-	.tooltip-content{
-		padding: $default-margin/2 $default-margin;
-		font-size: 0.9rem;
-	    line-height: 1.4rem;
+.ritchie-tooltips-footed{ 
+
+	max-width: 800px;
+
+	.tooltipster-content{
+		padding: 0;
+
+
+		.tooltip-content{
+			padding: $default-margin $default-margin;
+			font-size: 0.9rem;
+		    line-height: 1.4rem;
+		}
+	}
+
+	.bordered-area{
+		padding: $default-margin $default-margin 0;
+		overflow: hidden;
+		background: $grey-100;
+		border-radius: 10px;
 	}
 }
 

@@ -1,8 +1,8 @@
 $(function(){
 
 	$(document).on('mouseup','.js--prebid-click',function(e){
+		if($('body').hasClass('s-prebid-open')) return;
 		createPrebidPopup($(e.currentTarget));
-		console.log('hat');
 	});
 
 });
@@ -27,6 +27,7 @@ function createPrebidPopup(el){
 			origin.tooltipster('destroy');
 			prebidModal.unbind();
 			$('.s-active-prebid').removeClass('s-active-prebid');
+			$('body').removeClass('s-prebid-open');
 		}
 	});
 	
@@ -34,6 +35,7 @@ function createPrebidPopup(el){
 
 function killPrebidModal(){
 	$('.s-active-prebid').removeClass('s-active-prebid').find('.tooltipstered').tooltipster('destroy');
+	$('body').removeClass('s-prebid-open');
 }
 
 var prebidModal,
@@ -125,6 +127,8 @@ function loadPreBidTooltip(index){
 		prebid: prebid,
 		prebidController : prebidController
 	});
+
+	$('body').addClass('s-prebid-open');
 
 	prebid.lot = lotTable.lotList[findLot(lotTable.lotList, index)];
 	prebid.conversionActive = ccyconversion.active;
