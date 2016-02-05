@@ -87,6 +87,7 @@
 				
 				[class^="col"]{
 					border-bottom: $ritchie-border;
+					position: relative;
 				}
 
 				.col-0, .col-3, .col-4, .col-5{
@@ -197,7 +198,34 @@
 
 				}
 
+				&[data-group="1"] .col-0:before{
+					content: " ";
+					position: absolute;
+					top: 5px;
+					left: 10px;
+					right: 10px;
+					bottom: 0;
+					border-radius: 15px 15px 0 0;
+					background-color: $grey-100;
+					z-index: -1;
+				}
+
+				&[data-group="1"] ~ &[data-group="1"]{
+					.col-0:before{
+						border-radius: 0;
+						top: 0;
+					}
+				}
+
+				&[data-group="1"] ~ &[data-group="0"]{
+					.col-0:before{
+						border-radius: 0 0 10px 10px;
+						top: 0;
+					}
+				}
+
 			}
+
  
 				.lot--photo{
 					width: 100%;

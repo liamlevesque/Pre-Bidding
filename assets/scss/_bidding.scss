@@ -84,6 +84,10 @@
 			.bid-value:empty:before{
 				content: "waiting...";
 			}
+
+			&.bid-field_left{
+				text-align: left;
+			}
 		}
 
 		.bidding{

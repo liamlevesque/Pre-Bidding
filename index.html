@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Purchase Summary</title>
+    <title>Ritchie Bros. Live Auction</title>
     <link href="assets/img/favicon.ico" rel="Shortcut Icon">
     <link type="text/css" rel="stylesheet" href="assets/css/main.css">
 
@@ -335,7 +335,7 @@
                 </div>
             </header>
             <div class="lot-table lots_all js--lots-all"  rv-show="lotTable.allActive">
-                <div class="lot js--prebid-click" rv-each-lot="lotTable.lotList" rv-data-lot="lot.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="lot.bidder">
+                <div class="lot js--prebid-click" rv-each-lot="lotTable.lotList" rv-data-lot="lot.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="lot.bidder" rv-data-group="lot.group">
                     <div class="col-0" rv-text="lot.lot"></div>
                     <div class="col-1"><img class="lot--photo" rv-src="lot.photo | lotPhotoDirectory"/></div>
                     <div class="col-2">
@@ -363,7 +363,7 @@
                 </div>
             </div> 
             <div class="lot-table lots_bidding js--lots-bidding" rv-show="lotTable.biddingActive">
-                <div class="lot js--prebid-click" rv-each-bidded="lotTable.biddingList" rv-data-lot="bidded.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="bidded.bidder">
+                <div class="lot js--prebid-click" rv-each-bidded="lotTable.biddingList" rv-data-lot="bidded.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="bidded.bidder" rv-data-group="bidded.group">
                     <div class="col-0" rv-text="bidded.lot"></div>
                     <div class="col-1"><img class="lot--photo" rv-src="bidded.photo | lotPhotoDirectory"/></div>
                     <div class="col-2">
@@ -391,7 +391,7 @@
                 </div>
             </div>
             <div class="lot-table lots_watching js--lots-watching" rv-show="lotTable.watchingActive">
-                <div class="lot js--prebid-click" rv-each-watched="lotTable.watchingList" rv-data-lot="watched.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="watched.bidder">
+                <div class="lot js--prebid-click" rv-each-watched="lotTable.watchingList" rv-data-lot="watched.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="watched.bidder" rv-data-group="watched.group">
                     <div class="col-0" rv-text="watched.lot"></div>
                     <div class="col-1"><img class="lot--photo" rv-src="watched.photo | lotPhotoDirectory"/></div>
                     <div class="col-2">
@@ -620,7 +620,7 @@
                                 <span rv-html="prebid.bid | convertedPrebid"></span>
                             </li>
                         
-                            <li class="bid-field">
+                            <li class="bid-field bid-field_left">
                                 <button class="button_negative" rv-on-click="prebidController.delete" rv-show="prebid.bidActive">Cancel Bid</button>
                                 <button class="button h-float-right" rv-on-click="prebidController.bid">Place Bid</button>
                             </li>

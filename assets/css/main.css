@@ -1738,6 +1738,8 @@ header {
     float: left; }
   .bid-field .bid-value:empty:before {
     content: "waiting..."; }
+  .bid-field.bid-field_left {
+    text-align: left; }
 
 .bidding {
   position: absolute;
@@ -2680,7 +2682,8 @@ header {
   STATES FOR LOTS
   ***************/ }
   .lot [class^="col"] {
-    border-bottom: 1px dotted #bdbdbd; }
+    border-bottom: 1px dotted #bdbdbd;
+    position: relative; }
   .lot .col-0, .lot .col-3, .lot .col-4, .lot .col-5 {
     text-align: center;
     vertical-align: middle; }
@@ -2754,6 +2757,22 @@ header {
         color: #20579E; }
     .lot.s-currentLot .icon-plus, .lot.s-currentLot button {
       display: none; }
+  .lot[data-group="1"] .col-0:before {
+    content: " ";
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    right: 10px;
+    bottom: 0;
+    border-radius: 15px 15px 0 0;
+    background-color: #E9E9E9;
+    z-index: -1; }
+  .lot[data-group="1"] ~ .lot[data-group="1"] .col-0:before {
+    border-radius: 0;
+    top: 0; }
+  .lot[data-group="1"] ~ .lot[data-group="0"] .col-0:before {
+    border-radius: 0 0 10px 10px;
+    top: 0; }
 
 .lot--photo {
   width: 100%;
