@@ -3467,17 +3467,32 @@ button.swiper-pagination-bullet {
     .ritchie-tooltips-footed .tooltipster-content .tooltip-content {
       padding: 15px 15px;
       font-size: 0.9rem;
-      line-height: 1.4rem; }
+      line-height: 1.4rem;
+      overflow: hidden; }
   .ritchie-tooltips-footed .bordered-area {
     padding: 15px 15px 0;
     overflow: hidden;
     background: #E9E9E9;
     border-radius: 10px; }
 
+.tooltip--left {
+  width: 40%;
+  display: inline-block;
+  vertical-align: top; }
+
+.tooltip--right {
+  width: 58%;
+  display: inline-block;
+  float: right;
+  vertical-align: top; }
+
 .tooltip--footer {
   padding: 15px 15px 0;
   overflow: hidden;
-  background: #E9E9E9; }
+  background: #E9E9E9;
+  width: 100%;
+  font-size: 0.9rem;
+  line-height: 1.4rem; }
 
 body.s-no-scroll {
   overflow-y: hidden; }

@@ -573,16 +573,12 @@
                 <div class="tooltip-content ">
                     <div class="g-half">
                         <ul>
+                            <li>
+                                <img class="lot--photo" rv-src="prebid.lot.photo | lotPhotoDirectory"/>
+                            </li>
                             <li class="lot--field">
-                               <div class="g-quarter">
-                                    <img class="lot--photo" rv-src="prebid.lot.photo | lotPhotoDirectory"/>
-                                </div>
-                                <div class="g-three-quarters">
-                                    <div>
-                                        <span class="c-brand" >Lot <span rv-text="prebid.lot.lot"></span></span>
-                                        <div class="lot--name" rv-text="prebid.lot.name"></div>
-                                    </div>
-                                </div> 
+                                <span class="c-brand" >Lot <span rv-text="prebid.lot.lot"></span></span>
+                                <div class="lot--name" rv-text="prebid.lot.name"></div>
                             </li>
                             <li class="lot--field">
                                 <div class="lot--field_half">
@@ -593,6 +589,20 @@
                                     <label>Meter</label>
                                     <span rv-text="prebid.lot.meter"></span>
                                 </div> 
+                            </li>
+                        </ul>
+                        
+                    </div>
+                
+                    <div class="g-half">
+                        <ul>
+                            <li class="lot--field" rv-show="prebid.lot.comeswith">
+                                <label>Comes With</label>
+                                <p rv-text="prebid.lot.comeswith"></p>
+                            </li>
+                            <li class="lot--field" rv-show="prebid.lot.catnotes">
+                                <label>Catalog Notes</label>
+                                <p rv-text="prebid.lot.catnotes"></p>
                             </li>
                         </ul>
                         <ul class="bordered-area">
@@ -614,23 +624,6 @@
                                 <button class="button_negative" rv-on-click="prebidController.delete" rv-show="prebid.bidActive">Cancel Bid</button>
                                 <button class="button h-float-right" rv-on-click="prebidController.bid">Place Bid</button>
                             </li>
-                        </ul>
-                    </div>
-                
-                    <div class="g-half">
-                        <ul>
-                            
-                             <li class="lot--field" rv-show="prebid.lot.comeswith">
-                                <label>Comes With</label>
-                                <p rv-text="prebid.lot.comeswith"></p>
-                            </li>
-                            <li class="lot--field" rv-show="prebid.lot.catnotes">
-                                <label>Catalog Notes</label>
-                                <p rv-text="prebid.lot.catnotes"></p>
-                            </li>
-
-
-                           
                         </ul>
                     </div>
                 </div>

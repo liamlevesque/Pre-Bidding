@@ -17,7 +17,7 @@ function createPrebidPopup(el){
 		theme: 'ritchie-tooltips-footed',
 		interactive: true,
 		trigger: "click",
-		position: 'top',
+		position: 'bottom',
 		functionBefore: function(origin, continueTooltip){
 			continueTooltip();
 			loadPreBidTooltip(index);

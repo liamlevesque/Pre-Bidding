@@ -71,18 +71,19 @@
 }
 
 
+
 .ritchie-tooltips-footed{ 
 
 	max-width: 800px;
 
 	.tooltipster-content{
 		padding: 0;
-
-
+		
 		.tooltip-content{
 			padding: $default-margin $default-margin;
 			font-size: 0.9rem;
 		    line-height: 1.4rem;
+		    overflow: hidden;
 		}
 	}
 
@@ -94,8 +95,24 @@
 	}
 }
 
+	.tooltip--left{
+		width: 40%;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.tooltip--right{
+		width: 58%;
+		display: inline-block;
+		float: right;
+		vertical-align: top;
+	}
+
 	.tooltip--footer{
 		padding: $default-margin $default-margin 0;
 		overflow: hidden;
 		background: $grey-100;
+		width: 100%;
+	    font-size: 0.9rem;
+	    line-height: 1.4rem;
 	}
