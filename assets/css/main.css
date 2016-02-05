@@ -2770,9 +2770,6 @@ header {
   .lot[data-group="1"] ~ .lot[data-group="1"] .col-0:before {
     border-radius: 0;
     top: 0; }
-  .lot[data-group="1"] ~ .lot[data-group="0"] .col-0:before {
-    border-radius: 0 0 10px 10px;
-    top: 0; }
 
 .lot--photo {
   width: 100%;
