@@ -10,7 +10,7 @@ $(function(){
 function createPrebidPopup(el){
 	var index = $(el).data('lot');
 
-	$(el).parent().addClass('s-active-prebid');
+	$(el).addClass('s-active-prebid');
 
 	$(el).tooltipster({
 		content: $($('.js--prebid-toggle--content').html()),
