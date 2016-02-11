@@ -42,7 +42,7 @@ var counterbidderData = {
 
 		onMessageClick: function(e, model){
 			firebaseMsg.update({
-				message = "This is the auctioneer's message - how do you like me now";
+				message : "This is the auctioneer's message - how do you like me now"
 			})
 		}
 
