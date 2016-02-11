@@ -125,6 +125,15 @@ function submitBid(bid){
 	
 }
 
+var firebaseMsg = new Firebase("https://sizzling-inferno-6912.firebaseio.com/message");
+
+firebaseMsg.on("value", function(snapshot) {
+
+	var message = snapshot.val();
+	user.message = message.message;
+});
+
+
 var firebaseLot = new Firebase("https://sizzling-inferno-6912.firebaseio.com/lot");
 
 function submitLotChange(newlot){
