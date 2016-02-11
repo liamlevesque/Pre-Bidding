@@ -1827,6 +1827,10 @@ var counterbidderData = {
 			};
 			//console.log(newBid);
 			submitBid(newBid);
+		},
+
+		onMessageClick: function(e, model){
+			user.message = "This is the auctioneer's message - how do you like me now";
 		}
 
 	}

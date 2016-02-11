@@ -308,6 +308,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/js\/data\/8709802_2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 324346,
+		"inputAbbreviatedPath": "\/assets\/js\/data\/8709802_2.jpg",
+		"outputAbbreviatedPath": "\/assets\/js\/data\/8709802_2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/js\/data\/8709802_3.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 383750,
+		"inputAbbreviatedPath": "\/assets\/js\/data\/8709802_3.jpg",
+		"outputAbbreviatedPath": "\/assets\/js\/data\/8709802_3.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/js\/data\/8720400_1.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
