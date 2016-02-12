@@ -22,6 +22,7 @@ var user = {
 
 		onDismissMSGClick: function(e, model){
 			model.user.message = "";
+			clearMessage();
 		},
 
 		generateMessage: function(msg){
@@ -133,6 +134,11 @@ firebaseMsg.on("value", function(snapshot) {
 	user.message = message.message;
 });
 
+function clearMessage(){
+	firebaseMsg.update({
+		message : ""
+	})
+}
 
 var firebaseLot = new Firebase("https://sizzling-inferno-6912.firebaseio.com/lot");
 
