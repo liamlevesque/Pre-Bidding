@@ -354,38 +354,7 @@ label, .label, %label{
 	GENERAL LAYOUT
 *******************/
 
-	[class^="col"]{
-		display: table-cell;
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-		height: 100%;
-		
-	}
 
-	.col{
-		&-0{
-			width: 3%;
-		}
-		&-1{
-			width: 4%;
-		}
-		&-1and2{
-			width: 56%;
-		}
-		&-2{
-			width: 48%;
-		}
-		&-3{
-			width: 8%;
-		}
-		&-4{
-			width: 8%;
-		}
-		&-5{
-			width: 8%;
-		}
-	}
 
 	//BOTTOM APPLY FOR FINANCING SECTION - MATCH WIDTH OF LAST TWO COLUMNS IN THE TABLE ABOVE
 	.g-custom-35{

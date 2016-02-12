@@ -80,6 +80,39 @@
 			@include tableLayout;
 		}
 
+			[class^="col"]{
+				display: table-cell;
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				height: 100%;
+				
+			}
+
+			.col{
+				&-0{
+					width: 3%;
+				}
+				&-1{
+					width: 4%;
+				}
+				&-1and2{
+					width: 64%;
+				}
+				&-2{
+					width: 56%;
+				}
+				&-3{
+					display: none; //HIDING WARRANTY
+				}
+				&-4{
+					width: 8%;
+				}
+				&-5{
+					width: 8%;
+				}
+			}
+
 			.lot{
 				display: table-row;
 				font-size: 0.85rem;

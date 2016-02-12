@@ -14,8 +14,8 @@ var counterbidderData = {
 				highBid: saleItem.highBid + 500,
 				sold: false
 			};
-			console.log(newBid);
-			submitBid(newBid);
+
+			dataController.submitCounterBid(newBid);
 		},
 
 		onLotClick: function(e, model){
@@ -24,7 +24,7 @@ var counterbidderData = {
 				source: user.bidder
 			}
 
-			submitLotChange(newlot);
+			dataController.submitLotChange(newlot);
 		},
 
 		onSellClick: function(e, model){
@@ -36,8 +36,8 @@ var counterbidderData = {
 				highBid: saleItem.highBid,
 				sold: true
 			};
-			//console.log(newBid);
-			submitBid(newBid);
+
+			dataController.submitCounterBid(newBid);
 		},
 
 		onMessageClick: function(e, model){

@@ -32,15 +32,8 @@ function notifyOutbid(){
 *********************************/
 
 function initializeLot(index){
-	lotTable.currentLot = index + 1;
-    
-    lotInfo.currentLot = index; 
-
-    saleItem.currentLot = index;
-
-    controller.initSaleItem();
+	controller.initSaleItem();
 }
-
 
 
 var saleItem = {
@@ -59,7 +52,13 @@ var saleItem = {
 	},
 
 	controller = {
-		initSaleItem: function(){
+		initSaleItem: function(index){
+			lotTable.currentLot = index + 1;
+    
+		    lotInfo.currentLot = index; 
+
+		    saleItem.currentLot = index;
+
 			var currentItem = lotTable.lotList[lotTable.currentLot-1],
 				currentGroup = currentItem.group;
 			
@@ -71,16 +70,7 @@ var saleItem = {
 			saleItem.bidstatus = 'disabled';
 			saleItem.prebid = 0;
 
-			var newBid = {
-				source: user.bidder,
-				lot: saleItem.currentLot,
-				price: saleItem.price,
-				bidder: saleItem.bidder,
-				highBid: saleItem.highBid,
-				sold: false
-			};
-			console.log('poop');
-			submitBid(newBid);
+			dataController.submitBid(false);
 
 			//IF THIS IS PART OF A BIDDING GROUP AND WE'VE NOT INITIALIZED THIS GROUP, INITALIZE THAT
 			if(currentGroup > 0 && group.groupnumber != currentGroup){
@@ -103,7 +93,7 @@ var saleItem = {
 				saleItem.highBid = saleItem.price;
 				saleItem.price += 500;
 
-				controller.emitBid();
+				dataController.submitBid(false);
 			}
 		},
 
@@ -171,28 +161,12 @@ var saleItem = {
 			saleItem.highBid = saleItem.price;
 			saleItem.price += 500;
 
-			controller.emitBid();
+			dataController.submitBid(false);
 
 			controller.updatePrice();
 	    },
 
-	    emitBid: function(){
-	    	//intercom.emit('newbid', {
-			
-			var newBid = {
-				source: user.bidder,
-				lot: saleItem.currentLot,
-				price: saleItem.price,
-				bidder: saleItem.bidder,
-				highBid: saleItem.highBid,
-				sold: false
-			};
-			//});
-
-			submitBid(newBid);
-	    },
-
-	    onOutBid: function(e, model){
+	   onOutBid: function(e, model){
 	    	outBid();
 	    },
 
@@ -202,19 +176,53 @@ var saleItem = {
 	    },
 
 	    onSellClick: function(){
-	    	//intercom.emit('sold', {});
-	    	var newBid = {
-	    		source: user.bidder,
-	    		lot: saleItem.currentLot,
-				price: saleItem.price,
-				bidder: saleItem.bidder,
-				highBid: saleItem.highBid,
-				sold: true
-			};
-			
-			submitBid(newBid);
+	    	dataController.submitBid(true);
 	    	//IF YOU WON THE LOT, SHOW THE RIGHT MESSAGE
 	    	controller.sellItem();
+
+	    },
+
+	    incomingBid: function(snapshot){
+	    	var bid = snapshot.val();
+	    	
+	    	//IF YOU'RE INTO OPEN OFFERS RETURN
+	    		if(group.isOpenOffers) return;
+
+			//IF THIS LOT SOLD
+				if(bid.sold){
+					if(bid.source === user.bidder) return;
+					controller.sellItem();
+					return;
+				}
+
+			//IF A BID COMES IN, BUT I HAVE A HIGHER PRE-BID
+				if(saleItem.prebid >= bid.price && bid.bidder != user.bidder){ 
+					//UPDATE THE ITEM WITH THE HIGH BID SUBMITTED BY THE OTHER BIDDER
+					saleItem.highBid = bid.highBid;
+					saleItem.price = bid.price;
+					
+					//THEN PLACE MY COUNTER BID AUTOMATICALLY
+					controller.placeBid();
+					return;
+				}
+
+			//OTHERWISE!!
+				//IF I WAS THE HIGH BIDDER AND THE NEW BIDDER ISN'T ME, SHOW OUTBID NOTIFICATION
+				if(saleItem.bidder === user.bidder && bid.bidder != user.bidder) outBid();
+
+				//IF I'M BIDDING AND I'M IN ANOTHER STATE (WAITING, ETC), SWITCH TO ACTIVE
+			    if(saleItem.bidstatus != 'disabled' && user.bidder != bid.bidder) saleItem.bidstatus = 'active';
+				
+				//SET THE BIDDER TO THE NEW BID VALUES
+				saleItem.bidder = bid.bidder;
+				saleItem.highBid = bid.highBid;
+				saleItem.price = bid.price;
+
+				controller.updatePrice();
+
+				//COUNTER BIDDER
+				counterbidderData.price = bid.price;
+
 	    },
 
 	    sellItem: function(){
@@ -223,43 +231,8 @@ var saleItem = {
 	    	saleItem.bidstatus = (youwin)? 'soldYou': 'soldOther';
 
 	    	//IF WE WERE IN OPEN OFFERS
-			if(saleItem.isgroup && saleItem.openOffersList.length > 0){
-	    		var allSold = true;
-
-	    		//SET SOLD PRICE FOR LOTS PURCHASED AND ADD TO CART
-	    		for(var i =0; i < saleItem.openOffersList.length; i++){ 
-	    			var soldLot = findLot(lotTable.lotList,saleItem.openOffersList[i]);
-	    			
-	    			lotTable.lotList[soldLot].soldPrice = saleItem.highBid;
-	    			headerController.addToCart(lotTable.lotList[soldLot]);
-	    		}
-
-	    		headerController.alertWon(saleItem.openOffersList);
-				
-				//SET ALL LOTS IN GROUP TO INACTIVE
-				for(var j = 0; j < group.lotList.length; j++){ 
-					group.lotList[j].isActive = false;
-					if(group.lotList[j].soldPrice === 0) allSold = false;
-				}
-	    		
-	    		//RESET THE OPEN OFFERS LIST
-	    		saleItem.openOffersList = [];
-
-	    		//MOVE ON TO THE NEXT LOT AFTER 2 SECONDS
-	    		if(allSold){
-		    		setTimeout(function(){
-						initializeLot(group.lotList[group.lotList.length-1].lot);
-						$('.js--open-offer').removeClass('s-visible');
-					},5000);
-				}
-				//OR RESUME OPEN OFFER IF NOT ALL SOLD
-				else{
-					setTimeout(function(){
-						groupController.activateOpenOffers();
-
-					},2000);
-				}
-
+			if(saleItem.isgroup && saleItem.openOffersList.length > 0){	    		
+	    		controller.sellOpenOffers();
 	    	}
  
 	    	//IF THIS LOT WAS PART OF A GROUP
@@ -291,10 +264,48 @@ var saleItem = {
 
 				setTimeout(function(){
 					//MOVE ON TO THE NEXT LOT AFTER 2 SECONDS
-					initializeLot(lotTable.currentLot);
+					controller.initSaleItem(lotTable.currentLot);
 				},5000);
 			}
 			
+	    },
+
+	    sellOpenOffers: function(){
+	    	var allSold = true;//CHECKING IF ALL ARE SOLD
+
+    		//SET SOLD PRICE FOR LOTS PURCHASED AND ADD TO CART
+    		for(var i =0; i < saleItem.openOffersList.length; i++){ 
+    			var soldLot = findLot(lotTable.lotList,saleItem.openOffersList[i]);
+    			
+    			lotTable.lotList[soldLot].soldPrice = saleItem.highBid;
+    			headerController.addToCart(lotTable.lotList[soldLot]);
+    		}
+
+    		headerController.alertWon(saleItem.openOffersList);
+			
+			//SET ALL LOTS IN GROUP TO INACTIVE
+			for(var j = 0; j < group.lotList.length; j++){ 
+				group.lotList[j].isActive = false;
+				if(group.lotList[j].soldPrice === 0) allSold = false;
+			}
+    		
+    		//RESET THE OPEN OFFERS LIST
+    		saleItem.openOffersList = [];
+
+    		//MOVE ON TO THE NEXT LOT AFTER 2 SECONDS
+    		if(allSold){
+	    		setTimeout(function(){
+					controller.initSaleItem(group.lotList[group.lotList.length-1].lot);
+					$('.js--open-offer').removeClass('s-visible');
+				},5000);
+			}
+			//OR RESUME OPEN OFFER IF NOT ALL SOLD
+			else{
+				setTimeout(function(){
+					groupController.activateOpenOffers();
+
+				},2000);
+			}
 	    }
 
 	};

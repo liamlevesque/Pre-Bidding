@@ -117,7 +117,7 @@ function buildLotsTable(data){
     lotTable.biddingCount = bids.length;
     lotTable.watchingCount = watching.length;
 
-    initializeLot(0);
+    controller.initSaleItem(0);
 	
 }
 

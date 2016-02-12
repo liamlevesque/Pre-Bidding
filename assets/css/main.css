@@ -527,28 +527,6 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 /*******************
 	GENERAL LAYOUT
 *******************/
-[class^="col"] {
-  display: table-cell;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  height: 100%; }
-
-.col-0 {
-  width: 3%; }
-.col-1 {
-  width: 4%; }
-.col-1and2 {
-  width: 56%; }
-.col-2 {
-  width: 48%; }
-.col-3 {
-  width: 8%; }
-.col-4 {
-  width: 8%; }
-.col-5 {
-  width: 8%; }
-
 .g-custom-35 {
   display: table-cell;
   vertical-align: top;
@@ -2672,6 +2650,28 @@ header {
   display: table;
   width: 100%;
   table-layout: fixed; }
+
+[class^="col"] {
+  display: table-cell;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%; }
+
+.col-0 {
+  width: 3%; }
+.col-1 {
+  width: 4%; }
+.col-1and2 {
+  width: 64%; }
+.col-2 {
+  width: 56%; }
+.col-3 {
+  display: none; }
+.col-4 {
+  width: 8%; }
+.col-5 {
+  width: 8%; }
 
 .lot {
   display: table-row;
