@@ -6,6 +6,23 @@ $(function(){
 
 	dataController.submitLotChange({lot: 0,source: user.bidder});
 
+	
+	$('.js--settings').tooltipster({
+		content: $($('.js--settings-content').html()),
+		theme: 'ritchie-tooltips',
+		interactive: true,
+		trigger: "click",
+		position: 'bottom-left',
+		functionBefore: function(origin, continueTooltip){
+			continueTooltip();
+			settings.load();
+		},
+		functionAfter: function(origin){
+			settings.unload();
+		}
+	});
+	
+ 
 });
 
 var user = {
@@ -16,7 +33,7 @@ var user = {
 		message: '',
 		audio: true,
 		photos: true,
-		cart: [],
+		cart: [], 
 	},
 	headerController = {
 
@@ -107,5 +124,20 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+
+
+
+var settings = {
+	load: function(){
+		settingsModal = rivets.bind($('.js--settings-object'),{
+			user: user,
+			headerController: headerController
+		});
+	},
+
+	unload: function(){
+		settingsModal.unbind();
+	}
+}
 
 

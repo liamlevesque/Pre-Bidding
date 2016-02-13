@@ -34,16 +34,6 @@
             </div>
         </div>
         <div class="header--right">
-            <div class="header--section h-ta-right">
-                <label class="toggle_icon toggle_icon_header">
-                    <input type="checkbox" rv-checked="user.audio">
-                    <span rv-text="user.audio | booltotext 'Audio'"></span><i class="icon-audio"></i>
-                </label>
-                <label class="toggle_icon toggle_icon_header">
-                    <input type="checkbox" rv-checked="user.photos">
-                    <span rv-text="user.photos | booltotext 'Photos'"></span><i class="icon-Photos"></i>
-                </label>
-            </div>
             <div class="header--section">
                 <div class="header--full-height">
                     <div class="h-va-center">
@@ -73,13 +63,13 @@
                 </div>
             </div>
             <div class="header--section">
-                <button class="button--unbound">
+                <button class="button--unbound h-icon--large">
                     <i class="icon-help"></i>
                     <!-- <label>HELP</label> -->
                 </button> 
                 <br/>
-                <button class="button--unbound">
-                    <i class="icon-close"></i>
+                <button class="button--unbound js--settings h-icon--large">
+                    <i class="icon-settings"></i>
                    <!--  <label>EXIT</label> -->
                 </button>
             </div>
@@ -455,6 +445,23 @@
     </div>
 
     <div class="tooltips--content-placeholder">
+
+        <div class="js--settings-content">
+            <ul class="js--settings-object">
+                <li class="bid-field">
+                    <label class="toggle_icon toggle_icon_header">
+                        <input type="checkbox" rv-checked="user.audio">
+                        <span rv-text="user.audio | booltotext 'Audio'"></span><i class="icon-audio"></i> 
+                    </label>
+                </li>
+                <li class="bid-field">
+                    <label class="toggle_icon toggle_icon_header">
+                        <input type="checkbox" rv-checked="user.photos">
+                        <span rv-text="user.photos | booltotext 'Photos'"></span><i class="icon-Photos"></i>
+                    </label>
+                </li>
+            </ul>
+        </div>
 
         <div class="js--confirmation-content">
             <div class="header--confirmation js-confirm-object">

@@ -4574,25 +4574,25 @@
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/assets\/js\/_group-bidding.js",
+			"linkedFileAbbreviatedPath": "\/assets\/js\/_lot-table.js",
 			"position": 12,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/assets\/js\/_ccy-converter.js",
+			"linkedFileAbbreviatedPath": "\/assets\/js\/_group-bidding.js",
 			"position": 13,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/assets\/js\/_finance-calculator.js",
+			"linkedFileAbbreviatedPath": "\/assets\/js\/_ccy-converter.js",
 			"position": 14,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/assets\/js\/_lot-table.js",
+			"linkedFileAbbreviatedPath": "\/assets\/js\/_finance-calculator.js",
 			"position": 15,
 			"type": 1
 			},

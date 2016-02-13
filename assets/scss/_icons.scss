@@ -36,6 +36,10 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+
+.icon-settings:before {
+    content: "\e917";
+}
 .icon-check-inner:before {
     content: "\e915";
 }

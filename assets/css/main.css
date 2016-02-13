@@ -99,6 +99,9 @@ GRID
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-settings:before {
+  content: "\e917"; }
+
 .icon-check-inner:before {
   content: "\e915"; }
 
@@ -3647,6 +3650,9 @@ body.s-no-financing.s-no-purchases .no-finance--hide {
 
 .h-ws-nowrap {
   white-space: nowrap; }
+
+.h-icon--large {
+  font-size: 25px; }
 
 /*******************
 	COLOUR OVERRIDES
