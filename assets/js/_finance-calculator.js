@@ -83,6 +83,11 @@ var	finance = {
 		
 		onToggleClick: function(e, model){
 	    	//model.finance.active = !model.finance.active;
+	    },
+
+	    onCloseClick: function(e, model){
+	    	$('.js--calc-financing').tooltipster('hide');
+	    	unloadCalculator();
 	    }
 
 	};

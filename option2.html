@@ -30,16 +30,6 @@
             </div>
         </div>
         <div class="header--right">
-            <div class="header--section h-ta-right">
-                <label class="toggle_icon toggle_icon_header">
-                    <input type="checkbox" rv-checked="user.audio">
-                    <span rv-text="user.audio | booltotext 'Audio'"></span><i class="icon-audio"></i>
-                </label>
-                <label class="toggle_icon toggle_icon_header">
-                    <input type="checkbox" rv-checked="user.photos">
-                    <span rv-text="user.photos | booltotext 'Photos'"></span><i class="icon-Photos"></i>
-                </label>
-            </div>
             <div class="header--section">
                 <div class="header--full-height">
                     <div class="h-va-center">
@@ -69,13 +59,13 @@
                 </div>
             </div>
             <div class="header--section">
-                <button class="button--unbound">
+                <button class="button--unbound h-icon--large">
                     <i class="icon-help"></i>
                     <!-- <label>HELP</label> -->
                 </button> 
                 <br/>
-                <button class="button--unbound">
-                    <i class="icon-close"></i>
+                <button class="button--unbound js--settings h-icon--large">
+                    <i class="icon-settings"></i>
                    <!--  <label>EXIT</label> -->
                 </button>
             </div>
@@ -88,6 +78,7 @@
         </div>
 
         <div class="header--cart js--cart">
+            <div class="tooltip--close" rv-on-click="headerController.onCartCloseClick"><i class="icon-close"></i></div>
             <label>Lots you won (<span rv-text="user.cart | lengthtoquantity"></span>)</label>
             <hr/>
             <div class="cart--empty" rv-hide="user.cart | lengthtoquantity">
@@ -206,7 +197,7 @@
                                         </button>
                                     </div>
 
-                                    <button rv-on-click="controller.onSellClick">Sell Now</button>
+                                    <!-- <button rv-on-click="controller.onSellClick">Sell Now</button> -->
                                 </li>
                             </ul>
                             <div class="bidding">
@@ -331,7 +322,7 @@
                 </div>
             </header>
             <div class="lot-table lots_all js--lots-all"  rv-show="lotTable.allActive">
-                <div class="lot" rv-each-lot="lotTable.lotList" rv-data-lot="lot.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="lot.bidder">
+                <div class="lot" rv-each-lot="lotTable.lotList" rv-data-lot="lot.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="lot.bidder" rv-on-click="tablecontroller.onLotClick">
                     <div class="col-0" rv-text="lot.lot"></div>
                     <div class="col-1"><img class="lot--photo" rv-src="lot.photo | lotPhotoDirectory"/></div>
                     <div class="col-2">
@@ -346,14 +337,14 @@
                     <div class="col-3">
                         <i class="icon-warranty" rv-show="lot.warranty"></i>
                     </div>
-                    <div class="col-4 js--prebid-click" rv-data-lot="lot.lot">
+                    <div class="col-4" rv-data-lot="lot.lot">
                         <div rv-hide="lot.soldPrice">
-                            <button class="button_hollow" rv-hide="watched.bid">Pre-Bid</button>
+                            <button class="button_hollow" rv-hide="lot.bid">Pre-Bid</button>
                             <div class="bid dollars" rv-show="lot.bid" rv-html="lot.bid | price"></div>
                         </div>
                         <div class="dollars" rv-show="lot.soldPrice" rv-html="lot.soldPrice | price"></div>
                     </div>
-                    <div class="col-5" rv-on-click="tablecontroller.onWatchClick"  rv-data-lot="lot.lot">
+                    <div class="col-5 js--watch" rv-data-lot="lot.lot">
                         <i class="icon-eye lot--watching" rv-addClass="lot.watching"></i>
                     </div>
                 </div>
@@ -381,7 +372,7 @@
                         </div>
                         <div class="dollars" rv-show="lot.soldPrice" rv-html="lot.soldPrice | price"></div>
                     </div>
-                    <div class="col-5" rv-on-click="tablecontroller.onWatchClick" rv-data-lot="bidded.lot">
+                    <div class="col-5 js--watch" rv-data-lot="bidded.lot">
                         <i class="icon-eye lot--watching" rv-addClass="bidded.watching"></i> 
                     </div>
                 </div>
@@ -409,7 +400,7 @@
                         </div>
                         <div class="dollars" rv-show="lot.soldPrice" rv-html="lot.soldPrice | price"></div>
                     </div>
-                    <div class="col-5" rv-on-click="tablecontroller.onWatchClick" rv-data-lot="watched.lot">
+                    <div class="col-5 js--watch" rv-data-lot="watched.lot">
                         <i class="icon-eye lot--watching" rv-addClass="watched.watching"></i>
                     </div>
                 </div>
@@ -424,7 +415,51 @@
         </section>
     </div>
 
+
+    <div class="counter-bidder js--counter-bidder">
+        
+        <div class="counter--bidding">
+            <div class="h-ta-center">
+                ASK: <span class="CCY"></span><span class="dollars" rv-html="counterbidderData.price | price"></span>
+            </div>
+            <br/>
+
+            <button class="button" rv-on-click="counterbidder.onBidClick">Bid <span class="CCY"></span><span class="dollars" rv-html="counterbidderData.price | price"></button>
+            <br/><br/>
+            <button class="button_positive" rv-on-click="counterbidder.onSellClick">Sell</button>
+        </div>
+        
+        <div class="counter--lots">
+            <div class="h-ta-center"><label>Jump to Lots</label></div><br/>
+            <div class="g-third"><button class="button_hollow" rv-on-click="counterbidder.onLotClick" data-lot="0">Lot 1</button></div>
+            <div class="g-third"><button class="button_hollow" rv-on-click="counterbidder.onLotClick" data-lot="5">Lot 6</button></div>
+            <div class="g-third"><button class="button_hollow" rv-on-click="counterbidder.onLotClick" data-lot="9">Lot 10</button></div>
+        </div>
+
+        <div class="counter--bidding">
+            <button class="button_negative" rv-on-click="counterbidder.onMessageClick">Send Auctioneer's Message</button>
+        </div>
+    </div>
+
+    
     <div class="tooltips--content-placeholder">
+
+        <div class="js--settings-content">
+            <ul class="js--settings-object">
+                <li class="bid-field">
+                    <label class="toggle_icon toggle_icon_header">
+                        <input type="checkbox" rv-checked="user.audio">
+                        <span rv-text="user.audio | booltotext 'Audio'"></span><i class="icon-audio"></i> 
+                    </label>
+                </li>
+                <li class="bid-field">
+                    <label class="toggle_icon toggle_icon_header">
+                        <input type="checkbox" rv-checked="user.photos">
+                        <span rv-text="user.photos | booltotext 'Photos'"></span><i class="icon-Photos"></i>
+                    </label>
+                </li>
+            </ul>
+        </div>
 
         <div class="js--confirmation-content">
             <div class="header--confirmation js-confirm-object">
@@ -459,6 +494,7 @@
         <!-- CONVERT CURRENCY -->
         <div class="ccy-converter-control js--convert-ccy--content">
             <div class="js-ccy-object">
+                <div class="tooltip--close" rv-on-click="ccycontroller.onCloseClick"><i class="icon-close"></i></div>
                 <p>Convert prices to your preferred currency</p>
                 <hr>
                  
@@ -503,6 +539,7 @@
         <!-- CALCULATE MONTHLY PAYMENTS CONTROL -->
         <div class="js--calculate-payments--content">
             <div class="js-financing-object">
+                <div class="tooltip--close" rv-on-click="calccontroller.onCloseClick"><i class="icon-close"></i></div>
                 <p>Calculate your monthly payments</p>
                 <hr>
                 <ul>
@@ -544,29 +581,71 @@
 
         <div class="js--prebid-toggle--content">
             <div class="h-overflow js--pre-bid-object">
-                <p>Place a Pre-bid</p>
-                <hr>
-                <ul>
-                    <li class="bid-field">
-                        <label>Max Bid</label>
-                        <div class="input--money">
-                            <div class="symbols">
-                                <span class="CCY"></span> <span class="dollars"></span>
-                            </div>
-                            <input type="text" class="field--text" rv-value="prebid.bid" rv-on-keypress="prebidController.onKeyPress"/>
+                <div class="tooltip--close" rv-on-click="prebidController.onCloseClick"><i class="icon-close"></i></div>
+                <div class="tooltip-content ">
+                    <div class="tooltip--header">
+                        <span class="c-brand" >Lot <span rv-text="prebid.lot.lot"></span></span>
+                        <div class="lot--name" rv-text="prebid.lot.name"></div>
+                    </div>
+                    <div>
+                        <div class="g-half">
+                            <ul>
+                                <li>
+                                    <img class="lot--photo" rv-src="prebid.lot.photo | lotPhotoDirectory"/>
+                                </li>
+                                <li class="lot--field">
+                                    <div class="lot--field_half">
+                                        <label>Serial</label>
+                                        <span rv-text="prebid.lot.serial"></span>
+                                    </div>
+                                    <div class="lot--field_half"> 
+                                        <label>Meter</label>
+                                        <span rv-text="prebid.lot.meter"></span>
+                                    </div> 
+                                </li>
+                                <li class="lot--field">
+                                    <button class="button--unbound">
+                                        <i class="icon-dei"></i><label>View Detailed Equipment Information</label>
+                                    </button>
+                                </li>
+                            </ul>
+                            
                         </div>
-                    </li>
-                    <li class="bid-field" rv-show="prebid.conversionActive">
-                        <label>Local currency</label>
-                        <span rv-html="prebid.bid | convertedPrebid"></span>
-                    </li>
-                </ul>
-                <div class="prebid--conversion">
                     
-                </div>
-                <div class="tooltip--footer">
-                    <button class="button_negative" rv-on-click="prebidController.delete" rv-show="prebid.bidActive">Cancel Bid</button>
-                    <button class="button h-float-right" rv-on-click="prebidController.bid">Place Bid</button>
+                        <div class="g-half">
+                            <ul>
+                                
+                                <li class="lot--field" rv-show="prebid.lot.comeswith">
+                                    <label>Comes With</label>
+                                    <p rv-text="prebid.lot.comeswith"></p>
+                                </li>
+                                <li class="lot--field" rv-show="prebid.lot.catnotes">
+                                    <label>Catalog Notes</label>
+                                    <p rv-text="prebid.lot.catnotes"></p>
+                                </li>
+                            </ul>
+                            <ul class="bordered-area">
+                                 <li class="bid-field">
+                                    <label>Max Bid</label>
+                                    <div class="input--money">
+                                        <div class="symbols">
+                                            <span class="CCY"></span> <span class="dollars"></span>
+                                        </div>
+                                        <input type="number" class="field--text" rv-value="prebid.bid" rv-on-focus="prebidController.onFocus" rv-on-keypress="prebidController.onKeyPress"/>
+                                    </div>
+                                </li>
+                                <li class="bid-field" rv-show="prebid.conversionActive">
+                                    <label>Converted currency</label>
+                                    <span rv-html="prebid.bid | convertedPrebid"></span>
+                                </li>
+                            
+                                <li class="bid-field bid-field_left">
+                                    <button class="button_negative" rv-on-click="prebidController.delete" rv-show="prebid.bidActive">Cancel Bid</button>
+                                    <button class="button h-float-right" rv-on-click="prebidController.bid">Place Bid</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 
             </div>

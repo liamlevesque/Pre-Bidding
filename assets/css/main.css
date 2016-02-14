@@ -1786,7 +1786,7 @@ header {
     color: #cccccc;
     font-size: 0.9rem; }
   .bidding--activate.s-active {
-    opacity: 0.5; }
+    opacity: 0; }
   .bidding--activate:after {
     display: block;
     content: " ";
@@ -3478,6 +3478,21 @@ button.swiper-pagination-bullet {
     margin-top: 15px; }
   .ritchie-tooltips .tooltipster-content a {
     color: #1478BC; }
+
+.tooltip--close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 10px; }
+
+.tooltip--header {
+  border-bottom: 1px dotted #bdbdbd;
+  padding-bottom: 5px;
+  margin-bottom: 10px; }
+  .tooltip--header .lot--name {
+    font-size: 1rem; }
 
 .ritchie-tooltips-footed {
   max-width: 800px; }

@@ -162,6 +162,7 @@ var saleItem = {
 			saleItem.price += 500;
 
 			dataController.submitBid(false);
+			$('.js--outbid').removeClass('s-visible');
 
 			controller.updatePrice();
 	    },
@@ -227,6 +228,8 @@ var saleItem = {
 
 	    sellItem: function(){
 	    	var youwin = (saleItem.bidder === user.bidder)? true : false;
+
+	    	$('.js--outbid').removeClass('s-visible');
 
 	    	saleItem.bidstatus = (youwin)? 'soldYou': 'soldOther';
 

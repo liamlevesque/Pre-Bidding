@@ -70,6 +70,25 @@
 	}
 }
 
+	.tooltip--close{
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		font-size: 15px;
+		cursor: pointer;
+		padding: 10px;
+	}
+
+	.tooltip--header{
+		border-bottom: $ritchie-border;
+		padding-bottom: 5px;
+		margin-bottom: 10px;
+
+		.lot--name{
+			font-size: 1rem;
+		}
+	}
+
 
 
 .ritchie-tooltips-footed{ 

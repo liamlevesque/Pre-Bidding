@@ -34,7 +34,7 @@ function createPrebidPopup(el){
 }
 
 function killPrebidModal(){
-	$('.s-active-prebid').removeClass('s-active-prebid').find('.tooltipstered').tooltipster('destroy');
+	$('.s-active-prebid').removeClass('s-active-prebid').tooltipster('destroy');
 	$('body').removeClass('s-prebid-open');
 }
 
@@ -64,7 +64,7 @@ var prebidModal,
 
 			lotTable.lotList[model.prebid.index].bid = model.prebid.bid;
 			model.prebid.bidActive = (model.prebid.bid > 0) ? true : false;
-			
+
 			killPrebidModal();
 		},
 
@@ -112,7 +112,11 @@ var prebidModal,
 		        	else return true; // exit this handler for other keys
 		    }
 		    e.preventDefault();
-		}
+		},
+
+	    onCloseClick: function(e, model){
+	    	killPrebidModal();
+	    }
 	};
 
 rivets.formatters.convertedPrebid = function(value){

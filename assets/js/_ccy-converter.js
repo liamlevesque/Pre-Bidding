@@ -62,6 +62,11 @@ var ccys = {
 			data.conversion = data.rate * saleItem.price;
 			
 			finance.ccy = data.currentCCY;
+	    },
+
+	    onCloseClick: function(e, model){
+	    	$('.js--convert-ccy').tooltipster('hide');
+	    	unloadCCYConverter();
 	    }
 	};
 

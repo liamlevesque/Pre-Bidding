@@ -497,6 +497,10 @@ var user = {
 
 		onToggleCartClick: function(){
 			$('.js--cart').toggleClass('s-visible');
+		},
+
+		onCartCloseClick: function(){
+			$('.js--cart').removeClass('s-visible');
 		}
 
 	};
@@ -880,6 +884,7 @@ var saleItem = {
 			saleItem.price += 500;
 
 			dataController.submitBid(false);
+			$('.js--outbid').removeClass('s-visible');
 
 			controller.updatePrice();
 	    },
@@ -945,6 +950,8 @@ var saleItem = {
 
 	    sellItem: function(){
 	    	var youwin = (saleItem.bidder === user.bidder)? true : false;
+
+	    	$('.js--outbid').removeClass('s-visible');
 
 	    	saleItem.bidstatus = (youwin)? 'soldYou': 'soldOther';
 
@@ -1103,6 +1110,12 @@ $(function(){
 		}
 	});
 
+	$(document).on('mouseup','.js--watch',function(e){
+		e.stopPropagation();
+		var index = $(e.currentTarget).data('lot');
+		tablecontroller.watchItem(index);
+	});
+
 });
 
 var lotTable = {
@@ -1139,24 +1152,33 @@ var lotTable = {
 
 		},
 
-		onWatchClick: function(e, model){
-			var index = $(e.currentTarget).data('lot');
-			model.lotTable.lotList[index-1].watching = !model.lotTable.lotList[index-1].watching;
+		onLotClick: function(e, model){
+			// if($('body').hasClass('s-prebid-open')) return;
+			// createPrebidPopup($(e.currentTarget));
+		},
 
-			//IF WE JUST STOPPED WATCHING, ADD TO WATCHING TABLE
-			if(model.lotTable.lotList[index-1].watching){
-				model.lotTable.watchingList.push(model.lotTable.lotList[index-1]);
+		onWatchClick: function(e, model){
+			//var index = $(e.currentTarget).data('lot');
+			//watchItem(index);
+		},
+
+		watchItem: function(index){
+			lotTable.lotList[index-1].watching = !lotTable.lotList[index-1].watching;
+
+			//IF WE JUST STARTED WATCHING, ADD TO WATCHING TABLE
+			if(lotTable.lotList[index-1].watching){
+				lotTable.watchingList.push(lotTable.lotList[index-1]);
 				//SORT THE LIST
-				sortList(model.lotTable.watchingList);
+				sortList(lotTable.watchingList);
 			}
 			
 			//ELSE REMOVE FROM WATCHING TABLE
 			else{
-				model.lotTable.watchingList.splice(findLot(model.lotTable.watchingList, index),1); 
+				lotTable.watchingList.splice(findLot(lotTable.watchingList, index),1); 
 			}
 
 			//UPDATE THE COUNT AFTERWARDS
-			lotTable.watchingCount = model.lotTable.watchingList.length;
+			lotTable.watchingCount = lotTable.watchingList.length;
 
 		}
 	};
@@ -1474,6 +1496,11 @@ var ccys = {
 			data.conversion = data.rate * saleItem.price;
 			
 			finance.ccy = data.currentCCY;
+	    },
+
+	    onCloseClick: function(e, model){
+	    	$('.js--convert-ccy').tooltipster('hide');
+	    	unloadCCYConverter();
 	    }
 	};
 
@@ -1593,6 +1620,11 @@ var	finance = {
 		
 		onToggleClick: function(e, model){
 	    	//model.finance.active = !model.finance.active;
+	    },
+
+	    onCloseClick: function(e, model){
+	    	$('.js--calc-financing').tooltipster('hide');
+	    	unloadCalculator();
 	    }
 
 	};
@@ -1708,7 +1740,7 @@ function createPrebidPopup(el){
 }
 
 function killPrebidModal(){
-	$('.s-active-prebid').removeClass('s-active-prebid').find('.tooltipstered').tooltipster('destroy');
+	$('.s-active-prebid').removeClass('s-active-prebid').tooltipster('destroy');
 	$('body').removeClass('s-prebid-open');
 }
 
@@ -1738,7 +1770,7 @@ var prebidModal,
 
 			lotTable.lotList[model.prebid.index].bid = model.prebid.bid;
 			model.prebid.bidActive = (model.prebid.bid > 0) ? true : false;
-			
+
 			killPrebidModal();
 		},
 
@@ -1786,7 +1818,11 @@ var prebidModal,
 		        	else return true; // exit this handler for other keys
 		    }
 		    e.preventDefault();
-		}
+		},
+
+	    onCloseClick: function(e, model){
+	    	killPrebidModal();
+	    }
 	};
 
 rivets.formatters.convertedPrebid = function(value){

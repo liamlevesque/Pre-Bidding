@@ -66,6 +66,10 @@ var user = {
 
 		onToggleCartClick: function(){
 			$('.js--cart').toggleClass('s-visible');
+		},
+
+		onCartCloseClick: function(){
+			$('.js--cart').removeClass('s-visible');
 		}
 
 	};
