@@ -775,6 +775,14 @@ var saleItem = {
 
 	controller = {
 		initSaleItem: function(index){
+			$('.js--upper-area').clone().appendTo('.js--middle-section').addClass('s-copy');
+			setTimeout(function(){
+				$('.js--upper-area.s-copy').addClass('s-hide');
+				setTimeout(function(){
+					$('.js--upper-area.s-copy').remove();
+				},1000);
+			},10);
+
 			lotTable.currentLot = index + 1;
     
 		    lotInfo.currentLot = index; 

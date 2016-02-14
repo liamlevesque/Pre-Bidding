@@ -2483,10 +2483,20 @@ header {
   margin: 0 auto;
   position: relative;
   z-index: 2;
-  padding: 10px; }
+  padding: 10px;
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   @media (min-width: 80em) {
     .client--upper {
       height: 500px; } }
+  .client--upper.s-copy {
+    position: absolute;
+    top: 0; }
+    .client--upper.s-copy.s-hide {
+      -webkit-transform: translateX(-100%);
+          -ms-transform: translateX(-100%);
+              transform: translateX(-100%);
+      opacity: 0; }
 
 .lot-info {
   display: inline-block;

@@ -19,9 +19,20 @@
 	position: relative;
 	z-index: 2;
 	padding: 10px;
+	transition: $transition;
 
 	@include breakpoint(large){
 		height: 500px;	
+	}
+
+	&.s-copy{
+		position: absolute;
+		top: 0;
+
+		&.s-hide{
+			transform: translateX(-100%);
+			opacity: 0;
+		}
 	}
 	
 }
