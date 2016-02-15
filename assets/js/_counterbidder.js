@@ -1,6 +1,7 @@
 var counterbidderData = {
-	    currentLot: null,
-	    price: saleItem.price
+	    currentLot: 1,
+	    price: saleItem.price,
+	    highBid: saleItem.highBid
 	},
 	counterbidder = {
 		onBidClick: function(e, model){
@@ -24,6 +25,8 @@ var counterbidderData = {
 				source: user.bidder
 			}
 
+			counterbidderData.currentLot = newlot.lot + 1;
+
 			dataController.submitLotChange(newlot);
 		},
 
@@ -36,6 +39,8 @@ var counterbidderData = {
 				highBid: saleItem.highBid,
 				sold: true
 			};
+
+			counterbidderData.currentLot = newBid.lot + 1;
 
 			dataController.submitCounterBid(newBid);
 		},

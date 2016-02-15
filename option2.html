@@ -121,8 +121,8 @@
     </header>
 
     <!--BIDDING SECTION-->
-    <div class="middle-section">
-        <section class="client--upper">
+     <div class="middle-section js--middle-section">
+        <section class="client--upper js--upper-area">
             <div class="lot-info js--lot-info" rv-currentlot="lotInfo.currentLot">
                 <!-- THIS IS THE AREA THAT THE MAIN LOT PREVIEW GOES -->
             </div>
@@ -204,19 +204,23 @@
                             </ul>
                             <div class="bidding">
                                 
-                                <div class="bidding--activate js--activate-container" rv-hide="saleItem.isgroup" rv-addclass="saleItem.bidactive">
-                                    <label class="input--circle-check">
-                                        <input type="checkbox" class="js--bidding-active" rv-checked="saleItem.bidactive" rv-on-change="controller.onActivateClick"/> 
-                                        <span>Activate bidding for lot <span rv-text="saleItem.currentLot"></span></span>
-                                    </label>
+                                <div class="js--activate-container" rv-hide="saleItem.isgroup" rv-addclass="saleItem.bidactive">
+                                    <div class="bidding--activate_unlock" rv-hide="saleItem.bidactive">
+                                        <label class="input--circle-check">
+                                            <i class="icon-lock" rv-hide="saleItem.bidactive"></i>
+                                            <i class="icon-unlocked" rv-show="saleItem.bidactive"></i>
+                                            <input type="checkbox" class="js--bidding-active" rv-checked="saleItem.bidactive" rv-on-change="controller.onActivateClick"/> 
+                                            <span>Unlock bidding for lot <span rv-text="saleItem.currentLot"></span></span>
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="bidding--activate_group" rv-show="saleItem.isgroup">
+                                <div class="bidding--activate_group" rv-show="saleItem.isgroup"> 
                                     <span rv-hide="saleItem.bidactive">Choose a lot to activate bidding</span>
                                     <span rv-show="saleItem.bidactive">Bidding on lot <span rv-text="saleItem.currentLot"></span></span>
                                 </div>
 
-                                <div class="bidding--controls">
-                                    <button class="bidding--bid-button" rv-bidstate="saleItem.bidstatus" rv-on-click="controller.onBidClick" rv-hide="saleItem.prebid">
+                                <div class="bidding--controls bidding--controls_b">
+                                    <button class="bidding--bid-button_b" rv-bidstate="saleItem.bidstatus" rv-on-click="controller.onBidClick" rv-hide="saleItem.prebid">
                                         <span class="bidder--option bidder--disabled">
                                             <span class="CCY"></span><span class="dollars" rv-html="saleItem.price | price"></span>
                                         </span>
@@ -422,7 +426,7 @@
         
         <div class="counter--bidding">
             <div class="h-ta-center">
-                ASK: <span class="CCY"></span><span class="dollars" rv-html="counterbidderData.price | price"></span>
+                High Bid: <span class="CCY"></span><span class="dollars" rv-html="counterbidderData.highBid | price"></span>
             </div>
             <br/>
 
@@ -432,7 +436,11 @@
         </div>
         
         <div class="counter--lots">
-            <div class="h-ta-center"><label>Jump to Lots</label></div><br/>
+
+            <div class="h-ta-center">
+                <label>Current Lot: <span rv-text="counterbidderData.currentLot"></span></label>
+                <br/><label>Jump to Lots</label>
+            </div><br/>
             <div class="g-third"><button class="button_hollow" rv-on-click="counterbidder.onLotClick" data-lot="0">Lot 1</button></div>
             <div class="g-third"><button class="button_hollow" rv-on-click="counterbidder.onLotClick" data-lot="5">Lot 6</button></div>
             <div class="g-third"><button class="button_hollow" rv-on-click="counterbidder.onLotClick" data-lot="9">Lot 10</button></div>

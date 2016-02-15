@@ -151,6 +151,26 @@
 			}
 		}
 
+		.bidding--activate_unlock label{
+			@extend .button_positive;
+			color: $black;
+			width: 100%;
+			min-height: 100px;
+
+			text-align: center;
+			color: white;
+			font-size: 1.2rem;
+			line-height: 80px;
+
+			input{
+				display: none;
+			}
+
+			&:hover{
+				background-color: lighten($finance-color, 10%);
+			}
+		}
+
 		.bidding--activate{
 			position: relative;
 
@@ -330,6 +350,15 @@
 
 			
 		}
+
+		.bidding--controls_b .bidding--bid-button{
+			min-height: 100px;
+
+			&.s-disabled{
+				display: none;
+			}
+		}
+			
 			.pre-bid{
 				text-align: center;
 				padding: 20px 0;

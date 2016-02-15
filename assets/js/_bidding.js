@@ -231,6 +231,7 @@ var saleItem = {
 
 				//COUNTER BIDDER
 				counterbidderData.price = bid.price;
+				counterbidderData.highBid = bid.highBid;
 
 	    },
 

@@ -424,7 +424,7 @@
         
         <div class="counter--bidding">
             <div class="h-ta-center">
-                ASK: <span class="CCY"></span><span class="dollars" rv-html="counterbidderData.price | price"></span>
+                High Bid: <span class="CCY"></span><span class="dollars" rv-html="counterbidderData.highBid | price"></span>
             </div>
             <br/>
 
@@ -434,7 +434,10 @@
         </div>
         
         <div class="counter--lots">
-            <div class="h-ta-center"><label>Jump to Lots</label></div><br/>
+            <div class="h-ta-center">
+                <label>Current Lot: <span rv-text="counterbidderData.currentLot"></span></label>
+                <br/><label>Jump to Lots</label>
+            </div><br/>
             <div class="g-third"><button class="button_hollow" rv-on-click="counterbidder.onLotClick" data-lot="0">Lot 1</button></div>
             <div class="g-third"><button class="button_hollow" rv-on-click="counterbidder.onLotClick" data-lot="5">Lot 6</button></div>
             <div class="g-third"><button class="button_hollow" rv-on-click="counterbidder.onLotClick" data-lot="9">Lot 10</button></div>
