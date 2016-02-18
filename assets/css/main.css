@@ -780,9 +780,6 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 /***********************
 	FOOTER
 ************************/
-footer {
-  padding-bottom: 50px; }
-
 .disclaimers {
   font-size: 0.7rem;
   font-weight: 700;
@@ -1145,11 +1142,9 @@ footer {
   background-color: #bfc0be;
   background-image: none;
   border: 0;
-  color: #000000; }
+  color: #585858; }
   .button_secondary:hover {
-    background-color: #737471;
-    box-shadow: none;
-    color: #ffffff;
+    background-color: #d9d9d8;
     text-decoration: none; }
 
 .button_select-all {
@@ -2595,9 +2590,75 @@ header {
   .lot--field_half:last-of-type {
     text-align: right; }
 
-.lot-tables {
+.client--bottom {
+  background-color: #E9E9E9;
+  position: relative;
+  overflow: hidden; }
+  .client--bottom:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: white; }
+
+.bottom-bg {
   max-width: 1400px;
-  margin: 0 auto;
+  margin: 0 auto; }
+
+.other-rings {
+  float: right;
+  width: 38%;
+  margin-top: 65px;
+  font-size: 0.9rem;
+  line-height: 1.4rem; }
+
+.other-ring {
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+  padding: 5px 30px 5px 55px;
+  position: relative;
+  background-color: white; }
+  .other-ring img {
+    width: 100%;
+    max-width: 100%;
+    display: block; }
+  .other-ring .lot--name {
+    margin-bottom: 5px; }
+  .other-ring header {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    background-color: #E9E9E9;
+    text-align: center; }
+  .other-ring footer {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    right: 0;
+    width: 30px; }
+    .other-ring footer button {
+      font-size: 20px;
+      padding: 10px 2px;
+      margin-bottom: 8px; }
+
+.ring--lot {
+  text-align: center;
+  background-color: #E87722;
+  color: white;
+  padding: 1px; }
+
+.ring--label {
+  display: block;
+  font-size: 1.6rem; }
+
+.lot-tables {
+  width: 60%;
+  float: left;
   margin-bottom: 100px;
   font-size: 0.9rem;
   line-height: 1.4rem;
@@ -2665,11 +2726,11 @@ header {
 .col-0 {
   width: 3%; }
 .col-1 {
-  width: 4%; }
+  width: 7%; }
 .col-1and2 {
-  width: 64%; }
+  width: 61%; }
 .col-2 {
-  width: 56%; }
+  width: 53%; }
 .col-3 {
   display: none; }
 .col-4 {

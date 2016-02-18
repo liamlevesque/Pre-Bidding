@@ -85,12 +85,12 @@
 		background-color: $grey-300;
 		background-image: none;
 		border: 0;
-		color: $black;
+		color: $grey-700;
 
 		&:hover{
-			background-color: darken($grey-300,30%);
-			box-shadow: none;
-			color: $white;
+			background-color: lighten($grey-300,10%);
+			//box-shadow: none;
+			//color: $white;
 			text-decoration: none;
 		}
 	}

@@ -288,137 +288,191 @@
 
     <!--FOOTER SECTION-->
     <div class="client--bottom">
-        <!--LOT TABLE SECTION-->
-        <section class="lot-tables js-lot-tables">
-            <header class="lot-tables--header">
-                <div class="lot-tables--tab-bar">
-                    <ul class="lot-tables--tabs">
-                        <li class="tab" rv-addclass="lotTable.allActive" data-tab="all" rv-on-click="tablecontroller.changeTab" rv-show="lotTable.allCount">
-                            ALL LOTS
-                            <span class="tab--counter" rv-text="lotTable.allCount"></span>
-                        </li>
-                        
-                        <li class="tab" rv-addclass="lotTable.biddingActive" data-tab="bidding" rv-on-click="tablecontroller.changeTab" rv-show="lotTable.biddingCount">
-                            BIDDING
-                            <span class="tab--counter" rv-text="lotTable.biddingCount"></span>
-                        </li>
-                        <li class="tab" rv-addClass="lotTable.watchingActive" data-tab="watching" rv-on-click="tablecontroller.changeTab" rv-show="lotTable.watchingCount">
-                            WATCHING
-                            <span class="tab--counter" rv-text="lotTable.watchingCount"></span>
-                        </li>
-                    </ul>
-                    <div class="lot-tables--search">
-                        <input type="text" class="field--text" placeholder="search" />
+        <div class="bottom-bg">
+            <!--LOT TABLE SECTION-->
+            <section class="lot-tables js-lot-tables">
+                <header class="lot-tables--header">
+                    <div class="lot-tables--tab-bar">
+                        <ul class="lot-tables--tabs">
+                            <li class="tab" rv-addclass="lotTable.allActive" data-tab="all" rv-on-click="tablecontroller.changeTab" rv-show="lotTable.allCount">
+                                ALL LOTS
+                                <span class="tab--counter" rv-text="lotTable.allCount"></span>
+                            </li>
+                            
+                            <li class="tab" rv-addclass="lotTable.biddingActive" data-tab="bidding" rv-on-click="tablecontroller.changeTab" rv-show="lotTable.biddingCount">
+                                BIDDING
+                                <span class="tab--counter" rv-text="lotTable.biddingCount"></span>
+                            </li>
+                            <li class="tab" rv-addClass="lotTable.watchingActive" data-tab="watching" rv-on-click="tablecontroller.changeTab" rv-show="lotTable.watchingCount">
+                                WATCHING
+                                <span class="tab--counter" rv-text="lotTable.watchingCount"></span>
+                            </li>
+                        </ul>
+                        <div class="lot-tables--search">
+                            <input type="text" class="field--text" placeholder="search" />
+                        </div>
+                        <div class="lot-tables--follow">
+                            <label class="field--toggle">
+                                <input type="checkbox" class="toggle_input" rv-checked="lotTable.followCurrentLot"/>
+                                <span>Follow Current Lot</span>
+                                <div class="toggle-control"></div>
+                            </label>
+                            
+                        </div>
                     </div>
-                    <div class="lot-tables--follow">
-                        <label class="field--toggle">
-                            <input type="checkbox" class="toggle_input" rv-checked="lotTable.followCurrentLot"/>
-                            <span>Follow Current Lot</span>
-                            <div class="toggle-control"></div>
-                        </label>
-                        
+                    <div class="lot-tables--column-headers">
+                        <div class="col-0">Lot</div>
+                        <div class="col-1and2">Description</div>
+                        <div class="col-3">Warranty</div>
+                        <div class="col-4">Price / Pre-Bid</div>
+                        <div class="col-5">Watch</div>
+                    </div>
+                </header>
+                <div class="lot-table lots_all js--lots-all"  rv-show="lotTable.allActive">
+                    <div class="lot" rv-each-lot="lotTable.lotList" rv-data-lot="lot.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="lot.bidder" rv-on-click="tablecontroller.onLotClick">
+                        <div class="col-0" rv-text="lot.lot"></div>
+                        <div class="col-1"><img class="lot--photo" rv-src="lot.photo | lotPhotoDirectory"/></div>
+                        <div class="col-2">
+                            <div class="lot--name" rv-text="lot.name"></div>
+                            <div class="lot--details">
+                                <label>S/N:</label>
+                                <span class="lot--value" rv-text="lot.serial"></span>
+                                <label>METER:</label>
+                                <span class="lot--value" rv-text="lot.meter"></span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <i class="icon-warranty" rv-show="lot.warranty"></i>
+                        </div>
+                        <div class="col-4" rv-data-lot="lot.lot">
+                            <div rv-hide="lot.soldPrice">
+                                <button class="button_hollow" rv-hide="lot.bid">Pre-Bid</button>
+                                <div class="bid dollars" rv-show="lot.bid" rv-html="lot.bid | price"></div>
+                            </div>
+                            <div class="dollars" rv-show="lot.soldPrice" rv-html="lot.soldPrice | price"></div>
+                        </div>
+                        <div class="col-5 js--watch" rv-data-lot="lot.lot">
+                            <i class="icon-eye lot--watching" rv-addClass="lot.watching"></i>
+                        </div>
+                    </div>
+                </div> 
+                <div class="lot-table lots_bidding js--lots-bidding" rv-show="lotTable.biddingActive">
+                    <div class="lot" rv-each-bidded="lotTable.biddingList" rv-data-lot="bidded.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="bidded.bidder">
+                        <div class="col-0" rv-text="bidded.lot"></div>
+                        <div class="col-1"><img class="lot--photo" rv-src="bidded.photo | lotPhotoDirectory"/></div>
+                        <div class="col-2">
+                            <div class="lot--name" rv-text="bidded.name"></div>
+                            <div class="lot--details">
+                                <label>S/N:</label>
+                                <span class="lot--value" rv-text="bidded.serial"></span>
+                                <label>METER:</label>
+                                <span class="lot--value" rv-text="bidded.meter"></span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <i class="icon-warranty" rv-show="bidded.warranty"></i>
+                        </div>
+                        <div class="col-4 js--prebid-click" rv-data-lot="bidded.lot">
+                             <div rv-hide="bidded.soldPrice">
+                                <button class="button_hollow" rv-hide="watched.bid">Pre-Bid</button>
+                                <div class="bid dollars" rv-show="bidded.bid" rv-html="bidded.bid | price"></div>
+                            </div>
+                            <div class="dollars" rv-show="lot.soldPrice" rv-html="lot.soldPrice | price"></div>
+                        </div>
+                        <div class="col-5 js--watch" rv-data-lot="bidded.lot">
+                            <i class="icon-eye lot--watching" rv-addClass="bidded.watching"></i> 
+                        </div>
                     </div>
                 </div>
-                <div class="lot-tables--column-headers">
-                    <div class="col-0">Lot</div>
-                    <div class="col-1and2">Description</div>
-                    <div class="col-3">Warranty</div>
-                    <div class="col-4">Price / Pre-Bid</div>
-                    <div class="col-5">Watch</div>
-                </div>
-            </header>
-            <div class="lot-table lots_all js--lots-all"  rv-show="lotTable.allActive">
-                <div class="lot" rv-each-lot="lotTable.lotList" rv-data-lot="lot.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="lot.bidder" rv-on-click="tablecontroller.onLotClick">
-                    <div class="col-0" rv-text="lot.lot"></div>
-                    <div class="col-1"><img class="lot--photo" rv-src="lot.photo | lotPhotoDirectory"/></div>
-                    <div class="col-2">
-                        <div class="lot--name" rv-text="lot.name"></div>
-                        <div class="lot--details">
-                            <label>S/N:</label>
-                            <span class="lot--value" rv-text="lot.serial"></span>
-                            <label>METER:</label>
-                            <span class="lot--value" rv-text="lot.meter"></span>
+                <div class="lot-table lots_watching js--lots-watching" rv-show="lotTable.watchingActive">
+                    <div class="lot" rv-each-watched="lotTable.watchingList" rv-data-lot="watched.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="watched.bidder">
+                        <div class="col-0" rv-text="watched.lot"></div>
+                        <div class="col-1"><img class="lot--photo" rv-src="watched.photo | lotPhotoDirectory"/></div>
+                        <div class="col-2">
+                            <div class="lot--name" rv-text="watched.name"></div>
+                            <div class="lot--details">
+                                <label>S/N:</label>
+                                <span class="lot--value" rv-text="watched.serial"></span>
+                                <label>METER:</label>
+                                <span class="lot--value" rv-text="watched.meter"></span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-3">
-                        <i class="icon-warranty" rv-show="lot.warranty"></i>
-                    </div>
-                    <div class="col-4" rv-data-lot="lot.lot">
-                        <div rv-hide="lot.soldPrice">
-                            <button class="button_hollow" rv-hide="lot.bid">Pre-Bid</button>
-                            <div class="bid dollars" rv-show="lot.bid" rv-html="lot.bid | price"></div>
+                        <div class="col-3">
+                            <i class="icon-warranty" rv-show="watched.warranty"></i>
                         </div>
-                        <div class="dollars" rv-show="lot.soldPrice" rv-html="lot.soldPrice | price"></div>
-                    </div>
-                    <div class="col-5 js--watch" rv-data-lot="lot.lot">
-                        <i class="icon-eye lot--watching" rv-addClass="lot.watching"></i>
+                        <div class="col-4 js--prebid-click" rv-data-lot="watched.lot">
+                             <div rv-hide="watched.soldPrice">
+                                <button class="button_hollow" rv-hide="watched.bid">Pre-Bid</button>
+                                <div class="bid dollars" rv-show="watched.bid" rv-html="watched.bid | price"></div>
+                            </div>
+                            <div class="dollars" rv-show="lot.soldPrice" rv-html="lot.soldPrice | price"></div>
+                        </div>
+                        <div class="col-5 js--watch" rv-data-lot="watched.lot">
+                            <i class="icon-eye lot--watching" rv-addClass="watched.watching"></i>
+                        </div>
                     </div>
                 </div>
-            </div> 
-            <div class="lot-table lots_bidding js--lots-bidding" rv-show="lotTable.biddingActive">
-                <div class="lot" rv-each-bidded="lotTable.biddingList" rv-data-lot="bidded.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="bidded.bidder">
-                    <div class="col-0" rv-text="bidded.lot"></div>
-                    <div class="col-1"><img class="lot--photo" rv-src="bidded.photo | lotPhotoDirectory"/></div>
-                    <div class="col-2">
-                        <div class="lot--name" rv-text="bidded.name"></div>
-                        <div class="lot--details">
-                            <label>S/N:</label>
-                            <span class="lot--value" rv-text="bidded.serial"></span>
-                            <label>METER:</label>
-                            <span class="lot--value" rv-text="bidded.meter"></span>
+            </section>
+            <!--OTHER RINGS SECTION-->
+            <section class="other-rings">
+                <ul class="">
+                    <li class="other-ring">
+                        <header>
+                            <label>Ring</label>
+                            <span class="ring--label">1</span>
+                        </header>
+                        <div class="g-quarter">
+                            <img src="assets/img/crane.jpg"/>
+                            <div class="ring--lot">Lot 3128</div>
                         </div>
-                    </div>
-                    <div class="col-3">
-                        <i class="icon-warranty" rv-show="bidded.warranty"></i>
-                    </div>
-                    <div class="col-4 js--prebid-click" rv-data-lot="bidded.lot">
-                         <div rv-hide="bidded.soldPrice">
-                            <button class="button_hollow" rv-hide="watched.bid">Pre-Bid</button>
-                            <div class="bid dollars" rv-show="bidded.bid" rv-html="bidded.bid | price"></div>
+                        <div class="g-three-quarters">
+                            <div class="lot--name">1995 TADANO TR280XL 28 Ton 4x4x4 Rough Terrain Crane</div>
+                            <div class="g-half">
+                                <label>Ask:</label><span class="dollars">26000</span>
+                            </div>
+                            <div class="g-half">
+                                <label>High Bid:</label><span class="dollars">25000</span>
+                                <br/>
+                                <label>High Bidder:</label><span class="dollars">On-Site</span>
+                            </div>
                         </div>
-                        <div class="dollars" rv-show="lot.soldPrice" rv-html="lot.soldPrice | price"></div>
-                    </div>
-                    <div class="col-5 js--watch" rv-data-lot="bidded.lot">
-                        <i class="icon-eye lot--watching" rv-addClass="bidded.watching"></i> 
-                    </div>
-                </div>
-            </div>
-            <div class="lot-table lots_watching js--lots-watching" rv-show="lotTable.watchingActive">
-                <div class="lot" rv-each-watched="lotTable.watchingList" rv-data-lot="watched.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="watched.bidder">
-                    <div class="col-0" rv-text="watched.lot"></div>
-                    <div class="col-1"><img class="lot--photo" rv-src="watched.photo | lotPhotoDirectory"/></div>
-                    <div class="col-2">
-                        <div class="lot--name" rv-text="watched.name"></div>
-                        <div class="lot--details">
-                            <label>S/N:</label>
-                            <span class="lot--value" rv-text="watched.serial"></span>
-                            <label>METER:</label>
-                            <span class="lot--value" rv-text="watched.meter"></span>
+                        <footer>
+                            <button class="button--unbound"><i class="icon-close"></i></button>
+                            <button class="button--unbound"><i class="icon-popout"></i></button>
+                        </footer>
+                    </li>
+                    <li class="other-ring">
+                        <header>
+                            <label>Ring</label>
+                            <span class="ring--label">2</span>
+                        </header>
+                        <div class="g-quarter">
+                            <img src="assets/img/grader.jpg"/>
+                            <div class="ring--lot">Lot 4568</div>
                         </div>
-                    </div>
-                    <div class="col-3">
-                        <i class="icon-warranty" rv-show="watched.warranty"></i>
-                    </div>
-                    <div class="col-4 js--prebid-click" rv-data-lot="watched.lot">
-                         <div rv-hide="watched.soldPrice">
-                            <button class="button_hollow" rv-hide="watched.bid">Pre-Bid</button>
-                            <div class="bid dollars" rv-show="watched.bid" rv-html="watched.bid | price"></div>
+                        <div class="g-three-quarters">
+                            <div class="lot--name">2001 CATERPILLAR 16H Motor Grader</div>
+                            <div class="g-half">
+                                <label>Ask:</label><span class="dollars">220000</span>
+                            </div>
+                            <div class="g-half">
+                                <label>High Bid:</label><span class="dollars">215000</span>
+                                <br/>
+                                <label>High Bidder:</label><span class="dollars">On-Site</span>
+                            </div>
                         </div>
-                        <div class="dollars" rv-show="lot.soldPrice" rv-html="lot.soldPrice | price"></div>
-                    </div>
-                    <div class="col-5 js--watch" rv-data-lot="watched.lot">
-                        <i class="icon-eye lot--watching" rv-addClass="watched.watching"></i>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--OTHER RINGS SECTION-->
-        <section class="other-rings">
-            <ul class="">
-                <li class="other-ring">
-                </li>
-            </ul>
-        </section>
+                        <footer>
+                            <button class="button--unbound"><i class="icon-close"></i></button>
+                            <button class="button--unbound"><i class="icon-popout"></i></button>
+                        </footer>
+                    </li>
+                    <li class="h-ta-center">
+                        <button class="button_secondary"><i class="icon-plus"></i>Add A Ring To Watch</button>
+                    </li>
+                </ul>
+
+            </section>
+        </div>
     </div>
 </div>
 

@@ -1,5 +1,96 @@
-.lot-tables{
+$ring-top-spacing: 50px;
+$ring-left-spacing: 50px;
+$ring-right-spacing: 30px;
+
+.client--bottom{
+	background-color: $grey-100;
+	position: relative;
+	overflow: hidden;
+
+	&:before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: $ring-top-spacing;
+		background-color: white;
+	}
+}
+
+.bottom-bg{
 	@include center-content;
+}
+
+.other-rings{
+	float: right;
+	width: 38%;
+	margin-top: $ring-top-spacing + $default-margin;
+	@include default-font;
+
+	
+}
+
+	.other-ring{
+		box-shadow: $ritchie-shadow;
+		margin-bottom: $default-margin;
+		padding: 5px $ring-right-spacing 5px $ring-left-spacing+5;
+		position: relative;
+		background-color: white;
+
+		img{
+			width: 100%;
+			max-width: 100%;
+			display: block;
+		}
+
+		.lot--name{
+			margin-bottom: 5px;
+		}
+
+		header{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			width: $ring-left-spacing;
+			background-color: $grey-100;
+			text-align: center;
+		}
+
+		footer{
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 0;
+			width: $ring-right-spacing;
+
+			button{
+				font-size: 20px;
+				padding: 10px 2px;
+				margin-bottom: 8px;
+			}
+		}
+	}
+
+	.ring--lot{
+		text-align: center;
+		background-color: $brand-color;
+		color: white;
+		padding: 1px;
+	}
+
+	.ring--label{
+		display: block;
+		font-size: 1.6rem;
+	}
+
+	
+
+.lot-tables{
+	width: 60%;
+	float: left;
+	//@include center-content;
 	margin-bottom: 100px;
 	@include default-font;
 
@@ -94,13 +185,13 @@
 					width: 3%;
 				}
 				&-1{
-					width: 4%;
+					width: 7%;
 				}
 				&-1and2{
-					width: 64%;
+					width: 61%;
 				}
 				&-2{
-					width: 56%;
+					width: 53%;
 				}
 				&-3{
 					display: none; //HIDING WARRANTY

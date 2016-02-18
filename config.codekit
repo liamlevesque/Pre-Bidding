@@ -55,6 +55,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/img\/crane.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 16939,
+		"inputAbbreviatedPath": "\/assets\/img\/crane.jpg",
+		"outputAbbreviatedPath": "\/assets\/img\/crane.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/img\/download.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -73,6 +84,17 @@
 		"initialSize": 7264,
 		"inputAbbreviatedPath": "\/assets\/img\/empty.png",
 		"outputAbbreviatedPath": "\/assets\/img\/empty.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/img\/grader.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 20699,
+		"inputAbbreviatedPath": "\/assets\/img\/grader.jpg",
+		"outputAbbreviatedPath": "\/assets\/img\/grader.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
