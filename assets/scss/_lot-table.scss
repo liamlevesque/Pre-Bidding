@@ -28,7 +28,7 @@ $ring-right-spacing: 30px;
 	margin-top: $ring-top-spacing + $default-margin;
 	@include default-font;
 
-	
+
 }
 
 	.other-ring{
@@ -168,6 +168,7 @@ $ring-right-spacing: 30px;
 
 		
 		.lot-table{
+			background-color: white;
 			@include tableLayout;
 		}
 
