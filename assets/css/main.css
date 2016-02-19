@@ -2729,7 +2729,8 @@ header {
 .col-1 {
   width: 7%; }
 .col-1and2 {
-  width: 61%; }
+  width: 61%;
+  text-align: center; }
 .col-2 {
   width: 53%; }
 .col-3 {
