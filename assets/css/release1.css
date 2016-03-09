@@ -983,6 +983,9 @@ label, .label, .lot-tables--column-headers {
 .CCY:before {
   font-size: 0.8em; }
 
+/************************
+MOST IMPORTANT - LOT TABLE STYLES
+*************************/
 .client--bottom {
   position: relative;
   overflow: hidden; }
