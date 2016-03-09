@@ -1,0 +1,282 @@
+$ring-top-spacing: 50px;
+$ring-left-spacing: 50px;
+$ring-right-spacing: 30px;
+
+.client--bottom{
+	position: relative;
+	overflow: hidden;
+}
+
+.bottom-bg{
+	@include center-content;
+}
+
+.lot-tables{
+	margin-bottom: 100px;
+	@include default-font;
+	box-shadow: $ritchie-shadow;
+}
+
+	.lot-tables--header{
+		background-color: $grey-100;
+		padding: 0;
+		position: relative;
+		padding: 10px 0;
+		z-index: 1000;
+			
+		&:after{
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -$shadow-height;
+			height: $shadow-height - 1;
+			
+			background-image: radial-gradient(ellipse farthest-side at center top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+			opacity: 0;
+			transition: opacity 0.5s linear; 
+		}
+	}
+
+		.lot-tables--column-headers{
+			@extend %label;
+			width: 100%;
+			padding: 0 $default-margin;
+			display: table;
+   			position: relative;
+
+   			.col-0{
+				text-align: right;
+				padding-right: $default-margin;
+				text-align: center;
+			}
+		}
+		
+		.lot-table{
+			background-color: white;
+			z-index: 1;
+			@include tableLayout;
+		}
+
+			[class^="col"]{
+				display: table-cell;
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				height: 100%;
+				
+			}
+
+			.col{
+				&-0{
+					width: 5%;
+				}
+				&2a{
+					width: 40%;
+					text-align: center;
+				}
+				&-2b{
+					width: 15%;
+				}
+				&-2c{
+					width: 10%;
+				}
+				&-2d{
+					width: 5%;
+				}
+				&-5{
+					width: 10%;
+				}
+				&-5b{
+					width: 10%;
+				}
+			}
+
+			.col-2d, .col-5, .col-5b{
+				text-align: center;
+			}
+
+			.lot{
+				display: table-row;
+				font-size: 0.85rem;
+				transition: $transition;
+				
+				[class^="col"]{
+					border-bottom: $ritchie-border;
+					position: relative;
+					padding: 10px 0;
+				}
+
+				.col-0{
+					text-align: right;
+					padding-right: $default-margin;
+				}
+
+				.col-2a{
+					padding:0  10px;
+					@include ellipsize;
+				}
+
+				.col-5b{
+					padding: 0;
+					line-height: 1;
+					vertical-align: top;
+					padding-top: 5px;
+				}
+
+
+				/**************
+				STATES FOR LOTS
+				***************/
+
+				&.s-sold{
+					opacity: 0.7;
+
+					.col-5{
+						pointer-events: none;
+					}
+
+					.icon-plus, button{
+						display: none;
+					}
+
+					&.s-youwon{
+						background-color: rgba($finance-color,0.2);
+						
+						.col-5b label{
+							color: $finance-color;
+						}
+
+					}
+
+				}
+
+				&.s-outofauction{
+					background-color: rgba($error-colour,0.1);
+					[class^="col"]{
+						text-decoration: line-through;
+						opacity: 0.5;
+					}
+
+					.icon-plus, button{
+						display: none;
+					}
+
+					.col-5b{
+						padding-top: 15px;
+
+						label{
+							color: $error-colour;
+						}
+					}
+				}
+
+
+				&.s-currentLot{
+					background-color: rgba($money-color,0.1);
+	
+					.col-0{
+						color: white;
+						font-weight: 700;
+						position: relative;
+						background-color: $money-color;
+					}
+
+					.col-5{
+						pointer-events: none;
+						.bid{ text-decoration: none; }
+					}
+
+					.icon-plus, button{
+						display: none;
+					}
+
+				}
+
+
+
+				&.s-grouped:not(.s-currentLot){
+					.col-0{
+						position: relative;
+						z-index: 1;
+					}
+
+					.col-0:before{
+						content: " ";
+						position: absolute;
+						top: 2px;
+						left: 2px;
+						right: 0;
+						bottom: 0;
+						border-radius: 15px 0 0 0;
+						background-color: $grey-100;
+						z-index: -1;
+					}
+
+					&.s-grouped_last .col-0:before{
+						top: 0;
+						bottom: 2px;
+						border-radius: 0 0 0 15px !important;
+					}
+				}
+
+				&.s-grouped ~ &.s-grouped{
+					.col-0:before{
+						border-radius: 0;
+						top: 0;
+					}
+				}
+
+			}
+				.lot--photo-icon{
+					width: 18px;
+					vertical-align: middle;
+				}
+
+				.icon-warranty{
+					color: $brand-color;
+				}
+ 
+				.lot--photo{
+					width: 100%;
+					max-width: 100%;
+					display: block;
+					margin: 2px 0;
+				}
+
+				.lot--name{
+					font-weight: 700;					
+				}
+
+				.lot--details{
+					margin-top: 3px;
+
+					.lot--value{
+						margin-right: 10px;
+					}
+				}
+
+				.lot--watching{
+					opacity: 0.25;
+					cursor: pointer;
+
+					&:hover{
+						color: $money-color;
+						opacity: 0.8;
+					}
+
+					&.s-active{
+						color: $money-color;
+						opacity: 1;
+					}
+				}
+
+
+
+	.prebid--conversion{
+		color: $grey-500;
+		line-height: 1;
+	}
+
+
+

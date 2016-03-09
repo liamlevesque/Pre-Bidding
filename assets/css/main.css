@@ -2817,7 +2817,7 @@ header {
       .lot.s-currentLot .col-4 .bid {
         text-decoration: none; }
       .lot.s-currentLot .col-4:before {
-        content: "Bidding Now";
+        content: "Selling Now";
         font-size: 0.7rem;
         text-transform: uppercase;
         color: #20579E; }
