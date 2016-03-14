@@ -195,7 +195,7 @@ $ring-right-spacing: 30px;
 								display: block;
 								position: absolute;
 								top: 0;
-								bottom: 0;
+								bottom: -1px;
 								right: 0;
 								width: 10px;
 								background-color: white;
@@ -210,9 +210,10 @@ $ring-right-spacing: 30px;
 								display: block;
 								position: absolute;
 								top: 0;
-								bottom: 0;
+								bottom: -1px;
 								right: 0;
 								width: 10px;
+								border-bottom: $ritchie-border;
 							}
 						}
 					}
