@@ -148,7 +148,7 @@ $ring-right-spacing: 30px;
 					&.s-youwon{
 						background-color: rgba($finance-color,0.2);
 						
-						.col-5b label{
+						.lot--sold-label{
 							color: $finance-color;
 						}
 
@@ -168,12 +168,13 @@ $ring-right-spacing: 30px;
 					}
 
 					.col-5b{
-						padding-top: 15px;
-
-						label{
-							color: $error-colour;
-						}
+						vertical-align: middle;
 					}
+
+					.lot--sold-label{
+						color: $error-colour;
+					}
+					
 				}
 
 
@@ -187,9 +188,46 @@ $ring-right-spacing: 30px;
 						background-color: $money-color;
 					}
 
+					&:not(.s-grouped){
+						.col-0{
+							&:before{
+								content: '';
+								display: block;
+								position: absolute;
+								top: 0;
+								bottom: 0;
+								right: 0;
+								width: 10px;
+								background-color: white;
+							}
+
+							&:after{
+								content: '';
+								background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 20" preserveAspectRatio="none"><polygon fill="%2320579E" points="0,0 10,10 0,20"/></svg>');
+								background-size: 10px 100%;
+								background-repeat: no-repeat;
+								background-color: rgba($money-color,0.1);
+								display: block;
+								position: absolute;
+								top: 0;
+								bottom: 0;
+								right: 0;
+								width: 10px;
+							}
+						}
+					}
+
 					.col-5{
 						pointer-events: none;
 						.bid{ text-decoration: none; }
+					}
+
+					.col-5b{
+						vertical-align: middle;
+					}
+
+					&:not(.s-sold) .lot--sold-label{
+						color: $money-color;
 					}
 
 					.icon-plus, button{
@@ -250,7 +288,11 @@ $ring-right-spacing: 30px;
 				}
 
 				.lot--name{
-					font-weight: 700;					
+					font-weight: 700;
+
+					&:hover{
+						color: $money-color;
+					}
 				}
 
 				.lot--details{

@@ -1092,7 +1092,7 @@ MOST IMPORTANT - LOT TABLE STYLES
       display: none; }
     .lot.s-sold.s-youwon {
       background-color: rgba(36, 83, 43, 0.2); }
-      .lot.s-sold.s-youwon .col-5b label {
+      .lot.s-sold.s-youwon .lot--sold-label {
         color: #24532B; }
   .lot.s-outofauction {
     background-color: rgba(196, 72, 58, 0.1); }
@@ -1102,9 +1102,9 @@ MOST IMPORTANT - LOT TABLE STYLES
     .lot.s-outofauction .icon-plus, .lot.s-outofauction button {
       display: none; }
     .lot.s-outofauction .col-5b {
-      padding-top: 15px; }
-      .lot.s-outofauction .col-5b label {
-        color: #c4483a; }
+      vertical-align: middle; }
+    .lot.s-outofauction .lot--sold-label {
+      color: #c4483a; }
   .lot.s-currentLot {
     background-color: rgba(32, 87, 158, 0.1); }
     .lot.s-currentLot .col-0 {
@@ -1112,10 +1112,35 @@ MOST IMPORTANT - LOT TABLE STYLES
       font-weight: 700;
       position: relative;
       background-color: #20579E; }
+    .lot.s-currentLot:not(.s-grouped) .col-0:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 10px;
+      background-color: white; }
+    .lot.s-currentLot:not(.s-grouped) .col-0:after {
+      content: '';
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 20" preserveAspectRatio="none"><polygon fill="%2320579E" points="0,0 10,10 0,20"/></svg>');
+      background-size: 10px 100%;
+      background-repeat: no-repeat;
+      background-color: rgba(32, 87, 158, 0.1);
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 10px; }
     .lot.s-currentLot .col-5 {
       pointer-events: none; }
       .lot.s-currentLot .col-5 .bid {
         text-decoration: none; }
+    .lot.s-currentLot .col-5b {
+      vertical-align: middle; }
+    .lot.s-currentLot:not(.s-sold) .lot--sold-label {
+      color: #20579E; }
     .lot.s-currentLot .icon-plus, .lot.s-currentLot button {
       display: none; }
   .lot.s-grouped:not(.s-currentLot) .col-0 {
@@ -1154,6 +1179,8 @@ MOST IMPORTANT - LOT TABLE STYLES
 
 .lot--name {
   font-weight: 700; }
+  .lot--name:hover {
+    color: #20579E; }
 
 .lot--details {
   margin-top: 3px; }

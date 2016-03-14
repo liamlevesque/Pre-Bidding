@@ -49,6 +49,12 @@ $default-text-size: 0.9rem;
   text-overflow: ellipsis;
 }
 
+@mixin vert-align{
+  top: 50%;
+  position: relative;
+  transform: translateY(-50%);
+}
+
 //MEASUREMENTS
 
 $default-border-radius: 5px;
