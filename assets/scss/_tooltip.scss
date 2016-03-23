@@ -33,7 +33,7 @@
 	}
 }
 
-.ritchie-tooltips, .ritchie-tooltips-footed {
+.ritchie-tooltips, .ritchie-tooltips-footed, .ritchie-tooltips_full {
 	border-radius: 0; 
 	border: 1px solid $black;
 	box-shadow: $ritchie-shadow;
@@ -43,7 +43,7 @@
 }
 
 /* Use this next selector to style things like font-size and line-height: */
-.ritchie-tooltips .tooltipster-content {
+.ritchie-tooltips .tooltipster-content, .ritchie-tooltips_full .tooltipster-content{
 	font-size: 1rem;
 	padding: $default-margin/2 $default-margin;
 	overflow: visible;
@@ -89,6 +89,40 @@
 		}
 	}
 
+.ritchie-tooltips_full{
+	border: none;
+	max-width: 350px;
+	
+	.tooltip--close{
+		top: 0;
+		right: 0;
+	}
+
+	.tooltipster-content{
+		padding: 0;
+	} 
+
+	.tooltip--body{
+		@include default-font;
+		padding: 5px;
+	}
+
+	.tooltip--footer{
+		padding: 5px;
+	}
+
+	.tooltip--photo{
+		max-width: 100%;
+		display: block;
+	}
+
+	.tooltip--lot-details{
+		display: flex;
+		flex-wrap: wrap;
+		flex: 4;
+		padding: 0 10px
+	}
+}
 
 
 .ritchie-tooltips-footed{ 

@@ -155,7 +155,7 @@
 	font-size: 1rem;
 	cursor: pointer;
 
-	label{
+	label:not(.narrow){
 		margin: 0 15px;
 		vertical-align: top;
 		color: inherit;
@@ -200,7 +200,7 @@
 
 	
 
-.field--toggle{
+.field--toggle, .field--toggle_icon{
 
     cursor: pointer;
     position: relative;
@@ -250,6 +250,43 @@
    
   }
   
+}
+
+.field--toggle_icon{
+	position: relative;
+	font-size: 15px;
+	padding: 5px;
+
+	i{
+		&:after{
+			content: '';
+			display: block;
+			position: absolute;
+			height: 2px;
+			background-color: $grey-500;
+			top: 40%;
+			left: 0;
+			width: 100%;
+			transform: rotate(-45deg);
+		}
+
+		&:hover{
+			color: lighten($finance-color,10%);
+
+			&:after{
+				background-color: lighten($finance-color,10%);
+			}
+		}
+	}
+
+	input:checked ~ i{
+		color: $finance-color;
+
+		&:after{
+			width: 0;
+		}
+	}
+
 }
 
 

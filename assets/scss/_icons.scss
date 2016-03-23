@@ -36,6 +36,15 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-trash:before {
+    content: "\e91e";
+}
+.icon-ccy:before {
+    content: "\e91a";
+}
+.icon-calculator:before {
+    content: "\e91b";
+}
 .icon-unlocked:before {
     content: "\e918";
 }

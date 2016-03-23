@@ -1,0 +1,297 @@
+header{
+	@include center-content;
+
+	padding: 5px 0;
+	position: relative;
+	z-index: 10;
+
+
+	.home-link{
+		font-size: 0.8rem;
+		
+		img{
+			height: 8px;
+		}
+	}
+}
+
+	.logo{
+		display: inline-block;
+		width: 200px;
+    	height: 46px;
+    	margin: 10px 0 20px;
+
+    	@include breakpoint(med-lg-max){
+    		width: 46px; 
+
+    		.logo-hide-small{
+    			display: none;
+    		}
+    	}
+	}
+
+	.header--left{
+		padding-left: 5px;		
+	}
+
+	.header--right{
+		position: absolute;
+		right: 0;
+		top: 5px;
+	}
+
+	.header--right_inner{
+		float: right;
+		display: table-row;
+	}
+
+	.header--upper{
+		background-color: $grey-100;
+		border-radius: 5px;
+		padding: 7px 10px 2px;
+		margin-top: -10px;
+		margin-bottom: 4px;
+	}
+
+	.header--section{
+		border-right: 1px solid $border-color;
+		padding: 0 $default-margin;
+		display: table-cell;
+		vertical-align: top;
+
+		&:last-child{
+			border-right: none;
+			padding-right: 0;
+		}
+	}
+
+		.header--full-height{
+			height: 100%;
+		    position: relative;
+		    vertical-align: top;
+		    display: inline-block;
+		}
+
+	.cart-icon{
+		display: inline-block;
+		position: relative;
+		margin-left: 15px;
+		vertical-align: top;
+		cursor: pointer;
+		height: 100%;
+
+		&:hover{
+			.cart-count{
+				transform: rotate(0) translate(2px, -3px);
+			}
+		}
+
+		i{
+			position: relative;
+			top: 11px;
+			font-size: 1.8rem;
+			z-index: 2;
+		}
+
+		.cart-count{
+			position: absolute;
+			display: block;
+			top: 0;
+
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+
+			transition: $transition;
+			
+			background-color: $brand-color;
+			transform: rotate(15deg) translateX(4px);
+			color: white;
+			font-size: 0.8rem;
+		}
+	}
+
+	.auction-ccy{
+		&:before{
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 7px;
+			width: 20px;
+			height: 10px;
+			background-repeat: no-repeat;
+			background-size: 100% auto;
+			background-image: url(../img/ccy-flags.png);
+		}
+
+		&:after{
+			font-weight: 700;
+			font-size: 0.8rem;
+			color: $grey-700;
+		}
+	}
+
+	.header--price{
+		label{
+			display: inline-block; 
+			width: 120px;
+			text-align: right;
+		}
+	}
+
+		.header--price-readout{
+			@extend .label;
+			color: inherit;
+			font-size: 0.9rem;
+			margin-left: $default-margin/2;
+		}
+
+	.auctioneers-message{
+		position: absolute;
+		bottom: -25px;
+		left: 0;
+		right: 0;
+		border-radius: 5px;
+		background-color: $grey-700;
+		text-align: center;
+		padding: 5px;
+		color: white;
+		box-shadow: $ritchie-shadow;
+
+		opacity: 0;
+		pointer-events: none;
+		transform: translateY(-100%);
+		transition: $transition;
+
+		button{
+			float: right;
+			color: white;
+		}
+
+		&.s-active{
+			opacity: 1;
+			pointer-events: all;
+			transform: translateY(0);
+		}
+
+	}
+
+.header--confirmation{
+	position: absolute;
+	top: 80px;
+	right: 0;
+	background-color: white;
+	width: 350px;
+	box-shadow: $ritchie-shadow;
+
+	@include default-font;
+
+	transform: translateX(100%);
+	opacity: 0;
+
+	transition: $transition;
+
+	&.s-active{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+	.message-header{
+		padding: $default-margin;
+		background-color: $finance-color;
+		color: white;
+		font-size: 1rem;
+		font-weight: 700;
+	}
+
+	.message-body{
+		padding: $default-margin;
+	}
+
+
+
+.header--cart{
+	position: absolute;
+	top: 80px;
+	right: 0;
+	background-color: white;
+	padding: $default-margin;
+	padding-top: 5px;
+	width: 350px;
+	box-shadow: $ritchie-shadow;
+
+	@include default-font;
+	transform: translateY(-150%);
+	opacity: 0;
+
+	transition: $transition;
+
+	&.s-visible{
+		opacity: 1;
+		transform: translateY(0);
+	}
+	
+}
+
+	.cart--empty{
+		text-align: center;
+		font-size: 1rem;
+	}
+
+	.cart--items{
+		max-height: calc(100vh - 285px);
+		overflow-y: auto;
+	}
+
+	.cart--item{
+		line-height: 1rem;
+		overflow: hidden;
+		padding: 10px 0;
+
+		&:not(:last-of-type){
+			border-bottom: $ritchie-border;
+		}
+
+		.lot--number{
+			color: $brand-color;
+
+			&:before{
+				content: "Lot ";
+			}
+		}
+
+		.lot--sold-price{
+			text-align: right;
+			font-size: 1.2rem;
+		}
+	}
+
+	.cart--footer{
+		
+		background-color: white;
+		padding-top: $default-margin;
+		text-align: center;
+
+		border-top: $ritchie-border;
+	}
+
+	.cart--summary{
+		overflow: hidden;
+		text-align: right;
+
+		label{
+			float: left;
+		}
+	}
+
+	
+
+
+
+
+
+
+
+

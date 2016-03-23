@@ -44,6 +44,14 @@ function formatpriceInput(amt){
 }
 
 
+rivets.formatters.convertPrice = function(value, rate){
+	var tempVal = parseFloat(value),
+		tempRate = parseFloat(rate),
+		convertedVal = tempVal * tempRate;
+	return "roughly <span class='USD'><span class='CCY'></span><span class='dollars'>" + formatprice(convertedVal.toFixed(0)) + "</span></span>";
+}
+
+
 rivets.formatters.zeroToFalse = function(value){
 	if(value > 0) return false;
 	else return true;

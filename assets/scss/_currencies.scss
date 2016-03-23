@@ -1,17 +1,17 @@
-$ccys: 	"CAD" "$" "" "," "." true,
-		"USD" "$" "" "," "." true,
-		"SGD" "$" "" "," "." true,
-		"NZD" "$" "" "," "." true,
-		"AUD" "$" "" "," "." true,
-		"MXN" "$" "" "," "." true,
-		"ZAR" "R" "" "," "." true,
-		"PLN" "" "z\0142" " " "," true,
-		"GBP" "\00A3" "" "," "." true,
-		"EUR" "\20AC" "" " " "," true,
-		"CNY" "\00A5" "" "," "." true,
-		"JPY" "\00A5" "" "," "." false,
-		"INR" " \20B9" "" "," "." true,
-		"AED" "" "د.إ" "," "." true;
+$ccys: 	"CAD" "$" "" "," "." true 0,
+		"USD" "$" "" "," "." true 1,
+		"SGD" "$" "" "," "." true 2,
+		"NZD" "$" "" "," "." true 3,
+		"AUD" "$" "" "," "." true 4,
+		"MXN" "$" "" "," "." true 5,
+		"ZAR" "R" "" "," "." true 6,
+		"PLN" "" "z\0142" " " "," true 7,
+		"GBP" "\00A3" "" "," "." true 8,
+		"EUR" "\20AC" "" " " "," true 9,
+		"CNY" "\00A5" "" "," "." true 10,
+		"JPY" "\00A5" "" "," "." false 11,
+		"INR" " \20B9" "" "," "." true 12,
+		"AED" "" "د.إ" "," "." true 13;
 
 
 @each $ccy in $ccys{
@@ -37,6 +37,24 @@ $ccys: 	"CAD" "$" "" "," "." true,
 			content: "#{nth($ccy,1)}";
 		}
 	}
+
+	.auction-ccy:before{
+		.#{nth($ccy,1)} & {
+			background-position: 0 #{nth($ccy,7)*20px};
+		}
+	}
+
+	.auction-ccy:after{
+		.#{nth($ccy,1)} & {
+			content: "#{nth($ccy,2)} #{nth($ccy,1)}"; 
+		}
+	}
+
+	.CCY-dollars:before{
+		.#{nth($ccy,1)} & {
+			content: "#{nth($ccy,1)} #{nth($ccy,2)}";
+		}
+	}
 }
 
 
@@ -48,3 +66,4 @@ $ccys: 	"CAD" "$" "" "," "." true,
 .CCY:before{
 	font-size: 0.8em;
 }
+

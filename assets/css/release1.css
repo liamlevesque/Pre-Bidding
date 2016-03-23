@@ -99,6 +99,15 @@ GRID
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-trash:before {
+  content: "\e91e"; }
+
+.icon-ccy:before {
+  content: "\e91a"; }
+
+.icon-calculator:before {
+  content: "\e91b"; }
+
 .icon-unlocked:before {
   content: "\e918"; }
 
@@ -265,6 +274,197 @@ input[type=number]::-webkit-outer-spin-button {
     width: 160px;
     vertical-align: middle; }
 
+/**********************
+	BUTTONS
+**********************/
+.button, .button_secondary, .button_select-all, .button_hollow, .button_positive, .button_two-state, .button_negative, .button_two-state.s-negative {
+  position: relative;
+  display: inline-block;
+  padding: 8px 15px;
+  color: #000000;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 700;
+  outline: none;
+  cursor: pointer;
+  user-select: none; }
+  .button:disabled, .button_secondary:disabled, .button_select-all:disabled, .button_hollow:disabled, .button_positive:disabled, .button_two-state:disabled, .button_negative:disabled {
+    opacity: 0.4;
+    cursor: normal;
+    pointer-events: none; }
+  .button:focus, .button_secondary:focus, .button_select-all:focus, .button_hollow:focus, .button_positive:focus, .button_two-state:focus, .button_negative:focus {
+    outline: none;
+    border-color: #f2b07e; }
+
+.button {
+  transition-property: padding-left;
+  transition-duration: 0.35s;
+  transition-timing-function: cubic-bezier(0.63, 0.005, 0.365, 1);
+  background-color: #E87722;
+  background-image: linear-gradient(#FAB558, #F69731);
+  border: 1px solid #E87722; }
+  .button:hover {
+    background-color: #c35f14;
+    background-image: linear-gradient(#F58D31, #EB6D30);
+    color: #ffffff; }
+  .button.icon {
+    background-color: transparent;
+    background-image: none;
+    border: 0; }
+    .button.icon img {
+      width: 15px; }
+    .button.icon.icon_plain {
+      padding: 0 5px;
+      vertical-align: middle; }
+  .button.icon_100 img {
+    width: 10px; }
+  .button.s-success {
+    padding-left: 36px; }
+    .button.s-success:before {
+      content: " ";
+      background: url("../img/check_small.png") no-repeat 0 0;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%); }
+
+.button_secondary {
+  box-shadow: inset 1px 1px 5px 0 rgba(0, 0, 0, 0.15);
+  background-color: #bfc0be;
+  background-image: none;
+  border: 0;
+  color: #585858; }
+  .button_secondary:hover {
+    background-color: #d9d9d8;
+    text-decoration: none; }
+
+.button_select-all {
+  background-image: none;
+  background-color: #333333;
+  color: white;
+  border: 0;
+  box-shadow: none; }
+  .button_select-all:hover {
+    background-image: none;
+    background-color: #262626;
+    color: white; }
+
+.button_hollow {
+  background-image: none;
+  background-color: white;
+  color: #E87722;
+  box-shadow: none;
+  border: 1px solid #E87722;
+  font-size: 0.8rem;
+  padding: 5px; }
+  .button_hollow:hover {
+    background-image: none;
+    background-color: #E87722;
+    color: white; }
+
+.button_positive, .button_two-state {
+  background-color: #24532B;
+  background-image: none;
+  border: none;
+  color: white; }
+
+.button_negative, .button_two-state.s-negative {
+  background-color: #c4483a;
+  background-image: none;
+  border: none;
+  color: white; }
+
+.button--unbound {
+  border: 0;
+  background-color: transparent;
+  font-size: 1rem;
+  cursor: pointer; }
+  .button--unbound label:not(.narrow) {
+    margin: 0 15px;
+    vertical-align: top;
+    color: inherit;
+    cursor: pointer; }
+  .button--unbound:hover {
+    color: #20579E; }
+
+.toggle_icon {
+  color: #959595;
+  font-size: 0.8rem;
+  cursor: pointer; }
+  .toggle_icon i {
+    margin: 10px;
+    font-size: 20px;
+    vertical-align: middle; }
+  .toggle_icon span {
+    vertical-align: middle; }
+  .toggle_icon input[type=checkbox] {
+    display: none; }
+    .toggle_icon input[type=checkbox]:checked ~ * {
+      color: #20579E; }
+  .toggle_icon.toggle_icon_header {
+    padding: 8px 0;
+    display: block; }
+
+.field--toggle, .field--toggle_icon {
+  cursor: pointer;
+  position: relative; }
+  .field--toggle .toggle-control, .field--toggle_icon .toggle-control {
+    transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+    width: 30px;
+    height: 20px;
+    display: inline-block;
+    border: 2px solid #585858;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    position: relative;
+    vertical-align: middle; }
+    .field--toggle .toggle-control:after, .field--toggle_icon .toggle-control:after {
+      transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+      content: "";
+      width: 16px;
+      height: 16px;
+      display: block;
+      background-color: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0; }
+  .field--toggle span, .field--toggle_icon span {
+    margin-right: 4px;
+    vertical-align: middle; }
+  .field--toggle input, .field--toggle_icon input {
+    display: none; }
+    .field--toggle input:checked ~ .toggle-control, .field--toggle_icon input:checked ~ .toggle-control {
+      border-color: #24532B;
+      background-color: #24532B; }
+      .field--toggle input:checked ~ .toggle-control:after, .field--toggle_icon input:checked ~ .toggle-control:after {
+        left: 10px; }
+
+.field--toggle_icon {
+  position: relative;
+  font-size: 15px;
+  padding: 5px; }
+  .field--toggle_icon i:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 2px;
+    background-color: #959595;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    transform: rotate(-45deg); }
+  .field--toggle_icon i:hover {
+    color: #33773d; }
+    .field--toggle_icon i:hover:after {
+      background-color: #33773d; }
+  .field--toggle_icon input:checked ~ i {
+    color: #24532B; }
+    .field--toggle_icon input:checked ~ i:after {
+      width: 0; }
+
 /*******************
 	RESETS
 *******************/
@@ -366,7 +566,7 @@ hr {
   line-height: 0.9rem;
   text-transform: uppercase; }
 
-label, .label, .lot-tables--column-headers {
+label, .label, .button_hollow, .header--price-readout, .lot-tables--column-headers {
   font-size: 0.7rem;
   font-weight: 700;
   line-height: 0.9rem;
@@ -808,6 +1008,15 @@ label, .label, .lot-tables--column-headers {
 .CAD .CCY:before {
   content: "CAD"; }
 
+.CAD .auction-ccy:before {
+  background-position: 0 0px; }
+
+.CAD .auction-ccy:after {
+  content: "$ CAD"; }
+
+.CAD .CCY-dollars:before {
+  content: "CAD $"; }
+
 .USD .divider:before {
   content: ","; }
 
@@ -820,6 +1029,15 @@ label, .label, .lot-tables--column-headers {
 
 .USD .CCY:before {
   content: "USD"; }
+
+.USD .auction-ccy:before {
+  background-position: 0 20px; }
+
+.USD .auction-ccy:after {
+  content: "$ USD"; }
+
+.USD .CCY-dollars:before {
+  content: "USD $"; }
 
 .SGD .divider:before {
   content: ","; }
@@ -834,6 +1052,15 @@ label, .label, .lot-tables--column-headers {
 .SGD .CCY:before {
   content: "SGD"; }
 
+.SGD .auction-ccy:before {
+  background-position: 0 40px; }
+
+.SGD .auction-ccy:after {
+  content: "$ SGD"; }
+
+.SGD .CCY-dollars:before {
+  content: "SGD $"; }
+
 .NZD .divider:before {
   content: ","; }
 
@@ -846,6 +1073,15 @@ label, .label, .lot-tables--column-headers {
 
 .NZD .CCY:before {
   content: "NZD"; }
+
+.NZD .auction-ccy:before {
+  background-position: 0 60px; }
+
+.NZD .auction-ccy:after {
+  content: "$ NZD"; }
+
+.NZD .CCY-dollars:before {
+  content: "NZD $"; }
 
 .AUD .divider:before {
   content: ","; }
@@ -860,6 +1096,15 @@ label, .label, .lot-tables--column-headers {
 .AUD .CCY:before {
   content: "AUD"; }
 
+.AUD .auction-ccy:before {
+  background-position: 0 80px; }
+
+.AUD .auction-ccy:after {
+  content: "$ AUD"; }
+
+.AUD .CCY-dollars:before {
+  content: "AUD $"; }
+
 .MXN .divider:before {
   content: ","; }
 
@@ -872,6 +1117,15 @@ label, .label, .lot-tables--column-headers {
 
 .MXN .CCY:before {
   content: "MXN"; }
+
+.MXN .auction-ccy:before {
+  background-position: 0 100px; }
+
+.MXN .auction-ccy:after {
+  content: "$ MXN"; }
+
+.MXN .CCY-dollars:before {
+  content: "MXN $"; }
 
 .ZAR .divider:before {
   content: ","; }
@@ -886,6 +1140,15 @@ label, .label, .lot-tables--column-headers {
 .ZAR .CCY:before {
   content: "ZAR"; }
 
+.ZAR .auction-ccy:before {
+  background-position: 0 120px; }
+
+.ZAR .auction-ccy:after {
+  content: "R ZAR"; }
+
+.ZAR .CCY-dollars:before {
+  content: "ZAR R"; }
+
 .PLN .divider:before {
   content: " "; }
 
@@ -898,6 +1161,15 @@ label, .label, .lot-tables--column-headers {
 
 .PLN .CCY:before {
   content: "PLN"; }
+
+.PLN .auction-ccy:before {
+  background-position: 0 140px; }
+
+.PLN .auction-ccy:after {
+  content: " PLN"; }
+
+.PLN .CCY-dollars:before {
+  content: "PLN "; }
 
 .GBP .divider:before {
   content: ","; }
@@ -912,6 +1184,15 @@ label, .label, .lot-tables--column-headers {
 .GBP .CCY:before {
   content: "GBP"; }
 
+.GBP .auction-ccy:before {
+  background-position: 0 160px; }
+
+.GBP .auction-ccy:after {
+  content: "£ GBP"; }
+
+.GBP .CCY-dollars:before {
+  content: "GBP £"; }
+
 .EUR .divider:before {
   content: " "; }
 
@@ -924,6 +1205,15 @@ label, .label, .lot-tables--column-headers {
 
 .EUR .CCY:before {
   content: "EUR"; }
+
+.EUR .auction-ccy:before {
+  background-position: 0 180px; }
+
+.EUR .auction-ccy:after {
+  content: "€ EUR"; }
+
+.EUR .CCY-dollars:before {
+  content: "EUR €"; }
 
 .CNY .divider:before {
   content: ","; }
@@ -938,6 +1228,15 @@ label, .label, .lot-tables--column-headers {
 .CNY .CCY:before {
   content: "CNY"; }
 
+.CNY .auction-ccy:before {
+  background-position: 0 200px; }
+
+.CNY .auction-ccy:after {
+  content: "¥ CNY"; }
+
+.CNY .CCY-dollars:before {
+  content: "CNY ¥"; }
+
 .JPY .divider:before {
   content: ","; }
 
@@ -950,6 +1249,15 @@ label, .label, .lot-tables--column-headers {
 
 .JPY .CCY:before {
   content: "JPY"; }
+
+.JPY .auction-ccy:before {
+  background-position: 0 220px; }
+
+.JPY .auction-ccy:after {
+  content: "¥ JPY"; }
+
+.JPY .CCY-dollars:before {
+  content: "JPY ¥"; }
 
 .INR .divider:before {
   content: ","; }
@@ -964,6 +1272,15 @@ label, .label, .lot-tables--column-headers {
 .INR .CCY:before {
   content: "INR"; }
 
+.INR .auction-ccy:before {
+  background-position: 0 240px; }
+
+.INR .auction-ccy:after {
+  content: " ₹ INR"; }
+
+.INR .CCY-dollars:before {
+  content: "INR  ₹"; }
+
 .AED .divider:before {
   content: ","; }
 
@@ -977,11 +1294,230 @@ label, .label, .lot-tables--column-headers {
 .AED .CCY:before {
   content: "AED"; }
 
+.AED .auction-ccy:before {
+  background-position: 0 260px; }
+
+.AED .auction-ccy:after {
+  content: " AED"; }
+
+.AED .CCY-dollars:before {
+  content: "AED "; }
+
 .convertCCY {
   font-size: 0.8em; }
 
 .CCY:before {
   font-size: 0.8em; }
+
+header {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 5px 0;
+  position: relative;
+  z-index: 10; }
+  header .home-link {
+    font-size: 0.8rem; }
+    header .home-link img {
+      height: 8px; }
+
+.logo {
+  display: inline-block;
+  width: 200px;
+  height: 46px;
+  margin: 10px 0 20px; }
+  @media (max-width: 64em) {
+    .logo {
+      width: 46px; }
+      .logo .logo-hide-small {
+        display: none; } }
+
+.header--left {
+  padding-left: 5px; }
+
+.header--right {
+  position: absolute;
+  right: 0;
+  top: 5px; }
+
+.header--right_inner {
+  float: right;
+  display: table-row; }
+
+.header--upper {
+  background-color: #E9E9E9;
+  border-radius: 5px;
+  padding: 7px 10px 2px;
+  margin-top: -10px;
+  margin-bottom: 4px; }
+
+.header--section {
+  border-right: 1px solid #bdbdbd;
+  padding: 0 15px;
+  display: table-cell;
+  vertical-align: top; }
+  .header--section:last-child {
+    border-right: none;
+    padding-right: 0; }
+
+.header--full-height {
+  height: 100%;
+  position: relative;
+  vertical-align: top;
+  display: inline-block; }
+
+.cart-icon {
+  display: inline-block;
+  position: relative;
+  margin-left: 15px;
+  vertical-align: top;
+  cursor: pointer;
+  height: 100%; }
+  .cart-icon:hover .cart-count {
+    transform: rotate(0) translate(2px, -3px); }
+  .cart-icon i {
+    position: relative;
+    top: 11px;
+    font-size: 1.8rem;
+    z-index: 2; }
+  .cart-icon .cart-count {
+    position: absolute;
+    display: block;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+    background-color: #E87722;
+    transform: rotate(15deg) translateX(4px);
+    color: white;
+    font-size: 0.8rem; }
+
+.auction-ccy:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 7px;
+  width: 20px;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-image: url(../img/ccy-flags.png); }
+.auction-ccy:after {
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #585858; }
+
+.header--price label {
+  display: inline-block;
+  width: 120px;
+  text-align: right; }
+
+.header--price-readout {
+  color: inherit;
+  font-size: 0.9rem;
+  margin-left: 7.5px; }
+
+.auctioneers-message {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+  background-color: #585858;
+  text-align: center;
+  padding: 5px;
+  color: white;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+  .auctioneers-message button {
+    float: right;
+    color: white; }
+  .auctioneers-message.s-active {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0); }
+
+.header--confirmation {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  background-color: white;
+  width: 350px;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+  .header--confirmation.s-active {
+    transform: translateX(0);
+    opacity: 1; }
+
+.message-header {
+  padding: 15px;
+  background-color: #24532B;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700; }
+
+.message-body {
+  padding: 15px; }
+
+.header--cart {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  background-color: white;
+  padding: 15px;
+  padding-top: 5px;
+  width: 350px;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  transform: translateY(-150%);
+  opacity: 0;
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+  .header--cart.s-visible {
+    opacity: 1;
+    transform: translateY(0); }
+
+.cart--empty {
+  text-align: center;
+  font-size: 1rem; }
+
+.cart--items {
+  max-height: calc(100vh - 285px);
+  overflow-y: auto; }
+
+.cart--item {
+  line-height: 1rem;
+  overflow: hidden;
+  padding: 10px 0; }
+  .cart--item:not(:last-of-type) {
+    border-bottom: 1px dotted #bdbdbd; }
+  .cart--item .lot--number {
+    color: #E87722; }
+    .cart--item .lot--number:before {
+      content: "Lot "; }
+  .cart--item .lot--sold-price {
+    text-align: right;
+    font-size: 1.2rem; }
+
+.cart--footer {
+  background-color: white;
+  padding-top: 15px;
+  text-align: center;
+  border-top: 1px dotted #bdbdbd; }
+
+.cart--summary {
+  overflow: hidden;
+  text-align: right; }
+  .cart--summary label {
+    float: left; }
 
 /************************
 MOST IMPORTANT - LOT TABLE STYLES
@@ -1070,10 +1606,17 @@ MOST IMPORTANT - LOT TABLE STYLES
   .lot [class^="col"] {
     border-bottom: 1px dotted #bdbdbd;
     position: relative;
-    padding: 10px 0; }
+    padding: 10px 0;
+    transition-property: background-color;
+    transition-duration: 0.35s;
+    transition-timing-function: cubic-bezier(0.63, 0.005, 0.365, 1); }
   .lot .col-0 {
     text-align: right;
     padding-right: 15px; }
+    .lot .col-0:before {
+      transition-property: background-color;
+      transition-duration: 0.35s;
+      transition-timing-function: cubic-bezier(0.63, 0.005, 0.365, 1); }
   .lot .col-2a {
     padding: 0  10px;
     overflow: hidden;
@@ -1144,13 +1687,22 @@ MOST IMPORTANT - LOT TABLE STYLES
       color: #20579E; }
     .lot.s-currentLot .icon-plus, .lot.s-currentLot button {
       display: none; }
+  .lot.s-selected [class^="col"] {
+    background-color: rgba(232, 119, 34, 0.3); }
+  .lot.s-selected .lot--add-bid {
+    color: #E87722; }
   .lot.s-grouped:not(.s-currentLot) .col-0 {
     position: relative;
     z-index: 1; }
+  .lot.s-grouped:not(.s-currentLot).s-selected .col-0 {
+    background-color: white;
+    border-bottom: 1px dotted #bdbdbd; }
+    .lot.s-grouped:not(.s-currentLot).s-selected .col-0:before {
+      background-color: rgba(232, 119, 34, 0.5); }
   .lot.s-grouped:not(.s-currentLot) .col-0:before {
     content: " ";
     position: absolute;
-    top: 2px;
+    top: 1px;
     left: 2px;
     right: 0;
     bottom: 0;
@@ -1159,7 +1711,7 @@ MOST IMPORTANT - LOT TABLE STYLES
     z-index: -1; }
   .lot.s-grouped:not(.s-currentLot).s-grouped_last .col-0:before {
     top: 0;
-    bottom: 2px;
+    bottom: 1px;
     border-radius: 0 0 0 15px !important; }
   .lot.s-grouped ~ .lot.s-grouped .col-0:before {
     border-radius: 0;
@@ -1188,6 +1740,11 @@ MOST IMPORTANT - LOT TABLE STYLES
   .lot--details .lot--value {
     margin-right: 10px; }
 
+.lot--add-bid {
+  cursor: pointer; }
+  .lot--add-bid:hover {
+    color: #20579E; }
+
 .lot--watching {
   opacity: 0.25;
   cursor: pointer; }
@@ -1201,6 +1758,28 @@ MOST IMPORTANT - LOT TABLE STYLES
 .prebid--conversion {
   color: #959595;
   line-height: 1; }
+
+.flex-container_columns {
+  display: flex; }
+
+.flex-container_rows {
+  display: flex;
+  flex-direction: column; }
+
+[class^="flex-item_"] {
+  flex: 1; }
+
+.flex-item_quarter {
+  flex: 1 1 50px; }
+
+.flex-item_threequarters {
+  flex: 4; }
+
+.flex-item_full {
+  width: 100%; }
+
+.flex-item_half {
+  width: 50%; }
 
 /* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
 .tooltipster-default {
@@ -1470,7 +2049,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   top: 50%;
   transform: translateY(-50%); }
 
-.ritchie-tooltips, .ritchie-tooltips-footed {
+.ritchie-tooltips, .ritchie-tooltips-footed, .ritchie-tooltips_full {
   border-radius: 0;
   border: 1px solid #000000;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
@@ -1479,16 +2058,16 @@ MOST IMPORTANT - LOT TABLE STYLES
   max-width: 400px; }
 
 /* Use this next selector to style things like font-size and line-height: */
-.ritchie-tooltips .tooltipster-content {
+.ritchie-tooltips .tooltipster-content, .ritchie-tooltips_full .tooltipster-content {
   font-size: 1rem;
   padding: 7.5px 15px;
   overflow: visible;
   min-width: 350px; }
-  .ritchie-tooltips .tooltipster-content p {
+  .ritchie-tooltips .tooltipster-content p, .ritchie-tooltips_full .tooltipster-content p {
     margin: 0; }
-  .ritchie-tooltips .tooltipster-content p + p {
+  .ritchie-tooltips .tooltipster-content p + p, .ritchie-tooltips_full .tooltipster-content p + p {
     margin-top: 15px; }
-  .ritchie-tooltips .tooltipster-content a {
+  .ritchie-tooltips .tooltipster-content a, .ritchie-tooltips_full .tooltipster-content a {
     color: #1478BC; }
 
 .tooltip--close {
@@ -1505,6 +2084,29 @@ MOST IMPORTANT - LOT TABLE STYLES
   margin-bottom: 10px; }
   .tooltip--header .lot--name {
     font-size: 1rem; }
+
+.ritchie-tooltips_full {
+  border: none;
+  max-width: 350px; }
+  .ritchie-tooltips_full .tooltip--close {
+    top: 0;
+    right: 0; }
+  .ritchie-tooltips_full .tooltipster-content {
+    padding: 0; }
+  .ritchie-tooltips_full .tooltip--body {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+    padding: 5px; }
+  .ritchie-tooltips_full .tooltip--footer {
+    padding: 5px; }
+  .ritchie-tooltips_full .tooltip--photo {
+    max-width: 100%;
+    display: block; }
+  .ritchie-tooltips_full .tooltip--lot-details {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 4;
+    padding: 0 10px; }
 
 .ritchie-tooltips-footed {
   max-width: 800px; }
@@ -1626,6 +2228,9 @@ MOST IMPORTANT - LOT TABLE STYLES
   top: 15px;
   right: 15px;
   text-align: right; }
+
+.h-float-left {
+  float: left; }
 
 .h-float-right {
   float: right; }

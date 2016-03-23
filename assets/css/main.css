@@ -99,6 +99,15 @@ GRID
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-trash:before {
+  content: "\e91e"; }
+
+.icon-ccy:before {
+  content: "\e91a"; }
+
+.icon-calculator:before {
+  content: "\e91b"; }
+
 .icon-unlocked:before {
   content: "\e918"; }
 
@@ -1188,7 +1197,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   background-color: transparent;
   font-size: 1rem;
   cursor: pointer; }
-  .button--unbound label {
+  .button--unbound label:not(.narrow) {
     margin: 0 15px;
     vertical-align: top;
     color: inherit;
@@ -1214,10 +1223,10 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
     padding: 8px 0;
     display: block; }
 
-.field--toggle {
+.field--toggle, .field--toggle_icon {
   cursor: pointer;
   position: relative; }
-  .field--toggle .toggle-control {
+  .field--toggle .toggle-control, .field--toggle_icon .toggle-control {
     -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
     transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
     width: 30px;
@@ -1228,7 +1237,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
     border-radius: 20px;
     position: relative;
     vertical-align: middle; }
-    .field--toggle .toggle-control:after {
+    .field--toggle .toggle-control:after, .field--toggle_icon .toggle-control:after {
       -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
       transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
       content: "";
@@ -1240,16 +1249,40 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
       position: absolute;
       top: 0;
       left: 0; }
-  .field--toggle span {
+  .field--toggle span, .field--toggle_icon span {
     margin-right: 4px;
     vertical-align: middle; }
-  .field--toggle input {
+  .field--toggle input, .field--toggle_icon input {
     display: none; }
-    .field--toggle input:checked ~ .toggle-control {
+    .field--toggle input:checked ~ .toggle-control, .field--toggle_icon input:checked ~ .toggle-control {
       border-color: #24532B;
       background-color: #24532B; }
-      .field--toggle input:checked ~ .toggle-control:after {
+      .field--toggle input:checked ~ .toggle-control:after, .field--toggle_icon input:checked ~ .toggle-control:after {
         left: 10px; }
+
+.field--toggle_icon {
+  position: relative;
+  font-size: 15px;
+  padding: 5px; }
+  .field--toggle_icon i:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 2px;
+    background-color: #959595;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  .field--toggle_icon i:hover {
+    color: #33773d; }
+    .field--toggle_icon i:hover:after {
+      background-color: #33773d; }
+  .field--toggle_icon input:checked ~ i {
+    color: #24532B; }
+    .field--toggle_icon input:checked ~ i:after {
+      width: 0; }
 
 .CAD .divider:before {
   content: ","; }
@@ -1264,6 +1297,15 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .CAD .CCY:before {
   content: "CAD"; }
 
+.CAD .auction-ccy:before {
+  background-position: 0 0px; }
+
+.CAD .auction-ccy:after {
+  content: "$ CAD"; }
+
+.CAD .CCY-dollars:before {
+  content: "CAD $"; }
+
 .USD .divider:before {
   content: ","; }
 
@@ -1276,6 +1318,15 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 
 .USD .CCY:before {
   content: "USD"; }
+
+.USD .auction-ccy:before {
+  background-position: 0 20px; }
+
+.USD .auction-ccy:after {
+  content: "$ USD"; }
+
+.USD .CCY-dollars:before {
+  content: "USD $"; }
 
 .SGD .divider:before {
   content: ","; }
@@ -1290,6 +1341,15 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .SGD .CCY:before {
   content: "SGD"; }
 
+.SGD .auction-ccy:before {
+  background-position: 0 40px; }
+
+.SGD .auction-ccy:after {
+  content: "$ SGD"; }
+
+.SGD .CCY-dollars:before {
+  content: "SGD $"; }
+
 .NZD .divider:before {
   content: ","; }
 
@@ -1302,6 +1362,15 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 
 .NZD .CCY:before {
   content: "NZD"; }
+
+.NZD .auction-ccy:before {
+  background-position: 0 60px; }
+
+.NZD .auction-ccy:after {
+  content: "$ NZD"; }
+
+.NZD .CCY-dollars:before {
+  content: "NZD $"; }
 
 .AUD .divider:before {
   content: ","; }
@@ -1316,6 +1385,15 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .AUD .CCY:before {
   content: "AUD"; }
 
+.AUD .auction-ccy:before {
+  background-position: 0 80px; }
+
+.AUD .auction-ccy:after {
+  content: "$ AUD"; }
+
+.AUD .CCY-dollars:before {
+  content: "AUD $"; }
+
 .MXN .divider:before {
   content: ","; }
 
@@ -1328,6 +1406,15 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 
 .MXN .CCY:before {
   content: "MXN"; }
+
+.MXN .auction-ccy:before {
+  background-position: 0 100px; }
+
+.MXN .auction-ccy:after {
+  content: "$ MXN"; }
+
+.MXN .CCY-dollars:before {
+  content: "MXN $"; }
 
 .ZAR .divider:before {
   content: ","; }
@@ -1342,6 +1429,15 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .ZAR .CCY:before {
   content: "ZAR"; }
 
+.ZAR .auction-ccy:before {
+  background-position: 0 120px; }
+
+.ZAR .auction-ccy:after {
+  content: "R ZAR"; }
+
+.ZAR .CCY-dollars:before {
+  content: "ZAR R"; }
+
 .PLN .divider:before {
   content: " "; }
 
@@ -1354,6 +1450,15 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 
 .PLN .CCY:before {
   content: "PLN"; }
+
+.PLN .auction-ccy:before {
+  background-position: 0 140px; }
+
+.PLN .auction-ccy:after {
+  content: " PLN"; }
+
+.PLN .CCY-dollars:before {
+  content: "PLN "; }
 
 .GBP .divider:before {
   content: ","; }
@@ -1368,6 +1473,15 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .GBP .CCY:before {
   content: "GBP"; }
 
+.GBP .auction-ccy:before {
+  background-position: 0 160px; }
+
+.GBP .auction-ccy:after {
+  content: "£ GBP"; }
+
+.GBP .CCY-dollars:before {
+  content: "GBP £"; }
+
 .EUR .divider:before {
   content: " "; }
 
@@ -1380,6 +1494,15 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 
 .EUR .CCY:before {
   content: "EUR"; }
+
+.EUR .auction-ccy:before {
+  background-position: 0 180px; }
+
+.EUR .auction-ccy:after {
+  content: "€ EUR"; }
+
+.EUR .CCY-dollars:before {
+  content: "EUR €"; }
 
 .CNY .divider:before {
   content: ","; }
@@ -1394,6 +1517,15 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .CNY .CCY:before {
   content: "CNY"; }
 
+.CNY .auction-ccy:before {
+  background-position: 0 200px; }
+
+.CNY .auction-ccy:after {
+  content: "¥ CNY"; }
+
+.CNY .CCY-dollars:before {
+  content: "CNY ¥"; }
+
 .JPY .divider:before {
   content: ","; }
 
@@ -1406,6 +1538,15 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 
 .JPY .CCY:before {
   content: "JPY"; }
+
+.JPY .auction-ccy:before {
+  background-position: 0 220px; }
+
+.JPY .auction-ccy:after {
+  content: "¥ JPY"; }
+
+.JPY .CCY-dollars:before {
+  content: "JPY ¥"; }
 
 .INR .divider:before {
   content: ","; }
@@ -1420,6 +1561,15 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .INR .CCY:before {
   content: "INR"; }
 
+.INR .auction-ccy:before {
+  background-position: 0 240px; }
+
+.INR .auction-ccy:after {
+  content: " ₹ INR"; }
+
+.INR .CCY-dollars:before {
+  content: "INR  ₹"; }
+
 .AED .divider:before {
   content: ","; }
 
@@ -1432,6 +1582,15 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 
 .AED .CCY:before {
   content: "AED"; }
+
+.AED .auction-ccy:before {
+  background-position: 0 260px; }
+
+.AED .auction-ccy:after {
+  content: " AED"; }
+
+.AED .CCY-dollars:before {
+  content: "AED "; }
 
 .convertCCY {
   font-size: 0.8em; }
@@ -3507,7 +3666,7 @@ button.swiper-pagination-bullet {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%); }
 
-.ritchie-tooltips, .ritchie-tooltips-footed {
+.ritchie-tooltips, .ritchie-tooltips-footed, .ritchie-tooltips_full {
   border-radius: 0;
   border: 1px solid #000000;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
@@ -3516,16 +3675,16 @@ button.swiper-pagination-bullet {
   max-width: 400px; }
 
 /* Use this next selector to style things like font-size and line-height: */
-.ritchie-tooltips .tooltipster-content {
+.ritchie-tooltips .tooltipster-content, .ritchie-tooltips_full .tooltipster-content {
   font-size: 1rem;
   padding: 7.5px 15px;
   overflow: visible;
   min-width: 350px; }
-  .ritchie-tooltips .tooltipster-content p {
+  .ritchie-tooltips .tooltipster-content p, .ritchie-tooltips_full .tooltipster-content p {
     margin: 0; }
-  .ritchie-tooltips .tooltipster-content p + p {
+  .ritchie-tooltips .tooltipster-content p + p, .ritchie-tooltips_full .tooltipster-content p + p {
     margin-top: 15px; }
-  .ritchie-tooltips .tooltipster-content a {
+  .ritchie-tooltips .tooltipster-content a, .ritchie-tooltips_full .tooltipster-content a {
     color: #1478BC; }
 
 .tooltip--close {
@@ -3542,6 +3701,37 @@ button.swiper-pagination-bullet {
   margin-bottom: 10px; }
   .tooltip--header .lot--name {
     font-size: 1rem; }
+
+.ritchie-tooltips_full {
+  border: none;
+  max-width: 350px; }
+  .ritchie-tooltips_full .tooltip--close {
+    top: 0;
+    right: 0; }
+  .ritchie-tooltips_full .tooltipster-content {
+    padding: 0; }
+  .ritchie-tooltips_full .tooltip--body {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+    padding: 5px; }
+  .ritchie-tooltips_full .tooltip--footer {
+    padding: 5px; }
+  .ritchie-tooltips_full .tooltip--photo {
+    max-width: 100%;
+    display: block; }
+  .ritchie-tooltips_full .tooltip--lot-details {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-flex: 4;
+    -webkit-flex: 4;
+        -ms-flex: 4;
+            flex: 4;
+    padding: 0 10px; }
 
 .ritchie-tooltips-footed {
   max-width: 800px; }
@@ -3703,6 +3893,9 @@ body.s-no-financing.s-no-purchases .no-finance--hide {
   top: 15px;
   right: 15px;
   text-align: right; }
+
+.h-float-left {
+  float: left; }
 
 .h-float-right {
   float: right; }
