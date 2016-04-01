@@ -27,18 +27,17 @@ $ring-right-spacing: 30px;
 		padding: 0;
 		position: relative;
 		padding: 10px 0;
-		z-index: 1000;
 			
 		&:after{
 			content: '';
 			position: absolute;
-			left: 0;
-			right: 0;
-			bottom: -$shadow-height;
+			left: -100px;
+			right: -100px;
+			bottom: -$shadow-height + 1;
 			height: $shadow-height - 1;
 			
 			background-image: radial-gradient(ellipse farthest-side at center top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
-			opacity: 0;
+			opacity: 0.5;
 			transition: opacity 0.5s linear; 
 		}
 	}
@@ -146,7 +145,7 @@ $ring-right-spacing: 30px;
 						pointer-events: none;
 					}
 
-					.icon-plus, button{
+					.icon-plus, button, .lot--add-bid:before{
 						display: none;
 					}
 
@@ -168,7 +167,7 @@ $ring-right-spacing: 30px;
 						opacity: 0.5;
 					}
 
-					.icon-plus, button{
+					.icon-plus, button, .lot--add-bid:before{
 						display: none;
 					}
 
@@ -236,7 +235,7 @@ $ring-right-spacing: 30px;
 						color: $money-color;
 					}
 
-					.icon-plus, button{
+					.icon-plus, button, .lot--add-bid:before{
 						display: none;
 					}
 
@@ -331,6 +330,13 @@ $ring-right-spacing: 30px;
 
 				.lot--add-bid{
 					cursor: pointer;
+					font-weight: 700;
+
+					&:empty:before{
+						@include icon-font;
+						content: '\e90d';
+						text-decoration: none;
+					}
 
 					&:hover{
 						color: $money-color;

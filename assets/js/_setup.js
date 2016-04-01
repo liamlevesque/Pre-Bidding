@@ -27,7 +27,7 @@ $(function(){
 
 var user = {
 		bidder : "v7005",
-		limit: 1000000, 
+		limit: 10000, 
 		spent: 0,
 		bid: 0,
 		message: '',

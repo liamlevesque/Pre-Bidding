@@ -30,6 +30,11 @@ header{
     	}
 	}
 
+	.main-header{
+		margin-bottom: 15px;
+		z-index: 1000;
+	}
+
 	.header--left{
 		padding-left: 5px;		
 	}
@@ -218,7 +223,6 @@ header{
 	right: 0;
 	background-color: white;
 	padding: $default-margin;
-	padding-top: 5px;
 	width: 350px;
 	box-shadow: $ritchie-shadow;
 

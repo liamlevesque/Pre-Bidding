@@ -201,7 +201,7 @@ GRID
   position: relative;
   font-family: 'Trebuchet MS', Verdana, sans-serif;
   font-size: 1rem; }
-  .invalid.field--text, .invalid.field--select {
+  .invalid.field--text, .invalid.field--select, .s-error.field--text, .s-error.field--select {
     background-color: #F3BFBF; }
   .field--text:hover, .field--select:hover {
     border: 1px solid #E35530; }
@@ -1104,7 +1104,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
     pointer-events: none; }
   .button:focus, .bidding--bid-button:focus, .button_secondary:focus, .button_select-all:focus, .button_hollow:focus, .button_positive:focus, .bidding--activate_unlock label:focus, .button_two-state:focus, .button_negative:focus {
     outline: none;
-    border-color: #f2b07e; }
+    border-color: #95490f; }
 
 .button, .bidding--bid-button {
   -webkit-transition-property: padding-left;
@@ -3732,6 +3732,11 @@ button.swiper-pagination-bullet {
         -ms-flex: 4;
             flex: 4;
     padding: 0 10px; }
+  .ritchie-tooltips_full .tooltip--error {
+    background-color: #c4483a;
+    color: white; }
+    .ritchie-tooltips_full .tooltip--error h3, .ritchie-tooltips_full .tooltip--error h4, .ritchie-tooltips_full .tooltip--error h5, .ritchie-tooltips_full .tooltip--error label {
+      color: white; }
 
 .ritchie-tooltips-footed {
   max-width: 800px; }

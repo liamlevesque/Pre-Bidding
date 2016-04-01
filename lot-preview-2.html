@@ -13,7 +13,7 @@
 
 <div class="main-body-2">
 
-    <header class="js--header">
+    <header class="js--header main-header">
         <div class="header--left">
             <a href="http://rbauction.com" class="logo js--tooltip-logo" target="_blank" alt="Back to rbauction">
                 <svg version="1.1" id="rba-header-logo-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="46" viewBox="0 0 162 40.25" enable-background="new 0 0 162 40.25" xml:space="preserve">
@@ -113,42 +113,18 @@
 
         <div class="header--cart js--cart">
             <div class="tooltip--close" rv-on-click="headerController.onCartCloseClick"><i class="icon-close"></i></div>
-            <label>Lots you won (<span rv-text="user.cart | lengthtoquantity"></span>)</label>
-            <hr/>
-            <div class="cart--empty" rv-hide="user.cart | lengthtoquantity">
-                You haven't won any lots yet :(
-                <img src="assets/img/empty.png">
-
+            
+            <div class="cart--summary">
+                <label> Total Purchases</label><span class="dollars" rv-html="user.spent | price"></span>
             </div>
-            <ul class="cart--items">
-                <li class="cart--item" rv-each-cartitem="user.cart">
-                    <div class="g-quarter">
-                        <img class="lot--photo" rv-src="cartitem.photo | lotPhotoDirectory"/>
-                    </div>
-                    <div class="g-three-quarters">
-                        <div>
-                            <div class="lot--number h-d-inline-block" rv-text="cartitem.lot"></div>
-                            <div class="lot--name h-d-inline-block" rv-text="cartitem.name"></div>
-                        </div>
-                        <div class="lot--details" rv-text="cartitem.serial"></div>
-
-                        <div class="lot--sold-price dollars" rv-html="cartitem.soldPrice | price"></div>
-                    </div>
-                </li>
-            </ul>
-            <div class="cart--footer" >
-                <div class="cart--summary">
-                    <label> Total Purchases</label><span class="dollars" rv-html="user.spent | price"></span>
-                </div>
-                <div class="cart--summary">
-                    <label> Total Pre-Bids</label><span class="dollars" rv-html="user.bid | price"></span>
-                </div>
-                <div class="cart--summary">
-                    <label> Available Balance</label><span class="dollars" rv-html="user.limit | limitprice user.spent user.bid"></span>
-                </div>
-                <br/>
-                <a href="http://liamlevesque.github.io/VPP-Prototype2/" class="button_positive" target="_blank">Show Purchase Summary</a>
+            <div class="cart--summary">
+                <label> Total Max-Bids</label><span class="dollars" rv-html="user.bid | price"></span>
             </div>
+            <div class="cart--summary">
+                <label> Available Balance</label><span class="dollars" rv-html="user.limit | limitprice user.spent user.bid"></span>
+            </div>
+            <br/>
+            <a href="http://liamlevesque.github.io/VPP-Prototype2/" class="button_positive" target="_blank">Show Purchase Summary</a>
         </div>
     </header>
 
@@ -184,9 +160,7 @@
 							<img class="lot--photo-icon" src="assets/img/photo.png"/>
                         </div>
                         <div class="col-5" rv-data-lot="lot.lot">
-                            <div class="lot--add-bid js--max-bid-tooltip">
-                                <i class="icon-plus"></i>
-                            </div>
+                            <div data-bid="0" class="lot--add-bid js--max-bid-tooltip"></div>
                         </div>
                         <div class="col-5b">
                         	<label class="lot--sold-label">Sold</label>
@@ -210,9 +184,7 @@
 							<img class="lot--photo-icon" src="assets/img/photo.png"/>
                         </div>
                         <div class="col-5" rv-data-lot="lot.lot">
-                            <div class="lot--add-bid js--max-bid-tooltip">
-                                <i class="icon-plus"></i>
-                            </div>
+                            <div data-bid="0" class="lot--add-bid js--max-bid-tooltip"></div>
                         </div>
                         <div class="col-5b">
                         	<label class="lot--sold-label">Out Of Auction</label>
@@ -236,9 +208,7 @@
 							<img class="lot--photo-icon" src="assets/img/photo.png"/>
                         </div>
                         <div class="col-5" rv-data-lot="lot.lot">
-                            <div class="lot--add-bid js--max-bid-tooltip">
-                                <i class="icon-plus"></i>
-                            </div>
+                            <div data-bid="0" class="lot--add-bid js--max-bid-tooltip"></div>
                         </div>
                         <div class="col-5b">
                         	<label class="lot--sold-label">Sold To You</label>
@@ -262,9 +232,7 @@
 							<img class="lot--photo-icon" src="assets/img/photo.png"/>
                         </div>
                         <div class="col-5" rv-data-lot="lot.lot">
-                            <div class="lot--add-bid js--max-bid-tooltip">
-                                <i class="icon-plus"></i>
-                            </div>
+                            <div data-bid="0" class="lot--add-bid js--max-bid-tooltip"></div>
                         </div>
                         <div class="col-5b">
                         	<label class="lot--sold-label">Selling Now</label>
@@ -287,9 +255,7 @@
 							<img class="lot--photo-icon" src="assets/img/photo.png"/>
                         </div>
                         <div class="col-5" rv-data-lot="lot.lot">
-                            <div class="lot--add-bid js--max-bid-tooltip">
-                                <i class="icon-plus"></i>
-                            </div>
+                            <div data-bid="0" class="lot--add-bid js--max-bid-tooltip"></div>
                         </div>
                         <div class="col-5b">
                         	
@@ -312,9 +278,7 @@
 							<img class="lot--photo-icon" src="assets/img/photo.png"/>
                         </div>
                         <div class="col-5" rv-data-lot="lot.lot">
-                            <div class="lot--add-bid js--max-bid-tooltip">
-                                <i class="icon-plus"></i>
-                            </div>
+                            <div data-bid="0" class="lot--add-bid js--max-bid-tooltip"></div>
                         </div>
                         <div class="col-5b">
                         	
@@ -337,9 +301,7 @@
 							<img class="lot--photo-icon" src="assets/img/photo.png"/>
                         </div>
                         <div class="col-5" rv-data-lot="lot.lot">
-                            <div class="lot--add-bid js--max-bid-tooltip">
-                                <i class="icon-plus"></i>
-                            </div>
+                            <div data-bid="0" class="lot--add-bid js--max-bid-tooltip"></div>
                         </div>
                         <div class="col-5b">
                         	
@@ -362,9 +324,7 @@
 							<img class="lot--photo-icon" src="assets/img/photo.png"/>
                         </div>
                         <div class="col-5" rv-data-lot="lot.lot">
-                            <div class="lot--add-bid js--max-bid-tooltip">
-                                <i class="icon-plus"></i>
-                            </div>
+                            <div data-bid="0" class="lot--add-bid js--max-bid-tooltip"></div>
                         </div>
                         <div class="col-5b">
                         	
@@ -387,9 +347,7 @@
 							<img class="lot--photo-icon" src="assets/img/photo.png"/>
                         </div>
                         <div class="col-5" rv-data-lot="lot.lot">
-                            <div class="lot--add-bid js--max-bid-tooltip">
-                                <i class="icon-plus"></i>
-                            </div>
+                            <div data-bid="0" class="lot--add-bid js--max-bid-tooltip"></div>
                         </div>
                         <div class="col-5b">
                         	
@@ -412,9 +370,7 @@
 							<img class="lot--photo-icon" src="assets/img/photo.png"/>
                         </div>
                         <div class="col-5" rv-data-lot="lot.lot">
-                            <div class="lot--add-bid js--max-bid-tooltip">
-                                <i class="icon-plus"></i>
-                            </div>
+                            <div data-bid="0" class="lot--add-bid js--max-bid-tooltip"></div>
                         </div>
                         <div class="col-5b">
                         	
@@ -437,9 +393,7 @@
 							<img class="lot--photo-icon" src="assets/img/photo.png"/>
                         </div>
                         <div class="col-5" rv-data-lot="lot.lot">
-                            <div class="lot--add-bid js--max-bid-tooltip">
-                                <i class="icon-plus"></i>
-                            </div>
+                            <div data-bid="0" class="lot--add-bid js--max-bid-tooltip"></div>
                         </div>
                         <div class="col-5b">
                         	<label class="lot--sold-label">Sold</label>
@@ -463,9 +417,7 @@
 							<img class="lot--photo-icon" src="assets/img/photo.png"/>
                         </div>
                         <div class="col-5" rv-data-lot="lot.lot">
-                            <div class="lot--add-bid js--max-bid-tooltip">
-                                <i class="icon-plus"></i>
-                            </div>
+                            <div data-bid="0" class="lot--add-bid js--max-bid-tooltip"></div>
                         </div>
                         <div class="col-5b">
                         	<label class="lot--sold-label">Sold To You</label>
@@ -489,9 +441,7 @@
 							<img class="lot--photo-icon" src="assets/img/photo.png"/>
                         </div>
                         <div class="col-5" rv-data-lot="lot.lot">
-                            <div class="lot--add-bid js--max-bid-tooltip">
-                                <i class="icon-plus"></i>
-                            </div>
+                            <div data-bid="0" class="lot--add-bid js--max-bid-tooltip"></div>
                         </div>
                         <div class="col-5b">
                         	<label class="lot--sold-label">Selling Now</label>
@@ -514,9 +464,7 @@
 							<img class="lot--photo-icon" src="assets/img/photo.png"/>
                         </div>
                         <div class="col-5" rv-data-lot="lot.lot">
-                            <div class="lot--add-bid js--max-bid-tooltip">
-                                <i class="icon-plus"></i>
-                            </div>
+                            <div data-bid="0" class="lot--add-bid js--max-bid-tooltip"></div>
                         </div>
                         <div class="col-5b">
                         	<label class="lot--sold-label">Selling Now</label>
@@ -554,15 +502,34 @@
                     <div>
                         <label>Max-Bid (<span class="CCY-dollars"></span>)</label>
                     </div>
-                    <input type="text" pattern="[0-9]{2,7}" inputmode="numeric" class="field--text" rv-value="maxbidObject.maxbidAmount" rv-on-blur="maxbidController.onMaxBidBlur" rv-on-change="maxbidController.onMaxBidInput"/>
+                    <input type="tel" placeholder="enter max-bid" pattern="[0-9]{2,7}" inputmode="numeric" class="field--text js--max-bid-field" rv-value="maxbidObject.maxbidAmount" rv-on-blur="maxbidController.onMaxBidBlur" rv-on-keydown="maxbidController.onMaxBidInput"/>
                     <div class="h-ta-right qualifier">
                         <span rv-html="maxbidObject.maxbidAmount | convertPrice maxbidObject.conversion"></span>
+                    </div>
+
+                    <div class="tooltip--error js--tooltip-warning h-ta-center" rv-show="maxbidObject.maxbidAmount | greaterThanToFalse maxbidObject.remainingCredit">
+                        <h4>Uh Oh! You don't have enough credit to bid that much</h4>
+                        <div class="h-d-inline-block">
+                            <h3 class="dollars" rv-html="maxbidObject.maxbidAmount | price"></h3>
+                            <label>Total Max Bids</label>
+                        </div>
+                        <div class="h-d-inline-block">
+                            >
+                        </div>
+                        <div class="h-d-inline-block">
+                            <h3 class="dollars" rv-html="maxbidObject.remainingCredit | price"></h3>
+                            <label>Available Credit</label>
+                        </div>
                     </div>
                     
                 </div>
                 <footer class="tooltip--footer h-ta-right">
-                    <a href="" class="h-float-left"><i class="icon-trash h-mr-50"></i>Cancel Bid</a>
-                    <button class="button">
+                    <div class="h-float-left">
+                        <span rv-show="maxbidObject.maxbidAmount" rv-on-click="maxbidController.cancelMaxBid"><i class="icon-trash h-mr-50"></i>Cancel Bid</span>
+                        <span rv-hide="maxbidObject.maxbidAmount" rv-on-click="maxbidController.onCloseClick">Cancel</span>
+                    </div>
+
+                    <button class="button js--set-maxbid" rv-on-click="maxbidController.onSetClick">
                         Set Max-Bid
                     </button>
                 </footer>

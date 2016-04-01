@@ -23,7 +23,7 @@
 
 	&:focus{
 		outline: none;
-		border-color: lighten($brand-color,20%);
+		border-color: darken($brand-color,20%);
 	}
 }
 

@@ -12,7 +12,7 @@
   font-family: 'Trebuchet MS', Verdana, sans-serif;
   font-size: 1rem;
   
-  &.invalid{
+  &.invalid, &.s-error{
     background-color: $error-colour-light;
   }
 

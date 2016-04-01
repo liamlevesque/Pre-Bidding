@@ -122,6 +122,15 @@
 		flex: 4;
 		padding: 0 10px
 	}
+
+	.tooltip--error{
+		background-color: $error-colour;
+		color: white;
+
+		h3, h4, h5, label{
+			color: white;
+		}
+	}
 }
 
 

@@ -9,7 +9,7 @@ rivets.formatters.pricelist = function(value){
 }
 
 rivets.formatters.limitprice = function(value, spent, bid){
-	var val = value - (spent + bid);
+	var val = value - spent;
 
 	return formatprice(val);
 }
@@ -48,7 +48,17 @@ rivets.formatters.convertPrice = function(value, rate){
 	var tempVal = parseFloat(value),
 		tempRate = parseFloat(rate),
 		convertedVal = tempVal * tempRate;
+		convertedVal = convertedVal || 0;
 	return "roughly <span class='USD'><span class='CCY'></span><span class='dollars'>" + formatprice(convertedVal.toFixed(0)) + "</span></span>";
+}
+
+
+rivets.formatters.greaterThanToFalse = function(value,comparison){
+	if(parseInt(value) > comparison){
+		console.log('MORE');
+		return true;	
+	} 
+	else return false;
 }
 
 
