@@ -511,7 +511,7 @@
                          Your max-bids will now be greater than your available credit</h4>
                          <div class="error--values">
                               <div class="h-d-inline-block">
-                                <h3 class="dollars" rv-html="maxbidObject.maxbidAmount | price"></h3>
+                                <h3 class="dollars" rv-html="maxbidObject.totalMaxBids | totalmaxbidprice maxbidObject.maxbidAmount maxbidObject.hasMaxBid maxbidObject.initialBid"></h3>
                                 <label>Total Max Bids</label>
                             </div>
                             <div class="h-d-inline-block error--greater-than">

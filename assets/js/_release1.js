@@ -28,6 +28,8 @@ function loadMaxBidTooltip(target){
 
 			maxbidObject.totalMaxBids = user.bid;
 			maxbidObject.maxbidAmount = (target.data('bid') > 0) ? target.data('bid') : '';
+			maxbidObject.hasMaxBid = (target.data('bid') > 0) ? true : false;
+			maxbidObject.initialBid = (target.data('bid') > 0) ? target.data('bid') : 0;
 
 			financeModal = rivets.bind($('.js--max-bid-object'),{
 				maxbidObject: maxbidObject,
@@ -54,6 +56,8 @@ function unloadMaxBidTooltip(target){
 		"totalMaxBids" : user.bid,
 		"remainingCredit" : user.limit,
 		"maxbidAmount" :0,
+		"hasMaxBid": false,
+		"initialBid" : 0,
 		"conversion" : 1.53,
 		"offIncrement" : false,
 		"offIncrement_high": 0,

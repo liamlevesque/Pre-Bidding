@@ -2,6 +2,13 @@ rivets.formatters.price = function(value){
 	return formatprice(value);
 }
 
+rivets.formatters.totalmaxbidprice = function(value,bid,hasbid,initialbid){
+	if(hasbid)
+		return formatprice(value - parseInt(initialbid) + parseInt(bid));
+	else
+		return formatprice(value + parseInt(bid));
+}
+
 rivets.formatters.pricelist = function(value){
 	var val = value.length * saleItem.highBid;
 
