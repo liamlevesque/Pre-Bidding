@@ -400,7 +400,6 @@ rivets.formatters.convertPrice = function(value, rate){
 
 rivets.formatters.greaterThanToFalse = function(value,comparison){
 	if(parseInt(value) > comparison){
-		console.log('MORE');
 		return true;	
 	} 
 	else return false;
@@ -449,6 +448,11 @@ rivets.binders.addclass = function(el, value) {
 	else $(el).removeClass('s-active');
 }
 
+rivets.binders.adderrorclass = function(el, value) {
+	if(value) $(el).addClass('s-error');
+	else $(el).removeClass('s-error');
+}
+
 $(function(){
 
 	//ON LOAD ASSIGN A RANDOM BIDDER NUMBER
@@ -481,6 +485,7 @@ var user = {
 		limit: 10000, 
 		spent: 0,
 		bid: 0,
+		bidcount: 0,
 		message: '',
 		audio: true,
 		photos: true,
@@ -2027,7 +2032,11 @@ function unloadMaxBidTooltip(target){
 		"totalMaxBids" : user.bid,
 		"remainingCredit" : user.limit,
 		"maxbidAmount" :0,
-		"conversion" : 1.53
+		"conversion" : 1.53,
+		"offIncrement" : false,
+		"offIncrement_high": 0,
+		"offIncrement_low": 0,
+		"isValid": true
 	},
 	maxbidModal,
 	maxbidController = {
@@ -2040,8 +2049,21 @@ function unloadMaxBidTooltip(target){
 	    	maxbidController.createMaxBid();
 	    },
 
+	    onSetLowClick: function(e,model){
+	    	maxbidObject.maxbidAmount = maxbidObject.offIncrement_low;
+	    	maxbidController.createMaxBid();
+	    },
+
+	    onSetHighClick: function(e,model){
+	    	maxbidObject.maxbidAmount = maxbidObject.offIncrement_high;
+	    	maxbidController.createMaxBid();
+	    },
+
 	    onMaxBidInput: function(e, model){
 	    	$(e.currentTarget).removeClass('s-error');
+
+	    	//HIDE INCREMENT WARNING WHEN YOU START TO TYPE AGAIN
+	    		maxbidObject.offIncrement = false;
 
 	    	switch(e.which) {
 		    	case 9:
@@ -2087,9 +2109,19 @@ function unloadMaxBidTooltip(target){
 	    createMaxBid: function(){
 	    	if(maxbidObject.maxbidAmount > user.limit){
 	    		$('.js--max-bid-field').addClass('s-error').focus().select();
-
 	    		return;
 	    	}
+
+	    	//IF THIS IS OFF INCREMENT POLICY
+	    	if(maxbidObject.maxbidAmount % 1000 != 0){
+	    		$('.js--max-bid-field').addClass('s-error').focus().select();
+	    		maxbidObject.offIncrement = true;
+	    		maxbidObject.offIncrement_low = Math.floor(maxbidObject.maxbidAmount/1000)*1000;
+	    		maxbidObject.offIncrement_high = Math.ceil(maxbidObject.maxbidAmount/1000)*1000;
+	    		return;
+	    	}
+
+	    	maxbidObject.offIncrement = false;
 
 	    	$('.js--max-bid-tooltip.tooltipstered').data('bid',maxbidObject.maxbidAmount).html("<span class='dollars'>"+formatprice(maxbidObject.maxbidAmount)+"</span>");
 	    	maxbidController.updateBids();
@@ -2098,9 +2130,17 @@ function unloadMaxBidTooltip(target){
 
 	    updateBids: function(){
 	    	user.bid = 0;
+	    	var i = 0;
+
 	    	$('.js--max-bid-tooltip').each(function(){
-	    		user.bid += parseInt($(this).data('bid'));
+	    		var tempbid = parseInt($(this).data('bid'));
+	    		if(tempbid > 0){
+	    			user.bid += tempbid; 
+	    			i++;
+	    		}
 	    	})
+
+	    	user.bidcount = i;
 	    },
 
 	    cancelMaxBid: function(amt){
@@ -2116,7 +2156,12 @@ function unloadMaxBidTooltip(target){
 
 	};
 
-
+rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
+	if(parseInt(bids) > credit || offIncrement){
+		return true;	
+	} 
+	else return false;
+}
 
 
 

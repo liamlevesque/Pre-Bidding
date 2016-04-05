@@ -126,9 +126,30 @@
 	.tooltip--error{
 		background-color: $error-colour;
 		color: white;
+		padding: 15px;
+		line-height: 1;
 
 		h3, h4, h5, label{
 			color: white;
+		}
+
+		.error--values{
+			background-color: white;
+			color: $error-colour;
+			padding: 5px 0;
+	
+			h3, h4, h5, label{
+				color: $error-colour;
+			}
+
+			&>*{
+				vertical-align: middle;
+			}
+		}
+
+		.error--greater-than{
+			font-size: 40px;
+			padding: 0 10px;
 		}
 	}
 }

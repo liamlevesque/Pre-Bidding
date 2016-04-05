@@ -99,6 +99,9 @@ GRID
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-error-1:before {
+  content: "\e91f"; }
+
 .icon-trash:before {
   content: "\e91e"; }
 
@@ -1679,6 +1682,8 @@ header {
   display: inline-block;
   width: 65px;
   text-align: right; }
+.header--price.s-error label, .header--price.s-error span {
+  color: #c4483a; }
 
 .header--price-readout {
   color: inherit;
@@ -3734,9 +3739,22 @@ button.swiper-pagination-bullet {
     padding: 0 10px; }
   .ritchie-tooltips_full .tooltip--error {
     background-color: #c4483a;
-    color: white; }
+    color: white;
+    padding: 15px;
+    line-height: 1; }
     .ritchie-tooltips_full .tooltip--error h3, .ritchie-tooltips_full .tooltip--error h4, .ritchie-tooltips_full .tooltip--error h5, .ritchie-tooltips_full .tooltip--error label {
       color: white; }
+    .ritchie-tooltips_full .tooltip--error .error--values {
+      background-color: white;
+      color: #c4483a;
+      padding: 5px 0; }
+      .ritchie-tooltips_full .tooltip--error .error--values h3, .ritchie-tooltips_full .tooltip--error .error--values h4, .ritchie-tooltips_full .tooltip--error .error--values h5, .ritchie-tooltips_full .tooltip--error .error--values label {
+        color: #c4483a; }
+      .ritchie-tooltips_full .tooltip--error .error--values > * {
+        vertical-align: middle; }
+    .ritchie-tooltips_full .tooltip--error .error--greater-than {
+      font-size: 40px;
+      padding: 0 10px; }
 
 .ritchie-tooltips-footed {
   max-width: 800px; }

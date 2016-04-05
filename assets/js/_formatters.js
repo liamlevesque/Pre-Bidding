@@ -55,7 +55,6 @@ rivets.formatters.convertPrice = function(value, rate){
 
 rivets.formatters.greaterThanToFalse = function(value,comparison){
 	if(parseInt(value) > comparison){
-		console.log('MORE');
 		return true;	
 	} 
 	else return false;
@@ -102,4 +101,9 @@ GENERIC BINDERS USED THROUGHOUT
 rivets.binders.addclass = function(el, value) {
 	if(value) $(el).addClass('s-active');
 	else $(el).removeClass('s-active');
+}
+
+rivets.binders.adderrorclass = function(el, value) {
+	if(value) $(el).addClass('s-error');
+	else $(el).removeClass('s-error');
 }

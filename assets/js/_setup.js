@@ -30,6 +30,7 @@ var user = {
 		limit: 10000, 
 		spent: 0,
 		bid: 0,
+		bidcount: 0,
 		message: '',
 		audio: true,
 		photos: true,

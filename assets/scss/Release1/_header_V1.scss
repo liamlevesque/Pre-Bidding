@@ -143,6 +143,19 @@ header{
 			width: 120px;
 			text-align: right;
 		}
+
+		&.s-error{
+			label:before{
+				@include icon-font;
+				content: "\e91f";
+				font-size: 13px;
+				margin-right: 5px;
+			}
+
+			label, span{
+				color: $error-colour;
+			}
+		}  
 	}
 
 		.header--price-readout{

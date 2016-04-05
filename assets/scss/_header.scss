@@ -106,6 +106,12 @@ header{
 			width: 65px;
 			text-align: right;
 		}
+
+		&.s-error{
+			label, span{
+				color: $error-colour;
+			}
+		}  
 	}
 
 		.header--price-readout{
