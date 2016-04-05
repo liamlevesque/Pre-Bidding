@@ -2140,24 +2140,30 @@ MOST IMPORTANT - LOT TABLE STYLES
     flex-wrap: wrap;
     flex: 4;
     padding: 0 10px; }
-  .ritchie-tooltips_full .tooltip--error {
+  .ritchie-tooltips_full .tooltip--error, .ritchie-tooltips_full .tooltip--warning {
     background-color: #c4483a;
     color: white;
     padding: 15px;
     line-height: 1; }
-    .ritchie-tooltips_full .tooltip--error h3, .ritchie-tooltips_full .tooltip--error h4, .ritchie-tooltips_full .tooltip--error h5, .ritchie-tooltips_full .tooltip--error label {
+    .ritchie-tooltips_full .tooltip--error h3, .ritchie-tooltips_full .tooltip--error h4, .ritchie-tooltips_full .tooltip--error h5, .ritchie-tooltips_full .tooltip--error label, .ritchie-tooltips_full .tooltip--warning h3, .ritchie-tooltips_full .tooltip--warning h4, .ritchie-tooltips_full .tooltip--warning h5, .ritchie-tooltips_full .tooltip--warning label {
       color: white; }
-    .ritchie-tooltips_full .tooltip--error .error--values {
+    .ritchie-tooltips_full .tooltip--error .error--values, .ritchie-tooltips_full .tooltip--warning .error--values {
       background-color: white;
       color: #c4483a;
       padding: 5px 0; }
-      .ritchie-tooltips_full .tooltip--error .error--values h3, .ritchie-tooltips_full .tooltip--error .error--values h4, .ritchie-tooltips_full .tooltip--error .error--values h5, .ritchie-tooltips_full .tooltip--error .error--values label {
+      .ritchie-tooltips_full .tooltip--error .error--values h3, .ritchie-tooltips_full .tooltip--error .error--values h4, .ritchie-tooltips_full .tooltip--error .error--values h5, .ritchie-tooltips_full .tooltip--error .error--values label, .ritchie-tooltips_full .tooltip--warning .error--values h3, .ritchie-tooltips_full .tooltip--warning .error--values h4, .ritchie-tooltips_full .tooltip--warning .error--values h5, .ritchie-tooltips_full .tooltip--warning .error--values label {
         color: #c4483a; }
-      .ritchie-tooltips_full .tooltip--error .error--values > * {
+      .ritchie-tooltips_full .tooltip--error .error--values > *, .ritchie-tooltips_full .tooltip--warning .error--values > * {
         vertical-align: middle; }
-    .ritchie-tooltips_full .tooltip--error .error--greater-than {
+    .ritchie-tooltips_full .tooltip--error .error--greater-than, .ritchie-tooltips_full .tooltip--warning .error--greater-than {
       font-size: 40px;
       padding: 0 10px; }
+  .ritchie-tooltips_full .tooltip--warning {
+    background-color: #FFE101;
+    color: black;
+    text-align: center; }
+    .ritchie-tooltips_full .tooltip--warning h3, .ritchie-tooltips_full .tooltip--warning h4, .ritchie-tooltips_full .tooltip--warning h5, .ritchie-tooltips_full .tooltip--warning label {
+      color: black; }
 
 .ritchie-tooltips-footed {
   max-width: 800px; }

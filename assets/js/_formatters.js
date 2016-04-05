@@ -60,6 +60,15 @@ rivets.formatters.greaterThanToFalse = function(value,comparison){
 	else return false;
 }
 
+rivets.formatters.greaterThanToFalse_bids = function(value,credit,bids){
+	if(parseInt(value) + bids > credit){
+		if(parseInt(value) > credit){
+			return false;	
+		} 
+		return true;	
+	} 
+	else return false;
+}
 
 rivets.formatters.zeroToFalse = function(value){
 	if(value > 0) return false;

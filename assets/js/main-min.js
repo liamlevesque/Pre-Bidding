@@ -405,6 +405,15 @@ rivets.formatters.greaterThanToFalse = function(value,comparison){
 	else return false;
 }
 
+rivets.formatters.greaterThanToFalse_bids = function(value,credit,bids){
+	if(parseInt(value) + bids > credit){
+		if(parseInt(value) > credit){
+			return false;	
+		} 
+		return true;	
+	} 
+	else return false;
+}
 
 rivets.formatters.zeroToFalse = function(value){
 	if(value > 0) return false;
@@ -2005,6 +2014,7 @@ function loadMaxBidTooltip(target){
 			maxbidObject.lotSerial = parent.find('.col-2b').text();
 			maxbidObject.lotMeter = parent.find('.col-2c').text();
 
+			maxbidObject.totalMaxBids = user.bid;
 			maxbidObject.maxbidAmount = (target.data('bid') > 0) ? target.data('bid') : '';
 
 			financeModal = rivets.bind($('.js--max-bid-object'),{

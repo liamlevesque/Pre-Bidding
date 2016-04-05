@@ -26,6 +26,7 @@ function loadMaxBidTooltip(target){
 			maxbidObject.lotSerial = parent.find('.col-2b').text();
 			maxbidObject.lotMeter = parent.find('.col-2c').text();
 
+			maxbidObject.totalMaxBids = user.bid;
 			maxbidObject.maxbidAmount = (target.data('bid') > 0) ? target.data('bid') : '';
 
 			financeModal = rivets.bind($('.js--max-bid-object'),{
