@@ -81,11 +81,13 @@
                             <label>Max-Bids (<span rv-text="user.bidcount"></span>):</label><span class="header--price-readout dollars" rv-html="user.bid | price"></span></div>
                     </div>
 
-                    <div class="cart-icon" rv-on-click="headerController.onToggleCartClick">
-                        <div class="h-va-center js--cart-tooltip">
-                            <i class="icon-cart"></i>
-                            <div class="cart-count" rv-text="user.cart | lengthtoquantity"></div>
-                        </div>
+                    <div class="cart-icon">
+                        <a href="http://liamlevesque.github.io/VPP-Prototype2/" target="_blank" class="header--cart-link">
+                            <div class="h-va-center js--cart-tooltip">
+                                <i class="icon-cart"></i>
+                                <div class="cart-count" rv-text="user.cart | lengthtoquantity"></div>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="header--section">
@@ -569,11 +571,11 @@
         </div>
 
         <div class="js--tooltip-audio">
-            <p>Turn Audio On</p>
+            <p>Turn Audio Off</p>
         </div>
         
         <div class="js--tooltip-photos">
-            <p>Turn Photos On</p>
+            <p>Turn Photos Off</p>
         </div>
 
         <div class="js--tooltip-cart">

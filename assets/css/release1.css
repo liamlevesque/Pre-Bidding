@@ -1401,6 +1401,12 @@ header {
     color: white;
     font-size: 0.8rem; }
 
+.header--cart-link {
+  display: block;
+  height: 100%; }
+  .header--cart-link:hover {
+    text-decoration: none; }
+
 .auction-ccy:before {
   content: '';
   display: inline-block;
