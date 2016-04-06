@@ -19,7 +19,7 @@ header{
 		display: inline-block;
 		width: 200px;
     	height: 46px;
-    	margin: 10px 0 20px;
+    	margin: 10px 15px 10px 0;
 
     	@include breakpoint(med-lg-max){
     		width: 46px; 
