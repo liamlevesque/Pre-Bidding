@@ -69,14 +69,26 @@ function loadMaxBidTooltip(target){
 			maxbidObject.lotMeter = parent.find('.col-2c').text();
 
 			maxbidObject.totalMaxBids = user.bid;
-			maxbidObject.maxbidAmount = (target.data('bid') > 0) ? target.data('bid') : '';
 			maxbidObject.hasMaxBid = (target.data('bid') > 0) ? true : false;
 			maxbidObject.initialBid = (target.data('bid') > 0) ? target.data('bid') : 0;
-
+			maxbidObject.maxbidAmount = (target.data('bid') > 0) ? target.data('bid') : '';
+			
 			financeModal = rivets.bind($('.js--max-bid-object'),{
 				maxbidObject: maxbidObject,
 				maxbidController : maxbidController
 			});
+
+			$('.js--max-bid-field').inputmask("numeric", {
+			    radixPoint: ".",
+			    groupSeparator: ",",
+			    digits: 2,
+			    autoGroup: true,
+			    prefix: '', //Space after $, this will not truncate the first character.
+			    rightAlign: false,
+			    oncleared: function () { self.Value(''); }
+			});
+
+			//console.log(maxbidObject.initialBid);
 
 			$('.js--max-bid-field').focus().removeClass('s-error');
 		},
@@ -133,42 +145,26 @@ function unloadMaxBidTooltip(target){
 	    },
 
 	    onMaxBidInput: function(e, model){
-	    	$(e.currentTarget).removeClass('s-error');
-
-	    	//HIDE INCREMENT WARNING WHEN YOU START TO TYPE AGAIN
-	    		maxbidObject.offIncrement = false;
-
-	    	switch(e.which) {
-		    	case 9:
-		    		$('.js--set-maxbid').focus();
-		    		e.preventDefault();
-		    		return true;
-		    		break;
-		    	case 13: // enter
-		    		maxbidController.createMaxBid();
-		    		e.preventDefault();
-			        return true;
-			        break;
-
-		        case 38: // up
-		        	maxbidController.incrementMaxBid(1000);
-		        	e.preventDefault();
-			       	return true;
-			        break;
-
-		        case 40: // down
-		        	maxbidController.incrementMaxBid(-1000);
-		        	e.preventDefault();
-			       	return true;
-			       	break;
-
-		        default: 
-
-		        	if(e.which != 46 && e.which > 31 && (e.which < 48 || e.which > 57)) return false;
-		        	else return true; // exit this handler for other keys
-		    }
-		    e.preventDefault();
+	    	
 		},
+
+		onMaxBidChange: function(e,model){
+			$(e.currentTarget).removeClass('s-error');
+
+	    	maxbidObject.offIncrement = false; //HIDE INCREMENT WARNING WHEN YOU START TO TYPE AGAIN
+
+			maxbidObject.maxbidAmount = parseInt($('.js--max-bid-field').inputmask('unmaskedvalue'));
+
+			switch(e.which){
+				case 13://ENTER
+					maxbidController.createMaxBid();
+					break;
+				case 9://TAB
+					$('.js--set-maxbid').focus();
+					break;
+			}
+		},
+
 	    onMaxBidBlur: function(e,model){
 
 	    },

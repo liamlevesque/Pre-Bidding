@@ -67,12 +67,14 @@ rivets.formatters.greaterThanToFalse = function(value,comparison){
 	else return false;
 }
 
-rivets.formatters.greaterThanToFalse_bids = function(value,credit,bids){
-	if(parseInt(value) + bids > credit){
-		console.log(value,bids,credit);
-		if(parseInt(value) > credit){
-			return false;	
-		} 
+rivets.formatters.greaterThanToFalse_bids = function(value,credit,bids,initialbid,hasbid){
+	
+	if(hasbid && parseInt(value) + (bids - parseInt(initialbid)) > credit){
+		if(parseInt(value) > credit) return false;
+		return true;
+	}
+	else if(!hasbid && parseInt(value) + bids > credit){
+		if(parseInt(value) > credit) return false;
 		return true;	
 	} 
 	else return false;
