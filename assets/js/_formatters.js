@@ -69,6 +69,7 @@ rivets.formatters.greaterThanToFalse = function(value,comparison){
 
 rivets.formatters.greaterThanToFalse_bids = function(value,credit,bids){
 	if(parseInt(value) + bids > credit){
+		console.log(value,bids,credit);
 		if(parseInt(value) > credit){
 			return false;	
 		} 
@@ -81,6 +82,12 @@ rivets.formatters.zeroToFalse = function(value){
 	if(value > 0) return false;
 	else return true;
 }
+
+rivets.formatters.zeroOrEmptyToFalse = function(value){
+	if(value === 0 || value === '') return false;
+	else return true;
+}
+
 
 rivets.formatters.lotPhotoDirectory = function(value){
 	return 'assets/js/data/'+value;

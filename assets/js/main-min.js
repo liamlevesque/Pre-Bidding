@@ -414,6 +414,7 @@ rivets.formatters.greaterThanToFalse = function(value,comparison){
 
 rivets.formatters.greaterThanToFalse_bids = function(value,credit,bids){
 	if(parseInt(value) + bids > credit){
+		console.log(value,bids,credit);
 		if(parseInt(value) > credit){
 			return false;	
 		} 
@@ -426,6 +427,12 @@ rivets.formatters.zeroToFalse = function(value){
 	if(value > 0) return false;
 	else return true;
 }
+
+rivets.formatters.zeroOrEmptyToFalse = function(value){
+	if(value === 0 || value === '') return false;
+	else return true;
+}
+
 
 rivets.formatters.lotPhotoDirectory = function(value){
 	return 'assets/js/data/'+value;
@@ -1999,7 +2006,49 @@ $(function(){
 		loadMaxBidTooltip($(e.currentTarget));
 	});
 
+	$('.js--ppl-tooltip').tooltipster({
+		content: $($('.js--tooltip-ppl').html()),
+		theme: 'ritchie-tooltips',
+		delay: tooltipDelay,
+		touchDevices: false,
+		position: 'bottom-right'
+	});
+
+	$('.js--ppl-tooltip').tooltipster({
+		content: $($('.js--tooltip-ppl').html()),
+		theme: 'ritchie-tooltips',
+		delay: tooltipDelay,
+		touchDevices: false,
+		position: 'bottom-right'
+	});
+
+	$('.js--audio-tooltip').tooltipster({
+		content: $($('.js--tooltip-audio').html()),
+		theme: 'ritchie-tooltips',
+		delay: tooltipDelay,
+		touchDevices: false,
+		position: 'bottom-right'
+	});
+
+	$('.js--photo-tooltip').tooltipster({
+		content: $($('.js--tooltip-photos').html()),
+		theme: 'ritchie-tooltips',
+		delay: tooltipDelay,
+		touchDevices: false,
+		position: 'bottom-right'
+	});
+
+	$('.js--cart-tooltip').tooltipster({
+		content: $($('.js--tooltip-cart').html()),
+		theme: 'ritchie-tooltips',
+		delay: tooltipDelay,
+		touchDevices: false,
+		position: 'bottom-right'
+	});
+
 });
+
+var tooltipDelay = 500;
 
 
 function loadMaxBidTooltip(target){
@@ -2078,6 +2127,11 @@ function unloadMaxBidTooltip(target){
 	    onSetHighClick: function(e,model){
 	    	maxbidObject.maxbidAmount = maxbidObject.offIncrement_high;
 	    	maxbidController.createMaxBid();
+	    },
+
+	    clearWarningClick: function(e,model){
+			maxbidObject.maxbidAmount = '';
+	    	$('.js--max-bid-field').focus();
 	    },
 
 	    onMaxBidInput: function(e, model){

@@ -65,6 +65,10 @@
 		padding: 0;
 	}
 
+	.h-lh-200{
+		line-height: 2;
+	}
+
 	.h-d-table{
 		@include tableLayout;
 	}
@@ -136,6 +140,7 @@
 .c-finance{color: $finance-color;}
 .c-brand{color: $brand-color;}
 .c-active{ color: $finance-color; } 
+.c-error{ color: $error-colour; }
 
 .c-link{color: $link-colour;}
 

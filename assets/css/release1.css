@@ -380,6 +380,7 @@ input[type=number]::-webkit-outer-spin-button {
   color: white; }
 
 .button--unbound {
+  outline: none;
   border: 0;
   background-color: transparent;
   font-size: 1rem;
@@ -2250,6 +2251,9 @@ MOST IMPORTANT - LOT TABLE STYLES
 .h-p-0 {
   padding: 0; }
 
+.h-lh-200 {
+  line-height: 2; }
+
 .h-d-table {
   display: table;
   width: 100%;
@@ -2315,6 +2319,9 @@ MOST IMPORTANT - LOT TABLE STYLES
 
 .c-active {
   color: #24532B; }
+
+.c-error {
+  color: #c4483a; }
 
 .c-link {
   color: #1478BC; }

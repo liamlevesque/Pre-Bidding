@@ -1196,6 +1196,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   color: white; }
 
 .button--unbound {
+  outline: none;
   border: 0;
   background-color: transparent;
   font-size: 1rem;
@@ -3885,6 +3886,9 @@ body.s-no-financing.s-no-purchases .no-finance--hide {
 .h-p-0 {
   padding: 0; }
 
+.h-lh-200 {
+  line-height: 2; }
+
 .h-d-table {
   display: table;
   width: 100%;
@@ -3952,6 +3956,9 @@ body.s-no-financing.s-no-purchases .no-finance--hide {
 
 .c-active {
   color: #24532B; }
+
+.c-error {
+  color: #c4483a; }
 
 .c-link {
   color: #1478BC; }
