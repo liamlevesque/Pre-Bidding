@@ -46,9 +46,20 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 679,
+		"initialSize": 14707,
 		"inputAbbreviatedPath": "\/assets\/img\/ccy-flags.png",
 		"outputAbbreviatedPath": "\/assets\/img\/ccy-flags.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/img\/ccy-flags_bak.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 679,
+		"inputAbbreviatedPath": "\/assets\/img\/ccy-flags_bak.png",
+		"outputAbbreviatedPath": "\/assets\/img\/ccy-flags_bak.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

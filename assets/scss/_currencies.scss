@@ -1,17 +1,19 @@
-$ccys: 	"CAD" "$" "" "," "." true 0,
-		"USD" "$" "" "," "." true 1,
-		"SGD" "$" "" "," "." true 2,
-		"NZD" "$" "" "," "." true 3,
-		"AUD" "$" "" "," "." true 4,
-		"MXN" "$" "" "," "." true 5,
-		"ZAR" "R" "" "," "." true 6,
-		"PLN" "" "z\0142" " " "," true 7,
-		"GBP" "\00A3" "" "," "." true 8,
-		"EUR" "\20AC" "" " " "," true 9,
-		"CNY" "\00A5" "" "," "." true 10,
-		"JPY" "\00A5" "" "," "." false 11,
-		"INR" " \20B9" "" "," "." true 12,
-		"AED" "" "د.إ" "," "." true 13;
+$ccys: 	"CAD" "$" "" "," "." true 2,
+		"USD" "$" "" "," "." true 14,
+		"SGD" "$" "" "," "." true 12,
+		"NZD" "$" "" "," "." true 10,
+		"AUD" "$" "" "," "." true 1,
+		"MXN" "$" "" "," "." true 8,
+		"ZAR" "R" "" "," "." true 15,
+		"PLN" "" "z\0142" " " "," true 11,
+		"GBP" "\00A3" "" "," "." true 5,
+		"EUR" "\20AC" "" " " "," true 4,
+		"CNY" "\00A5" "" "," "." true 3,
+		"JPY" "\00A5" "" "," "." false 7,
+		"INR" " \20B9" "" "," "." true 6,
+		"AED" "" "د.إ" "," "." true 0,
+		"NOK" "kr" "" "," "." true 9,
+		"TRY" "\20BA" "" "," "." true 13;
 
 
 @each $ccy in $ccys{
@@ -40,7 +42,7 @@ $ccys: 	"CAD" "$" "" "," "." true 0,
 
 	.auction-ccy:before{
 		.#{nth($ccy,1)} & {
-			background-position: 0 #{nth($ccy,7)*20px};
+			background-position: 0 -#{nth($ccy,7)*15px};
 		}
 	}
 
