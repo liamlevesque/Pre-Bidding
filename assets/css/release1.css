@@ -1460,7 +1460,7 @@ header {
   height: 15px;
   background-repeat: no-repeat;
   background-size: 100% auto;
-  background-image: url(../img/ccy-flags.svg); }
+  background-image: url(../img/ccy-flags.png); }
 .auction-ccy:after {
   font-weight: 700;
   font-size: 0.8rem;
