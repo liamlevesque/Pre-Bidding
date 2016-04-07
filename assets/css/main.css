@@ -3716,7 +3716,7 @@ button.swiper-pagination-bullet {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%); }
 
-.ritchie-tooltips, .ritchie-tooltips-footed, .ritchie-tooltips_full {
+.ritchie-tooltips, .ritchie-tooltips-footed, .ritchie-tooltips_full, .ritchie-tooltips_small {
   border-radius: 0;
   border: 1px solid #000000;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
@@ -3725,16 +3725,16 @@ button.swiper-pagination-bullet {
   max-width: 400px; }
 
 /* Use this next selector to style things like font-size and line-height: */
-.ritchie-tooltips .tooltipster-content, .ritchie-tooltips_full .tooltipster-content {
+.ritchie-tooltips .tooltipster-content, .ritchie-tooltips_full .tooltipster-content, .ritchie-tooltips_small .tooltipster-content {
   font-size: 1rem;
   padding: 7.5px 15px;
   overflow: visible;
   min-width: 350px; }
-  .ritchie-tooltips .tooltipster-content p, .ritchie-tooltips_full .tooltipster-content p {
+  .ritchie-tooltips .tooltipster-content p, .ritchie-tooltips_full .tooltipster-content p, .ritchie-tooltips_small .tooltipster-content p {
     margin: 0; }
-  .ritchie-tooltips .tooltipster-content p + p, .ritchie-tooltips_full .tooltipster-content p + p {
+  .ritchie-tooltips .tooltipster-content p + p, .ritchie-tooltips_full .tooltipster-content p + p, .ritchie-tooltips_small .tooltipster-content p + p {
     margin-top: 15px; }
-  .ritchie-tooltips .tooltipster-content a, .ritchie-tooltips_full .tooltipster-content a {
+  .ritchie-tooltips .tooltipster-content a, .ritchie-tooltips_full .tooltipster-content a, .ritchie-tooltips_small .tooltipster-content a {
     color: #1478BC; }
 
 .tooltip--close {
@@ -3751,6 +3751,10 @@ button.swiper-pagination-bullet {
   margin-bottom: 10px; }
   .tooltip--header .lot--name {
     font-size: 1rem; }
+
+.ritchie-tooltips_small .tooltipster-content {
+  min-width: auto;
+  text-align: center; }
 
 .ritchie-tooltips_full {
   border: none;

@@ -33,7 +33,7 @@
 	}
 }
 
-.ritchie-tooltips, .ritchie-tooltips-footed, .ritchie-tooltips_full {
+.ritchie-tooltips, .ritchie-tooltips-footed, .ritchie-tooltips_full, .ritchie-tooltips_small{
 	border-radius: 0; 
 	border: 1px solid $black;
 	box-shadow: $ritchie-shadow;
@@ -43,30 +43,32 @@
 }
 
 /* Use this next selector to style things like font-size and line-height: */
-.ritchie-tooltips .tooltipster-content, .ritchie-tooltips_full .tooltipster-content{
-	font-size: 1rem;
-	padding: $default-margin/2 $default-margin;
-	overflow: visible;
-	min-width: 350px;
+.ritchie-tooltips, .ritchie-tooltips_full, .ritchie-tooltips_small{
+	.tooltipster-content{
+	 	font-size: 1rem;
+		padding: $default-margin/2 $default-margin;
+		overflow: visible;
+		min-width: 350px;
 
-	p{
-		margin: 0;
-	}
+		p{
+			margin: 0;
+		}
 
-	p + p{
-		margin-top: $default-margin;
-	}
+		p + p{
+			margin-top: $default-margin;
+		}
 
-	ul{
-		
-	}
+		ul{
+			
+		}
 
-	li{
-		
-	}
+		li{
+			
+		}
 
-	a{
-		color: $link-colour;
+		a{
+			color: $link-colour;
+		}
 	}
 }
 
@@ -88,6 +90,11 @@
 			font-size: 1rem;
 		}
 	}
+
+.ritchie-tooltips_small .tooltipster-content{
+	min-width: auto;
+	text-align: center;
+}
 
 .ritchie-tooltips_full{
 	border: none;

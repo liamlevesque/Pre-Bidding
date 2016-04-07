@@ -6,42 +6,34 @@ $(function(){
 
 	$('.js--ppl-tooltip').tooltipster({
 		content: $($('.js--tooltip-ppl').html()),
-		theme: 'ritchie-tooltips',
+		theme: 'ritchie-tooltips_small',
 		delay: tooltipDelay,
 		touchDevices: false,
-		position: 'bottom-right'
-	});
-
-	$('.js--ppl-tooltip').tooltipster({
-		content: $($('.js--tooltip-ppl').html()),
-		theme: 'ritchie-tooltips',
-		delay: tooltipDelay,
-		touchDevices: false,
-		position: 'bottom-right'
+		position: 'bottom'
 	});
 
 	$('.js--audio-tooltip').tooltipster({
 		content: $($('.js--tooltip-audio').html()),
-		theme: 'ritchie-tooltips',
+		theme: 'ritchie-tooltips_small',
 		delay: tooltipDelay,
 		touchDevices: false,
-		position: 'bottom-right'
+		position: 'bottom'
 	});
 
 	$('.js--photo-tooltip').tooltipster({
 		content: $($('.js--tooltip-photos').html()),
-		theme: 'ritchie-tooltips',
+		theme: 'ritchie-tooltips_small',
 		delay: tooltipDelay,
 		touchDevices: false,
-		position: 'bottom-right'
+		position: 'bottom'
 	});
 
 	$('.js--cart-tooltip').tooltipster({
 		content: $($('.js--tooltip-cart').html()),
-		theme: 'ritchie-tooltips',
+		theme: 'ritchie-tooltips_small',
 		delay: tooltipDelay,
 		touchDevices: false,
-		position: 'bottom-right'
+		position: 'bottom'
 	});
 
 });
