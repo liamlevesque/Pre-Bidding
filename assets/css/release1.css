@@ -1016,7 +1016,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   background-position: 0 -30px; }
 
 .CAD .auction-ccy:after {
-  content: "$ CAD"; }
+  content: "$ CAD  "; }
 
 .CAD .CCY-dollars:before {
   content: "CAD $"; }
@@ -1038,7 +1038,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   background-position: 0 -210px; }
 
 .USD .auction-ccy:after {
-  content: "$ USD"; }
+  content: "$ USD  "; }
 
 .USD .CCY-dollars:before {
   content: "USD $"; }
@@ -1060,7 +1060,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   background-position: 0 -180px; }
 
 .SGD .auction-ccy:after {
-  content: "$ SGD"; }
+  content: "$ SGD  "; }
 
 .SGD .CCY-dollars:before {
   content: "SGD $"; }
@@ -1082,7 +1082,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   background-position: 0 -150px; }
 
 .NZD .auction-ccy:after {
-  content: "$ NZD"; }
+  content: "$ NZD  "; }
 
 .NZD .CCY-dollars:before {
   content: "NZD $"; }
@@ -1104,7 +1104,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   background-position: 0 -15px; }
 
 .AUD .auction-ccy:after {
-  content: "$ AUD"; }
+  content: "$ AUD  "; }
 
 .AUD .CCY-dollars:before {
   content: "AUD $"; }
@@ -1126,7 +1126,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   background-position: 0 -120px; }
 
 .MXN .auction-ccy:after {
-  content: "$ MXN"; }
+  content: "$ MXN  "; }
 
 .MXN .CCY-dollars:before {
   content: "MXN $"; }
@@ -1148,7 +1148,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   background-position: 0 -225px; }
 
 .ZAR .auction-ccy:after {
-  content: "R ZAR"; }
+  content: "R ZAR  "; }
 
 .ZAR .CCY-dollars:before {
   content: "ZAR R"; }
@@ -1170,7 +1170,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   background-position: 0 -165px; }
 
 .PLN .auction-ccy:after {
-  content: " PLN"; }
+  content: " PLN  zł"; }
 
 .PLN .CCY-dollars:before {
   content: "PLN "; }
@@ -1192,7 +1192,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   background-position: 0 -75px; }
 
 .GBP .auction-ccy:after {
-  content: "£ GBP"; }
+  content: "£ GBP  "; }
 
 .GBP .CCY-dollars:before {
   content: "GBP £"; }
@@ -1214,7 +1214,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   background-position: 0 -60px; }
 
 .EUR .auction-ccy:after {
-  content: "€ EUR"; }
+  content: "€ EUR  "; }
 
 .EUR .CCY-dollars:before {
   content: "EUR €"; }
@@ -1236,7 +1236,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   background-position: 0 -45px; }
 
 .CNY .auction-ccy:after {
-  content: "¥ CNY"; }
+  content: "¥ CNY  "; }
 
 .CNY .CCY-dollars:before {
   content: "CNY ¥"; }
@@ -1258,7 +1258,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   background-position: 0 -105px; }
 
 .JPY .auction-ccy:after {
-  content: "¥ JPY"; }
+  content: "¥ JPY  "; }
 
 .JPY .CCY-dollars:before {
   content: "JPY ¥"; }
@@ -1280,7 +1280,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   background-position: 0 -90px; }
 
 .INR .auction-ccy:after {
-  content: " ₹ INR"; }
+  content: " ₹ INR  "; }
 
 .INR .CCY-dollars:before {
   content: "INR  ₹"; }
@@ -1302,7 +1302,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   background-position: 0 -0px; }
 
 .AED .auction-ccy:after {
-  content: " AED"; }
+  content: " AED  د.إ"; }
 
 .AED .CCY-dollars:before {
   content: "AED "; }
@@ -1324,7 +1324,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   background-position: 0 -135px; }
 
 .NOK .auction-ccy:after {
-  content: "kr NOK"; }
+  content: "kr NOK  "; }
 
 .NOK .CCY-dollars:before {
   content: "NOK kr"; }
@@ -1346,7 +1346,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   background-position: 0 -195px; }
 
 .TRY .auction-ccy:after {
-  content: "₺ TRY"; }
+  content: "₺ TRY  "; }
 
 .TRY .CCY-dollars:before {
   content: "TRY ₺"; }

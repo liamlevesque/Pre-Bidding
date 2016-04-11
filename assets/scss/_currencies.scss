@@ -48,7 +48,7 @@ $ccys: 	"CAD" "$" "" "," "." true 2,
 
 	.auction-ccy:after{
 		.#{nth($ccy,1)} & {
-			content: "#{nth($ccy,2)} #{nth($ccy,1)}"; 
+			content: "#{nth($ccy,2)} #{nth($ccy,1)}  #{nth($ccy,3)}"; 
 		}
 	}
 
