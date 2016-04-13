@@ -253,6 +253,18 @@ $ring-right-spacing: 30px;
 					}
 				}
 
+				&.s-moved{
+					[class^="col"]{
+						background-color: $grey-100;
+						text-decoration: line-through;
+						color: rgba(black,0.5);
+					}
+
+					.col-5>*{
+						display: none;
+					}
+				}
+
 
 				&.s-grouped:not(.s-currentLot){
 					.col-0{

@@ -1763,6 +1763,12 @@ MOST IMPORTANT - LOT TABLE STYLES
     background-color: rgba(232, 119, 34, 0.3); }
   .lot.s-selected .lot--add-bid {
     color: #E87722; }
+  .lot.s-moved [class^="col"] {
+    background-color: #E9E9E9;
+    text-decoration: line-through;
+    color: rgba(0, 0, 0, 0.5); }
+  .lot.s-moved .col-5 > * {
+    display: none; }
   .lot.s-grouped:not(.s-currentLot) .col-0 {
     position: relative;
     z-index: 1; }

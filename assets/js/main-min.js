@@ -2019,6 +2019,13 @@ $(function(){
 		loadMaxBidTooltip($(e.currentTarget));
 	});
 
+	$('.js-tooltip-ooo').tooltipster({
+		content: $('<p>Sold Out Of Order</p>'),
+		theme: 'ritchie-tooltips_small',
+		delay: tooltipDelay,
+		position: 'bottom'
+	});
+
 	$('.js--ppl-tooltip').tooltipster({
 		content: $($('.js--tooltip-ppl').html()),
 		theme: 'ritchie-tooltips_small',
