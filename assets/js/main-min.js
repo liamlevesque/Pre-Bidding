@@ -2058,6 +2058,11 @@ $(function(){
 		position: 'bottom'
 	});
 
+	window.onbeforeunload = function(){
+    	location.assign('http://www.google.com');
+    	return "Woah! You've won 6 lots.\n\nTo see a summary of your purchases, stay on this page and click on the shopping cart.";
+    } 
+
 });
 
 var tooltipDelay = 500;
