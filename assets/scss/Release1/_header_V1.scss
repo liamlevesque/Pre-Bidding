@@ -225,7 +225,7 @@ header{
 
 		opacity: 0;
 		pointer-events: none;
-		transform: translateY(-100%);
+		transform: translateX(100%);
 		transition: $transition;
 
 		p{
@@ -247,7 +247,7 @@ header{
 		&.s-active{
 			opacity: 1;
 			pointer-events: all;
-			transform: translateY(0);
+			transform: translateX(0);
 		}
 
 	}
