@@ -5,7 +5,6 @@ header{
 	position: relative;
 	z-index: 10;
 
-
 	.home-link{
 		font-size: 0.8rem;
 		
@@ -15,13 +14,43 @@ header{
 	}
 }
 
+.client--upper{
+	@include center-content;
+	z-index: 20;
+
+	padding: 5px 0;
+	position: relative;
+
+	img{
+		width: 100%;
+		max-width: 100%;
+		display: block;
+	}
+}
+
+.stuck--footer{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #aaa;
+	padding: 10px;
+	text-align: center;
+	z-index: 30;
+
+	button{
+		display: inline-block;
+	}
+}
+
+
 	.logo{
 		display: inline-block;
 		width: 200px;
     	height: 46px;
     	margin: 10px 15px 10px 0;
 
-    	@include breakpoint(med-lg-max){
+    	@include breakpoint(largemax){
     		width: 46px; 
 
     		.logo-hide-small{
@@ -32,7 +61,7 @@ header{
 
 	.main-header{
 		margin-bottom: 15px;
-		z-index: 1000;
+		//z-index: 1000;
 	}
 
 	.header--left{
@@ -177,13 +206,14 @@ header{
 
 	.auctioneers-message{
 		position: absolute;
-		bottom: -50px;
+		top: -25px;
 		left: auto;
-		right: 20px;
-		border-radius: 5px;
+		max-width: 44%;
+		right: 0;
+		border-radius: 3px;
 		background-color: $grey-700;
-		text-align: right;
-		padding: 5px 40px 5px 20px;
+		text-align: center;
+		padding: 5px 20px;
 		color: white;
 		box-shadow: $ritchie-shadow;
 
@@ -192,11 +222,15 @@ header{
 		transform: translateY(-100%);
 		transition: $transition;
 
+		p{
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+
 		button{
 			position: absolute;
 		    right: 5px;
-		    top: 50%;
-		    transform: translateY(-50%);
+		    top: 5px;
 		    color: white;
 
 			&:hover{
@@ -207,10 +241,12 @@ header{
 		&.s-active{
 			opacity: 1;
 			pointer-events: all;
-			transform: translateY(0);
+			transform: translateY(-50%);
 		}
 
 	}
+
+
 
 .header--confirmation{
 	position: absolute;

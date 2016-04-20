@@ -85,6 +85,11 @@ rivets.bind($('.js--header'),{
 	headerController: headerController
 });
 
+rivets.bind($('.js--main-body'),{
+	user: user,
+	headerController: headerController
+});
+
 
 var confirmModal,
 	wonItems = {

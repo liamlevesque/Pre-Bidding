@@ -109,12 +109,17 @@
             
         </div>
 
+    </header>
+
+    <div class="client--upper js--main-body">
+        <img src="assets/img/bidArea.png"/>
+
         <div class="auctioneers-message js--auctioneer-msg" rv-addclass="user.message">
-            <span rv-text="user.message"></span>
+            <label>Auctioneer's Message</label>
+            <p rv-text="user.message"></p>
             <button class="button--unbound" rv-on-click="headerController.onDismissMSGClick"><i class="icon-close"></i></button>
         </div>
-
-    </header>
+    </div>
 
 	<div class="client--bottom">
         <div class="bottom-bg">
@@ -466,8 +471,10 @@
         </div>
     </div>
 
-    <button class="js--auctioneer-msg-button">Show Random auctioneer's message</button>
+</div>
 
+<div class="stuck--footer">
+    <button class="js--auctioneer-msg-button">Show Random auctioneer's message</button>
 </div>
 
     <!-- TOOLTIP CONTENT -->
