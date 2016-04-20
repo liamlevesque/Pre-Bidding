@@ -42,6 +42,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/img\/bidArea.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 179051,
+		"inputAbbreviatedPath": "\/assets\/img\/bidArea.png",
+		"outputAbbreviatedPath": "\/assets\/img\/bidArea.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/img\/ccy-flags.png": {
 		"fileType": 32768,
 		"ignore": 0,

@@ -39,8 +39,11 @@ var user = {
 	headerController = {
 
 		onDismissMSGClick: function(e, model){
-			model.user.message = "";
-			clearMessage();
+			$('.js--auctioneer-msg').removeClass('s-active');
+			setTimeout(function(){
+				model.user.message = "";
+				clearMessage();
+			},1000);
 		},
 
 		generateMessage: function(msg){

@@ -177,13 +177,13 @@ header{
 
 	.auctioneers-message{
 		position: absolute;
-		bottom: -25px;
-		left: 0;
-		right: 0;
+		bottom: -50px;
+		left: auto;
+		right: 20px;
 		border-radius: 5px;
 		background-color: $grey-700;
-		text-align: center;
-		padding: 5px;
+		text-align: right;
+		padding: 5px 40px 5px 20px;
 		color: white;
 		box-shadow: $ritchie-shadow;
 
@@ -193,8 +193,15 @@ header{
 		transition: $transition;
 
 		button{
-			float: right;
-			color: white;
+			position: absolute;
+		    right: 5px;
+		    top: 50%;
+		    transform: translateY(-50%);
+		    color: white;
+
+			&:hover{
+				color: $brand-color;
+			}
 		}
 
 		&.s-active{

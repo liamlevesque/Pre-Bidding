@@ -109,26 +109,11 @@
             
         </div>
 
-        <div class="auctioneers-message" rv-addclass="user.message">
+        <div class="auctioneers-message js--auctioneer-msg" rv-addclass="user.message">
             <span rv-text="user.message"></span>
             <button class="button--unbound" rv-on-click="headerController.onDismissMSGClick"><i class="icon-close"></i></button>
         </div>
 
-        <div class="header--cart js--cart">
-            <div class="tooltip--close" rv-on-click="headerController.onCartCloseClick"><i class="icon-close"></i></div>
-            
-            <div class="cart--summary">
-                <label> Total Purchases</label><span class="dollars" rv-html="user.spent | price"></span>
-            </div>
-            <div class="cart--summary">
-                <label> Total Max-Bids</label><span class="dollars" rv-html="user.bid | price"></span>
-            </div>
-            <div class="cart--summary">
-                <label> Available Balance</label><span class="dollars" rv-html="user.limit | limitprice user.spent user.bid"></span>
-            </div>
-            <br/>
-            <a href="http://liamlevesque.github.io/VPP-Prototype2/" class="button_positive" target="_blank">Show Purchase Summary</a>
-        </div>
     </header>
 
 	<div class="client--bottom">
@@ -480,6 +465,8 @@
             
         </div>
     </div>
+
+    <button class="js--auctioneer-msg-button">Show Random auctioneer's message</button>
 
 </div>
 

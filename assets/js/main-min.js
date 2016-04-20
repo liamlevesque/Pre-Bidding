@@ -530,8 +530,11 @@ var user = {
 	headerController = {
 
 		onDismissMSGClick: function(e, model){
-			model.user.message = "";
-			clearMessage();
+			$('.js--auctioneer-msg').removeClass('s-active');
+			setTimeout(function(){
+				model.user.message = "";
+				clearMessage();
+			},1000);
 		},
 
 		generateMessage: function(msg){
@@ -2058,14 +2061,28 @@ $(function(){
 		position: 'bottom'
 	});
 
-	window.onbeforeunload = function(){
-    	location.assign('http://www.google.com');
-    	return "Woah! You've won 6 lots.\n\nTo see a summary of your purchases, stay on this page and click on the shopping cart.";
-    } 
+	$('.js--auctioneer-msg-button').click(function(){
+		user.message = auctioneerMessages[Math.floor(Math.random() * auctioneerMessages.length)];
+	});
+
+	// window.onbeforeunload = function(){
+ //    	location.assign('http://www.google.com');
+ //    	return "Woah! You've won 6 lots.\n\nTo see a summary of your purchases, stay on this page and click on the shopping cart.";
+ //    } 
 
 });
 
-var tooltipDelay = 500;
+var tooltipDelay = 500,
+	auctioneerMessages = [
+			"This is the auctioneer's message",
+			"Avast! As in Avast ye mateys! What the hell does Avast mean and where did it come from?",
+			"Arrg. What does Arrg mean and why did so many pirates say that?",
+			"How much wood would a wood chuck chuck if a wood chuck could chuck wood?",
+			"She sells sea shells by the sea shore",
+			"My Mum tries to be cool by saying that she likes all the same things that I do.",
+			"If the Easter Bunny and the Tooth Fairy had babies would they take your teeth and leave chocolate for you?",
+			"Wednesday is hump day, but has anyone asked the camel if he's happy about it?"
+		]
 
 
 function loadMaxBidTooltip(target){
