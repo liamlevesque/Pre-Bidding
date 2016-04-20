@@ -18,7 +18,7 @@ header{
 	@include center-content;
 	z-index: 20;
 
-	padding: 5px 0;
+	padding: 0;
 	position: relative;
 
 	img{
@@ -26,6 +26,12 @@ header{
 		max-width: 100%;
 		display: block;
 	}
+}
+
+.client--msg{
+	@include center-content;
+	z-index: 40;
+	position: relative;
 }
 
 .stuck--footer{
@@ -206,9 +212,9 @@ header{
 
 	.auctioneers-message{
 		position: absolute;
-		top: -25px;
+		top: -40px;
 		left: auto;
-		max-width: 44%;
+		width: 44%;
 		right: 0;
 		border-radius: 3px;
 		background-color: $grey-700;
@@ -241,7 +247,7 @@ header{
 		&.s-active{
 			opacity: 1;
 			pointer-events: all;
-			transform: translateY(-50%);
+			transform: translateY(0);
 		}
 
 	}
