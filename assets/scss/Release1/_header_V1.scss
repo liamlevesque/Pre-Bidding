@@ -137,6 +137,7 @@ header{
 			background-color: transparent;
 			border-radius: 15px;
 			color: $finance-color;
+			min-width: 100px;
 			
 			&.s-disconnected{
 				animation-name: disconnections;

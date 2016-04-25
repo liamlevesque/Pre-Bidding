@@ -1461,7 +1461,8 @@ header {
   padding: 2px 5px;
   background-color: transparent;
   border-radius: 15px;
-  color: #24532B; }
+  color: #24532B;
+  min-width: 100px; }
   .header--connection.s-disconnected {
     animation-name: disconnections;
     animation-iteration-count: infinite;
