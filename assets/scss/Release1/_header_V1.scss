@@ -116,6 +116,7 @@ header{
 
 		&:last-child{
 			border-right: none;
+			padding: 0 5px;
 		}
 	}
 
@@ -129,6 +130,33 @@ header{
 		.header--user{
 			margin-top: 10px;
 			text-align: center;
+		}
+
+		.header--connection{
+			padding: 2px 5px;
+			background-color: transparent;
+			border-radius: 15px;
+			color: $finance-color;
+			
+			&.s-disconnected{
+				animation-name: disconnections;
+				animation-iteration-count: infinite;
+				animation-direction: alternate;
+				animation-duration: 1s;
+				color: white;
+				
+			}	
+		}
+
+		@keyframes disconnections {
+		  0% { 
+		  	background-color: $error-colour; 
+		  	color: white;
+		  }
+		  100% { 
+		  	background-color: lighten($error-colour,50%); 
+		  	color: $error-colour;
+		  }
 		}
 
 	.cart-icon{
