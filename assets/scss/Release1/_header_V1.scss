@@ -104,6 +104,18 @@ header{
 		.button--unbound label{
 			margin-right: 5px; 
 		}
+
+		.icon-ccy{
+			font-size: 30px;
+		    line-height: 0;
+		    vertical-align: middle;
+		    top: -2px;
+		    position: relative;
+
+		    &~ label{
+				margin-left: 10px;
+		    }
+		}
 	}
 
 	.header--section{

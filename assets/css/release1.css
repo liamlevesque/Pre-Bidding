@@ -1435,6 +1435,14 @@ header {
   font-family: 'Trebuchet MS', Verdana, sans-serif; }
   .header--upper .button--unbound label {
     margin-right: 5px; }
+  .header--upper .icon-ccy {
+    font-size: 30px;
+    line-height: 0;
+    vertical-align: middle;
+    top: -2px;
+    position: relative; }
+    .header--upper .icon-ccy ~ label {
+      margin-left: 10px; }
 
 .header--section {
   border-right: 1px solid #bdbdbd;
