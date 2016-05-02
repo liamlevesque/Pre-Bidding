@@ -2269,10 +2269,18 @@ MOST IMPORTANT - LOT TABLE STYLES
   height: 100%;
   float: right;
   position: relative; }
+  .bidding--group.s-active-lot .bidding--header {
+    border-left-color: #e8e6e2; }
+  .bidding--group.s-active-lot ul:before {
+    background-color: #e8e6e2; }
+  .bidding--group.s-active-lot li:not(.s-active-lot):not(.s-sold) {
+    opacity: 0.5; }
+    .bidding--group.s-active-lot li:not(.s-active-lot):not(.s-sold) .lot--selector {
+      pointer-events: none; }
 
 .bidding--header {
   background-color: #bfc0be;
-  border-left: 10px solid #e8e6e2;
+  border-left: 10px solid #E87722;
   padding: 3px 10px;
   font-size: 0.9rem;
   line-height: 1.4rem;
@@ -2300,12 +2308,6 @@ MOST IMPORTANT - LOT TABLE STYLES
     top: 0;
     bottom: -1px;
     left: 0; }
-  .group--body.s-active-lot ul:before {
-    background-color: #e8e6e2; }
-  .group--body.s-active-lot li:not(.s-active-lot):not(.s-sold) {
-    opacity: 0.5; }
-    .group--body.s-active-lot li:not(.s-active-lot):not(.s-sold) .lot--selector {
-      pointer-events: none; }
 
 .group--footer {
   position: absolute;

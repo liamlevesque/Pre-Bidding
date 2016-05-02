@@ -329,11 +329,29 @@
 		height: 100%;
 		float: right;
 		position: relative;
+
+		&.s-active-lot{
+			.bidding--header{
+				border-left-color: $grey-50;
+			}
+
+			ul:before{
+				background-color: $grey-50;
+			}
+
+			li:not(.s-active-lot):not(.s-sold){
+				opacity: 0.5;
+
+				.lot--selector{
+					pointer-events: none;
+				}
+			}
+		}
 	}
 
 	.bidding--header{
 		background-color: $grey-300;
-		border-left: 10px solid $grey-50;
+		border-left: 10px solid $brand-color;
 		padding: 3px 10px;
 		@include default-font;
 		font-weight: 700;
@@ -367,21 +385,9 @@
 			bottom: -1px;
 			left: 0;
 		}
-
-		&.s-active-lot{
-			ul:before{
-				background-color: $grey-50;
-			}
-
-			li:not(.s-active-lot):not(.s-sold){
-				opacity: 0.5;
-
-				.lot--selector{
-					pointer-events: none;
-				}
-			}
-		}
 	}
+
+		
 
 	.group--footer{
 		position: absolute;
