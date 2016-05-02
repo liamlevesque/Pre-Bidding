@@ -111,7 +111,250 @@
     </header>
 
     <div class="client--upper">
-        <img src="assets/img/bidArea.png"/>
+        <div class="lot-info">
+            <img src="assets/img/lotInfo.png"/>
+        </div>
+        <div class="lot-bidding js--bid-area">
+            <div class="bidding--area" rv-isgroupbidding="saleItem.isgroup">
+                
+                <ul class="bidding--info">
+                    
+                    <li class="bid-field">
+                        <label>High Bid:</label>
+                        <span class="c-brand">
+                            <span class="bid-value dollars" rv-html="bidObject.bidPrice | price"></span>
+                            <span class="CCY"></span> 
+                        </span>
+                    </li>
+                    <li class="bid-field">
+                        <label>High Bidder:</label>
+                        <span class="bid-value" rv-text="bidObject.bidder | bidderoryou"></span>
+                        <span class="bid-value bid-value_sub" rv-text="bidObject.location">Location</span>
+                        <!-- <button rv-on-click="controller.onOutBid">Outbid me!</button> -->
+                    </li>
+                    <li class="bid-field">
+                        <label>Ask Price</label>
+
+                        <span class="h-t-large">
+                            <span class="bid-value dollars" rv-html="bidObject.askPrice | price"></span>
+                            <span class="CCY"></span>
+                        </span>
+                    </li>
+                </ul>
+                    
+                <div class="bidding">
+                            
+                    <div class="bidding--activate" rv-hide="bidObject.lotSelected">
+                        Check the circle next to the lot you want to bid on
+                    </div>
+
+                    <div class="bidding--lot" rv-show="bidObject.lotSelected">
+                        <label>Bidding on lot <span rv-text="bidObject.lotSelected"></span></label>
+                    </div>
+
+                    <div class="bidding--messages">
+                        <div class="bidding--outbid js--outbid">
+                            <div class="message-box--warning">
+                                You've been outbid!<br/>
+                                Bid again now.
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="bidding--bid-button" rv-lotbidstate="bidObject.bidStatus" rv-on-click="bidController.onBidClick">
+                        <span class="bidder--option bidder--disabled">
+                            Bid <span class="dollars" rv-html="bidObject.askPrice | price"></span><span class="CCY"></span>
+                        </span>
+                        
+                        <span class="bidder--option bidder--open-offer">
+                            Buy <span></span> @
+                            <br/><span class="CCY"></span><span class="dollars" rv-html="bidObject.bidPrice | price"></span> each
+                            <br/><label rv-show="saleItem.openOffersList">Total <span class="dollars" rv-html="saleItem.openOffersList | pricelists"></span><span class="CCY"></span></label>
+                        </span>
+
+                        <span class="bidder--option bidder--open-offer_disabled">
+                            <span class="CCY"></span><span class="dollars" rv-html="bidObject.bidPrice | price"></span> each
+                            <br/><label rv-show="saleItem.openOffersList">Total <span class="dollars" rv-html="saleItem.openOffersList | pricelists"></span><span class="CCY"></span></label>
+                        </span>
+                        
+                        <span class="bidder--option bidder--active">
+                            Bid <span class="dollars" rv-html="bidObject.askPrice | price"></span><span class="CCY"></span>
+                        </span>
+                    
+                        <span class="bidder--option bidder--waiting">
+                            Bid submitted!
+                            <br/>Waiting for acceptance.
+                        </span>
+                        
+                        <span class="bidder--option bidder--accepted">
+                           Bid Accepted!<br/>You're on!
+                        </span>
+                        
+                        <span class="bidder--option bidder--won">
+                            Sold!
+                            <br/>You won this lot!
+                        </span>
+                        
+                        <span class="bidder--option bidder--lost">
+                            Sold
+                            <br/>Bidder <span rv-text="saleItem.bidder"></span> won this lot
+                        </span>
+                    </button>
+
+                </div>
+
+                <div class="lot-tables--follow">
+                    <label class="field--toggle">
+                        <input type="checkbox" class="toggle_input"/>
+                        <span>Follow Current Lot</span>
+                        <div class="toggle-control"></div>
+                    </label>
+                    
+                </div>
+            </div>
+            <div class="bidding--group">
+                <div class="bidding--header">
+                    Choice of 9
+                </div>
+                <div class="group--body group--body_b" rv-itemactive="bidObject.lotSelected">
+                    <ul>
+                        <li class="group--lot js--group-lot s-sold" data-lotnumber="10" rv-lotactive="bidObject.lotSelected">
+                            <label class="lot--selector"> 
+                                <input type="checkbox" rv-on-click="bidController.activate">
+                                <span>
+                                    <i class="icon-check-inner"></i>
+                                </span>
+                            </label>
+                            <img class="lot--photo" src="assets/js/data/8754458_1.jpg">
+                            <div class="lot--values">
+                                <div class="lot--name">LOT 10</div> 
+                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
+                            </div>
+                        </li>
+                        <li class="group--lot js--group-lot" data-lotnumber="11" rv-lotactive="bidObject.lotSelected">
+                            <label class="lot--selector"> 
+                                <input type="checkbox" rv-on-click="bidController.activate">
+                                <span>
+                                    <i class="icon-check-inner"></i>
+                                </span>
+                            </label>
+                            <img class="lot--photo" src="assets/js/data/8754458_1.jpg">
+                            <div class="lot--values">
+                                <div class="lot--name">LOT 11</div>
+                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
+                            </div>
+                        </li>
+                        <li class="group--lot js--group-lot" data-lotnumber="12" rv-lotactive="bidObject.lotSelected">
+                            <label class="lot--selector"> 
+                                <input type="checkbox" rv-on-click="bidController.activate">
+                                <span>
+                                    <i class="icon-check-inner"></i>
+                                </span>
+                            </label>
+                            <img class="lot--photo" src="assets/js/data/8754458_1.jpg">
+                            <div class="lot--values">
+                                <div class="lot--name">LOT 12</div>
+                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
+                            </div>
+                        </li>
+                        <li class="group--lot js--group-lot" data-lotnumber="13" rv-lotactive="bidObject.lotSelected">
+                            <label class="lot--selector"> 
+                                <input type="checkbox" rv-on-click="bidController.activate">
+                                <span>
+                                    <i class="icon-check-inner"></i>
+                                </span>
+                            </label>
+                            <img class="lot--photo" src="assets/js/data/8754458_1.jpg">
+                            <div class="lot--values">
+                                <div class="lot--name">LOT 13</div>
+                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
+                            </div>
+                        </li>
+                        <li class="group--lot js--group-lot" data-lotnumber="14" rv-lotactive="bidObject.lotSelected">
+                            <label class="lot--selector"> 
+                                <input type="checkbox" rv-on-click="bidController.activate">
+                                <span>
+                                    <i class="icon-check-inner"></i>
+                                </span>
+                            </label>
+                            <img class="lot--photo" src="assets/js/data/8754458_1.jpg">
+                            <div class="lot--values">
+                                <div class="lot--name">LOT 14</div>
+                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
+                            </div>
+                        </li>
+                        <li class="group--lot js--group-lot" data-lotnumber="15" rv-lotactive="bidObject.lotSelected">
+                            <label class="lot--selector"> 
+                                <input type="checkbox" rv-on-click="bidController.activate">
+                                <span>
+                                    <i class="icon-check-inner"></i>
+                                </span>
+                            </label>
+                            <img class="lot--photo" src="assets/js/data/8754458_1.jpg">
+                            <div class="lot--values">
+                                <div class="lot--name">LOT 15</div>
+                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
+                            </div>
+                        </li>
+                        <li class="group--lot js--group-lot" data-lotnumber="16" rv-lotactive="bidObject.lotSelected">
+                            <label class="lot--selector"> 
+                                <input type="checkbox" rv-on-click="bidController.activate">
+                                <span>
+                                    <i class="icon-check-inner"></i>
+                                </span>
+                            </label>
+                            <img class="lot--photo" src="assets/js/data/8754458_1.jpg">
+                            <div class="lot--values">
+                                <div class="lot--name">LOT 16</div>
+                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
+                            </div>
+                        </li>
+                        <li class="group--lot js--group-lot" data-lotnumber="17" rv-lotactive="bidObject.lotSelected">
+                            <label class="lot--selector"> 
+                                <input type="checkbox" rv-on-click="bidController.activate">
+                                <span>
+                                    <i class="icon-check-inner" rv-checked="bidObject.lotSelected"></i>
+                                </span>
+                            </label>
+                            <img class="lot--photo" src="assets/js/data/8754458_1.jpg">
+                            <div class="lot--values">
+                                <div class="lot--name">LOT 17</div>
+                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
+                            </div>
+                        </li>
+                        <li class="group--lot js--group-lot" data-lotnumber="18" rv-lotactive="bidObject.lotSelected">
+                            <label class="lot--selector"> 
+                                <input type="checkbox" rv-on-click="bidController.activate">
+                                <span>
+                                    <i class="icon-check-inner" rv-checked="bidObject.lotSelected"></i>
+                                </span>
+                            </label>
+                            <img class="lot--photo" src="assets/js/data/8754458_1.jpg">
+                            <div class="lot--values">
+                                <div class="lot--name">LOT 17</div>
+                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
+                            </div>
+                        </li>
+                        <li class="group--lot js--group-lot" data-lotnumber="19" rv-lotactive="bidObject.lotSelected">
+                            <label class="lot--selector"> 
+                                <input type="checkbox" rv-on-click="bidController.activate">
+                                <span>
+                                    <i class="icon-check-inner" rv-checked="bidObject.lotSelected"></i>
+                                </span>
+                            </label>
+                            <img class="lot--photo" src="assets/js/data/8754458_1.jpg">
+                            <div class="lot--values">
+                                <div class="lot--name">LOT 17</div>
+                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="group--footer">
+                    <button class="button_select-all" rv-show="group.isOpenOffers" rv-on-click="groupController.onSelectAllClick">Select All Remaining Lots</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="client--msg js--main-body">

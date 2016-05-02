@@ -55,9 +55,11 @@ header{
 		width: 200px;
     	height: 46px;
     	margin: 10px 5px 10px 10px;
+    	transform: scale(1.15) translateX(15px);
 
     	@include breakpoint(largemax){
     		width: 46px; 
+    		transform: scale(1.15) translateX(5px);
 
     		.logo-hide-small{
     			display: none;

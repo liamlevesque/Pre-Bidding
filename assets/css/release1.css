@@ -147,7 +147,7 @@ GRID
 .icon-cart:before {
   content: "\e903"; }
 
-.icon-check:before {
+.icon-check:before, .message-box--success:before {
   content: "\e904"; }
 
 .icon-clock:before {
@@ -174,7 +174,7 @@ GRID
 .icon-plus:before {
   content: "\e90d"; }
 
-.icon-sale:before {
+.icon-sale:before, .message-box--open-offer:before {
   content: "\e90f"; }
 
 .icon-search:before {
@@ -183,7 +183,7 @@ GRID
 .icon-user:before {
   content: "\e911"; }
 
-.icon-warning:before {
+.icon-warning:before, .message-box--error:before, .message-box--warning:before {
   content: "\e912"; }
 
 .icon-warranty:before {
@@ -195,7 +195,9 @@ GRID
   border: 1px solid #bfc0be;
   background-color: #ffffff;
   border-radius: 0;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   box-sizing: border-box;
   padding: 2px 8px;
   outline: none;
@@ -208,6 +210,11 @@ GRID
     border: 1px solid #E35530; }
   .field--text:focus, .field--select:focus {
     border: 1px solid #E35530; }
+
+.field--text:-moz-read-only {
+  border-width: 0 !important;
+  text-decoration: underline;
+  cursor: pointer; }
 
 .field--text:read-only {
   border-width: 0 !important;
@@ -244,13 +251,16 @@ input[type=number]::-webkit-outer-spin-button {
     background-position: right -33px; }
 
 .input--circle-check input {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-color: white;
   width: 18px;
   height: 18px;
   border-radius: 18px;
   outline: none;
   vertical-align: middle;
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   .input--circle-check input:after {
     font-family: 'ritchie-icons' !important;
@@ -280,7 +290,7 @@ input[type=number]::-webkit-outer-spin-button {
 /**********************
 	BUTTONS
 **********************/
-.button, .button_secondary, .button_select-all, .button_hollow, .button_positive, .button_two-state, .button_negative, .button_two-state.s-negative {
+.button, .bidding--bid-button, .button_secondary, .button_select-all, .button_hollow, .button_positive, .button_two-state, .button_negative, .button_two-state.s-negative {
   position: relative;
   display: inline-block;
   padding: 8px 15px;
@@ -290,40 +300,48 @@ input[type=number]::-webkit-outer-spin-button {
   font-weight: 700;
   outline: none;
   cursor: pointer;
-  user-select: none; }
-  .button:disabled, .button_secondary:disabled, .button_select-all:disabled, .button_hollow:disabled, .button_positive:disabled, .button_two-state:disabled, .button_negative:disabled {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  .button:disabled, .bidding--bid-button:disabled, .button_secondary:disabled, .button_select-all:disabled, .button_hollow:disabled, .button_positive:disabled, .button_two-state:disabled, .button_negative:disabled {
     opacity: 0.4;
     cursor: normal;
     pointer-events: none; }
-  .button:focus, .button_secondary:focus, .button_select-all:focus, .button_hollow:focus, .button_positive:focus, .button_two-state:focus, .button_negative:focus {
+  .button:focus, .bidding--bid-button:focus, .button_secondary:focus, .button_select-all:focus, .button_hollow:focus, .button_positive:focus, .button_two-state:focus, .button_negative:focus {
     outline: none;
     border-color: #95490f; }
 
-.button {
+.button, .bidding--bid-button {
+  -webkit-transition-property: padding-left;
   transition-property: padding-left;
-  transition-duration: 0.35s;
-  transition-timing-function: cubic-bezier(0.63, 0.005, 0.365, 1);
+  -webkit-transition-duration: 0.35s;
+          transition-duration: 0.35s;
+  -webkit-transition-timing-function: cubic-bezier(0.63, 0.005, 0.365, 1);
+          transition-timing-function: cubic-bezier(0.63, 0.005, 0.365, 1);
   background-color: #E87722;
+  background-image: -webkit-linear-gradient(#FAB558, #F69731);
   background-image: linear-gradient(#FAB558, #F69731);
   border: 1px solid #E87722; }
-  .button:hover {
+  .button:hover, .bidding--bid-button:hover {
     background-color: #c35f14;
+    background-image: -webkit-linear-gradient(#F58D31, #EB6D30);
     background-image: linear-gradient(#F58D31, #EB6D30);
     color: #ffffff; }
-  .button.icon {
+  .button.icon, .icon.bidding--bid-button {
     background-color: transparent;
     background-image: none;
     border: 0; }
-    .button.icon img {
+    .button.icon img, .icon.bidding--bid-button img {
       width: 15px; }
-    .button.icon.icon_plain {
+    .button.icon.icon_plain, .icon.icon_plain.bidding--bid-button {
       padding: 0 5px;
       vertical-align: middle; }
-  .button.icon_100 img {
+  .button.icon_100 img, .icon_100.bidding--bid-button img {
     width: 10px; }
-  .button.s-success {
+  .button.s-success, .s-success.bidding--bid-button {
     padding-left: 36px; }
-    .button.s-success:before {
+    .button.s-success:before, .s-success.bidding--bid-button:before {
       content: " ";
       background: url("../img/check_small.png") no-repeat 0 0;
       position: absolute;
@@ -331,7 +349,8 @@ input[type=number]::-webkit-outer-spin-button {
       height: 20px;
       left: 8px;
       top: 50%;
-      transform: translateY(-50%); }
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); }
 
 .button_secondary {
   box-shadow: inset 1px 1px 5px 0 rgba(0, 0, 0, 0.15);
@@ -415,6 +434,7 @@ input[type=number]::-webkit-outer-spin-button {
   cursor: pointer;
   position: relative; }
   .field--toggle .toggle-control, .field--toggle_icon .toggle-control {
+    -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
     transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
     width: 30px;
     height: 20px;
@@ -425,6 +445,7 @@ input[type=number]::-webkit-outer-spin-button {
     position: relative;
     vertical-align: middle; }
     .field--toggle .toggle-control:after, .field--toggle_icon .toggle-control:after {
+      -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
       transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
       content: "";
       width: 16px;
@@ -459,7 +480,8 @@ input[type=number]::-webkit-outer-spin-button {
     top: 40%;
     left: 0;
     width: 100%;
-    transform: rotate(-45deg); }
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
   .field--toggle_icon i:hover {
     color: #33773d; }
     .field--toggle_icon i:hover:after {
@@ -669,6 +691,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   .box-money_finance {
     background-color: #D3E8CB;
     color: #24532B;
+    -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
     transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
     position: relative; }
     .box-money_finance.s-finance-inactive {
@@ -692,7 +715,8 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   position: absolute;
   left: 50%;
   top: 0;
-  transform: translateX(-50%); }
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%); }
 
 .actions {
   position: absolute;
@@ -811,8 +835,10 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
     right: 0;
     bottom: -10px;
     height: 9px;
+    background-image: -webkit-radial-gradient(ellipse farthest-side at center top, rgba(0, 0, 0, 0.4), transparent);
     background-image: radial-gradient(ellipse farthest-side at center top, rgba(0, 0, 0, 0.4), transparent);
     opacity: 0;
+    -webkit-transition: opacity 0.5s linear;
     transition: opacity 0.5s linear; }
   .pinned-section.s-stuck {
     position: fixed;
@@ -826,6 +852,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
       right: -25px; }
 
 .js--sticky-wrapper {
+  -webkit-transition: height 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: height 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
 
 .financing {
@@ -846,6 +873,7 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   position: absolute;
   top: 15px;
   right: 0;
+  -webkit-transition: right 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: right 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   z-index: 1; }
 
@@ -948,7 +976,8 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   position: absolute;
   top: 50%;
   left: 0;
-  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
   background-color: #585858;
   border-radius: 24px;
   line-height: 24px;
@@ -989,7 +1018,8 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   position: relative;
   display: inline-block;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   color: #000000; }
   .demo-controls li {
     position: relative;
@@ -997,7 +1027,10 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
     margin-bottom: 10px; }
   .demo-controls .toggle-currency {
     cursor: pointer;
-    user-select: none; }
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
 
 .CAD .divider:before {
   content: ","; }
@@ -1401,10 +1434,14 @@ header {
   display: inline-block;
   width: 200px;
   height: 46px;
-  margin: 10px 5px 10px 10px; }
+  margin: 10px 5px 10px 10px;
+  -webkit-transform: scale(1.15) translateX(15px);
+          transform: scale(1.15) translateX(15px); }
   @media (max-width: 80em) {
     .logo {
-      width: 46px; }
+      width: 46px;
+      -webkit-transform: scale(1.15) translateX(5px);
+              transform: scale(1.15) translateX(5px); }
       .logo .logo-hide-small {
         display: none; } }
 
@@ -1472,11 +1509,23 @@ header {
   color: #24532B;
   min-width: 100px; }
   .header--connection.s-disconnected {
-    animation-name: disconnections;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-duration: 1s;
+    -webkit-animation-name: disconnections;
+            animation-name: disconnections;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
     color: white; }
+
+@-webkit-keyframes disconnections {
+  0% {
+    background-color: #c4483a;
+    color: white; }
+  100% {
+    background-color: #fffefe;
+    color: #c4483a; } }
 
 @keyframes disconnections {
   0% {
@@ -1493,7 +1542,8 @@ header {
   vertical-align: top;
   cursor: pointer; }
   .cart-icon:hover .cart-count {
-    transform: rotate(0) translate(2px, -3px); }
+    -webkit-transform: rotate(0) translate(2px, -3px);
+            transform: rotate(0) translate(2px, -3px); }
   .cart-icon i {
     position: relative;
     top: 11px;
@@ -1507,9 +1557,11 @@ header {
     height: 20px;
     line-height: 20px;
     text-align: center;
+    -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
     transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
     background-color: #E87722;
-    transform: rotate(15deg) translateX(4px);
+    -webkit-transform: rotate(15deg) translateX(4px);
+            transform: rotate(15deg) translateX(4px);
     color: white;
     font-size: 0.8rem; }
 
@@ -1578,7 +1630,9 @@ header {
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   opacity: 0;
   pointer-events: none;
-  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   .auctioneers-message p {
     margin-top: 5px;
@@ -1593,7 +1647,8 @@ header {
   .auctioneers-message.s-active {
     opacity: 1;
     pointer-events: all;
-    transform: translateX(0); }
+    -webkit-transform: translateX(0);
+            transform: translateX(0); }
 
 .header--confirmation {
   position: absolute;
@@ -1604,11 +1659,14 @@ header {
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   font-size: 0.9rem;
   line-height: 1.4rem;
-  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
   opacity: 0;
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   .header--confirmation.s-active {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
     opacity: 1; }
 
 .message-header {
@@ -1631,12 +1689,15 @@ header {
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   font-size: 0.9rem;
   line-height: 1.4rem;
-  transform: translateY(-150%);
+  -webkit-transform: translateY(-150%);
+          transform: translateY(-150%);
   opacity: 0;
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   .header--cart.s-visible {
     opacity: 1;
-    transform: translateY(0); }
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
 
 .cart--empty {
   text-align: center;
@@ -1701,8 +1762,10 @@ MOST IMPORTANT - LOT TABLE STYLES
     right: -100px;
     bottom: -9px;
     height: 9px;
+    background-image: -webkit-radial-gradient(ellipse farthest-side at center top, rgba(0, 0, 0, 0.4), transparent);
     background-image: radial-gradient(ellipse farthest-side at center top, rgba(0, 0, 0, 0.4), transparent);
     opacity: 0.5;
+    -webkit-transition: opacity 0.5s linear;
     transition: opacity 0.5s linear; }
 
 .lot-tables--column-headers {
@@ -1751,6 +1814,7 @@ MOST IMPORTANT - LOT TABLE STYLES
 .lot {
   display: table-row;
   font-size: 0.85rem;
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   /**************
   STATES FOR LOTS
@@ -1759,16 +1823,22 @@ MOST IMPORTANT - LOT TABLE STYLES
     border-bottom: 1px dotted #bdbdbd;
     position: relative;
     padding: 10px 0;
+    -webkit-transition-property: background-color;
     transition-property: background-color;
-    transition-duration: 0.35s;
-    transition-timing-function: cubic-bezier(0.63, 0.005, 0.365, 1); }
+    -webkit-transition-duration: 0.35s;
+            transition-duration: 0.35s;
+    -webkit-transition-timing-function: cubic-bezier(0.63, 0.005, 0.365, 1);
+            transition-timing-function: cubic-bezier(0.63, 0.005, 0.365, 1); }
   .lot .col-0 {
     text-align: right;
     padding-right: 15px; }
     .lot .col-0:before {
+      -webkit-transition-property: background-color;
       transition-property: background-color;
-      transition-duration: 0.35s;
-      transition-timing-function: cubic-bezier(0.63, 0.005, 0.365, 1); }
+      -webkit-transition-duration: 0.35s;
+              transition-duration: 0.35s;
+      -webkit-transition-timing-function: cubic-bezier(0.63, 0.005, 0.365, 1);
+              transition-timing-function: cubic-bezier(0.63, 0.005, 0.365, 1); }
   .lot .col-2a {
     padding: 0  10px;
     overflow: hidden;
@@ -1931,26 +2001,444 @@ MOST IMPORTANT - LOT TABLE STYLES
   line-height: 1; }
 
 .flex-container_columns {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex; }
 
 .flex-container_rows {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column; }
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
 
 [class^="flex-item_"] {
-  flex: 1; }
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
 
 .flex-item_quarter {
-  flex: 1 1 50px; }
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 50px;
+      -ms-flex: 1 1 50px;
+          flex: 1 1 50px; }
 
 .flex-item_threequarters {
-  flex: 4; }
+  -webkit-box-flex: 4;
+  -webkit-flex: 4;
+      -ms-flex: 4;
+          flex: 4; }
 
 .flex-item_full {
   width: 100%; }
 
 .flex-item_half {
   width: 50%; }
+
+.lot-info {
+  display: inline-block;
+  width: 49%;
+  position: relative;
+  vertical-align: top; }
+  @media (min-width: 64em) {
+    .lot-info {
+      width: 55%; } }
+
+.lot-bidding {
+  width: 49%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  height: auto; }
+  @media (min-width: 64em) {
+    .lot-bidding {
+      width: 45%; } }
+
+.bidding--area {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  position: relative;
+  background-color: #e8e6e2; }
+
+.bidding--info {
+  padding: 15px; }
+
+.bidding {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  right: 0;
+  padding: 0 15px; }
+
+.bidding--bid-button {
+  height: 100px; }
+
+.bidding--activate {
+  background-color: #E87722;
+  color: white;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  padding: 7.5px;
+  padding-left: 20px;
+  line-height: 1rem;
+  position: relative;
+  margin-bottom: 10px;
+  margin-right: -15px; }
+  .bidding--activate:before {
+    content: '';
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 20" preserveAspectRatio="none"><polygon fill="%23e8e6e2" points="0,0 10,10 0,20"/></svg>');
+    background-size: 10px 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 10px; }
+
+.lot-tables--follow {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #E9E9E9;
+  padding: 2px 0; }
+
+.bid-field {
+  padding: 15px 0;
+  border-bottom: 1px dotted #bdbdbd;
+  text-align: right;
+  line-height: 1;
+  overflow: hidden; }
+  .bid-field .field--select, .bid-field .field--w-modifier {
+    width: 50%; }
+  .bid-field .field--toggle {
+    float: right; }
+  .bid-field:last-of-type {
+    border-bottom: none; }
+  .bid-field:first-of-type {
+    padding-top: 0; }
+  .bid-field label {
+    float: left; }
+  .bid-field .bid-value_sub {
+    display: block;
+    font-size: 0.8rem;
+    margin-top: 10px; }
+  .bid-field .bid-value:empty:before {
+    content: "waiting..."; }
+  .bid-field.bid-field_left {
+    text-align: left; }
+
+.bidding--bid-button {
+  color: #000000;
+  background-image: none;
+  background-color: white;
+  width: 100%; }
+  .bidding--bid-button label {
+    color: black; }
+  .bidding--bid-button:hover {
+    color: black;
+    background-image: none;
+    background-color: white; }
+  .bidding--bid-button .bidder--option {
+    display: none; }
+  .bidding--bid-button.s-disabled {
+    opacity: 0.5;
+    background-image: none;
+    background-color: #d2d2d2;
+    border-color: transparent; }
+    .bidding--bid-button.s-disabled .bidder--disabled {
+      display: block;
+      font-size: 1.2rem; }
+  .bidding--bid-button.s-active, .bidding--bid-button.s-open-offer {
+    background-image: -webkit-linear-gradient(#FAB558, #F69731);
+    background-image: linear-gradient(#FAB558, #F69731); }
+    .bidding--bid-button.s-active:hover, .bidding--bid-button.s-open-offer:hover {
+      background-image: -webkit-linear-gradient(#F58D31, #EB6D30);
+      background-image: linear-gradient(#F58D31, #EB6D30);
+      color: black; }
+  .bidding--bid-button.s-active .bidder--active {
+    display: block;
+    font-size: 1.2rem; }
+    .bidding--bid-button.s-active .bidder--active:before {
+      font-size: 0.9rem;
+      display: block; }
+  .bidding--bid-button.s-open-offer .bidder--open-offer {
+    display: block;
+    font-size: 1.2rem; }
+  .bidding--bid-button.s-open-offer_disabled {
+    opacity: 0.5;
+    pointer-events: none; }
+    .bidding--bid-button.s-open-offer_disabled .bidder--open-offer_disabled {
+      display: block;
+      font-size: 1.2rem; }
+  .bidding--bid-button.s-waiting {
+    border: 2px solid #bfc0be; }
+    .bidding--bid-button.s-waiting .bidder--waiting {
+      display: block; }
+  .bidding--bid-button.s-accepted {
+    border: 2px solid #24532B; }
+    .bidding--bid-button.s-accepted .bidder--accepted {
+      display: block; }
+  .bidding--bid-button.s-sold-won {
+    border: 2px solid #24532B; }
+    .bidding--bid-button.s-sold-won .bidder--won {
+      display: block; }
+  .bidding--bid-button.s-sold-lost {
+    border: 2px solid #bfc0be; }
+    .bidding--bid-button.s-sold-lost .bidder--lost {
+      display: block; }
+
+.bidding--controls_b .bidding--bid-button {
+  min-height: 100px; }
+  .bidding--controls_b .bidding--bid-button.s-disabled {
+    display: none; }
+
+.pre-bid {
+  text-align: center;
+  padding: 20px 0; }
+
+/************************
+	MESSAGE BOXES
+************************/
+*[class^="message-box"] {
+  border: 1px solid #bfc0be;
+  padding: 10px 15px;
+  padding-left: 57px;
+  font-weight: 700;
+  position: relative;
+  text-align: left;
+  font-size: 0.8rem;
+  line-height: 1rem; }
+  *[class^="message-box"]:before {
+    display: inline-block;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    padding-right: 15px;
+    font-family: 'ritchie-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 24px; }
+
+.message-box--error {
+  border-color: #c4483a; }
+  .message-box--error:before {
+    color: #c4483a; }
+
+.message-box--warning {
+  border: none;
+  background-color: #fde27a;
+  color: #585858; }
+  .message-box--warning:before {
+    color: #c19a03;
+    border-right-color: #c19a03; }
+
+.message-box--open-offer {
+  border: none;
+  background-color: #d06c61;
+  color: white; }
+  .message-box--open-offer:before {
+    color: #62241d;
+    border-right-color: #62241d; }
+
+.message-box--success {
+  border-color: #24532B; }
+  .message-box--success:before {
+    color: #24532B; }
+
+.bidding--group {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  float: right;
+  position: relative; }
+
+.bidding--header {
+  background-color: #bfc0be;
+  border-left: 10px solid #e8e6e2;
+  padding: 3px 10px;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.group--body {
+  overflow-y: auto;
+  position: absolute;
+  top: 28px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5px; }
+  .group--body.group--body_b {
+    padding: 0; }
+  .group--body ul {
+    position: relative; }
+  .group--body ul:before {
+    display: block;
+    width: 10px;
+    background-color: #E87722;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: -1px;
+    left: 0; }
+  .group--body.s-active-lot ul:before {
+    background-color: #e8e6e2; }
+  .group--body.s-active-lot li:not(.s-active-lot):not(.s-sold) {
+    opacity: 0.5; }
+    .group--body.s-active-lot li:not(.s-active-lot):not(.s-sold) .lot--selector {
+      pointer-events: none; }
+
+.group--footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  display: none;
+  text-align: center; }
+
+.group--lot {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  overflow: hidden;
+  padding: 2px 10px 2px 45px;
+  margin-left: 10px;
+  border-bottom: 1px dotted #bdbdbd;
+  position: relative;
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+  .group--lot .lot--watching {
+    vertical-align: middle;
+    margin-right: 5px; }
+  .group--lot .lot--photo {
+    position: relative;
+    width: 60px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px; }
+  .group--lot .lot--values {
+    vertical-align: middle;
+    display: inline-block;
+    width: calc(100% - 70px); }
+  .group--lot .lot--name {
+    line-height: 0.9rem; }
+  .group--lot .lot--value {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.8rem;
+    line-height: 1.2rem; }
+  .group--lot .lot--selector {
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    outline: none;
+    cursor: pointer;
+    -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+    transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+    .group--lot .lot--selector span {
+      height: 30px;
+      width: 30px;
+      display: block;
+      background-color: transparent;
+      border: 3px solid #E87722;
+      color: white;
+      border-radius: 20px;
+      font-size: 18px;
+      text-align: center;
+      -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+      transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+      .group--lot .lot--selector span i {
+        line-height: 24px;
+        display: block;
+        -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+        transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+      .group--lot .lot--selector span:hover {
+        color: rgba(232, 119, 34, 0.7); }
+        .group--lot .lot--selector span:hover i {
+          -webkit-transform: scale(1.1);
+                  transform: scale(1.1); }
+    .group--lot .lot--selector input {
+      display: none; }
+      .group--lot .lot--selector input:checked + span {
+        background-color: #E87722;
+        opacity: 1; }
+        .group--lot .lot--selector input:checked + span:hover {
+          color: white; }
+  .group--lot.s-disabled .lot--selector {
+    display: none; }
+  .group--lot.s-preview {
+    background-color: rgba(32, 87, 158, 0.1); }
+    .group--lot.s-preview .lot--watching {
+      color: #20579E;
+      opacity: 1; }
+  .group--lot.s-active-lot {
+    background-color: white;
+    margin-left: 0; }
+    .group--lot.s-active-lot .lot--selector {
+      left: 5px; }
+  .group--lot.s-sold {
+    background-color: #e8e6e2; }
+    .group--lot.s-sold * {
+      opacity: 0.5; }
+    .group--lot.s-sold:before {
+      content: "SOLD";
+      color: #959595;
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      bottom: 0;
+      font-size: 0.7rem;
+      width: 35px;
+      text-align: center;
+      font-weight: 700;
+      vertical-align: middle; }
+    .group--lot.s-sold .lot--selector {
+      display: none; }
+
+.bidding--lot {
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 5px 0; }
+  .bidding--lot label {
+    font-size: 0.9rem; }
+
+.bidding--outbid {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  opacity: 0;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+  .bidding--outbid.s-active {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 1; }
 
 /* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
 .tooltipster-default {
@@ -2082,9 +2570,6 @@ MOST IMPORTANT - LOT TABLE STYLES
 .tooltipster-fade {
   opacity: 0;
   -webkit-transition-property: opacity;
-  -moz-transition-property: opacity;
-  -o-transition-property: opacity;
-  -ms-transition-property: opacity;
   transition-property: opacity; }
 
 .tooltipster-fade-show {
@@ -2092,76 +2577,48 @@ MOST IMPORTANT - LOT TABLE STYLES
 
 .tooltipster-grow {
   -webkit-transform: scale(0, 0);
-  -moz-transform: scale(0, 0);
-  -o-transform: scale(0, 0);
-  -ms-transform: scale(0, 0);
   transform: scale(0, 0);
   -webkit-transition-property: -webkit-transform;
-  -moz-transition-property: -moz-transform;
-  -o-transition-property: -o-transform;
-  -ms-transition-property: -ms-transform;
+  transition-property: -webkit-transform;
   transition-property: transform;
+  transition-property: transform, -webkit-transform;
   -webkit-backface-visibility: hidden; }
 
 .tooltipster-grow-show {
   -webkit-transform: scale(1, 1);
-  -moz-transform: scale(1, 1);
-  -o-transform: scale(1, 1);
-  -ms-transform: scale(1, 1);
   transform: scale(1, 1);
   -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
   -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
-  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
-  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
-  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15); }
 
 .tooltipster-swing {
   opacity: 0;
   -webkit-transform: rotateZ(4deg);
-  -moz-transform: rotateZ(4deg);
-  -o-transform: rotateZ(4deg);
-  -ms-transform: rotateZ(4deg);
   transform: rotateZ(4deg);
   -webkit-transition-property: -webkit-transform, opacity;
-  -moz-transition-property: -moz-transform;
-  -o-transition-property: -o-transform;
-  -ms-transition-property: -ms-transform;
-  transition-property: transform; }
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform; }
 
 .tooltipster-swing-show {
   opacity: 1;
   -webkit-transform: rotateZ(0deg);
-  -moz-transform: rotateZ(0deg);
-  -o-transform: rotateZ(0deg);
-  -ms-transform: rotateZ(0deg);
   transform: rotateZ(0deg);
   -webkit-transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 1);
   -webkit-transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 2.4);
-  -moz-transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 2.4);
-  -ms-transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 2.4);
-  -o-transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 2.4);
   transition-timing-function: cubic-bezier(0.23, 0.635, 0.495, 2.4); }
 
 .tooltipster-fall {
   top: 0;
   -webkit-transition-property: top;
-  -moz-transition-property: top;
-  -o-transition-property: top;
-  -ms-transition-property: top;
   transition-property: top;
   -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
   -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
-  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
-  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
-  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15); }
 
 .tooltipster-fall.tooltipster-dying {
   -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  -ms-transition-property: all;
   transition-property: all;
   top: 0px !important;
   opacity: 0; }
@@ -2169,22 +2626,13 @@ MOST IMPORTANT - LOT TABLE STYLES
 .tooltipster-slide {
   left: -40px;
   -webkit-transition-property: left;
-  -moz-transition-property: left;
-  -o-transition-property: left;
-  -ms-transition-property: left;
   transition-property: left;
   -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
   -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
-  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
-  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
-  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15);
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.15); }
 
 .tooltipster-slide.tooltipster-dying {
   -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  -ms-transition-property: all;
   transition-property: all;
   left: 0px !important;
   opacity: 0; }
@@ -2193,9 +2641,6 @@ MOST IMPORTANT - LOT TABLE STYLES
 .tooltipster-content-changing {
   opacity: 0.5;
   -webkit-transform: scale(1.1, 1.1);
-  -moz-transform: scale(1.1, 1.1);
-  -o-transform: scale(1.1, 1.1);
-  -ms-transform: scale(1.1, 1.1);
   transform: scale(1.1, 1.1); }
 
 .tooltips--content-placeholder {
@@ -2218,7 +2663,8 @@ MOST IMPORTANT - LOT TABLE STYLES
 .tooltip_e {
   right: -27px;
   top: 50%;
-  transform: translateY(-50%); }
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }
 
 .ritchie-tooltips, .ritchie-tooltips-footed, .ritchie-tooltips_full, .ritchie-tooltips_small {
   border-radius: 0;
@@ -2278,9 +2724,17 @@ MOST IMPORTANT - LOT TABLE STYLES
     max-width: 100%;
     display: block; }
   .ritchie-tooltips_full .tooltip--lot-details {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    flex: 4;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-flex: 4;
+    -webkit-flex: 4;
+        -ms-flex: 4;
+            flex: 4;
     padding: 0 10px; }
   .ritchie-tooltips_full .tooltip--error, .ritchie-tooltips_full .tooltip--warning {
     background-color: #c4483a;
@@ -2413,13 +2867,15 @@ MOST IMPORTANT - LOT TABLE STYLES
   position: absolute;
   top: 20px;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   text-align: center; }
 
 .h-va-center {
   position: relative;
   top: 50%;
-  transform: translateY(-50%); }
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }
 
 .h-mw-400 {
   max-width: 430px;

@@ -252,5 +252,127 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 
 
 
+//SIMPLE BIDDING PROTOTYPE
+	
+	var bidObject = {
+		"lotSelected": 0,
+		"bidStatus": 'disabled',
+		"bidder" : 'v10005',
+		"location" : 'TX, USA',
+		"askPrice" : 10000,
+		"bidPrice" : 7500
+	},
+	bidController = {
+
+		activate: function(e, model){
+			
+			var target = $(e.currentTarget).parent().parent().data('lotnumber');
+			
+			if(bidObject.lotSelected == target){
+				//console.log(bidObject.lotSelected, target);
+				bidObject.lotSelected = 0;
+			}
+			else bidObject.lotSelected = target;
+
+		},
+
+		onBidClick: function(e, model){
+			
+			switch(bidObject.bidStatus){
+				case "disabled":
+					bidObject.bidStatus = 'active';
+					break;
+
+				case "active":
+					bidObject.bidStatus = 'waiting';
+					break;
+
+				case "waiting":
+					bidObject.bidStatus = 'accepted';
+					bidController.outbid();
+					break;
+				
+				case "accepted":
+					bidObject.bidStatus = 'soldYou';
+					break;
+
+				case "soldYou":
+					bidObject.bidStatus = 'soldOther';
+					break;
+
+				case "soldOther":
+					bidObject.bidStatus = 'open-offer';
+					break;
+
+				case "open-offer":
+					bidObject.bidStatus = 'disabled';
+					break;
+				
+				default:
+					bidObject.bidStatus = 'disabled';
+			}
+		},
+
+		outbid: function(){
+			$('.js--outbid').addClass('s-active');
+			setTimeout(function(){
+				$('.js--outbid').removeClass('s-active');
+			},3000);
+		}
+
+	};
+
+	rivets.binders.lotactive = function(el, value){
+		
+		if(value == $(el).data('lotnumber')) $(el).addClass('s-active-lot');
+		else $(el).removeClass('s-active-lot');
+
+	}
+
+
+	rivets.binders.lotbidstate = function(el, value) {
+		$(el).removeClass().addClass('bidding--bid-button');
+		console.log(value);
+		switch (value){
+			case 'disabled':
+				$(el).addClass('s-disabled');
+				break;	
+
+			case 'waiting':
+				$(el).addClass('s-waiting');
+				break;
+
+			case 'accepted':
+				$(el).addClass('s-accepted');
+				break;			
+
+			case 'soldYou':
+				$(el).addClass('s-sold-won');
+				break;
+
+			case 'soldOther':
+				$(el).addClass('s-sold-lost');
+				break;
+
+			case 'open-offer':
+				$(el).addClass('s-open-offer');
+				break;
+
+			case 'open-offer_disabled':
+				$(el).addClass('s-open-offer_disabled');
+				break;
+
+			default:
+				$(el).addClass('s-active');
+				break;
+		}
+
+	}
+
+	bidArea = rivets.bind($('.js--bid-area'),{
+		bidObject: bidObject,
+		bidController : bidController
+	});
+
 
 
