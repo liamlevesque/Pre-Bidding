@@ -2273,9 +2273,9 @@ MOST IMPORTANT - LOT TABLE STYLES
     border-left-color: #e8e6e2; }
   .bidding--group.s-active-lot ul:before {
     background-color: #e8e6e2; }
-  .bidding--group.s-active-lot li:not(.s-active-lot):not(.s-sold) {
+  .bidding--group.s-active-lot li:not(.s-active-lot):not(.s-sold):not(.s-out) {
     opacity: 0.5; }
-    .bidding--group.s-active-lot li:not(.s-active-lot):not(.s-sold) .lot--selector {
+    .bidding--group.s-active-lot li:not(.s-active-lot):not(.s-sold):not(.s-out) .lot--selector {
       pointer-events: none; }
   .bidding--group.s-open-offers .group--body {
     top: 65px; }
@@ -2348,9 +2348,12 @@ MOST IMPORTANT - LOT TABLE STYLES
   .group--lot .lot--values {
     vertical-align: middle;
     display: inline-block;
-    width: calc(100% - 70px); }
+    width: calc(100% - 70px);
+    cursor: default; }
   .group--lot .lot--name {
     line-height: 0.9rem; }
+    .group--lot .lot--name:hover {
+      color: inherit; }
   .group--lot .lot--value {
     white-space: nowrap;
     overflow: hidden;
@@ -2408,11 +2411,11 @@ MOST IMPORTANT - LOT TABLE STYLES
     margin-left: 0; }
     .group--lot.s-active-lot .lot--selector {
       left: 5px; }
-  .group--lot.s-sold {
+  .group--lot.s-sold, .group--lot.s-out {
     background-color: #e8e6e2; }
-    .group--lot.s-sold * {
+    .group--lot.s-sold *, .group--lot.s-out * {
       opacity: 0.5; }
-    .group--lot.s-sold:before {
+    .group--lot.s-sold:before, .group--lot.s-out:before {
       content: "SOLD";
       color: #959595;
       position: absolute;
@@ -2426,8 +2429,12 @@ MOST IMPORTANT - LOT TABLE STYLES
       text-align: center;
       font-weight: 700;
       vertical-align: middle; }
-    .group--lot.s-sold .lot--selector {
+    .group--lot.s-sold .lot--selector, .group--lot.s-out .lot--selector {
       display: none; }
+  .group--lot.s-out:before {
+    content: "OUT"; }
+  .group--lot.s-out .lot--name, .group--lot.s-out .lot--value {
+    text-decoration: line-through; }
 
 .bidding--lot {
   margin-bottom: 15px;

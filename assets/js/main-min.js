@@ -2072,6 +2072,7 @@ $(function(){
 
 	$('.js--goToOpenOffers').click(function(){
 		bidObject.openOffer = !bidObject.openOffer;
+		if(bidObject.openOffer) user.message = "Open Offer mode";
 	});
 
 	// window.onbeforeunload = function(){

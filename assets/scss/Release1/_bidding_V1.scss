@@ -339,7 +339,7 @@
 				background-color: $grey-50;
 			}
 
-			li:not(.s-active-lot):not(.s-sold){
+			li:not(.s-active-lot):not(.s-sold):not(.s-out){
 				opacity: 0.5;
 
 				.lot--selector{
@@ -441,10 +441,16 @@
 			vertical-align: middle;
 			display: inline-block;
 			width: calc(100% - #{$lot-photo-width});
+
+			cursor: default;
 		}
 
 			.lot--name{
 				line-height: 0.9rem;
+
+				&:hover{
+					color: inherit;
+				}
 			}
 
 			.lot--value{
@@ -538,7 +544,7 @@
 			}
 		}
 
-		&.s-sold{
+		&.s-sold, &.s-out{
 			background-color: $grey-50;
 			
 			*{
@@ -562,6 +568,15 @@
 
 			.lot--selector{
 				display: none;
+			}
+		}
+
+		&.s-out{
+			&:before{
+				content: "OUT";
+			}
+			.lot--name, .lot--value{
+				text-decoration: line-through;
 			}
 		}
 	}
