@@ -212,9 +212,10 @@
                     
                 </div>
             </div>
-            <div class="bidding--group" rv-itemactive="bidObject.lotSelected">
+            <div class="bidding--group" rv-itemactive="bidObject.lotSelected" rv-isopenoffers="bidObject.openOffer">
                 <div class="bidding--header">
                     Choice of 9
+                    <button class="button_select-all" rv-show="bidObject.openOffer" rv-on-click="bidController.onSelectAllClick">Select All Remaining Lots</button>
                 </div>
                 <div class="group--body group--body_b">
                     <ul>
@@ -349,9 +350,6 @@
                             </div>
                         </li>
                     </ul>
-                </div>
-                <div class="group--footer">
-                    <button class="button_select-all" rv-show="group.isOpenOffers" rv-on-click="groupController.onSelectAllClick">Select All Remaining Lots</button>
                 </div>
             </div>
         </div>
@@ -719,6 +717,7 @@
 
 <div class="stuck--footer">
     <button class="js--auctioneer-msg-button">Show Random auctioneer's message</button>
+    <button class="js--goToOpenOffers">Toggle Open Offer Mode</button>
 </div>
 
     <!-- TOOLTIP CONTENT -->

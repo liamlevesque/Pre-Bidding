@@ -2277,6 +2277,8 @@ MOST IMPORTANT - LOT TABLE STYLES
     opacity: 0.5; }
     .bidding--group.s-active-lot li:not(.s-active-lot):not(.s-sold) .lot--selector {
       pointer-events: none; }
+  .bidding--group.s-open-offers .group--body {
+    top: 65px; }
 
 .bidding--header {
   background-color: #bfc0be;
@@ -2285,7 +2287,11 @@ MOST IMPORTANT - LOT TABLE STYLES
   font-size: 0.9rem;
   line-height: 1.4rem;
   font-weight: 700;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  text-align: center; }
+
+.button_select-all {
+  margin-bottom: 5px; }
 
 .group--body {
   overflow-y: auto;
@@ -2294,7 +2300,9 @@ MOST IMPORTANT - LOT TABLE STYLES
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 5px; }
+  padding: 5px;
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   .group--body.group--body_b {
     padding: 0; }
   .group--body ul {

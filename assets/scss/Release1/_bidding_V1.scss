@@ -347,6 +347,12 @@
 				}
 			}
 		}
+
+		&.s-open-offers{
+			.group--body{
+				top: 65px;
+			}
+		}
 	}
 
 	.bidding--header{
@@ -356,7 +362,12 @@
 		@include default-font;
 		font-weight: 700;
 		text-transform: uppercase;
+		text-align: center;
 	}
+
+		.button_select-all{
+			margin-bottom: 5px;
+		}
 
 	.group--body{
 		overflow-y: auto;
@@ -366,6 +377,7 @@
 		left: 0;
 		right: 0;
 		padding: 5px;
+		transition: $transition;
 
 		&.group--body_b{
 			padding: 0;

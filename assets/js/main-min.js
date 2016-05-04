@@ -2070,6 +2070,10 @@ $(function(){
 		user.message = auctioneerMessages[Math.floor(Math.random() * auctioneerMessages.length)];
 	});
 
+	$('.js--goToOpenOffers').click(function(){
+		bidObject.openOffer = !bidObject.openOffer;
+	});
+
 	// window.onbeforeunload = function(){
  //    	location.assign('http://www.google.com');
  //    	return "Woah! You've won 6 lots.\n\nTo see a summary of your purchases, stay on this page and click on the shopping cart.";
@@ -2283,7 +2287,8 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 		"bidder" : 'v10005',
 		"location" : 'TX, USA',
 		"askPrice" : 10000,
-		"bidPrice" : 7500
+		"bidPrice" : 7500,
+		"openOffer" : false
 	},
 	bidController = {
 
@@ -2341,6 +2346,10 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 			setTimeout(function(){
 				$('.js--outbid').removeClass('s-active');
 			},3000);
+		},
+
+		onSelectAllClick: function(e, model){
+			console.log('select all');
 		}
 
 	};
@@ -2352,6 +2361,12 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 
 	}
 
+	rivets.binders.isopenoffers = function(el, value){
+		
+		if(value) $(el).addClass('s-open-offers');
+		else $(el).removeClass('s-open-offers');
+
+	}
 
 	rivets.binders.lotbidstate = function(el, value) {
 		$(el).removeClass().addClass('bidding--bid-button');
