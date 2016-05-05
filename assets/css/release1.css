@@ -2062,6 +2062,21 @@ MOST IMPORTANT - LOT TABLE STYLES
     .lot-bidding {
       width: 45%; } }
 
+@-webkit-keyframes runnerup {
+  0% {
+    background-color: #E87722; }
+  50% {
+    background-color: #ac5412; }
+  100% {
+    background-color: #E87722; } }
+
+@keyframes runnerup {
+  0% {
+    background-color: #E87722; }
+  50% {
+    background-color: #ac5412; }
+  100% {
+    background-color: #E87722; } }
 .bidding--area {
   display: inline-block;
   width: 50%;
@@ -2074,7 +2089,7 @@ MOST IMPORTANT - LOT TABLE STYLES
 
 .bidding {
   position: absolute;
-  bottom: 35px;
+  bottom: 40px;
   left: 0;
   right: 0;
   padding: 0 15px; }
@@ -2103,6 +2118,30 @@ MOST IMPORTANT - LOT TABLE STYLES
     bottom: 0;
     left: 0;
     width: 10px; }
+  .bidding--activate.s-winner {
+    background-color: #24532B; }
+  .bidding--activate.s-runnerup {
+    -webkit-animation-name: runnerup;
+            animation-name: runnerup;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s; }
+
+.normal, .openoffer, .runnerup, .winner {
+  display: none; }
+
+.s-normal .normal {
+  display: block; }
+
+.s-open-offers .openoffer {
+  display: block; }
+
+.s-runnerup .runnerup {
+  display: block; }
+
+.s-winner .winner {
+  display: block; }
 
 .lot-tables--follow {
   position: absolute;
@@ -2110,7 +2149,8 @@ MOST IMPORTANT - LOT TABLE STYLES
   width: 100%;
   text-align: center;
   background-color: #E9E9E9;
-  padding: 2px 0; }
+  padding: 2px 0;
+  border-top: 1px solid #959595; }
 
 .bid-field {
   padding: 15px 0;
@@ -2269,26 +2309,43 @@ MOST IMPORTANT - LOT TABLE STYLES
   height: 100%;
   float: right;
   position: relative; }
-  .bidding--group.s-active-lot .bidding--header {
-    border-left-color: #e8e6e2; }
-  .bidding--group.s-active-lot ul:before {
-    background-color: #e8e6e2; }
+  .bidding--group.s-active-lot ul:before, .bidding--group.s-active-lot .bidding--header:before {
+    background-color: #959595; }
   .bidding--group.s-active-lot li:not(.s-active-lot):not(.s-sold):not(.s-out) {
     opacity: 0.5; }
     .bidding--group.s-active-lot li:not(.s-active-lot):not(.s-sold):not(.s-out) .lot--selector {
       pointer-events: none; }
-  .bidding--group.s-open-offers .group--body {
+  .bidding--group.s-runnerup:not(.s-active-lot) ul:before, .bidding--group.s-runnerup:not(.s-active-lot) .bidding--header:before {
+    -webkit-animation-name: runnerup;
+            animation-name: runnerup;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s; }
+  .bidding--group.s-winner:not(.s-active-lot) ul:before, .bidding--group.s-winner:not(.s-active-lot) .bidding--header:before {
+    background-color: #24532B; }
+  .bidding--group.s-open-offers .bidding--header, .bidding--group.s-winner .bidding--header, .bidding--group.s-runnerup .bidding--header {
+    background-color: #333333;
+    color: #E87722; }
+  .bidding--group.s-open-offers .group--body, .bidding--group.s-winner .group--body, .bidding--group.s-runnerup .group--body {
     top: 65px; }
 
 .bidding--header {
   background-color: #bfc0be;
-  border-left: 10px solid #E87722;
-  padding: 3px 10px;
+  padding: 3px 0 0 10px;
   font-size: 0.9rem;
   line-height: 1.4rem;
   font-weight: 700;
-  text-transform: uppercase;
   text-align: center; }
+  .bidding--header:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 10px;
+    background-color: #E87722;
+    display: inline-block; }
 
 .button_select-all {
   margin-bottom: 5px; }
@@ -2296,7 +2353,7 @@ MOST IMPORTANT - LOT TABLE STYLES
 .group--body {
   overflow-y: auto;
   position: absolute;
-  top: 28px;
+  top: 25px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -2325,6 +2382,44 @@ MOST IMPORTANT - LOT TABLE STYLES
   height: 40px;
   display: none;
   text-align: center; }
+
+.lot--selector {
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  vertical-align: middle; }
+  .lot--selector span {
+    height: 30px;
+    width: 30px;
+    display: block;
+    background-color: white;
+    border: 3px solid #E87722;
+    color: transparent;
+    border-radius: 20px;
+    font-size: 18px;
+    text-align: center;
+    margin-right: 6px;
+    -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+    transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+    .lot--selector span i {
+      line-height: 24px;
+      display: block;
+      -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+      transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+    .lot--selector span:hover {
+      color: rgba(232, 119, 34, 0.7); }
+      .lot--selector span:hover i {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1); }
+  .lot--selector input {
+    display: none; }
+    .lot--selector input:checked + span {
+      background-color: #E87722;
+      opacity: 1;
+      color: white; }
+      .lot--selector input:checked + span:hover {
+        color: white; }
 
 .group--lot {
   font-size: 0.9rem;
@@ -2365,40 +2460,7 @@ MOST IMPORTANT - LOT TABLE STYLES
     left: 6px;
     top: 50%;
     -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    outline: none;
-    cursor: pointer;
-    -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
-    transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
-    .group--lot .lot--selector span {
-      height: 30px;
-      width: 30px;
-      display: block;
-      background-color: transparent;
-      border: 3px solid #E87722;
-      color: white;
-      border-radius: 20px;
-      font-size: 18px;
-      text-align: center;
-      -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
-      transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
-      .group--lot .lot--selector span i {
-        line-height: 24px;
-        display: block;
-        -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
-        transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
-      .group--lot .lot--selector span:hover {
-        color: rgba(232, 119, 34, 0.7); }
-        .group--lot .lot--selector span:hover i {
-          -webkit-transform: scale(1.1);
-                  transform: scale(1.1); }
-    .group--lot .lot--selector input {
-      display: none; }
-      .group--lot .lot--selector input:checked + span {
-        background-color: #E87722;
-        opacity: 1; }
-        .group--lot .lot--selector input:checked + span:hover {
-          color: white; }
+            transform: translateY(-50%); }
   .group--lot.s-disabled .lot--selector {
     display: none; }
   .group--lot.s-preview {
@@ -2407,10 +2469,19 @@ MOST IMPORTANT - LOT TABLE STYLES
       color: #20579E;
       opacity: 1; }
   .group--lot.s-active-lot {
-    background-color: white;
+    background-color: #E87722;
     margin-left: 0; }
+    .group--lot.s-active-lot:before {
+      width: 100%; }
     .group--lot.s-active-lot .lot--selector {
       left: 5px; }
+      .group--lot.s-active-lot .lot--selector span {
+        background-color: white;
+        color: #E87722; }
+        .group--lot.s-active-lot .lot--selector span:hover {
+          color: #E87722; }
+    .group--lot.s-active-lot .lot--name, .group--lot.s-active-lot .lot--value {
+      color: white; }
   .group--lot.s-sold, .group--lot.s-out {
     background-color: #e8e6e2; }
     .group--lot.s-sold *, .group--lot.s-out * {
@@ -2435,6 +2506,16 @@ MOST IMPORTANT - LOT TABLE STYLES
     content: "OUT"; }
   .group--lot.s-out .lot--name, .group--lot.s-out .lot--value {
     text-decoration: line-through; }
+
+.select-all {
+  color: white;
+  background-color: #333333;
+  padding: 5px  6px;
+  text-align: left; }
+  .select-all span {
+    border-color: white;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9); }
 
 .bidding--lot {
   margin-bottom: 15px;

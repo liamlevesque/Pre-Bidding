@@ -49,7 +49,8 @@ $(function(){
 
 	$('.js--goToOpenOffers').click(function(){
 		bidObject.openOffer = !bidObject.openOffer;
-		if(bidObject.openOffer) user.message = "Open Offer mode";
+		bidModeIndex = (bidModeIndex + 1 < bidMode.length)? bidModeIndex + 1 : 0;
+		bidObject.bidMode = bidMode[bidModeIndex];
 	});
 
 	// window.onbeforeunload = function(){
@@ -69,7 +70,9 @@ var tooltipDelay = 500,
 			"My Mum tries to be cool by saying that she likes all the same things that I do.",
 			"If the Easter Bunny and the Tooth Fairy had babies would they take your teeth and leave chocolate for you?",
 			"Wednesday is hump day, but has anyone asked the camel if he's happy about it?"
-		]
+		],
+	bidMode = [ 'normal', 'open-offer', 'runner-up', 'winners-choice' ],
+	bidModeIndex = 0;
 
 
 function loadMaxBidTooltip(target){
@@ -266,7 +269,9 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 		"location" : 'TX, USA',
 		"askPrice" : 10000,
 		"bidPrice" : 7500,
-		"openOffer" : false
+		"bidMode" : 'normal',
+		"openOffer" : false,
+		"selectAll" : false
 	},
 	bidController = {
 
@@ -327,13 +332,21 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 		},
 
 		onSelectAllClick: function(e, model){
-			console.log('select all');
+			bidObject.selectAll = !bidObject.selectAll;
+			if(bidObject.selectAll){ 
+				$('.js--group-lot:not(.s-out):not(.s-sold)').addClass('s-active-lot').find('input').prop("checked", "checked");
+				bidObject.lotSelected = 99;
+			}
+			else {
+				$('.js--group-lot').removeClass('s-active-lot').find('input').prop("checked", "");
+				bidObject.lotSelected = 0;
+			} 
 		}
 
 	};
 
 	rivets.binders.lotactive = function(el, value){
-		
+		if(value === 99) return;
 		if(value == $(el).data('lotnumber')) $(el).addClass('s-active-lot');
 		else $(el).removeClass('s-active-lot');
 
@@ -346,9 +359,35 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 
 	}
 
+	rivets.binders.biddingmode = function(el, value) {
+		$(el).removeClass('s-normal s-open-offers s-runnerup s-winner');
+
+		switch (value){
+			case 'normal':
+				$(el).addClass('s-normal');
+				break;
+
+			case 'open-offer':
+				$(el).addClass('s-open-offers');
+				break;
+
+			case 'runner-up':
+				$(el).addClass('s-runnerup');
+				break;
+
+			case 'winners-choice':
+				$(el).addClass('s-winner');
+				break;
+
+			default:
+				$(el).addClass('s-normal');
+				break;
+		}
+	}
+
 	rivets.binders.lotbidstate = function(el, value) {
 		$(el).removeClass().addClass('bidding--bid-button');
-		console.log(value);
+		
 		switch (value){
 			case 'disabled':
 				$(el).addClass('s-disabled');

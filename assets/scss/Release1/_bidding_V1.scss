@@ -24,6 +24,24 @@
 	}
 }
 
+@mixin runnerupAnimation{
+	animation-name: runnerup;
+	animation-iteration-count: infinite;
+	animation-duration: 1s;
+}
+
+@keyframes runnerup {
+  	0% {
+    	background-color: $brand-color;
+	}
+	50%{
+		background-color: darken($brand-color,15%);
+	}
+  	100% {
+	 	background-color: $brand-color;
+	} 
+}
+
 	.bidding--area{
 		display: inline-block;
 		width: 50%;
@@ -38,7 +56,7 @@
 
 		.bidding{
 			position: absolute;
-			bottom: 35px;
+			bottom: 40px;
 			left: 0;
 			right: 0;	
 			padding: 0 $default-margin;
@@ -70,7 +88,36 @@
 					left: 0;
 					width: 10px;
 				}
+				
+				&.s-winner{
+					background-color: $finance-color;
+				}
+
+				&.s-runnerup{
+					@include runnerupAnimation;
+				}
+				
 			}
+
+				.normal, .openoffer, .runnerup, .winner{
+					display: none;
+				}
+
+				.s-normal .normal{
+					display: block;
+				}
+
+				.s-open-offers .openoffer{
+					display: block;
+				}
+
+				.s-runnerup .runnerup{
+					display: block;
+				}
+
+				.s-winner .winner{
+					display: block;
+				}
 
 		.lot-tables--follow{
 			position: absolute;
@@ -79,6 +126,7 @@
 			text-align: center;
 			background-color: $grey-100;
 			padding: 2px 0;
+			border-top: 1px solid $grey-500;
 		}
 
 
@@ -331,12 +379,8 @@
 		position: relative;
 
 		&.s-active-lot{
-			.bidding--header{
-				border-left-color: $grey-50;
-			}
-
-			ul:before{
-				background-color: $grey-50;
+			ul:before, .bidding--header:before{
+				background-color: $grey-500;
 			}
 
 			li:not(.s-active-lot):not(.s-sold):not(.s-out){
@@ -346,9 +390,34 @@
 					pointer-events: none;
 				}
 			}
+
+			li:not(.s-active-lot){
+				//border-left: 1px solid $grey-900;
+			}
+
+			li.s-sold, li.s-out{
+				//border-left: 1px solid rgba($grey-900,0.5);	
+			}
 		}
 
-		&.s-open-offers{
+		&.s-runnerup:not(.s-active-lot){
+			ul:before, .bidding--header:before{
+				@include runnerupAnimation;
+			}
+		}
+
+		&.s-winner:not(.s-active-lot){
+			ul:before, .bidding--header:before{
+				background-color: $finance-color;
+			}
+		}
+
+		&.s-open-offers, &.s-winner, &.s-runnerup{
+			.bidding--header{
+				background-color: $grey-900;
+				color: $brand-color;
+			}
+
 			.group--body{
 				top: 65px;
 			}
@@ -357,12 +426,21 @@
 
 	.bidding--header{
 		background-color: $grey-300;
-		border-left: 10px solid $brand-color;
-		padding: 3px 10px;
+		padding: 3px 0 0 10px;
 		@include default-font;
 		font-weight: 700;
-		text-transform: uppercase;
 		text-align: center;
+
+		&:before{
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 10px;
+			background-color: $brand-color;
+			display: inline-block;
+		}
 	}
 
 		.button_select-all{
@@ -372,7 +450,7 @@
 	.group--body{
 		overflow-y: auto;
 		position: absolute;
-		top: 28px;
+		top: 25px;
 		bottom: 0;
 		left: 0;
 		right: 0;
@@ -412,6 +490,59 @@
 		text-align: center;
 	}
 
+	.lot--selector{
+			outline: none;
+			cursor: pointer;
+			transition: $transition;
+			vertical-align: middle;
+
+			span{
+				height: 30px;
+				width: 30px;
+		    	display: block;
+			    background-color: white;
+			    border: 3px solid $brand-color;
+			    color: transparent;
+				border-radius: 20px;
+				font-size: 18px;
+				text-align: center;
+				margin-right: 6px;
+
+				i{
+					line-height: 24px;
+					display: block;
+
+					transition: $transition;
+				}
+
+				transition: $transition;
+
+				&:hover{
+					color: rgba($brand-color,0.7);
+
+					i{
+						transform: scale(1.1);
+					}
+				}
+			}
+
+			input{
+				display: none;
+
+				&:checked{
+					+ span{
+						background-color: $brand-color;
+						opacity: 1;
+						color: white;
+
+						&:hover{
+							color: white;
+						}
+					}
+			    }
+			}
+		}
+
 	.group--lot{
 		@include default-font;
 		overflow: hidden;
@@ -421,6 +552,17 @@
 		position: relative;
 
 		transition: $transition;
+
+			// &:before{
+			// 	content: '';
+			// 	position: absolute;
+			// 	background-color: $brand-color;
+			// 	top: 0;
+			// 	left: 0;
+			// 	width: 0;
+			// 	height: 100%;
+			// 	transition: $transition;
+			// }
 
 		.lot--watching{
 			vertical-align: middle;
@@ -471,54 +613,6 @@
 		    left: 6px;
 		    top: 50%;
 		    transform: translateY(-50%);
-			
-			outline: none;
-			cursor: pointer;
-			transition: $transition;
-
-			span{
-				height: 30px;
-				width: 30px;
-		    	display: block;
-			    background-color: transparent;
-			    border: 3px solid $brand-color;
-			    color: white;
-				border-radius: 20px;
-				font-size: 18px;
-				text-align: center;
-
-				i{
-					line-height: 24px;
-					display: block;
-
-					transition: $transition;
-				}
-
-				transition: $transition;
-
-				&:hover{
-					color: rgba($brand-color,0.7);
-
-					i{
-						transform: scale(1.1);
-					}
-				}
-			}
-
-			input{
-				display: none;
-
-				&:checked{
-					+ span{
-						background-color: $brand-color;
-						opacity: 1;
-
-						&:hover{
-							color: white;
-						}
-					}
-			    }
-			}
 		}
 
 		
@@ -536,11 +630,28 @@
 		}
 
 		&.s-active-lot{
-			background-color: white;
+			background-color: $brand-color;
 			margin-left: 0;
+
+			&:before{
+				width: 100%;
+			}
+
 
 			.lot--selector{
 				left: 5px;
+				span{
+					background-color: white;
+					color: $brand-color;
+
+					&:hover{
+						color: $brand-color;
+					}
+				}
+			}
+
+			.lot--name, .lot--value{
+				color: white;
 			}
 		}
 
@@ -581,6 +692,18 @@
 		}
 	}
 
+	
+	.select-all{
+		color: white;
+		background-color: $grey-900;
+		padding: 5px  6px;
+		text-align: left;
+
+		span{
+			border-color: white;
+			transform: scale(0.9);
+		}
+	}
 
 	.bidding--lot{
 		margin-bottom: $default-margin;
