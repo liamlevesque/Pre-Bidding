@@ -134,7 +134,7 @@
 			text-align: center;
 			background-color: $grey-100;
 			padding: 2px 0;
-		    border: 1px solid #959595;
+		    border: 1px solid $border-separator;
 		    border-bottom: 0;
 		    border-radius: 5px 5px 0 0;
 		}
@@ -171,6 +171,10 @@
 				display: block;
 				font-size: 0.8rem;
 				margin-top: 10px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+
 			}
 
 			.bid-value:empty:before{

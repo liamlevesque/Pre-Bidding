@@ -2159,10 +2159,10 @@ MOST IMPORTANT - LOT TABLE STYLES
   margin-bottom: 100px;
   font-size: 0.9rem;
   line-height: 1.4rem;
-  border-top: 1px solid #959595; }
+  border-top: 1px solid rgba(149, 149, 149, 0.5); }
   @media (min-width: 80em) {
     .lot-tables {
-      border: 1px solid #959595; } }
+      border: 1px solid rgba(149, 149, 149, 0.5); } }
 
 .lot-tables--header {
   background-color: #E9E9E9;
@@ -2568,7 +2568,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   text-align: center;
   background-color: #E9E9E9;
   padding: 2px 0;
-  border: 1px solid #959595;
+  border: 1px solid rgba(149, 149, 149, 0.5);
   border-bottom: 0;
   border-radius: 5px 5px 0 0; }
 
@@ -2591,7 +2591,10 @@ MOST IMPORTANT - LOT TABLE STYLES
   .bid-field .bid-value_sub {
     display: block;
     font-size: 0.8rem;
-    margin-top: 10px; }
+    margin-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
   .bid-field .bid-value:empty:before {
     content: "waiting..."; }
   .bid-field.bid-field_left {

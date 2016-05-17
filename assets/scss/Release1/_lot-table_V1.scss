@@ -20,11 +20,11 @@ $ring-right-spacing: 30px;
 	margin-bottom: 100px;
 	@include default-font;
 	//box-shadow: $ritchie-shadow;
-	border-top: 1px solid #959595;
+	border-top: 1px solid $border-separator;
 	
 
 	@include breakpoint(large){
-		border: 1px solid #959595; 
+		border: 1px solid $border-separator; 
 	}
 }
 
