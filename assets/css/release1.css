@@ -2159,7 +2159,10 @@ MOST IMPORTANT - LOT TABLE STYLES
   margin-bottom: 100px;
   font-size: 0.9rem;
   line-height: 1.4rem;
-  border: 1px solid #959595; }
+  border-top: 1px solid #959595; }
+  @media (min-width: 80em) {
+    .lot-tables {
+      border: 1px solid #959595; } }
 
 .lot-tables--header {
   background-color: #E9E9E9;
