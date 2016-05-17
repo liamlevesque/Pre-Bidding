@@ -2455,15 +2455,6 @@ MOST IMPORTANT - LOT TABLE STYLES
 .flex-item_half {
   width: 50%; }
 
-.lot-info {
-  display: inline-block;
-  width: 49%;
-  position: relative;
-  vertical-align: top; }
-  @media (min-width: 64em) {
-    .lot-info {
-      width: 55%; } }
-
 .lot-bidding {
   width: 49%;
   position: absolute;
@@ -2986,8 +2977,12 @@ MOST IMPORTANT - LOT TABLE STYLES
 
 .lot-info {
   display: inline-block;
-  width: 55%;
+  position: relative;
+  width: 51%;
   background-color: white; }
+  @media (min-width: 64em) {
+    .lot-info {
+      width: 55%; } }
 
 .lot--header {
   padding: 7px 10px 7px;

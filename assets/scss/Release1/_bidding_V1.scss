@@ -1,14 +1,4 @@
-.lot-info{
-	display: inline-block;
-	width: 49%;
 
-	@include breakpoint(med-large){
-		width: 55%;
-	}
-
-	position: relative;
-	vertical-align: top;
-}
 
 .lot-bidding{
 	width: 49%;

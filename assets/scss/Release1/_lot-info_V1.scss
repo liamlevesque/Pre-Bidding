@@ -32,8 +32,13 @@
 
 .lot-info{
 	display: inline-block;
-	width: 55%;
+	position: relative;
+	width: 51%;
 	background-color: $li-bg;
+
+	@include breakpoint(med-large){
+		width: 55%;
+	}
 	
 }
 
