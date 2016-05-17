@@ -119,13 +119,14 @@
                 
                 <ul class="bidding--info">
                     <li class="bid-field">
-                        <label>Ask Price</label>
+                        <label rv-hide="bidObject.bidStatus | equals 'soldYou'">Ask Price</label>
+                        <label rv-show="bidObject.bidStatus | equals 'soldYou'">Sold</label>
 
                         <span class="h-t-large">
                             <span class="bid-value dollars" rv-html="bidObject.askPrice | price"></span>
                         </span>
                     </li>
-                    <li class="bid-field">
+                    <li class="bid-field" rv-hide="bidObject.bidStatus | equals 'soldYou'">
                         <label>High Bid:</label>
                         <span class="c-brand">
                             <span class="bid-value dollars" rv-html="bidObject.bidPrice | price"></span>
@@ -133,7 +134,8 @@
                     </li>
                     <li class="bid-field">
                         <label>High Bidder:</label>
-                        <span class="bid-value" rv-text="bidObject.bidder | bidderoryou"></span>
+                        <span class="bid-value" rv-hide="bidObject.bidStatus | equals 'soldYou'">Internet</span>
+                        <span class="bid-value" rv-text="bidObject.bidder | bidderoryou" rv-show="bidObject.bidStatus | equals 'soldYou'"></span>
                         <span class="bid-value bid-value_sub" rv-text="bidObject.location">Location</span>
                     </li>
                 </ul>
@@ -147,17 +149,29 @@
                         <span class="winner"><b>WINNER'S CHOICE:</b><br/>Check the circle next to the lots you want to buy at this price</span>
                     </div>
 
-                    <div class="bidding--lot" rv-show="bidObject.lotSelected">
+                    <!-- <div class="bidding--lot" rv-show="bidObject.lotSelected">
                         <label>Bidding on lot <span rv-text="bidObject.lotSelected"></span></label>
-                    </div>
+                    </div> -->
 
                     <div class="bidding--messages">
-                        <div class="bidding--outbid js--outbid">
-                            <div class="message-box--warning">
-                                You've been outbid!<br/>
-                                Bid again now.
-                            </div>
+                        
+                        <div class="message-box--error" rv-show="bidObject.bidStatus | equals 'outbid'">
+                            You've been outbid!<br/>
+                            Bid again now.
                         </div>
+                    
+                        <div class="message-box--waiting" rv-show="bidObject.bidStatus | equals 'waiting'">
+                            Bid Submitted - <span class="dollars" rv-html="bidObject.askPrice | price"></span>
+                        </div>
+                        
+                        <div class="message-box--success" rv-show="bidObject.bidStatus | equals 'accepted'">
+                            Bid Accepted - You're On!
+                        </div>
+
+                        <div class="message-box--success" rv-show="bidObject.bidStatus | equals 'soldYou'">
+                            Sold to you!
+                        </div>
+                        
                     </div>
 
                     <button class="bidding--bid-button" rv-lotbidstate="bidObject.bidStatus" rv-on-click="bidController.onBidClick">

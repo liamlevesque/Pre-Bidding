@@ -165,7 +165,7 @@ GRID
 .icon-help:before {
   content: "\e909"; }
 
-.icon-loading:before {
+.icon-loading:before, .message-box--waiting:before {
   content: "\e90a"; }
 
 .icon-Photos:before {
@@ -2678,6 +2678,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   padding: 10px 15px;
   padding-left: 57px;
   font-weight: 700;
+  margin-bottom: 10px;
   position: relative;
   text-align: left;
   font-size: 0.8rem;
@@ -2689,7 +2690,6 @@ MOST IMPORTANT - LOT TABLE STYLES
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    padding-right: 15px;
     font-family: 'ritchie-icons' !important;
     speak: none;
     font-style: normal;
@@ -2702,18 +2702,64 @@ MOST IMPORTANT - LOT TABLE STYLES
     font-size: 24px; }
 
 .message-box--error {
-  border-color: #c4483a; }
+  border: none;
+  background-color: #c4483a;
+  color: white;
+  font-weight: 400; }
   .message-box--error:before {
-    color: #c4483a; }
+    color: white; }
 
 .message-box--warning {
   border: none;
-  background-color: #fde27a;
-  color: #585858; }
+  background-color: #FCD748;
+  color: black; }
   .message-box--warning:before {
-    color: #c19a03;
-    border-right-color: #c19a03; }
+    color: black;
+    border-right-color: transparent; }
 
+.message-box--waiting {
+  border: none;
+  background-color: #FCD748;
+  color: black; }
+  .message-box--waiting:before {
+    color: black;
+    border-right-color: #FCD748;
+    -webkit-animation-name: waitingspin;
+            animation-name: waitingspin;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+
+@-webkit-keyframes waitingspin {
+  0% {
+    -webkit-transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(0deg); }
+  50% {
+    -webkit-transform: translateY(-50%) rotate(200deg);
+            transform: translateY(-50%) rotate(200deg); }
+  60% {
+    -webkit-transform: translateY(-50%) rotate(240deg);
+            transform: translateY(-50%) rotate(240deg); }
+  100% {
+    -webkit-transform: translateY(-50%) rotate(360deg);
+            transform: translateY(-50%) rotate(360deg); } }
+
+@keyframes waitingspin {
+  0% {
+    -webkit-transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(0deg); }
+  50% {
+    -webkit-transform: translateY(-50%) rotate(200deg);
+            transform: translateY(-50%) rotate(200deg); }
+  60% {
+    -webkit-transform: translateY(-50%) rotate(240deg);
+            transform: translateY(-50%) rotate(240deg); }
+  100% {
+    -webkit-transform: translateY(-50%) rotate(360deg);
+            transform: translateY(-50%) rotate(360deg); } }
 .message-box--open-offer {
   border: none;
   background-color: #d06c61;
@@ -2723,9 +2769,12 @@ MOST IMPORTANT - LOT TABLE STYLES
     border-right-color: #62241d; }
 
 .message-box--success {
-  border-color: #24532B; }
+  border-color: #24532B;
+  background-color: #24532B;
+  color: white;
+  font-weight: 400; }
   .message-box--success:before {
-    color: #24532B; }
+    color: white; }
 
 .bidding--group {
   display: inline-block;
@@ -2999,11 +3048,14 @@ MOST IMPORTANT - LOT TABLE STYLES
 
 .lot--title {
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis; }
+  @media (min-width: 80em) {
+    .lot--title {
+      font-size: 1.2rem; } }
 
 @media (min-width: 64em) {
   .lot--photos {

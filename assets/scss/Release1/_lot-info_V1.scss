@@ -57,9 +57,13 @@
 
 	.lot--title{
 		color: $li-title;
-		font-size: 1.2rem;
+		font-size: 1rem;
 		margin-bottom: 0;
 		@include ellipsize;
+
+		@include breakpoint(large){
+			font-size: 1.2rem;
+		}
 	}
 
 	.lot--photos{

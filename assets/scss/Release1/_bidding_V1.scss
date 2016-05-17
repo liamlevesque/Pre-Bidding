@@ -320,6 +320,7 @@
 				padding: 10px $default-margin;
 				padding-left: 57px;
 				font-weight: 700;
+				margin-bottom: 10px;
 
 				position: relative;
 				text-align: left;
@@ -332,7 +333,7 @@
 					left: $default-margin;
 					top: 50%;
 					transform: translateY(-50%);
-					padding-right: $default-margin;
+					//padding-right: $default-margin;
 
 					@include icon-font;
 					font-size: 24px;
@@ -340,23 +341,60 @@
 			}
 
 			.message-box--error{
-				border-color: $error-colour;
+				border: none;
+				background-color: $error-colour;
+				color: white;
+				font-weight: 400;
 				@extend .icon-warning;
 
 				&:before{
-					color: $error-colour;
+					color: white;
 				}
 			}
 
 			.message-box--warning{
 				border: none;
-				background-color: lighten($warning-colour, 10%);
-				color: $grey-700;
+				background-color: $warning-colour;
+				color: black;
 				@extend .icon-warning;
 
 				&:before{
-					color: darken($warning-colour,25%);
-					border-right-color: darken($warning-colour,25%);
+					color: black;
+					border-right-color: transparent;
+				}
+			}
+
+			.message-box--waiting{
+				border: none;
+				background-color: $warning-colour;
+				color: black;
+				@extend .icon-loading;
+
+				&:before{
+					color: black;
+					border-right-color: $warning-colour;
+					animation-name: waitingspin;
+					animation-iteration-count: infinite;
+					animation-duration: 1s;
+					animation-timing-function: linear;
+				}
+			}
+
+			@keyframes waitingspin{
+				0%{
+					transform: translateY(-50%) rotate(0deg);
+				}
+
+				50%{
+					transform: translateY(-50%) rotate(200deg);
+				}
+
+				60%{
+					transform: translateY(-50%) rotate(240deg);
+				}
+
+				100%{
+					transform: translateY(-50%) rotate(360deg);
 				}
 			}
 
@@ -374,10 +412,14 @@
 
 			.message-box--success{
 				border-color: $finance-color;
+				background-color: $finance-color;
+				color: white;
+				font-weight: 400;
+				//text-transform: uppercase;
 				@extend .icon-check;
 
 				&:before{
-					color: $finance-color;
+					color: white;
 				}
 			}
 

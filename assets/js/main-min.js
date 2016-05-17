@@ -2324,8 +2324,11 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 			if(bidObject.lotSelected == target){
 				//console.log(bidObject.lotSelected, target);
 				bidObject.lotSelected = 0;
+				bidObject.bidStatus = 'disabled';
+				return;
 			}
 			else bidObject.lotSelected = target;
+			bidObject.bidStatus = 'active';
 
 		},
 
@@ -2337,21 +2340,23 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 					break;
 
 				case "active":
-					bidObject.bidStatus = 'disabled';
-					bidController.outbid();
+					bidObject.bidStatus = 'waiting';
 					break;
 
 				case "waiting":
 					bidObject.bidStatus = 'accepted';
-					
 					break;
-				
+
 				case "accepted":
+					bidObject.bidStatus = 'outbid';
+					break;
+
+				case "outbid":
 					bidObject.bidStatus = 'soldYou';
 					break;
 
 				case "soldYou":
-					bidObject.bidStatus = 'soldOther';
+					bidObject.bidStatus = 'disabled';
 					break;
 
 				case "soldOther":
@@ -2367,6 +2372,12 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 			}
 		},
 
+		bidSubmitted: function(){
+			setTimeout(function(){
+				bidController.outbid();
+			},3000);
+		},
+
 		outbid: function(){
 			$('.js--outbid').addClass('s-active');
 			setTimeout(function(){
@@ -2379,14 +2390,20 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 			if(bidObject.selectAll){ 
 				$('.js--group-lot:not(.s-out):not(.s-sold)').addClass('s-active-lot').find('input').prop("checked", "checked");
 				bidObject.lotSelected = 99;
+				bidObject.bidStatus = 'active';
 			}
 			else {
 				$('.js--group-lot').removeClass('s-active-lot').find('input').prop("checked", "");
 				bidObject.lotSelected = 0;
+				bidObject.bidStatus = 'disabled';
 			} 
 		}
 
 	};
+
+	rivets.formatters.equals = function(value, arg){
+		return value === arg;
+	}
 
 	rivets.binders.lotactive = function(el, value){
 		if(value === 99) return;
@@ -2437,15 +2454,19 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 				break;	
 
 			case 'waiting':
-				$(el).addClass('s-waiting');
+				$(el).addClass('s-disabled');
 				break;
 
 			case 'accepted':
-				$(el).addClass('s-accepted');
+				$(el).addClass('s-disabled');
 				break;			
 
 			case 'soldYou':
-				$(el).addClass('s-sold-won');
+				$(el).addClass('s-disabled');
+				break;
+
+			case 'outbid':
+				$(el).addClass('s-active');
 				break;
 
 			case 'soldOther':
