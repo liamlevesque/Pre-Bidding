@@ -111,34 +111,30 @@
     </header>
 
     <div class="client--upper">
-        <div class="lot-info">
-            <img src="assets/img/lotInfo.png"/>
+        <div class="lot-info js--lot-info" >
+            
         </div>
         <div class="lot-bidding js--bid-area">
             <div class="bidding--area" rv-isgroupbidding="saleItem.isgroup">
                 
                 <ul class="bidding--info">
-                    
+                    <li class="bid-field">
+                        <label>Ask Price</label>
+
+                        <span class="h-t-large">
+                            <span class="bid-value dollars" rv-html="bidObject.askPrice | price"></span>
+                        </span>
+                    </li>
                     <li class="bid-field">
                         <label>High Bid:</label>
                         <span class="c-brand">
                             <span class="bid-value dollars" rv-html="bidObject.bidPrice | price"></span>
-                            <span class="CCY"></span> 
                         </span>
                     </li>
                     <li class="bid-field">
                         <label>High Bidder:</label>
                         <span class="bid-value" rv-text="bidObject.bidder | bidderoryou"></span>
                         <span class="bid-value bid-value_sub" rv-text="bidObject.location">Location</span>
-                        <!-- <button rv-on-click="controller.onOutBid">Outbid me!</button> -->
-                    </li>
-                    <li class="bid-field">
-                        <label>Ask Price</label>
-
-                        <span class="h-t-large">
-                            <span class="bid-value dollars" rv-html="bidObject.askPrice | price"></span>
-                            <span class="CCY"></span>
-                        </span>
                     </li>
                 </ul>
                     
@@ -166,25 +162,25 @@
 
                     <button class="bidding--bid-button" rv-lotbidstate="bidObject.bidStatus" rv-on-click="bidController.onBidClick">
                         <span class="bidder--option bidder--disabled">
-                            Bid <span class="dollars" rv-html="bidObject.askPrice | price"></span><span class="CCY"></span>
+                            Bid <span class="dollars" rv-html="bidObject.askPrice | price"></span>
                         </span>
                         
-                        <span class="bidder--option bidder--open-offer">
+                       <!--  <span class="bidder--option bidder--open-offer">
                             Buy <span></span> @
-                            <br/><span class="CCY"></span><span class="dollars" rv-html="bidObject.bidPrice | price"></span> each
+                            <br/><span class="dollars" rv-html="bidObject.bidPrice | price"></span> each
                             <br/><label rv-show="saleItem.openOffersList">Total <span class="dollars" rv-html="saleItem.openOffersList | pricelists"></span><span class="CCY"></span></label>
                         </span>
 
                         <span class="bidder--option bidder--open-offer_disabled">
-                            <span class="CCY"></span><span class="dollars" rv-html="bidObject.bidPrice | price"></span> each
-                            <br/><label rv-show="saleItem.openOffersList">Total <span class="dollars" rv-html="saleItem.openOffersList | pricelists"></span><span class="CCY"></span></label>
-                        </span>
+                            <span class="dollars" rv-html="bidObject.bidPrice | price"></span> each
+                            <br/><label rv-show="saleItem.openOffersList">Total <span class="dollars" rv-html="saleItem.openOffersList | pricelists"></span></label>
+                        </span> -->
                         
                         <span class="bidder--option bidder--active">
-                            Bid <span class="dollars" rv-html="bidObject.askPrice | price"></span><span class="CCY"></span>
+                            Bid <span class="dollars" rv-html="bidObject.askPrice | price"></span>
                         </span>
                     
-                        <span class="bidder--option bidder--waiting">
+                        <!-- <span class="bidder--option bidder--waiting">
                             Bid submitted!
                             <br/>Waiting for acceptance.
                         </span>
@@ -201,7 +197,7 @@
                         <span class="bidder--option bidder--lost">
                             Sold
                             <br/>Bidder <span rv-text="saleItem.bidder"></span> won this lot
-                        </span>
+                        </span> -->
                     </button>
 
                 </div>
@@ -222,7 +218,7 @@
                     <span class="runnerup">Runner Up: 9 Remaining</span> 
                     <span class="winner">Winner's Choice: 9 Remaining</span>
 
-                    <div class="select-all openoffer normal runnerup winner">
+                    <div class="select-all openoffer runnerup winner">
                         
                         <label class="lot--selector"> 
                             <input type="checkbox" rv-on-click="bidController.onSelectAllClick">
@@ -846,5 +842,62 @@
     </div>
 
 <script type="text/javascript" src="assets/js/main-min.js"></script>
+
+    <script id="currentlot" type="x-tmpl-mustache">
+        <div class="lot--header">
+            <h5 class="lot--number">Lot {{ lot }}</h5>
+            <h2 class="lot--title">{{ name }}</h2>
+        </div>
+        <div class="lot--photos">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    {{#photos}}
+                    <div class="swiper-slide">
+                        <img src="assets/js/data/{{ . }}" />
+                    </div>
+                    {{/photos}}
+                </div>
+                
+                <div class="swiper-pagination"></div>
+                
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- <div class="swiper-counter">
+                   <span class="js--swiper-active">1</span> of 3
+                </div> -->
+                
+            </div>
+        </div>
+        <div class="lot--fields">
+           
+            <div class="lot--field_container">
+                <div class="lot--field_half">
+                    <label>Serial Number / VIN</label>
+                    <span class="">{{ serial }}</span>
+                </div>
+                <div class="lot--field_half">
+                    <label>Meter Reads</label>
+                    <span class="">{{ meter }}</span>
+                </div>
+            </div>
+            {{#warranty}}
+                <div class="lot--field lot--field_warranty">
+                    <i class="c-brand icon-warranty h-mr-50"></i>Powertrain Service Warranty Available
+                </div>
+            {{/warranty}}
+            <div class="lot--field">
+                <label>Comes With</label>
+                <span class="">{{ comeswith }}</span>
+            </div>
+            <div class="lot--field">
+                <label>Catalogue Notes</label>
+                <span class="">{{ catnotes }}</span>
+            </div>
+
+            
+        </div>
+    </script>
 
 </body>

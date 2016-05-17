@@ -19,7 +19,8 @@ $ring-right-spacing: 30px;
 .lot-tables{
 	margin-bottom: 100px;
 	@include default-font;
-	box-shadow: $ritchie-shadow;
+	//box-shadow: $ritchie-shadow;
+	border: 1px solid #959595;
 }
 
 	.lot-tables--header{

@@ -48,10 +48,27 @@
 		height: 100%;
 		position: relative;
 		background-color: $grey-50;
+
+		&:before{
+			content: "";
+			width: 10px;
+			height: 53px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 20" preserveAspectRatio="none"><polygon fill="%23333333" points="0,0 10,10 0,20"/></svg>');
+			background-size: 10px 100%;
+			background-repeat: no-repeat;
+					
+		}
 	}
 		
 		.bidding--info{
 			padding: $default-margin;
+
+			.h-t-large{
+				font-size: 1.4rem;
+			}
 		}
 
 		.bidding{
@@ -121,12 +138,15 @@
 
 		.lot-tables--follow{
 			position: absolute;
-			bottom: 0;
-			width: 100%;
+			bottom: -1px;
+			left: 10px;
+			right: 10px;
 			text-align: center;
 			background-color: $grey-100;
 			padding: 2px 0;
-			border-top: 1px solid $grey-500;
+		    border: 1px solid #959595;
+		    border-bottom: 0;
+		    border-radius: 5px 5px 0 0;
 		}
 
 
@@ -177,6 +197,7 @@
 			color: $black;
 			background-image: none;
 			background-color: white;
+			height: 80px;
 			
 			width: 100%;
 
@@ -572,11 +593,17 @@
 		$lot-photo-width: 70px;
 
 		.lot--photo{
+			
 			position: relative;
-			width: $lot-photo-width - 10px;
+			width: $lot-photo-width - 20px;
 			display: inline-block;
 			vertical-align: middle;
 			margin-right: 5px;
+
+			@include breakpoint(large){
+				width: $lot-photo-width - 10px;
+			}
+
 		}
 
 		.lot--values{

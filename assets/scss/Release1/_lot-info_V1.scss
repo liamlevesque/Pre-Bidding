@@ -1,0 +1,254 @@
+.middle-section{
+	margin-bottom: 2 * $default-margin;
+	position: relative;
+
+	&:before{
+		content: " ";
+		background-color: $brand-color;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 60px;
+		z-index: 0;
+	}
+}
+
+	// $li-bg: $grey-700;
+	// $li-header-bg: $grey-900;
+	// $li-title: white;
+	// $li-text: white;
+
+	// $li-bg: white;
+	// $li-header-bg: white;
+	// $li-title: $grey-900;
+	// $li-text: $grey-900;
+
+	$li-bg: white;
+	$li-header-bg: $grey-900;
+	$li-title: white;
+	$li-text: $grey-900;
+	
+
+.lot-info{
+	display: inline-block;
+	width: 55%;
+	background-color: $li-bg;
+	
+}
+
+	.lot--header{
+		padding: 7px 10px 7px;
+		background-color: $li-header-bg;
+		//border-bottom: $ritchie-border;
+	}
+
+	.lot--number{
+		color: $brand-color;
+		text-transform: uppercase;
+		font-weight: 700;
+		margin-bottom: 0;
+	}
+
+	.lot--title{
+		color: $li-title;
+		font-size: 1.2rem;
+		margin-bottom: 0;
+		@include ellipsize;
+	}
+
+	.lot--photos{
+		
+
+		@include breakpoint(med-large){
+			display: inline-block;
+			width: 65%;
+		}
+
+		@include breakpoint(large){
+			width: 65%;	
+			padding: 10px 0 10px 0;
+		}
+	}
+
+		.lot--bottom{
+			margin-top: $default-margin;
+			@include default-font;
+			text-align: center;
+		}
+
+	.swiper-container{
+		
+		img{
+			width: 100%;
+    		min-width: 100%;
+    		vertical-align: bottom;
+		}
+
+		&:after{
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			z-index: 2;
+			right: 0;
+			height: 100px;
+			background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
+		}
+
+		.swiper-counter{
+			display: block;
+			position: absolute;
+			bottom: 5px;
+			right: 5px;
+			z-index: 3;
+			border-radius: 5px;
+			background-color: rgba(black, 0.5);
+			color: white;
+			font-size: 0.8rem;
+			font-weight: 700;
+			padding: 5px 10px;
+		}
+
+		.swiper-pagination-bullet{
+			background: white;
+			opacity: 0.5;
+			transition: $transition;
+			
+			&.swiper-pagination-bullet-active{
+				background: $brand-color;
+				opacity: 1;
+				transform: scale(1.2);
+			}
+		}
+
+		.swiper-button-next, .swiper-container-rtl .swiper-button-prev, .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+			background-color: rgba(white,0.5);
+		  	padding: 30px 20px;
+		  	opacity: 0.25;
+		  	transition: $transition;
+		  }
+
+		.swiper-button-prev,
+		.swiper-container-rtl .swiper-button-next {
+			left: 0;
+			background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E");
+			&:hover{
+				background-color: $brand-color;
+				background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+				opacity: 1 !important;
+			}
+  		}
+
+  		.swiper-button-next,
+		.swiper-container-rtl .swiper-button-prev {
+		  	right: 0;
+		  	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E");
+			&:hover{
+				background-color: $brand-color;
+				background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+				opacity: 1 !important;
+			}
+		}
+
+		&:hover{
+			.swiper-button-next, .swiper-container-rtl .swiper-button-prev, .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+				opacity: 0.5;
+			}
+		}
+	}
+
+	.lot--fields{
+		padding: 5px 10px;
+		font-size: 0.8rem;
+		line-height: 1.3rem;
+		color: $li-text;
+
+		@include breakpoint(med-large){
+			position: absolute;
+			top: 53px;
+			bottom: 0;
+			overflow-y: auto;
+			display: inline-block;
+			width: 35%;
+			float: right;
+		}
+
+		@include breakpoint(large){
+			padding: 10px $default-margin;
+			width: 35%;	
+		}
+	}
+
+		.lot--field, .lot--field_half, .lot--field_warranty{
+			label{
+				display: block;
+				margin-bottom: 2px;
+			}
+			
+			padding-top: 4px;
+			padding-bottom: 2px;
+			border-bottom: $ritchie-border;
+
+			@include breakpoint(large){
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+		}
+
+		.lot--field_warranty{
+			position: relative;
+			padding-left: 25px;
+			line-height: 1rem;
+
+			i{
+				position: absolute;
+				left: 2px;
+				top: 6px;
+				font-size: 16px;
+			}
+
+			@include breakpoint(large){
+				padding-top: 5px;
+				padding-bottom: 5px;
+
+				i{
+					top: 8px;
+				}
+			}
+		}
+
+		.lot--field:first-of-type{
+			padding-top: 0;
+		}
+
+		.lot--field:last-of-type{
+			border-bottom: none;
+		}
+
+		.lot--field_container{
+			@include breakpoint(large){
+				border-bottom: $ritchie-border;
+				padding-bottom: 5px;
+			}
+		}
+
+		.lot--field_half{
+			@include breakpoint(large){
+				display: inline-block;
+				width: 55%;
+				border-bottom: none;
+				padding: 0;
+
+				&:last-of-type{
+					width: 40%;
+					text-align: right;
+				}
+			}
+		}
+
+
+
+
+

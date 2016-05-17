@@ -53,6 +53,25 @@ $(function(){
 		bidObject.bidMode = bidMode[bidModeIndex];
 	});
 
+	var template2 = $('#currentlot').html();
+	var rendered = Mustache.render(template2, lotObject);
+	$('.js--lot-info').html(rendered);
+
+	var mySwiper = new Swiper ('.swiper-container', {
+		direction: 'horizontal',
+		loop: true,
+		pagination: '.swiper-pagination',
+		paginationClickable: 'true',
+		nextButton: '.swiper-button-next',
+		prevButton: '.swiper-button-prev',
+		autoHeight: true,
+		onSlideChangeEnd: function(mySwiper){
+			$('.js--swiper-active').text($('.swiper-slide-active').data('swiper-slide-index')+1);
+
+		}
+	})
+
+
 	// window.onbeforeunload = function(){
  //    	location.assign('http://www.google.com');
  //    	return "Woah! You've won 6 lots.\n\nTo see a summary of your purchases, stay on this page and click on the shopping cart.";
@@ -295,12 +314,13 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 					break;
 
 				case "active":
-					bidObject.bidStatus = 'waiting';
+					bidObject.bidStatus = 'disabled';
+					bidController.outbid();
 					break;
 
 				case "waiting":
 					bidObject.bidStatus = 'accepted';
-					bidController.outbid();
+					
 					break;
 				
 				case "accepted":
@@ -422,7 +442,7 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 				break;
 		}
 
-	}
+	},
 
 	bidArea = rivets.bind($('.js--bid-area'),{
 		bidObject: bidObject,
@@ -430,4 +450,32 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 	});
 
 
+ 
+ 	var lotObject = {
+			lot: 1,
+			name: "2008 KENWORTH T800 T/A Winch Tractor",
+			serial: "1XKDDB0X08J236544",
+			meter: "113903 Mi",
+			photo: "8686158_1.jpg",
+			photos: [
+				"8686158_1.jpg",
+				"8709802_2.jpg",
+				"8709802_3.jpg"
+			],
+			warranty: true,
+			bid: 0,
+			watching: false,
+			comeswith: "Cummins ISX, 500 hp, eng brake, Eaton Fuller RTLO18918B, dbl diff lock, 8 bag A/R susp, 13200 lb frt, D46-170HP rears, 238 in. WB, 48 in. sleeper, wet kit, PAS",
+			catnotes: "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
+			openPrice: 10000,
+			soldPrice: 0,
+			bidder: null,
+			group:0
+		},
+		lotController = {
+
+		},
+		lotArea = rivets.bind($('.js--lot-info'),{
+			lotObject: lotObject
+		});
 
