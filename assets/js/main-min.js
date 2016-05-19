@@ -2182,7 +2182,7 @@ function loadMaxBidTooltip(target){
 				maxbidController : maxbidController
 			});
 
-			$('.js--max-bid-field').autoNumeric('init',{
+			$('.js--max-bid-field').val(maxbidObject.maxbidAmount).autoNumeric('init',{
 				aSep: ',', 
 				aDec: '.',
 				mDec: 0
