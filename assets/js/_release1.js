@@ -123,15 +123,21 @@ function loadMaxBidTooltip(target){
 				maxbidController : maxbidController
 			});
 
-			$('.js--max-bid-field').inputmask("numeric", {
-			    radixPoint: ".",
-			    groupSeparator: ",",
-			    digits: 2,
-			    autoGroup: true,
-			    prefix: '', //Space after $, this will not truncate the first character.
-			    rightAlign: false,
-			    oncleared: function () { self.Value(''); }
+			$('.js--max-bid-field').autoNumeric('init',{
+				aSep: ',', 
+				aDec: '.',
+				mDec: 0
 			});
+
+			// $('.js--max-bid-field').inputmask("numeric", {
+			//     radixPoint: ".",
+			//     groupSeparator: ",",
+			//     digits: 2,
+			//     autoGroup: true,
+			//     prefix: '', //Space after $, this will not truncate the first character.
+			//     rightAlign: false,
+			//     oncleared: function () { self.Value(''); }
+			// });
 
 			//console.log(maxbidObject.initialBid);
 
@@ -186,7 +192,7 @@ function unloadMaxBidTooltip(target){
 
 	    clearWarningClick: function(e,model){
 			maxbidObject.maxbidAmount = '';
-	    	$('.js--max-bid-field').focus();
+			$('.js--max-bid-field').autoNumeric('set', 0).focus().select();
 	    },
 
 	    onMaxBidInput: function(e, model){
@@ -194,11 +200,13 @@ function unloadMaxBidTooltip(target){
 		},
 
 		onMaxBidChange: function(e,model){
+			console.log('test');
+
 			$(e.currentTarget).removeClass('s-error');
 
 	    	maxbidObject.offIncrement = false; //HIDE INCREMENT WARNING WHEN YOU START TO TYPE AGAIN
-
-			maxbidObject.maxbidAmount = parseInt($('.js--max-bid-field').inputmask('unmaskedvalue'));
+	    	
+	    	maxbidObject.maxbidAmount = parseInt($(e.currentTarget).val().split(',').join(''));
 
 			switch(e.which){
 				case 13://ENTER
