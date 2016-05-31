@@ -48,10 +48,10 @@
         <div class="header--right">
             <div class="header--upper h-ta-right">
                 
-                <button class="button--unbound">
+                <button class="button--unbound js--open-ccyconverter">
                     <i class="icon-ccy"></i><label>Currency Converter</label>
                 </button>
-                <button class="button--unbound">
+                <button class="button--unbound js--open-financecalc">
                     <i class="icon-calculator"></i><label>Finance Calculator</label>
                 </button>
                 <button class="button--unbound">
@@ -853,7 +853,122 @@
         <div class="js--tooltip-cart">
             <p>View Purchases</p>
         </div>
+
+
     </div>
+
+<div class="calculations modal js--calc-modal">
+    <header class="modal--header">
+        Calculations
+        <i class="icon-close js--close-calc"></i>
+    </header>
+
+    <!-- CURRENCY CONVERTER -->
+    <div class="expander js--ccy-converter">
+        <div class="expander--toggle js-expander-toggle">   
+            <label>Currency Converter</label>
+        </div>
+        <div class="expander--content">
+            <div class="ccyconversion setting js--converter-outputz">
+                <div class="setting--result">
+                    <label>Approximate Equivalent</label>
+                    <div class="result c-price">
+                        <div rv-html="ccyconversion2.conversion | priceWithCCYs"></div>
+                        <span class="h-t-xs h-tt-uppercase">Rate is approximate</span>
+                    </div>
+                    <i class="icon-settings toggle-icon" rv-on-click="ccycontroller2.onToggleClick" rv-activeToggle="ccyconversion2.editing"></i>
+                </div>
+                <div class="setting--controls" rv-show="ccyconversion2.editing">
+                    <div class="setting--row">
+                        <label for="">Convert To</label>
+                        <ul class="ccyconversion--selector" rv-activeccy="ccyconversion2.currentCCY">
+                            <li class="ccy-flag CAD" rv-on-click="ccycontroller2.ccyChange" data-ccy="CAD">CAD</li>
+                            <li class="ccy-flag USD" rv-on-click="ccycontroller2.ccyChange" data-ccy="USD">USD</li>
+                            <li class="ccy-flag SGD" rv-on-click="ccycontroller2.ccyChange" data-ccy="SGD">SGD</li>
+                            <li class="ccy-flag NZD" rv-on-click="ccycontroller2.ccyChange" data-ccy="NZD">NZD</li>
+                            <li class="ccy-flag AUD" rv-on-click="ccycontroller2.ccyChange" data-ccy="AUD">AUD</li>
+                            <li class="ccy-flag MXN" rv-on-click="ccycontroller2.ccyChange" data-ccy="MXN">MXN</li>
+                            <li class="ccy-flag ZAR" rv-on-click="ccycontroller2.ccyChange" data-ccy="ZAR">ZAR</li>
+                            <li class="ccy-flag PLN" rv-on-click="ccycontroller2.ccyChange" data-ccy="PLN">PLN</li>
+                            <li class="ccy-flag GBP" rv-on-click="ccycontroller2.ccyChange" data-ccy="GBP">GBP</li>
+                            <li class="ccy-flag EUR" rv-on-click="ccycontroller2.ccyChange" data-ccy="EUR">EUR</li>
+                            <li class="ccy-flag JPY" rv-on-click="ccycontroller2.ccyChange" data-ccy="JPY">JPY</li>
+                            <li class="ccy-flag CNY" rv-on-click="ccycontroller2.ccyChange" data-ccy="CNY">CNY</li>
+                            <li class="ccy-flag INR" rv-on-click="ccycontroller2.ccyChange" data-ccy="INR">INR</li>
+                            <li class="ccy-flag AED" rv-on-click="ccycontroller2.ccyChange" data-ccy="AED">AED</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <!-- FINANCE CALCULATOR -->
+    <div class="expander js--finance-calc">
+        <div class="expander--toggle js-expander-toggle">   
+            <label>Finance Calculator</label>
+        </div>
+        <div class="expander--content">
+            <div class="financing-calculation setting js-financing-object2">
+                <div class="setting--result">
+                    <label>Estimated Finance Payment</label>
+                    <div class="result c-finance">
+                        <div rv-html="finance2.payment | convertedPrice2"></div>
+                        <span class="h-t-xs h-tt-uppercase">On Approved Credit/ <br/>Subject to Financing Approval</span>
+                    </div>
+                    <i class="icon-settings toggle-icon" rv-on-click="calccontroller2.onToggleClick" rv-activeToggle="finance2.editing"></i>
+                </div>
+                <div class="setting--controls" rv-show="finance2.editing">
+                    <div class="setting--row">
+                         <label>Interest Rate</label>
+                        <div class="field--w-modifier">
+                            <input type="text" class="field--text js--finance-interest" rv-value="finance2.financeRate" rv-on-blur="calccontroller2.onInterestBlur" rv-on-keydown="calccontroller2.onInterestInput">
+                            <button class="button" rv-on-click="calccontroller2.onInterestIncrement" data-increment="-0.5">-</button>
+                            <button class="button" rv-on-click="calccontroller2.onInterestIncrement" data-increment="0.5">+</button>
+                        </div>
+                    </div>
+                    <div class="setting--row">
+                        <label for="">Payment Period</label>
+                        <select name="select" class="js--finance-period field--select" rv-value="finance2.financePeriod" rv-on-change="calccontroller2.onPeriodUpdate">
+                          <option value="3">3 Months</option> 
+                          <option value="6">6 Months</option> 
+                          <option value="12">12 Months</option> 
+                          <option value="24">24 Months</option> 
+                          <option value="36">36 Months</option>
+                          <option value="48" selected>48 Months</option>
+                          <option value="60">60 Months</option>
+                          <option value="72">72 Months</option>
+                        </select>
+                    </div>
+                    <div class="setting--row">
+                        <label for="">Convert To</label>
+                        <select name="select" class="js--ccy-selector field--select" rv-on-change="calccontroller2.onCCYChange">
+                            <option value="CAD">CAD</option>
+                            <option value="USD">USD</option>
+                            <option value="SGD">SGD</option>
+                            <option value="NZD">NZD</option>
+                            <option value="AUD">AUD</option>
+                            <option value="MXN">MXN</option>
+                            <option value="ZAR">ZAR</option>
+                            <option value="PLN">PLN</option>
+                            <option value="GBP">GBP</option>
+                            <option value="EUR">EUR</option>
+                            <option value="JPY">JPY</option>
+                            <option value="CNY">CNY</option>
+                            <option value="INR">INR</option>
+                            <option value="AED">AED</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+</div>
 
 <script type="text/javascript" src="assets/js/main-min.js"></script>
 

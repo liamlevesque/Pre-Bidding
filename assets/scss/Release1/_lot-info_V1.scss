@@ -45,26 +45,34 @@
 	.lot--header{
 		padding: 7px 10px 7px;
 		background-color: $li-header-bg;
+		height: $lot-header-height;
 		//border-bottom: $ritchie-border;
 	}
 
-	.lot--number{
-		color: $brand-color;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin-bottom: 0;
-	}
-
-	.lot--title{
-		color: $li-title;
-		font-size: 1rem;
-		margin-bottom: 0;
-		@include ellipsize;
-
-		@include breakpoint(large){
-			font-size: 1.2rem;
+		.lot--number{
+			color: $brand-color;
+			text-transform: uppercase;
+			font-weight: 700;
+			margin-bottom: 0;
+			display: inline;
+			
+			@include breakpoint(large){
+				display: block;
+			}
 		}
-	}
+
+		.lot--title{
+			color: $li-title;
+			font-size: 1rem;
+			margin-bottom: 0;
+			display: inline;
+
+			@include breakpoint(large){
+				font-size: 1.2rem;
+				@include ellipsize;
+				display: block;
+			}
+		}
 
 	.lot--photos{
 		
@@ -176,7 +184,7 @@
 
 		@include breakpoint(med-large){
 			position: absolute;
-			top: 53px;
+			top: $lot-header-height;
 			bottom: 0;
 			overflow-y: auto;
 			display: inline-block;

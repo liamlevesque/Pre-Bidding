@@ -2131,6 +2131,33 @@ $(function(){
 	})
 
 
+	$('.js-expander-toggle').click(function(e){
+		$(e.currentTarget).parent().toggleClass('s-expanded')
+	});
+
+	//FINANCE CALCULATOR FORMATTING ON INIT
+	//INIT THE CORRECT PAYMENT PRICE
+	finance2.payment = financingCalculation2();
+
+	//INIT CLEAN INTEREST RATE INPUT DISPLAY
+	cleanupInterestInput2();
+
+
+	$('.js--open-ccyconverter').click(function(){
+		$('.js--calc-modal').addClass('s-shown');
+		$('.js--ccy-converter').addClass('s-expanded');
+	});
+
+	$('.js--open-financecalc').click(function(){
+		$('.js--calc-modal').addClass('s-shown');
+		$('.js--finance-calc').addClass('s-expanded');
+	});
+
+	$('.js--close-calc').click(function(){
+		$('.js--calc-modal').removeClass('s-shown');
+		$('.js--finance-calc, .js--ccy-converter').removeClass('s-expanded');
+	});
+
 	// window.onbeforeunload = function(){
  //    	location.assign('http://www.google.com');
  //    	return "Woah! You've won 6 lots.\n\nTo see a summary of your purchases, stay on this page and click on the shopping cart.";
@@ -2566,6 +2593,232 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 		lotArea = rivets.bind($('.js--lot-info'),{
 			lotObject: lotObject
 		});
+
+
+//CCY CONVERTER
+
+var ccys = {
+		"CAD":"1",
+		"USD":"0.7",
+		"EUR":"0.6",
+		"GBP":"0.5",
+		"CNY":"4.5",
+		"SGD":"0.9",
+		"NZD":"1.1",
+		"AUD":"1",
+		"MXN":"12.5",
+		"PLN":"2.8",
+		"JPY":"79.5",
+		"INR":"46.5",
+		"AED":"2.5",
+		"ZAR":"11.5"
+	},
+	
+	ccyconversion2 = {
+		'active' : false,
+		'currentCCY' : 'CAD',
+		'rate' : 1,
+		'conversion' : bidObject.askPrice,
+		'price': bidObject.askPrice,
+		'editing': false
+	},
+	
+	ccycontroller2 = { 
+		
+		onCCYChange: function(e, model) {			
+			ccyconversion2.currentCCY = $(e.currentTarget).val();
+			ccycontroller2.update(ccyconversion2);
+			ccyconversion2.active = true;
+			ccyconversion2.editing = false;
+	    },
+
+	    ccyChange: function(e,model){
+	    	ccyconversion2.currentCCY = $(e.currentTarget).data('ccy');
+			ccycontroller2.update(ccyconversion2);
+			ccyconversion2.active = true;
+			ccyconversion2.editing = false;
+	    },
+
+		onToggleClick: function(e, model){
+	    	console.log('test');
+	    	ccyconversion2.editing = !ccyconversion2.editing;
+	    },
+	    
+	    update: function(data) {
+	    	data.rate = ccys[data.currentCCY];
+			data.conversion = data.rate * bidObject.askPrice;
+			
+			ccyconversion2.active = true;
+			finance2.ccy = data.currentCCY;
+			finance2.payment = 0; //force refresh of the CCY in the finance calculator
+			finance2.payment = financingCalculation2();
+
+	    },
+
+	    onCloseClick: function(e, model){
+	    	$('.js--convert-ccy').tooltipster('hide');
+	    	unloadCCYConverter();
+	    }
+	};
+
+rivets.formatters.priceWithCCYs = function(value){
+	var val = bidObject.askPrice * ccyconversion2.rate;
+	return "<span class='" + ccyconversion2.currentCCY + "'><span class='dollars'>" + formatprice(val.toFixed(0)) + '</span><span class="CCY"></span><span class="auction-ccy-flag"></span></span>';
+}
+
+rivets.binders.activeccy = function(el, value){
+	$(el).children('.s-active').removeClass('s-active');
+	$(el).find('.'+value).addClass('s-active');
+}
+
+rivets.binders.activetoggle = function(el, value){
+	if(value) $(el).addClass('s-active');
+	else $(el).removeClass('s-active');
+}
+
+rivets.bind($('.js--converter-outputz'),{
+	ccyconversion2: ccyconversion2,
+	ccycontroller2: ccycontroller2
+});
+
+
+
+// FINANCE CALCULATOR
+
+var	finance2 = {
+		"active" : false,
+		"financeRate" : 5.00,
+		"financePeriod" : 24,
+		"maxFinanceRate" : 15,
+		"payment" : 100,
+		"ccy": ccyconversion2.currentCCY,
+		"price": bidObject.askPrice,
+		"editing": false
+	},
+	calccontroller2 = {
+		
+		onInterestInput: function(e, model){
+			switch(e.which) {
+		    	case 9:
+		    	case 13: // enter
+			        cleanupInterestInput2();
+			        $('.js--finance-period').focus();
+			        e.preventDefault();
+			        return true;
+			        break;
+
+		        case 38: // up
+		        	incrementInterest2(0.5);
+		        	cleanupInterestInput2();
+			       	e.preventDefault();
+			       	return true;
+			        break;
+
+		        case 40: // down
+		        	incrementInterest2(-0.5);
+		        	cleanupInterestInput2();
+		        	e.preventDefault();
+			       	return true;
+			       	break;
+
+		        default: 
+
+		        	if(e.which != 46 && e.which != 190 && e.which != 188 && e.which > 31 && (e.which < 48 || e.which > 57)) return false;
+		        	else return true; // exit this handler for other keys
+		    }
+		    e.preventDefault();
+		},
+
+		onInterestBlur: function(e, model){
+			var val = parseFloat($(e.currentTarget).val());
+			updateInterest2(val);
+			cleanupInterestInput2();
+			finance2.active = true;
+		},
+
+		onInterestIncrement: function(e, model){
+			incrementInterest2($(e.currentTarget).data('increment'));
+			cleanupInterestInput2();
+			finance2.active = true;
+		},
+
+		onPeriodUpdate: function(e, model){
+			finance2.financePeriod = $(e.currentTarget).val();
+			finance2.payment = financingCalculation2();
+			finance2.active = true;
+		},
+		
+		onToggleClick: function(e, model){
+	    	finance2.editing = !finance2.editing;
+	    }
+
+	};
+
+	
+
+rivets.formatters.convertedPrice2 = function(value){
+	var tempVal = parseFloat(value),
+		convertedVal = tempVal * ccyconversion2.rate;
+
+	console.log(tempVal);
+	if(ccyconversion2.active) return "<span class='"+ ccyconversion2.currentCCY +"'><span class='CCY'></span><span class='dollars'>" + formatprice(convertedVal.toFixed(2)) + "</span><span class='h-t-s'>per month</span></span>";
+	else return "<span class='CCY'></span><span class='dollars'>" + formatprice(tempVal.toFixed(2)) + "</span><span class='h-t-s'>per month</span>";
+}
+
+rivets.bind($('.js-financing-object2'),{
+	finance2: finance2,
+	calccontroller2 : calccontroller2
+});
+
+
+//HANDLE INTEREST RATE INCREMENTS (+/- Button presses)
+function incrementInterest2(val){
+	var tempValue = parseFloat(finance2.financeRate),
+		increment = parseFloat(val);
+	
+	updateInterest2(tempValue + increment);
+}
+
+//ADJUST INTEREST RATE
+function updateInterest2(val){
+	
+	if(val < 0) finance2.financeRate = 0;
+	
+	else if(val >= finance2.maxFinanceRate) finance2.financeRate = finance2.maxFinanceRate;
+	
+	else finance2.financeRate = val;
+
+	finance2.payment = financingCalculation2();
+}
+
+//TIDY UP DISPLAY OF INTEREST RATE
+function cleanupInterestInput2(){
+	var val = parseFloat($('.js--finance-interest').val());
+	$('.js--finance-interest').val(val.toFixed(2) + "%");
+}
+
+
+function financingCalculation2(){
+	var amt = bidObject.askPrice,
+		adjustedInterest = (finance2.financeRate/100)/12,
+		monthly = amt * ((adjustedInterest * Math.pow((1 + adjustedInterest),finance2.financePeriod)) / (Math.pow((1 + adjustedInterest),finance2.financePeriod) - 1));
+
+	if(adjustedInterest === 0) monthly = amt/finance2.financePeriod; //IF 0% FINANCING, JUST DIVIDE PRICE BY TOTAL PERIOD
+
+	return monthly.toFixed(2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

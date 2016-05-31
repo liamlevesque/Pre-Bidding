@@ -43,6 +43,10 @@
 .field--w-modifier{
   position: relative;
   display: inline-block;
+
+  .field--text{
+    text-align: center;
+  }
   
   button{
     width: $input-height - 2;
@@ -55,8 +59,9 @@
     bottom: 2px;
     line-height: 1;
 
-    &:last-child{
-      right: $input-height + 1;
+    &:first-of-type{
+      left: 2px; //: $input-height + 1;
+      right: auto;
     }
   }
 }

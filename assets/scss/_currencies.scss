@@ -2,7 +2,7 @@ $ccys: 	"CAD" "$" "" "," "." true 2,
 		"USD" "$" "" "," "." true 14,
 		"SGD" "$" "" "," "." true 12,
 		"NZD" "$" "" "," "." true 10,
-		"AUD" "$" "" "," "." true 1,
+		"AUD" "$" "" "," "." true 0,
 		"MXN" "$" "" "," "." true 8,
 		"ZAR" "R" "" "," "." true 15,
 		"PLN" "" "z\0142" " " "," true 11,
@@ -11,7 +11,7 @@ $ccys: 	"CAD" "$" "" "," "." true 2,
 		"CNY" "\00A5" "" "," "." true 3,
 		"JPY" "\00A5" "" "," "." false 7,
 		"INR" " \20B9" "" "," "." true 6,
-		"AED" "" "د.إ" "," "." true 0,
+		"AED" "" "د.إ" "," "." true 1,
 		"NOK" "kr" "" "," "." true 9,
 		"TRY" "\20BA" "" "," "." true 13;
 
@@ -46,6 +46,19 @@ $ccys: 	"CAD" "$" "" "," "." true 2,
 		}
 	}
 
+	.auction-ccy-flag:before{
+		.#{nth($ccy,1)} & {
+			background-position: 0 -#{nth($ccy,7)*15px};
+		}
+	}
+
+
+	.ccy-flag{
+		&.#{nth($ccy,1)}:before{
+			background-position: 0 -#{nth($ccy,7)*15px};
+		}
+	}
+
 	.auction-ccy:after{
 		.#{nth($ccy,1)} & {
 			content: "#{nth($ccy,2)} #{nth($ccy,1)}  #{nth($ccy,3)}"; 
@@ -59,7 +72,18 @@ $ccys: 	"CAD" "$" "" "," "." true 2,
 	}
 }
 
-
+.auction-ccy-flag:before{
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 7px;
+	width: 30px;
+	height: 15px;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-image: url(../img/ccy-flags.png);
+	box-shadow: $ritchie-shadow;
+}
 
 .convertCCY{
 	font-size: 0.8em;

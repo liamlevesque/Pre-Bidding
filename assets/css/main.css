@@ -224,6 +224,8 @@ GRID
 .field--w-modifier {
   position: relative;
   display: inline-block; }
+  .field--w-modifier .field--text {
+    text-align: center; }
   .field--w-modifier button {
     width: 28px;
     padding: 0;
@@ -234,8 +236,9 @@ GRID
     top: 2px;
     bottom: 2px;
     line-height: 1; }
-    .field--w-modifier button:last-child {
-      right: 31px; }
+    .field--w-modifier button:first-of-type {
+      left: 2px;
+      right: auto; }
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -1304,6 +1307,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .CAD .auction-ccy:before {
   background-position: 0 -30px; }
 
+.CAD .auction-ccy-flag:before {
+  background-position: 0 -30px; }
+
+.ccy-flag.CAD:before {
+  background-position: 0 -30px; }
+
 .CAD .auction-ccy:after {
   content: "$ CAD  "; }
 
@@ -1324,6 +1333,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   content: "USD"; }
 
 .USD .auction-ccy:before {
+  background-position: 0 -210px; }
+
+.USD .auction-ccy-flag:before {
+  background-position: 0 -210px; }
+
+.ccy-flag.USD:before {
   background-position: 0 -210px; }
 
 .USD .auction-ccy:after {
@@ -1348,6 +1363,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .SGD .auction-ccy:before {
   background-position: 0 -180px; }
 
+.SGD .auction-ccy-flag:before {
+  background-position: 0 -180px; }
+
+.ccy-flag.SGD:before {
+  background-position: 0 -180px; }
+
 .SGD .auction-ccy:after {
   content: "$ SGD  "; }
 
@@ -1370,6 +1391,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .NZD .auction-ccy:before {
   background-position: 0 -150px; }
 
+.NZD .auction-ccy-flag:before {
+  background-position: 0 -150px; }
+
+.ccy-flag.NZD:before {
+  background-position: 0 -150px; }
+
 .NZD .auction-ccy:after {
   content: "$ NZD  "; }
 
@@ -1390,7 +1417,13 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   content: "AUD"; }
 
 .AUD .auction-ccy:before {
-  background-position: 0 -15px; }
+  background-position: 0 -0px; }
+
+.AUD .auction-ccy-flag:before {
+  background-position: 0 -0px; }
+
+.ccy-flag.AUD:before {
+  background-position: 0 -0px; }
 
 .AUD .auction-ccy:after {
   content: "$ AUD  "; }
@@ -1412,6 +1445,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   content: "MXN"; }
 
 .MXN .auction-ccy:before {
+  background-position: 0 -120px; }
+
+.MXN .auction-ccy-flag:before {
+  background-position: 0 -120px; }
+
+.ccy-flag.MXN:before {
   background-position: 0 -120px; }
 
 .MXN .auction-ccy:after {
@@ -1436,6 +1475,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .ZAR .auction-ccy:before {
   background-position: 0 -225px; }
 
+.ZAR .auction-ccy-flag:before {
+  background-position: 0 -225px; }
+
+.ccy-flag.ZAR:before {
+  background-position: 0 -225px; }
+
 .ZAR .auction-ccy:after {
   content: "R ZAR  "; }
 
@@ -1456,6 +1501,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   content: "PLN"; }
 
 .PLN .auction-ccy:before {
+  background-position: 0 -165px; }
+
+.PLN .auction-ccy-flag:before {
+  background-position: 0 -165px; }
+
+.ccy-flag.PLN:before {
   background-position: 0 -165px; }
 
 .PLN .auction-ccy:after {
@@ -1480,6 +1531,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .GBP .auction-ccy:before {
   background-position: 0 -75px; }
 
+.GBP .auction-ccy-flag:before {
+  background-position: 0 -75px; }
+
+.ccy-flag.GBP:before {
+  background-position: 0 -75px; }
+
 .GBP .auction-ccy:after {
   content: "£ GBP  "; }
 
@@ -1500,6 +1557,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   content: "EUR"; }
 
 .EUR .auction-ccy:before {
+  background-position: 0 -60px; }
+
+.EUR .auction-ccy-flag:before {
+  background-position: 0 -60px; }
+
+.ccy-flag.EUR:before {
   background-position: 0 -60px; }
 
 .EUR .auction-ccy:after {
@@ -1524,6 +1587,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .CNY .auction-ccy:before {
   background-position: 0 -45px; }
 
+.CNY .auction-ccy-flag:before {
+  background-position: 0 -45px; }
+
+.ccy-flag.CNY:before {
+  background-position: 0 -45px; }
+
 .CNY .auction-ccy:after {
   content: "¥ CNY  "; }
 
@@ -1544,6 +1613,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   content: "JPY"; }
 
 .JPY .auction-ccy:before {
+  background-position: 0 -105px; }
+
+.JPY .auction-ccy-flag:before {
+  background-position: 0 -105px; }
+
+.ccy-flag.JPY:before {
   background-position: 0 -105px; }
 
 .JPY .auction-ccy:after {
@@ -1568,6 +1643,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .INR .auction-ccy:before {
   background-position: 0 -90px; }
 
+.INR .auction-ccy-flag:before {
+  background-position: 0 -90px; }
+
+.ccy-flag.INR:before {
+  background-position: 0 -90px; }
+
 .INR .auction-ccy:after {
   content: " ₹ INR  "; }
 
@@ -1588,7 +1669,13 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   content: "AED"; }
 
 .AED .auction-ccy:before {
-  background-position: 0 -0px; }
+  background-position: 0 -15px; }
+
+.AED .auction-ccy-flag:before {
+  background-position: 0 -15px; }
+
+.ccy-flag.AED:before {
+  background-position: 0 -15px; }
 
 .AED .auction-ccy:after {
   content: " AED  د.إ"; }
@@ -1610,6 +1697,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   content: "NOK"; }
 
 .NOK .auction-ccy:before {
+  background-position: 0 -135px; }
+
+.NOK .auction-ccy-flag:before {
+  background-position: 0 -135px; }
+
+.ccy-flag.NOK:before {
   background-position: 0 -135px; }
 
 .NOK .auction-ccy:after {
@@ -1634,11 +1727,29 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .TRY .auction-ccy:before {
   background-position: 0 -195px; }
 
+.TRY .auction-ccy-flag:before {
+  background-position: 0 -195px; }
+
+.ccy-flag.TRY:before {
+  background-position: 0 -195px; }
+
 .TRY .auction-ccy:after {
   content: "₺ TRY  "; }
 
 .TRY .CCY-dollars:before {
   content: "TRY ₺"; }
+
+.auction-ccy-flag:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 7px;
+  width: 30px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-image: url(../img/ccy-flags.png);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
 
 .convertCCY {
   font-size: 0.8em; }
@@ -3893,6 +4004,9 @@ body.s-no-financing.s-no-purchases .no-finance--hide {
 
 .h-t-xs {
   font-size: 0.6rem; }
+
+.h-t-s {
+  font-size: 0.8rem; }
 
 .h-t-l, .h-t-large {
   font-size: 1.5rem; }

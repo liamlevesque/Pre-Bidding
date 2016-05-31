@@ -5,6 +5,7 @@ $finance-color: #24532B;
 $finance-tint: #D3E8CB;
 $finance-dabled: #F3FFF8;
 $money-color: #20579E;
+$money-tint: #D2DDEC;
 
 $error-colour: #c4483a;
 $error-colour-light: #F3BFBF;
@@ -65,6 +66,7 @@ $input-height: 30px;
 $toggle-height: 20px;
 $toggle-padding: 40px; //THIS IS HOW MUCH THE MONEY
 $tooltip-icon-size: 24px;
+$lot-header-height: 53px;
 
 @mixin center-content(){
   max-width: 1400px;

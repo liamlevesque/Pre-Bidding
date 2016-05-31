@@ -224,6 +224,8 @@ GRID
 .field--w-modifier {
   position: relative;
   display: inline-block; }
+  .field--w-modifier .field--text {
+    text-align: center; }
   .field--w-modifier button {
     width: 28px;
     padding: 0;
@@ -234,8 +236,9 @@ GRID
     top: 2px;
     bottom: 2px;
     line-height: 1; }
-    .field--w-modifier button:last-child {
-      right: 31px; }
+    .field--w-modifier button:first-of-type {
+      left: 2px;
+      right: auto; }
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -1048,6 +1051,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .CAD .auction-ccy:before {
   background-position: 0 -30px; }
 
+.CAD .auction-ccy-flag:before {
+  background-position: 0 -30px; }
+
+.ccy-flag.CAD:before {
+  background-position: 0 -30px; }
+
 .CAD .auction-ccy:after {
   content: "$ CAD  "; }
 
@@ -1068,6 +1077,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   content: "USD"; }
 
 .USD .auction-ccy:before {
+  background-position: 0 -210px; }
+
+.USD .auction-ccy-flag:before {
+  background-position: 0 -210px; }
+
+.ccy-flag.USD:before {
   background-position: 0 -210px; }
 
 .USD .auction-ccy:after {
@@ -1092,6 +1107,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .SGD .auction-ccy:before {
   background-position: 0 -180px; }
 
+.SGD .auction-ccy-flag:before {
+  background-position: 0 -180px; }
+
+.ccy-flag.SGD:before {
+  background-position: 0 -180px; }
+
 .SGD .auction-ccy:after {
   content: "$ SGD  "; }
 
@@ -1114,6 +1135,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .NZD .auction-ccy:before {
   background-position: 0 -150px; }
 
+.NZD .auction-ccy-flag:before {
+  background-position: 0 -150px; }
+
+.ccy-flag.NZD:before {
+  background-position: 0 -150px; }
+
 .NZD .auction-ccy:after {
   content: "$ NZD  "; }
 
@@ -1134,7 +1161,13 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   content: "AUD"; }
 
 .AUD .auction-ccy:before {
-  background-position: 0 -15px; }
+  background-position: 0 -0px; }
+
+.AUD .auction-ccy-flag:before {
+  background-position: 0 -0px; }
+
+.ccy-flag.AUD:before {
+  background-position: 0 -0px; }
 
 .AUD .auction-ccy:after {
   content: "$ AUD  "; }
@@ -1156,6 +1189,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   content: "MXN"; }
 
 .MXN .auction-ccy:before {
+  background-position: 0 -120px; }
+
+.MXN .auction-ccy-flag:before {
+  background-position: 0 -120px; }
+
+.ccy-flag.MXN:before {
   background-position: 0 -120px; }
 
 .MXN .auction-ccy:after {
@@ -1180,6 +1219,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .ZAR .auction-ccy:before {
   background-position: 0 -225px; }
 
+.ZAR .auction-ccy-flag:before {
+  background-position: 0 -225px; }
+
+.ccy-flag.ZAR:before {
+  background-position: 0 -225px; }
+
 .ZAR .auction-ccy:after {
   content: "R ZAR  "; }
 
@@ -1200,6 +1245,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   content: "PLN"; }
 
 .PLN .auction-ccy:before {
+  background-position: 0 -165px; }
+
+.PLN .auction-ccy-flag:before {
+  background-position: 0 -165px; }
+
+.ccy-flag.PLN:before {
   background-position: 0 -165px; }
 
 .PLN .auction-ccy:after {
@@ -1224,6 +1275,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .GBP .auction-ccy:before {
   background-position: 0 -75px; }
 
+.GBP .auction-ccy-flag:before {
+  background-position: 0 -75px; }
+
+.ccy-flag.GBP:before {
+  background-position: 0 -75px; }
+
 .GBP .auction-ccy:after {
   content: "£ GBP  "; }
 
@@ -1244,6 +1301,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   content: "EUR"; }
 
 .EUR .auction-ccy:before {
+  background-position: 0 -60px; }
+
+.EUR .auction-ccy-flag:before {
+  background-position: 0 -60px; }
+
+.ccy-flag.EUR:before {
   background-position: 0 -60px; }
 
 .EUR .auction-ccy:after {
@@ -1268,6 +1331,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .CNY .auction-ccy:before {
   background-position: 0 -45px; }
 
+.CNY .auction-ccy-flag:before {
+  background-position: 0 -45px; }
+
+.ccy-flag.CNY:before {
+  background-position: 0 -45px; }
+
 .CNY .auction-ccy:after {
   content: "¥ CNY  "; }
 
@@ -1288,6 +1357,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   content: "JPY"; }
 
 .JPY .auction-ccy:before {
+  background-position: 0 -105px; }
+
+.JPY .auction-ccy-flag:before {
+  background-position: 0 -105px; }
+
+.ccy-flag.JPY:before {
   background-position: 0 -105px; }
 
 .JPY .auction-ccy:after {
@@ -1312,6 +1387,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .INR .auction-ccy:before {
   background-position: 0 -90px; }
 
+.INR .auction-ccy-flag:before {
+  background-position: 0 -90px; }
+
+.ccy-flag.INR:before {
+  background-position: 0 -90px; }
+
 .INR .auction-ccy:after {
   content: " ₹ INR  "; }
 
@@ -1332,7 +1413,13 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   content: "AED"; }
 
 .AED .auction-ccy:before {
-  background-position: 0 -0px; }
+  background-position: 0 -15px; }
+
+.AED .auction-ccy-flag:before {
+  background-position: 0 -15px; }
+
+.ccy-flag.AED:before {
+  background-position: 0 -15px; }
 
 .AED .auction-ccy:after {
   content: " AED  د.إ"; }
@@ -1354,6 +1441,12 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
   content: "NOK"; }
 
 .NOK .auction-ccy:before {
+  background-position: 0 -135px; }
+
+.NOK .auction-ccy-flag:before {
+  background-position: 0 -135px; }
+
+.ccy-flag.NOK:before {
   background-position: 0 -135px; }
 
 .NOK .auction-ccy:after {
@@ -1378,11 +1471,29 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 .TRY .auction-ccy:before {
   background-position: 0 -195px; }
 
+.TRY .auction-ccy-flag:before {
+  background-position: 0 -195px; }
+
+.ccy-flag.TRY:before {
+  background-position: 0 -195px; }
+
 .TRY .auction-ccy:after {
   content: "₺ TRY  "; }
 
 .TRY .CCY-dollars:before {
   content: "TRY ₺"; }
+
+.auction-ccy-flag:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 7px;
+  width: 30px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-image: url(../img/ccy-flags.png);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
 
 .convertCCY {
   font-size: 0.8em; }
@@ -2500,7 +2611,11 @@ MOST IMPORTANT - LOT TABLE STYLES
     background-repeat: no-repeat; }
 
 .bidding--info {
-  padding: 15px; }
+  padding: 15px;
+  padding-right: 8px; }
+  @media (min-width: 80em) {
+    .bidding--info {
+      padding-right: 15px; } }
   .bidding--info .h-t-large {
     font-size: 1.4rem; }
 
@@ -2573,11 +2688,14 @@ MOST IMPORTANT - LOT TABLE STYLES
   border-radius: 5px 5px 0 0; }
 
 .bid-field {
-  padding: 15px 0;
+  padding: 8px 0;
   border-bottom: 1px dotted #bdbdbd;
   text-align: right;
   line-height: 1;
   overflow: hidden; }
+  @media (min-width: 80em) {
+    .bid-field {
+      padding: 15px 0; } }
   .bid-field .field--select, .bid-field .field--w-modifier {
     width: 50%; }
   .bid-field .field--toggle {
@@ -2587,7 +2705,8 @@ MOST IMPORTANT - LOT TABLE STYLES
   .bid-field:first-of-type {
     padding-top: 0; }
   .bid-field label {
-    float: left; }
+    float: left;
+    margin-top: 5px; }
   .bid-field .bid-value_sub {
     display: block;
     font-size: 0.8rem;
@@ -3038,24 +3157,31 @@ MOST IMPORTANT - LOT TABLE STYLES
 
 .lot--header {
   padding: 7px 10px 7px;
-  background-color: #333333; }
+  background-color: #333333;
+  height: 53px; }
 
 .lot--number {
   color: #E87722;
   text-transform: uppercase;
   font-weight: 700;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  display: inline; }
+  @media (min-width: 80em) {
+    .lot--number {
+      display: block; } }
 
 .lot--title {
   color: white;
   font-size: 1rem;
   margin-bottom: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis; }
+  display: inline; }
   @media (min-width: 80em) {
     .lot--title {
-      font-size: 1.2rem; } }
+      font-size: 1.2rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      display: block; } }
 
 @media (min-width: 64em) {
   .lot--photos {
@@ -3203,6 +3329,164 @@ MOST IMPORTANT - LOT TABLE STYLES
     .lot--field_half:last-of-type {
       width: 40%;
       text-align: right; } }
+
+.modal {
+  display: none;
+  width: 350px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
+  z-index: 100;
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+  .modal.s-shown {
+    display: block;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+
+.modal--header {
+  background-color: black;
+  color: white;
+  line-height: 40px;
+  padding: 0 15px; }
+  .modal--header .icon-close {
+    float: right;
+    line-height: 40px;
+    cursor: pointer; }
+    .modal--header .icon-close:hover {
+      color: #E87722; }
+
+.expander.s-expanded .expander--toggle:before {
+  -webkit-transform: rotate(0);
+          transform: rotate(0); }
+.expander.s-expanded .expander--content {
+  display: block; }
+
+.expander--toggle {
+  background-color: #585858;
+  color: #959595;
+  font-size: 0.8rem;
+  padding: 4px 10px; }
+  .expander--toggle:before {
+    font-family: 'ritchie-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: '\e900';
+    display: inline-block;
+    -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+    transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+    font-size: 6px;
+    margin-right: 6px;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg); }
+
+.expander--content {
+  display: none; }
+
+.setting label {
+  width: 30%;
+  padding-right: 5px;
+  text-align: right;
+  display: inline-block; }
+.setting .CCY {
+  margin-right: 5px; }
+.setting.ccyconversion .setting--result {
+  background-color: rgba(32, 87, 158, 0.2); }
+.setting.financing-calculation .setting--result {
+  background-color: rgba(36, 83, 43, 0.2); }
+
+.setting--result {
+  padding: 10px; }
+  .setting--result > * {
+    display: inline-block;
+    vertical-align: middle; }
+  .setting--result .toggle-icon {
+    float: right;
+    line-height: 25px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative; }
+    .setting--result .toggle-icon:hover {
+      color: #E87722; }
+    .setting--result .toggle-icon:after {
+      -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+      transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+      width: 0;
+      content: '';
+      display: block;
+      position: absolute;
+      height: 2px;
+      background-color: black;
+      top: 50%;
+      left: -3px;
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+      box-shadow: 1px -2px 0 0 #D2DDEC; }
+    .setting--result .toggle-icon.s-active:after {
+      width: 140%;
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg); }
+  .setting--result .result {
+    line-height: 0.8rem; }
+  .setting--result .result > div {
+    margin-bottom: 5px; }
+
+.setting--row {
+  border-top: 1px dotted #bdbdbd;
+  padding: 3px 10px; }
+  .setting--row > :not(label) {
+    display: inline-block;
+    width: 68%;
+    vertical-align: top; }
+
+.ccyconversion--selector {
+  max-height: 200px;
+  overflow-y: auto; }
+
+.ccy-flag {
+  padding: 5px;
+  cursor: pointer;
+  border-bottom: 1px dotted #bdbdbd; }
+  .ccy-flag:hover {
+    color: #E87722; }
+  .ccy-flag.s-active {
+    background-color: rgba(232, 119, 34, 0.2); }
+    .ccy-flag.s-active:after {
+      font-family: 'ritchie-icons' !important;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "\e915";
+      float: right;
+      color: #E87722; }
+  .ccy-flag:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 7px;
+    width: 30px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-image: url(../img/ccy-flags.png);
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
 
 /* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
 .tooltipster-default {
@@ -3567,6 +3851,9 @@ MOST IMPORTANT - LOT TABLE STYLES
 
 .h-t-xs {
   font-size: 0.6rem; }
+
+.h-t-s {
+  font-size: 0.8rem; }
 
 .h-t-l, .h-t-large {
   font-size: 1.5rem; }
