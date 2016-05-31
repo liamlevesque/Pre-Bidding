@@ -1,0 +1,191 @@
+body{
+	font-family: 'Trebuchet MS', Verdana, sans-serif;
+	font-size: 18px;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+	margin-top: 0;
+	color: black;
+}
+
+h1{
+	font-size: 1.9rem;
+	margin-bottom: 3px;
+}
+
+h2{
+	font-size: 1.7rem;
+	margin-bottom: $default-margin;
+}
+
+h3{
+	font-size: 1.3rem;
+	margin-bottom: $default-margin/2;
+	color: $brand-color;
+}
+
+h4{
+	margin-bottom: $default-margin/2;
+}
+
+h5{
+	color: inherit;
+	margin-bottom: $default-margin/3;
+}
+
+p{
+	font-size: $default-text-size;
+	line-height: 1.4rem;
+	margin-top: 0;
+}
+	
+	.p-100{
+		font-size: 1rem;
+		line-height: 1.6rem;
+	}
+
+a{
+	color: inherit;
+	text-decoration: none;
+	outline: none;
+
+	&:hover{
+		text-decoration: underline;
+		outline: none;
+	}
+
+	&:active, &:focus{
+		outline: none;
+	}
+
+	&.a--img{
+		line-height: 0;
+		display: inline-block;
+		max-width: 100%;
+
+		img{
+			max-width: 100%;
+		}
+	}
+}
+
+
+hr{
+	height: 0;
+	border: none;
+	border-bottom: $ritchie-border;
+}
+
+.link{
+	color: $brand-color;
+	text-decoration: underline;
+}
+
+
+
+	.logo{
+		display: inline-block;
+		width: 200px;
+    	height: 46px;
+    	margin: 10px 5px 10px 10px;
+    	transform: scale(1.15) translateX(15px);
+	}
+
+
+
+.body--half{
+	
+	@include breakpoint(medium){
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 50%;
+	
+	}
+}
+
+	.auction-details{
+		padding: 50px;
+
+		@media (min-height: 700px) {
+			position: absolute;
+			top: calc(50% - 100px);
+			transform: translateY(-50%);
+		}
+	}
+
+		.button--enter-auction{
+			font-size: 30px;
+			padding: 15px 30px;
+			display: block;
+			margin-top: 15px;
+		}
+
+		.auction--enter{
+			margin-top: 50px;
+		}
+
+	.custom-area{
+		left: auto;
+		right: 0;
+		background-color: $grey-100;
+	}
+
+		.custom--content{
+			padding: 50px;
+
+			@media (min-height: 700px) {
+				position: absolute;
+				top: calc(50% - 80px);
+				transform: translateY(-50%);
+			}
+		}
+
+		.custom--media{
+			
+			position: relative;
+			padding-bottom: 56.25%;
+
+			iframe{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+
+
+
+	footer{
+
+		@include breakpoint(medium){
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+		}
+
+		border-top: 1px solid $grey-300;
+		background-color: $grey-100;
+		padding: 15px 30px;
+
+		&.warning{
+			background-color: $warning-colour;
+			border-top: none;
+		}
+	}

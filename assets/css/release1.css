@@ -1,4 +1,21 @@
 @charset "UTF-8";
+/**********************
+  TEXT FORMATTING
+**********************/
+.smalltext {
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 0.9rem;
+  text-transform: uppercase; }
+
+label, .label, .button_hollow, .header--price-readout, .lot-tables--column-headers {
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 0.9rem;
+  text-transform: uppercase;
+  display: inline-block;
+  color: #959595; }
+
 /*****************
 GRID
 ******************/
@@ -585,23 +602,6 @@ hr {
     border-radius: 5px; }
   .counter-bidder .counter--bidding {
     background-color: #E9E9E9; }
-
-/**********************
-	TEXT FORMATTING
-**********************/
-.smalltext {
-  font-size: 0.7rem;
-  font-weight: 700;
-  line-height: 0.9rem;
-  text-transform: uppercase; }
-
-label, .label, .button_hollow, .header--price-readout, .lot-tables--column-headers {
-  font-size: 0.7rem;
-  font-weight: 700;
-  line-height: 0.9rem;
-  text-transform: uppercase;
-  display: inline-block;
-  color: #959595; }
 
 .grey-link {
   color: #959595;

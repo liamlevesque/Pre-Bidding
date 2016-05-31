@@ -126,37 +126,6 @@ hr{
 	}
 }
 
-
-
-
-/**********************
-	TEXT FORMATTING
-**********************/
-@mixin smalltext{
-	font-size: 0.7rem;
-	font-weight: 700;
-	line-height: 0.9rem;
-}
-
-	.smalltext{
-		@include smalltext;
-		text-transform: uppercase;
-	}
-
-@mixin boldtext{
-	font-size: 1.1rem;
-	font-weight: 700;
-}
-
-label, .label, %label{
-	@include smalltext;
-	text-transform: uppercase;
-	
-	display: inline-block;
-
-	color: $grey-500; 
-}
-
 .grey-link{
 	color: $grey-500;
 	font-size: 0.8rem;
