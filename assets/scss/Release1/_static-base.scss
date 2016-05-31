@@ -133,6 +133,12 @@ hr{
 			padding: 15px 30px;
 			display: block;
 			margin-top: 15px;
+			text-align: center;
+
+			&:hover{
+				text-decoration: none;
+				color: black;
+			}
 		}
 
 		.auction--enter{

@@ -612,7 +612,11 @@ hr {
   font-size: 30px;
   padding: 15px 30px;
   display: block;
-  margin-top: 15px; }
+  margin-top: 15px;
+  text-align: center; }
+  .button--enter-auction:hover {
+    text-decoration: none;
+    color: black; }
 
 .auction--enter {
   margin-top: 50px; }
