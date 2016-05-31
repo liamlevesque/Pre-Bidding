@@ -601,12 +601,23 @@ hr {
 
 .auction-details {
   padding: 50px; }
-  @media (min-height: 700px) {
+  @media (min-height: 700px) and (min-width: 48em) {
     .auction-details {
       position: absolute;
       top: calc(50% - 100px);
       -webkit-transform: translateY(-50%);
               transform: translateY(-50%); } }
+  @media (min-width: 80em) {
+    .auction-details {
+      position: absolute;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
+      width: 80%; } }
+  @media (min-width: 80em) and (min-height: 700px) {
+    .auction-details {
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); } }
 
 .button--enter-auction {
   font-size: 30px;
@@ -628,7 +639,13 @@ hr {
 
 .custom--content {
   padding: 50px; }
-  @media (min-height: 700px) {
+  @media (max-height: 700px) and (min-width: 48em) {
+    .custom--content {
+      position: absolute;
+      top: 0;
+      bottom: 150px;
+      overflow-y: auto; } }
+  @media (min-height: 700px) and (min-width: 48em) {
     .custom--content {
       position: absolute;
       top: calc(50% - 80px);
@@ -646,6 +663,7 @@ hr {
     left: 0; }
 
 footer {
+  overflow: hidden;
   border-top: 1px solid #bfc0be;
   background-color: #E9E9E9;
   padding: 15px 30px; }
@@ -654,10 +672,18 @@ footer {
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 100%; } }
+      width: 100%;
+      height: 150px; } }
   footer.warning {
     background-color: #FCD748;
     border-top: none; }
+  @media (min-width: 48em) {
+    footer.contact-details {
+      padding-top: 40px; } }
+  footer.contact-details > div:first-of-type {
+    padding-right: 20px; }
+  footer.contact-details p {
+    margin: 7px 0; }
 
 /*******************
 	HELPER CLASSES

@@ -121,11 +121,23 @@ hr{
 	.auction-details{
 		padding: 50px;
 
-		@media (min-height: 700px) {
+		@media (min-height: 700px) and (min-width: 48em) {
 			position: absolute;
 			top: calc(50% - 100px);
 			transform: translateY(-50%);
 		}
+
+		@media (min-width: 80em){
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 80%;
+		}
+
+		@media (min-width: 80em) and (min-height: 700px){
+			transform: translate(-50%,-50%);
+		}
+
 	}
 
 		.button--enter-auction{
@@ -154,7 +166,14 @@ hr{
 		.custom--content{
 			padding: 50px;
 
-			@media (min-height: 700px) {
+			@media (max-height: 700px) and (min-width: 48em){
+				position: absolute;
+				top: 0;
+				bottom: 150px;
+				overflow-y: auto;
+			}
+
+			@media (min-height: 700px) and (min-width: 48em) {
 				position: absolute;
 				top: calc(50% - 80px);
 				transform: translateY(-50%);
@@ -184,8 +203,10 @@ hr{
 			bottom: 0;
 			left: 0;
 			width: 100%;
+			height: 150px;
 		}
 
+		overflow: hidden;
 		border-top: 1px solid $grey-300;
 		background-color: $grey-100;
 		padding: 15px 30px;
@@ -194,4 +215,26 @@ hr{
 			background-color: $warning-colour;
 			border-top: none;
 		}
-	}
+
+		&.contact-details{
+			
+			@include breakpoint(medium){
+				padding-top: 40px;
+			}
+
+			&>div:first-of-type{
+				padding-right: 20px;
+			}
+
+			p{
+				margin: 7px 0;
+			}
+		}
+	}  
+
+
+
+
+
+
+
