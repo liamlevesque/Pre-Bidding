@@ -3494,15 +3494,17 @@ MOST IMPORTANT - LOT TABLE STYLES
   font-size: 0.9rem;
   line-height: 1.4rem;
   font-size: 0.8rem;
-  text-align: left;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  white-space: nowrap;
-  padding: 3px;
-  background-color: #585858; }
+  padding: 3px 30px;
+  background-color: #585858;
+  position: relative; }
   .other-rings ul {
     padding: 0;
-    margin: 0; }
+    margin: 0;
+    text-align: left;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    white-space: nowrap;
+    line-height: 0; }
 
 .other-ring {
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
@@ -3510,7 +3512,9 @@ MOST IMPORTANT - LOT TABLE STYLES
   background-color: white;
   display: inline-block;
   width: 350px;
-  margin: 0; }
+  margin: 0;
+  cursor: pointer;
+  line-height: 1.4rem; }
   .other-ring .ring--photo, .other-ring .ring--data {
     box-sizing: border-box;
     position: relative;
@@ -3563,6 +3567,29 @@ MOST IMPORTANT - LOT TABLE STYLES
       line-height: 1; }
     .other-ring .lot--detail label {
       margin-right: 5px; }
+
+.overflow-arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: none; }
+  .overflow-arrow.arrow--next {
+    right: 0;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E"); }
+    .overflow-arrow.arrow--next:hover {
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23E87722'%2F%3E%3C%2Fsvg%3E"); }
+  .overflow-arrow.arrow--prev {
+    left: 0;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E"); }
+    .overflow-arrow.arrow--prev:hover {
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23E87722'%2F%3E%3C%2Fsvg%3E"); }
 
 /* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
 .tooltipster-default {
