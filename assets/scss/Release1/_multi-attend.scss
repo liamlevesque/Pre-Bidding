@@ -1,0 +1,112 @@
+.other-rings{
+	width: 100%;
+	@include default-font;
+	font-size: 0.8rem;
+	text-align: left;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	white-space: nowrap;
+	padding: 3px;
+	background-color: $grey-700;
+
+	ul{
+		padding: 0;
+		margin: 0;
+	}
+}
+
+	.other-ring{
+		box-shadow: $ritchie-shadow;
+		position: relative;
+		background-color: white;
+		display: inline-block;
+		width: 350px;
+		margin: 0;
+
+		.ring--photo, .ring--data{
+			box-sizing: border-box;
+			position: relative;
+			vertical-align: top;
+			float: left;
+		}
+
+		.ring--photo{
+			width: 25%;
+		}
+
+			img{
+				width: 100%;
+				max-width: 100%;
+				display: block;
+			}
+
+			.ring--lot{
+				text-align: center;
+				background-color: $brand-color;
+				color: white;
+				padding: 1px;
+			}
+
+		.ring--data{
+			width: 75%;
+		}
+			header{
+				background-color: $grey-100;
+				padding: 3px 8px; 
+				
+				button{
+					position: absolute;
+					right: 5px;
+					top: 5px;
+				}
+			}
+				
+				.ring--label, .ring--lots{
+					display: block;
+					margin-right: 25px;
+					@include ellipsize;
+				}
+
+				.ring--label{
+					font-weight: 700;
+				}
+
+				.ring--lots{
+					color: $grey-700;
+					line-height: 1;
+				}
+
+			.data--body{
+				padding: 3px 8px;
+			}
+
+				.lot--name{
+					margin-bottom: 0;
+					@include ellipsize;
+
+					&:hover{
+						color: black;
+					}
+				}
+
+				.lot--detail{
+					width: 50%;
+					float: left;
+
+					span{
+						line-height: 1;
+					}
+
+					label{
+						margin-right: 5px;
+					}
+				}
+
+	}
+		
+		
+		
+
+	
+
+	

@@ -46,7 +46,7 @@
 			position: absolute;
 			top: 0;
 			left: 0;
-			background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 20" preserveAspectRatio="none"><polygon fill="%23333333" points="0,0 10,10 0,20"/></svg>');
+			background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%220%200%2010%2020%22%20preserveAspectRatio%3D%22none%22%3E%3Cpolygon%20fill%3D%22%23333333%22%20points%3D%220%2C0%2010%2C10%200%2C20%22%2F%3E%3C%2Fsvg%3E');
 			background-size: 10px 100%;
 			background-repeat: no-repeat;
 					
@@ -91,7 +91,7 @@
 				
 				&:before{
 					content: '';
-					background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 20" preserveAspectRatio="none"><polygon fill="%23e8e6e2" points="0,0 10,10 0,20"/></svg>');
+					background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%220%200%2010%2020%22%20preserveAspectRatio%3D%22none%22%3E%3Cpolygon%20fill%3D%22%23e8e6e2%22%20points%3D%220%2C0%2010%2C10%200%2C20%22%2F%3E%3C%2Fsvg%3E');
 					background-size: 10px 100%;
 					background-repeat: no-repeat;
 					position: absolute;
@@ -224,6 +224,7 @@
 				background-image: none;
 				background-color: #d2d2d2;
 				border-color: transparent;
+				cursor: default;
 
 				.bidder--disabled{
 					display: block;

@@ -1946,7 +1946,7 @@ header {
   left: 0;
   right: 0;
   background-color: #aaa;
-  padding: 10px;
+  padding: 0 0 10px 0;
   text-align: center;
   z-index: 30; }
   .stuck--footer button {
@@ -2413,7 +2413,7 @@ MOST IMPORTANT - LOT TABLE STYLES
       background-color: white; }
     .lot.s-currentLot:not(.s-grouped) .col-0:after {
       content: '';
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 20" preserveAspectRatio="none"><polygon fill="%2320579E" points="0,0 10,10 0,20"/></svg>');
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%220%200%2010%2020%22%20preserveAspectRatio%3D%22none%22%3E%3Cpolygon%20fill%3D%22%2320579E%22%20points%3D%220%2C0%2010%2C10%200%2C20%22%2F%3E%3C%2Fsvg%3E");
       background-size: 10px 100%;
       background-repeat: no-repeat;
       background-color: rgba(32, 87, 158, 0.1);
@@ -2606,7 +2606,7 @@ MOST IMPORTANT - LOT TABLE STYLES
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 20" preserveAspectRatio="none"><polygon fill="%23333333" points="0,0 10,10 0,20"/></svg>');
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%220%200%2010%2020%22%20preserveAspectRatio%3D%22none%22%3E%3Cpolygon%20fill%3D%22%23333333%22%20points%3D%220%2C0%2010%2C10%200%2C20%22%2F%3E%3C%2Fsvg%3E");
     background-size: 10px 100%;
     background-repeat: no-repeat; }
 
@@ -2642,7 +2642,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   margin-right: -15px; }
   .bidding--activate:before {
     content: '';
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 20" preserveAspectRatio="none"><polygon fill="%23e8e6e2" points="0,0 10,10 0,20"/></svg>');
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%220%200%2010%2020%22%20preserveAspectRatio%3D%22none%22%3E%3Cpolygon%20fill%3D%22%23e8e6e2%22%20points%3D%220%2C0%2010%2C10%200%2C20%22%2F%3E%3C%2Fsvg%3E");
     background-size: 10px 100%;
     background-repeat: no-repeat;
     position: absolute;
@@ -2737,7 +2737,8 @@ MOST IMPORTANT - LOT TABLE STYLES
     opacity: 0.5;
     background-image: none;
     background-color: #d2d2d2;
-    border-color: transparent; }
+    border-color: transparent;
+    cursor: default; }
     .bidding--bid-button.s-disabled .bidder--disabled {
       display: block;
       font-size: 1.2rem; }
@@ -3488,6 +3489,81 @@ MOST IMPORTANT - LOT TABLE STYLES
     background-image: url(../img/ccy-flags.png);
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
 
+.other-rings {
+  width: 100%;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  font-size: 0.8rem;
+  text-align: left;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  white-space: nowrap;
+  padding: 3px;
+  background-color: #585858; }
+  .other-rings ul {
+    padding: 0;
+    margin: 0; }
+
+.other-ring {
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  position: relative;
+  background-color: white;
+  display: inline-block;
+  width: 350px;
+  margin: 0; }
+  .other-ring .ring--photo, .other-ring .ring--data {
+    box-sizing: border-box;
+    position: relative;
+    vertical-align: top;
+    float: left; }
+  .other-ring .ring--photo {
+    width: 25%; }
+  .other-ring img {
+    width: 100%;
+    max-width: 100%;
+    display: block; }
+  .other-ring .ring--lot {
+    text-align: center;
+    background-color: #E87722;
+    color: white;
+    padding: 1px; }
+  .other-ring .ring--data {
+    width: 75%; }
+  .other-ring header {
+    background-color: #E9E9E9;
+    padding: 3px 8px; }
+    .other-ring header button {
+      position: absolute;
+      right: 5px;
+      top: 5px; }
+  .other-ring .ring--label, .other-ring .ring--lots {
+    display: block;
+    margin-right: 25px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .other-ring .ring--label {
+    font-weight: 700; }
+  .other-ring .ring--lots {
+    color: #585858;
+    line-height: 1; }
+  .other-ring .data--body {
+    padding: 3px 8px; }
+  .other-ring .lot--name {
+    margin-bottom: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+    .other-ring .lot--name:hover {
+      color: black; }
+  .other-ring .lot--detail {
+    width: 50%;
+    float: left; }
+    .other-ring .lot--detail span {
+      line-height: 1; }
+    .other-ring .lot--detail label {
+      margin-right: 5px; }
+
 /* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
 .tooltipster-default {
   border-radius: 5px;
@@ -3854,6 +3930,9 @@ MOST IMPORTANT - LOT TABLE STYLES
 
 .h-t-s {
   font-size: 0.8rem; }
+
+.h-t-m {
+  font-size: 1rem; }
 
 .h-t-l, .h-t-large {
   font-size: 1.5rem; }
