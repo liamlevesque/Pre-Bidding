@@ -18,7 +18,7 @@
 }
 
 	.other-ring{
-		box-shadow: $ritchie-shadow;
+		//box-shadow: $ritchie-shadow;
 		position: relative;
 		background-color: white;
 		display: inline-block;
@@ -26,6 +26,17 @@
 		margin: 0;
 		cursor: pointer;
 		line-height: 1.4rem;
+		border: 2px solid $grey-700;
+		margin-right: -4px;
+
+		&.s-active{
+			border-color: $brand-color;
+
+			.ring--lot{
+				background-color: $brand-color;
+				color: white;
+			}
+		}
 
 		.ring--photo, .ring--data{
 			box-sizing: border-box;
@@ -46,8 +57,8 @@
 
 			.ring--lot{
 				text-align: center;
-				background-color: $brand-color;
-				color: white;
+				background-color: $grey-900;
+				color: $brand-color;
 				padding: 1px;
 			}
 
