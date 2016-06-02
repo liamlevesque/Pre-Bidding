@@ -3535,7 +3535,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   .other-ring .ring--lot {
     text-align: center;
     background-color: #333333;
-    color: #E87722;
+    color: white;
     padding: 1px; }
   .other-ring .ring--data {
     width: 75%; }
