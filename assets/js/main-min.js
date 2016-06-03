@@ -479,7 +479,7 @@ rivets.formatters.zeroToFalse = function(value){
 
 rivets.formatters.zeroOrEmptyToFalse = function(value){
 	console.log(value);
-	if(value === 0 || value === ''| isNaN(value)) return false;
+	if(value === 0 || value === ''|| isNaN(value)) return false;
 	else return true;
 }
 
