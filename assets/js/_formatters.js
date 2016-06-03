@@ -86,7 +86,8 @@ rivets.formatters.zeroToFalse = function(value){
 }
 
 rivets.formatters.zeroOrEmptyToFalse = function(value){
-	if(value === 0 || value === '') return false;
+	console.log(value);
+	if(value === 0 || value === ''| isNaN(value)) return false;
 	else return true;
 }
 

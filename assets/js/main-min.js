@@ -478,7 +478,8 @@ rivets.formatters.zeroToFalse = function(value){
 }
 
 rivets.formatters.zeroOrEmptyToFalse = function(value){
-	if(value === 0 || value === '') return false;
+	console.log(value);
+	if(value === 0 || value === ''| isNaN(value)) return false;
 	else return true;
 }
 
@@ -2146,6 +2147,7 @@ $(function(){
 	$('.js--open-ccyconverter').click(function(){
 		$('.js--calc-modal').addClass('s-shown');
 		$('.js--ccy-converter').addClass('s-expanded');
+		ccyconversion2.editing = true;
 	});
 
 	$('.js--open-financecalc').click(function(){

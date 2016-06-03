@@ -87,6 +87,7 @@ $(function(){
 	$('.js--open-ccyconverter').click(function(){
 		$('.js--calc-modal').addClass('s-shown');
 		$('.js--ccy-converter').addClass('s-expanded');
+		ccyconversion2.editing = true;
 	});
 
 	$('.js--open-financecalc').click(function(){
