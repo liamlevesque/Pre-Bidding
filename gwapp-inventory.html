@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ritchie Bros. Live Auction</title>
+    <link href="assets/img/favicon.ico" rel="Shortcut Icon">
+    <link type="text/css" rel="stylesheet" href="assets/css/gwapp.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body class="body">
+
+
+    <section class="main-area">
+        
+        <div class="days">
+            <h2>Chilliwack, BC, CAN &middot; 2016001</h2>
+
+            <div class="day">
+                <h3 class="day--header">Day 1</h3>
+                <button class="button--unbound day--delete c-error"><label>Delete Day</label><i class="icon-trash"></i></button>
+                <div class="day--rings">
+                    <div class="ring">
+                        <h4 class="ring--title">Ring 1 <span class="ring--lot-total">400 lots</span></h4>
+                        <div class="ring--range">
+                            <input class="field--text_sm" type="text" placeholder="start">-<input class="field--text_sm" type="text" placeholder="end">
+                            <button class="button--unbound ring--delete"><i class="icon-trash"></i></button>
+                        </div>
+                        <button class="ring--add button_hollow">Add Range</button>
+                    </div>
+                    <div class="ring">
+                        <h4 class="ring--title">Ring 2 <span class="ring--lot-total">400 lots</span></h4>
+                        <div class="ring--range">
+                            <input class="field--text_sm" type="text" placeholder="start">-<input class="field--text_sm" type="text" placeholder="end">
+                            <button class="button--unbound ring--delete"><i class="icon-trash"></i></button>
+                        </div>
+                        <button class="ring--add button_hollow">Add Range</button>
+                    </div>
+                </div>
+            </div>
+            <div class="day">
+                <h3 class="day--header">Day 2</h3>
+                <button class="button--unbound day--delete c-error"><label>Delete Day</label><i class="icon-trash"></i></button>
+                <div class="day--rings">
+                    <div class="ring">
+                        <h4 class="ring--title">Ring 1 <span class="ring--lot-total">400 lots</span></h4>
+                        <div class="ring--range">
+                            <input class="field--text_sm" type="text" placeholder="start">-<input class="field--text_sm" type="text" placeholder="end">
+                            <button class="button--unbound ring--delete"><i class="icon-trash"></i></button>
+                        </div>
+                        <button class="ring--add button_hollow">Add Range</button>
+                    </div>
+                    <div class="ring">
+                        <h4 class="ring--title">Ring 2 <span class="ring--lot-total">400 lots</span></h4>
+                        <div class="ring--range">
+                            <input class="field--text_sm" type="text" placeholder="start" value="9">-<input class="field--text_sm s-error_border" type="text" placeholder="end" value="16">
+                            <button class="button--unbound ring--delete"><i class="icon-trash"></i></button>
+                        </div>
+                        <div class="error-message">
+                            Woah - that would split up a choice group. Either edit the group in C&amp;P, or try another lot #
+                            <a href="#" class="button">Take me to C&amp;P</a>
+                        </div>
+                        <button class="ring--add button_hollow">Add Range</button>
+                    </div>
+                </div>
+            </div>
+            <button class="button">+ Add A Day</button>
+        </div>
+
+        <div class="outstanding-lots">
+            <h2>Outstanding Lots</h2>
+            <div class="lots--complete">
+                <i class="icon-check icon_giant"></i>
+                <h4 class="c-white">Smooth moves<br/>All Lots Assigned!</h4>
+            </div>
+            <div class="lots--outstanding">
+                <ul class="lots">
+                    <li class="lot">1</li>
+                    <li class="lot">2</li>
+                    <li class="lot">3</li>
+                    <li class="lot">4</li>
+                    <li class="lot">5</li>
+                    <li class="lot">6</li>
+                    <li class="lot">7</li>
+                    <li class="lot">8</li>
+                    <li class="lot">9</li>
+                    <li class="lot group group-start">10</li>  
+                    <li class="lot group">11</li>
+                    <li class="lot group">12</li>
+                    <li class="lot group">13</li>
+                    <li class="lot group">14</li>
+                    <li class="lot group group-end">15</li>
+                    <li class="lot group group-start s-error">16</li>
+                    <li class="lot group group-end s-error">17</li>
+                    <li class="lot">18</li>
+                    <li class="lot">19</li>
+                    <li class="lot">20</li>
+                </ul>
+            </div>
+        </div>
+
+        
+
+    </section>
+
+    <footer class="fixed-footer s-modified">
+        <button class="button">Save and submit</button>
+    </footer>
+
+    
+</body>
+</html>

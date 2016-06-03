@@ -1,0 +1,73 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Variables */
+$wrapper: 80rem;
+$gutter: 1rem;
+
+//ROWS
+@mixin row($inside: false) {
+  @if($inside == true) {
+    margin-left: -$gutter/2;
+    margin-right: -$gutter/2;
+  }
+  @else {
+    width: 100%;
+    max-width: $wrapper;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &:before, &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+//COLUMNS
+@mixin col($width: 1, $padding: true) {
+  float: left;
+  width: percentage($width);
+  @if($padding == true) {
+    padding-left: $gutter/2;
+    padding-right: $gutter/2;
+  }
+}
+
+//RE-ORDER COLUMNS USING CSS
+@mixin push($width: 0) {
+  position: relative;
+  left: percentage($width);
+}
+
+@mixin pull($width: 0) {
+  position: relative;
+  right: percentage($width);
+}
+
+/* Easy breakpoint mixin */
+@mixin mq($value) {
+  @media only screen and (min-width: $value) {
+    @content;
+  }
+}
+
+/* Layout */
+.wrapper {
+  @include row;
+}
+.column {
+  @include col;
+  @include mq(600px) {
+    @include col(1/2);
+  }
+  @include mq(900px) {
+    @include col(1/4);
+  }
+}

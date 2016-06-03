@@ -206,7 +206,7 @@ GRID
 .icon-warranty:before {
   content: "\e913"; }
 
-.field--text, .field--select {
+.field--text, .field--text_sm, .field--select {
   width: 100%;
   height: 30px;
   border: 1px solid #bfc0be;
@@ -221,22 +221,27 @@ GRID
   position: relative;
   font-family: 'Trebuchet MS', Verdana, sans-serif;
   font-size: 1rem; }
-  .invalid.field--text, .invalid.field--select, .s-error.field--text, .s-error.field--select {
+  .invalid.field--text, .invalid.field--text_sm, .invalid.field--select, .s-error.field--text, .s-error.field--text_sm, .s-error.field--select {
     background-color: #F3BFBF; }
-  .field--text:hover, .field--select:hover {
+  .s-error_border.field--text, .s-error_border.field--text_sm, .s-error_border.field--select {
+    border-color: #c4483a; }
+  .field--text:hover, .field--text_sm:hover, .field--select:hover {
     border: 1px solid #E35530; }
-  .field--text:focus, .field--select:focus {
+  .field--text:focus, .field--text_sm:focus, .field--select:focus {
     border: 1px solid #E35530; }
 
-.field--text:-moz-read-only {
+.field--text:-moz-read-only, .field--text_sm:-moz-read-only {
   border-width: 0 !important;
   text-decoration: underline;
   cursor: pointer; }
 
-.field--text:read-only {
+.field--text:read-only, .field--text_sm:read-only {
   border-width: 0 !important;
   text-decoration: underline;
   cursor: pointer; }
+
+.field--text_sm {
+  width: 70px; }
 
 .field--w-modifier {
   position: relative;

@@ -16,6 +16,10 @@
     background-color: $error-colour-light;
   }
 
+  &.s-error_border{
+    border-color: $error-colour;
+  }
+
   &:hover{
     border: 1px solid $border-active;
   }
@@ -38,6 +42,11 @@
 
 .field--text{
   @extend %field--text;
+}
+
+.field--text_sm{
+  @extend %field--text;
+  width: 70px;
 }
 
 .field--w-modifier{
