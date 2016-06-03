@@ -3,19 +3,21 @@
 $footer-height: 70px;
 
 .scroll-area{
-	height: calc(100vh - #{$footer-height});
-	overflow-y: auto; 
-	position: relative;
-	width: 100%;
-	padding: 30px 0;
+	
 }
 
 .main-area{
-	@include row;
+	
 }
 
 .days{
-	@include col(9/12);
+	position: absolute;
+	top: 0;
+	bottom: $footer-height;
+	left: 0;
+	width: 70%;
+	overflow-y: auto;
+	padding: 30px;
 }
 
 	.day{
@@ -84,7 +86,13 @@ $footer-height: 70px;
 
 
 .outstanding-lots{
-	@include col(3/12);
+	position: absolute;
+	top: 0;
+	bottom: $footer-height;
+	right: 0;
+	width: 30%;
+	overflow-y: auto;
+	padding: 30px;
 }
 
 	.lots--complete{
