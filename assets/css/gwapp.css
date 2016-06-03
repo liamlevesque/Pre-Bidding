@@ -417,6 +417,26 @@ input[type=number]::-webkit-outer-spin-button {
   .button--unbound:hover {
     color: #20579E; }
 
+.button_text {
+  position: relative;
+  display: inline-block;
+  background-color: transparent;
+  border: 0;
+  padding: 8px 15px;
+  font-size: 1rem;
+  font-weight: 700;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: underline; }
+  .button_text:disabled {
+    opacity: 0.4;
+    cursor: normal;
+    pointer-events: none; }
+  .button_text:focus {
+    outline: none;
+    border-color: #95490f; }
+
 .toggle_icon {
   color: #959595;
   font-size: 0.8rem;
@@ -610,16 +630,18 @@ hr {
       padding-left: 0.5rem;
       padding-right: 0.5rem; } }
 
+.scroll-area {
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+  position: relative;
+  width: 100%;
+  padding: 30px 0; }
+
 .main-area {
   width: 100%;
   max-width: 80rem;
   margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  width: 100%;
-  padding: 30px 0;
-  height: calc(100vh - 70px);
-  overflow-y: auto; }
+  margin-right: auto; }
   .main-area:before, .main-area:after {
     content: '';
     display: table; }
@@ -731,6 +753,26 @@ hr {
   height: 70px;
   padding: 15px;
   text-align: right; }
+  .fixed-footer .button:last-of-type {
+    margin-left: 15px; }
+
+.error-message {
+  display: inline-block;
+  background-color: #c4483a;
+  color: white; }
+
+.confirmation-message {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #24532B;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  z-index: 5; }
 
 /*******************
 	HELPER CLASSES

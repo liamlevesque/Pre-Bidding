@@ -2,13 +2,16 @@
 
 $footer-height: 70px;
 
-.main-area{
-	@include row;
+.scroll-area{
+	height: calc(100vh - #{$footer-height});
+	overflow-y: auto; 
 	position: relative;
 	width: 100%;
 	padding: 30px 0;
-	height: calc(100vh - #{$footer-height});
-	overflow-y: auto; 
+}
+
+.main-area{
+	@include row;
 }
 
 .days{
@@ -136,7 +139,35 @@ $footer-height: 70px;
 	height: $footer-height;
 	padding: $default-margin;
 	text-align: right;
+
+	.button{
+		&:last-of-type{
+			margin-left: $default-margin;
+		}
+	}
 }
+
+	.error-message{
+		display: inline-block;
+		background-color: $error-colour;
+		color: white;
+	}
+
+	.confirmation-message{
+		display: none;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0; 
+		bottom: 0;
+		background-color: $finance-color;
+		color: white;
+		text-align: center;
+		padding: $default-margin;
+		z-index: 5;
+	}
+
+
 
 
 

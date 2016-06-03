@@ -169,6 +169,32 @@
 }
 
 
+.button_text{
+	position: relative;
+	display: inline-block;
+	background-color: transparent;
+	border: 0;
+	padding: 8px $default-margin;
+	font-size: 1rem;
+	font-weight: 700;
+	outline: none;
+	cursor: pointer;
+	user-select: none;
+	text-decoration: underline;
+
+	&:disabled{
+		opacity: 0.4;
+		cursor: normal;
+		pointer-events: none;
+	}
+
+	&:focus{
+		outline: none;
+		border-color: darken($brand-color,20%);
+	}
+
+}
+
 
 .toggle_icon{
 	color: $grey-500;

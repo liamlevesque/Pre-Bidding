@@ -436,6 +436,29 @@ input[type=number]::-webkit-outer-spin-button {
   .button--unbound:hover {
     color: #20579E; }
 
+.button_text {
+  position: relative;
+  display: inline-block;
+  background-color: transparent;
+  border: 0;
+  padding: 8px 15px;
+  font-size: 1rem;
+  font-weight: 700;
+  outline: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-decoration: underline; }
+  .button_text:disabled {
+    opacity: 0.4;
+    cursor: normal;
+    pointer-events: none; }
+  .button_text:focus {
+    outline: none;
+    border-color: #95490f; }
+
 .toggle_icon {
   color: #959595;
   font-size: 0.8rem;

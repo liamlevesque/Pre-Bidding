@@ -11,7 +11,7 @@
 
 <body class="body">
 
-
+<div class="scroll-area">
     <section class="main-area">
         
         <div class="days">
@@ -27,7 +27,7 @@
                             <input class="field--text_sm" type="text" placeholder="start">-<input class="field--text_sm" type="text" placeholder="end">
                             <button class="button--unbound ring--delete"><i class="icon-trash"></i></button>
                         </div>
-                        <button class="ring--add button_hollow">Add Range</button>
+                        <button class="ring--add button_text c-brand">+ Add Range</button>
                     </div>
                     <div class="ring">
                         <h4 class="ring--title">Ring 2 <span class="ring--lot-total">400 lots</span></h4>
@@ -35,7 +35,7 @@
                             <input class="field--text_sm" type="text" placeholder="start">-<input class="field--text_sm" type="text" placeholder="end">
                             <button class="button--unbound ring--delete"><i class="icon-trash"></i></button>
                         </div>
-                        <button class="ring--add button_hollow">Add Range</button>
+                        <button class="ring--add button_text c-brand">+ Add Range</button>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                             <input class="field--text_sm" type="text" placeholder="start">-<input class="field--text_sm" type="text" placeholder="end">
                             <button class="button--unbound ring--delete"><i class="icon-trash"></i></button>
                         </div>
-                        <button class="ring--add button_hollow">Add Range</button>
+                        <button class="ring--add button_text c-brand">+ Add Range</button>
                     </div>
                     <div class="ring">
                         <h4 class="ring--title">Ring 2 <span class="ring--lot-total">400 lots</span></h4>
@@ -58,10 +58,10 @@
                             <button class="button--unbound ring--delete"><i class="icon-trash"></i></button>
                         </div>
                         <div class="error-message">
-                            Woah - that would split up a choice group. Either edit the group in C&amp;P, or try another lot #
+                            Woah - that would split up a choice group. Either edit the group in C&amp;P, or try another lot number
                             <a href="#" class="button">Take me to C&amp;P</a>
                         </div>
-                        <button class="ring--add button_hollow">Add Range</button>
+                        <button class="ring--add button_text c-brand">+ Add Range</button>
                     </div>
                 </div>
             </div>
@@ -103,10 +103,18 @@
         
 
     </section>
+</div>
 
-    <footer class="fixed-footer s-modified">
-        <button class="button">Save and submit</button>
-    </footer>
+<footer class="fixed-footer s-modified">
+    <div class="error-message">
+        Fix your errors before you can save            
+    </div>
+    <div class="confirmation-message">
+        Changes Saved and Submitted!
+    </div>
+    <button class="button_text c-white">Cancel</button>
+    <button class="button">Save and submit</button>
+</footer>
 
     
 </body>
