@@ -2132,8 +2132,17 @@ $(function(){
 	})
 
 
+	//SHOW/HIDE THE PREVIEW IMAGE IN THE LOT TABLE
+	$('.js--lot-preview-hover').mouseover(function(e){
+		var offset = $(e.currentTarget).offset();
+		$('.js--preview-photo').addClass('s-visible').css({"top":(offset.top + 8) + "px", "left": (offset.left - 220) +"px"}); 
+	}).mouseout(function(e){
+		$('.js--preview-photo').removeClass('s-visible');
+	});
+
+
 	$('.js-expander-toggle').click(function(e){
-		$(e.currentTarget).parent().toggleClass('s-expanded')
+		$(e.currentTarget).parent().toggleClass('s-expanded');
 	});
 
 	//FINANCE CALCULATOR FORMATTING ON INIT
