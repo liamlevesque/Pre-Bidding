@@ -701,6 +701,11 @@ var	finance2 = {
 		
 		onToggleClick: function(e, model){
 	    	finance2.editing = !finance2.editing;
+	    },
+
+	    showCCYConverter: function(e,model){
+	    	$('.js--ccy-converter').addClass('s-expanded');
+			ccyconversion2.editing = true;
 	    }
 
 	};

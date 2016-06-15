@@ -458,6 +458,8 @@ input[type=number]::-webkit-outer-spin-button {
   .button_text:focus {
     outline: none;
     border-color: #95490f; }
+  .button_text.button_text--s {
+    font-size: 0.8rem; }
 
 .toggle_icon {
   color: #959595;
