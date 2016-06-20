@@ -3159,10 +3159,6 @@ MOST IMPORTANT - LOT TABLE STYLES
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     font-size: 24px; }
-  .group--lot.s-preview:not(.s-active-lot):before {
-    color: #959595;
-    font-size: 12px;
-    left: 4px; }
   .group--lot.s-preview:not(.s-active-lot) .lot--values {
     color: #E87722; }
   .group--lot.s-sold, .group--lot.s-out {
