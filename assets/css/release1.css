@@ -3160,7 +3160,6 @@ MOST IMPORTANT - LOT TABLE STYLES
             transform: translateY(-50%);
     font-size: 24px; }
   .group--lot.s-preview:not(.s-active-lot):before {
-    content: "\e908";
     color: #959595;
     font-size: 12px;
     left: 4px; }
@@ -3729,7 +3728,8 @@ MOST IMPORTANT - LOT TABLE STYLES
     text-align: center;
     background-color: #333333;
     color: white;
-    padding: 1px; }
+    padding: 1px;
+    line-height: 16px; }
   .other-ring .ring--data {
     width: 75%; }
   .other-ring header {

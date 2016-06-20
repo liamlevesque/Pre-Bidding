@@ -744,7 +744,7 @@
 
 		&.s-preview:not(.s-active-lot){
 			&:before{
-				content: "\e908";
+				//content: "\e908";
 				color: $grey-500;
 				font-size: 12px;
 				left: 4px;

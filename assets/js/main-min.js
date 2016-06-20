@@ -2395,7 +2395,8 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 		"bidPrice" : 7500,
 		"bidMode" : 'normal',
 		"openOffer" : false,
-		"selectAll" : false
+		"selectAll" : false,
+		"previewLot" : 0
 	},
 	bidController = {
 
@@ -2415,16 +2416,21 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 		},
 
 		changePreview: function(e, model){
+			var targetLot = ($(e.currentTarget).data('lotnumber')) - 1;
+			if(targetLot === bidObject.previewLot) return;
+
+			bidObject.previewLot = targetLot;
+
+			//CLEAR OUT LOT PREVIEW
 			$('.js--lot-info').html('');
 
 			//GIVE PREVIEW APPEARANCE
 			$('.s-preview').removeClass('s-preview');
 			$(e.currentTarget).addClass('s-preview');
 			
-			var targetLot = ($(e.currentTarget).data('lotnumber')) - 1;
+			//BUILD NEW LOT PREVIEW 
 			var newLotData = lotTable.lotList[targetLot];
 			var template3 = $('#currentlot').html();
-
 			var newLot = Mustache.render(template3, newLotData);
 			$('.js--lot-info').html(newLot);
 			
