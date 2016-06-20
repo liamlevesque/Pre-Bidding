@@ -56,9 +56,10 @@
 		.bidding--info{
 			padding: $default-margin;
 			padding-right: 8px;
-
+			
 			@include breakpoint(large){
 				padding-right: $default-margin;
+				padding-left: 20px;
 			}
 
 			.h-t-large{
@@ -152,8 +153,8 @@
 			line-height: 1;
 			overflow: hidden;
 
-			@include breakpoint(large){
-				padding: $default-margin 0;
+			@include vbreakpoint(med){
+				padding: $default-margin 0;		
 			}
 
 			.field--select, .field--w-modifier{
@@ -383,6 +384,7 @@
 
 				&:before{
 					color: black;
+					transform: translateY(-50%) rotate(0deg);
 					border-right-color: $warning-colour;
 					animation-name: waitingspin;
 					animation-iteration-count: infinite;
@@ -452,10 +454,11 @@
 			}
 
 			li:not(.s-active-lot):not(.s-sold):not(.s-out){
-				opacity: 0.5;
+				//opacity: 0.5;
 
 				.lot--selector{
 					pointer-events: none;
+					opacity: 0;
 				}
 			}
 
@@ -568,7 +571,7 @@
 				height: 30px;
 				width: 30px;
 		    	display: block;
-			    background-color: white;
+			    //background-color: white;
 			    border: 3px solid $brand-color;
 			    color: transparent;
 				border-radius: 20px;
@@ -587,6 +590,7 @@
 
 				&:hover{
 					color: rgba($brand-color,0.7);
+					background-color: white;
 
 					i{
 						transform: scale(1.1);
@@ -618,6 +622,7 @@
 		margin-left: 10px;
 		border-bottom: $ritchie-border;
 		position: relative;
+		cursor: pointer;
 
 		transition: $transition;
 
@@ -658,7 +663,9 @@
 			display: inline-block;
 			width: calc(100% - #{$lot-photo-width});
 
-			cursor: default;
+			&:hover{
+				text-decoration: underline;
+			}
 		}
 
 			.lot--name{
@@ -694,14 +701,7 @@
 			display: none;
 		}
 
-		&.s-preview{
-			background-color: rgba($money-color,0.1);
-
-			.lot--watching{
-				color: $money-color;
-				opacity: 1;
-			}
-		}
+		
 
 		&.s-active-lot{
 			background-color: $brand-color;
@@ -724,41 +724,94 @@
 				}
 			}
 
-			.lot--name, .lot--value{
+			.lot--values{
 				color: white;
+			}
+		}
+
+		&.s-sold, &.s-out, &.s-preview{
+			&:before{
+				@include icon-font;
+				position: absolute;
+				left: 5px;
+				width: 35px;
+				text-align: center;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 24px;
+			}
+		}
+
+		&.s-preview:not(.s-active-lot){
+			&:before{
+				content: "\e908";
+				color: $grey-500;
+				font-size: 12px;
+				left: 4px;
+			}
+
+			.lot--values{
+				color: $brand-color;
 			}
 		}
 
 		&.s-sold, &.s-out{
 			background-color: $grey-50;
+			cursor: default;
 			
 			*{
 				opacity: 0.5;
 			}
 
-			&:before{
-				content: "SOLD";
-				color: $grey-500;
-				position: absolute;
-				left: 5px;
-				top: 50%;
-				transform: translateY(-50%);
-				bottom: 0;
-				font-size: 0.7rem;
-				width: 35px;
-				text-align: center;
-				font-weight: 700;
-				vertical-align: middle;
-			}
+			// &:before{
+			// 	content: "SOLD";
+			// 	color: $grey-500;
+			// 	position: absolute;
+			// 	left: 5px;
+			// 	top: 50%;
+			// 	transform: translateY(-50%);
+			// 	bottom: 0;
+			// 	font-size: 0.7rem;
+			// 	width: 35px;
+			// 	text-align: center;
+			// 	font-weight: 700;
+			// 	vertical-align: middle;
+			// }
 
 			.lot--selector{
 				display: none;
 			}
 		}
 
-		&.s-out{
+		&.s-sold{
+
 			&:before{
-				content: "OUT";
+				content: "\e920";
+				color: $brand-color;
+
+			}
+
+			// &:after{
+			// 	position: absolute;
+			// 	display: block;
+			// 	left: 5px;
+			// 	bottom: 0px;
+			// 	content: "SOLD";
+			// 	font-size: 0.7rem;
+			// 	width: 35px;
+			// 	text-align: center;
+			// 	font-weight: 700;
+			// 	color: $grey-500;
+			// }
+		}
+
+		&.s-out{
+			background-color: rgba($error-colour, 0.2);
+
+			&:before{
+				content: "\e906";
+				color: rgba($error-colour,0.5);
+				font-size: 18px;
 			}
 			.lot--name, .lot--value{
 				text-decoration: line-through;
@@ -803,6 +856,209 @@
     	}
 
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	.group--lot_b{
+		@include default-font;
+		overflow: hidden;
+		padding: 5px 10px 5px 45px;
+		background-color: $grey-100;
+		margin: 2px;
+		margin-left: 12px;
+		border-radius: 5px;
+		position: relative;
+		cursor: pointer;
+		border: 2px solid transparent;
+
+		transition: $transition;
+
+			// &:before{
+			// 	content: '';
+			// 	position: absolute;
+			// 	background-color: $brand-color;
+			// 	top: 0;
+			// 	left: 0;
+			// 	width: 0;
+			// 	height: 100%;
+			// 	transition: $transition;
+			// }
+
+		.lot--watching{
+			vertical-align: middle;
+			margin-right: 5px;
+		}
+
+		$lot-photo-width: 70px;
+
+		.lot--photo{
+			display: none;
+		}
+
+		.lot--values{
+			vertical-align: middle;
+			display: inline-block;
+			
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+
+			.lot--name{
+				line-height: 0.9rem;
+
+				&:hover{
+					color: inherit;
+				}
+			}
+
+			.lot--value{
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				font-size: 0.8rem;
+				line-height: 1.2rem;
+			}
+
+		// .lot--name{
+		// 	display: inline-block;
+		// 	vertical-align: middle;
+		// }
+
+		.lot--selector{
+			position: absolute;
+		    left: 6px;
+		    top: 50%;
+		    transform: translateY(-50%);
+		}
+
+		
+		&.s-disabled .lot--selector{
+			display: none;
+		}
+
+		
+
+		&.s-active-lot{
+			background-color: $brand-color;
+			margin-left: 0;
+
+			&:before{
+				width: 100%;
+			}
+
+
+			.lot--selector{
+				left: 5px;
+				span{
+					background-color: white;
+					color: $brand-color;
+
+					&:hover{
+						color: $brand-color;
+					}
+				}
+			}
+
+			.lot--values{
+				color: white;
+			}
+		}
+
+		&.s-preview{
+			border-color: $brand-color;
+		}
+
+		&.s-sold, &.s-out{
+			background-color: $grey-50;
+			cursor: default;
+
+			&:before{
+				@include icon-font;
+				position: absolute;
+				left: 5px;
+				width: 35px;
+				text-align: center;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 24px;
+			}
+			
+			*{
+				opacity: 0.5;
+			}
+
+			// &:before{
+			// 	content: "SOLD";
+			// 	color: $grey-500;
+			// 	position: absolute;
+			// 	left: 5px;
+			// 	top: 50%;
+			// 	transform: translateY(-50%);
+			// 	bottom: 0;
+			// 	font-size: 0.7rem;
+			// 	width: 35px;
+			// 	text-align: center;
+			// 	font-weight: 700;
+			// 	vertical-align: middle;
+			// }
+
+			.lot--selector{
+				display: none;
+			}
+		}
+
+		&.s-sold{
+
+			&:before{
+				content: "\e920";
+				color: $brand-color;
+
+			}
+
+			// &:after{
+			// 	position: absolute;
+			// 	display: block;
+			// 	left: 5px;
+			// 	bottom: 0px;
+			// 	content: "SOLD";
+			// 	font-size: 0.7rem;
+			// 	width: 35px;
+			// 	text-align: center;
+			// 	font-weight: 700;
+			// 	color: $grey-500;
+			// }
+		}
+
+		&.s-out{
+			background-color: rgba($error-colour, 0.2);
+
+			&:before{
+				content: "\e906";
+				color: rgba($error-colour,0.5);
+				font-size: 18px;
+			}
+			.lot--name, .lot--value{
+				text-decoration: line-through;
+			}
+		}
+	}
+
 
 
 

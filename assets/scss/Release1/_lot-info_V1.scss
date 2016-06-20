@@ -35,6 +35,7 @@
 	position: relative;
 	width: 51%;
 	background-color: $li-bg;
+	min-height: 360px;
 
 	@include breakpoint(med-large){
 		width: 55%;
@@ -80,12 +81,18 @@
 		@include breakpoint(med-large){
 			display: inline-block;
 			width: 65%;
+			max-width: 400px;
+			max-height: 300px;
 		}
 
-		@include breakpoint(large){
-			width: 65%;	
-			padding: 10px 0 10px 0;
-		}
+		@include vbreakpoint(med){
+			margin: 20px 0;
+		}	
+
+		@include vbreakpoint(large){
+			margin-bottom: 40px;
+		}	
+
 	}
 
 		.lot--bottom{
@@ -189,12 +196,20 @@
 			overflow-y: auto;
 			display: inline-block;
 			width: 35%;
+			min-width: calc(100% - 400px);
 			float: right;
+			padding: 10px 10px;
 		}
 
+		@include vbreakpoint(med){
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}	
+
 		@include breakpoint(large){
-			padding: 10px $default-margin;
-			width: 35%;	
+			padding-left: 20px;
+			padding-right: 20px;
+			width: calc(100% - 400px);	
 		}
 	}
 
@@ -208,9 +223,15 @@
 			padding-bottom: 2px;
 			border-bottom: $ritchie-border;
 
+			&:first-of-type{
+				padding-top: 0;
+			}
+
 			@include breakpoint(large){
-				padding-top: 10px;
-				padding-bottom: 10px;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				font-size: 0.9rem;
+				line-height: 1.4rem;
 			}
 		}
 
@@ -227,8 +248,8 @@
 			}
 
 			@include breakpoint(large){
-				padding-top: 5px;
-				padding-bottom: 5px;
+				padding-top: 8px;
+				padding-bottom: 8px;
 
 				i{
 					top: 8px;

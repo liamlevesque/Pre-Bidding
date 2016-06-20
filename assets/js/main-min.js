@@ -2414,6 +2414,23 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 
 		},
 
+		changePreview: function(e, model){
+			$('.js--lot-info').html('');
+
+			//GIVE PREVIEW APPEARANCE
+			$('.s-preview').removeClass('s-preview');
+			$(e.currentTarget).addClass('s-preview');
+			
+			var targetLot = ($(e.currentTarget).data('lotnumber')) - 1;
+			var newLotData = lotTable.lotList[targetLot];
+			var template3 = $('#currentlot').html();
+
+			var newLot = Mustache.render(template3, newLotData);
+			$('.js--lot-info').html(newLot);
+			
+			//console.log($(e.currentTarget).data('lotnumber'));
+		},
+
 		onBidClick: function(e, model){
 			
 			switch(bidObject.bidStatus){

@@ -182,3 +182,14 @@ $transition: $transition-time_1 $transition-function;
   }
 }
 
+
+//VERTICAL BREAKPOINTS
+
+@mixin vbreakpoint($point){
+  @if $point == med{
+    @media (min-height: 800px) { @content; }
+  }
+  @if $point == large{
+    @media (min-height: 1000px) { @content; }
+  }
+}

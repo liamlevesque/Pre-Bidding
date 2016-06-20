@@ -379,6 +379,27 @@
 			"soldPrice": 0,
 			"bidder": null,
 			"group":0
+		},
+		{
+			"lot": 19,
+			"name": "2002 KENWORTH T800 T/A Winch Tractor",
+			"serial": "1XKDDT9X12J884037",
+			"meter": "158138 Mi",
+			"photo": "8733298_1.jpg",
+			"photos": [
+				"8709802_1.jpg",
+				"8709802_2.jpg",
+				"8709802_3.jpg"
+			],
+			"warranty": false,
+			"bid":0,
+			"watching": false,
+			"comeswith": "Cummins ISX, 500 hp, eng brake, Eaton Fuller RTLO18918B, dbl diff lock, 8 bag A/R susp, 13200 lb frt, D46-170HP rears, 238 in. WB, 48 in. sleeper, wet kit, PAS",
+			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
+			"openPrice": 10000,
+			"soldPrice": 0,
+			"bidder": null,
+			"group":0
 		}
 	]
   }
