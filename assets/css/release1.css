@@ -3329,6 +3329,12 @@ MOST IMPORTANT - LOT TABLE STYLES
   @media (min-width: 64em) {
     .lot-info {
       width: 55%; } }
+  @media (min-height: 800px) {
+    .lot-info {
+      min-height: 395px; } }
+  @media (min-height: 1000px) {
+    .lot-info {
+      min-height: 415px; } }
 
 .lot--header {
   padding: 7px 10px 7px;

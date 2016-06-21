@@ -40,6 +40,14 @@
 	@include breakpoint(med-large){
 		width: 55%;
 	}
+
+	@include vbreakpoint(med){
+		min-height: 395px;
+	}
+
+	@include vbreakpoint(large){
+		min-height: 415px;
+	}
 	
 }
 
