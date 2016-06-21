@@ -185,7 +185,7 @@ GRID
 .icon-help:before {
   content: "\e909"; }
 
-.icon-loading:before, .message-box--waiting:before {
+.icon-loading:before {
   content: "\e90a"; }
 
 .icon-Photos:before {
@@ -2905,48 +2905,50 @@ MOST IMPORTANT - LOT TABLE STYLES
 .message-box--waiting {
   border: none;
   background-color: #FCD748;
-  color: black; }
-  .message-box--waiting:before {
-    color: black;
-    -webkit-transform: translateY(-50%) rotate(0deg);
-            transform: translateY(-50%) rotate(0deg);
-    border-right-color: #FCD748;
-    -webkit-animation-name: waitingspin;
-            animation-name: waitingspin;
+  color: black;
+  padding-left: 15px;
+  text-align: center; }
+  .message-box--waiting:after {
+    display: block;
+    position: absolute;
+    content: " ";
+    left: 0;
+    right: 100%;
+    height: 4px;
+    bottom: 0;
+    background-color: #fbcc16;
+    -webkit-animation-name: waitingslide;
+            animation-name: waitingslide;
     -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite;
     -webkit-animation-duration: 1s;
             animation-duration: 1s;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
     -webkit-animation-timing-function: linear;
             animation-timing-function: linear; }
 
-@-webkit-keyframes waitingspin {
+@-webkit-keyframes waitingslide {
   0% {
-    -webkit-transform: translateY(-50%) rotate(0deg);
-            transform: translateY(-50%) rotate(0deg); }
+    left: 0;
+    right: 100%; }
   50% {
-    -webkit-transform: translateY(-50%) rotate(200deg);
-            transform: translateY(-50%) rotate(200deg); }
-  60% {
-    -webkit-transform: translateY(-50%) rotate(240deg);
-            transform: translateY(-50%) rotate(240deg); }
+    left: 0;
+    right: 0; }
   100% {
-    -webkit-transform: translateY(-50%) rotate(360deg);
-            transform: translateY(-50%) rotate(360deg); } }
+    left: 100%;
+    right: 0; } }
 
-@keyframes waitingspin {
+@keyframes waitingslide {
   0% {
-    -webkit-transform: translateY(-50%) rotate(0deg);
-            transform: translateY(-50%) rotate(0deg); }
+    left: 0;
+    right: 100%; }
   50% {
-    -webkit-transform: translateY(-50%) rotate(200deg);
-            transform: translateY(-50%) rotate(200deg); }
-  60% {
-    -webkit-transform: translateY(-50%) rotate(240deg);
-            transform: translateY(-50%) rotate(240deg); }
+    left: 0;
+    right: 0; }
   100% {
-    -webkit-transform: translateY(-50%) rotate(360deg);
-            transform: translateY(-50%) rotate(360deg); } }
+    left: 100%;
+    right: 0; } }
 .message-box--open-offer {
   border: none;
   background-color: #d06c61;
@@ -3705,39 +3707,44 @@ MOST IMPORTANT - LOT TABLE STYLES
   position: relative;
   background-color: white;
   display: inline-block;
-  width: 350px;
+  width: 360px;
   margin: 0;
   cursor: pointer;
   line-height: 1.4rem;
   border: 2px solid #585858;
   margin-right: -4px; }
   .other-ring.s-active {
-    border-color: #E87722; }
-    .other-ring.s-active .ring--lot {
-      background-color: #E87722;
-      color: white; }
+    border-color: #E87722;
+    cursor: default; }
+    .other-ring.s-active .ring--photo {
+      background-color: #E87722; }
   .other-ring .ring--photo, .other-ring .ring--data {
     box-sizing: border-box;
     position: relative;
     vertical-align: top;
     float: left; }
   .other-ring .ring--photo {
-    width: 25%; }
+    width: 23%;
+    background-color: #333333;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    position: absolute; }
   .other-ring img {
     width: 100%;
     max-width: 100%;
     display: block; }
   .other-ring .ring--lot {
     text-align: center;
-    background-color: #333333;
     color: white;
     padding: 1px;
     line-height: 16px; }
   .other-ring .ring--data {
-    width: 75%; }
+    width: 77%;
+    margin-left: 23%; }
   .other-ring header {
     background-color: #E9E9E9;
-    padding: 3px 8px; }
+    padding: 3px 5px; }
     .other-ring header button {
       position: absolute;
       right: 5px;
@@ -3754,7 +3761,7 @@ MOST IMPORTANT - LOT TABLE STYLES
     color: #585858;
     line-height: 1; }
   .other-ring .data--body {
-    padding: 3px 8px; }
+    padding: 3px 5px; }
   .other-ring .lot--name {
     margin-bottom: 0;
     overflow: hidden;
