@@ -2432,6 +2432,22 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 					break;
 
 				case "soldYou":
+					bidObject.bidStatus = 'tooLate';
+					break;
+
+				case "tooLate":
+					bidObject.bidStatus = 'limitExceeded';
+					break;
+
+				case "limitExceeded":
+					bidObject.bidStatus = 'backedUp';
+					break;
+
+				case "backedUp":
+					bidObject.bidStatus = 'inactive';
+					break;
+
+				case "inactive":
 					bidObject.bidStatus = 'disabled';
 					break;
 

@@ -156,7 +156,7 @@
                         
                         <div class="message-box--error" rv-show="bidObject.bidStatus | equals 'outbid'">
                             You've been outbid!<br/>
-                            Bid again now.
+                            Bid again now
                         </div>
                     
                         <div class="message-box--waiting" rv-show="bidObject.bidStatus | equals 'waiting'">
@@ -167,8 +167,32 @@
                             Bid Accepted - You're On!
                         </div>
 
-                        <div class="message-box--success" rv-show="bidObject.bidStatus | equals 'soldYou'">
+                        <div class="message-box--success s-sold" rv-show="bidObject.bidStatus | equals 'soldYou'">
                             Sold to you!
+                            <div class="stripe"></div>
+                            <div class="stripe"></div>
+                            <div class="stripe"></div>
+                            <!--<div class="stripe-top"></div>
+                            <div class="stripe-top"></div>
+                            <div class="stripe-top"></div> -->
+                        </div>
+
+                        <div class="message-box--error" rv-show="bidObject.bidStatus | equals 'tooLate'">
+                            Too late! <br/>
+                            Bid again now
+                        </div>
+
+                        <div class="message-box--error" rv-show="bidObject.bidStatus | equals 'limitExceeded'">
+                            Bidding limit exceeded!
+                        </div>
+
+                        <div class="message-box--error" rv-show="bidObject.bidStatus | equals 'backedUp'">
+                            Auctioneer backed-up<br/>
+                            Lot has not been sold
+                        </div>
+
+                        <div class="message-box--warning" rv-show="bidObject.bidStatus | equals 'inactive'">
+                            Bidding Inactive
                         </div>
                         
                     </div>

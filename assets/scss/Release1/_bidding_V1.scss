@@ -336,8 +336,8 @@
 
 				position: relative;
 				text-align: left;
-				font-size: 0.8rem;
-				line-height: 1rem;
+				font-size: 1rem;
+				line-height: 1.1rem;
 
 				&:before{
 					display: inline-block;
@@ -374,6 +374,10 @@
 					color: black;
 					border-right-color: transparent;
 				}
+
+				&.s-disabled{
+
+				}
 			}
 
 			.message-box--waiting{
@@ -391,7 +395,7 @@
 					right: 100%;
 					height: 4px;
 					bottom: 0;
-					background-color: darken($warning-colour, 10%);
+					background-color: darken($warning-colour, 15%);
 
 					animation-name: waitingslide;
 					animation-iteration-count: infinite;
@@ -440,6 +444,86 @@
 
 				&:before{
 					color: white;
+				}
+
+				&.s-sold{
+					font-size: 1.1rem;
+					border: transparent;
+					padding-bottom: 15px;
+					
+					// animation-name: youwin;
+					// animation-iteration-count: infinite;
+					// animation-duration: 1s;
+					// animation-direction: alternate;
+					// animation-timing-function: linear;
+
+					.stripe, .stripe-top{
+						position: absolute;
+						content: "";
+						left: 50%;
+						width: 0;
+						height: 4px;
+						bottom: 0;
+						transform: none;
+						top: auto;
+					}
+
+					.stripe-top{
+						top: 0;
+						bottom: auto;
+					}
+
+					.stripe-top:nth-of-type(4){
+						background-color: lighten($finance-color, 10%);
+						animation: youwin 1.5s linear infinite;
+					}
+
+					.stripe-top:nth-of-type(5){
+						background-color: lighten($finance-color, 20%);
+						animation: youwin 1.5s linear 0.5s infinite;
+					}
+
+					.stripe-top:nth-of-type(6){
+						background-color: lighten($finance-color, 30%);
+						animation: youwin 1.5s linear 1s infinite;
+					}
+
+					.stripe:nth-of-type(1){
+						background-color: lighten($finance-color, 10%);
+						animation: youwin 1.5s linear infinite;
+					}
+
+					.stripe:nth-of-type(2){
+						background-color: lighten($finance-color, 20%);
+						animation: youwin 1.5s linear 0.5s infinite;
+					}
+
+					.stripe:nth-of-type(3){
+						background-color: lighten($finance-color, 30%);
+						animation: youwin 1.5s linear 1s infinite;
+					}
+					
+				}
+			}
+
+
+
+			@keyframes youwin{
+				0%{
+					left: 50%;
+					width: 0;
+					z-index: 100;
+				}
+
+				33%{
+					left: 0;
+					width: 100%;
+					z-index: 10;
+				}
+
+				100%{
+					left: 0;
+					width: 100%;
 				}
 			}
 
