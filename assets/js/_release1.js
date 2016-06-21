@@ -53,25 +53,6 @@ $(function(){
 		bidObject.bidMode = bidMode[bidModeIndex];
 	});
 
-	var template2 = $('#currentlot').html();
-	var rendered = Mustache.render(template2, lotObject);
-	$('.js--lot-info').html(rendered);
-
-	var mySwiper = new Swiper ('.swiper-container', {
-		direction: 'horizontal',
-		loop: true,
-		pagination: '.swiper-pagination',
-		paginationClickable: 'true',
-		nextButton: '.swiper-button-next',
-		prevButton: '.swiper-button-prev',
-		autoHeight: true,
-		onSlideChangeEnd: function(mySwiper){
-			$('.js--swiper-active').text($('.swiper-slide-active').data('swiper-slide-index')+1);
-
-		}
-	})
-
-
 	//SHOW/HIDE THE PREVIEW IMAGE IN THE LOT TABLE
 	$('.js--lot-preview-hover').mouseover(function(e){
 		var offset = $(e.currentTarget).offset();
@@ -542,12 +523,31 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 		var template3 = $('#currentlot').html();
 		var newLot = Mustache.render(template3, newLotData);
 		$(el).html(newLot);
+
+		//Init image scrolling on the preview image
+		buildSwiper();
 	}
 
 	function buildLotPreview(){
 		lotArea = rivets.bind($('.js--lot-info'),{
 			lotObject: lotObject
 		});
+	}
+
+	function buildSwiper(){
+		var mySwiper = new Swiper ('.swiper-container', {
+			direction: 'horizontal',
+			loop: true,
+			pagination: '.swiper-pagination',
+			paginationClickable: 'true',
+			nextButton: '.swiper-button-next',
+			prevButton: '.swiper-button-prev',
+			autoHeight: true,
+			onSlideChangeEnd: function(mySwiper){
+				$('.js--swiper-active').text($('.swiper-slide-active').data('swiper-slide-index')+1);
+
+			}
+		})
 	}
 
 
