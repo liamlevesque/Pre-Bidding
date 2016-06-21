@@ -3163,7 +3163,8 @@ MOST IMPORTANT - LOT TABLE STYLES
     color: #E87722; }
   .group--lot.s-sold, .group--lot.s-out {
     background-color: #e8e6e2;
-    cursor: default; }
+    cursor: default;
+    pointer-events: none; }
     .group--lot.s-sold *, .group--lot.s-out * {
       opacity: 0.5; }
     .group--lot.s-sold .lot--selector, .group--lot.s-out .lot--selector {

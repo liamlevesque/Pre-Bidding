@@ -6,6 +6,7 @@ $(function(){
 		dataType: "json", 
 		success: function(data){
 			buildLotsTable( data );
+			buildLotPreview();
 		},
 		error: function(jqXHR, textStatus){
 			console.log(jqXHR.responseText);

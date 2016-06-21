@@ -357,24 +357,13 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 
 		changePreview: function(e, model){
 			var targetLot = ($(e.currentTarget).data('lotnumber')) - 1;
-			if(targetLot === bidObject.previewLot) return;
+			if(targetLot === lotObject.lot) return;
 
-			bidObject.previewLot = targetLot;
-
-			//CLEAR OUT LOT PREVIEW
-			$('.js--lot-info').html('');
-
-			//GIVE PREVIEW APPEARANCE
+			//GIVE PREVIEW APPEARANCE TO THE LOT TILE IN THE CHOICE SELECTOR
 			$('.s-preview').removeClass('s-preview');
 			$(e.currentTarget).addClass('s-preview');
-			
-			//BUILD NEW LOT PREVIEW 
-			var newLotData = lotTable.lotList[targetLot];
-			var template3 = $('#currentlot').html();
-			var newLot = Mustache.render(template3, newLotData);
-			$('.js--lot-info').html(newLot);
-			
-			//console.log($(e.currentTarget).data('lotnumber'));
+
+			lotObject.lot = targetLot;
 		},
 
 		onBidClick: function(e, model){
@@ -541,32 +530,26 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 
  
  	var lotObject = {
-			lot: 1,
-			name: "2008 KENWORTH T800 T/A Winch Tractor",
-			serial: "1XKDDB0X08J236544",
-			meter: "113903 Mi",
-			photo: "8686158_1.jpg",
-			photos: [
-				"8686158_1.jpg",
-				"8709802_2.jpg",
-				"8709802_3.jpg"
-			],
-			warranty: true,
-			bid: 0,
-			watching: false,
-			comeswith: "Cummins ISX, 500 hp, eng brake, Eaton Fuller RTLO18918B, dbl diff lock, 8 bag A/R susp, 13200 lb frt, D46-170HP rears, 238 in. WB, 48 in. sleeper, wet kit, PAS",
-			catnotes: "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
-			openPrice: 10000,
-			soldPrice: 0,
-			bidder: null,
-			group:0
+			lot: 0,
 		},
-		lotController = {
+		lotArea;
 
-		},
+
+	rivets.binders.lotpreviews = function(el,value){
+		$(el).html('');
+
+		var newLotData = lotTable.lotList[value];
+		var template3 = $('#currentlot').html();
+		var newLot = Mustache.render(template3, newLotData);
+		$(el).html(newLot);
+	}
+
+	function buildLotPreview(){
 		lotArea = rivets.bind($('.js--lot-info'),{
 			lotObject: lotObject
 		});
+	}
+
 
 
 //CCY CONVERTER

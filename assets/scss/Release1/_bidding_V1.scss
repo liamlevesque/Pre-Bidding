@@ -758,6 +758,7 @@
 		&.s-sold, &.s-out{
 			background-color: $grey-50;
 			cursor: default;
+			pointer-events: none;
 			
 			*{
 				opacity: 0.5;
