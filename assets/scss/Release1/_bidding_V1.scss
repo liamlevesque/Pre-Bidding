@@ -109,7 +109,23 @@
 				&.s-runnerup{
 					@include runnerupAnimation;
 				}
+
+				&.s-flash{
+					animation: clickwarn 0.5s ease-in-out infinite;
+				}
 				
+			}
+
+			@keyframes clickwarn {
+			  	0% {
+			    	transform: translateX(0);
+				}
+				50%{
+					transform: translateX(5px);
+				}
+			  	100% {
+				 	transform: translateX(0);
+				} 
 			}
 
 				.normal, .openoffer, .runnerup, .winner{
@@ -451,12 +467,10 @@
 					border: transparent;
 					padding-bottom: 15px;
 					
-					// animation-name: youwin;
-					// animation-iteration-count: infinite;
-					// animation-duration: 1s;
-					// animation-direction: alternate;
-					// animation-timing-function: linear;
-
+					&:before{
+						animation: happybounce 0.5s ease-in-out infinite;
+					}
+				
 					.stripe, .stripe-top{
 						position: absolute;
 						content: "";
@@ -525,6 +539,14 @@
 					left: 0;
 					width: 100%;
 				}
+			}
+
+			@keyframes happybounce{
+				0%{ transform: translateY(-50%); }
+				20%{ transform: translateY(-52%); }
+				50%{ transform: translateY(-70%); }
+				80%{ transform: translateY(-52%); }
+				100%{ transform: translateY(-50%); }
 			}
 
 
@@ -827,9 +849,19 @@
 				left: 5px;
 				width: 35px;
 				text-align: center;
-				top: 50%;
+				top: 40%;
 				transform: translateY(-50%);
 				font-size: 24px;
+			}
+
+			&:after{
+				position: absolute;
+				left: 5px;
+				width: 35px;
+				text-align: center;
+				bottom: 5px;
+				@include smalltext;
+				color: $grey-500;
 			}
 		}
 
@@ -841,9 +873,7 @@
 				//left: 4px;
 			}
 
-			.lot--values{
-				color: $brand-color;
-			}
+			background-color: $selected-background;
 		}
 
 		&.s-sold, &.s-out{
@@ -854,21 +884,6 @@
 			*{
 				opacity: 0.5;
 			}
-
-			// &:before{
-			// 	content: "SOLD";
-			// 	color: $grey-500;
-			// 	position: absolute;
-			// 	left: 5px;
-			// 	top: 50%;
-			// 	transform: translateY(-50%);
-			// 	bottom: 0;
-			// 	font-size: 0.7rem;
-			// 	width: 35px;
-			// 	text-align: center;
-			// 	font-weight: 700;
-			// 	vertical-align: middle;
-			// }
 
 			.lot--selector{
 				display: none;
@@ -881,6 +896,9 @@
 				content: "\e920";
 				color: $brand-color;
 
+			}
+			&:after{
+				content: "SOLD";
 			}
 
 			// &:after{
@@ -898,12 +916,14 @@
 		}
 
 		&.s-out{
-			background-color: rgba($error-colour, 0.2);
-
+			
 			&:before{
 				content: "\e906";
 				color: rgba($error-colour,0.5);
 				font-size: 18px;
+			}
+			&:after{
+				content: "OUT";
 			}
 			.lot--name, .lot--value{
 				text-decoration: line-through;

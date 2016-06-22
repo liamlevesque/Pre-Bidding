@@ -2378,8 +2378,9 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 		"bidMode" : 'normal',
 		"openOffer" : false,
 		"selectAll" : false,
-		"previewLot" : 0
-	},
+		"previewLot" : 11,
+		"disabledClickCount" : 0
+	}, 
 	bidController = {
 
 		activate: function(e, model){
@@ -2393,23 +2394,26 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 				return;
 			}
 			else bidObject.lotSelected = target;
-			bidObject.bidStatus = 'active';
+			bidObject.bidStatus = 'active'; 
 
+			//RESET WARNING TO SELECT A LOT BEFORE BIDDING
+			bidObject.disabledClickCount = 0;
 		},
 
 		changePreview: function(e, model){
 			var targetLot = ($(e.currentTarget).data('lotnumber')) - 1;
 			if(targetLot === lotObject.lot) return;
 
-			//GIVE PREVIEW APPEARANCE TO THE LOT TILE IN THE CHOICE SELECTOR
-			$('.s-preview').removeClass('s-preview');
-			$(e.currentTarget).addClass('s-preview');
-
-			lotObject.lot = targetLot;
+			lotObject.lot = bidObject.previewLot = targetLot;
 		},
 
 		onBidClick: function(e, model){
-			
+			//IF NO LOT SELECTED, DON'T DO NOTHING
+			if(bidObject.lotSelected === 0){
+				bidObject.disabledClickCount ++;
+				return;
+			}
+
 			switch(bidObject.bidStatus){
 				case "disabled":
 					bidObject.bidStatus = 'active';
@@ -2504,11 +2508,23 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 
 	}
 
+	rivets.binders.lotpreview = function(el, value){
+		if(value === 99) return;
+		if(value == $(el).data('lotnumber') - 1) $(el).addClass('s-preview');
+		else $(el).removeClass('s-preview');
+	}
+
 	rivets.binders.isopenoffers = function(el, value){
 		
 		if(value) $(el).addClass('s-open-offers');
 		else $(el).removeClass('s-open-offers');
 
+	}
+
+	rivets.binders.activatewarning = function(el, value) {
+		console.log(value);
+		if(value > 2) $(el).addClass('s-flash');
+		else $(el).removeClass('s-flash');
 	}
 
 	rivets.binders.biddingmode = function(el, value) {
@@ -2542,35 +2558,17 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 		
 		switch (value){
 			case 'disabled':
-				$(el).addClass('s-disabled');
-				break;	
-
 			case 'waiting':
-				$(el).addClass('s-disabled');
-				break;
-
 			case 'accepted':
-				$(el).addClass('s-disabled');
-				break;			
-
 			case 'soldYou':
+			case 'limitExceeded':
+			case 'inactive':
 				$(el).addClass('s-disabled');
 				break;
 
 			case 'outbid':
+			case 'backedUp':
 				$(el).addClass('s-active');
-				break;
-
-			case 'soldOther':
-				$(el).addClass('s-sold-lost');
-				break;
-
-			case 'open-offer':
-				$(el).addClass('s-open-offer');
-				break;
-
-			case 'open-offer_disabled':
-				$(el).addClass('s-open-offer_disabled');
 				break;
 
 			default:
@@ -2588,7 +2586,7 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 
  
  	var lotObject = {
-			lot: 0,
+			lot: bidObject.previewLot,
 		},
 		lotArea;
 

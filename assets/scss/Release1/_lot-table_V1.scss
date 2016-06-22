@@ -250,7 +250,7 @@ $ring-right-spacing: 30px;
 				&.s-selected{
 					
 					[class^="col"]{
-						background-color: rgba($brand-color,0.3);
+						background-color: $selected-background;
 						//border-color: $brand-color;
 					}
 

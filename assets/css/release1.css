@@ -2724,7 +2724,31 @@ MOST IMPORTANT - LOT TABLE STYLES
             animation-iteration-count: infinite;
     -webkit-animation-duration: 1s;
             animation-duration: 1s; }
+  .bidding--activate.s-flash {
+    -webkit-animation: clickwarn 0.5s ease-in-out infinite;
+            animation: clickwarn 0.5s ease-in-out infinite; }
 
+@-webkit-keyframes clickwarn {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); }
+  50% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px); }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
+@keyframes clickwarn {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); }
+  50% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px); }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
 .normal, .openoffer, .runnerup, .winner {
   display: none; }
 
@@ -2968,6 +2992,9 @@ MOST IMPORTANT - LOT TABLE STYLES
     font-size: 1.1rem;
     border: transparent;
     padding-bottom: 15px; }
+    .message-box--success.s-sold:before {
+      -webkit-animation: happybounce 0.5s ease-in-out infinite;
+              animation: happybounce 0.5s ease-in-out infinite; }
     .message-box--success.s-sold .stripe, .message-box--success.s-sold .stripe-top {
       position: absolute;
       content: "";
@@ -3031,6 +3058,38 @@ MOST IMPORTANT - LOT TABLE STYLES
   100% {
     left: 0;
     width: 100%; } }
+@-webkit-keyframes happybounce {
+  0% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  20% {
+    -webkit-transform: translateY(-52%);
+            transform: translateY(-52%); }
+  50% {
+    -webkit-transform: translateY(-70%);
+            transform: translateY(-70%); }
+  80% {
+    -webkit-transform: translateY(-52%);
+            transform: translateY(-52%); }
+  100% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); } }
+@keyframes happybounce {
+  0% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  20% {
+    -webkit-transform: translateY(-52%);
+            transform: translateY(-52%); }
+  50% {
+    -webkit-transform: translateY(-70%);
+            transform: translateY(-70%); }
+  80% {
+    -webkit-transform: translateY(-52%);
+            transform: translateY(-52%); }
+  100% {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); } }
 .bidding--group {
   display: inline-block;
   width: 50%;
@@ -3223,12 +3282,22 @@ MOST IMPORTANT - LOT TABLE STYLES
     left: 5px;
     width: 35px;
     text-align: center;
-    top: 50%;
+    top: 40%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     font-size: 24px; }
-  .group--lot.s-preview:not(.s-active-lot) .lot--values {
-    color: #E87722; }
+  .group--lot.s-sold:after, .group--lot.s-out:after, .group--lot.s-preview:after {
+    position: absolute;
+    left: 5px;
+    width: 35px;
+    text-align: center;
+    bottom: 5px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 0.9rem;
+    color: #959595; }
+  .group--lot.s-preview:not(.s-active-lot) {
+    background-color: rgba(232, 119, 34, 0.3); }
   .group--lot.s-sold, .group--lot.s-out {
     background-color: #e8e6e2;
     cursor: default;
@@ -3240,14 +3309,16 @@ MOST IMPORTANT - LOT TABLE STYLES
   .group--lot.s-sold:before {
     content: "\e920";
     color: #E87722; }
-  .group--lot.s-out {
-    background-color: rgba(196, 72, 58, 0.2); }
-    .group--lot.s-out:before {
-      content: "\e906";
-      color: rgba(196, 72, 58, 0.5);
-      font-size: 18px; }
-    .group--lot.s-out .lot--name, .group--lot.s-out .lot--value {
-      text-decoration: line-through; }
+  .group--lot.s-sold:after {
+    content: "SOLD"; }
+  .group--lot.s-out:before {
+    content: "\e906";
+    color: rgba(196, 72, 58, 0.5);
+    font-size: 18px; }
+  .group--lot.s-out:after {
+    content: "OUT"; }
+  .group--lot.s-out .lot--name, .group--lot.s-out .lot--value {
+    text-decoration: line-through; }
 
 .select-all {
   color: white;
@@ -3804,7 +3875,12 @@ MOST IMPORTANT - LOT TABLE STYLES
     text-align: center;
     color: white;
     padding: 1px;
-    line-height: 16px; }
+    line-height: 16px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 2px; }
   .other-ring .ring--data {
     width: 77%;
     margin-left: 23%; }

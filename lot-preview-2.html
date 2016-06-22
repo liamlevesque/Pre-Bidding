@@ -141,7 +141,7 @@
                     
                 <div class="bidding">
                             
-                    <div class="bidding--activate" rv-hide="bidObject.lotSelected" rv-biddingmode="bidObject.bidMode">
+                    <div class="bidding--activate" rv-hide="bidObject.lotSelected" rv-biddingmode="bidObject.bidMode" rv-activatewarning="bidObject.disabledClickCount">
                         <span class="normal">Check the circle next to the lot you want to bid on</span>
                         <span class="openoffer"><b>OPEN OFFER:</b><br/>Check the circle next to the lots you want to buy at this price</span>
                         <span class="runnerup"><b>RUNNER UP:</b><br/>Check the circle next to the lots you want to buy at this price</span>
@@ -172,9 +172,7 @@
                             <div class="stripe"></div>
                             <div class="stripe"></div>
                             <div class="stripe"></div>
-                            <!--<div class="stripe-top"></div>
-                            <div class="stripe-top"></div>
-                            <div class="stripe-top"></div> -->
+                            
                         </div>
 
                         <div class="message-box--error" rv-show="bidObject.bidStatus | equals 'tooLate'">
@@ -270,7 +268,7 @@
                 </div>
                 <div class="group--body group--body_b">
                     <ul>
-                        <li class="group--lot js--group-lot s-sold" data-lotnumber="10" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot js--group-lot s-sold" data-lotnumber="10" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
@@ -283,7 +281,7 @@
                                 <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
                             </div>
                         </li>
-                        <li class="group--lot js--group-lot s-out" data-lotnumber="11" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot js--group-lot s-out" data-lotnumber="11" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
@@ -296,7 +294,7 @@
                                 <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
                             </div>
                         </li>
-                        <li class="group--lot js--group-lot" data-lotnumber="12" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot js--group-lot" data-lotnumber="12" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
@@ -309,7 +307,7 @@
                                 <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
                             </div>
                         </li>
-                        <li class="group--lot js--group-lot" data-lotnumber="13" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot js--group-lot" data-lotnumber="13" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
@@ -322,7 +320,7 @@
                                 <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
                             </div>
                         </li>
-                        <li class="group--lot js--group-lot" data-lotnumber="14" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot js--group-lot" data-lotnumber="14" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
@@ -335,7 +333,7 @@
                                 <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
                             </div>
                         </li>
-                        <li class="group--lot js--group-lot" data-lotnumber="15" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot js--group-lot" data-lotnumber="15" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
@@ -348,7 +346,7 @@
                                 <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
                             </div>
                         </li>
-                        <li class="group--lot js--group-lot" data-lotnumber="16" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot js--group-lot" data-lotnumber="16" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
@@ -361,7 +359,7 @@
                                 <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
                             </div>
                         </li>
-                        <li class="group--lot js--group-lot" data-lotnumber="17" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot js--group-lot" data-lotnumber="17" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
@@ -374,7 +372,7 @@
                                 <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
                             </div>
                         </li>
-                        <li class="group--lot js--group-lot" data-lotnumber="18" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot js--group-lot" data-lotnumber="18" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
@@ -387,7 +385,7 @@
                                 <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
                             </div>
                         </li>
-                        <li class="group--lot js--group-lot" data-lotnumber="19" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot js--group-lot" data-lotnumber="19" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
