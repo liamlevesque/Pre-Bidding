@@ -56,6 +56,10 @@
 		background-color: $li-header-bg;
 		height: $lot-header-height;
 		//border-bottom: $ritchie-border;
+
+		@include breakpoint(large){
+			//padding-left: 0;
+		}
 	}
 
 		.lot--number{
@@ -71,7 +75,7 @@
 		}
 
 		.lot--title{
-			color: $li-title;
+			color: white;
 			font-size: 1rem;
 			margin-bottom: 0;
 			display: inline;

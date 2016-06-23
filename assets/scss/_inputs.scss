@@ -75,6 +75,32 @@
   }
 }
 
+  .field--clear{
+    border: 1px solid transparent;
+    outline: transparent;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    bottom: 2px; 
+    width: $input-height - 2;
+    line-height: 1;
+
+    &:before{
+      @include icon-font;
+      content: "\e906";
+    }
+
+    &:focus{
+      border-color: $brand-color;
+    }
+
+    &:hover:before{
+      color: $active-colour
+    }
+  }
+
 
 //HIDE INPUT SPINNERS ON NUMBER INPUTS (WE HAVE OUR OWN)
 input[type=number]::-webkit-inner-spin-button, 

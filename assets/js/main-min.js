@@ -2289,6 +2289,7 @@ function unloadMaxBidTooltip(target){
 
 			switch(e.which){
 				case 13://ENTER
+					if(maxbidObject.maxbidAmount === 0) return;
 					maxbidController.createMaxBid();
 					break;
 				case 9://TAB

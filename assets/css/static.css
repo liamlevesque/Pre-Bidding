@@ -264,6 +264,33 @@ GRID
       left: 2px;
       right: auto; }
 
+.field--clear {
+  border: 1px solid transparent;
+  outline: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+  width: 28px;
+  line-height: 1; }
+  .field--clear:before {
+    font-family: 'ritchie-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e906"; }
+  .field--clear:focus {
+    border-color: #E87722; }
+  .field--clear:hover:before {
+    color: #20579E; }
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;

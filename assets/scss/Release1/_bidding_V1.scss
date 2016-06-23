@@ -42,10 +42,12 @@
 		&:before{
 			content: "";
 			width: 10px;
+			// height: 20px;
 			height: $lot-header-height;
 			position: absolute;
 			top: 0;
 			left: 0;
+			// transform: translateY(-50%);
 			background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%220%200%2010%2020%22%20preserveAspectRatio%3D%22none%22%3E%3Cpolygon%20fill%3D%22%23333333%22%20points%3D%220%2C0%2010%2C10%200%2C20%22%2F%3E%3C%2Fsvg%3E');
 			background-size: 10px 100%;
 			background-repeat: no-repeat;
@@ -567,7 +569,8 @@
 			}
 
 			li:not(.s-active-lot):not(.s-sold):not(.s-out){
-				//opacity: 0.5;
+				opacity: 0.5;
+				pointer-events: none;
 
 				.lot--selector{
 					pointer-events: none;
@@ -609,6 +612,8 @@
 	}
 
 	.bidding--header{
+		// background-color: white;
+		// color: $grey-900;
 		background-color: $grey-300;
 		padding: 3px 0 0 10px;
 		@include default-font;
