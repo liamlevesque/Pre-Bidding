@@ -385,11 +385,11 @@
 			.message-box--max-bid{
 				border: none;
 				background-color: $brand-color;
-				color: black;
+				color: white;
 				@extend .icon-warning;
 
 				&:before{
-					color: black;
+					color: white;
 					border-right-color: transparent;
 				}
 			}
@@ -397,7 +397,7 @@
 			.message-box--warning{
 				border: none;
 				background-color: $warning-colour;
-				color: white;
+				color: black;
 				@extend .icon-warning;
 
 				&:before{

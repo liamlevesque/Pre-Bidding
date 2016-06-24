@@ -2952,15 +2952,15 @@ MOST IMPORTANT - LOT TABLE STYLES
 .message-box--max-bid {
   border: none;
   background-color: #E87722;
-  color: black; }
+  color: white; }
   .message-box--max-bid:before {
-    color: black;
+    color: white;
     border-right-color: transparent; }
 
 .message-box--warning {
   border: none;
   background-color: #FCD748;
-  color: white; }
+  color: black; }
   .message-box--warning:before {
     color: black;
     border-right-color: transparent; }
