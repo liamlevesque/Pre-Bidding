@@ -189,6 +189,10 @@
                             Lot has not been sold
                         </div>
 
+                        <div class="message-box--max-bid" rv-show="bidObject.bidStatus | equals 'maxBidding'">
+                            Max-Bid: $15,000<br/>Bidding automatically
+                        </div> 
+
                         <div class="message-box--warning" rv-show="bidObject.bidStatus | equals 'inactive'">
                             Bidding Inactive
                         </div>

@@ -392,6 +392,10 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 					break;
 
 				case "inactive":
+					bidObject.bidStatus = 'maxBidding';
+					break;
+
+				case "maxBidding":
 					bidObject.bidStatus = 'disabled';
 					break;
 
@@ -503,6 +507,7 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 			case 'soldYou':
 			case 'limitExceeded':
 			case 'inactive':
+			case 'maxBidding':
 				$(el).addClass('s-disabled');
 				break;
 

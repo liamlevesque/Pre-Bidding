@@ -203,7 +203,7 @@ GRID
 .icon-user:before {
   content: "\e911"; }
 
-.icon-warning:before, .message-box--error:before, .message-box--warning:before {
+.icon-warning:before, .message-box--error:before, .message-box--max-bid:before, .message-box--warning:before {
   content: "\e912"; }
 
 .icon-warranty:before {
@@ -579,7 +579,9 @@ body {
   font-size: 18px;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 * {
   box-sizing: border-box; }
@@ -2947,10 +2949,18 @@ MOST IMPORTANT - LOT TABLE STYLES
   .message-box--error:before {
     color: white; }
 
+.message-box--max-bid {
+  border: none;
+  background-color: #E87722;
+  color: black; }
+  .message-box--max-bid:before {
+    color: black;
+    border-right-color: transparent; }
+
 .message-box--warning {
   border: none;
   background-color: #FCD748;
-  color: black; }
+  color: white; }
   .message-box--warning:before {
     color: black;
     border-right-color: transparent; }

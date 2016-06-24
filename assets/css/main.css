@@ -350,7 +350,9 @@ body {
   font-size: 18px;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 * {
   box-sizing: border-box; }
