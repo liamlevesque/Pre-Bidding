@@ -3387,7 +3387,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   font-size: 0.9rem;
   line-height: 1.4rem;
   overflow: hidden;
-  padding: 5px 10px 5px 45px;
+  padding: 0 10px 0 45px;
   background-color: #E9E9E9;
   margin: 2px;
   margin-left: 12px;
@@ -3401,10 +3401,18 @@ MOST IMPORTANT - LOT TABLE STYLES
     vertical-align: middle;
     margin-right: 5px; }
   .group--lot_b .lot--photo {
-    display: none; }
+    position: relative;
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px; }
+    @media (min-width: 80em) {
+      .group--lot_b .lot--photo {
+        width: 60px; } }
   .group--lot_b .lot--values {
     vertical-align: middle;
-    display: inline-block; }
+    display: inline-block;
+    width: calc(100% - 70px); }
     .group--lot_b .lot--values:hover {
       text-decoration: underline; }
   .group--lot_b .lot--name {
@@ -3425,6 +3433,8 @@ MOST IMPORTANT - LOT TABLE STYLES
             transform: translateY(-50%); }
   .group--lot_b.s-disabled .lot--selector {
     display: none; }
+  .group--lot_b.s-preview {
+    background-color: rgba(232, 119, 34, 0.3); }
   .group--lot_b.s-active-lot {
     background-color: #E87722;
     margin-left: 0; }
@@ -3439,8 +3449,6 @@ MOST IMPORTANT - LOT TABLE STYLES
           color: #E87722; }
     .group--lot_b.s-active-lot .lot--values {
       color: white; }
-  .group--lot_b.s-preview {
-    border-color: #E87722; }
   .group--lot_b.s-sold, .group--lot_b.s-out {
     background-color: #e8e6e2;
     cursor: default; }

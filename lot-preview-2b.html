@@ -30,7 +30,7 @@
                 </svg>
             </a>
             <div class="h-d-inline-block">
-                <h3 class="header--auction c-grey">Chilliwack, BC, CAN <span class="h-mr-50">&middot;</span><span class="c-brand">Ring 1</span></h3>
+                <h1 class="header--auction c-grey">Chilliwack, BC, CAN <span class="h-mr-50">&middot;</span><span class="c-brand">Ring 1</span></h1>
                 <h5 class=""><span class="h-mr-50">Live Auction</span><span class="h-mr-50">&middot;</span><span class="c-price js--auction-attendees h-mr-50 js--ppl-tooltip">12,481 People Online</span>&middot;
                     <label class="field--toggle_icon js--photo-tooltip">    
                         <input type="checkbox" class="toggle_input" checked>
@@ -111,7 +111,7 @@
     </header>
 
     <div class="client--upper">
-        <div class="lot-info js--lot-info" >
+        <div class="lot-info js--lot-info" rv-lotpreviews="lotObject.lot">
             
         </div>
         <div class="lot-bidding js--bid-area">
@@ -141,7 +141,7 @@
                     
                 <div class="bidding">
                             
-                    <div class="bidding--activate" rv-hide="bidObject.lotSelected" rv-biddingmode="bidObject.bidMode">
+                    <div class="bidding--activate" rv-hide="bidObject.lotSelected" rv-biddingmode="bidObject.bidMode" rv-activatewarning="bidObject.disabledClickCount">
                         <span class="normal">Check the circle next to the lot you want to bid on</span>
                         <span class="openoffer"><b>OPEN OFFER:</b><br/>Check the circle next to the lots you want to buy at this price</span>
                         <span class="runnerup"><b>RUNNER UP:</b><br/>Check the circle next to the lots you want to buy at this price</span>
@@ -156,7 +156,7 @@
                         
                         <div class="message-box--error" rv-show="bidObject.bidStatus | equals 'outbid'">
                             You've been outbid!<br/>
-                            Bid again now.
+                            Bid again now
                         </div>
                     
                         <div class="message-box--waiting" rv-show="bidObject.bidStatus | equals 'waiting'">
@@ -167,8 +167,30 @@
                             Bid Accepted - You're On!
                         </div>
 
-                        <div class="message-box--success" rv-show="bidObject.bidStatus | equals 'soldYou'">
+                        <div class="message-box--success s-sold" rv-show="bidObject.bidStatus | equals 'soldYou'">
                             Sold to you!
+                            <div class="stripe"></div>
+                            <div class="stripe"></div>
+                            <div class="stripe"></div>
+                            
+                        </div>
+
+                        <div class="message-box--error" rv-show="bidObject.bidStatus | equals 'tooLate'">
+                            Too late! <br/>
+                            Bid again now
+                        </div>
+
+                        <div class="message-box--error" rv-show="bidObject.bidStatus | equals 'limitExceeded'">
+                            Bidding limit exceeded!
+                        </div>
+
+                        <div class="message-box--error" rv-show="bidObject.bidStatus | equals 'backedUp'">
+                            Auctioneer backed-up<br/>
+                            Lot has not been sold
+                        </div>
+
+                        <div class="message-box--warning" rv-show="bidObject.bidStatus | equals 'inactive'">
+                            Bidding Inactive
                         </div>
                         
                     </div>
@@ -246,7 +268,7 @@
                 </div>
                 <div class="group--body group--body_b">
                     <ul>
-                        <li class="group--lot_b js--group-lot s-sold" data-lotnumber="10" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot_b js--group-lot s-sold" data-lotnumber="10" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
@@ -259,7 +281,7 @@
                                 <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
                             </div>
                         </li>
-                        <li class="group--lot_b js--group-lot s-out" data-lotnumber="11" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot_b js--group-lot s-out" data-lotnumber="11" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
@@ -272,7 +294,7 @@
                                 <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
                             </div>
                         </li>
-                        <li class="group--lot_b js--group-lot" data-lotnumber="12" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot_b js--group-lot" data-lotnumber="12" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
@@ -285,7 +307,7 @@
                                 <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
                             </div>
                         </li>
-                        <li class="group--lot_b js--group-lot" data-lotnumber="13" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot_b js--group-lot" data-lotnumber="13" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
@@ -298,7 +320,7 @@
                                 <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
                             </div>
                         </li>
-                        <li class="group--lot_b js--group-lot" data-lotnumber="14" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot_b js--group-lot" data-lotnumber="14" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
@@ -311,7 +333,7 @@
                                 <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
                             </div>
                         </li>
-                        <li class="group--lot_b js--group-lot" data-lotnumber="15" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot_b js--group-lot" data-lotnumber="15" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
@@ -324,7 +346,7 @@
                                 <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
                             </div>
                         </li>
-                        <li class="group--lot_b js--group-lot" data-lotnumber="16" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot_b js--group-lot" data-lotnumber="16" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
@@ -337,7 +359,7 @@
                                 <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
                             </div>
                         </li>
-                        <li class="group--lot_b js--group-lot" data-lotnumber="17" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot_b js--group-lot" data-lotnumber="17" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
@@ -350,7 +372,7 @@
                                 <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
                             </div>
                         </li>
-                        <li class="group--lot_b js--group-lot" data-lotnumber="18" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot_b js--group-lot" data-lotnumber="18" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
@@ -363,7 +385,7 @@
                                 <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
                             </div>
                         </li>
-                        <li class="group--lot_b js--group-lot" data-lotnumber="19" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview">
+                        <li class="group--lot_b js--group-lot" data-lotnumber="19" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
@@ -763,10 +785,10 @@
                             <div class="data--body">
                                 <div class="lot--name">1995 TADANO TR280XL 28 Ton 4x4x4 Rough Terrain Crane</div>
                                 <div class="lot--detail">
-                                    <label>Offerta:</label><span class="dollars">25,000</span>
+                                    <label>Offerta:</label><span class="dollars">9,999,000</span>
                                 </div>
                                 <div class="lot--detail">
-                                    <label>Richiedi:</label><span class="dollars h-t-m">26,000</span>
+                                    <label>Richiedi:</label><span class="dollars h-t-m">9,999,999</span>
                                 </div>
                             </div>
                         </div>
@@ -875,6 +897,7 @@
                         </div>
                         <div class="g-three-quarters">
                             <input type="tel" placeholder="enter max-bid" pattern="[0-9]{2,7}" inputmode="numeric" class="field--text js--max-bid-field" rv-on-blur="maxbidController.onMaxBidBlur" rv-on-keyup="maxbidController.onMaxBidChange"/>
+                            <button class="field--clear" rv-show="maxbidObject.maxbidAmount" rv-on-click="maxbidController.clearWarningClick"></button>
                         </div>
                     </div>
                     <div class="h-ta-right qualifier">
@@ -913,9 +936,6 @@
                             <label>Available Credit</label>
                         </div>
                     </div>
-                    <button class="button" rv-on-click="maxbidController.clearWarningClick">
-                        Clear bid and try Again
-                    </button>
                 </div>
                 <div class="tooltip--error js--tooltip-warning h-ta-center" rv-show="maxbidObject.offIncrement">
                     <h4>INVALID BID!

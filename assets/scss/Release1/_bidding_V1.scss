@@ -994,7 +994,7 @@
 	.group--lot_b{
 		@include default-font;
 		overflow: hidden;
-		padding: 5px 10px 5px 45px;
+		padding: 0 10px 0 45px;
 		background-color: $grey-100;
 		margin: 2px;
 		margin-left: 12px;
@@ -1022,18 +1022,29 @@
 		}
 
 		$lot-photo-width: 70px;
-
+		
 		.lot--photo{
-			display: none;
-		}
+			position: relative;
+			width: $lot-photo-width - 20px;
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 5px;
 
+			@include breakpoint(large){
+				width: $lot-photo-width - 10px;
+			}
+		}
+		
 		.lot--values{
+		
 			vertical-align: middle;
 			display: inline-block;
-			
+			width: calc(100% - #{$lot-photo-width});
+
 			&:hover{
 				text-decoration: underline;
 			}
+		
 		}
 
 			.lot--name{
@@ -1069,7 +1080,9 @@
 			display: none;
 		}
 
-		
+		&.s-preview{
+			background-color: $selected-background;
+		}
 
 		&.s-active-lot{
 			background-color: $brand-color;
@@ -1095,10 +1108,6 @@
 			.lot--values{
 				color: white;
 			}
-		}
-
-		&.s-preview{
-			border-color: $brand-color;
 		}
 
 		&.s-sold, &.s-out{
