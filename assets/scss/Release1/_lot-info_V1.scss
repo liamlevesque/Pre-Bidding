@@ -33,7 +33,7 @@
 .lot-info{
 	display: inline-block;
 	position: relative;
-	width: 51%;
+	width: 400px;
 	background-color: $li-bg;
 	min-height: 360px;
 
@@ -96,12 +96,12 @@
 			max-width: 400px;
 			max-height: 300px;
 		}
-
-		@include vbreakpoint(med){
+		
+		@media (min-width: 64em) and (min-height: 800px) {
 			margin: 20px 0;
-		}	
+		}
 
-		@include vbreakpoint(large){
+		@media (min-width: 64em) and (min-height: 1000px) {
 			margin-bottom: 40px;
 		}	
 

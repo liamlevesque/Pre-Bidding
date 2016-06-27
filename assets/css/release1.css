@@ -2662,7 +2662,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   width: 50%; }
 
 .lot-bidding {
-  width: 49%;
+  width: calc(100% - 400px);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -3030,48 +3030,53 @@ MOST IMPORTANT - LOT TABLE STYLES
   .message-box--success.s-sold {
     font-size: 1.1rem;
     border: transparent;
-    padding-bottom: 15px; }
+    padding-bottom: 15px;
+    overflow: hidden; }
     .message-box--success.s-sold:before {
-      -webkit-animation: happybounce 0.5s ease-in-out infinite;
-              animation: happybounce 0.5s ease-in-out infinite; }
-    .message-box--success.s-sold .stripe, .message-box--success.s-sold .stripe-top {
+      z-index: 1; }
+    .message-box--success.s-sold span {
+      z-index: 2;
+      display: inline-block;
+      position: relative; }
+    .message-box--success.s-sold .stripe {
       position: absolute;
       content: "";
-      left: 50%;
-      width: 0;
-      height: 4px;
-      bottom: 0;
+      left: 22px;
+      width: 10px;
+      height: 10px;
+      border-radius: 500px;
+      top: calc(50% - 5px);
       -webkit-transform: none;
               transform: none;
-      top: auto; }
-    .message-box--success.s-sold .stripe-top {
-      top: 0;
-      bottom: auto; }
-    .message-box--success.s-sold .stripe-top:nth-of-type(4) {
-      background-color: #33773d;
-      -webkit-animation: youwin 1.5s linear infinite;
-              animation: youwin 1.5s linear infinite; }
-    .message-box--success.s-sold .stripe-top:nth-of-type(5) {
-      background-color: #439a50;
-      -webkit-animation: youwin 1.5s linear 0.5s infinite;
-              animation: youwin 1.5s linear 0.5s infinite; }
-    .message-box--success.s-sold .stripe-top:nth-of-type(6) {
-      background-color: #59b767;
-      -webkit-animation: youwin 1.5s linear 1s infinite;
-              animation: youwin 1.5s linear 1s infinite; }
+      z-index: 0; }
     .message-box--success.s-sold .stripe:nth-of-type(1) {
-      background-color: #33773d;
-      -webkit-animation: youwin 1.5s linear infinite;
-              animation: youwin 1.5s linear infinite; }
+      background-color: rgba(255, 255, 255, 0.1);
+      -webkit-animation: youwincircle 1.5s ease-in infinite;
+              animation: youwincircle 1.5s ease-in infinite; }
     .message-box--success.s-sold .stripe:nth-of-type(2) {
-      background-color: #439a50;
-      -webkit-animation: youwin 1.5s linear 0.5s infinite;
-              animation: youwin 1.5s linear 0.5s infinite; }
+      background-color: #24532B;
+      -webkit-animation: youwincircle 1.5s ease-in 0.5s infinite;
+              animation: youwincircle 1.5s ease-in 0.5s infinite; }
     .message-box--success.s-sold .stripe:nth-of-type(3) {
-      background-color: #59b767;
-      -webkit-animation: youwin 1.5s linear 1s infinite;
-              animation: youwin 1.5s linear 1s infinite; }
+      background-color: rgba(255, 255, 255, 0.1);
+      -webkit-animation: youwincircle 1.5s ease-in 1s infinite;
+              animation: youwincircle 1.5s ease-in 1s infinite; }
 
+@-webkit-keyframes youwincircle {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  100% {
+    -webkit-transform: scale(70);
+            transform: scale(70); } }
+
+@keyframes youwincircle {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  100% {
+    -webkit-transform: scale(70);
+            transform: scale(70); } }
 @-webkit-keyframes youwin {
   0% {
     left: 50%;
@@ -3084,7 +3089,6 @@ MOST IMPORTANT - LOT TABLE STYLES
   100% {
     left: 0;
     width: 100%; } }
-
 @keyframes youwin {
   0% {
     left: 50%;
@@ -3512,7 +3516,7 @@ MOST IMPORTANT - LOT TABLE STYLES
 .lot-info {
   display: inline-block;
   position: relative;
-  width: 51%;
+  width: 400px;
   background-color: white;
   min-height: 360px; }
   @media (min-width: 64em) {
@@ -3559,10 +3563,10 @@ MOST IMPORTANT - LOT TABLE STYLES
     width: 65%;
     max-width: 400px;
     max-height: 300px; } }
-@media (min-height: 800px) {
+@media (min-width: 64em) and (min-height: 800px) {
   .lot--photos {
     margin: 20px 0; } }
-@media (min-height: 1000px) {
+@media (min-width: 64em) and (min-height: 1000px) {
   .lot--photos {
     margin-bottom: 40px; } }
 

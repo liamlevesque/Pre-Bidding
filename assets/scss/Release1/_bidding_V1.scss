@@ -1,7 +1,7 @@
 
 
 .lot-bidding{
-	width: 49%;
+	width: calc(100% - 400px);
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -480,60 +480,57 @@
 					font-size: 1.1rem;
 					border: transparent;
 					padding-bottom: 15px;
+					overflow: hidden;
 					
 					&:before{
-						animation: happybounce 0.5s ease-in-out infinite;
+						z-index: 1;
+						//animation: happybounce 0.5s ease-in-out infinite;
+					}
+					span{
+						z-index: 2;
+						display: inline-block;
+						position: relative;
 					}
 				
-					.stripe, .stripe-top{
+					.stripe{
 						position: absolute;
 						content: "";
-						left: 50%;
-						width: 0;
-						height: 4px;
-						bottom: 0;
+						left: 22px;
+						width: 10px;
+						height: 10px;
+						border-radius: 500px;
+						top: calc(50% - 5px);
 						transform: none;
-						top: auto;
-					}
-
-					.stripe-top{
-						top: 0;
-						bottom: auto;
-					}
-
-					.stripe-top:nth-of-type(4){
-						background-color: lighten($finance-color, 10%);
-						animation: youwin 1.5s linear infinite;
-					}
-
-					.stripe-top:nth-of-type(5){
-						background-color: lighten($finance-color, 20%);
-						animation: youwin 1.5s linear 0.5s infinite;
-					}
-
-					.stripe-top:nth-of-type(6){
-						background-color: lighten($finance-color, 30%);
-						animation: youwin 1.5s linear 1s infinite;
+						z-index: 0;
 					}
 
 					.stripe:nth-of-type(1){
-						background-color: lighten($finance-color, 10%);
-						animation: youwin 1.5s linear infinite;
+						background-color: rgba(white,0.1);
+						animation: youwincircle 1.5s ease-in infinite;
 					}
 
 					.stripe:nth-of-type(2){
-						background-color: lighten($finance-color, 20%);
-						animation: youwin 1.5s linear 0.5s infinite;
+						background-color: $finance-color;
+						animation: youwincircle 1.5s ease-in 0.5s infinite;
 					}
 
 					.stripe:nth-of-type(3){
-						background-color: lighten($finance-color, 30%);
-						animation: youwin 1.5s linear 1s infinite;
+						background-color: rgba(white,0.1);
+						animation: youwincircle 1.5s ease-in 1s infinite;
 					}
 					
 				}
 			}
+			
+			@keyframes youwincircle{
+				0%{
+					transform: scale(1);
+				}
 
+				100%{
+					transform: scale(70);
+				}
+			}
 
 
 			@keyframes youwin{
