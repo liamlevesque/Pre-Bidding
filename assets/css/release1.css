@@ -2034,6 +2034,12 @@ header {
     display: none; }
     .logo svg.s-active {
       display: block; }
+  .logo #logo-chinese-simplified, .logo #logo-chinese-traditional {
+    -webkit-transform: scale(1.3) translate(30px, 3px);
+            transform: scale(1.3) translate(30px, 3px); }
+  .logo #logo-arabic {
+    -webkit-transform: scale(1.3) translate(30px, 3px);
+            transform: scale(1.3) translate(30px, 3px); }
 
 .main-header {
   margin-bottom: 5px; }

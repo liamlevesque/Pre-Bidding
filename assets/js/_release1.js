@@ -48,7 +48,6 @@ $(function(){
 	});
 
 	$('.js--logo-swap').click(function(){
-		console.log('swap');
 		var $next = $('.js--logo .s-active').attr('class','').next('svg');
 		if ($next.length) $next.attr('class','s-active'); 
 		else $(".js--logo svg:first").attr('class','s-active'); 
