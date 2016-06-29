@@ -276,7 +276,7 @@ GRID
   bottom: 2px;
   width: 28px;
   line-height: 1; }
-  .field--clear:before {
+  .field--clear:after {
     font-family: 'ritchie-icons' !important;
     speak: none;
     font-style: normal;
@@ -289,7 +289,7 @@ GRID
     content: "\e906"; }
   .field--clear:focus {
     border-color: #E87722; }
-  .field--clear:hover:before {
+  .field--clear:hover {
     color: #20579E; }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -3733,17 +3733,13 @@ MOST IMPORTANT - LOT TABLE STYLES
   background-color: white;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -100%);
-          transform: translate(-50%, -100%);
+  top: 5px;
+  right: 5px;
   z-index: 100;
   -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   .modal.s-shown {
-    display: block;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); }
+    display: block; }
 
 .modal--header {
   background-color: black;

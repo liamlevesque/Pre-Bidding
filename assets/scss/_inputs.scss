@@ -87,16 +87,17 @@
     width: $input-height - 2;
     line-height: 1;
 
-    &:before{
+    &:after{
       @include icon-font;
       content: "\e906";
+      //padding-left: 5px;
     }
 
     &:focus{
       border-color: $brand-color;
     }
 
-    &:hover:before{
+    &:hover{
       color: $active-colour
     }
   }

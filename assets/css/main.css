@@ -276,7 +276,7 @@ GRID
   bottom: 2px;
   width: 28px;
   line-height: 1; }
-  .field--clear:before {
+  .field--clear:after {
     font-family: 'ritchie-icons' !important;
     speak: none;
     font-style: normal;
@@ -289,7 +289,7 @@ GRID
     content: "\e906"; }
   .field--clear:focus {
     border-color: #E87722; }
-  .field--clear:hover:before {
+  .field--clear:hover {
     color: #20579E; }
 
 input[type=number]::-webkit-inner-spin-button,
