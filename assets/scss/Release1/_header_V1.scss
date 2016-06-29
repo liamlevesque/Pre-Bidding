@@ -1,7 +1,7 @@
 header{
 	@include center-content;
 
-	padding: 5px 0;
+	padding: 10px 0;
 	position: relative;
 	z-index: 10;
 
@@ -61,15 +61,27 @@ header{
     			display: none;
     		}
     	}
+
+    	svg{
+    		display: none;
+
+    		&.s-active{
+    			display: block;
+    		}
+    	}
 	}
 
 	.main-header{
-		margin-bottom: 15px;
+		margin-bottom: 5px;
 		//z-index: 1000;
 	}
 
 	.header--left{
-		padding-left: 5px;		
+		padding-left: 5px;
+
+		&>*{
+			vertical-align: middle;
+		}		
 	}
 
 		.header--auction{

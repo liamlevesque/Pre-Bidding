@@ -47,6 +47,14 @@ $(function(){
 		user.message = auctioneerMessages[Math.floor(Math.random() * auctioneerMessages.length)];
 	});
 
+	$('.js--logo-swap').click(function(){
+		console.log('swap');
+		var $next = $('.js--logo .s-active').attr('class','').next('svg');
+		if ($next.length) $next.attr('class','s-active'); 
+		else $(".js--logo svg:first").attr('class','s-active'); 
+
+	});
+
 	$('.js--goToOpenOffers').click(function(){
 		bidObject.openOffer = !bidObject.openOffer;
 		bidModeIndex = (bidModeIndex + 1 < bidMode.length)? bidModeIndex + 1 : 0;
@@ -351,6 +359,7 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 			//IF NO LOT SELECTED, DON'T DO NOTHING
 			if(bidObject.lotSelected === 0){
 				bidObject.disabledClickCount ++;
+				setTimeout(function(){bidObject.disabledClickCount = 0;},1000);
 				return;
 			}
 
@@ -392,6 +401,10 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 					break;
 
 				case "inactive":
+					bidObject.bidStatus = 'notInCatalog';
+					break;
+
+				case "notInCatalog":
 					bidObject.bidStatus = 'maxBidding';
 					break;
 
@@ -466,8 +479,7 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 	}
 
 	rivets.binders.activatewarning = function(el, value) {
-		console.log(value);
-		if(value > 2) $(el).addClass('s-flash');
+		if(value > 0) $(el).addClass('s-flash');
 		else $(el).removeClass('s-flash');
 	}
 

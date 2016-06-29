@@ -1,0 +1,69 @@
+.lot-info {
+  display: inline-block;
+  position: relative;
+  width: 400px;
+  background-color: white;
+  min-height: 360px; }
+
+  @media (min-width: 64em) {
+    .lot-info {
+      width: 55%; } }
+
+  @media (min-height: 800px) {
+    .lot-info {
+      min-height: 395px; } }
+
+  @media (min-height: 1000px) {
+    .lot-info {
+      min-height: 415px; } }
+
+
+
+
+.lot--number {
+  color: #E87722;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0;
+  display: inline; }
+  @media (min-width: 80em) {
+    .lot--number {
+      display: block; } }
+
+.lot--title {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 0;
+  display: inline; }
+  @media (min-width: 80em) {
+    .lot--title {
+      font-size: 1.2rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      display: block; } }
+
+@media (min-width: 64em) {
+  .lot--photos {
+    display: inline-block;
+    width: 65%;
+    max-width: 400px;
+    max-height: 300px; } }
+@media (min-width: 64em) and (min-height: 800px) {
+  .lot--photos {
+    margin: 20px 0; } }
+@media (min-width: 64em) and (min-height: 1000px) {
+  .lot--photos {
+    margin-bottom: 40px; } }
+
+
+
+.bid-field {
+  padding: 8px 0;
+  border-bottom: 1px dotted #bdbdbd;
+  text-align: right;
+  line-height: 1;
+  overflow: hidden; }
+     @media (min-height: 800px) {
+    .bid-field {
+      padding: 15px 0; } }
