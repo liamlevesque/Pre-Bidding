@@ -2158,6 +2158,15 @@ $(function(){
 		$('.js--finance-calc, .js--ccy-converter').removeClass('s-expanded');
 	});
 
+	//GET TODAY'S EXCHANGE RATES
+	$.ajax({
+		url: "http://api.fixer.io/latest?base="+ccyconversion2.auctionCCY,
+		success: function (ccydata) {
+			ccys = ccydata.rates;
+		}
+	})
+	
+
 	// window.onbeforeunload = function(){
  //    	location.assign('http://www.google.com');
  //    	return "Woah! You've won 6 lots.\n\nTo see a summary of your purchases, stay on this page and click on the shopping cart.";
@@ -2672,21 +2681,22 @@ var ccys = {
 		'rate' : 1,
 		'conversion' : bidObject.askPrice,
 		'price': bidObject.askPrice,
-		'editing': false
+		'editing': false,
+		'auctionCCY': 'CAD'
 	},
 	
 	ccycontroller2 = { 
 		
 		onCCYChange: function(e, model) {			
 			ccyconversion2.currentCCY = $(e.currentTarget).val();
-			ccycontroller2.update(ccyconversion2);
+			ccycontroller2.update();
 			ccyconversion2.active = true;
 			ccyconversion2.editing = false;
 	    },
 
 	    ccyChange: function(e,model){
 	    	ccyconversion2.currentCCY = $(e.currentTarget).data('ccy');
-			ccycontroller2.update(ccyconversion2);
+			ccycontroller2.update();
 			ccyconversion2.active = true;
 			ccyconversion2.editing = false;
 	    },
@@ -2696,12 +2706,13 @@ var ccys = {
 	    	ccyconversion2.editing = !ccyconversion2.editing;
 	    },
 	    
-	    update: function(data) {
-	    	data.rate = ccys[data.currentCCY];
-			data.conversion = data.rate * bidObject.askPrice;
+	    update: function() {
+	    	
+	    	ccyconversion2.rate = (ccyconversion2.currentCCY === ccyconversion2.auctionCCY) ? 1 : ccys[ccyconversion2.currentCCY];
+			ccyconversion2.conversion = ccyconversion2.rate * bidObject.askPrice;
 			
 			ccyconversion2.active = true;
-			finance2.ccy = data.currentCCY;
+			finance2.ccy = ccyconversion2.currentCCY;
 			finance2.payment = 0; //force refresh of the CCY in the finance calculator
 			finance2.payment = financingCalculation2();
 
@@ -2817,9 +2828,8 @@ rivets.formatters.convertedPrice2 = function(value){
 	var tempVal = parseFloat(value),
 		convertedVal = tempVal * ccyconversion2.rate;
 
-	console.log(tempVal);
-	if(ccyconversion2.active) return "<span class='"+ ccyconversion2.currentCCY +"'><span class='CCY'></span><span class='dollars'>" + formatprice(convertedVal.toFixed(2)) + "</span><span class='h-t-s'>per month</span></span>";
-	else return "<span class='CCY'></span><span class='dollars'>" + formatprice(tempVal.toFixed(2)) + "</span><span class='h-t-s'>per month</span>";
+	if(ccyconversion2.active) return "<span class='"+ ccyconversion2.currentCCY +"'><span class='dollars'>" + formatprice(convertedVal.toFixed(2)) + "</span><span class='CCY'></span><span class='h-t-s'>per month</span></span>";
+	else return "<span class='dollars'>" + formatprice(tempVal.toFixed(2)) + "</span><span class='CCY'></span><span class='h-t-s'>per month</span>";
 }
 
 rivets.bind($('.js-financing-object2'),{
