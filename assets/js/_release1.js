@@ -43,6 +43,12 @@ $(function(){
 		position: 'bottom'
 	});
 
+	$('.js--max-bid-tooltip').tooltipster({
+		content: "Max-Bid",
+		theme: 'ritchie-tooltips_small',
+		position: 'bottom'
+	})
+
 	$('.js--auctioneer-msg-button').click(function(){
 		user.message = auctioneerMessages[Math.floor(Math.random() * auctioneerMessages.length)];
 	});
@@ -137,6 +143,7 @@ function loadMaxBidTooltip(target){
 		content: $($('.js--max-bid-content').html()),
 		theme: 'ritchie-tooltips_full',
 		interactive: true,
+		multiple: true,
 		trigger: "click",
 		position: 'top-right',
 		functionBefore: function(origin, continueTooltip){
