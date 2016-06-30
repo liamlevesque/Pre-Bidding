@@ -590,7 +590,7 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 
 var ccys = {
 		"CAD":"1",
-		"USD":"0.7",
+		"USD":"0.7731",
 		"EUR":"0.6",
 		"GBP":"0.5",
 		"CNY":"4.5",
