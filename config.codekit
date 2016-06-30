@@ -188,6 +188,50 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/img\/MissingCatalog-sad.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 10548,
+		"inputAbbreviatedPath": "\/assets\/img\/MissingCatalog-sad.png",
+		"outputAbbreviatedPath": "\/assets\/img\/MissingCatalog-sad.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/img\/MissingCatalog-w.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 10568,
+		"inputAbbreviatedPath": "\/assets\/img\/MissingCatalog-w.png",
+		"outputAbbreviatedPath": "\/assets\/img\/MissingCatalog-w.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/img\/MissingCatalog.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 10161,
+		"inputAbbreviatedPath": "\/assets\/img\/MissingCatalog.png",
+		"outputAbbreviatedPath": "\/assets\/img\/MissingCatalog.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/img\/MissingLot.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6629,
+		"inputAbbreviatedPath": "\/assets\/img\/MissingLot.png",
+		"outputAbbreviatedPath": "\/assets\/img\/MissingLot.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/img\/photo.png": {
 		"fileType": 32768,
 		"ignore": 0,

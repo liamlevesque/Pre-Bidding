@@ -130,6 +130,14 @@ $ring-right-spacing: 30px;
 				.col-2a{
 					padding:0  10px;
 					@include ellipsize;
+
+					a:hover:after{
+						@include icon-font;
+						content: "\e90b";
+						margin-left: 5px;
+						color: $money-color;
+						text-decoration: none;
+					}
 				}
 
 				.col-5b{

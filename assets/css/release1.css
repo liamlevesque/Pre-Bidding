@@ -2445,6 +2445,20 @@ MOST IMPORTANT - LOT TABLE STYLES
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis; }
+    .lot .col-2a a:hover:after {
+      font-family: 'ritchie-icons' !important;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "\e90b";
+      margin-left: 5px;
+      color: #20579E;
+      text-decoration: none; }
   .lot .col-5b {
     padding: 0;
     line-height: 1;
@@ -3587,6 +3601,15 @@ MOST IMPORTANT - LOT TABLE STYLES
   font-size: 0.9rem;
   line-height: 1.4rem;
   text-align: center; }
+
+.lot--not-in-catalog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: none; }
+  .lot--not-in-catalog.s-visible {
+    display: block; }
 
 .swiper-container img {
   width: 100%;

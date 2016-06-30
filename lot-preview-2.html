@@ -522,7 +522,7 @@
                         </div>
 
                         <div class="message-box--max-bid" rv-show="bidObject.bidStatus | equals 'maxBidding'">
-                            Max-Bid: $15,000<br/>Bidding automatically
+                            Max-Bid: $15,000<br/>Bidding for you
                         </div> 
 
                         <div class="message-box--warning" rv-show="bidObject.bidStatus | equals 'inactive'">
@@ -530,8 +530,7 @@
                         </div>
 
                         <div class="message-box--warning" rv-show="bidObject.bidStatus | equals 'notInCatalog'">
-                            Lot not in catalog
-                            <br/>Internet Bidding not available
+                            Lot not available for internet bidding
                         </div>
                         
                     </div>
@@ -1449,7 +1448,9 @@
                 <!-- <div class="swiper-counter">
                    <span class="js--swiper-active">1</span> of 3
                 </div> -->
-                
+                <div class="lot--not-in-catalog js--not-in-catalog">
+                    <img src="assets/img/MissingLot.png">
+                </div>
             </div>
         </div>
         <div class="lot--fields">

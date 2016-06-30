@@ -401,10 +401,12 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 
 				case "inactive":
 					bidObject.bidStatus = 'notInCatalog';
+					$('.js--not-in-catalog').addClass('s-visible');
 					break;
 
 				case "notInCatalog":
 					bidObject.bidStatus = 'maxBidding';
+					$('.js--not-in-catalog').removeClass('s-visible');
 					break;
 
 				case "maxBidding":
@@ -519,6 +521,7 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 			case 'limitExceeded':
 			case 'inactive':
 			case 'maxBidding':
+			case 'notInCatalog':
 				$(el).addClass('s-disabled');
 				break;
 
