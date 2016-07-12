@@ -20,6 +20,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/assets\/css\/lot-preview-description-hover.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/css\/lot-preview-description-hover.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/assets\/css\/main.css": {
 		"fileType": 16,
 		"ignore": 1,
@@ -5057,50 +5066,16 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
 		},
-	"\/bower_components\/tooltipster\/css\/themes\/tooltipster-light.css": {
-		"fileType": 16,
+	"\/bower_components\/tooltipster\/demo\/geometry.jpg": {
+		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/css\/themes\/tooltipster-light.css",
-		"outputAbbreviatedPath": "No Output Path",
+		"initialSize": 32175,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/demo\/geometry.jpg",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/demo\/geometry.jpg",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/bower_components\/tooltipster\/css\/themes\/tooltipster-noir.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/css\/themes\/tooltipster-noir.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/bower_components\/tooltipster\/css\/themes\/tooltipster-punk.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/css\/themes\/tooltipster-punk.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/bower_components\/tooltipster\/css\/themes\/tooltipster-shadow.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/css\/themes\/tooltipster-shadow.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/bower_components\/tooltipster\/css\/tooltipster.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/css\/tooltipster.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/bower_components\/tooltipster\/demo\/index.html": {
 		"fileType": 8192,
@@ -5110,17 +5085,6 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
-		},
-	"\/bower_components\/tooltipster\/demo\/map.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 6353,
-		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/demo\/map.png",
-		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/demo\/map.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
 		},
 	"\/bower_components\/tooltipster\/demo\/reset.css": {
 		"fileType": 16,
@@ -5139,6 +5103,184 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/demo\/svg.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/demo\/svg.min.js",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/demo\/min\/svg.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/bower_components\/tooltipster\/demo\/svg.screenbox.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/demo\/svg.screenbox.js",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/demo\/min\/svg.screenbox-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/bower_components\/tooltipster\/dist\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-borderless.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-borderless.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/dist\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-light.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-light.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/dist\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-noir.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-noir.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/dist\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-punk.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-punk.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/dist\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-shadow.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-shadow.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/dist\/css\/plugins\/tooltipster\/sideTip\/tooltipster-sideTip.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/css\/plugins\/tooltipster\/sideTip\/tooltipster-sideTip.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/dist\/css\/tooltipster.bundle.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/css\/tooltipster.bundle.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/dist\/css\/tooltipster.bundle.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/css\/tooltipster.bundle.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/dist\/css\/tooltipster.core.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/css\/tooltipster.core.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/dist\/css\/tooltipster.core.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/css\/tooltipster.core.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/dist\/js\/plugins\/tooltipster\/SVG\/tooltipster-SVG.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/js\/plugins\/tooltipster\/SVG\/tooltipster-SVG.js",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/js\/plugins\/tooltipster\/SVG\/min\/tooltipster-SVG-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/bower_components\/tooltipster\/dist\/js\/plugins\/tooltipster\/SVG\/tooltipster-SVG.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/js\/plugins\/tooltipster\/SVG\/tooltipster-SVG.min.js",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/js\/plugins\/tooltipster\/SVG\/min\/tooltipster-SVG.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/bower_components\/tooltipster\/dist\/js\/tooltipster.bundle.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/js\/tooltipster.bundle.js",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/js\/min\/tooltipster.bundle-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/bower_components\/tooltipster\/dist\/js\/tooltipster.bundle.min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/js\/tooltipster.bundle.min.js",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/js\/min\/tooltipster.bundle.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/bower_components\/tooltipster\/dist\/js\/tooltipster.core.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/js\/tooltipster.core.js",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/js\/min\/tooltipster.core-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/bower_components\/tooltipster\/dist\/js\/tooltipster.core.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/js\/tooltipster.core.min.js",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/js\/min\/tooltipster.core.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
 		},
 	"\/bower_components\/tooltipster\/doc\/css\/prettify.css": {
 		"fileType": 16,
@@ -5277,12 +5419,196 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/bower_components\/tooltipster\/doc\/images\/star.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2969,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/images\/star.png",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/images\/star.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/external\/jquery\/jquery.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/external\/jquery\/jquery.js",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/external\/jquery\/min\/jquery-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_444444_256x240.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6992,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_444444_256x240.png",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_444444_256x240.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_555555_256x240.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6988,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_555555_256x240.png",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_555555_256x240.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_777620_256x240.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4549,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_777620_256x240.png",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_777620_256x240.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_777777_256x240.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6999,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_777777_256x240.png",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_777777_256x240.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_cc0000_256x240.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4549,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_cc0000_256x240.png",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_cc0000_256x240.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_ffffff_256x240.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6299,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_ffffff_256x240.png",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_ffffff_256x240.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/index.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/index.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/jquery-ui.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/jquery-ui.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/jquery-ui.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/jquery-ui.js",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/min\/jquery-ui-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/jquery-ui.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/jquery-ui.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/jquery-ui.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/jquery-ui.min.js",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/min\/jquery-ui.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/jquery-ui.structure.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/jquery-ui.structure.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/jquery-ui.structure.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/jquery-ui.structure.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/jquery-ui.theme.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/jquery-ui.theme.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/jquery-ui.theme.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/jquery-ui.theme.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/bower_components\/tooltipster\/doc\/js\/jquery.jgfeed.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery.jgfeed.js",
 		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/min\/jquery.jgfeed-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/bower_components\/tooltipster\/doc\/js\/jquery.ui.touch-punch.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/jquery.ui.touch-punch.min.js",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/doc\/js\/min\/jquery.ui.touch-punch.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -5321,6 +5647,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/bower_components\/tooltipster\/Gruntfile.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/Gruntfile.js",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/min\/Gruntfile-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/bower_components\/tooltipster\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -5330,27 +5667,16 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/bower_components\/tooltipster\/js\/jquery.tooltipster.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/js\/jquery.tooltipster.js",
-		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/js\/min\/jquery.tooltipster-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/bower_components\/tooltipster\/js\/jquery.tooltipster.min.js": {
-		"fileType": 64,
+	"\/bower_components\/tooltipster\/package.json": {
+		"fileType": 524288,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/js\/jquery.tooltipster.min.js",
-		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/js\/min\/jquery.tooltipster.min-min.js",
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/package.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/package-min.json",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"outputStyle": 1
 		},
 	"\/bower_components\/tooltipster\/README.md": {
 		"criticStyle": 0,
@@ -5373,16 +5699,101 @@
 		"randomFootnoteNumbers": 0,
 		"useCompatibilityMode": 0
 		},
-	"\/bower_components\/tooltipster\/tooltipster.jquery.json": {
-		"fileType": 524288,
-		"ignore": 1,
+	"\/bower_components\/tooltipster\/src\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-borderless.css": {
+		"fileType": 16,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/tooltipster.jquery.json",
-		"orderOutput": 0,
-		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/tooltipster.jquery-min.json",
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/src\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-borderless.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/src\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-light.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/src\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-light.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/src\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-noir.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/src\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-noir.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/src\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-punk.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/src\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-punk.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/src\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-shadow.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/src\/css\/plugins\/tooltipster\/sideTip\/themes\/tooltipster-sideTip-shadow.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/src\/css\/plugins\/tooltipster\/sideTip\/tooltipster-sideTip.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/src\/css\/plugins\/tooltipster\/sideTip\/tooltipster-sideTip.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/src\/css\/tooltipster.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/src\/css\/tooltipster.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/bower_components\/tooltipster\/src\/js\/plugins\/tooltipster\/sideTip\/tooltipster-sideTip.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/src\/js\/plugins\/tooltipster\/sideTip\/tooltipster-sideTip.js",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/src\/js\/plugins\/tooltipster\/sideTip\/min\/tooltipster-sideTip-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/bower_components\/tooltipster\/src\/js\/plugins\/tooltipster\/SVG\/tooltipster-SVG.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/src\/js\/plugins\/tooltipster\/SVG\/tooltipster-SVG.js",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/src\/js\/plugins\/tooltipster\/SVG\/min\/tooltipster-SVG-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/bower_components\/tooltipster\/src\/js\/tooltipster.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/bower_components\/tooltipster\/src\/js\/tooltipster.js",
+		"outputAbbreviatedPath": "\/bower_components\/tooltipster\/src\/js\/min\/tooltipster-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
 		},
 	"\/bower_components\/waypoints\/bower.json": {
 		"fileType": 524288,
@@ -5708,43 +6119,43 @@
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/bower_components\/tooltipster\/js\/jquery.tooltipster.min.js",
+			"linkedFileAbbreviatedPath": "\/bower_components\/waypoints\/lib\/jquery.waypoints.min.js",
 			"position": 3,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/bower_components\/waypoints\/lib\/jquery.waypoints.min.js",
+			"linkedFileAbbreviatedPath": "\/bower_components\/mustache.js\/mustache.min.js",
 			"position": 4,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/bower_components\/mustache.js\/mustache.min.js",
+			"linkedFileAbbreviatedPath": "\/bower_components\/rivets\/dist\/rivets.bundled.min.js",
 			"position": 5,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/bower_components\/rivets\/dist\/rivets.bundled.min.js",
+			"linkedFileAbbreviatedPath": "\/bower_components\/intercom\/intercom.min.js",
 			"position": 6,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/bower_components\/intercom\/intercom.min.js",
+			"linkedFileAbbreviatedPath": "\/bower_components\/list.js\/dist\/list.min.js",
 			"position": 7,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/bower_components\/list.js\/dist\/list.min.js",
+			"linkedFileAbbreviatedPath": "\/bower_components\/autoNumeric\/autoNumeric-min.js",
 			"position": 8,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 0,
-			"linkedFileAbbreviatedPath": "\/bower_components\/autoNumeric\/autoNumeric-min.js",
+			"linkedFileAbbreviatedPath": "\/bower_components\/tooltipster\/dist\/js\/tooltipster.bundle.min.js",
 			"position": 9,
 			"type": 0
 			},

@@ -1,0 +1,19 @@
+.lot .col-2a {
+    padding: 0  10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+    .lot .col-2a a:hover:after {
+      font-family: 'ritchie-icons' !important;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "\e90b";
+      margin-left: 5px;
+      color: #20579E;
+      text-decoration: none; }

@@ -1,53 +1,76 @@
 $(function(){
 
-	$(document).on('mouseup','.js--max-bid-tooltip',function(e){
-		loadMaxBidTooltip($(e.currentTarget));
-	});
-
 	$('.js-tooltip-ooo').tooltipster({
 		content: $('<p>Sold Out Of Order</p>'),
 		theme: 'ritchie-tooltips_small',
 		delay: tooltipDelay,
-		position: 'bottom'
+		side: 'bottom'
 	});
 
 	$('.js--ppl-tooltip').tooltipster({
-		content: $($('.js--tooltip-ppl').html()),
+		content: $('.js--tooltip-ppl').detach(),
 		theme: 'ritchie-tooltips_small',
 		delay: tooltipDelay,
-		touchDevices: false,
-		position: 'bottom'
+		trigger: 'custom',
+	    triggerOpen: {
+	        mouseenter: true
+	    },
+	    triggerClose: {
+	        click: true,
+	        scroll: true,
+	        mouseleave: true
+	    },
+		side: 'bottom',
+
 	});
 
 	$('.js--audio-tooltip').tooltipster({
-		content: $($('.js--tooltip-audio').html()),
+		content: $('.js--tooltip-audio').detach(),
 		theme: 'ritchie-tooltips_small',
 		delay: tooltipDelay,
-		touchDevices: false,
-		position: 'bottom'
+		trigger: 'custom',
+	    triggerOpen: {
+	        mouseenter: true
+	    },
+	    triggerClose: {
+	        click: true,
+	        scroll: true,
+	        mouseleave: true
+	    },
+		side: 'bottom'
 	});
 
 	$('.js--photo-tooltip').tooltipster({
-		content: $($('.js--tooltip-photos').html()),
+		content: $('.js--tooltip-photos').detach(),
 		theme: 'ritchie-tooltips_small',
 		delay: tooltipDelay,
-		touchDevices: false,
-		position: 'bottom'
+		trigger: 'custom',
+	    triggerOpen: {
+	        mouseenter: true
+	    },
+	    triggerClose: {
+	        click: true,
+	        scroll: true,
+	        mouseleave: true
+	    },
+		side: 'bottom'
 	});
 
 	$('.js--cart-tooltip').tooltipster({
-		content: $($('.js--tooltip-cart').html()),
+		content: $('.js--tooltip-cart').detach(),
 		theme: 'ritchie-tooltips_small',
 		delay: tooltipDelay,
-		touchDevices: false,
-		position: 'bottom'
+		trigger: 'custom',
+	    triggerOpen: {
+	        mouseenter: true
+	    },
+	    triggerClose: {
+	        click: true,
+	        scroll: true,
+	        mouseleave: true
+	    },
+		side: 'bottom'
 	});
-
-	$('.js--max-bid-tooltip').tooltipster({
-		content: "Max-Bid",
-		theme: 'ritchie-tooltips_small',
-		position: 'bottom'
-	})
 
 	$('.js--auctioneer-msg-button').click(function(){
 		user.message = auctioneerMessages[Math.floor(Math.random() * auctioneerMessages.length)];
@@ -131,67 +154,39 @@ var tooltipDelay = 500,
 			"Wednesday is hump day, but has anyone asked the camel if he's happy about it?"
 		],
 	bidMode = [ 'normal', 'open-offer', 'runner-up', 'winners-choice' ],
-	bidModeIndex = 0;
+	bidModeIndex = 0,
+	tooltipInstance;
 
 
-function loadMaxBidTooltip(target){
-	var parent = $(target).parents('.lot');
+function buildMaxBidTooltip(instance, helper){
+
+	var target = $(helper.origin),
+		parent = target.parents('.lot'),
+		targetLot = lotObject2.lotList[target.data('lot') - 1];
 	parent.addClass('s-selected');
-	
-	//FINANCE CALCULATOR CONTROLS
-	$(target).tooltipster({
-		content: $($('.js--max-bid-content').html()),
-		theme: 'ritchie-tooltips_full',
-		interactive: true,
-		multiple: true,
-		trigger: "click",
-		position: 'top-right',
-		functionBefore: function(origin, continueTooltip){
-			continueTooltip();
-			
-			maxbidObject.lotNumber = parent.find('.col-0').text();
-			maxbidObject.lotName = parent.find('.col-2a').text();
-			maxbidObject.lotSerial = parent.find('.col-2b').text();
-			maxbidObject.lotMeter = parent.find('.col-2c').text();
 
-			maxbidObject.totalMaxBids = user.bid;
-			maxbidObject.hasMaxBid = (target.data('bid') > 0) ? true : false;
-			maxbidObject.initialBid = (target.data('bid') > 0) ? target.data('bid') : 0;
-			maxbidObject.maxbidAmount = (target.data('bid') > 0) ? target.data('bid') : '';
-			
-			financeModal = rivets.bind($('.js--max-bid-object'),{
-				maxbidObject: maxbidObject,
-				maxbidController : maxbidController
-			});
+	maxbidObject.lotNumber = targetLot.lot;
+	maxbidObject.lotName = targetLot.name;
+	maxbidObject.lotSerial = targetLot.serial;
+	maxbidObject.lotMeter = targetLot.meter;
+	maxbidObject.totalMaxBids = user.bid;
+	maxbidObject.hasMaxBid = (targetLot.bid > 0) ? true : false;
+	maxbidObject.initialBid = (targetLot.bid > 0) ? targetLot.bid : 0;
+	maxbidObject.maxbidAmount = (targetLot.bid > 0) ? targetLot.bid : '';
 
-			$('.js--max-bid-field').val(maxbidObject.maxbidAmount).autoNumeric('init',{
-				aSep: ',', 
-				aDec: '.',
-				mDec: 0
-			});
-
-			// $('.js--max-bid-field').inputmask("numeric", {
-			//     radixPoint: ".",
-			//     groupSeparator: ",",
-			//     digits: 2,
-			//     autoGroup: true,
-			//     prefix: '', //Space after $, this will not truncate the first character.
-			//     rightAlign: false,
-			//     oncleared: function () { self.Value(''); }
-			// });
-
-			//console.log(maxbidObject.initialBid);
-
-			$('.js--max-bid-field').focus().removeClass('s-error');
-		},
-		functionAfter: function(origin){
-			unloadMaxBidTooltip(target);
-		}
+	financeModal = rivets.bind($(instance.elementTooltip()).find('.js--max-bid-object'),{
+		maxbidObject: maxbidObject,
+		maxbidController : maxbidController
 	});
-}
 
-function unloadMaxBidTooltip(target){
-	$(target).parents('.lot').removeClass('s-selected');
+	$(instance.elementTooltip()).find('.js--max-bid-field').val(maxbidObject.maxbidAmount).autoNumeric('init',{
+		aSep: ',', 
+		aDec: '.',
+		mDec: 0
+	}).focus().removeClass('s-error');
+
+	tooltipInstance = instance;
+	
 }
 	
 	var maxbidObject = {
@@ -241,8 +236,7 @@ function unloadMaxBidTooltip(target){
 		},
 
 		onMaxBidChange: function(e,model){
-			console.log('test');
-
+			
 			$(e.currentTarget).removeClass('s-error');
 
 	    	maxbidObject.offIncrement = false; //HIDE INCREMENT WARNING WHEN YOU START TO TYPE AGAIN
@@ -286,36 +280,35 @@ function unloadMaxBidTooltip(target){
 	    	}
 
 	    	maxbidObject.offIncrement = false;
+	    	
+	    	//GIVE THE LOT OBJECT THE CORRECT MAX BID
+	    	lotObject2.lotList[($(tooltipInstance.elementOrigin()).data('lot')) - 1].bid = maxbidObject.maxbidAmount;
 
-	    	$('.js--max-bid-tooltip.tooltipstered').data('bid',maxbidObject.maxbidAmount).html("<span class='dollars'>"+formatprice(maxbidObject.maxbidAmount)+"</span>");
 	    	maxbidController.updateBids();
 	    	maxbidController.killtooltip();
 	    },
 
 	    updateBids: function(){
 	    	user.bid = 0;
-	    	var i = 0;
+	    	
+	    	//SUM UP ALL OF THE LOTS WITH MAX-BIDS ON THEM
+	    	user.bid = lotObject2.lotList.reduce(function(a,b){ return {bid: a.bid + b.bid}; }).bid;
 
-	    	$('.js--max-bid-tooltip').each(function(){
-	    		var tempbid = parseInt($(this).data('bid'));
-	    		if(tempbid > 0){
-	    			user.bid += tempbid; 
-	    			i++;
-	    		}
-	    	})
-
-	    	user.bidcount = i;
+	    	//COUNT THE NUMBER OF LOTS WITH MAX BIDS ON THEM
+	    	user.bidcount = lotObject2.lotList.filter(function(val){ return val.bid > 0; }).length;
 	    },
 
 	    cancelMaxBid: function(amt){
-	    	$('.js--max-bid-tooltip.tooltipstered').data('bid',0).text('');
+	    	lotObject2.lotList[$(tooltipInstance.elementOrigin()).data('lot')-1].bid = 0;
+	    	
 	    	maxbidController.updateBids();
 	    	maxbidController.killtooltip();
 	    },
 
 	    killtooltip: function(){
-	    	$('.js--max-bid-tooltip.tooltipstered').tooltipster('destroy');
-	    	unloadMaxBidTooltip();
+	    	$('.lot.s-selected').removeClass('s-selected');
+	    	tooltipInstance.close();
+	    	
 	    }
 
 	};
@@ -823,8 +816,76 @@ function financingCalculation2(){
 
 
 
+/*********************************
+	LOT LIST
+********************************/
+
+var lotObject2 = {
+		lotList : [],
+		currentLot: null,
+		followCurrentLot: true
+	},
+
+	lotObjectController2 = {
+
+	};
+
+rivets.bind($('.js-lot-tables2'),{
+	lotObject2: lotObject2
+});
+
+$.ajax({
+	method: "GET",
+	url: "assets/js/data/lotdata.json",
+	dataType: "json", 
+	success: function(data){
+		buildLotTable( data );
+	},
+	error: function(jqXHR, textStatus){
+		console.log(jqXHR.responseText);
+		console.log("Request failed: " + textStatus);
+	}
+});
 
 
+function buildLotTable(data){
+	for(var i = 0; i < data[0].lots.length; i++) lotObject2.lotList.push(data[0].lots[i]);
+
+	lotObject2.currentLot = 4;
+
+	$('.js--max-bid-tooltip').tooltipster({
+		content: "Max-Bid",
+		theme: 'ritchie-tooltips_small',
+		side: 'bottom',
+		multiple: true,
+		trigger: 'custom',
+	    triggerOpen: {
+	        mouseenter: true
+	    },
+	    triggerClose: {
+	        click: true,
+	        scroll: true,
+	        mouseleave: true
+	    }
+	});
+
+	$('.js--max-bid-tooltip').tooltipster({
+		content: $('.js--max-bid-content').detach(),
+		theme: 'ritchie-tooltips_full',
+		interactive: true,
+		multiple: true,
+		trigger: "click",
+		side: 'top',
+		contentCloning: true,
+		functionReady: function(instance,helper){
+			buildMaxBidTooltip(instance, helper);
+		},
+		functionAfter: function (instance,helper){
+			$('.lot.s-selected').removeClass('s-selected');
+		}
+		
+	});
+}
 
 
 

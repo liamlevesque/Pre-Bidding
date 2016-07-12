@@ -2,9 +2,18 @@
 
 body {
 	background-color: #dcdcdc;
-	color: #0b0b0b;
 	font-size: 16px;
 	line-height: 22px;
+}
+
+.circle {
+	background: red;
+	border-radius: 50px;
+	display: inline-block;
+	height: 50px;
+	margin-right: 10px;
+	vertical-align: middle;
+	width: 50px;
 }
 
 .container, #container {
@@ -25,4 +34,41 @@ body {
 	margin: 10px;
 	background: #000;
 	color: #fff;
+}
+
+#circle {
+	display: block;
+	margin: auto;
+	position: relative;
+}
+
+#genderChart1 {
+	height: 300px;
+	width: 300px;
+	margin: 0 auto;
+}
+
+#inline_container p {
+	margin: auto;
+	width: 300px;
+}
+
+#scrollable {
+	height: 300px;
+	overflow: scroll;
+}
+
+#scrollable2 {
+	border: 1px solid gray;
+	height: 250px;
+	overflow: scroll;
+}
+
+#square {
+	background: red;
+	height: 50px;
+	position: fixed;
+	right: 30px;
+	top: 30px;
+	width: 50px;
 }

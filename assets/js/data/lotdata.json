@@ -19,7 +19,7 @@
 			"comeswith": "Cummins ISX, 500 hp, eng brake, Eaton Fuller RTLO18918B, dbl diff lock, 8 bag A/R susp, 13200 lb frt, D46-170HP rears, 238 in. WB, 48 in. sleeper, wet kit, PAS",
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
-			"soldPrice": 0,
+			"soldPrice": 25000,
 			"bidder": null,
 			"group":0
 		},
@@ -40,9 +40,10 @@
 			"comeswith": "Cummins ISX, 500 hp, eng brake, Eaton Fuller RTLO18918B, dbl diff lock, 8 bag A/R susp, 13200 lb frt, D46-170HP rears, 238 in. WB, 48 in. sleeper, wet kit, PAS",
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
-			"soldPrice": 0,
+			"soldPrice": 18000,
 			"bidder": null,
-			"group":0
+			"group":0,
+			"soldToYou" : true
 		},
 		{
 			"lot": 3,
@@ -61,7 +62,7 @@
 			"comeswith": "Cummins ISX, 500 hp, eng brake, Eaton Fuller RTLO18918B, dbl diff lock, 8 bag A/R susp, 13200 lb frt, D46-170HP rears, 238 in. WB, 48 in. sleeper, wet kit, PAS",
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
-			"soldPrice": 0,
+			"soldPrice": 17500,
 			"bidder": null,
 			"group":0
 		},
@@ -126,6 +127,7 @@
 			"openPrice": 10000,
 			"soldPrice": 0,
 			"bidder": null,
+			"status": "Out Of Auction",
 			"group":0
 		},
 		{
@@ -210,7 +212,8 @@
 			"openPrice": 10000,
 			"soldPrice": 0,
 			"bidder": null,
-			"group":1
+			"group":1,
+			"status":"Moved to Ring 2"
 		},
 		{
 			"lot": 11,

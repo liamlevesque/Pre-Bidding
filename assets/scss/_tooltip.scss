@@ -33,22 +33,24 @@
 	}
 }
 
-.ritchie-tooltips, .ritchie-tooltips-footed, .ritchie-tooltips_full, .ritchie-tooltips_small{
-	border-radius: 0; 
-	border: 1px solid $black;
-	box-shadow: $ritchie-shadow;
-	background: $white;
-	color: $black;
-	max-width: 400px;
-}
 
-/* Use this next selector to style things like font-size and line-height: */
-.ritchie-tooltips, .ritchie-tooltips_full, .ritchie-tooltips_small{
-	.tooltipster-content{
-	 	font-size: 1rem;
+$tooltip-arrow-size: 10px;
+
+
+.tooltipster-sidetip.ritchie-tooltips_small, .tooltipster-sidetip.ritchie-tooltips_full{
+	.tooltipster-box {
+		background: white;
+		border: 1px solid $black;
+		border-radius: 0;
+		box-shadow: $ritchie-shadow;
+		max-width: 400px;
+	}
+
+	.tooltipster-content {
+		font-size: 1rem;
 		padding: $default-margin/2 $default-margin;
 		overflow: visible;
-		min-width: 350px;
+		color: black;
 
 		p{
 			margin: 0;
@@ -71,6 +73,93 @@
 		}
 	}
 }
+
+.tooltipster-arrow{
+	.tooltipster-bottom &{
+		top: -1px !important;
+	}
+
+	.tooltipster-right &{
+		left: -1px !important;
+
+	}
+
+	.tooltipster-left &{
+		right: -1px !important;
+
+		&:before{
+			left: auto;
+			right: $tooltip-arrow-size/2;
+		}
+	}
+
+	.tooltipster-top &{
+		bottom: -1px !important;
+
+		&:before{
+			top: auto;
+			bottom: $tooltip-arrow-size/2;
+		}
+	}
+
+	&:before{
+		content: "";
+		display: block;
+		position: absolute;
+		top: $tooltip-arrow-size/2;
+		left: $tooltip-arrow-size/2;
+		width: $tooltip-arrow-size;
+		height: $tooltip-arrow-size;
+		background-color: white;
+		border: 1px solid black;
+		transform: rotate(45deg);
+	}
+	.tooltipster-arrow-border, .tooltipster-arrow-background{
+		display: none;
+	}
+}
+
+
+
+
+// .ritchie-tooltips, .ritchie-tooltips-footed, .ritchie-tooltips_full, .ritchie-tooltips_small{
+// 	border-radius: 0; 
+// 	border: 1px solid $black;
+// 	box-shadow: $ritchie-shadow;
+// 	background: $white;
+// 	color: $black;
+// 	max-width: 400px;
+// }
+
+// /* Use this next selector to style things like font-size and line-height: */
+// .ritchie-tooltips, .ritchie-tooltips_full, .ritchie-tooltips_small{
+// 	.tooltipster-content{
+// 	 	font-size: 1rem;
+// 		padding: $default-margin/2 $default-margin;
+// 		overflow: visible;
+// 		min-width: 350px;
+
+// 		p{
+// 			margin: 0;
+// 		}
+
+// 		p + p{
+// 			margin-top: $default-margin;
+// 		}
+
+// 		ul{
+			
+// 		}
+
+// 		li{
+			
+// 		}
+
+// 		a{
+// 			color: $link-colour;
+// 		}
+// 	}
+// }
 
 	.tooltip--close{
 		position: absolute;
@@ -96,9 +185,18 @@
 	text-align: center;
 }
 
-.ritchie-tooltips_full{
-	border: none;
-	max-width: 350px;
+.tooltipster-sidetip.ritchie-tooltips_full{
+	width: 350px !important;
+	height: auto !important;
+
+	.tooltipster-arrow:before{
+		border-color: transparent;
+	}
+
+	.tooltipster-box {
+		border: 0;
+		position: relative;
+	}
 	
 	.tooltip--close{
 		top: 0;

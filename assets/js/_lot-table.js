@@ -20,7 +20,7 @@ $(function(){
 		tablecontroller.watchItem(index);
 	});
 
-});
+}); 
 
 var lotTable = {
 		allActive: true,
