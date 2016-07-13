@@ -405,7 +405,7 @@
                 </div>
 
 
-                <div class="header--section">
+                <div class="header--section h-viewer-hidden">
                     
                     <div class="h-d-inline-block">
                         <div class="header--price">
@@ -428,10 +428,12 @@
                 <div class="header--section">
                     
                     <div class="header--user">
-                        <i class="icon-user"></i>
-                        <span rv-text="user.bidder">v7004</span>
-                    
-                        <div >
+                        
+                            <i class="icon-user"></i>
+                            <span class="h-viewer-hidden" rv-text="user.bidder">v7004</span>
+                            <span class="h-viewer-shown">GUEST</span>
+                        
+                        <div>
                             <label class="header--connection">Connected</label>
                         </div>
                     </div>
@@ -473,7 +475,7 @@
                     
                 <div class="bidding">
                             
-                    <div class="bidding--activate" rv-hide="bidObject.lotSelected" rv-biddingmode="bidObject.bidMode" rv-activatewarning="bidObject.disabledClickCount">
+                    <div class="bidding--activate h-viewer-hidden" rv-hide="bidObject.lotSelected" rv-biddingmode="bidObject.bidMode" rv-activatewarning="bidObject.disabledClickCount">
                         <span class="normal">Check the circle next to the lot you want to bid on</span>
                         <span class="openoffer"><b>OPEN OFFER:</b><br/>Check the circle next to the lots you want to buy at this price</span>
                         <span class="runnerup"><b>RUNNER UP:</b><br/>Check the circle next to the lots you want to buy at this price</span>
@@ -768,7 +770,7 @@
                     </div>
                 </header>
                 <div class="lot-table lots_all js-lot-tables2">
-                    <div class="lot" rv-each-lotObject="lotObject2.lotList" rv-class-s-sold="lotobject.soldPrice" rv-class-s-outofauction="lotobject.status" rv-class-s-youwon="lotobject.soldToYou" rv-data-lot="lotobject.lot">
+                    <div class="lot" rv-each-lotObject="lotObject2.lotList" rv-class-s-sold="lotobject.soldPrice" rv-class-s-outofauction="lotobject.status" rv-class-s-youwon="lotobject.soldToYou" rv-data-lot="lotobject.lot" rv-class-s-currentLot="lotObject2.currentLot | equals lotobject.lot">
                         <div class="col-0" rv-text="lotobject.lot"></div>
                         <div class="col-2a">
                             <i class="icon-warranty" rv-show="lotobject.warranty"></i>
@@ -910,6 +912,7 @@
 
             </section>
     <button class="js--logo-swap">Swap Logo Language</button>
+    <button class="js--viewer-toggle">Toggle Viewer Mode</button>
     <button class="js--auctioneer-msg-button">Show Random auctioneer's message</button>
     <button class="js--goToOpenOffers">Toggle Bidding Mode</button>
 </div>

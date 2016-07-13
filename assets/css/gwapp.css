@@ -905,6 +905,14 @@ hr {
 .h-icon--large {
   font-size: 25px; }
 
+.s-viewer-mode .h-viewer-hidden {
+  display: none; }
+
+.h-viewer-shown {
+  display: none; }
+  .s-viewer-mode .h-viewer-shown {
+    display: initial; }
+
 /*******************
 	COLOUR OVERRIDES
 ********************/

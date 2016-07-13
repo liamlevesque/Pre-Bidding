@@ -140,6 +140,24 @@
 	    font-size: 25px;
 	}
 
+
+
+
+	.h-viewer-hidden{
+		.s-viewer-mode &{
+			display: none;
+		}
+	}
+
+	.h-viewer-shown{
+		display: none;
+
+		.s-viewer-mode &{
+			display: initial;
+		}
+	}
+
+
 /*******************
 	COLOUR OVERRIDES
 ********************/

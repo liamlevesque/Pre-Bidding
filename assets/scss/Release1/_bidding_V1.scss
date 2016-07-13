@@ -639,6 +639,12 @@
 			background-color: $brand-color;
 			display: inline-block;
 		}
+
+		.s-viewer-mode &{
+			&:before{
+				background-color: $grey-500;
+			}
+		}
 	}
 
 		.button_select-all{
@@ -672,6 +678,12 @@
 			top: 0;
 			bottom: -1px;
 			left: 0;
+		}
+
+		.s-viewer-mode &{
+			ul:before{
+				background-color: $grey-500;
+			}
 		}
 	}
 
@@ -753,6 +765,14 @@
 
 		transition: $transition;
 
+		.s-viewer-mode &{
+			padding-left: 10px;
+
+			&.s-sold, &.s-out{
+				padding-left: 45px;
+			}
+		}
+
 			// &:before{
 			// 	content: '';
 			// 	position: absolute;
@@ -817,6 +837,10 @@
 		// }
 
 		.lot--selector{
+			.s-viewer-mode &{
+				display: none;
+			}
+
 			position: absolute;
 		    left: 6px;
 		    top: 50%;
@@ -825,7 +849,7 @@
 
 		
 		&.s-disabled .lot--selector{
-			display: none;
+			opacity: 0.2;
 		}
 
 		

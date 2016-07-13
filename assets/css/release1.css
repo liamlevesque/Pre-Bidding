@@ -2412,6 +2412,12 @@ MOST IMPORTANT - LOT TABLE STYLES
 .col-2d, .col-5, .col-5b {
   text-align: center; }
 
+.s-viewer-mode .col-5 {
+  width: 0;
+  display: none; }
+.s-viewer-mode .col-5b {
+  width: 20%; }
+
 .lot {
   display: table-row;
   font-size: 0.85rem;
@@ -2485,14 +2491,14 @@ MOST IMPORTANT - LOT TABLE STYLES
       vertical-align: middle; }
     .lot.s-outofauction .lot--sold-label {
       color: #c4483a; }
-  .lot.s-currentLot {
+  .lot.s-currentLot, .lot.s-currentlot {
     background-color: rgba(32, 87, 158, 0.1); }
-    .lot.s-currentLot .col-0 {
+    .lot.s-currentLot .col-0, .lot.s-currentlot .col-0 {
       color: white;
       font-weight: 700;
       position: relative;
       background-color: #20579E; }
-    .lot.s-currentLot:not(.s-grouped) .col-0:before {
+    .lot.s-currentLot:not(.s-grouped) .col-0:before, .lot.s-currentlot:not(.s-grouped) .col-0:before {
       content: '';
       display: block;
       position: absolute;
@@ -2501,7 +2507,7 @@ MOST IMPORTANT - LOT TABLE STYLES
       right: 0;
       width: 10px;
       background-color: white; }
-    .lot.s-currentLot:not(.s-grouped) .col-0:after {
+    .lot.s-currentLot:not(.s-grouped) .col-0:after, .lot.s-currentlot:not(.s-grouped) .col-0:after {
       content: '';
       background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%220%200%2010%2020%22%20preserveAspectRatio%3D%22none%22%3E%3Cpolygon%20fill%3D%22%2320579E%22%20points%3D%220%2C0%2010%2C10%200%2C20%22%2F%3E%3C%2Fsvg%3E");
       background-size: 10px 100%;
@@ -2514,15 +2520,15 @@ MOST IMPORTANT - LOT TABLE STYLES
       right: 0;
       width: 10px;
       border-bottom: 1px dotted #bdbdbd; }
-    .lot.s-currentLot .col-5 {
+    .lot.s-currentLot .col-5, .lot.s-currentlot .col-5 {
       pointer-events: none; }
-      .lot.s-currentLot .col-5 .bid {
+      .lot.s-currentLot .col-5 .bid, .lot.s-currentlot .col-5 .bid {
         text-decoration: none; }
-    .lot.s-currentLot .col-5b {
+    .lot.s-currentLot .col-5b, .lot.s-currentlot .col-5b {
       vertical-align: middle; }
-    .lot.s-currentLot:not(.s-sold) .lot--sold-label {
+    .lot.s-currentLot:not(.s-sold) .lot--sold-label, .lot.s-currentlot:not(.s-sold) .lot--sold-label {
       color: #20579E; }
-    .lot.s-currentLot .icon-plus, .lot.s-currentLot button, .lot.s-currentLot .lot--add-bid:before {
+    .lot.s-currentLot .icon-plus, .lot.s-currentLot button, .lot.s-currentLot .lot--add-bid:before, .lot.s-currentlot .icon-plus, .lot.s-currentlot button, .lot.s-currentlot .lot--add-bid:before {
       display: none; }
   .lot.s-selected [class^="col"] {
     background-color: rgba(232, 119, 34, 0.3); }
@@ -2600,6 +2606,8 @@ MOST IMPORTANT - LOT TABLE STYLES
     text-decoration: none; }
   .lot--add-bid:hover {
     color: #20579E; }
+  .s-viewer-mode .lot--add-bid {
+    display: none !important; }
 
 .lot--watching {
   opacity: 0.25;
@@ -3204,6 +3212,8 @@ MOST IMPORTANT - LOT TABLE STYLES
     width: 10px;
     background-color: #E87722;
     display: inline-block; }
+  .s-viewer-mode .bidding--header:before {
+    background-color: #959595; }
 
 .button_select-all {
   margin-bottom: 5px; }
@@ -3231,6 +3241,8 @@ MOST IMPORTANT - LOT TABLE STYLES
     top: 0;
     bottom: -1px;
     left: 0; }
+  .s-viewer-mode .group--body ul:before {
+    background-color: #959595; }
 
 .group--footer {
   position: absolute;
@@ -3290,6 +3302,10 @@ MOST IMPORTANT - LOT TABLE STYLES
   cursor: pointer;
   -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+  .s-viewer-mode .group--lot {
+    padding-left: 10px; }
+    .s-viewer-mode .group--lot.s-sold, .s-viewer-mode .group--lot.s-out {
+      padding-left: 45px; }
   .group--lot .lot--watching {
     vertical-align: middle;
     margin-right: 5px; }
@@ -3324,8 +3340,10 @@ MOST IMPORTANT - LOT TABLE STYLES
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%); }
+    .s-viewer-mode .group--lot .lot--selector {
+      display: none; }
   .group--lot.s-disabled .lot--selector {
-    display: none; }
+    opacity: 0.2; }
   .group--lot.s-active-lot {
     background-color: #E87722;
     margin-left: 0; }
@@ -4631,6 +4649,14 @@ corresponds to the arrow we want to display */
 
 .h-icon--large {
   font-size: 25px; }
+
+.s-viewer-mode .h-viewer-hidden {
+  display: none; }
+
+.h-viewer-shown {
+  display: none; }
+  .s-viewer-mode .h-viewer-shown {
+    display: initial; }
 
 /*******************
 	COLOUR OVERRIDES

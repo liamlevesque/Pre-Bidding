@@ -2133,6 +2133,10 @@ $(function(){
 		side: 'bottom'
 	});
 
+	$('.js--viewer-toggle').click(function(){
+		$('body').toggleClass('s-viewer-mode');
+	})
+
 	$('.js--auctioneer-msg-button').click(function(){
 		user.message = auctioneerMessages[Math.floor(Math.random() * auctioneerMessages.length)];
 	});

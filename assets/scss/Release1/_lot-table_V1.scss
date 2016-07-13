@@ -106,6 +106,17 @@ $ring-right-spacing: 30px;
 				text-align: center;
 			}
 
+			.s-viewer-mode{
+				.col-5{
+					width: 0;
+					display: none;
+				}
+
+				.col-5b{
+					width: 20%;
+				}
+			}
+
 			.lot{
 				display: table-row;
 				font-size: 0.85rem;
@@ -196,7 +207,7 @@ $ring-right-spacing: 30px;
 				}
 
 
-				&.s-currentLot{
+				&.s-currentLot, &.s-currentlot{
 					background-color: rgba($money-color,0.1);
 	
 					.col-0{
@@ -321,6 +332,8 @@ $ring-right-spacing: 30px;
 					}
 				}
 
+
+
 			}
 				.lot--photo-icon{
 					width: 18px;
@@ -367,6 +380,12 @@ $ring-right-spacing: 30px;
 					&:hover{
 						color: $money-color;
 					}
+
+					.s-viewer-mode &{
+						display: none !important;
+					}
+
+					
 				}
 
 				.lot--watching{
