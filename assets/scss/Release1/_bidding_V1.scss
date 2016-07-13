@@ -583,7 +583,7 @@
 
 				.lot--selector{
 					pointer-events: none;
-					opacity: 0;
+					opacity: 0.5;
 				}
 			}
 
@@ -849,7 +849,7 @@
 
 		
 		&.s-disabled .lot--selector{
-			opacity: 0.2;
+			display: none;
 		}
 
 		

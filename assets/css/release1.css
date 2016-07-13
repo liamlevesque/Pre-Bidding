@@ -3180,7 +3180,7 @@ MOST IMPORTANT - LOT TABLE STYLES
     pointer-events: none; }
     .bidding--group.s-active-lot li:not(.s-active-lot):not(.s-sold):not(.s-out) .lot--selector {
       pointer-events: none;
-      opacity: 0; }
+      opacity: 0.5; }
   .bidding--group.s-runnerup:not(.s-active-lot) ul:before, .bidding--group.s-runnerup:not(.s-active-lot) .bidding--header:before {
     -webkit-animation-name: runnerup;
             animation-name: runnerup;
@@ -3343,7 +3343,7 @@ MOST IMPORTANT - LOT TABLE STYLES
     .s-viewer-mode .group--lot .lot--selector {
       display: none; }
   .group--lot.s-disabled .lot--selector {
-    opacity: 0.2; }
+    display: none; }
   .group--lot.s-active-lot {
     background-color: #E87722;
     margin-left: 0; }
