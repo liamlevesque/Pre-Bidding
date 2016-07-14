@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'ritchie-icons';
-    src:    url('../fonts/ritchie-icons.eot?2gbai8');
-    src:    url('../fonts/ritchie-icons.eot?2gbai8#iefix') format('embedded-opentype'),
-        url('../fonts/ritchie-icons.ttf?2gbai8') format('truetype'),
-        url('../fonts/ritchie-icons.woff?2gbai8') format('woff'),
-        url('../fonts/ritchie-icons.svg?2gbai8#ritchie-icons') format('svg');
+    src:    url('../fonts/ritchie-icons.eot?u4y10d');
+    src:    url('../fonts/ritchie-icons.eot?u4y10d#iefix') format('embedded-opentype'),
+        url('../fonts/ritchie-icons.ttf?u4y10d') format('truetype'),
+        url('../fonts/ritchie-icons.woff?u4y10d') format('woff'),
+        url('../fonts/ritchie-icons.svg?u4y10d#ritchie-icons') format('svg');
     font-weight: normal;
     font-style: normal;
 } 
@@ -36,6 +36,21 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-arrow-left:before {
+    content: "\e925";
+}
+.icon-max-4:before {
+    content: "\e923";
+}
+.icon-max-1:before {
+    content: "\e922";
+}
+.icon-max-3:before {
+    content: "\e924";
+}
+.icon-mail:before {
+    content: "\e921";
+}
 .icon-sold:before {
     content: "\e920";
 }

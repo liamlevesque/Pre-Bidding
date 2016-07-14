@@ -370,6 +370,15 @@
 				}
 			}
 
+			.message-box--mail{
+				background-color: transparent;
+				border: 1px solid rgba(white,0.5);
+				color: white;
+				@extend .icon-mail;
+
+				font-size: 0.8rem;
+			}
+
 			.message-box--error{
 				border: none;
 				background-color: $error-colour;

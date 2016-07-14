@@ -98,8 +98,8 @@ GRID
 
 @font-face {
   font-family: 'ritchie-icons';
-  src: url("../fonts/ritchie-icons.eot?2gbai8");
-  src: url("../fonts/ritchie-icons.eot?2gbai8#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?2gbai8") format("truetype"), url("../fonts/ritchie-icons.woff?2gbai8") format("woff"), url("../fonts/ritchie-icons.svg?2gbai8#ritchie-icons") format("svg");
+  src: url("../fonts/ritchie-icons.eot?u4y10d");
+  src: url("../fonts/ritchie-icons.eot?u4y10d#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?u4y10d") format("truetype"), url("../fonts/ritchie-icons.woff?u4y10d") format("woff"), url("../fonts/ritchie-icons.svg?u4y10d#ritchie-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], [class*=" icon-"] {
@@ -114,6 +114,21 @@ GRID
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+.icon-arrow-left:before {
+  content: "\e925"; }
+
+.icon-max-4:before {
+  content: "\e923"; }
+
+.icon-max-1:before {
+  content: "\e922"; }
+
+.icon-max-3:before {
+  content: "\e924"; }
+
+.icon-mail:before {
+  content: "\e921"; }
 
 .icon-sold:before {
   content: "\e920"; }
@@ -334,7 +349,7 @@ input[type=number]::-webkit-outer-spin-button {
 /**********************
 	BUTTONS
 **********************/
-.button, .button_secondary, .button_select-all, .button_hollow, .button_positive, .button_two-state, .button_negative, .button_two-state.s-negative {
+.button, .button_secondary, .button_secondary--white, .button_select-all, .button_hollow, .button_positive, .button_two-state, .button_negative, .button_two-state.s-negative {
   position: relative;
   display: inline-block;
   padding: 8px 15px;
@@ -345,11 +360,11 @@ input[type=number]::-webkit-outer-spin-button {
   outline: none;
   cursor: pointer;
   user-select: none; }
-  .button:disabled, .button_secondary:disabled, .button_select-all:disabled, .button_hollow:disabled, .button_positive:disabled, .button_two-state:disabled, .button_negative:disabled {
+  .button:disabled, .button_secondary:disabled, .button_secondary--white:disabled, .button_select-all:disabled, .button_hollow:disabled, .button_positive:disabled, .button_two-state:disabled, .button_negative:disabled {
     opacity: 0.4;
     cursor: normal;
     pointer-events: none; }
-  .button:focus, .button_secondary:focus, .button_select-all:focus, .button_hollow:focus, .button_positive:focus, .button_two-state:focus, .button_negative:focus {
+  .button:focus, .button_secondary:focus, .button_secondary--white:focus, .button_select-all:focus, .button_hollow:focus, .button_positive:focus, .button_two-state:focus, .button_negative:focus {
     outline: none;
     border-color: #95490f; }
 
@@ -388,13 +403,22 @@ input[type=number]::-webkit-outer-spin-button {
       transform: translateY(-50%); }
 
 .button_secondary {
-  box-shadow: inset 1px 1px 5px 0 rgba(0, 0, 0, 0.15);
-  background-color: #bfc0be;
+  background-color: transparent;
   background-image: none;
-  border: 0;
-  color: #585858; }
+  border: 2px solid #E87722;
+  color: #E87722; }
   .button_secondary:hover {
-    background-color: #d9d9d8;
+    background-color: white;
+    text-decoration: none; }
+
+.button_secondary--white {
+  background-color: transparent;
+  background-image: none;
+  border: 2px solid white;
+  color: white;
+  opacity: 0.8; }
+  .button_secondary--white:hover {
+    opacity: 1;
     text-decoration: none; }
 
 .button_select-all {

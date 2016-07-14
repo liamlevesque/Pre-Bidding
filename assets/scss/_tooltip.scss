@@ -205,11 +205,17 @@ $tooltip-arrow-size: 10px;
 
 	.tooltipster-content{
 		padding: 0;
+		overflow: hidden;
 	} 
 
 	.tooltip--body{
 		@include default-font;
 		padding: 5px;
+	}
+
+	.tooltip--input{
+		@include default-font;
+		padding: 0 10px 10px;
 	}
 
 	.tooltip--footer{
@@ -228,15 +234,18 @@ $tooltip-arrow-size: 10px;
 		padding: 0 10px
 	}
 
-	.tooltip--error, .tooltip--warning{
-		background-color: $error-colour;
-		color: white;
+	.tooltip--error, .tooltip--warning, .tooltip--success{				
 		padding: 15px;
 		line-height: 1;
 
 		h3, h4, h5, label{
 			color: white;
 		}
+	}
+
+	.tooltip--error, .tooltip--warning{
+		background-color: $error-colour;
+		color: white;
 
 		.error--values{
 			background-color: white;
@@ -259,15 +268,61 @@ $tooltip-arrow-size: 10px;
 	}
 
 	.tooltip--warning{
-		background-color: #FFE101;
+		background-color: $warning-colour;
 		color: black;
-		text-align: center;
 
 		h3, h4, h5, label{
 			color: black;
 		}
+
+		.error--values{
+			color: black;
+
+			h3, h4, h5, label{
+				color: black;
+			}
+		}
+	}
+
+	.tooltip--success{
+		display: none;
+		overflow: hidden;
+		padding: 0;
+
+		.tooltip--body{
+			background-color: $finance-color;
+			color: white;
+			padding: 15px;
+		}
+
+		&.s-visible{
+			display: block;
+			animation: successfade 0.2s 0s ease-out;
+		}
+
 	}
 }
+	@keyframes successhide{
+		0% {
+	    	transform: translateX(0);
+	    	opacity: 0;
+		}
+		100% {
+		 	transform: translateY(-100%);
+	    	opacity: 1;
+		} 
+	}
+
+	@keyframes successfade {
+	  	0% {
+	    	transform: translateX(100%);
+	    	opacity: 0;
+	    }
+		100% {
+		 	transform: translateY(0);
+	    	opacity: 1;
+		} 
+	}
 
 
 .ritchie-tooltips-footed{ 

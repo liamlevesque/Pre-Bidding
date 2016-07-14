@@ -1,0 +1,53 @@
+<style>
+  
+  .text--line, .text--line2{
+    font-family: Trebuchet MS, Helvetica, sans-serif;
+    font-size: 100px;
+    font-weight: 700;
+  }
+
+  .text-copy {
+    fill: none;
+    stroke: blue;
+    stroke-dasharray: 10%;
+    stroke-dashoffset: 100%;
+    stroke-width: 3px;
+    animation: stroke-offset 1s infinite alternate ease-in-out;
+  }
+
+  .text-copy:nth-child(2) {
+    stroke: orange;
+    stroke-dashoffset: 80%;
+    animation: stroke-offset 1s 0.5s infinite alternate ease-in-out;
+  }
+
+    @keyframes stroke-offset{
+      100%{
+        stroke-dashoffset: 0;
+      }
+    }
+
+</style>
+
+
+<svg viewBox="0 0 800 400">
+  <symbol id="s-text">
+    <text class="text--line" y="35%" x="50%" text-anchor="middle">
+   RBA
+    </text>
+    <text class="text--line2" y="68%" x="50%" text-anchor="middle">
+    by Liam
+    </text>
+    
+  </symbol>
+  
+  <g class="g-ants">
+    <use class="text-copy" xlink:href="#s-text"/>     
+    <use class="text-copy" xlink:href="#s-text"/>     
+    <use class="text-copy" xlink:href="#s-text"/>     
+    <use class="text-copy" xlink:href="#s-text"/>     
+    <use class="text-copy" xlink:href="#s-text"/>     
+  </g>
+  
+  
+</svg>

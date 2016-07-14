@@ -2235,6 +2235,7 @@ function buildMaxBidTooltip(instance, helper){
 	maxbidObject.lotSerial = targetLot.serial;
 	maxbidObject.lotMeter = targetLot.meter;
 	maxbidObject.totalMaxBids = user.bid;
+	maxbidObject.showConfirmation = false;
 	maxbidObject.hasMaxBid = (targetLot.bid > 0) ? true : false;
 	maxbidObject.initialBid = (targetLot.bid > 0) ? targetLot.bid : 0;
 	maxbidObject.maxbidAmount = (targetLot.bid > 0) ? targetLot.bid : '';
@@ -2243,7 +2244,7 @@ function buildMaxBidTooltip(instance, helper){
 		maxbidObject: maxbidObject,
 		maxbidController : maxbidController
 	});
-
+	
 	$(instance.elementTooltip()).find('.js--max-bid-field').val(maxbidObject.maxbidAmount).autoNumeric('init',{
 		aSep: ',', 
 		aDec: '.',
@@ -2268,6 +2269,7 @@ function buildMaxBidTooltip(instance, helper){
 		"offIncrement" : false,
 		"offIncrement_high": 0,
 		"offIncrement_low": 0,
+		"showConfirmation":false,
 		"isValid": true
 	},
 	maxbidModal,
@@ -2289,6 +2291,10 @@ function buildMaxBidTooltip(instance, helper){
 	    onSetHighClick: function(e,model){
 	    	maxbidObject.maxbidAmount = maxbidObject.offIncrement_high;
 	    	maxbidController.createMaxBid();
+	    },
+
+	    onHideConfirm: function(e,model){
+	    	maxbidObject.showConfirmation = false;
 	    },
 
 	    clearWarningClick: function(e,model){
@@ -2349,8 +2355,11 @@ function buildMaxBidTooltip(instance, helper){
 	    	//GIVE THE LOT OBJECT THE CORRECT MAX BID
 	    	lotObject2.lotList[($(tooltipInstance.elementOrigin()).data('lot')) - 1].bid = maxbidObject.maxbidAmount;
 
+	    	maxbidObject.showConfirmation = true;
+	    	maxbidObject.hasMaxBid = true;
+
 	    	maxbidController.updateBids();
-	    	maxbidController.killtooltip();
+	    	//maxbidController.killtooltip();
 	    },
 
 	    updateBids: function(){

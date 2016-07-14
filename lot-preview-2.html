@@ -935,6 +935,8 @@
                             <div class="flex-item_half h-ta-right" rv-text="maxbidObject.lotMeter"></div> -->
                         </div>
                     </div>
+                </div>
+                <div class="tooltip--input" rv-hide="maxbidObject.showConfirmation">
                     <hr/>
                     <div>
                         <div class="g-quarter h-ta-right">
@@ -945,10 +947,10 @@
                             <button class="field--clear" rv-show="maxbidObject.maxbidAmount" rv-on-click="maxbidController.clearWarningClick"></button>
                         </div>
                     </div>
-                    <div class="h-ta-right qualifier">
+                    <!-- <div class="h-ta-right qualifier">
                         <span rv-html="maxbidObject.maxbidAmount | convertPrice maxbidObject.conversion"></span>
-                    </div>
-                    <div class="tooltip--warning" rv-show="maxbidObject.maxbidAmount | greaterThanToFalse_bids maxbidObject.remainingCredit maxbidObject.totalMaxBids maxbidObject.initialBid maxbidObject.hasMaxBid">
+                    </div> -->
+                    <div class="tooltip--warning h-ta-center" rv-show="maxbidObject.maxbidAmount | greaterThanToFalse_bids maxbidObject.remainingCredit maxbidObject.totalMaxBids maxbidObject.initialBid maxbidObject.hasMaxBid">
                          <h4>WARNING!
                          Your max-bids will now be greater than your available credit</h4>
                          <div class="error--values">
@@ -966,42 +968,64 @@
                         </div>
                     </div>
                 </div>
-                <div class="tooltip--error js--tooltip-warning h-ta-center" rv-show="maxbidObject.maxbidAmount | greaterThanToFalse maxbidObject.remainingCredit">
-                    <h4>Uh Oh! You don't have enough credit to bid that much</h4>
-                    <div class="error--values">
-                        <div class="h-d-inline-block">
-                            <h3 class="dollars" rv-html="maxbidObject.maxbidAmount | price"></h3>
-                            <label>Total Max Bids</label>
-                        </div>
-                        <div class="h-d-inline-block error--greater-than">
-                            >
-                        </div>
-                        <div class="h-d-inline-block">
-                            <h3 class="dollars" rv-html="maxbidObject.remainingCredit | price"></h3>
-                            <label>Available Credit</label>
+
+                <div class="tooltip--success js--tooltip-success h-ta-center" rv-class-s-visible="maxbidObject.showConfirmation">
+                    <div class="tooltip--body">
+                        <h3>Max-bid: <b class="dollars" rv-html="maxbidObject.maxbidAmount | price"></b> saved!</h3>
+                        <p>You can edit this bid up until this lot goes on the block.</p>
+                        <div class="message-box--mail">
+                            We will notify you via e-mail when this lot sells, whether you win or lose
                         </div>
                     </div>
+                    <div class="tooltip--footer">
+                        <button class="h-lh-200 button--unbound h-float-left" rv-on-click="maxbidController.onHideConfirm">
+                            <i class="icon-arrow-left"></i> Edit Bid
+                        </button>
+                        <button class="button h-float-right" rv-on-click="maxbidController.onCloseClick">
+                            Done
+                        </button>
+                    </div>
                 </div>
-                <div class="tooltip--error js--tooltip-warning h-ta-center" rv-show="maxbidObject.offIncrement">
-                    <h4>INVALID BID!
-                    <br/>You must bid in $1000 intervals</h4>
-                    <button class="button" rv-on-click="maxbidController.onSetLowClick" rv-show="maxbidObject.offIncrement_low | zeroOrEmptyToFalse">
-                        Bid <span class="dollars" rv-html="maxbidObject.offIncrement_low"></span>
-                    </button>
-                    <button class="button" rv-on-click="maxbidController.onSetHighClick">
-                        Bid <span class="dollars" rv-html="maxbidObject.offIncrement_high"></span>
-                    </button>
-                    <br/>
-                </div>
-                <footer class="tooltip--footer h-ta-right" rv-hide="maxbid.isValid | validateBid maxbidObject.offIncrement maxbidObject.maxbidAmount maxbidObject.remainingCredit">
-                    <button class="h-float-left h-lh-200 button--unbound" rv-show="maxbidObject.hasMaxBid" rv-on-click="maxbidController.cancelMaxBid">
-                        <i class="icon-trash h-mr-50 c-error"></i>Delete Max-Bid
-                    </button>
 
-                    <button class="button js--set-maxbid" rv-on-click="maxbidController.onSetClick" rv-enabled="maxbidObject.maxbidAmount | zeroOrEmptyToFalse">
-                        Set Max-Bid
-                    </button>
-                </footer>
+                <div rv-hide="maxbidObject.showConfirmation">
+
+                    <div class="tooltip--error js--tooltip-warning h-ta-center" rv-show="maxbidObject.maxbidAmount | greaterThanToFalse maxbidObject.remainingCredit">
+                        <h4>Uh Oh! You don't have enough credit to bid that much</h4>
+                        <div class="error--values">
+                            <div class="h-d-inline-block">
+                                <h3 class="dollars" rv-html="maxbidObject.maxbidAmount | price"></h3>
+                                <label>Total Max Bids</label>
+                            </div>
+                            <div class="h-d-inline-block error--greater-than">
+                                >
+                            </div>
+                            <div class="h-d-inline-block">
+                                <h3 class="dollars" rv-html="maxbidObject.remainingCredit | price"></h3>
+                                <label>Available Credit</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tooltip--error js--tooltip-warning h-ta-center" rv-show="maxbidObject.offIncrement">
+                        <h4>INVALID BID!
+                        <br/>You must bid in $1000 intervals</h4>
+                        <button class="button" rv-on-click="maxbidController.onSetLowClick" rv-show="maxbidObject.offIncrement_low | zeroOrEmptyToFalse">
+                            Bid <span class="dollars" rv-html="maxbidObject.offIncrement_low"></span>
+                        </button>
+                        <button class="button" rv-on-click="maxbidController.onSetHighClick">
+                            Bid <span class="dollars" rv-html="maxbidObject.offIncrement_high"></span>
+                        </button>
+                        <br/>
+                    </div>
+                    <footer class="tooltip--footer h-ta-right" rv-hide="maxbid.isValid | validateBid maxbidObject.offIncrement maxbidObject.maxbidAmount maxbidObject.remainingCredit">
+                        <button class="h-float-left h-lh-200 button--unbound" rv-show="maxbidObject.hasMaxBid" rv-on-click="maxbidController.cancelMaxBid">
+                            <i class="icon-trash h-mr-50 c-error"></i>Delete Max-Bid
+                        </button>
+
+                        <button class="button js--set-maxbid" rv-on-click="maxbidController.onSetClick" rv-enabled="maxbidObject.maxbidAmount | zeroOrEmptyToFalse">
+                            Set Max-Bid
+                        </button>
+                    </footer>
+                </div>
             </div>
         </div>
         

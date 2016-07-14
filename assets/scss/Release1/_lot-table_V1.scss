@@ -151,6 +151,10 @@ $ring-right-spacing: 30px;
 					}
 				}
 
+				.col-5 i{
+					//font-size: 1.5rem;
+				}
+
 				.col-5b{
 					padding: 0;
 					line-height: 1;
@@ -170,7 +174,7 @@ $ring-right-spacing: 30px;
 						pointer-events: none;
 					}
 
-					.icon-plus, button, .lot--add-bid:before{
+					i, button, .lot--add-bid:before{
 						display: none;
 					}
 
@@ -192,7 +196,7 @@ $ring-right-spacing: 30px;
 						opacity: 0.5;
 					}
 
-					.icon-plus, button, .lot--add-bid:before{
+					i, button, .lot--add-bid:before{
 						display: none;
 					}
 
@@ -260,7 +264,7 @@ $ring-right-spacing: 30px;
 						color: $money-color;
 					}
 
-					.icon-plus, button, .lot--add-bid:before{
+					i, button, .lot--add-bid:before{
 						display: none;
 					}
 

@@ -81,19 +81,35 @@
 	.button_secondary{
 		@extend %button;
 
-		box-shadow: $ritchie-shadow_inner;
-		background-color: $grey-300;
+		background-color: transparent;
 		background-image: none;
-		border: 0;
-		color: $grey-700;
+		border: 2px solid $brand-color;
+		color: $brand-color;
 
 		&:hover{
-			background-color: lighten($grey-300,10%);
+			background-color: white;
 			//box-shadow: none;
 			//color: $white;
 			text-decoration: none;
 		}
 	}
+
+	.button_secondary--white{
+		@extend %button;
+
+		background-color: transparent;
+		background-image: none;
+		border: 2px solid white;
+		color: white;
+		opacity: 0.8;
+
+		&:hover{
+			opacity: 1;
+			text-decoration: none;
+		}
+	}
+
+
 
 	.button_select-all{
 		@extend %button;
