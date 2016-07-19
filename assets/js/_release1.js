@@ -234,6 +234,7 @@ function buildMaxBidTooltip(instance, helper){
 
 	    onHideConfirm: function(e,model){
 	    	maxbidObject.showConfirmation = false;
+	    	$('.js--max-bid-field').focus().select();
 	    },
 
 	    clearWarningClick: function(e,model){
@@ -325,6 +326,20 @@ function buildMaxBidTooltip(instance, helper){
 	    }
 
 	};
+
+rivets.binders.showhideanimate = function(el, value){
+	if(value){
+		//$(el).css({"display":"initial"});
+		$(el).addClass('s-visible');	
+	} 
+	else {
+		$(el).removeClass('s-visible');
+		// setTimeout(function(){
+		// 	$(el).css({"display":"none"});
+		// },1000);
+	}
+
+}
 
 rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 	if(parseInt(bids) > credit || offIncrement){

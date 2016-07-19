@@ -172,7 +172,7 @@
 
 .c-grey{color: $grey-500;}
 .c-grey-700{color: $grey-700};
-.c-white{color: $white;}
+.c-white{color: $white !important;}
 .c-black{color: $black;}
 
 .bg-finance{background-color: $finance-tint;}

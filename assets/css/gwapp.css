@@ -223,7 +223,7 @@ GRID
 .icon-warranty:before {
   content: "\e913"; }
 
-.field--text, .field--text_sm, .field--select {
+.field--text, .field--text_innner-label, .field--text_sm, .field--select {
   width: 100%;
   height: 30px;
   border: 1px solid #bfc0be;
@@ -236,19 +236,30 @@ GRID
   position: relative;
   font-family: 'Trebuchet MS', Verdana, sans-serif;
   font-size: 1rem; }
-  .invalid.field--text, .invalid.field--text_sm, .invalid.field--select, .s-error.field--text, .s-error.field--text_sm, .s-error.field--select {
+  .invalid.field--text, .invalid.field--text_innner-label, .invalid.field--text_sm, .invalid.field--select, .s-error.field--text, .s-error.field--text_innner-label, .s-error.field--text_sm, .s-error.field--select {
     background-color: #F3BFBF; }
-  .s-error_border.field--text, .s-error_border.field--text_sm, .s-error_border.field--select {
+  .s-error_border.field--text, .s-error_border.field--text_innner-label, .s-error_border.field--text_sm, .s-error_border.field--select {
     border-color: #c4483a; }
-  .field--text:hover, .field--text_sm:hover, .field--select:hover {
+  .field--text:hover, .field--text_innner-label:hover, .field--text_sm:hover, .field--select:hover {
     border: 1px solid #E35530; }
-  .field--text:focus, .field--text_sm:focus, .field--select:focus {
+  .field--text:focus, .field--text_innner-label:focus, .field--text_sm:focus, .field--select:focus {
     border: 1px solid #E35530; }
 
-.field--text:read-only, .field--text_sm:read-only {
+.field--text:read-only, .field--text_innner-label:read-only, .field--text_sm:read-only {
   border-width: 0 !important;
   text-decoration: underline;
   cursor: pointer; }
+
+.field--text_innner-label {
+  padding-left: 45px; }
+
+.field--inner-label {
+  position: absolute;
+  left: 5px;
+  top: 0;
+  bottom: 0;
+  line-height: 30px;
+  color: black; }
 
 .field--text_sm {
   width: 70px; }
@@ -278,10 +289,10 @@ GRID
   background-color: transparent;
   cursor: pointer;
   position: absolute;
-  right: 2px;
+  right: 0;
   top: 2px;
   bottom: 2px;
-  width: 28px;
+  width: 70px;
   line-height: 1; }
   .field--clear:after {
     font-family: 'ritchie-icons' !important;
@@ -965,7 +976,7 @@ hr {
   color: #585858; }
 
 .c-white {
-  color: #ffffff; }
+  color: #ffffff !important; }
 
 .c-black {
   color: #000000; }

@@ -44,6 +44,20 @@
   @extend %field--text;
 }
 
+.field--text_innner-label{
+  @extend %field--text;
+  padding-left: 45px;
+}
+
+  .field--inner-label{
+    position: absolute;
+    left: 5px;
+    top: 0;
+    bottom: 0;
+    line-height: $input-height;
+    color: black;
+  }
+
 .field--text_sm{
   @extend %field--text;
   width: 70px;
@@ -81,10 +95,10 @@
     background-color: transparent;
     cursor: pointer;
     position: absolute;
-    right: 2px;
+    right: 0;
     top: 2px;
     bottom: 2px; 
-    width: $input-height - 2;
+    width: 70px;
     line-height: 1;
 
     &:after{

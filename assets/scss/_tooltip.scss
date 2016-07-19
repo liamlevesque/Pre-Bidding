@@ -68,9 +68,11 @@ $tooltip-arrow-size: 10px;
 			
 		}
 
-		a{
-			color: $link-colour;
-		}
+		
+	}
+
+	a{
+		color: $link-colour;
 	}
 }
 
@@ -227,6 +229,13 @@ $tooltip-arrow-size: 10px;
 		display: block;
 	}
 
+	.tooltip--info{
+		color: white;
+		margin-bottom: 10px;
+		display: block;
+		text-decoration: underline;
+	}
+
 	.tooltip--lot-details{
 		display: flex;
 		flex-wrap: wrap;
@@ -285,44 +294,29 @@ $tooltip-arrow-size: 10px;
 	}
 
 	.tooltip--success{
-		display: none;
+		//display: none;
 		overflow: hidden;
 		padding: 0;
+		max-height: 0;
+    	opacity: 0;
+    	transition: $transition;
 
 		.tooltip--body{
 			background-color: $finance-color;
 			color: white;
-			padding: 15px;
+			padding: 10px 15px 0;
+			overflow: hidden;
 		}
 
 		&.s-visible{
-			display: block;
-			animation: successfade 0.2s 0s ease-out;
+			max-height: 400px;
+	    	opacity: 1;
 		}
 
 	}
 }
-	@keyframes successhide{
-		0% {
-	    	transform: translateX(0);
-	    	opacity: 0;
-		}
-		100% {
-		 	transform: translateY(-100%);
-	    	opacity: 1;
-		} 
-	}
+	
 
-	@keyframes successfade {
-	  	0% {
-	    	transform: translateX(100%);
-	    	opacity: 0;
-	    }
-		100% {
-		 	transform: translateY(0);
-	    	opacity: 1;
-		} 
-	}
 
 
 .ritchie-tooltips-footed{ 
