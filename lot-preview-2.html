@@ -976,11 +976,16 @@
 
                 <div class="tooltip--success js--tooltip-success h-ta-center" rv-showhideanimate="maxbidObject.showConfirmation">
                     <div class="tooltip--body">
-                        <h3>
-                            Max Bid set for:
-                            <span class="CCY"></span>&nbsp;<span class="dollars" rv-html="maxbidObject.maxbidAmount | price"></span>
-                        </h3>
-                        <p><a href="#" class="tooltip--info">How do Max Bids work?</a></p>
+                        <div class="max-bid--success">
+                            
+                            <img class="tooltip--check-success" src="assets/img/check.gif"/>
+                            Max Bid saved!
+                            <h3>
+                                <span class="CCY c-brand"></span>&nbsp;<span class="dollars c-brand" rv-html="maxbidObject.maxbidAmount | price"></span>
+                            </h3>
+                            <p><a href="#" class="tooltip--info">What happens now?</a></p>
+                        
+                        </div>
                         <div class="message-box--mail">
                             We will notify you via e-mail when this lot sells, whether you win or lose
                         </div>

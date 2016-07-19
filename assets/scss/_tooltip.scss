@@ -230,7 +230,6 @@ $tooltip-arrow-size: 10px;
 	}
 
 	.tooltip--info{
-		color: white;
 		margin-bottom: 10px;
 		display: block;
 		text-decoration: underline;
@@ -301,9 +300,11 @@ $tooltip-arrow-size: 10px;
     	opacity: 0;
     	transition: $transition;
 
+    	
+
 		.tooltip--body{
-			background-color: $finance-color;
-			color: white;
+			background: $grey-100;
+			color: black;
 			padding: 10px 15px 0;
 			overflow: hidden;
 		}
@@ -311,6 +312,20 @@ $tooltip-arrow-size: 10px;
 		&.s-visible{
 			max-height: 400px;
 	    	opacity: 1;
+		}
+
+		.max-bid--success{
+			position: relative;
+			padding-left: 60px;
+			text-align: left;
+		}
+
+		.tooltip--check-success{
+			width: 50px;
+			position: absolute;
+			left: 0;
+			top: 0;
+
 		}
 
 	}

@@ -3017,8 +3017,8 @@ MOST IMPORTANT - LOT TABLE STYLES
 
 .message-box--mail {
   background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  color: white;
+  border: 1px solid #959595;
+  color: #333333;
   font-size: 0.8rem; }
 
 .message-box--error {
@@ -4517,7 +4517,6 @@ corresponds to the arrow we want to display */
     max-width: 100%;
     display: block; }
   .tooltipster-sidetip.ritchie-tooltips_full .tooltip--info {
-    color: white;
     margin-bottom: 10px;
     display: block;
     text-decoration: underline; }
@@ -4570,13 +4569,22 @@ corresponds to the arrow we want to display */
     -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
     transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
     .tooltipster-sidetip.ritchie-tooltips_full .tooltip--success .tooltip--body {
-      background-color: #24532B;
-      color: white;
+      background: #E9E9E9;
+      color: black;
       padding: 10px 15px 0;
       overflow: hidden; }
     .tooltipster-sidetip.ritchie-tooltips_full .tooltip--success.s-visible {
       max-height: 400px;
       opacity: 1; }
+    .tooltipster-sidetip.ritchie-tooltips_full .tooltip--success .max-bid--success {
+      position: relative;
+      padding-left: 60px;
+      text-align: left; }
+    .tooltipster-sidetip.ritchie-tooltips_full .tooltip--success .tooltip--check-success {
+      width: 50px;
+      position: absolute;
+      left: 0;
+      top: 0; }
 
 .ritchie-tooltips-footed {
   max-width: 800px; }
@@ -4632,6 +4640,9 @@ corresponds to the arrow we want to display */
 
 .h-ta-center {
   text-align: center; }
+
+.h-ta-left {
+  text-align: left; }
 
 .h-ta-right {
   text-align: right; }
