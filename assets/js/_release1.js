@@ -882,7 +882,7 @@ function buildLotTable(data){
 	lotObject2.currentLot = 4;
 
 	$('.js--max-bid-tooltip').tooltipster({
-		content: "Max-Bid",
+		content: "Max Bid",
 		theme: 'ritchie-tooltips_small',
 		side: 'bottom',
 		multiple: true,

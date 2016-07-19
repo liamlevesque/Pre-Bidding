@@ -2895,7 +2895,12 @@ MOST IMPORTANT - LOT TABLE STYLES
     padding-top: 0; }
   .bid-field label {
     float: left;
-    margin-top: 5px; }
+    max-width: 80px;
+    vertical-align: middle;
+    text-align: left; }
+    @media (min-width: 80em) {
+      .bid-field label {
+        max-width: 200px; } }
   .bid-field .bid-value_sub {
     display: block;
     font-size: 0.8rem;

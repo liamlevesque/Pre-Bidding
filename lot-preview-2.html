@@ -402,7 +402,7 @@
                             <div class="auction-ccy"></div>
                         </div>
                     </div>
-                </div>
+                </div> 
 
 
                 <div class="header--section h-viewer-hidden">
@@ -413,7 +413,7 @@
                         <div class="header--price">
                             <label>Spent:</label><span class="header--price-readout dollars" rv-html="user.spent | price"></span></div>
                         <div class="header--price" rv-adderrorclass="user.bid | greaterThanToFalse user.limit">
-                            <label>Max-Bids (<span rv-text="user.bidcount"></span>):</label><span class="header--price-readout dollars" rv-html="user.bid | price"></span></div>
+                            <label>Max Bids (<span rv-text="user.bidcount"></span>):</label><span class="header--price-readout dollars" rv-html="user.bid | price"></span></div>
                     </div>
 
                     <div class="cart-icon">
@@ -524,7 +524,7 @@
                         </div>
 
                         <div class="message-box--max-bid" rv-show="bidObject.bidStatus | equals 'maxBidding'">
-                            Max-Bid: $15,000<br/>Bidding for you
+                            Max Bid: $15,000<br/>Bidding for you
                         </div> 
 
                         <div class="message-box--warning" rv-show="bidObject.bidStatus | equals 'inactive'">
@@ -940,14 +940,14 @@
                     <hr/>
                     <div class="h-mb-50">
                         <div class="g-quarter">
-                            <span class="c-brand">Max-Bid</span>
+                            <span class="c-brand">Max Bid</span>
                         </div>
                         <div class="g-three-quarters h-ta-right">
-                            <a href="#">How do max-bids work?</a>
+                            <a href="#">How do Max Bids work?</a>
                         </div>
                     </div>
                     <div class="h-mb-50 h-pos-relative">
-                        <input type="tel" placeholder="enter max-bid" pattern="[0-9]{2,7}" inputmode="numeric" class="field--text_innner-label js--max-bid-field" rv-on-blur="maxbidController.onMaxBidBlur" rv-on-keyup="maxbidController.onMaxBidChange" autocomplete="off" autocorrect="off" spellcheck="false"/>
+                        <input type="tel" placeholder="Enter Max Bid" pattern="[0-9]{2,7}" inputmode="numeric" class="field--text_innner-label js--max-bid-field" rv-on-blur="maxbidController.onMaxBidBlur" rv-on-keyup="maxbidController.onMaxBidChange" autocomplete="off" autocorrect="off" spellcheck="false"/>
                         <button class="field--clear" rv-show="maxbidObject.maxbidAmount" rv-on-click="maxbidController.clearWarningClick">CLEAR </button>
                         <label class="field--inner-label"><span class="CCY-dollars"></span></label>
                     </div>
@@ -957,7 +957,7 @@
                     </div> -->
                     <div class="tooltip--warning h-ta-center" rv-show="maxbidObject.maxbidAmount | greaterThanToFalse_bids maxbidObject.remainingCredit maxbidObject.totalMaxBids maxbidObject.initialBid maxbidObject.hasMaxBid">
                          <h4>WARNING!
-                         Your max-bids will now be greater than your available credit</h4>
+                         Your Max Bids will now be greater than your available credit</h4>
                          <div class="error--values">
                               <div class="h-d-inline-block">
                                 <h3 class="dollars" rv-html="maxbidObject.totalMaxBids | totalmaxbidprice maxbidObject.maxbidAmount maxbidObject.hasMaxBid maxbidObject.initialBid"></h3>
@@ -977,10 +977,10 @@
                 <div class="tooltip--success js--tooltip-success h-ta-center" rv-showhideanimate="maxbidObject.showConfirmation">
                     <div class="tooltip--body">
                         <h3>
-                            Max-bid set for:
-                            <span class="CCY"></span><span class="dollars" rv-html="maxbidObject.maxbidAmount | price"></span>
+                            Max Bid set for:
+                            <span class="CCY"></span>&nbsp;<span class="dollars" rv-html="maxbidObject.maxbidAmount | price"></span>
                         </h3>
-                        <p><a href="#" class="tooltip--info">How do max-bids work?</a></p>
+                        <p><a href="#" class="tooltip--info">How do Max Bids work?</a></p>
                         <div class="message-box--mail">
                             We will notify you via e-mail when this lot sells, whether you win or lose
                         </div>
@@ -1026,11 +1026,11 @@
                     </div>
                     <footer class="tooltip--footer h-ta-right" rv-hide="maxbid.isValid | validateBid maxbidObject.offIncrement maxbidObject.maxbidAmount maxbidObject.remainingCredit">
                         <button class="h-float-left h-lh-200 button--unbound" rv-show="maxbidObject.hasMaxBid" rv-on-click="maxbidController.cancelMaxBid">
-                            <i class="icon-trash h-mr-50 c-error"></i>Delete Max-Bid
+                            <i class="icon-trash h-mr-50 c-error"></i>Delete Max Bid
                         </button>
 
                         <button class="button js--set-maxbid" rv-on-click="maxbidController.onSetClick" rv-enabled="maxbidObject.maxbidAmount | zeroOrEmptyToFalse">
-                            Set Max-Bid
+                            Set Max Bid
                         </button>
                     </footer>
                 </div>

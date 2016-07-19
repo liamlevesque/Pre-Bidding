@@ -193,7 +193,13 @@
 
 			label{
 				float: left;
-				margin-top: 5px;
+				max-width: 80px;
+				vertical-align: middle;
+				text-align: left;
+
+				@include breakpoint(large){
+					max-width: 200px;
+				}
 			}
 
 			.bid-value_sub{

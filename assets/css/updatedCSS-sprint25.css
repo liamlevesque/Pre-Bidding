@@ -1,0 +1,11 @@
+.bid-field label {
+    float: left;
+    max-width: 80px;
+    vertical-align: middle;
+    text-align: left; 
+}
+    @media (min-width: 80em) {
+    	.bid-field label {
+     		max-width: 200px;
+     	} 
+    }
