@@ -2357,6 +2357,10 @@ function buildMaxBidTooltip(instance, helper){
 	    	lotObject2.lotList[($(tooltipInstance.elementOrigin()).data('lot')) - 1].bid = maxbidObject.maxbidAmount;
 
 	    	maxbidObject.showConfirmation = true;
+	    	
+	    	//HACK TO FORCE CHECKMARK GIF TO REPLAY
+	    	$('.js--success-checkmark').prop('src',function(){return this.src;});
+	    	
 	    	maxbidObject.hasMaxBid = true;
 
 	    	maxbidController.updateBids();
