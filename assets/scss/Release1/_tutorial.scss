@@ -1,0 +1,39 @@
+.tutorial{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 50%;
+	background-color: white;
+	z-index: 50;
+	box-shadow: $ritchie-shadow;
+	transform: translateX(100%);
+	opacity: 0;
+	pointer-events: none;
+	transition: $transition;
+
+	&.s-active{
+		transform: translateX(0);
+		opacity: 1;
+		pointer-events: initial;
+	}
+}
+
+	.tutorial--body{
+		padding: 30px;
+		overflow-y: auto;
+	}
+
+		.custom--media{
+			
+			position: relative;
+			padding-bottom: 56.25%;
+
+			iframe{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}

@@ -115,6 +115,10 @@ GRID
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.i-size-med {
+  font-size: 20px;
+  vertical-align: middle; }
+
 .icon-arrow-left:before {
   content: "\e925"; }
 
@@ -830,6 +834,12 @@ footer {
 
 .h-mr-50 {
   margin-right: 7.5px; }
+
+.h-ml-100 {
+  margin-left: 15px; }
+
+.h-ml-50 {
+  margin-left: 7.5px; }
 
 .h-pt-100 {
   padding-top: 15px; }

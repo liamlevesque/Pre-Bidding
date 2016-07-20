@@ -2298,6 +2298,11 @@ function buildMaxBidTooltip(instance, helper){
 	    	$('.js--max-bid-field').focus().select();
 	    },
 
+	    showTutorial: function(e,model){
+	    	tutorialObject.active = true;
+	    	maxbidController.killtooltip();
+	    },
+
 	    clearWarningClick: function(e,model){
 			maxbidObject.maxbidAmount = '';
 			$('.js--max-bid-field').autoNumeric('set', 0).focus().select();
@@ -2982,7 +2987,25 @@ function buildLotTable(data){
 
 
 
+/*************************
+	MAX BID TUTORIAL
+*************************/
 
+var tutorialObject = {
+		active: false,
+		step: 0,
+	},
+
+	tutorialController = {
+		onCloseClick: function(e, model){
+			tutorialObject.active = false;
+		}
+	};
+
+rivets.bind($('.js--tutorial-object'),{
+	tutorialObject: tutorialObject,
+	tutorialController: tutorialController
+});
 
 
 

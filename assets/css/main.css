@@ -116,6 +116,10 @@ GRID
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.i-size-med {
+  font-size: 20px;
+  vertical-align: middle; }
+
 .icon-arrow-left:before {
   content: "\e925"; }
 
@@ -422,20 +426,21 @@ p {
   font-size: 1rem;
   line-height: 1.6rem; }
 
-a {
+a, .text-link {
   color: inherit;
   text-decoration: none;
   outline: none; }
-  a:hover {
+  a:hover, .text-link:hover {
     text-decoration: underline;
+    outline: none;
+    cursor: pointer; }
+  a:active, a:focus, .text-link:active, .text-link:focus {
     outline: none; }
-  a:active, a:focus {
-    outline: none; }
-  a.a--img {
+  a.a--img, .text-link.a--img {
     line-height: 0;
     display: inline-block;
     max-width: 100%; }
-    a.a--img img {
+    a.a--img img, .text-link.a--img img {
       max-width: 100%; }
 
 hr {
@@ -4129,7 +4134,7 @@ corresponds to the arrow we want to display */
     display: block; }
   .tooltipster-sidetip.ritchie-tooltips_full .tooltip--info {
     margin-bottom: 10px;
-    display: block;
+    display: inline-block;
     text-decoration: underline; }
   .tooltipster-sidetip.ritchie-tooltips_full .tooltip--lot-details {
     display: -webkit-box;
@@ -4319,6 +4324,12 @@ body.s-no-financing.s-no-purchases .no-finance--hide {
 
 .h-mr-50 {
   margin-right: 7.5px; }
+
+.h-ml-100 {
+  margin-left: 15px; }
+
+.h-ml-50 {
+  margin-left: 7.5px; }
 
 .h-pt-100 {
   padding-top: 15px; }

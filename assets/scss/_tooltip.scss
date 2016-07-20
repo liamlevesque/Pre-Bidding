@@ -231,7 +231,7 @@ $tooltip-arrow-size: 10px;
 
 	.tooltip--info{
 		margin-bottom: 10px;
-		display: block;
+		display: inline-block;
 		text-decoration: underline;
 	}
 
@@ -299,8 +299,6 @@ $tooltip-arrow-size: 10px;
 		max-height: 0;
     	opacity: 0;
     	transition: $transition;
-
-    	
 
 		.tooltip--body{
 			background: $grey-100;
