@@ -72,6 +72,27 @@ $(function(){
 		side: 'bottom'
 	});
 
+	$('.js--total-max-bids-tooltip').tooltipster({
+		content: $('.js--tooltip-max-bid').detach(),
+		theme: 'ritchie-tooltips_error',
+		trigger: 'custom',
+		delay: tooltipDelay,
+		triggerOpen: {
+	        mouseenter: true,
+	        click: true
+	    },
+	    triggerClose: {
+	        click: true,
+	        scroll: true,
+	        mouseleave: true
+	    },
+	    functionBefore: function(instance,helper){
+			if(!$(helper.origin).hasClass('s-error'))return false;
+		},
+		side: 'bottom',
+
+	});
+
 	$('.js--viewer-toggle').click(function(){
 		$('body').toggleClass('s-viewer-mode');
 	})

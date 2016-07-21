@@ -76,6 +76,32 @@ $tooltip-arrow-size: 10px;
 	}
 }
 
+.tooltipster-sidetip.ritchie-tooltips_error{
+	.tooltipster-box {
+		background-color: $error-colour;
+		border: none;
+		box-shadow: $ritchie-shadow;
+		max-width: 400px;
+	}
+
+	.tooltipster-content{
+		padding: 0;
+
+		p{
+			margin: 0;
+		}
+
+		p + p{
+			margin-top: $default-margin;
+		}
+	}
+
+	.tooltipster-arrow:before{
+		background-color: $error-colour;
+		border-color: transparent;
+	}
+}
+
 .tooltipster-arrow{
 	.tooltipster-bottom &{
 		top: -1px !important;

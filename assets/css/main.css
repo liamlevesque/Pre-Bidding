@@ -4057,6 +4057,21 @@ corresponds to the arrow we want to display */
 .tooltipster-sidetip.ritchie-tooltips_small a, .tooltipster-sidetip.ritchie-tooltips_full a {
   color: #1478BC; }
 
+.tooltipster-sidetip.ritchie-tooltips_error .tooltipster-box {
+  background-color: #c4483a;
+  border: none;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  max-width: 400px; }
+.tooltipster-sidetip.ritchie-tooltips_error .tooltipster-content {
+  padding: 0; }
+  .tooltipster-sidetip.ritchie-tooltips_error .tooltipster-content p {
+    margin: 0; }
+  .tooltipster-sidetip.ritchie-tooltips_error .tooltipster-content p + p {
+    margin-top: 15px; }
+.tooltipster-sidetip.ritchie-tooltips_error .tooltipster-arrow:before {
+  background-color: #c4483a;
+  border-color: transparent; }
+
 .tooltipster-bottom .tooltipster-arrow {
   top: -1px !important; }
 .tooltipster-right .tooltipster-arrow {
