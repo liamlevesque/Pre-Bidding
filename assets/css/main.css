@@ -4210,7 +4210,8 @@ corresponds to the arrow we want to display */
     .tooltipster-sidetip.ritchie-tooltips_full .tooltip--success .max-bid--success {
       position: relative;
       padding-left: 60px;
-      text-align: left; }
+      text-align: left;
+      margin-bottom: 15px; }
     .tooltipster-sidetip.ritchie-tooltips_full .tooltip--success .tooltip--check-success {
       width: 50px;
       position: absolute;

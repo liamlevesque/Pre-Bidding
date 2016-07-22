@@ -2375,18 +2375,32 @@ header {
 MOST IMPORTANT - LOT TABLE STYLES
 *************************/
 .client--bottom {
-  position: relative;
-  overflow: hidden; }
+  position: absolute;
+  overflow: hidden;
+  bottom: 30px;
+  top: 451px;
+  width: 100%; }
+  .client--bottom.s-multi-attend {
+    bottom: 128px; }
+  @media (min-height: 800px) {
+    .client--bottom {
+      top: 486px; } }
+  @media (min-height: 1000px) {
+    .client--bottom {
+      top: 506px; } }
 
 .bottom-bg {
   max-width: 1400px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  height: 100%; }
 
 .lot-tables {
   margin-bottom: 100px;
   font-size: 0.9rem;
   line-height: 1.4rem;
-  border-top: 1px solid rgba(149, 149, 149, 0.5); }
+  border-top: 1px solid rgba(149, 149, 149, 0.5);
+  position: relative;
+  height: 100%; }
   @media (min-width: 80em) {
     .lot-tables {
       border: 1px solid rgba(149, 149, 149, 0.5); } }
@@ -2394,8 +2408,11 @@ MOST IMPORTANT - LOT TABLE STYLES
 .lot-tables--header {
   background-color: #E9E9E9;
   padding: 0;
-  position: relative;
-  padding: 10px 0; }
+  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; }
   .lot-tables--header:after {
     content: '';
     position: absolute;
@@ -2418,6 +2435,12 @@ MOST IMPORTANT - LOT TABLE STYLES
     text-align: right;
     padding-right: 15px;
     text-align: center; }
+
+.lot-scroll {
+  overflow-y: scroll;
+  position: absolute;
+  top: 33px;
+  bottom: 0; }
 
 .lot-table {
   background-color: white;
@@ -3993,6 +4016,8 @@ MOST IMPORTANT - LOT TABLE STYLES
     overflow-x: hidden;
     white-space: nowrap;
     line-height: 0; }
+  .other-rings.s-hidden {
+    display: none; }
 
 .other-ring {
   position: relative;
@@ -4634,7 +4659,8 @@ corresponds to the arrow we want to display */
     .tooltipster-sidetip.ritchie-tooltips_full .tooltip--success .max-bid--success {
       position: relative;
       padding-left: 60px;
-      text-align: left; }
+      text-align: left;
+      margin-bottom: 15px; }
     .tooltipster-sidetip.ritchie-tooltips_full .tooltip--success .tooltip--check-success {
       width: 50px;
       position: absolute;

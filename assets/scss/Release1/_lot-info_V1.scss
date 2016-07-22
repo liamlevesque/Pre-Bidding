@@ -35,18 +35,18 @@
 	position: relative;
 	width: 400px;
 	background-color: $li-bg;
-	min-height: 360px;
+	min-height: $top-section-height-small;
 
 	@include breakpoint(med-large){
 		width: 55%;
 	}
 
 	@include vbreakpoint(med){
-		min-height: 395px;
+		min-height: $top-section-height-med;
 	}
 
 	@include vbreakpoint(large){
-		min-height: 415px;
+		min-height: $top-section-height-large;
 	}
 	
 }

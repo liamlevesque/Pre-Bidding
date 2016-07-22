@@ -99,6 +99,14 @@ $toggle-padding: 40px; //THIS IS HOW MUCH THE MONEY
 $tooltip-icon-size: 24px;
 $lot-header-height: 53px;
 
+//HEADER AREA
+$header-height: 91px;
+
+//MEASUREMENTS FOR THE UPPER SECTION AND LOT INFO AREA
+$top-section-height-small: 360px;
+$top-section-height-med: 395px;
+$top-section-height-large: 415px;
+
 @mixin center-content(){
   max-width: 1400px;
   margin: 0 auto;

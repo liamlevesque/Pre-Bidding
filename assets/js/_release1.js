@@ -108,6 +108,11 @@ $(function(){
 
 	});
 
+	$('.js--toggleMultiAttend').click(function(){
+		$('.js--multi-attend').toggleClass('s-hidden');
+		$('.js--lot-table-area').toggleClass('s-multi-attend');
+	});
+
 	$('.js--goToOpenOffers').click(function(){
 		bidObject.openOffer = !bidObject.openOffer;
 		bidModeIndex = (bidModeIndex + 1 < bidMode.length)? bidModeIndex + 1 : 0;

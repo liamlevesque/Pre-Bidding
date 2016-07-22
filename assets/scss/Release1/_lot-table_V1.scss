@@ -8,12 +8,30 @@ $ring-left-spacing: 50px;
 $ring-right-spacing: 30px;
 
 .client--bottom{
-	position: relative;
-	overflow: hidden;
+	position: absolute;
+    overflow: hidden;
+    bottom: 30px;
+    top: $top-section-height-small + $header-height;
+    width: 100%;
+
+    &.s-multi-attend{
+		bottom: 128px;
+	}
+
+	@include vbreakpoint(med){
+		top: $top-section-height-med + $header-height;
+	}
+
+	@include vbreakpoint(large){
+		top: $top-section-height-large + $header-height;
+	}
 }
+
+
 
 .bottom-bg{
 	@include center-content;
+	height: 100%;
 }
 
 .lot-tables{
@@ -21,6 +39,8 @@ $ring-right-spacing: 30px;
 	@include default-font;
 	//box-shadow: $ritchie-shadow;
 	border-top: 1px solid $border-separator;
+	position: relative;
+	height: 100%;
 	
 
 	@include breakpoint(large){
@@ -31,8 +51,11 @@ $ring-right-spacing: 30px;
 	.lot-tables--header{
 		background-color: $grey-100;
 		padding: 0;
-		position: relative;
 		padding: 10px 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
 			
 		&:after{
 			content: '';
@@ -60,6 +83,14 @@ $ring-right-spacing: 30px;
 				padding-right: $default-margin;
 				text-align: center;
 			}
+		}
+
+		.lot-scroll{
+			overflow-y: scroll;
+			position: absolute;
+			top: 33px;
+			bottom: 0;
+
 		}
 		
 		.lot-table{
