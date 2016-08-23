@@ -81,6 +81,7 @@ $setting-label-width: 30%;
 		padding-right: 5px;
 		text-align: right;
 		display: inline-block;
+		word-wrap: break-word;
 	}
 
 	.CCY{
@@ -141,6 +142,7 @@ $setting-label-width: 30%;
 		
 		.result{
 			line-height: 0.8rem;
+			max-width: 60%;
 		}
 
 		.result>div{

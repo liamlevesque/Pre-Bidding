@@ -3911,7 +3911,8 @@ MOST IMPORTANT - LOT TABLE STYLES
   width: 30%;
   padding-right: 5px;
   text-align: right;
-  display: inline-block; }
+  display: inline-block;
+  word-wrap: break-word; }
 .setting .CCY {
   margin-right: 5px; }
 .setting.ccyconversion .setting--result {
@@ -3951,7 +3952,8 @@ MOST IMPORTANT - LOT TABLE STYLES
       -webkit-transform: rotate(-45deg);
               transform: rotate(-45deg); }
   .setting--result .result {
-    line-height: 0.8rem; }
+    line-height: 0.8rem;
+    max-width: 60%; }
   .setting--result .result > div {
     margin-bottom: 5px; }
 

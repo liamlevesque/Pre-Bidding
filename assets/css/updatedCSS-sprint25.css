@@ -9,3 +9,9 @@
      		max-width: 200px;
      	} 
     }
+
+
+.setting--result .result {
+	line-height: 0.8rem;
+	max-width: 60%; 
+}

@@ -413,7 +413,7 @@
                         <div class="header--price">
                             <label>Spent:</label><span class="header--price-readout dollars" rv-html="user.spent | price"></span></div>
                         <div class="header--price js--total-max-bids-tooltip" rv-adderrorclass="user.bid | greaterThanToFalse user.limit">
-                            <label>Max Bids (<span rv-text="user.bidcount"></span>):</label><span class="header--price-readout dollars" rv-html="user.bid | price"></span></div>
+                            <label>preBids (<span rv-text="user.bidcount"></span>):</label><span class="header--price-readout dollars" rv-html="user.bid | price"></span></div>
                     </div>
 
                     <div class="cart-icon">
@@ -524,7 +524,7 @@
                         </div>
 
                         <div class="message-box--max-bid" rv-show="bidObject.bidStatus | equals 'maxBidding'">
-                            Max Bid: $15,000<br/>Bidding for you
+                            preBid: $15,000<br/>Bidding for you
                         </div> 
 
                         <div class="message-box--warning" rv-show="bidObject.bidStatus | equals 'inactive'">
@@ -765,7 +765,7 @@
                         <div class="col-2b">Serial Number</div>
 						<div class="col-2c">Meter Reads</div>
 						<div class="col-2d">Photo</div>
-						<div class="col-5">Max Bid</div>
+						<div class="col-5">preBid</div>
                         <div class="col-5b">Status</div>
                     </div>
                 </header>
@@ -955,14 +955,14 @@
                     <hr/>
                     <div class="h-mb-50">
                         <div class="g-quarter">
-                            <span class="c-brand">Max Bid</span>
+                            <span class="c-brand">preBid</span>
                         </div>
                         <div class="g-three-quarters h-ta-right" rv-on-click="maxbidController.showTutorial">
-                            <span class="text-link c-link">How do Max Bids work?<i class="icon-help i-size-med h-ml-50"></i>
+                            <span class="text-link c-link">How do preBids work?<i class="icon-help i-size-med h-ml-50"></i>
                         </div>
                     </div>
                     <div class="h-mb-50 h-pos-relative">
-                        <input type="tel" placeholder="Enter Max Bid" pattern="[0-9]{2,7}" inputmode="numeric" class="field--text_innner-label js--max-bid-field" rv-on-blur="maxbidController.onMaxBidBlur" rv-on-keyup="maxbidController.onMaxBidChange" autocomplete="off" autocorrect="off" spellcheck="false"/>
+                        <input type="tel" placeholder="Enter preBid" pattern="[0-9]{2,7}" inputmode="numeric" class="field--text_innner-label js--max-bid-field" rv-on-blur="maxbidController.onMaxBidBlur" rv-on-keyup="maxbidController.onMaxBidChange" autocomplete="off" autocorrect="off" spellcheck="false"/>
                         <button class="field--clear" rv-show="maxbidObject.maxbidAmount" rv-on-click="maxbidController.clearWarningClick">CLEAR </button>
                         <label class="field--inner-label"><span class="CCY-dollars"></span></label>
                     </div>
@@ -972,11 +972,11 @@
                     </div> -->
                     <div class="tooltip--warning h-ta-center" rv-show="maxbidObject.maxbidAmount | greaterThanToFalse_bids maxbidObject.remainingCredit maxbidObject.totalMaxBids maxbidObject.initialBid maxbidObject.hasMaxBid">
                          <h4>WARNING!
-                         Your Max Bids will now be greater than your available credit</h4>
+                         Your preBids will now be greater than your available credit</h4>
                          <div class="error--values">
                               <div class="h-d-inline-block">
                                 <h3 class="dollars" rv-html="maxbidObject.totalMaxBids | totalmaxbidprice maxbidObject.maxbidAmount maxbidObject.hasMaxBid maxbidObject.initialBid"></h3>
-                                <label>Total Max Bids</label>
+                                <label>Total preBids</label>
                             </div>
                             <div class="h-d-inline-block error--greater-than">
                                 >
@@ -994,7 +994,7 @@
                         <div class="max-bid--success">
                             
                             <img class="tooltip--check-success js--success-checkmark" src="assets/img/check.gif"/>
-                            Max Bid saved!<span class="h-float-right text-link c-link" rv-on-click="maxbidController.showTutorial"><i class="icon-help i-size-med h-mr-50"></i>More Info</span>
+                            preBid saved!<span class="h-float-right text-link c-link" rv-on-click="maxbidController.showTutorial"><i class="icon-help i-size-med h-mr-50"></i>More Info</span>
                             <h3>
                                 <span class="CCY c-brand"></span>&nbsp;<span class="dollars c-brand" rv-html="maxbidObject.maxbidAmount | price"></span>
                             </h3>
@@ -1021,7 +1021,7 @@
                         <div class="error--values">
                             <div class="h-d-inline-block">
                                 <h3 class="dollars" rv-html="maxbidObject.maxbidAmount | price"></h3>
-                                <label>Total Max Bids</label>
+                                <label>Total preBids</label>
                             </div>
                             <div class="h-d-inline-block error--greater-than">
                                 >
@@ -1045,11 +1045,11 @@
                     </div>
                     <footer class="tooltip--footer h-ta-right" rv-hide="maxbid.isValid | validateBid maxbidObject.offIncrement maxbidObject.maxbidAmount maxbidObject.remainingCredit">
                         <button class="h-float-left h-lh-200 button--unbound" rv-show="maxbidObject.hasMaxBid" rv-on-click="maxbidController.cancelMaxBid">
-                            <i class="icon-trash h-mr-50 c-error"></i>Delete Max Bid
+                            <i class="icon-trash h-mr-50 c-error"></i>Delete preBid
                         </button>
 
                         <button class="button js--set-maxbid" rv-on-click="maxbidController.onSetClick" rv-enabled="maxbidObject.maxbidAmount | zeroOrEmptyToFalse">
-                            Set Max Bid
+                            Set preBid
                         </button>
                     </footer>
                 </div>
@@ -1074,8 +1074,8 @@
 
         <div class="js--tooltip-max-bid">
            <div class="message-box--error">
-                <p>The total of all of your Max Bids are more than your available credit.</p>
-                <p>When you run out of credit, any further Max Bids you place will not take effect.</p>
+                <p>The total of all of your preBids are more than your available credit.</p>
+                <p>When you run out of credit, any further preBids you place will not take effect.</p>
             </div>
         </div>
 
