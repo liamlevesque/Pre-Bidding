@@ -7,19 +7,22 @@
 	height: 200px;
 }
 
-.pen, .penclip, .pencil{
+.pen, .penclip{
 	transform: translateY(-50px);
-	animation: pens 8s infinite;
+	animation: pens 7s infinite;
+	animation-timing-function: ease-in-out;
 }
 
 .ink{
-	animation: ink 8s infinite;
+	animation: ink 7s infinite;
+	animation-timing-function: ease-in-out;
 	transform-origin: center center;
 }
 
 #pocket{
 	clip-path: url(#inkclip);
-	animation: pocket 8s infinite;
+	animation: pocket 7s infinite;
+	animation-timing-function: ease-in-out;
 }
 
 .pencil{
@@ -28,6 +31,9 @@
 
 	@keyframes pens{
 		0%{
+			transform: translateY(-50px);
+		}
+		5%{
 			transform: translateY(-50px);
 		}
 		10%{
@@ -75,7 +81,7 @@
 		50%{
 			fill: #4270B7;
 		}
-		60%{
+		70%{
 			fill: #4270B7;
 		}
 		90%{
