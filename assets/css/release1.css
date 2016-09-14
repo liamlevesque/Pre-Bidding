@@ -3446,20 +3446,26 @@ MOST IMPORTANT - LOT TABLE STYLES
     left: 5px;
     width: 35px;
     text-align: center;
-    top: 40%;
+    top: 35%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     font-size: 24px; }
   .group--lot.s-sold:after, .group--lot.s-out:after, .group--lot.s-preview:after {
     position: absolute;
-    left: 5px;
+    left: 4px;
     width: 35px;
     text-align: center;
-    bottom: 5px;
+    top: 27px;
     font-size: 0.7rem;
     font-weight: 700;
     line-height: 0.9rem;
-    color: #959595; }
+    color: #959595;
+    line-height: 0.6rem;
+    overflow: hidden;
+    word-break: break-all; }
+    @media (min-width: 80em) {
+      .group--lot.s-sold:after, .group--lot.s-out:after, .group--lot.s-preview:after {
+        top: 33px; } }
   .group--lot.s-preview:not(.s-active-lot) {
     background-color: rgba(232, 119, 34, 0.3); }
   .group--lot.s-sold, .group--lot.s-out {

@@ -902,19 +902,26 @@
 				left: 5px;
 				width: 35px;
 				text-align: center;
-				top: 40%;
+				top: 35%;
 				transform: translateY(-50%);
 				font-size: 24px;
 			}
 
 			&:after{
 				position: absolute;
-				left: 5px;
+				left: 4px;
 				width: 35px;
 				text-align: center;
-				bottom: 5px;
+				top: 27px;
 				@include smalltext;
 				color: $grey-500;
+				line-height: 0.6rem;
+				overflow: hidden;
+				word-break: break-all;
+
+				@include breakpoint(large){
+					top: 33px;
+				}
 			}
 		}
 
