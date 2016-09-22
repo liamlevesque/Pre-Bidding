@@ -317,7 +317,7 @@ header{
 		transition: $transition;
 
 		label{
-			color: darken($warning-colour,30%);
+			color: darken($warning-colour,30%); 
 		}
 
 		p{
@@ -328,7 +328,7 @@ header{
 		button{
 			position: absolute;
 		    right: 5px;
-		    top: 5px;
+		    top: 5px; 
 		    color: white;
 
 			&:hover{
