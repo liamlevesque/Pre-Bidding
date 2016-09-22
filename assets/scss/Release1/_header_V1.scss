@@ -301,20 +301,24 @@ header{
 	.auctioneers-message{
 		position: absolute;
 		top: -40px;
-		left: auto;
+		left: 0;
 		width: 44%;
-		right: 0;
+		right: auto;
 		border-radius: 3px;
-		background-color: $grey-700;
+		background-color: $warning-colour;
 		text-align: center;
 		padding: 5px 20px;
-		color: white;
+		color: black;
 		box-shadow: $ritchie-shadow;
 
 		opacity: 0;
 		pointer-events: none;
-		transform: translateX(100%);
+		transform: translateX(-100%);
 		transition: $transition;
+
+		label{
+			color: darken($warning-colour,30%);
+		}
 
 		p{
 			margin-top: 5px;
