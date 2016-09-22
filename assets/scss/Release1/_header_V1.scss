@@ -300,10 +300,10 @@ header{
 
 	.auctioneers-message{
 		position: absolute;
-		top: -40px;
-		left: 0;
+		top: 0;
+		left: auto;
 		width: 44%;
-		right: auto;
+		right: 0;
 		border-radius: 3px;
 		background-color: $warning-colour;
 		text-align: center;
@@ -313,7 +313,7 @@ header{
 
 		opacity: 0;
 		pointer-events: none;
-		transform: translateX(-100%);
+		transform: translateX(100%);
 		transition: $transition;
 
 		label{

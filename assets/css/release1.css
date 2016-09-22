@@ -2252,10 +2252,10 @@ header {
 
 .auctioneers-message {
   position: absolute;
-  top: -40px;
-  left: 0;
+  top: 0;
+  left: auto;
   width: 44%;
-  right: auto;
+  right: 0;
   border-radius: 3px;
   background-color: #FCD748;
   text-align: center;
@@ -2264,8 +2264,8 @@ header {
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   opacity: 0;
   pointer-events: none;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
   -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   .auctioneers-message label {
