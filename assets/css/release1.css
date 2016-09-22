@@ -2257,10 +2257,10 @@ header {
   width: 44%;
   right: 0;
   border-radius: 3px;
-  background-color: #FCD748;
+  background-color: #585858;
   text-align: center;
   padding: 5px 20px;
-  color: black;
+  color: white;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   opacity: 0;
   pointer-events: none;
@@ -2268,8 +2268,6 @@ header {
           transform: translateX(100%);
   -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
-  .auctioneers-message label {
-    color: #a88603; }
   .auctioneers-message p {
     margin-top: 5px;
     margin-bottom: 5px; }

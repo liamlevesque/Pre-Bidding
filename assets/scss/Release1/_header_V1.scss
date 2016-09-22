@@ -305,10 +305,10 @@ header{
 		width: 44%;
 		right: 0;
 		border-radius: 3px;
-		background-color: $warning-colour;
+		background-color: $grey-700; //$warning-color;
 		text-align: center;
 		padding: 5px 20px;
-		color: black;
+		color: white;
 		box-shadow: $ritchie-shadow;
 
 		opacity: 0;
@@ -317,7 +317,7 @@ header{
 		transition: $transition;
 
 		label{
-			color: darken($warning-colour,30%); 
+			//color: darken($warning-colour,30%); 
 		}
 
 		p{
