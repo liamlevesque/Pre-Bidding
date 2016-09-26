@@ -1,0 +1,202 @@
+$bg-color-ask: $brand-color;
+$bg-color-high-bid: darken($brand-color, 10%);
+$bg-color-details: darken($brand-color,15%);
+$bg-color-auctioneer-message: darken($brand-color,20%);
+
+$text-color-details: white;
+
+$height-ask: 40%;
+$height-high-bid: 90px;
+$height-lot-details: 50%;
+
+.details-area{
+	position: absolute;
+	top: 0;
+	bottom: $footer-height;
+	right: 0;
+
+	width: $details-width;
+
+	background-color: $bg-color-ask;
+	text-align: center;
+	color: $text-color-details;
+}
+
+	.prices{
+		position: absolute;
+		top: 0;
+		height: $height-ask;
+		width: 100%;
+	}
+
+		.ask{
+			@include font-size(4);
+			padding: 20px;
+
+			label{
+				@include font-size(2); 
+			}
+
+			.ccy:before{
+				@include font-size(2);
+			}
+
+			.ccy:after{
+				display: none;
+			}
+
+			.dollars{
+				display: inline-block;
+			}
+		}
+
+
+		$ccys: 	"CAD" "$" "" "," "." true 2,
+			"USD" "$" "" "," "." true 14,
+			"SGD" "$" "" "," "." true 12,
+			"NZD" "$" "" "," "." true 10,
+			"AUD" "$" "" "," "." true 0,
+			"MXN" "$" "" "," "." true 8,
+			"ZAR" "R" "" "," "." true 15,
+			"PLN" "" "z\0142" " " "," true 11,
+			"GBP" "\00A3" "" "," "." true 5,
+			"EUR" "\20AC" "" " " "," true 4,
+			"CNY" "\00A5" "" "," "." true 3,
+			"JPY" "\00A5" "" "," "." false 7,
+			"INR" " \20B9" "" "," "." true 6,
+			"AED" "" "د.إ" "," "." true 1,
+			"NOK" "kr" "" "," "." true 9,
+			"TRY" "\20BA" "" "," "." true 13;
+
+
+		@each $ccy in $ccys{
+			
+			.divider:before{
+				.#{nth($ccy,1)} & {
+					content: "#{nth($ccy,4)}";
+				}
+			}
+			.dollars:before{
+				.#{nth($ccy,1)} & {
+					content: "#{nth($ccy,2)}";
+				}
+			}
+			.dollars:after{
+				.#{nth($ccy,1)} & {
+					content: "#{nth($ccy,3)}";
+					margin-left: 3px;
+					display: inline-block;
+				}
+			}
+			.ccy{
+				&.#{nth($ccy,1)}:before{
+					content: "#{nth($ccy,1)}";
+				}
+			}
+
+			.ccy{
+				&.#{nth($ccy,1)}:after{
+					background-position: 0 -#{nth($ccy,7)*15px};
+				}
+			}
+
+		}
+
+		.ccy:after{
+			content: '';
+			display: block;
+			vertical-align: middle;
+			margin-right: 7px;
+			width: 30px;
+			height: 15px;
+			background-repeat: no-repeat;
+			background-size: 100% auto;
+			background-image: url(../img/ccy-flags.png);
+			box-shadow: $ritchie-shadow;
+		}
+
+
+		.conversions{
+			text-align: left;
+			margin: $default-padding;
+		}
+
+			.conversion{
+				padding: 10px;
+				background-color: darken($brand-color, 5%);
+				position: relative;
+				margin-bottom: 10px;
+
+				.ccy:before{
+					display: block;
+					@include font-size(1.5);
+				}
+
+				.dollars{
+					@include vert-align;
+					position: absolute;
+					right: 0;
+					display: inline-block;
+					@include font-size(2);
+				}
+			}
+
+
+	
+
+
+	.high-bid{
+		position: absolute;
+		top: $height-ask;
+		height: $height-high-bid;
+		width: 100%;
+
+		background-color: $bg-color-high-bid;
+		padding: $default-padding;
+		@include font-size(1.6);
+
+		@include details-label;
+
+	}
+
+	.lot-details{
+		padding: $default-padding;
+		background-color: $bg-color-details;
+
+		position: absolute;
+		bottom: 0;
+		height: calc(100% - (#{$height-ask} + #{$height-high-bid}));
+		width: 100%;
+		@include font-size(2);
+
+		@include details-label;
+
+	}
+
+		.lot-detail{
+			&:not(:last-of-type){
+				margin-bottom: 20px;	
+			}
+		}
+
+
+
+
+	.auctioneers-message{
+		background-color: $bg-color-auctioneer-message;
+		padding: $default-padding;
+
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+
+		@include font-size(2);
+		@include details-label;
+	}
+
+	
+
+
+
+
+

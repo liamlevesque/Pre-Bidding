@@ -1,0 +1,989 @@
+@charset "UTF-8";
+/**********************
+  TEXT FORMATTING
+**********************/
+.smalltext {
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 0.9rem;
+  text-transform: uppercase; }
+
+label, .label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 0.9rem;
+  text-transform: uppercase;
+  display: inline-block;
+  color: #959595; }
+
+body {
+  font-family: 'Trebuchet MS', Verdana, sans-serif;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; }
+
+* {
+  box-sizing: border-box; }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0;
+  color: black; }
+
+h1 {
+  font-size: 1.9rem;
+  margin-bottom: 3px; }
+
+h2 {
+  font-size: 1.7rem;
+  margin-bottom: 15px; }
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 7.5px;
+  color: #E87722; }
+
+h4 {
+  margin-bottom: 7.5px; }
+
+h5 {
+  color: inherit;
+  margin-bottom: 5px; }
+
+p {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  margin-top: 0; }
+
+.p-100 {
+  font-size: 1rem;
+  line-height: 1.6rem; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none; }
+  a:hover {
+    text-decoration: underline;
+    outline: none; }
+  a:active, a:focus {
+    outline: none; }
+  a.a--img {
+    line-height: 0;
+    display: inline-block;
+    max-width: 100%; }
+    a.a--img img {
+      max-width: 100%; }
+
+hr {
+  height: 0;
+  border: none;
+  border-bottom: 1px dotted #bdbdbd; }
+
+.link {
+  color: #E87722;
+  text-decoration: underline; }
+
+.logo {
+  display: inline-block;
+  width: 200px;
+  height: 46px;
+  margin: 10px 5px 10px 10px;
+  -webkit-transform: scale(1.15) translateX(15px);
+          transform: scale(1.15) translateX(15px); }
+
+@font-face {
+  font-family: 'ritchie-icons';
+  src: url("../fonts/ritchie-icons.eot?u4y10d");
+  src: url("../fonts/ritchie-icons.eot?u4y10d#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?u4y10d") format("truetype"), url("../fonts/ritchie-icons.woff?u4y10d") format("woff"), url("../fonts/ritchie-icons.svg?u4y10d#ritchie-icons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ritchie-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.i-size-med {
+  font-size: 20px;
+  vertical-align: middle; }
+
+.icon-arrow-left:before {
+  content: "\e925"; }
+
+.icon-max-4:before {
+  content: "\e923"; }
+
+.icon-max-1:before {
+  content: "\e922"; }
+
+.icon-max-3:before {
+  content: "\e924"; }
+
+.icon-mail:before {
+  content: "\e921"; }
+
+.icon-sold:before {
+  content: "\e920"; }
+
+.icon-error-1:before {
+  content: "\e91f"; }
+
+.icon-trash:before {
+  content: "\e91e"; }
+
+.icon-ccy:before {
+  content: "\e91a"; }
+
+.icon-calculator:before {
+  content: "\e91b"; }
+
+.icon-unlocked:before {
+  content: "\e918"; }
+
+.icon-lock:before {
+  content: "\e919"; }
+
+.icon-settings:before {
+  content: "\e917"; }
+
+.icon-check-inner:before {
+  content: "\e915"; }
+
+.icon-info:before {
+  content: "\e916"; }
+
+.icon-popout:before {
+  content: "\e90b"; }
+
+.icon-next:before {
+  content: "\e90e"; }
+
+.icon-prev:before {
+  content: "\e914"; }
+
+.icon-arrow-down:before {
+  content: "\e900"; }
+
+.icon-audio:before {
+  content: "\e901"; }
+
+.icon-bid:before {
+  content: "\e902"; }
+
+.icon-cart:before {
+  content: "\e903"; }
+
+.icon-check:before {
+  content: "\e904"; }
+
+.icon-clock:before {
+  content: "\e905"; }
+
+.icon-close:before {
+  content: "\e906"; }
+
+.icon-dei:before {
+  content: "\e907"; }
+
+.icon-eye:before {
+  content: "\e908"; }
+
+.icon-help:before {
+  content: "\e909"; }
+
+.icon-loading:before {
+  content: "\e90a"; }
+
+.icon-Photos:before {
+  content: "\e90c"; }
+
+.icon-plus:before {
+  content: "\e90d"; }
+
+.icon-sale:before {
+  content: "\e90f"; }
+
+.icon-search:before {
+  content: "\e910"; }
+
+.icon-user:before {
+  content: "\e911"; }
+
+.icon-warning:before {
+  content: "\e912"; }
+
+.icon-warranty:before {
+  content: "\e913"; }
+
+@font-face {
+  font-family: 'Frutiger LT Std';
+  src: url("../fonts/FrutigerLTStd-BlackCn.eot");
+  src: url("../fonts/FrutigerLTStd-BlackCn.eot?#iefix") format("embedded-opentype"), url("../fonts/FrutigerLTStd-BlackCn.woff") format("woff"), url("../fonts/FrutigerLTStd-BlackCn.ttf") format("truetype"), url("../fonts/FrutigerLTStd-BlackCn.svg#FrutigerLTStd-BlackCn") format("svg");
+  font-weight: 700;
+  font-style: normal; }
+@font-face {
+  font-family: 'Frutiger LT Std';
+  src: url("../fonts/FrutigerLTStd-BoldCn.eot");
+  src: url("../fonts/FrutigerLTStd-BoldCn.eot?#iefix") format("embedded-opentype"), url("../fonts/FrutigerLTStd-BoldCn.woff") format("woff"), url("../fonts/FrutigerLTStd-BoldCn.ttf") format("truetype"), url("../fonts/FrutigerLTStd-BoldCn.svg#FrutigerLTStd-BoldCn") format("svg");
+  font-weight: 400;
+  font-style: normal; }
+body {
+  font-family: 'Frutiger LT Std', 'Trebuchet MS', Verdana, sans-serif; }
+
+label {
+  color: inherit; }
+
+.lot-preview {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 60px;
+  right: 30%;
+  background-color: #333333; }
+
+.lot--title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100px;
+  max-width: 1200px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 1;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  background-color: white; }
+
+.lot--number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100px;
+  padding: 20px;
+  background-color: #E87722;
+  color: white;
+  font-size: 30px;
+  font-size: 3rem; }
+  .lot--number label {
+    display: block;
+    opacity: 0.8;
+    font-size: 11px;
+    font-size: 1.1rem;
+    margin-bottom: 10px; }
+  .lot--number label {
+    margin-bottom: 0; }
+
+.lot--description {
+  position: absolute;
+  top: 0;
+  height: 100px;
+  left: 200px;
+  right: 0;
+  padding: 20px;
+  font-size: 25px;
+  font-size: 2.5rem;
+  line-height: 2.5rem; }
+  .lot--description span {
+    padding-right: 20px; }
+
+.lot--photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden; }
+  .lot--photo img {
+    width: 100%;
+    max-width: 100%;
+    top: 50%;
+    position: relative;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    position: absolute; }
+
+.details-area {
+  position: absolute;
+  top: 0;
+  bottom: 60px;
+  right: 0;
+  width: 30%;
+  background-color: #E87722;
+  text-align: center;
+  color: white; }
+
+.prices {
+  position: absolute;
+  top: 0;
+  height: 40%;
+  width: 100%; }
+
+.ask {
+  font-size: 40px;
+  font-size: 4rem;
+  padding: 20px; }
+  .ask label {
+    font-size: 20px;
+    font-size: 2rem; }
+  .ask .ccy:before {
+    font-size: 20px;
+    font-size: 2rem; }
+  .ask .ccy:after {
+    display: none; }
+  .ask .dollars {
+    display: inline-block; }
+
+.CAD .divider:before {
+  content: ","; }
+
+.CAD .dollars:before {
+  content: "$"; }
+
+.CAD .dollars:after {
+  content: "";
+  margin-left: 3px;
+  display: inline-block; }
+
+.ccy.CAD:before {
+  content: "CAD"; }
+
+.ccy.CAD:after {
+  background-position: 0 -30px; }
+
+.USD .divider:before {
+  content: ","; }
+
+.USD .dollars:before {
+  content: "$"; }
+
+.USD .dollars:after {
+  content: "";
+  margin-left: 3px;
+  display: inline-block; }
+
+.ccy.USD:before {
+  content: "USD"; }
+
+.ccy.USD:after {
+  background-position: 0 -210px; }
+
+.SGD .divider:before {
+  content: ","; }
+
+.SGD .dollars:before {
+  content: "$"; }
+
+.SGD .dollars:after {
+  content: "";
+  margin-left: 3px;
+  display: inline-block; }
+
+.ccy.SGD:before {
+  content: "SGD"; }
+
+.ccy.SGD:after {
+  background-position: 0 -180px; }
+
+.NZD .divider:before {
+  content: ","; }
+
+.NZD .dollars:before {
+  content: "$"; }
+
+.NZD .dollars:after {
+  content: "";
+  margin-left: 3px;
+  display: inline-block; }
+
+.ccy.NZD:before {
+  content: "NZD"; }
+
+.ccy.NZD:after {
+  background-position: 0 -150px; }
+
+.AUD .divider:before {
+  content: ","; }
+
+.AUD .dollars:before {
+  content: "$"; }
+
+.AUD .dollars:after {
+  content: "";
+  margin-left: 3px;
+  display: inline-block; }
+
+.ccy.AUD:before {
+  content: "AUD"; }
+
+.ccy.AUD:after {
+  background-position: 0 -0px; }
+
+.MXN .divider:before {
+  content: ","; }
+
+.MXN .dollars:before {
+  content: "$"; }
+
+.MXN .dollars:after {
+  content: "";
+  margin-left: 3px;
+  display: inline-block; }
+
+.ccy.MXN:before {
+  content: "MXN"; }
+
+.ccy.MXN:after {
+  background-position: 0 -120px; }
+
+.ZAR .divider:before {
+  content: ","; }
+
+.ZAR .dollars:before {
+  content: "R"; }
+
+.ZAR .dollars:after {
+  content: "";
+  margin-left: 3px;
+  display: inline-block; }
+
+.ccy.ZAR:before {
+  content: "ZAR"; }
+
+.ccy.ZAR:after {
+  background-position: 0 -225px; }
+
+.PLN .divider:before {
+  content: " "; }
+
+.PLN .dollars:before {
+  content: ""; }
+
+.PLN .dollars:after {
+  content: "zł";
+  margin-left: 3px;
+  display: inline-block; }
+
+.ccy.PLN:before {
+  content: "PLN"; }
+
+.ccy.PLN:after {
+  background-position: 0 -165px; }
+
+.GBP .divider:before {
+  content: ","; }
+
+.GBP .dollars:before {
+  content: "£"; }
+
+.GBP .dollars:after {
+  content: "";
+  margin-left: 3px;
+  display: inline-block; }
+
+.ccy.GBP:before {
+  content: "GBP"; }
+
+.ccy.GBP:after {
+  background-position: 0 -75px; }
+
+.EUR .divider:before {
+  content: " "; }
+
+.EUR .dollars:before {
+  content: "€"; }
+
+.EUR .dollars:after {
+  content: "";
+  margin-left: 3px;
+  display: inline-block; }
+
+.ccy.EUR:before {
+  content: "EUR"; }
+
+.ccy.EUR:after {
+  background-position: 0 -60px; }
+
+.CNY .divider:before {
+  content: ","; }
+
+.CNY .dollars:before {
+  content: "¥"; }
+
+.CNY .dollars:after {
+  content: "";
+  margin-left: 3px;
+  display: inline-block; }
+
+.ccy.CNY:before {
+  content: "CNY"; }
+
+.ccy.CNY:after {
+  background-position: 0 -45px; }
+
+.JPY .divider:before {
+  content: ","; }
+
+.JPY .dollars:before {
+  content: "¥"; }
+
+.JPY .dollars:after {
+  content: "";
+  margin-left: 3px;
+  display: inline-block; }
+
+.ccy.JPY:before {
+  content: "JPY"; }
+
+.ccy.JPY:after {
+  background-position: 0 -105px; }
+
+.INR .divider:before {
+  content: ","; }
+
+.INR .dollars:before {
+  content: " ₹"; }
+
+.INR .dollars:after {
+  content: "";
+  margin-left: 3px;
+  display: inline-block; }
+
+.ccy.INR:before {
+  content: "INR"; }
+
+.ccy.INR:after {
+  background-position: 0 -90px; }
+
+.AED .divider:before {
+  content: ","; }
+
+.AED .dollars:before {
+  content: ""; }
+
+.AED .dollars:after {
+  content: "د.إ";
+  margin-left: 3px;
+  display: inline-block; }
+
+.ccy.AED:before {
+  content: "AED"; }
+
+.ccy.AED:after {
+  background-position: 0 -15px; }
+
+.NOK .divider:before {
+  content: ","; }
+
+.NOK .dollars:before {
+  content: "kr"; }
+
+.NOK .dollars:after {
+  content: "";
+  margin-left: 3px;
+  display: inline-block; }
+
+.ccy.NOK:before {
+  content: "NOK"; }
+
+.ccy.NOK:after {
+  background-position: 0 -135px; }
+
+.TRY .divider:before {
+  content: ","; }
+
+.TRY .dollars:before {
+  content: "₺"; }
+
+.TRY .dollars:after {
+  content: "";
+  margin-left: 3px;
+  display: inline-block; }
+
+.ccy.TRY:before {
+  content: "TRY"; }
+
+.ccy.TRY:after {
+  background-position: 0 -195px; }
+
+.ccy:after {
+  content: '';
+  display: block;
+  vertical-align: middle;
+  margin-right: 7px;
+  width: 30px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-image: url(../img/ccy-flags.png);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
+
+.conversions {
+  text-align: left;
+  margin: 20px; }
+
+.conversion {
+  padding: 10px;
+  background-color: #da6a17;
+  position: relative;
+  margin-bottom: 10px; }
+  .conversion .ccy:before {
+    display: block;
+    font-size: 15px;
+    font-size: 1.5rem; }
+  .conversion .dollars {
+    top: 50%;
+    position: relative;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    font-size: 20px;
+    font-size: 2rem; }
+
+.high-bid {
+  position: absolute;
+  top: 40%;
+  height: 90px;
+  width: 100%;
+  background-color: #c35f14;
+  padding: 20px;
+  font-size: 16px;
+  font-size: 1.6rem; }
+  .high-bid label {
+    display: block;
+    opacity: 0.8;
+    font-size: 11px;
+    font-size: 1.1rem;
+    margin-bottom: 10px; }
+
+.lot-details {
+  padding: 20px;
+  background-color: #ac5412;
+  position: absolute;
+  bottom: 0;
+  height: calc(100% - (40% + 90px));
+  width: 100%;
+  font-size: 20px;
+  font-size: 2rem; }
+  .lot-details label {
+    display: block;
+    opacity: 0.8;
+    font-size: 11px;
+    font-size: 1.1rem;
+    margin-bottom: 10px; }
+
+.lot-detail:not(:last-of-type) {
+  margin-bottom: 20px; }
+
+.auctioneers-message {
+  background-color: #95490f;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 20px;
+  font-size: 2rem; }
+  .auctioneers-message label {
+    display: block;
+    opacity: 0.8;
+    font-size: 11px;
+    font-size: 1.1rem;
+    margin-bottom: 10px; }
+
+.choice-area {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 30%;
+  z-index: 1; }
+
+.choice--header {
+  padding: 20px;
+  background: -webkit-linear-gradient(top, rgba(51, 51, 51, 0), #333333);
+  background: linear-gradient(top, rgba(51, 51, 51, 0), #333333);
+  font-size: 20px;
+  font-size: 2rem;
+  color: white; }
+
+.choice--body {
+  padding: 0 20px 20px;
+  background-color: #333333; }
+
+.choice--lot {
+  display: inline-block;
+  width: calc(100% / 10);
+  padding: 8px 20px 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: #E87722;
+  text-align: center; }
+  .choice--lot.s-sold {
+    background-color: #585858;
+    color: white; }
+    .choice--lot.s-sold:before {
+      font-family: 'ritchie-icons' !important;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 12px;
+      font-size: 1.2rem;
+      content: '\e920';
+      color: #E87722;
+      margin-right: 10px; }
+
+.other-rings {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #e8e6e2; }
+
+.rings {
+  height: 60px; }
+
+.ring {
+  width: 33%;
+  height: 60px;
+  position: relative;
+  display: inline-block; }
+  .ring:not(:first-child) {
+    border-left: 1px solid #959595; }
+
+.ring--number {
+  top: 50%;
+  position: relative;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: absolute;
+  left: 0;
+  width: 75px;
+  text-align: center;
+  font-size: 15px;
+  font-size: 1.5rem;
+  color: #E87722; }
+  .ring--number label {
+    display: block;
+    font-size: 10px;
+    font-size: 1rem; }
+
+.ring--progress {
+  top: 50%;
+  position: relative;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: absolute;
+  left: 75px;
+  right: 0;
+  font-size: 20px;
+  font-size: 2rem;
+  font-weight: 700; }
+
+/*******************
+	HELPER CLASSES
+********************/
+.h-overflow {
+  overflow: hidden; }
+
+.h-t-xs {
+  font-size: 0.6rem; }
+
+.h-t-s {
+  font-size: 0.8rem; }
+
+.h-t-m {
+  font-size: 1rem; }
+
+.h-t-l, .h-t-large {
+  font-size: 1.5rem; }
+
+.h-ta-center {
+  text-align: center; }
+
+.h-ta-left {
+  text-align: left; }
+
+.h-ta-right {
+  text-align: right; }
+
+.h-tt-uppercase {
+  text-transform: uppercase; }
+
+.h-t-ellipsize {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.h-valign {
+  top: 50%;
+  position: relative;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: absolute; }
+
+.h-mt-80 {
+  margin-top: 10px; }
+
+.h-mt-100 {
+  margin-top: 15px; }
+
+.h-mb-100 {
+  margin-bottom: 15px; }
+
+.h-mb-50 {
+  margin-bottom: 7.5px; }
+
+.h-mb-0 {
+  margin-bottom: 0; }
+
+.h-mr-100 {
+  margin-right: 15px; }
+
+.h-mr-50 {
+  margin-right: 7.5px; }
+
+.h-ml-100 {
+  margin-left: 15px; }
+
+.h-ml-50 {
+  margin-left: 7.5px; }
+
+.h-pt-100 {
+  padding-top: 15px; }
+
+.h-pb-100 {
+  padding-bottom: 15px; }
+
+.h-p-0 {
+  padding: 0; }
+
+.h-lh-200 {
+  line-height: 2; }
+
+.h-d-table {
+  display: table;
+  width: 100%;
+  table-layout: fixed; }
+
+.h-d-block {
+  display: block; }
+
+.h-d-inline-block {
+  display: inline-block; }
+
+.h-pos-relative {
+  position: relative; }
+
+.h-pos-center {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  text-align: center; }
+
+.h-va-center {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }
+
+.h-mw-400 {
+  max-width: 430px;
+  margin: 0 auto; }
+
+.h-f-right {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  text-align: right; }
+
+.h-float-left {
+  float: left; }
+
+.h-float-right {
+  float: right; }
+
+.h-va-super {
+  vertical-align: super; }
+
+.h-ws-nowrap {
+  white-space: nowrap; }
+
+.h-icon--large {
+  font-size: 25px; }
+
+.s-viewer-mode .h-viewer-hidden {
+  display: none; }
+
+.h-viewer-shown {
+  display: none; }
+  .s-viewer-mode .h-viewer-shown {
+    display: initial; }
+
+/*******************
+	COLOUR OVERRIDES
+********************/
+.c-price {
+  color: #20579E; }
+
+.c-finance {
+  color: #24532B; }
+
+.c-brand {
+  color: #E87722; }
+
+.c-active {
+  color: #24532B; }
+
+.c-error {
+  color: #c4483a; }
+
+.c-link {
+  color: #1478BC; }
+
+.c-grey {
+  color: #959595; }
+
+.c-grey-700 {
+  color: #585858; }
+
+.c-white {
+  color: #ffffff !important; }
+
+.c-black {
+  color: #000000; }
+
+.bg-finance {
+  background-color: #D3E8CB; }
+
+.bg-brand {
+  background-color: #E87722; }
+
+.bg-grey {
+  background-color: #E9E9E9; }

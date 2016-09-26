@@ -1,0 +1,29 @@
+$details-width: 30%;
+
+$footer-height: 60px;
+
+$default-padding: 20px; 
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+@mixin details-label{
+	label{
+		display: block;
+		opacity: 0.8;
+		@include font-size(1.1);
+		margin-bottom: 10px;
+	}
+}
+
+body{
+	font-family: 'Frutiger LT Std', 'Trebuchet MS', Verdana, sans-serif;
+}
+
+label{
+	color: inherit;
+}
+
+

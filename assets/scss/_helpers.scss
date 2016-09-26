@@ -36,6 +36,15 @@
 	.h-tt-uppercase{
 		text-transform: uppercase;
 	}
+
+	.h-t-ellipsize{
+		@include ellipsize;
+	}
+
+	.h-valign{
+		@include vert-align;
+		position: absolute;
+	}
 	
 	.h-mt-80{
 		margin-top: 10px;

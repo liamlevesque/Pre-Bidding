@@ -1,0 +1,85 @@
+
+$width-lot--number: 200px;
+$height-header: 100px;
+
+.lot-preview{
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: $footer-height;
+	right: $details-width;
+
+	background-color: $grey-900;
+}
+	
+	.lot--title{
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 100%;
+		height: $height-header;
+
+		max-width: 1200px;
+		transform: translateX(-50%);
+
+		z-index: 1;
+		box-shadow: $ritchie-shadow;
+
+		background-color: white;
+	}
+
+		.lot--number{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: $width-lot--number;
+			height: $height-header;
+
+			padding: $default-padding;
+
+			background-color: $brand-color;
+			color: white;
+
+			@include font-size(3); 
+
+			@include details-label;
+			label{
+				margin-bottom: 0;
+			}
+		}
+
+		.lot--description{
+			position: absolute;
+			top: 0;
+			height: $height-header;
+			left: $width-lot--number;
+			right: 0;
+
+			padding: $default-padding;
+
+			@include font-size(2.5);
+			line-height: 2.5rem;
+
+			span{
+				padding-right: $default-padding;
+			}
+		}
+
+
+	.lot--photo{
+		position: absolute;
+		top: 0;//$height-header;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		overflow: hidden;
+
+		img{
+			width: 100%;
+			max-width: 100%;
+
+			@include vert-align;
+			position: absolute;
+		}
+	}

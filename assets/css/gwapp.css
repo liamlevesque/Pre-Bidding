@@ -863,6 +863,17 @@ hr {
 .h-tt-uppercase {
   text-transform: uppercase; }
 
+.h-t-ellipsize {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.h-valign {
+  top: 50%;
+  position: relative;
+  transform: translateY(-50%);
+  position: absolute; }
+
 .h-mt-80 {
   margin-top: 10px; }
 

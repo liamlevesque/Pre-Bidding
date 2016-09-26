@@ -1,0 +1,63 @@
+$choice-spacing: 10px;
+
+.choice-area{
+	
+	position: absolute;
+	bottom: $footer-height;
+	left: 0;
+	right: $details-width;
+
+	z-index: 1;
+
+}
+
+	.choice--header{
+		padding: $default-padding;
+		background: linear-gradient(top, rgba($grey-900,0), rgba($grey-900,1));
+		
+		@include font-size(2);
+		color: white;
+	}
+
+	.choice--body{
+		padding: 0 $default-padding $default-padding;
+		background-color: $grey-900;
+
+	}
+
+		.choice--lot{
+			display: inline-block;
+			width: calc(100% / 10);
+			padding: 8px $default-padding 5px;
+			margin-right: $choice-spacing;
+			margin-bottom: $choice-spacing;
+			
+			background-color: white;
+			box-shadow: $ritchie-shadow;
+			
+			@include font-size(2);
+			line-height: 2rem;
+			color: $brand-color;
+			text-align: center;
+
+			&.s-sold{
+				background-color: $grey-700;
+				color: white;
+
+				&:before{
+					@include icon-font;
+					@include font-size(1.2);
+					content: '\e920';
+					color: $brand-color;
+
+					margin-right: 10px;
+				}
+			}
+		}
+
+
+
+
+
+
+
