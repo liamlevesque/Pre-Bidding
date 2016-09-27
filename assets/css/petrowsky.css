@@ -1,7 +1,7 @@
 .c-brand {
   color: #b22222; }
 
-.lot--number {
+.lot--number, .bidding--group.s-open-offers .bidding--header {
   color: #fff200; }
 
 .bidding--header:before, .group--body ul:before {
@@ -13,6 +13,12 @@
 .group--lot .lot--selector span:hover {
   color: rgba(178, 34, 34, 0.5); }
 
+.lot--selector input:hover + span {
+  color: #b22222; }
+
+.lot--selector input:checked + span {
+  background-color: #b22222; }
+
 .group--lot.s-active-lot .lot--selector span:hover, .group--lot.s-active-lot .lot--selector span {
   color: #b22222; }
 
@@ -21,6 +27,18 @@
 
 .group--lot.s-active-lot {
   background-color: #b22222; }
+
+.other-rings {
+  background-color: black; }
+
+.other-ring.s-active {
+  border-color: #fff200; }
+
+.other-ring.s-active .ring--photo {
+  background-color: #fff200; }
+
+.other-ring.s-active .ring--lot {
+  color: black; }
 
 .button, .bidding--bid-button.s-active, .bidding--bid-button.s-open-offer {
   background-image: linear-gradient(#fff200, #e6da00);
@@ -36,6 +54,10 @@
 .cart-icon .cart-count {
   background-color: #b22222;
   color: white; }
+
+.bidding--header {
+  background-color: black;
+  color: #fff200; }
 
 .bidding--activate {
   background-color: #fff200;

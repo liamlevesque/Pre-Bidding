@@ -6,7 +6,7 @@ $p-deep-red: #b22222;
 	color: $p-deep-red;
 }
 
-.lot--number{
+.lot--number, .bidding--group.s-open-offers .bidding--header{
 	color: $p-yellow;
 }
 
@@ -22,6 +22,14 @@ $p-deep-red: #b22222;
 	color: rgba($p-deep-red,0.5);
 }
 
+.lot--selector input:hover + span{
+	color: $p-deep-red;
+}
+
+.lot--selector input:checked + span{
+	background-color: $p-deep-red
+}
+
 .group--lot.s-active-lot .lot--selector span:hover, .group--lot.s-active-lot .lot--selector span{
 	color: $p-deep-red;
 }
@@ -33,6 +41,22 @@ $p-deep-red: #b22222;
 .group--lot.s-active-lot{
 	background-color: $p-deep-red;
 }
+
+.other-rings{
+	background-color: black;
+}
+
+	.other-ring.s-active{
+		border-color: $p-yellow;
+	}
+
+	.other-ring.s-active .ring--photo{
+		background-color: $p-yellow;
+	}
+
+	.other-ring.s-active .ring--lot{
+		color: black;
+	}
 
 .button, .bidding--bid-button.s-active, .bidding--bid-button.s-open-offer{
 	background-image: linear-gradient($p-yellow, darken($p-yellow,5%));
@@ -51,6 +75,11 @@ $p-deep-red: #b22222;
 .cart-icon .cart-count{
 	background-color: $p-deep-red;
 	color: white;
+}
+
+.bidding--header{
+	background-color: black;
+	color: $p-yellow;
 }
 
 .bidding--activate{
