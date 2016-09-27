@@ -30,6 +30,9 @@
   background-image: linear-gradient(#fff31a, #fff533);
   color: black; }
 
+.header--auction {
+  color: black; }
+
 .cart-icon .cart-count {
   background-color: #b22222;
   color: white; }
@@ -43,6 +46,15 @@
 
 .lot.s-selected .lot--add-bid {
   color: #b22222; }
+
+.icon-warranty {
+  color: #b22222; }
+
+.lot--header {
+  background-color: black; }
+
+.bidding--area:before {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%220%200%2010%2020%22%20preserveAspectRatio%3D%22none%22%3E%3Cpolygon%20fill%3D%22%23000000%22%20points%3D%220%2C0%2010%2C10%200%2C20%22%2F%3E%3C%2Fsvg%3E"); }
 
 .swiper-container .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #fff200; }
