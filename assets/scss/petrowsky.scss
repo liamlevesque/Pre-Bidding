@@ -58,6 +58,15 @@ $p-deep-red: #b22222;
 	color: black;
 }
 
+.message-box--max-bid{
+	background-color: $p-yellow;
+	color: black;
+
+	&:before{
+		color: black;
+	}
+}
+
 .lot.s-selected [class^="col"]{
 	background-color: rgba($p-deep-red,0.3);
 }

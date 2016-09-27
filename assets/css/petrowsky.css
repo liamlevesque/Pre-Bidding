@@ -41,6 +41,12 @@
   background-color: #fff200;
   color: black; }
 
+.message-box--max-bid {
+  background-color: #fff200;
+  color: black; }
+  .message-box--max-bid:before {
+    color: black; }
+
 .lot.s-selected [class^="col"] {
   background-color: rgba(178, 34, 34, 0.3); }
 
