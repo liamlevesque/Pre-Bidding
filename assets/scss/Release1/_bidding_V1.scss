@@ -909,19 +909,12 @@
 
 			&:after{
 				position: absolute;
-				left: 4px;
-				width: 35px;
+				left: 0;
+				min-width: 35px;
 				text-align: center;
-				top: 27px;
+				bottom: 4px;
 				@include smalltext;
 				color: $grey-500;
-				line-height: 0.6rem;
-				overflow: hidden;
-				word-break: break-all;
-
-				@include breakpoint(large){
-					top: 33px;
-				}
 			}
 		}
 
@@ -956,9 +949,15 @@
 				content: "\e920";
 				color: $brand-color;
 
+				@include breakpoint(largemax){
+					font-size: 20px;
+				}
 			}
 			&:after{
-				content: "SOLD";
+				content: "VENDIDO";
+				background-color: $grey-500;
+				color: white;
+				padding: 0 5px 0 5px;
 			}
 
 			// &:after{
@@ -984,6 +983,9 @@
 			}
 			&:after{
 				content: "OUT";
+				background-color: $error-colour;
+				color: white;
+				padding: 0 5px 0 5px;
 			}
 			.lot--name, .lot--value{
 				text-decoration: line-through;

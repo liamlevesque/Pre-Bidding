@@ -2252,10 +2252,10 @@ header {
 
 .auctioneers-message {
   position: absolute;
-  top: 0;
+  top: 5px;
   left: auto;
   width: 44%;
-  right: 0;
+  right: 5px;
   border-radius: 3px;
   background-color: #585858;
   text-align: center;
@@ -2427,10 +2427,23 @@ MOST IMPORTANT - LOT TABLE STYLES
   padding: 0 15px;
   display: table;
   position: relative; }
+  .lot-tables--column-headers [class^="col"] {
+    vertical-align: middle;
+    cursor: default;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
   .lot-tables--column-headers .col-0 {
     text-align: right;
     padding-right: 15px;
     text-align: center; }
+  .lot-tables--column-headers .col-5:hover {
+    color: #20579E; }
+  .lot-tables--column-headers .col-5 .info-icon {
+    font-size: 1rem;
+    vertical-align: middle;
+    margin-left: 2px; }
 
 .lot-scroll {
   overflow-y: scroll;
@@ -3442,20 +3455,14 @@ MOST IMPORTANT - LOT TABLE STYLES
     font-size: 24px; }
   .group--lot.s-sold:after, .group--lot.s-out:after, .group--lot.s-preview:after {
     position: absolute;
-    left: 4px;
-    width: 35px;
+    left: 0;
+    min-width: 35px;
     text-align: center;
-    top: 27px;
+    bottom: 4px;
     font-size: 0.7rem;
     font-weight: 700;
     line-height: 0.9rem;
-    color: #959595;
-    line-height: 0.6rem;
-    overflow: hidden;
-    word-break: break-all; }
-    @media (min-width: 80em) {
-      .group--lot.s-sold:after, .group--lot.s-out:after, .group--lot.s-preview:after {
-        top: 33px; } }
+    color: #959595; }
   .group--lot.s-preview:not(.s-active-lot) {
     background-color: rgba(232, 119, 34, 0.3); }
   .group--lot.s-sold, .group--lot.s-out {
@@ -3469,14 +3476,23 @@ MOST IMPORTANT - LOT TABLE STYLES
   .group--lot.s-sold:before {
     content: "\e920";
     color: #E87722; }
+    @media (max-width: 80em) {
+      .group--lot.s-sold:before {
+        font-size: 20px; } }
   .group--lot.s-sold:after {
-    content: "SOLD"; }
+    content: "VENDIDO";
+    background-color: #959595;
+    color: white;
+    padding: 0 5px 0 5px; }
   .group--lot.s-out:before {
     content: "\e906";
     color: rgba(196, 72, 58, 0.5);
     font-size: 18px; }
   .group--lot.s-out:after {
-    content: "OUT"; }
+    content: "OUT";
+    background-color: #c4483a;
+    color: white;
+    padding: 0 5px 0 5px; }
   .group--lot.s-out .lot--name, .group--lot.s-out .lot--value {
     text-decoration: line-through; }
 
