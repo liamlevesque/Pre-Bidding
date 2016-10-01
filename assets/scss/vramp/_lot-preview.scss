@@ -6,10 +6,14 @@ $height-header: 100px;
 	position: absolute;
 	left: 0;
 	top: 0;
-	bottom: $footer-height;
+	bottom: 0;
 	right: $details-width;
 
 	background-color: $grey-900;
+
+	.s-other-rings_all &{
+		bottom: $footer-height;
+	}
 }
 	
 	.lot--title{
@@ -45,6 +49,12 @@ $height-header: 100px;
 			@include details-label;
 			label{
 				margin-bottom: 0;
+				opacity: 1;
+			}
+
+			.sale-ring{
+				opacity: 0.8;
+				margin-right: 10px;
 			}
 		}
 

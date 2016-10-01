@@ -1,7 +1,7 @@
 $bg-color-ask: $brand-color;
 $bg-color-high-bid: darken($brand-color, 10%);
 $bg-color-details: darken($brand-color,15%);
-$bg-color-auctioneer-message: darken($brand-color,20%);
+$bg-color-auctioneer-message: darken($brand-color,25%);
 
 $text-color-details: white;
 
@@ -12,14 +12,20 @@ $height-lot-details: 50%;
 .details-area{
 	position: absolute;
 	top: 0;
-	bottom: $footer-height;
+	bottom: 0;
 	right: 0;
 
 	width: $details-width;
 
 	background-color: $bg-color-ask;
-	text-align: center;
+	text-align: left;
 	color: $text-color-details;
+
+	overflow: hidden;
+
+	.s-other-rings_single &{
+		bottom: $footer-height;
+	}
 }
 
 	.prices{
@@ -27,10 +33,12 @@ $height-lot-details: 50%;
 		top: 0;
 		height: $height-ask;
 		width: 100%;
+
+		text-align: center;
 	}
 
 		.ask{
-			@include font-size(4);
+			@include font-size(3.5);
 			padding: 20px;
 
 			label{
@@ -135,7 +143,7 @@ $height-lot-details: 50%;
 				.dollars{
 					@include vert-align;
 					position: absolute;
-					right: 0;
+					right: $default-padding;
 					display: inline-block;
 					@include font-size(2);
 				}
@@ -171,6 +179,10 @@ $height-lot-details: 50%;
 
 		@include details-label;
 
+		label{
+			line-height: 1.4rem;
+		}
+
 	}
 
 		.lot-detail{
@@ -192,6 +204,13 @@ $height-lot-details: 50%;
 
 		@include font-size(2);
 		@include details-label;
+
+		transform: translateY(100%);
+		transition: $transition;
+
+		&.s-shown{
+			transform: translateY(0);	
+		}
 	}
 
 	

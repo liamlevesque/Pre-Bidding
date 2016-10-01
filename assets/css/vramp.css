@@ -246,13 +246,26 @@ body {
 label {
   color: inherit; }
 
+.prototype-controls {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  z-index: 2; }
+  .prototype-controls button {
+    margin-bottom: 10px; }
+
 .lot-preview {
   position: absolute;
   left: 0;
   top: 0;
-  bottom: 60px;
+  bottom: 0;
   right: 30%;
   background-color: #333333; }
+  .s-other-rings_all .lot-preview {
+    bottom: 50px; }
 
 .lot--title {
   position: absolute;
@@ -281,11 +294,15 @@ label {
   .lot--number label {
     display: block;
     opacity: 0.8;
-    font-size: 11px;
-    font-size: 1.1rem;
+    font-size: 12px;
+    font-size: 1.2rem;
     margin-bottom: 10px; }
   .lot--number label {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    opacity: 1; }
+  .lot--number .sale-ring {
+    opacity: 0.8;
+    margin-right: 10px; }
 
 .lot--description {
   position: absolute;
@@ -319,22 +336,26 @@ label {
 .details-area {
   position: absolute;
   top: 0;
-  bottom: 60px;
+  bottom: 0;
   right: 0;
   width: 30%;
   background-color: #E87722;
-  text-align: center;
-  color: white; }
+  text-align: left;
+  color: white;
+  overflow: hidden; }
+  .s-other-rings_single .details-area {
+    bottom: 50px; }
 
 .prices {
   position: absolute;
   top: 0;
   height: 40%;
-  width: 100%; }
+  width: 100%;
+  text-align: center; }
 
 .ask {
-  font-size: 40px;
-  font-size: 4rem;
+  font-size: 35px;
+  font-size: 3.5rem;
   padding: 20px; }
   .ask label {
     font-size: 20px;
@@ -650,7 +671,7 @@ label {
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     position: absolute;
-    right: 0;
+    right: 20px;
     display: inline-block;
     font-size: 20px;
     font-size: 2rem; }
@@ -667,8 +688,8 @@ label {
   .high-bid label {
     display: block;
     opacity: 0.8;
-    font-size: 11px;
-    font-size: 1.1rem;
+    font-size: 12px;
+    font-size: 1.2rem;
     margin-bottom: 10px; }
 
 .lot-details {
@@ -683,41 +704,54 @@ label {
   .lot-details label {
     display: block;
     opacity: 0.8;
-    font-size: 11px;
-    font-size: 1.1rem;
+    font-size: 12px;
+    font-size: 1.2rem;
     margin-bottom: 10px; }
+  .lot-details label {
+    line-height: 1.4rem; }
 
 .lot-detail:not(:last-of-type) {
   margin-bottom: 20px; }
 
 .auctioneers-message {
-  background-color: #95490f;
+  background-color: #7d3d0d;
   padding: 20px;
   position: absolute;
   bottom: 0;
   width: 100%;
   font-size: 20px;
-  font-size: 2rem; }
+  font-size: 2rem;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   .auctioneers-message label {
     display: block;
     opacity: 0.8;
-    font-size: 11px;
-    font-size: 1.1rem;
+    font-size: 12px;
+    font-size: 1.2rem;
     margin-bottom: 10px; }
+  .auctioneers-message.s-shown {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
 
 .choice-area {
   position: absolute;
-  bottom: 60px;
+  bottom: 0;
   left: 0;
   right: 30%;
   z-index: 1; }
+  .s-other-rings_all .choice-area {
+    bottom: 50px; }
 
 .choice--header {
   padding: 20px;
+  padding-bottom: 10px;
   background: -webkit-linear-gradient(top, rgba(51, 51, 51, 0), #333333);
   background: linear-gradient(top, rgba(51, 51, 51, 0), #333333);
-  font-size: 20px;
-  font-size: 2rem;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-size: 1.6rem;
   color: white; }
 
 .choice--body {
@@ -725,21 +759,27 @@ label {
   background-color: #333333; }
 
 .choice--lot {
+  position: relative;
   display: inline-block;
-  width: calc(100% / 10);
-  padding: 8px 20px 5px;
   margin-right: 10px;
   margin-bottom: 10px;
+  vertical-align: top;
+  height: 130px;
+  width: calc(100% / 5);
   background-color: white;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
-  font-size: 20px;
-  font-size: 2rem;
-  line-height: 2rem;
   color: #E87722;
   text-align: center; }
+  .choice--lot span {
+    font-size: 30px;
+    font-size: 3rem;
+    line-height: 130px; }
   .choice--lot.s-sold {
     background-color: #585858;
-    color: white; }
+    color: white;
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 1.1rem; }
     .choice--lot.s-sold:before {
       font-family: 'ritchie-icons' !important;
       speak: none;
@@ -750,30 +790,55 @@ label {
       line-height: 1;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      font-size: 12px;
-      font-size: 1.2rem;
+      font-size: 50px;
       content: '\e920';
       color: #E87722;
+      display: block;
+      margin: 15px 0; }
+    .choice--lot.s-sold span {
+      line-height: 2rem;
+      font-size: 20px;
+      font-size: 2rem;
       margin-right: 10px; }
+    .choice--lot.s-sold div {
+      display: inline-block;
+      font-size: 20px;
+      font-size: 2rem; }
+  .choice--lot:nth-last-child(n+5), .choice--lot:nth-last-child(n+5) ~ li {
+    height: 60px;
+    width: calc(100% / 10);
+    font-size: 20px;
+    font-size: 2rem; }
+  .choice--lot:nth-last-child(n+12), .choice--lot:nth-last-child(n+12) ~ li {
+    height: 40px;
+    width: calc(100% / 12);
+    font-size: 15px;
+    font-size: 1.5rem; }
 
 .other-rings {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60px;
-  background-color: #e8e6e2; }
+  height: 50px; }
 
 .rings {
-  height: 60px; }
+  height: 50px; }
 
 .ring {
-  width: 33%;
-  height: 60px;
+  height: 50px;
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+  background-color: #e8e6e2; }
   .ring:not(:first-child) {
     border-left: 1px solid #959595; }
+  .ring:only-child {
+    width: 30%;
+    float: right; }
+  .ring:nth-last-child(n+2), .ring:nth-last-child(n+2) ~ li {
+    width: 50%; }
+  .ring:nth-last-child(n+3), .ring:nth-last-child(n+3) ~ li {
+    width: 33.33333%; }
 
 .ring--number {
   top: 50%;
@@ -790,7 +855,8 @@ label {
   .ring--number label {
     display: block;
     font-size: 10px;
-    font-size: 1rem; }
+    font-size: 1rem;
+    margin-top: 8px; }
 
 .ring--progress {
   top: 50%;
@@ -800,8 +866,8 @@ label {
   position: absolute;
   left: 75px;
   right: 0;
-  font-size: 20px;
-  font-size: 2rem;
+  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 700; }
 
 /*******************

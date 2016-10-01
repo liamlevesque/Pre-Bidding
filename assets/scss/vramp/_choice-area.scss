@@ -3,19 +3,25 @@ $choice-spacing: 10px;
 .choice-area{
 	
 	position: absolute;
-	bottom: $footer-height;
+	bottom: 0;
 	left: 0;
 	right: $details-width;
 
 	z-index: 1;
 
+	.s-other-rings_all &{
+		bottom: $footer-height;
+	}
+
 }
 
 	.choice--header{
 		padding: $default-padding;
+		padding-bottom: 10px;
 		background: linear-gradient(top, rgba($grey-900,0), rgba($grey-900,1));
-		
-		@include font-size(2);
+
+		text-transform: uppercase;
+		@include font-size(1.6);
 		color: white;
 	}
 
@@ -26,32 +32,66 @@ $choice-spacing: 10px;
 	}
 
 		.choice--lot{
+			position: relative;
 			display: inline-block;
-			width: calc(100% / 10);
-			padding: 8px $default-padding 5px;
 			margin-right: $choice-spacing;
 			margin-bottom: $choice-spacing;
+			vertical-align: top;
+
+			height: 130px;
+			width: calc(100% / 5);
 			
 			background-color: white;
 			box-shadow: $ritchie-shadow;
 			
-			@include font-size(2);
-			line-height: 2rem;
 			color: $brand-color;
 			text-align: center;
+
+			span{
+				@include font-size(3);
+				line-height: 130px;
+			}
 
 			&.s-sold{
 				background-color: $grey-700;
 				color: white;
-
+				@include font-size(1.2);
+				line-height: 1.1rem;
+				
 				&:before{
 					@include icon-font;
-					@include font-size(1.2);
+					font-size: 50px;
 					content: '\e920';
 					color: $brand-color;
+					display: block;
+					margin: 15px 0;
+				}
 
+				span{
+					line-height: 2rem;
+					@include font-size(2);
 					margin-right: 10px;
 				}
+
+				div{
+					display: inline-block;
+					@include font-size(2);
+				}
+			}
+
+			//DIFFERENT STYLING FOR DIFFERENT QUANTITIES OF LOTS
+			&:nth-last-child(n+5),
+			&:nth-last-child(n+5) ~ li {
+				height: 60px;
+				width: calc(100% / 10);
+				@include font-size(2);
+			}
+
+			&:nth-last-child(n+12),
+			&:nth-last-child(n+12) ~ li {
+				height: 40px;
+				width: calc(100% / 12);
+				@include font-size(1.5);
 			}
 		}
 
