@@ -248,7 +248,7 @@ label {
 
 .prototype-controls {
   position: fixed;
-  top: 0;
+  top: 200px;
   left: 0;
   background-color: white;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
@@ -352,11 +352,15 @@ label {
   height: 40%;
   width: 100%;
   text-align: center; }
+  .prices > div {
+    width: 100%; }
+  .prices.s-sold {
+    background-color: #585858; }
 
 .ask {
   font-size: 35px;
   font-size: 3.5rem;
-  padding: 20px; }
+  padding: 0 20px; }
   .ask label {
     font-size: 20px;
     font-size: 2rem; }
@@ -658,7 +662,7 @@ label {
 
 .conversion {
   padding: 10px;
-  background-color: #da6a17;
+  background-color: rgba(0, 0, 0, 0.1);
   position: relative;
   margin-bottom: 10px; }
   .conversion .ccy:before {
@@ -762,58 +766,81 @@ label {
   position: relative;
   display: inline-block;
   margin-right: 10px;
-  margin-bottom: 10px;
+  padding-top: 33px;
   vertical-align: top;
   height: 130px;
   width: calc(100% / 5);
   background-color: white;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   color: #E87722;
-  text-align: center; }
-  .choice--lot span {
-    font-size: 30px;
-    font-size: 3rem;
-    line-height: 130px; }
+  text-align: center;
+  font-size: 30px;
+  font-size: 3rem;
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  overflow: hidden; }
+  .choice--lot:before {
+    font-family: 'ritchie-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 50px;
+    content: '\e920';
+    color: #E87722;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    opacity: 0;
+    -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+    transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+    -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s; }
   .choice--lot.s-sold {
     background-color: #585858;
     color: white;
-    font-size: 12px;
-    font-size: 1.2rem;
-    line-height: 1.1rem; }
+    font-size: 20px;
+    font-size: 2rem;
+    padding-top: 80px; }
     .choice--lot.s-sold:before {
-      font-family: 'ritchie-icons' !important;
-      speak: none;
-      font-style: normal;
-      font-weight: normal;
-      font-variant: normal;
-      text-transform: none;
-      line-height: 1;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      font-size: 50px;
-      content: '\e920';
-      color: #E87722;
-      display: block;
-      margin: 15px 0; }
+      opacity: 1;
+      top: 20px; }
     .choice--lot.s-sold span {
-      line-height: 2rem;
-      font-size: 20px;
-      font-size: 2rem;
       margin-right: 10px; }
     .choice--lot.s-sold div {
-      display: inline-block;
-      font-size: 20px;
-      font-size: 2rem; }
+      display: inline-block; }
+  .choice--lot.s-active {
+    background-color: #E87722;
+    color: white; }
   .choice--lot:nth-last-child(n+5), .choice--lot:nth-last-child(n+5) ~ li {
     height: 60px;
-    width: calc(100% / 10);
+    width: calc((100% / 10) - 10px);
+    padding-top: 13px;
     font-size: 20px;
     font-size: 2rem; }
-  .choice--lot:nth-last-child(n+12), .choice--lot:nth-last-child(n+12) ~ li {
-    height: 40px;
-    width: calc(100% / 12);
-    font-size: 15px;
-    font-size: 1.5rem; }
+    .choice--lot:nth-last-child(n+5):before, .choice--lot:nth-last-child(n+5) ~ li:before {
+      left: 6px;
+      top: 0;
+      -webkit-transform: translateY(-50%) translateX(0);
+              transform: translateY(-50%) translateX(0);
+      margin: 0;
+      font-size: 20px; }
+    .choice--lot:nth-last-child(n+5).s-sold, .choice--lot:nth-last-child(n+5) ~ li.s-sold {
+      padding-left: 28px;
+      padding-top: 10px;
+      text-align: left;
+      font-size: 15px;
+      font-size: 1.5rem;
+      line-height: 1.5rem; }
+      .choice--lot:nth-last-child(n+5).s-sold:before, .choice--lot:nth-last-child(n+5) ~ li.s-sold:before {
+        top: 50%; }
 
 .other-rings {
   position: fixed;

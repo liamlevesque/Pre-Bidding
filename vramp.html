@@ -2,7 +2,7 @@
 <html>
 
 	<head>
-	    <title>Purchase Summary</title>
+	    <title>Vramp Prototype</title>
 	    <link href="assets/img/favicon.ico" rel="Shortcut Icon">
 	    <link type="text/css" rel="stylesheet" href="assets/css/vramp.css">
 	</head>
@@ -14,43 +14,45 @@
 			<div class="lot--title">
 				<div class="lot--number">
 					<label><span class="sale-ring">Ring 1</span>Lot</label>
-					<div>2471A</div>
+					<div rv-text="vrampObject.lotDetail.lotNumber"></div>
 				</div>
 				<div class="lot--description">
-					<span class="h-valign">
-						2008 Manitou 4x4 Bucket Lift
-					</span>
+					<span class="h-valign" rv-text="vrampObject.lotDetail.description"></span>
 				</div>
 			</div>
 
 			<div class="lot--photo">
-				<img src="assets/img/vramp-lotImage.png"/>
+				<img rv-src="vrampObject.lotDetail.photo"/>
 			</div>
 
 		</div>		
 
-		<div class="choice-area">
-			<div class="choice--header">Choice of 12 Remaining</div>
+		<div class="choice-area" rv-show="vrampObject.choiceGroup">
+			<div class="choice--header">Choice of <span rv-text="vrampObject.choiceGroup | length"></span> Remaining</div>
 			<div class="choice--body">
 				<ul class="choice--lots">
-					<li rv-each-choicelot="vrampObject.choiceGroup" class="choice--lot" rv-class-s-sold="choicelot.status"><span rv-text="choicelot.lot"></span><div rv-if="choicelot.status" class="c-brand">SOLD</div></li>
+					<li rv-each-choicelot="vrampObject.choiceGroup" class="choice--lot" rv-class-s-sold="choicelot.status" rv-class-s-active="choicelot.active"><span rv-text="choicelot.lotNumber"></span><div rv-if="choicelot.status" class="c-brand">SOLD</div></li>
 				</ul>
 			</div>
 		</div>
 
 		<div class="details-area">
-			<div class="prices">
-				<div class="ask">
-					<label>ASK</label>
-					<div class="ccy CAD">
-						<div class="dollars" rv-html="vrampObject.price | price"></div>
-					</div>
-				</div>
-				
+			<div class="prices" rv-class-s-sold="vrampObject.lotDetail.status">
+				<div class="h-valign">
 
-				<div class="conversions">
-					<div rv-each-conversion="vrampObject.conversions" class="conversion ccy" rv-addccyclass="conversion.currency" rv-class-s-outofauction="conversion.currency">
-						<span class="dollars" rv-html="conversion.rate | convertedVrampPrice vrampObject.price conversion.currency"></span>
+					<div class="ask">
+						<label rv-hide="vrampObject.lotDetail.status">ASK</label>
+						<label rv-show="vrampObject.lotDetail.status"><i class="c-brand icon-sold"></i>SOLD</label>
+						<div class="ccy CAD">
+							<div class="dollars" rv-html="vrampObject.price | price"></div>
+						</div>
+					</div>
+					
+
+					<div class="conversions">
+						<div rv-each-conversion="vrampObject.conversions" class="conversion ccy" rv-addccyclass="conversion.currency" rv-class-s-outofauction="conversion.currency">
+							<span class="dollars" rv-html="conversion.rate | convertedVrampPrice vrampObject.price conversion.currency"></span>
+						</div>
 					</div>
 				</div>
 
@@ -69,11 +71,11 @@
 			<div class="lot-details">
 				<div class="lot-detail">
 					<label for="">Usage</label>
-					<div>4756 hrs</div>
+					<div rv-text="vrampObject.lotDetail.usage"></div>
 				</div>
 				<div class="lot-detail" rv-hide="vrampObject.auctioneerMessage">
 					<label for="">Comes With</label>
-					<div>Cummins B3.9-C, 40 m boom, pwr to platform, hyd rotation, extendable axles, hyd leveling, EPA</div>
+					<div rv-text="vrampObject.lotDetail.comeswith"></div>
 				</div>
 			</div>
 
@@ -119,12 +121,13 @@
 		<div class="prototype-controls js--prototype-controls">
 			
 			<button rv-on-click="vrampController.prevLot" class="g-half">Previous Lot</button>
-			<button rv-on-click="vrampController.nextLot" class="g-half">Next Lot</button>
+			<button rv-on-click="vrampController.nextLot" class="g-half">Next Lot</button><br/>
+			<button rv-on-click="vrampController.sellLot">SELL THIS LOT</button>
 
 			<div>
 				<button rv-on-click="vrampController.showMessage">Toggle Auctioneer's Message</button><br/>
 				<button rv-on-click="vrampController.toggleOtherRings">Toggle Other Rings</button><br/>
-				<button rv-on-click="vrampController.toggleConversions">Toggle Conversions</button><br/>
+				<button rv-on-click="vrampController.toggleConversions">Toggle Conversions</button>
 			</div>
 
 		</div>

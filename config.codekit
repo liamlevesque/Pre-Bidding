@@ -378,6 +378,61 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/img\/vramp1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.54385e+06,
+		"inputAbbreviatedPath": "\/assets\/img\/vramp1.png",
+		"outputAbbreviatedPath": "\/assets\/img\/vramp1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/img\/vramp2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.54385e+06,
+		"inputAbbreviatedPath": "\/assets\/img\/vramp2.png",
+		"outputAbbreviatedPath": "\/assets\/img\/vramp2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/img\/vramp3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.54385e+06,
+		"inputAbbreviatedPath": "\/assets\/img\/vramp3.png",
+		"outputAbbreviatedPath": "\/assets\/img\/vramp3.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/img\/vramp4.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.54385e+06,
+		"inputAbbreviatedPath": "\/assets\/img\/vramp4.png",
+		"outputAbbreviatedPath": "\/assets\/img\/vramp4.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/img\/vramp5.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.54385e+06,
+		"inputAbbreviatedPath": "\/assets\/img\/vramp5.png",
+		"outputAbbreviatedPath": "\/assets\/img\/vramp5.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/js\/_bidding.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -751,6 +806,17 @@
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
+		},
+	"\/assets\/js\/vramplots\/data.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/js\/vramplots\/data.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/assets\/js\/vramplots\/data-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
 		},
 	"\/assets\/scss\/_base.scss": {
 		"createSourceMap": 0,
