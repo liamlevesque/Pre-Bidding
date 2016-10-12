@@ -5,12 +5,12 @@ $choice-spacing: 10px;
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	right: $details-width;
+	right: 0;
 
 	z-index: 1;
 
 	.s-other-rings_all &{
-		bottom: $footer-height;
+		//bottom: $footer-height;
 	}
 
 }

@@ -367,6 +367,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/img\/vramp-bg.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.19285e+06,
+		"inputAbbreviatedPath": "\/assets\/img\/vramp-bg.png",
+		"outputAbbreviatedPath": "\/assets\/img\/vramp-bg.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/img\/vramp-lotImage.png": {
 		"fileType": 32768,
 		"ignore": 0,

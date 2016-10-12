@@ -7,8 +7,10 @@
 	    <link type="text/css" rel="stylesheet" href="assets/css/vramp.css">
 	</head>
 
-	<body class="js--vramp-bidding">
+	<body class="js--vramp-bidding" rv-auctionstatus="vrampObject.auctionStatus">
 		
+		<img src="assets/img/vramp-bg.png" class="fullscreenbg" />
+
 		<div class="lot-preview">
 
 			<div class="lot--title">
@@ -25,64 +27,95 @@
 				<img rv-src="vrampObject.lotDetail.photo"/>
 			</div>
 
+			<div class="choice-area" rv-show="vrampObject.choiceGroup">
+				<div class="choice--header">Choice of <span rv-text="vrampObject.choiceGroup | length"></span> Remaining</div>
+				<div class="choice--body">
+					<ul class="choice--lots">
+						<li rv-each-choicelot="vrampObject.choiceGroup" class="choice--lot" rv-soldoroutclass="choicelot.status" rv-class-s-active="choicelot.active"><span rv-text="choicelot.lotNumber"></span><div rv-if="choicelot.status | issold" class="c-brand">SOLD</div><div rv-if="choicelot.status | isout" class="out-text">OUT</div></li>
+					</ul>
+				</div>
+			</div>
+
 		</div>		
 
-		<div class="choice-area" rv-show="vrampObject.choiceGroup">
-			<div class="choice--header">Choice of <span rv-text="vrampObject.choiceGroup | length"></span> Remaining</div>
-			<div class="choice--body">
-				<ul class="choice--lots">
-					<li rv-each-choicelot="vrampObject.choiceGroup" class="choice--lot" rv-soldoroutclass="choicelot.status" rv-class-s-active="choicelot.active"><span rv-text="choicelot.lotNumber"></span><div rv-if="choicelot.status | issold" class="c-brand">SOLD</div><div rv-if="choicelot.status | isout" class="out-text">OUT</div></li>
-				</ul>
-			</div>
-		</div>
+		
 
 		<div class="details-area">
-			<div class="prices" rv-class-s-sold="vrampObject.lotDetail.status">
-				<div class="h-valign">
+			<div class="active-details">
+				<div class="prices" rv-class-s-sold="vrampObject.lotDetail.status">
+					<div class="h-valign">
 
-					<div class="ask">
-						<label rv-hide="vrampObject.lotDetail.status">ASK</label>
-						<label rv-show="vrampObject.lotDetail.status"><i class="c-brand icon-sold"></i>SOLD</label>
-						<div class="ccy CAD">
-							<div class="dollars" rv-html="vrampObject.price | price"></div>
+						<div class="ask">
+							<label rv-hide="vrampObject.lotDetail.status">ASK</label>
+							<label rv-show="vrampObject.lotDetail.status"><i class="c-brand icon-sold"></i>SOLD</label>
+							<div class="ccy CAD">
+								<div class="dollars" rv-html="vrampObject.price | price"></div>
+							</div>
+						</div>
+						
+
+						<div class="conversions">
+							<div rv-each-conversion="vrampObject.conversions" class="conversion ccy" rv-addccyclass="conversion.currency" rv-class-s-outofauction="conversion.currency">
+								<span class="dollars" rv-html="conversion.rate | convertedVrampPrice vrampObject.price conversion.currency"></span>
+							</div>
 						</div>
 					</div>
-					
 
-					<div class="conversions">
-						<div rv-each-conversion="vrampObject.conversions" class="conversion ccy" rv-addccyclass="conversion.currency" rv-class-s-outofauction="conversion.currency">
-							<span class="dollars" rv-html="conversion.rate | convertedVrampPrice vrampObject.price conversion.currency"></span>
-						</div>
+				</div>
+
+				<div class="high-bid">
+					<label>
+						HIGH BID
+					</label>
+
+					<div class="h-t-ellipsize"> 
+						Internet, SK, CAN
+					</div>
+				</div>
+
+				<div class="lot-details">
+					<div class="lot-detail">
+						<label for="">Usage</label>
+						<div rv-text="vrampObject.lotDetail.usage"></div>
+					</div>
+					<div class="lot-detail" rv-hide="vrampObject.auctioneerMessage">
+						<label for="">Comes With</label>
+						<div rv-text="vrampObject.lotDetail.comeswith"></div>
+					</div>
+				</div>
+
+				<div class="auctioneers-message" rv-class-s-shown="vrampObject.auctioneerMessage">
+					<label for="">Note</label>
+					<div rv-text="vrampObject.auctioneerMessage"></div>
+				</div>
+
+				<div class="open-offers" rv-class-s-shown="vrampObject.openOffers">
+					<label for="">Open Offers</label>
+					<div> Choose lots to buy at the current ask price. </div>
+				</div>
+			</div>
+			
+			<!-- PAUSED RIGHT HAND SIDE AREA -->
+			<div class="paused-details">
+				
+				<div class="ring-detail">
+					RING 1
+					<label>Lots 1 - 290, 8001 - 8099</label>
+				</div>
+
+				<div class="ring-status">
+					<div class="ring-status--content">
+						<i class="icon-pause status-icon"></i>
+						Auction Paused
 					</div>
 				</div>
 
 			</div>
 
-			<div class="high-bid">
-				<label>
-					HIGH BID
-				</label>
+		</div>
 
-				<div class="h-t-ellipsize"> 
-					Internet, SK, CAN
-				</div>
-			</div>
-
-			<div class="lot-details">
-				<div class="lot-detail">
-					<label for="">Usage</label>
-					<div rv-text="vrampObject.lotDetail.usage"></div>
-				</div>
-				<div class="lot-detail" rv-hide="vrampObject.auctioneerMessage">
-					<label for="">Comes With</label>
-					<div rv-text="vrampObject.lotDetail.comeswith"></div>
-				</div>
-			</div>
-
-			<div class="auctioneers-message" rv-class-s-shown="vrampObject.auctioneerMessage">
-				<label for="">Note</label>
-				<div rv-text="vrampObject.auctioneerMessage"></div>
-			</div>
+		<div class="paused-message">
+			<div class="h-valign">We are currently experiencing technical difficulties. The auction will resume shortly.</div>
 		</div>
 
 
@@ -127,7 +160,12 @@
 			<div>
 				<button rv-on-click="vrampController.showMessage">Toggle Auctioneer's Message</button><br/>
 				<button rv-on-click="vrampController.toggleOtherRings">Toggle Other Rings</button><br/>
-				<button rv-on-click="vrampController.toggleConversions">Toggle Conversions</button>
+				<button rv-on-click="vrampController.toggleConversions">Toggle Conversions</button><br/>
+				<button rv-on-click="vrampController.toggleOpenOffer">Toggle Open Offer</button>
+			</div>
+
+			<div>
+				<button rv-on-click="vrampController.togglePause">Pause</button>
 			</div>
 
 		</div>

@@ -11,8 +11,16 @@ $height-header: 100px;
 
 	background-color: $grey-900;
 
+	transform: translateX(0);
+
+	transition: $transition;
+
 	.s-other-rings_all &{
 		bottom: $footer-height;
+	}
+
+	.s-auction-paused &{
+		transform: translateX(-100%);
 	}
 }
 	

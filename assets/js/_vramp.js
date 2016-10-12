@@ -52,7 +52,9 @@ var vrampObject = {
 		"choiceSize":0,
 		"choiceGroup": null,
 		"activeChoiceLot": 0,
-		"otherRings": []
+		"otherRings": [],
+		"openOffers" : false,
+		"auctionStatus" : "active"
 	},
 
 	vrampController = {
@@ -73,6 +75,12 @@ var vrampObject = {
 			vrampObject.auctioneerMessage = vrampObject.auctioneerMessage ? null : sampleAuctioneerMessage;
 		},
 
+		toggleOpenOffer: function(e,model){
+			console.log(vrampObject.openOffers);
+			vrampObject.openOffers = !vrampObject.openOffers;
+
+		},
+
 		toggleOtherRings: function(e,model){
 			if(vrampObject.otherRings.length == allOtherRings.length){
 				vrampObject.otherRings = [];
@@ -90,6 +98,12 @@ var vrampObject = {
 			//TOGGLE WHICH BIT OF THE OTHER RINGS AREA IS VISIBLE
 			if(vrampObject.otherRings.length === 1) $(".js--vramp-bidding").addClass('s-other-rings_single');
 			else $(".js--vramp-bidding").addClass('s-other-rings_all');
+		},
+
+		togglePause: function(e,model){
+			
+			vrampObject.auctionStatus = (vrampObject.auctionStatus === "active" ) ? "paused" : "active";
+		
 		},
 
 		nextLot: function(e,model){
@@ -127,6 +141,11 @@ rivets.formatters.issold = function (value) {
 rivets.formatters.isout = function (value) {
   return value === "out";
 };
+
+rivets.binders.auctionstatus = function (el, value) {
+	if(value === "active") $(el).addClass('s-auction-active').removeClass('s-auction-paused');
+	else if(value === "paused") $(el).addClass('s-auction-paused').removeClass('s-auction-active');
+}
 
 rivets.binders.soldoroutclass = function (el, value) {
   if(value === "sold") $(el).addClass("s-sold").removeClass('s-out');
@@ -188,7 +207,7 @@ rivets.bind($('.js--vramp-bidding'),{
 
 	function activateFirstAvailableChoiceLot(){
 		for(var i = 0; i < vrampObject.choiceGroup.length ; i++){
-			if(vrampObject.choiceGroup[i].status != "sold"){
+			if(vrampObject.choiceGroup[i].status != "sold" && vrampObject.choiceGroup[i].status != "out" ){
 				vrampObject.choiceGroup[i].active = true;
 				return i;
 			}else{

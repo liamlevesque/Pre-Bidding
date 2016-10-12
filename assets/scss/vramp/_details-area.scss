@@ -23,10 +23,34 @@ $height-lot-details: 50%;
 
 	overflow: hidden;
 
+	transition: $transition;
+
 	.s-other-rings_single &{
 		bottom: $footer-height;
 	}
+
+	.s-auction-paused &{
+		top: 60px;
+		bottom: 60px;
+		right: 60px;
+	}
 }
+
+	.active-details{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		transform: translateX(0);
+		transition: $transition;
+
+		.s-auction-paused &{
+			transform: translateX(100%);
+		}
+
+	}
 
 	.prices{
 		position: absolute;
@@ -202,7 +226,7 @@ $height-lot-details: 50%;
 
 
 
-	.auctioneers-message{
+	.auctioneers-message, .open-offers{
 		background-color: $bg-color-auctioneer-message;
 		padding: $default-padding;
 
@@ -220,6 +244,76 @@ $height-lot-details: 50%;
 			transform: translateY(0);	
 		}
 	}
+
+
+
+
+//PAUSED STYLES
+
+	$paused-upper-height: 30%;
+
+	.paused-details{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		
+		transform: translateX(-100%);
+
+		transition: $transition;
+
+		font-weight: 700;
+
+		.s-auction-paused &{
+			transform: translateX(0);
+		}
+	}
+
+		.ring-detail{
+			position: absolute;
+			top: 0;
+			bottom: $paused-upper-height;
+			left: 0;
+			right: 0;
+			padding: 30px;
+
+			@include font-size(6);
+
+			label{
+				display: block;
+				@include font-size(2);
+				opacity: 0.9;
+			}
+		}
+
+		.ring-status{
+			position: absolute;
+			top: $paused-upper-height;
+			bottom: 0;
+			left: 0;
+			right: 0;
+
+			background-color: $bg-color-auctioneer-message;
+
+			@include font-size(3);
+			text-align: center;
+			text-transform: uppercase;
+
+			.ring-status--content{
+				@include vert-align;
+				position: absolute;
+				width: 100%;
+			}
+
+			.status-icon{
+				display: block;
+				margin-bottom: 10px;
+				font-size: 80px;
+			}
+		}
+
+
 
 	
 

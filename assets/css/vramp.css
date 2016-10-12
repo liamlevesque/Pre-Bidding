@@ -99,8 +99,8 @@ hr {
 
 @font-face {
   font-family: 'ritchie-icons';
-  src: url("../fonts/ritchie-icons.eot?u4y10d");
-  src: url("../fonts/ritchie-icons.eot?u4y10d#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?u4y10d") format("truetype"), url("../fonts/ritchie-icons.woff?u4y10d") format("woff"), url("../fonts/ritchie-icons.svg?u4y10d#ritchie-icons") format("svg");
+  src: url("../fonts/ritchie-icons.eot?o9cbw0");
+  src: url("../fonts/ritchie-icons.eot?o9cbw0#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?o9cbw0") format("truetype"), url("../fonts/ritchie-icons.woff?o9cbw0") format("woff"), url("../fonts/ritchie-icons.svg?o9cbw0#ritchie-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], [class*=" icon-"] {
@@ -119,6 +119,9 @@ hr {
 .i-size-med {
   font-size: 20px;
   vertical-align: middle; }
+
+.icon-pause:before {
+  content: "\e926"; }
 
 .icon-arrow-left:before {
   content: "\e925"; }
@@ -246,6 +249,49 @@ body {
 label {
   color: inherit; }
 
+.fullscreenbg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 100%; }
+
+.paused-message {
+  position: absolute;
+  top: 60px;
+  bottom: 60px;
+  left: 60px;
+  right: calc(30% + (2 * 60px));
+  background-color: white;
+  padding: 120px;
+  font-size: 30px;
+  font-size: 3rem;
+  color: #E87722;
+  opacity: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s; }
+  .s-auction-paused .paused-message {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1; }
+  .paused-message:after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    width: 60px;
+    height: 60px;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+            transform: translateY(-50%) rotate(45deg);
+    background-color: white; }
+  .paused-message .h-valign {
+    padding-right: 120px;
+    text-align: center; }
+
 .prototype-controls {
   position: fixed;
   top: 200px;
@@ -263,9 +309,16 @@ label {
   top: 0;
   bottom: 0;
   right: 30%;
-  background-color: #333333; }
+  background-color: #333333;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   .s-other-rings_all .lot-preview {
     bottom: 50px; }
+  .s-auction-paused .lot-preview {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); }
 
 .lot--title {
   position: absolute;
@@ -342,9 +395,29 @@ label {
   background-color: #E87722;
   text-align: left;
   color: white;
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   .s-other-rings_single .details-area {
     bottom: 50px; }
+  .s-auction-paused .details-area {
+    top: 60px;
+    bottom: 60px;
+    right: 60px; }
+
+.active-details {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+  .s-auction-paused .active-details {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); }
 
 .prices {
   position: absolute;
@@ -717,7 +790,7 @@ label {
 .lot-detail:not(:last-of-type) {
   margin-bottom: 20px; }
 
-.auctioneers-message {
+.auctioneers-message, .open-offers {
   background-color: #7d3d0d;
   padding: 20px;
   position: absolute;
@@ -729,24 +802,75 @@ label {
           transform: translateY(100%);
   -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
-  .auctioneers-message label {
+  .auctioneers-message label, .open-offers label {
     display: block;
     opacity: 0.8;
     font-size: 12px;
     font-size: 1.2rem;
     margin-bottom: 10px; }
-  .auctioneers-message.s-shown {
+  .auctioneers-message.s-shown, .open-offers.s-shown {
     -webkit-transform: translateY(0);
             transform: translateY(0); }
+
+.paused-details {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  font-weight: 700; }
+  .s-auction-paused .paused-details {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); }
+
+.ring-detail {
+  position: absolute;
+  top: 0;
+  bottom: 30%;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  font-size: 60px;
+  font-size: 6rem; }
+  .ring-detail label {
+    display: block;
+    font-size: 20px;
+    font-size: 2rem;
+    opacity: 0.9; }
+
+.ring-status {
+  position: absolute;
+  top: 30%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #7d3d0d;
+  font-size: 30px;
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase; }
+  .ring-status .ring-status--content {
+    top: 50%;
+    position: relative;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    position: absolute;
+    width: 100%; }
+  .ring-status .status-icon {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 80px; }
 
 .choice-area {
   position: absolute;
   bottom: 0;
   left: 0;
-  right: 30%;
+  right: 0;
   z-index: 1; }
-  .s-other-rings_all .choice-area {
-    bottom: 50px; }
 
 .choice--header {
   padding: 20px;
