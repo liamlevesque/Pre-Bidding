@@ -790,8 +790,7 @@ label {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 50px;
-    content: '\e920';
-    color: #E87722;
+    content: '';
     display: block;
     position: absolute;
     top: 0;
@@ -803,19 +802,29 @@ label {
     transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
     -webkit-transition-delay: 0.3s;
             transition-delay: 0.3s; }
-  .choice--lot.s-sold {
+  .choice--lot.s-sold, .choice--lot.s-out {
     background-color: #585858;
     color: white;
     font-size: 20px;
     font-size: 2rem;
     padding-top: 80px; }
-    .choice--lot.s-sold:before {
+    .choice--lot.s-sold:before, .choice--lot.s-out:before {
       opacity: 1;
       top: 20px; }
-    .choice--lot.s-sold span {
+    .choice--lot.s-sold span, .choice--lot.s-out span {
       margin-right: 10px; }
-    .choice--lot.s-sold div {
+    .choice--lot.s-sold div, .choice--lot.s-out div {
       display: inline-block; }
+  .choice--lot.s-sold:before {
+    content: "\e920";
+    color: #E87722; }
+  .choice--lot.s-out {
+    background-color: #c4483a; }
+    .choice--lot.s-out .out-text {
+      color: rgba(255, 255, 255, 0.5); }
+    .choice--lot.s-out:before {
+      content: "\e906";
+      color: rgba(255, 255, 255, 0.5); }
   .choice--lot.s-active {
     background-color: #E87722;
     color: white; }
@@ -832,15 +841,26 @@ label {
               transform: translateY(-50%) translateX(0);
       margin: 0;
       font-size: 20px; }
-    .choice--lot:nth-last-child(n+5).s-sold, .choice--lot:nth-last-child(n+5) ~ li.s-sold {
+    .choice--lot:nth-last-child(n+5).s-sold, .choice--lot:nth-last-child(n+5).s-out, .choice--lot:nth-last-child(n+5) ~ li.s-sold, .choice--lot:nth-last-child(n+5) ~ li.s-out {
       padding-left: 28px;
       padding-top: 10px;
       text-align: left;
       font-size: 15px;
       font-size: 1.5rem;
       line-height: 1.5rem; }
-      .choice--lot:nth-last-child(n+5).s-sold:before, .choice--lot:nth-last-child(n+5) ~ li.s-sold:before {
+      .choice--lot:nth-last-child(n+5).s-sold:before, .choice--lot:nth-last-child(n+5).s-out:before, .choice--lot:nth-last-child(n+5) ~ li.s-sold:before, .choice--lot:nth-last-child(n+5) ~ li.s-out:before {
         top: 50%; }
+  .choice--lot:nth-last-child(n+12), .choice--lot:nth-last-child(n+12) ~ li {
+    height: 40px;
+    width: calc((100% / 12) - 10px);
+    margin-bottom: 10px;
+    padding-top: 5px; }
+    .choice--lot:nth-last-child(n+12).s-sold, .choice--lot:nth-last-child(n+12).s-out, .choice--lot:nth-last-child(n+12) ~ li.s-sold, .choice--lot:nth-last-child(n+12) ~ li.s-out {
+      padding-left: 28px;
+      padding-top: 4px;
+      font-size: 12px;
+      font-size: 1.2rem;
+      line-height: 1.2rem; }
 
 .other-rings {
   position: fixed;

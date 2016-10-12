@@ -59,8 +59,8 @@ $choice-spacing: 10px;
 			&:before{
 					@include icon-font;
 					font-size: 50px;
-					content: '\e920';
-					color: $brand-color;
+					content: '';
+					
 					display: block;
 					position: absolute;
 					top: 0;
@@ -72,7 +72,7 @@ $choice-spacing: 10px;
 					transition-delay: 0.3s;
 				}
 			
-			&.s-sold{
+			&.s-sold, &.s-out{
 				background-color: $grey-700;
 				color: white;
 				@include font-size(2);
@@ -90,6 +90,24 @@ $choice-spacing: 10px;
 
 				div{
 					display: inline-block;
+				}
+			}
+
+			&.s-sold:before{
+				content: "\e920";
+				color: $brand-color;
+			}
+
+			&.s-out{
+				background-color: $error-colour;
+
+				.out-text{
+					color: rgba(white, 0.5);
+				}
+
+				&:before{
+					content: "\e906";
+					color: rgba(white, 0.5);
 				}
 			}
 
@@ -118,7 +136,7 @@ $choice-spacing: 10px;
 					font-size: 20px;
 				}
 				
-				&.s-sold{
+				&.s-sold, &.s-out{
 					&:before{
 						top: 50%;
 					}
@@ -132,17 +150,21 @@ $choice-spacing: 10px;
 				}
 			}
 
-			// &:nth-last-child(n+12),
-			// &:nth-last-child(n+12) ~ li {
-			// 	height: $small-height;
-			// 	width: calc((100% / 12) - #{$choice-spacing});
-			// 	margin-bottom: $choice-spacing;
+			&:nth-last-child(n+12),
+			&:nth-last-child(n+12) ~ li {
+				height: $small-height;
+				width: calc((100% / 12) - #{$choice-spacing});
+				margin-bottom: $choice-spacing;
+				padding-top: 5px;
 
-			// 	span{
-			// 		@include font-size(1.5);
-			// 		line-height: $small-height;
-			// 	}
-			// }
+				&.s-sold, &.s-out{
+					padding-left: 28px;
+					padding-top: 4px;
+
+					@include font-size(1.2); 
+					line-height: 1.2rem;
+				}
+			}
 		}
 
 

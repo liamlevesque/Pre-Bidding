@@ -3160,6 +3160,20 @@ rivets.formatters.length = function (value) {
   return value? value.length : 0;
 };
 
+rivets.formatters.issold = function (value) {
+  return value === "sold";
+};
+
+rivets.formatters.isout = function (value) {
+  return value === "out";
+};
+
+rivets.binders.soldoroutclass = function (el, value) {
+  if(value === "sold") $(el).addClass("s-sold").removeClass('s-out');
+  else if(value === "out") $(el).addClass("s-out").removeClass('s-sold');
+  else $(el).removeClass("s-out s-sold");
+};
+
 rivets.binders.addccyclass = function(el, value){
 	$(el).addClass(value);
 }

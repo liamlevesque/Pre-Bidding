@@ -31,7 +31,7 @@
 			<div class="choice--header">Choice of <span rv-text="vrampObject.choiceGroup | length"></span> Remaining</div>
 			<div class="choice--body">
 				<ul class="choice--lots">
-					<li rv-each-choicelot="vrampObject.choiceGroup" class="choice--lot" rv-class-s-sold="choicelot.status" rv-class-s-active="choicelot.active"><span rv-text="choicelot.lotNumber"></span><div rv-if="choicelot.status" class="c-brand">SOLD</div></li>
+					<li rv-each-choicelot="vrampObject.choiceGroup" class="choice--lot" rv-soldoroutclass="choicelot.status" rv-class-s-active="choicelot.active"><span rv-text="choicelot.lotNumber"></span><div rv-if="choicelot.status | issold" class="c-brand">SOLD</div><div rv-if="choicelot.status | isout" class="out-text">OUT</div></li>
 				</ul>
 			</div>
 		</div>
