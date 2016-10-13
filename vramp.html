@@ -23,7 +23,7 @@
 				</div>
 			</div>
 
-			<div class="lot--photo">
+			<div class="lot--media"> 
 				<img rv-src="vrampObject.lotDetail.photo"/>
 			</div>
 
@@ -37,9 +37,15 @@
 			</div>
 
 		</div>		
-
 		
+		<div class="paused-message">
+			<div class="h-valign">We are currently experiencing technical difficulties. The auction will resume shortly.</div>
+		</div>
 
+		<div class="pre-post-message">
+			<div class="h-valign">Space for Marketing Material</div>
+		</div>
+		
 		<div class="details-area">
 			<div class="active-details">
 				<div class="prices" rv-class-s-sold="vrampObject.lotDetail.status">
@@ -48,7 +54,7 @@
 						<div class="ask">
 							<label rv-hide="vrampObject.lotDetail.status">ASK</label>
 							<label rv-show="vrampObject.lotDetail.status"><i class="c-brand icon-sold"></i>SOLD</label>
-							<div class="ccy CAD">
+							<div class="ask--price ccy CAD">
 								<div class="dollars" rv-html="vrampObject.price | price"></div>
 							</div>
 						</div>
@@ -65,7 +71,7 @@
 
 				<div class="high-bid">
 					<label>
-						HIGH BID
+						HIGH BIDDER
 					</label>
 
 					<div class="h-t-ellipsize"> 
@@ -74,11 +80,11 @@
 				</div>
 
 				<div class="lot-details">
-					<div class="lot-detail">
+					<div class="lot-detail" rv-show="vrampObject.lotDetail.usage">
 						<label for="">Usage</label>
 						<div rv-text="vrampObject.lotDetail.usage"></div>
 					</div>
-					<div class="lot-detail" rv-hide="vrampObject.auctioneerMessage">
+					<div class="lot-detail" rv-show="vrampObject.lotDetail.comeswith" rv-hide="vrampObject.auctioneerMessage">
 						<label for="">Comes With</label>
 						<div rv-text="vrampObject.lotDetail.comeswith"></div>
 					</div>
@@ -100,7 +106,7 @@
 				
 				<div class="ring-detail">
 					RING 1
-					<label>Lots 1 - 290, 8001 - 8099</label>
+					<label class="font--200">Lots 1 - 290, 8001 - 8099</label>
 				</div>
 
 				<div class="ring-status">
@@ -112,27 +118,61 @@
 
 			</div>
 
+			<div class="pre-auction-details">
+				
+				<div class="ring-detail">
+					RING 1
+					<label class="font--200">Lots 1 - 290, 8001 - 8099</label>
+				</div>
+
+				<div class="ring-status">
+					<div class="ring-status--content">
+						<label class="font--200">Starts at:</label><br/>
+						<span class="font--600">08:00</span>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="post-auction-details">
+				
+				<div class="ring-detail ring-detail_inactive">
+					RING 1
+					<label class="font--200">Lots 1 - 290, 8001 - 8099</label>
+					<div class="c-brand font--200"> Bidding has ended for the day </div>
+				</div>
+
+				<div class="ring-status ring-status_focus">
+					<div class="ring-status--content">
+						<div class="font--200">Ring 1 will start again tomorrow at:</div>
+						<span class="font--600">08:00</span><br/>
+						<label class="font--200">Lots 2140 - 2700</label>
+					</div>
+				</div>
+
+			</div>
+
 		</div>
 
-		<div class="paused-message">
-			<div class="h-valign">We are currently experiencing technical difficulties. The auction will resume shortly.</div>
-		</div>
-
-
+		
 		<footer class="other-rings">
 			<ul class="rings">
-				<li rv-each-ring="vrampObject.otherRings" class="ring">
+				<li rv-each-ring="vrampObject.otherRings" class="ring" rv-data-index="ring.index" rv-ringstatusclass="ring.status" rv-on-click="vrampController.toggleOtherRingStatus">
 					<div rv-unless="ring.TAL">
 						<div class="ring--number">
 							<label>RING</label>
 							<span rv-text="ring.number"></span>
 						</div>
+						
 						<div class="ring--progress">
-							<div rv-if="ring.status">
+							<div rv-if="ring.status | comparison 'inprogress'">
 								Lot <span rv-text="ring.lot"></span>
 							</div>
-							<div rv-unless="ring.status">
+							<div rv-if="ring.status | comparison 'notstarted'">
 								Starts ~ <span rv-text="ring.startTime"></span>
+							</div>
+							<div rv-if="ring.status | comparison 'ended'">
+								Ended. Starts tomorrow ~ <span rv-text="ring.startTime"></span>
 							</div>
 
 						</div>
@@ -153,19 +193,27 @@
 
 		<div class="prototype-controls js--prototype-controls">
 			
-			<button rv-on-click="vrampController.prevLot" class="g-half">Previous Lot</button>
-			<button rv-on-click="vrampController.nextLot" class="g-half">Next Lot</button><br/>
-			<button rv-on-click="vrampController.sellLot">SELL THIS LOT</button>
-
 			<div>
-				<button rv-on-click="vrampController.showMessage">Toggle Auctioneer's Message</button><br/>
-				<button rv-on-click="vrampController.toggleOtherRings">Toggle Other Rings</button><br/>
-				<button rv-on-click="vrampController.toggleConversions">Toggle Conversions</button><br/>
-				<button rv-on-click="vrampController.toggleOpenOffer">Toggle Open Offer</button>
+				<label>Navigate</label><br/>
+				<button rv-on-click="vrampController.prevLot" class="g-half">Previous Lot/Group</button>
+				<button rv-on-click="vrampController.nextLot" class="g-half">Next Lot/Group</button><br/>
+				<button rv-on-click="vrampController.sellLot">SELL THIS LOT</button>
 			</div>
 
 			<div>
-				<button rv-on-click="vrampController.togglePause">Pause</button>
+				<label>Settings</label><br/>
+				<button rv-on-click="vrampController.showMessage">Toggle Auctioneer's Message</button><br/>
+				<button rv-on-click="vrampController.toggleOtherRings">Toggle Other Rings</button><br/>
+				<button rv-on-click="vrampController.toggleConversions">Toggle Conversions</button><br/>
+				<!-- <button rv-on-click="vrampController.toggleOpenOffer">Toggle Open Offer</button> -->
+			</div>
+
+			<div>
+				<label>Auction State</label><br/>
+				<button rv-on-click="vrampController.toggleActive">Active</button>
+				<button rv-on-click="vrampController.togglePause">Paused</button>
+				<button rv-on-click="vrampController.togglePre">Pre-Auction</button>
+				<button rv-on-click="vrampController.togglePost">Post-Auction</button>
 			</div>
 
 		</div>

@@ -19,7 +19,7 @@ $height-header: 100px;
 		bottom: $footer-height;
 	}
 
-	.s-auction-paused &{
+	.s-auction-paused &, .s-auction-pre &, .s-auction-post &{
 		transform: translateX(-100%);
 	}
 }
@@ -84,7 +84,7 @@ $height-header: 100px;
 		}
 
 
-	.lot--photo{
+	.lot--media{
 		position: absolute;
 		top: 0;//$height-header;
 		left: 0;

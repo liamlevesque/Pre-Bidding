@@ -243,20 +243,31 @@ hr {
   src: url("../fonts/FrutigerLTStd-BoldCn.eot?#iefix") format("embedded-opentype"), url("../fonts/FrutigerLTStd-BoldCn.woff") format("woff"), url("../fonts/FrutigerLTStd-BoldCn.ttf") format("truetype"), url("../fonts/FrutigerLTStd-BoldCn.svg#FrutigerLTStd-BoldCn") format("svg");
   font-weight: 400;
   font-style: normal; }
+.font--200 {
+  font-size: 20px;
+  font-size: 2rem; }
+
+.font--600 {
+  font-size: 60px;
+  font-size: 6rem; }
+
 body {
   font-family: 'Frutiger LT Std', 'Trebuchet MS', Verdana, sans-serif; }
 
 label {
   color: inherit; }
 
+body {
+  overflow: hidden; }
+
 .fullscreenbg {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  min-width: 100%; }
+  min-width: 100%;
+  min-height: 100%; }
 
-.paused-message {
+.paused-message, .pre-post-message {
   position: absolute;
   top: 60px;
   bottom: 60px;
@@ -274,23 +285,31 @@ label {
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   -webkit-transition-delay: 0.1s;
           transition-delay: 0.1s; }
-  .s-auction-paused .paused-message {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1; }
-  .paused-message:after {
-    content: " ";
-    position: absolute;
-    top: 50%;
-    right: -30px;
-    width: 60px;
-    height: 60px;
-    -webkit-transform: translateY(-50%) rotate(45deg);
-            transform: translateY(-50%) rotate(45deg);
-    background-color: white; }
-  .paused-message .h-valign {
-    padding-right: 120px;
-    text-align: center; }
+  .paused-message .h-valign, .pre-post-message .h-valign {
+    padding: 60px;
+    text-align: center;
+    left: 0;
+    right: 0; }
+
+.paused-message:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  width: 60px;
+  height: 60px;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+          transform: translateY(-50%) rotate(45deg);
+  background-color: white; }
+.s-auction-paused .paused-message {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1; }
+
+.s-auction-pre .pre-post-message, .s-auction-post .pre-post-message {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1; }
 
 .prototype-controls {
   position: fixed;
@@ -316,7 +335,7 @@ label {
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   .s-other-rings_all .lot-preview {
     bottom: 50px; }
-  .s-auction-paused .lot-preview {
+  .s-auction-paused .lot-preview, .s-auction-pre .lot-preview, .s-auction-post .lot-preview {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%); }
 
@@ -370,14 +389,14 @@ label {
   .lot--description span {
     padding-right: 20px; }
 
-.lot--photo {
+.lot--media {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   overflow: hidden; }
-  .lot--photo img {
+  .lot--media img {
     width: 100%;
     max-width: 100%;
     top: 50%;
@@ -400,7 +419,7 @@ label {
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   .s-other-rings_single .details-area {
     bottom: 50px; }
-  .s-auction-paused .details-area {
+  .s-auction-paused .details-area, .s-auction-pre .details-area, .s-auction-post .details-area {
     top: 60px;
     bottom: 60px;
     right: 60px; }
@@ -415,7 +434,7 @@ label {
           transform: translateX(0);
   -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
-  .s-auction-paused .active-details {
+  .s-auction-paused .active-details, .s-auction-pre .active-details, .s-auction-post .active-details {
     -webkit-transform: translateX(100%);
             transform: translateX(100%); }
 
@@ -429,21 +448,6 @@ label {
     width: 100%; }
   .prices.s-sold {
     background-color: #585858; }
-
-.ask {
-  font-size: 35px;
-  font-size: 3.5rem;
-  padding: 0 20px; }
-  .ask label {
-    font-size: 20px;
-    font-size: 2rem; }
-  .ask .ccy:before {
-    font-size: 20px;
-    font-size: 2rem; }
-  .ask .ccy:after {
-    display: none; }
-  .ask .dollars {
-    display: inline-block; }
 
 .CAD .divider:before {
   content: ","; }
@@ -729,6 +733,32 @@ label {
   background-image: url(../img/ccy-flags.png);
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
 
+.ask {
+  font-size: 35px;
+  font-size: 3.5rem;
+  padding: 0 20px; }
+  .ask label {
+    font-size: 20px;
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 20px; }
+
+.ask--price {
+  display: inline-block;
+  position: relative; }
+  .ask--price:before {
+    font-size: 20px;
+    font-size: 2rem;
+    vertical-align: top; }
+  .ask--price:after {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4); }
+  .ask--price .dollars {
+    display: inline-block; }
+
 .conversions {
   text-align: left;
   margin: 20px; }
@@ -760,8 +790,8 @@ label {
   width: 100%;
   background-color: #c35f14;
   padding: 20px;
-  font-size: 16px;
-  font-size: 1.6rem; }
+  font-size: 20px;
+  font-size: 2rem; }
   .high-bid label {
     display: block;
     opacity: 0.8;
@@ -812,7 +842,7 @@ label {
     -webkit-transform: translateY(0);
             transform: translateY(0); }
 
-.paused-details {
+.paused-details, .pre-auction-details, .post-auction-details {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -823,9 +853,18 @@ label {
   -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   font-weight: 700; }
-  .s-auction-paused .paused-details {
-    -webkit-transform: translateX(0);
-            transform: translateX(0); }
+
+.s-auction-paused .paused-details {
+  -webkit-transform: translateX(0);
+          transform: translateX(0); }
+
+.s-auction-pre .pre-auction-details {
+  -webkit-transform: translateX(0);
+          transform: translateX(0); }
+
+.s-auction-post .post-auction-details {
+  -webkit-transform: translateX(0);
+          transform: translateX(0); }
 
 .ring-detail {
   position: absolute;
@@ -838,9 +877,12 @@ label {
   font-size: 6rem; }
   .ring-detail label {
     display: block;
-    font-size: 20px;
-    font-size: 2rem;
+    line-height: 2rem;
     opacity: 0.9; }
+
+.ring-detail_inactive {
+  background-color: #585858;
+  color: rgba(255, 255, 255, 0.8); }
 
 .ring-status {
   position: absolute;
@@ -859,12 +901,39 @@ label {
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     position: absolute;
-    width: 100%; }
+    width: 100%;
+    padding: 40px; }
   .ring-status .status-icon {
     display: block;
-    margin-bottom: 10px;
-    font-size: 80px; }
+    margin-bottom: 30px;
+    font-size: 80px;
+    -webkit-animation: pulsate 2s ease-in-out infinite;
+            animation: pulsate 2s ease-in-out infinite; }
 
+.ring-status_focus {
+  background-color: #E87722; }
+
+@-webkit-keyframes pulsate {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  50% {
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes pulsate {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  50% {
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
 .choice-area {
   position: absolute;
   bottom: 0;
@@ -1001,6 +1070,12 @@ label {
   position: relative;
   display: inline-block;
   background-color: #e8e6e2; }
+  .ring.s-post {
+    background-color: #585858;
+    color: rgba(255, 255, 255, 0.7); }
+  .ring.s-pre {
+    background-color: #585858;
+    color: rgba(255, 255, 255, 0.7); }
   .ring:not(:first-child) {
     border-left: 1px solid #959595; }
   .ring:only-child {

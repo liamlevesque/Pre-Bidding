@@ -6,10 +6,7 @@ $paused-spacing: 60px;
 
 $default-padding: 20px; 
 
-@mixin font-size($sizeValue: 1.6) {
-  font-size: ($sizeValue * 10) + px;
-  font-size: $sizeValue + rem;
-}
+
 
 @mixin details-label{
 	label{
@@ -20,6 +17,24 @@ $default-padding: 20px;
 	}
 }
 
+@mixin vrampbreakpoint($point) {
+  @if $point == xlarge {
+    @media (min-width: 1920px) { @content; }
+  }
+  
+  @if $point == large {
+    @media (min-width: 1600px) { @content; }
+  }
+
+  @if $point == medium {
+    @media (min-width: 1280) { @content; }
+  }
+
+  @if $point == small {
+    @media (min-width: 960) { @content; }
+  }
+}
+
 body{
 	font-family: 'Frutiger LT Std', 'Trebuchet MS', Verdana, sans-serif;
 }
@@ -28,15 +43,20 @@ label{
 	color: inherit;
 }
 
+body{
+	overflow: hidden;
+}
+
 .fullscreenbg{
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
+	
 	min-width: 100%;
+	min-height: 100%;
 }
 
-.paused-message{
+.paused-message, .pre-post-message{
 	position: absolute;
 	top: $paused-spacing;
 	bottom: $paused-spacing;
@@ -54,30 +74,43 @@ label{
 	transition: $transition;
 	transition-delay: 0.1s;
 
-	.s-auction-paused &{
-		transform: translateX(0);
-		opacity: 1;
-	}
-
-	&:after{
-		content: " ";
-		
-		position: absolute;
-		top:50%;
-		right: -$paused-spacing/2;
-		width: $paused-spacing;
-		height: $paused-spacing;
-		
-		transform: translateY(-50%) rotate(45deg);
-
-		background-color: white;
-	}
-
 	.h-valign{
-		padding-right: 2 * $paused-spacing;
+		padding: $paused-spacing;
 		text-align: center;
+		left: 0;
+		right: 0;
 	}
 }
+
+	.paused-message{
+		&:after{
+			content: " ";
+			
+			position: absolute;
+			top:50%;
+			right: -$paused-spacing/2;
+			width: $paused-spacing;
+			height: $paused-spacing;
+			
+			transform: translateY(-50%) rotate(45deg);
+
+			background-color: white;
+		}
+
+		.s-auction-paused &{
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+
+	.pre-post-message{
+
+		.s-auction-pre &, .s-auction-post &{
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+
 
 .prototype-controls{
 	position: fixed;

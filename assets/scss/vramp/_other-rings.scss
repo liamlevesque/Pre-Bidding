@@ -18,6 +18,16 @@ $width-ring-number: 75px;
 		display: inline-block;
 		background-color: $grey-50;
 
+		&.s-post{
+			background-color: $grey-700;
+			color: rgba(white, 0.7);
+		}
+
+		&.s-pre{
+			background-color: $grey-700;
+			color: rgba(white, 0.7);
+		}
+
 		&:not(:first-child){
 			border-left: 1px solid $grey-500;
 		}

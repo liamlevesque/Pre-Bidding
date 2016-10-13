@@ -10,27 +10,30 @@ var allConversions = [
 	],
 	allOtherRings = [
 		{
+			"index":0,
 			"number": "TAL",
-			"status": "In Progress",
+			"status": "inprogress",
 			"lot": "5000",
 			"TAL":true,
 			"startTime" : "09:00",
 			"displayOrder" : 99
 		},
 		{
+			"index":1,
 			"number": "2",
-			"status": "In Progress",
+			"status": "notstarted",
 			"lot": "945",
 			"TAL":false,
 			"startTime" : "09:00",
 			"displayOrder" : 1
 		},
 		{
+			"index":2,
 			"number": "3",
-			"status": null,
+			"status": "notstarted",
 			"lot": "945",
 			"TAL":false,
-			"startTime" : "09:00",
+			"startTime" : "11:30",
 			"displayOrder" : 2
 		}
 		
@@ -71,14 +74,11 @@ var vrampObject = {
 		},
 
 		showMessage: function(e,model){
-
 			vrampObject.auctioneerMessage = vrampObject.auctioneerMessage ? null : sampleAuctioneerMessage;
 		},
 
 		toggleOpenOffer: function(e,model){
-			console.log(vrampObject.openOffers);
 			vrampObject.openOffers = !vrampObject.openOffers;
-
 		},
 
 		toggleOtherRings: function(e,model){
@@ -100,10 +100,20 @@ var vrampObject = {
 			else $(".js--vramp-bidding").addClass('s-other-rings_all');
 		},
 
+		toggleActive: function(e,model){
+			vrampObject.auctionStatus = "active";
+		},
+
 		togglePause: function(e,model){
-			
-			vrampObject.auctionStatus = (vrampObject.auctionStatus === "active" ) ? "paused" : "active";
-		
+			vrampObject.auctionStatus = "paused";
+		},
+
+		togglePre: function(e,model){
+			vrampObject.auctionStatus = "pre";
+		},
+
+		togglePost: function(e,model){
+			vrampObject.auctionStatus = "post";
 		},
 
 		nextLot: function(e,model){
@@ -117,6 +127,16 @@ var vrampObject = {
 		sellLot: function(e,model){
 			vrampObject.lotDetail.status = "sold";
 			if(isChoiceGroup()) updateChoiceGroup();
+		},
+
+		toggleOtherRingStatus: function(e,model){
+			var target = $(e.currentTarget).data("index");
+			var status = vrampObject.otherRings[target].status;
+			console.log(target, status);
+
+			if(status === "notstarted") vrampObject.otherRings[target].status = "inprogress";
+			else if(status === "inprogress") vrampObject.otherRings[target].status = "ended";
+			else if(status === "ended") vrampObject.otherRings[target].status = "notstarted";
 		}
 
 	};
@@ -130,9 +150,18 @@ rivets.formatters.convertedVrampPrice = function(value, rate, ccy){
 	return formatprice(convertedVal.toFixed(0));
 }
 
+	function lotStillAvailable(obj){
+		if(obj.status != null) return false;
+		else return true;
+	}
+
 rivets.formatters.length = function (value) {
-  return value? value.length : 0;
+  return value? vrampObject.choiceGroup.filter(lotStillAvailable).length : 0;
 };
+
+rivets.formatters.comparison = function (value, comparer) {
+	return value === comparer;
+}
 
 rivets.formatters.issold = function (value) {
   return value === "sold";
@@ -142,10 +171,20 @@ rivets.formatters.isout = function (value) {
   return value === "out";
 };
 
+rivets.binders.ringstatusclass = function (el, value) {
+	$(el).removeClass('s-active s-post s-pre');
+	if(value === "inprogress") $(el).addClass('s-active');
+	else if(value === "ended") $(el).addClass('s-post');
+	else if(value === "notstarted") $(el).addClass('s-pre');
+};
+
 rivets.binders.auctionstatus = function (el, value) {
-	if(value === "active") $(el).addClass('s-auction-active').removeClass('s-auction-paused');
-	else if(value === "paused") $(el).addClass('s-auction-paused').removeClass('s-auction-active');
-}
+	$(el).removeClass('s-auction-paused s-auction-active s-auction-pre s-auction-post');
+	if(value === "active") $(el).addClass('s-auction-active');
+	else if(value === "paused") $(el).addClass('s-auction-paused');
+	else if(value === "pre") $(el).addClass('s-auction-pre');
+	else if(value === "post") $(el).addClass('s-auction-post');
+};
 
 rivets.binders.soldoroutclass = function (el, value) {
   if(value === "sold") $(el).addClass("s-sold").removeClass('s-out');
