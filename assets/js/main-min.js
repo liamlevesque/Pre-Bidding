@@ -3053,7 +3053,7 @@ var allConversions = [
 			"index":0,
 			"number": "TAL",
 			"status": "inprogress",
-			"lot": "5000",
+			"lot": 5000,
 			"TAL":true,
 			"startTime" : "09:00",
 			"displayOrder" : 99
@@ -3062,7 +3062,7 @@ var allConversions = [
 			"index":1,
 			"number": "2",
 			"status": "notstarted",
-			"lot": "945",
+			"lot": 945,
 			"TAL":false,
 			"startTime" : "09:00",
 			"displayOrder" : 1
@@ -3071,7 +3071,7 @@ var allConversions = [
 			"index":2,
 			"number": "3",
 			"status": "notstarted",
-			"lot": "945",
+			"lot": 1200,
 			"TAL":false,
 			"startTime" : "11:30",
 			"displayOrder" : 2
@@ -3170,16 +3170,19 @@ var vrampObject = {
 		},
 
 		toggleOtherRingStatus: function(e,model){
-			var target = $(e.currentTarget).data("index");
-			var status = vrampObject.otherRings[target].status;
-			console.log(target, status);
+			var status = model.ring.status;
+			
+			if(status === "notstarted") model.ring.status = "inprogress";
+			else if(status === "inprogress") model.ring.status = "ended";
+			else if(status === "ended") model.ring.status = "notstarted";
+		},
 
-			if(status === "notstarted") vrampObject.otherRings[target].status = "inprogress";
-			else if(status === "inprogress") vrampObject.otherRings[target].status = "ended";
-			else if(status === "ended") vrampObject.otherRings[target].status = "notstarted";
+		incrementOtherRingLots: function(e,model){
+			for(var i = 0; i < vrampObject.otherRings.length; i++) vrampObject.otherRings[i].lot++;
 		}
 
 	};
+
 
 
 rivets.formatters.convertedVrampPrice = function(value, rate, ccy){

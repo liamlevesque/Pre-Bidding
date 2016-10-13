@@ -157,7 +157,7 @@
 		
 		<footer class="other-rings">
 			<ul class="rings">
-				<li rv-each-ring="vrampObject.otherRings" class="ring" rv-data-index="ring.index" rv-ringstatusclass="ring.status" rv-on-click="vrampController.toggleOtherRingStatus">
+				<li rv-each-ring="vrampObject.otherRings" class="ring" rv-data-label="ring.number" rv-ringstatusclass="ring.status" rv-on-click="vrampController.toggleOtherRingStatus">
 					<div rv-unless="ring.TAL">
 						<div class="ring--number">
 							<label>RING</label>
@@ -183,7 +183,16 @@
 							TAL
 						</div>
 						<div class="ring--progress">
-							Lot <span rv-text="ring.lot"></span> Closes Next
+							<div rv-if="ring.status | comparison 'inprogress'">
+								Lot <span rv-text="ring.lot"></span> Closes Next
+							</div>
+							<div rv-if="ring.status | comparison 'notstarted'">
+								Starts ~ <span rv-text="ring.startTime"></span>
+							</div>
+							<div rv-if="ring.status | comparison 'ended'">
+								Timed Auction has Ended
+							</div>
+
 						</div>
 					</div>
 					
@@ -202,9 +211,13 @@
 
 			<div>
 				<label>Settings</label><br/>
-				<button rv-on-click="vrampController.showMessage">Toggle Auctioneer's Message</button><br/>
-				<button rv-on-click="vrampController.toggleOtherRings">Toggle Other Rings</button><br/>
 				<button rv-on-click="vrampController.toggleConversions">Toggle Conversions</button><br/>
+				<button rv-on-click="vrampController.showMessage">Toggle Auctioneer's Message</button><br/>
+			</div>
+			<div>
+				<label>Other Rings</label><br/>
+				<button rv-on-click="vrampController.toggleOtherRings">Toggle Other Rings</button>
+				<button rv-on-click="vrampController.incrementOtherRingLots">Change Other Rings</button>
 				<!-- <button rv-on-click="vrampController.toggleOpenOffer">Toggle Open Offer</button> -->
 			</div>
 
