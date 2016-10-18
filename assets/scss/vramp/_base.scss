@@ -1,5 +1,6 @@
 $details-width: 30%;
 
+$footer-height_small: 40px;
 $footer-height: 50px;
 
 $paused-spacing: 60px;
@@ -7,15 +8,6 @@ $paused-spacing: 60px;
 $default-padding: 20px; 
 
 
-
-@mixin details-label{
-	label{
-		display: block;
-		opacity: 0.8;
-		@include font-size(1.2);
-		margin-bottom: 10px;
-	}
-}
 
 @mixin vrampbreakpoint($point) {
   @if $point == xlarge {
@@ -27,16 +19,12 @@ $default-padding: 20px;
   }
 
   @if $point == medium {
-    @media (min-width: 1280) { @content; }
+    @media (min-width: 1280px) { @content; }
   }
 
   @if $point == small {
-    @media (min-width: 960) { @content; }
+    @media (min-width: 960px) { @content; }
   }
-}
-
-body{
-	font-family: 'Frutiger LT Std', 'Trebuchet MS', Verdana, sans-serif;
 }
 
 label{
@@ -55,61 +43,6 @@ body{
 	min-width: 100%;
 	min-height: 100%;
 }
-
-.paused-message, .pre-post-message{
-	position: absolute;
-	top: $paused-spacing;
-	bottom: $paused-spacing;
-	left: $paused-spacing;
-	right: calc(#{$details-width} + (2 * #{$paused-spacing}));
-
-	background-color: white;
-	padding: 2 * $paused-spacing;
-
-	@include font-size(3);
-	color: $brand-color;
-
-	opacity: 0;
-	transform: translateX(100%);
-	transition: $transition;
-	transition-delay: 0.1s;
-
-	.h-valign{
-		padding: $paused-spacing;
-		text-align: center;
-		left: 0;
-		right: 0;
-	}
-}
-
-	.paused-message{
-		&:after{
-			content: " ";
-			
-			position: absolute;
-			top:50%;
-			right: -$paused-spacing/2;
-			width: $paused-spacing;
-			height: $paused-spacing;
-			
-			transform: translateY(-50%) rotate(45deg);
-
-			background-color: white;
-		}
-
-		.s-auction-paused &{
-			transform: translateX(0);
-			opacity: 1;
-		}
-	}
-
-	.pre-post-message{
-
-		.s-auction-pre &, .s-auction-post &{
-			transform: translateX(0);
-			opacity: 1;
-		}
-	}
 
 
 .prototype-controls{

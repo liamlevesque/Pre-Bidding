@@ -1,11 +1,18 @@
+$width-ring-number_small: 50px;
 $width-ring-number: 75px;
+
+
 
 .other-rings{
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	height: $footer-height;
+	height: $footer-height_small;
+
+	@include vrampbreakpoint(medium){
+		height: $footer-height;
+	}
 }
 	
 	.rings{
@@ -13,7 +20,12 @@ $width-ring-number: 75px;
 	}
 
 	.ring{
-		height: $footer-height;
+		height: $footer-height_small;
+		
+		@include vrampbreakpoint(medium){
+			height: $footer-height;
+		}
+
 		position: relative;
 		display: inline-block;
 		background-color: $grey-50;
@@ -52,10 +64,13 @@ $width-ring-number: 75px;
 			@include vert-align;
 			position: absolute;
 			left: 0;
-			width: $width-ring-number;
+			width: $width-ring-number_small;
+
+			@include vrampbreakpoint(medium){
+				width: $width-ring-number;				
+			}
 
 			text-align: center;
-			@include font-size(1.5);
 
 			color: $brand-color;
 
@@ -69,9 +84,13 @@ $width-ring-number: 75px;
 		.ring--progress{
 			@include vert-align;
 			position: absolute;
-			left: $width-ring-number;
 			right: 0;
+			left: $width-ring-number_small;
 			
-			@include font-size(1.8);
+			@include vrampbreakpoint(medium){
+				left: $width-ring-number;				
+			}
+			
+			
 			font-weight: 700;
 		}

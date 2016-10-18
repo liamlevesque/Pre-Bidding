@@ -6,7 +6,11 @@ $bg-color-auctioneer-message: darken($brand-color,25%);
 $text-color-details: white;
 
 $height-ask: 40%;
+$height-ask_small: 35%;
+
 $height-high-bid: 90px;
+$height-high-bid_small: 75px;
+
 $height-lot-details: 50%;
 
 .details-area{
@@ -26,7 +30,11 @@ $height-lot-details: 50%;
 	transition: $transition;
 
 	.s-other-rings_single &{
-		bottom: $footer-height;
+		bottom: $footer-height_small;
+
+		@include vrampbreakpoint(medium){
+			bottom: $footer-height;
+		}
 	}
 
 	.s-auction-paused &, .s-auction-pre &, .s-auction-post &{
@@ -55,8 +63,13 @@ $height-lot-details: 50%;
 	.prices{
 		position: absolute;
 		top: 0;
-		height: $height-ask;
 		width: 100%;
+
+		height: $height-ask_small;
+
+		@include vrampbreakpoint(medium){
+			height: $height-ask;
+		}
 
 		text-align: center;
 
@@ -136,13 +149,17 @@ $height-lot-details: 50%;
 
 
 		.ask{
-			@include font-size(3.5);
+			
 			padding: 0 20px;
 
 			label{
-				@include font-size(2); 
+				opacity: 0.8;
 				display: block;
-				margin-bottom: 20px;
+				margin-bottom: 10px;
+
+				@include vrampbreakpoint(medium){
+					margin-bottom: 20px;
+				}
 			}
 			
 		}
@@ -152,15 +169,32 @@ $height-lot-details: 50%;
 				position: relative;
 			
 				&:before{
-					@include font-size(2);
+					@extend .font--180;
 					vertical-align: top;
 				}
 
 				&:after{
 					position: absolute;
-					left: 12px;
-					bottom: 12px;
-					transform: scale(1.4);
+					left: 5px;
+					top: 25px;
+					transform: scale(1);
+
+					@include vrampbreakpoint(medium){
+						left: 8px;
+						top: 30px;
+						transform: scale(1.2);
+					}
+					
+					@include vrampbreakpoint(large){
+						left: 10px;
+						top: 35px;
+					}
+
+					@include vrampbreakpoint(xlarge){
+						left: 12px;
+						top: 40px;
+						transform: scale(1.4);
+					}
 				}
 
 				.dollars{
@@ -175,22 +209,34 @@ $height-lot-details: 50%;
 		}
 
 			.conversion{
-				padding: 10px;
+				padding: 5px;
 				background-color: rgba(0,0,0,0.1);
 				position: relative;
 				margin-bottom: 10px;
 
-				.ccy:before{
-					display: block;
-					@include font-size(1.5);
+				@include vrampbreakpoint(medium){
+					padding: 10px;
+				}
+
+				&.ccy:after{
+					display: inline-block; 
+
+					@include vrampbreakpoint(medium){
+						display: block;
+					}
 				}
 
 				.dollars{
-					@include vert-align;
 					position: absolute;
-					right: $default-padding;
+					right: 5px;
+					top: 3px;
 					display: inline-block;
-					@include font-size(2);
+
+					@include vrampbreakpoint(medium){
+						@include vert-align;
+						position: absolute;
+						right: 10px;
+					}
 				}
 			}
 
@@ -198,15 +244,20 @@ $height-lot-details: 50%;
 	
 
 
-	.high-bid{
+	.high-bidder{
 		position: absolute;
-		top: $height-ask;
-		height: $height-high-bid;
 		width: 100%;
+
+		top: $height-ask_small;
+		height: $height-high-bid_small;
+		
+		@include vrampbreakpoint(medium){
+			top: $height-ask;
+			height: $height-high-bid;
+		}
 
 		background-color: $bg-color-high-bid;
 		padding: $default-padding;
-		@include font-size(2);
 
 		@include details-label;
 
@@ -218,10 +269,14 @@ $height-lot-details: 50%;
 
 		position: absolute;
 		bottom: 0;
-		height: calc(100% - (#{$height-ask} + #{$height-high-bid}));
 		width: 100%;
-		@include font-size(2);
 
+		height: calc(100% - (#{$height-ask_small} + #{$height-high-bid_small}));
+
+		@include vrampbreakpoint(medium){
+			height: calc(100% - (#{$height-ask} + #{$height-high-bid}));	
+		}
+		
 		@include details-label;
 
 		label{
@@ -232,7 +287,11 @@ $height-lot-details: 50%;
 
 		.lot-detail{
 			&:not(:last-of-type){
-				margin-bottom: 20px;	
+				margin-bottom: 10px;	
+
+				@include vrampbreakpoint(medium){
+					margin-bottom: 20px;
+				}
 			}
 		}
 
@@ -247,7 +306,6 @@ $height-lot-details: 50%;
 		bottom: 0;
 		width: 100%;
 
-		@include font-size(2);
 		@include details-label;
 
 		transform: translateY(100%);

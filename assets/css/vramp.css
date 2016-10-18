@@ -231,29 +231,6 @@ hr {
 .icon-warranty:before {
   content: "\e913"; }
 
-@font-face {
-  font-family: 'Frutiger LT Std';
-  src: url("../fonts/FrutigerLTStd-BlackCn.eot");
-  src: url("../fonts/FrutigerLTStd-BlackCn.eot?#iefix") format("embedded-opentype"), url("../fonts/FrutigerLTStd-BlackCn.woff") format("woff"), url("../fonts/FrutigerLTStd-BlackCn.ttf") format("truetype"), url("../fonts/FrutigerLTStd-BlackCn.svg#FrutigerLTStd-BlackCn") format("svg");
-  font-weight: 700;
-  font-style: normal; }
-@font-face {
-  font-family: 'Frutiger LT Std';
-  src: url("../fonts/FrutigerLTStd-BoldCn.eot");
-  src: url("../fonts/FrutigerLTStd-BoldCn.eot?#iefix") format("embedded-opentype"), url("../fonts/FrutigerLTStd-BoldCn.woff") format("woff"), url("../fonts/FrutigerLTStd-BoldCn.ttf") format("truetype"), url("../fonts/FrutigerLTStd-BoldCn.svg#FrutigerLTStd-BoldCn") format("svg");
-  font-weight: 400;
-  font-style: normal; }
-.font--200 {
-  font-size: 20px;
-  font-size: 2rem; }
-
-.font--600 {
-  font-size: 60px;
-  font-size: 6rem; }
-
-body {
-  font-family: 'Frutiger LT Std', 'Trebuchet MS', Verdana, sans-serif; }
-
 label {
   color: inherit; }
 
@@ -267,50 +244,6 @@ body {
   min-width: 100%;
   min-height: 100%; }
 
-.paused-message, .pre-post-message {
-  position: absolute;
-  top: 60px;
-  bottom: 60px;
-  left: 60px;
-  right: calc(30% + (2 * 60px));
-  background-color: white;
-  padding: 120px;
-  font-size: 30px;
-  font-size: 3rem;
-  color: #E87722;
-  opacity: 0;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
-  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
-  -webkit-transition-delay: 0.1s;
-          transition-delay: 0.1s; }
-  .paused-message .h-valign, .pre-post-message .h-valign {
-    padding: 60px;
-    text-align: center;
-    left: 0;
-    right: 0; }
-
-.paused-message:after {
-  content: " ";
-  position: absolute;
-  top: 50%;
-  right: -30px;
-  width: 60px;
-  height: 60px;
-  -webkit-transform: translateY(-50%) rotate(45deg);
-          transform: translateY(-50%) rotate(45deg);
-  background-color: white; }
-.s-auction-paused .paused-message {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-  opacity: 1; }
-
-.s-auction-pre .pre-post-message, .s-auction-post .pre-post-message {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
-  opacity: 1; }
-
 .prototype-controls {
   position: fixed;
   top: 200px;
@@ -322,6 +255,141 @@ body {
   .prototype-controls button {
     margin-bottom: 10px; }
 
+@font-face {
+  font-family: 'Frutiger LT Std';
+  src: url("../fonts/FrutigerLTStd-BlackCn.eot");
+  src: url("../fonts/FrutigerLTStd-BlackCn.eot?#iefix") format("embedded-opentype"), url("../fonts/FrutigerLTStd-BlackCn.woff") format("woff"), url("../fonts/FrutigerLTStd-BlackCn.ttf") format("truetype"), url("../fonts/FrutigerLTStd-BlackCn.svg#FrutigerLTStd-BlackCn") format("svg");
+  font-weight: 700;
+  font-style: normal; }
+@font-face {
+  font-family: 'Frutiger LT Std';
+  src: url("../fonts/FrutigerLTStd-BoldCn.eot");
+  src: url("../fonts/FrutigerLTStd-BoldCn.eot?#iefix") format("embedded-opentype"), url("../fonts/FrutigerLTStd-BoldCn.woff") format("woff"), url("../fonts/FrutigerLTStd-BoldCn.ttf") format("truetype"), url("../fonts/FrutigerLTStd-BoldCn.svg#FrutigerLTStd-BoldCn") format("svg");
+  font-weight: 400;
+  font-style: normal; }
+body {
+  font-family: 'Frutiger LT Std', 'Trebuchet MS', Verdana, sans-serif; }
+
+.font--120, .lot--number label, .high-bidder label, .lot-details label, .auctioneers-message label, .open-offers label {
+  font-size: 10px;
+  font-size: 1rem; }
+
+.font--150 {
+  font-size: 12px;
+  font-size: 1.2rem; }
+
+.font--180, .ask--price:before {
+  font-size: 13px;
+  font-size: 1.3rem; }
+
+.font--200 {
+  font-size: 15px;
+  font-size: 1.5rem; }
+
+.font--250 {
+  font-size: 18px;
+  font-size: 1.8rem; }
+
+.font--300 {
+  font-size: 25px;
+  font-size: 2.5rem; }
+
+.font--400 {
+  font-size: 20px;
+  font-size: 2rem; }
+
+.font--600 {
+  font-size: 60px;
+  font-size: 6rem; }
+
+@media (min-width: 1280px) {
+  .font--120, .lot--number label, .high-bidder label, .lot-details label, .auctioneers-message label, .open-offers label {
+    font-size: 12px;
+    font-size: 1.2rem; }
+
+  .font--150 {
+    font-size: 15px;
+    font-size: 1.5rem; }
+
+  .font--180, .ask--price:before {
+    font-size: 16px;
+    font-size: 1.6rem; }
+
+  .font--200 {
+    font-size: 18px;
+    font-size: 1.8rem; }
+
+  .font--250 {
+    font-size: 22px;
+    font-size: 2.2rem; }
+
+  .font--300 {
+    font-size: 30px;
+    font-size: 3rem; }
+
+  .font--400 {
+    font-size: 30px;
+    font-size: 3rem; }
+
+  .font--600 {
+    font-size: 60px;
+    font-size: 6rem; } }
+@media (min-width: 1600px) {
+  .font--150 {
+    font-size: 15px;
+    font-size: 1.5rem; }
+
+  .font--180, .ask--price:before {
+    font-size: 18px;
+    font-size: 1.8rem; }
+
+  .font--200 {
+    font-size: 20px;
+    font-size: 2rem; }
+
+  .font--250 {
+    font-size: 25px;
+    font-size: 2.5rem; }
+
+  .font--300 {
+    font-size: 30px;
+    font-size: 3rem; }
+
+  .font--400 {
+    font-size: 40px;
+    font-size: 4rem; }
+
+  .font--600 {
+    font-size: 60px;
+    font-size: 6rem; } }
+@media (min-width: 1920px) {
+  .font--150 {
+    font-size: 20px;
+    font-size: 2rem; }
+
+  .font--180, .ask--price:before {
+    font-size: 20px;
+    font-size: 2rem; }
+
+  .font--200 {
+    font-size: 25px;
+    font-size: 2.5rem; }
+
+  .font--250 {
+    font-size: 25px;
+    font-size: 2.5rem; }
+
+  .font--300 {
+    font-size: 35px;
+    font-size: 3.5rem; }
+
+  .font--400 {
+    font-size: 50px;
+    font-size: 5rem; }
+
+  .font--600 {
+    font-size: 70px;
+    font-size: 7rem; } }
 .lot-preview {
   position: absolute;
   left: 0;
@@ -334,7 +402,10 @@ body {
   -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   .s-other-rings_all .lot-preview {
-    bottom: 50px; }
+    bottom: 40px; }
+    @media (min-width: 1280px) {
+      .s-other-rings_all .lot-preview {
+        bottom: 50px; } }
   .s-auction-paused .lot-preview, .s-auction-pre .lot-preview, .s-auction-post .lot-preview {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%); }
@@ -344,34 +415,45 @@ body {
   top: 0;
   left: 50%;
   width: 100%;
-  height: 100px;
-  max-width: 1200px;
+  height: 80px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   z-index: 1;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   background-color: white; }
+  @media (min-width: 1280px) {
+    .lot--title {
+      height: 100px; } }
+  @media (min-width: 1920px) {
+    .lot--title {
+      max-width: 1200px; } }
 
 .lot--number {
   position: absolute;
   top: 0;
   left: 0;
-  width: 200px;
-  height: 100px;
-  padding: 20px;
+  width: 160px;
+  height: 100%;
+  padding: 13.3333333333px;
   background-color: #E87722;
-  color: white;
-  font-size: 30px;
-  font-size: 3rem; }
+  color: white; }
   .lot--number label {
     display: block;
     opacity: 0.8;
-    font-size: 12px;
-    font-size: 1.2rem;
-    margin-bottom: 10px; }
+    margin-bottom: 5px; }
+    @media (min-width: 1280px) {
+      .lot--number label {
+        margin-bottom: 10px; } }
   .lot--number label {
     margin-bottom: 0;
     opacity: 1; }
+  @media (min-width: 1280px) {
+    .lot--number {
+      width: 200px;
+      padding: 20px; } }
+  @media (min-width: 1920px) {
+    .lot--number {
+      width: 225px; } }
   .lot--number .sale-ring {
     opacity: 0.8;
     margin-right: 10px; }
@@ -379,23 +461,34 @@ body {
 .lot--description {
   position: absolute;
   top: 0;
-  height: 100px;
-  left: 200px;
+  height: 100%;
+  left: 160px;
   right: 0;
   padding: 20px;
-  font-size: 25px;
-  font-size: 2.5rem;
-  line-height: 2.5rem; }
+  line-height: 2rem; }
+  @media (min-width: 1280px) {
+    .lot--description {
+      left: 200px;
+      line-height: 2.5rem; } }
+  @media (min-width: 1920px) {
+    .lot--description {
+      left: 225px; } }
   .lot--description span {
     padding-right: 20px; }
 
 .lot--media {
   position: absolute;
-  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  top: 80px; }
+  @media (min-width: 1280px) {
+    .lot--media {
+      top: 100px; } }
+  @media (min-width: 1920px) {
+    .lot--media {
+      top: 0; } }
   .lot--media img {
     width: 100%;
     max-width: 100%;
@@ -418,7 +511,10 @@ body {
   -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   .s-other-rings_single .details-area {
-    bottom: 50px; }
+    bottom: 40px; }
+    @media (min-width: 1280px) {
+      .s-other-rings_single .details-area {
+        bottom: 50px; } }
   .s-auction-paused .details-area, .s-auction-pre .details-area, .s-auction-post .details-area {
     top: 60px;
     bottom: 60px;
@@ -441,9 +537,12 @@ body {
 .prices {
   position: absolute;
   top: 0;
-  height: 40%;
   width: 100%;
+  height: 35%;
   text-align: center; }
+  @media (min-width: 1280px) {
+    .prices {
+      height: 40%; } }
   .prices > div {
     width: 100%; }
   .prices.s-sold {
@@ -734,28 +833,42 @@ body {
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
 
 .ask {
-  font-size: 35px;
-  font-size: 3.5rem;
   padding: 0 20px; }
   .ask label {
-    font-size: 20px;
-    font-size: 2rem;
+    opacity: 0.8;
     display: block;
-    margin-bottom: 20px; }
+    margin-bottom: 10px; }
+    @media (min-width: 1280px) {
+      .ask label {
+        margin-bottom: 20px; } }
 
 .ask--price {
   display: inline-block;
   position: relative; }
   .ask--price:before {
-    font-size: 20px;
-    font-size: 2rem;
     vertical-align: top; }
   .ask--price:after {
     position: absolute;
-    left: 12px;
-    bottom: 12px;
-    -webkit-transform: scale(1.4);
-            transform: scale(1.4); }
+    left: 5px;
+    top: 25px;
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+    @media (min-width: 1280px) {
+      .ask--price:after {
+        left: 8px;
+        top: 30px;
+        -webkit-transform: scale(1.2);
+                transform: scale(1.2); } }
+    @media (min-width: 1600px) {
+      .ask--price:after {
+        left: 10px;
+        top: 35px; } }
+    @media (min-width: 1920px) {
+      .ask--price:after {
+        left: 12px;
+        top: 40px;
+        -webkit-transform: scale(1.4);
+                transform: scale(1.4); } }
   .ask--price .dollars {
     display: inline-block; }
 
@@ -764,61 +877,76 @@ body {
   margin: 20px; }
 
 .conversion {
-  padding: 10px;
+  padding: 5px;
   background-color: rgba(0, 0, 0, 0.1);
   position: relative;
   margin-bottom: 10px; }
-  .conversion .ccy:before {
-    display: block;
-    font-size: 15px;
-    font-size: 1.5rem; }
+  @media (min-width: 1280px) {
+    .conversion {
+      padding: 10px; } }
+  .conversion.ccy:after {
+    display: inline-block; }
+    @media (min-width: 1280px) {
+      .conversion.ccy:after {
+        display: block; } }
   .conversion .dollars {
-    top: 50%;
-    position: relative;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
     position: absolute;
-    right: 20px;
-    display: inline-block;
-    font-size: 20px;
-    font-size: 2rem; }
+    right: 5px;
+    top: 3px;
+    display: inline-block; }
+    @media (min-width: 1280px) {
+      .conversion .dollars {
+        top: 50%;
+        position: relative;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+        position: absolute;
+        right: 10px; } }
 
-.high-bid {
+.high-bidder {
   position: absolute;
-  top: 40%;
-  height: 90px;
   width: 100%;
+  top: 35%;
+  height: 75px;
   background-color: #c35f14;
-  padding: 20px;
-  font-size: 20px;
-  font-size: 2rem; }
-  .high-bid label {
+  padding: 20px; }
+  @media (min-width: 1280px) {
+    .high-bidder {
+      top: 40%;
+      height: 90px; } }
+  .high-bidder label {
     display: block;
     opacity: 0.8;
-    font-size: 12px;
-    font-size: 1.2rem;
-    margin-bottom: 10px; }
+    margin-bottom: 5px; }
+    @media (min-width: 1280px) {
+      .high-bidder label {
+        margin-bottom: 10px; } }
 
 .lot-details {
   padding: 20px;
   background-color: #ac5412;
   position: absolute;
   bottom: 0;
-  height: calc(100% - (40% + 90px));
   width: 100%;
-  font-size: 20px;
-  font-size: 2rem; }
+  height: calc(100% - (35% + 75px)); }
+  @media (min-width: 1280px) {
+    .lot-details {
+      height: calc(100% - (40% + 90px)); } }
   .lot-details label {
     display: block;
     opacity: 0.8;
-    font-size: 12px;
-    font-size: 1.2rem;
-    margin-bottom: 10px; }
+    margin-bottom: 5px; }
+    @media (min-width: 1280px) {
+      .lot-details label {
+        margin-bottom: 10px; } }
   .lot-details label {
     line-height: 1.4rem; }
 
 .lot-detail:not(:last-of-type) {
-  margin-bottom: 20px; }
+  margin-bottom: 10px; }
+  @media (min-width: 1280px) {
+    .lot-detail:not(:last-of-type) {
+      margin-bottom: 20px; } }
 
 .auctioneers-message, .open-offers {
   background-color: #7d3d0d;
@@ -826,8 +954,6 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  font-size: 20px;
-  font-size: 2rem;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
   -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
@@ -835,9 +961,10 @@ body {
   .auctioneers-message label, .open-offers label {
     display: block;
     opacity: 0.8;
-    font-size: 12px;
-    font-size: 1.2rem;
-    margin-bottom: 10px; }
+    margin-bottom: 5px; }
+    @media (min-width: 1280px) {
+      .auctioneers-message label, .open-offers label {
+        margin-bottom: 10px; } }
   .auctioneers-message.s-shown, .open-offers.s-shown {
     -webkit-transform: translateY(0);
             transform: translateY(0); }
@@ -947,8 +1074,6 @@ body {
   background: -webkit-linear-gradient(top, rgba(51, 51, 51, 0), #333333);
   background: linear-gradient(top, rgba(51, 51, 51, 0), #333333);
   text-transform: uppercase;
-  font-size: 16px;
-  font-size: 1.6rem;
   color: white; }
 
 .choice--body {
@@ -959,11 +1084,12 @@ body {
   position: relative;
   display: inline-block;
   margin-right: 10px;
-  padding-top: 33px;
+  padding-top: 28px;
   vertical-align: top;
   height: 130px;
   width: calc(100% / 5);
   background-color: white;
+  border: 5px solid transparent;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   color: #E87722;
   text-align: center;
@@ -1000,7 +1126,7 @@ body {
     color: white;
     font-size: 20px;
     font-size: 2rem;
-    padding-top: 80px; }
+    padding-top: 75px; }
     .choice--lot.s-sold:before, .choice--lot.s-out:before {
       opacity: 1;
       top: 20px; }
@@ -1019,12 +1145,17 @@ body {
       content: "\e906";
       color: rgba(255, 255, 255, 0.5); }
   .choice--lot.s-active {
-    background-color: #E87722;
-    color: white; }
+    border-color: #E87722; }
+  .choice--lot:nth-last-child(n+2), .choice--lot:nth-last-child(n+2) ~ li {
+    width: calc((100% / 2) - 10px); }
+  .choice--lot:nth-last-child(n+3), .choice--lot:nth-last-child(n+3) ~ li {
+    width: calc((100% / 3) - 10px); }
+  .choice--lot:nth-last-child(n+4), .choice--lot:nth-last-child(n+4) ~ li {
+    width: calc((100% / 4) - 10px); }
   .choice--lot:nth-last-child(n+5), .choice--lot:nth-last-child(n+5) ~ li {
     height: 60px;
-    width: calc((100% / 10) - 10px);
-    padding-top: 13px;
+    width: calc((100% / 5) - 10px);
+    padding-top: 8px;
     font-size: 20px;
     font-size: 2rem; }
     .choice--lot:nth-last-child(n+5):before, .choice--lot:nth-last-child(n+5) ~ li:before {
@@ -1036,21 +1167,35 @@ body {
       font-size: 20px; }
     .choice--lot:nth-last-child(n+5).s-sold, .choice--lot:nth-last-child(n+5).s-out, .choice--lot:nth-last-child(n+5) ~ li.s-sold, .choice--lot:nth-last-child(n+5) ~ li.s-out {
       padding-left: 28px;
-      padding-top: 10px;
+      padding-top: 5px;
       text-align: left;
       font-size: 15px;
       font-size: 1.5rem;
       line-height: 1.5rem; }
       .choice--lot:nth-last-child(n+5).s-sold:before, .choice--lot:nth-last-child(n+5).s-out:before, .choice--lot:nth-last-child(n+5) ~ li.s-sold:before, .choice--lot:nth-last-child(n+5) ~ li.s-out:before {
         top: 50%; }
+  .choice--lot:nth-last-child(n+6), .choice--lot:nth-last-child(n+6) ~ li {
+    width: calc((100% / 6) - 10px); }
+  .choice--lot:nth-last-child(n+7), .choice--lot:nth-last-child(n+7) ~ li {
+    width: calc((100% / 7) - 10px); }
+  .choice--lot:nth-last-child(n+8), .choice--lot:nth-last-child(n+8) ~ li {
+    width: calc((100% / 8) - 10px); }
+  .choice--lot:nth-last-child(n+9), .choice--lot:nth-last-child(n+9) ~ li {
+    width: calc((100% / 9) - 10px); }
+  .choice--lot:nth-last-child(n+10), .choice--lot:nth-last-child(n+10) ~ li {
+    width: calc((100% / 10) - 10px); }
+  .choice--lot:nth-last-child(n+11), .choice--lot:nth-last-child(n+11) ~ li {
+    width: calc((100% / 11) - 10px); }
+  .choice--lot:nth-last-child(n+12), .choice--lot:nth-last-child(n+12) ~ li {
+    width: calc((100% / 12) - 10px); }
   .choice--lot:nth-last-child(n+12), .choice--lot:nth-last-child(n+12) ~ li {
     height: 40px;
     width: calc((100% / 12) - 10px);
     margin-bottom: 10px;
-    padding-top: 5px; }
+    padding-top: 0; }
     .choice--lot:nth-last-child(n+12).s-sold, .choice--lot:nth-last-child(n+12).s-out, .choice--lot:nth-last-child(n+12) ~ li.s-sold, .choice--lot:nth-last-child(n+12) ~ li.s-out {
       padding-left: 28px;
-      padding-top: 4px;
+      padding-top: 0;
       font-size: 12px;
       font-size: 1.2rem;
       line-height: 1.2rem; }
@@ -1060,16 +1205,22 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 50px; }
+  height: 40px; }
+  @media (min-width: 1280px) {
+    .other-rings {
+      height: 50px; } }
 
 .rings {
   height: 50px; }
 
 .ring {
-  height: 50px;
+  height: 40px;
   position: relative;
   display: inline-block;
   background-color: #e8e6e2; }
+  @media (min-width: 1280px) {
+    .ring {
+      height: 50px; } }
   .ring.s-post {
     background-color: #585858;
     color: rgba(255, 255, 255, 0.7); }
@@ -1093,11 +1244,12 @@ body {
           transform: translateY(-50%);
   position: absolute;
   left: 0;
-  width: 75px;
+  width: 50px;
   text-align: center;
-  font-size: 15px;
-  font-size: 1.5rem;
   color: #E87722; }
+  @media (min-width: 1280px) {
+    .ring--number {
+      width: 75px; } }
   .ring--number label {
     display: block;
     font-size: 10px;
@@ -1110,11 +1262,56 @@ body {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   position: absolute;
-  left: 75px;
   right: 0;
-  font-size: 18px;
-  font-size: 1.8rem;
+  left: 50px;
   font-weight: 700; }
+  @media (min-width: 1280px) {
+    .ring--progress {
+      left: 75px; } }
+
+.paused-message, .pre-post-message {
+  position: absolute;
+  top: 60px;
+  bottom: 60px;
+  left: 60px;
+  right: calc(30% + (2 * 60px));
+  background-color: white;
+  padding: 120px;
+  font-size: 30px;
+  font-size: 3rem;
+  color: #E87722;
+  opacity: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s; }
+  .paused-message .h-valign, .pre-post-message .h-valign {
+    padding: 60px;
+    text-align: center;
+    left: 0;
+    right: 0; }
+
+.paused-message:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  width: 60px;
+  height: 60px;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+          transform: translateY(-50%) rotate(45deg);
+  background-color: white; }
+.s-auction-paused .paused-message {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1; }
+
+.s-auction-pre .pre-post-message, .s-auction-post .pre-post-message {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 1; }
 
 /*******************
 	HELPER CLASSES

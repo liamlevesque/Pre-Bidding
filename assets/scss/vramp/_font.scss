@@ -21,15 +21,156 @@
 }
 
 
+body{
+	font-family: 'Frutiger LT Std', 'Trebuchet MS', Verdana, sans-serif;
+}
+
+
 @mixin font-size($sizeValue: 1.6) {
   font-size: ($sizeValue * 10) + px;
   font-size: $sizeValue + rem;
 }
 
-.font--200{
-	@include font-size(2);
+
+
+	.font--120{
+		@include font-size(1);
+	}
+
+	.font--150{
+		@include font-size(1.2);
+	}
+
+	.font--180{
+		@include font-size(1.3);
+	}
+
+	.font--200{
+		@include font-size(1.5);
+	}
+
+	.font--250{
+		@include font-size(1.8);	
+	}
+
+	.font--300{
+		@include font-size(2.5);
+	}
+
+	.font--400{
+		@include font-size(2);
+	}
+
+	.font--600{
+		@include font-size(6);
+	}
+	
+
+@include vrampbreakpoint(medium){
+	.font--120{
+		@include font-size(1.2);
+	}
+
+	.font--150{
+		@include font-size(1.5);
+	}
+
+	.font--180{
+		@include font-size(1.6);
+	}
+
+	.font--200{
+		@include font-size(1.8);
+	}
+
+	.font--250{
+		@include font-size(2.2);	
+	}
+
+	.font--300{
+		@include font-size(3);
+	}
+
+	.font--400{
+		@include font-size(3);
+	}
+
+	.font--600{
+		@include font-size(6);
+	}
 }
 
-.font--600{
-	@include font-size(6);
+
+@include vrampbreakpoint(large){
+	.font--150{
+		@include font-size(1.5);
+	}
+
+	.font--180{
+		@include font-size(1.8);
+	}
+
+	.font--200{
+		@include font-size(2);
+	}
+
+	.font--250{
+		@include font-size(2.5);	
+	}
+
+	.font--300{
+		@include font-size(3);
+	}
+
+	.font--400{
+		@include font-size(4);
+	}
+
+	.font--600{
+		@include font-size(6);
+	}
+}
+
+@include vrampbreakpoint(xlarge){
+	.font--150{
+		@include font-size(2);
+	}
+
+	.font--180{
+		@include font-size(2);
+	}
+
+	.font--200{
+		@include font-size(2.5);
+	}
+
+	.font--250{
+		@include font-size(2.5);	
+	}
+
+	.font--300{
+		@include font-size(3.5);
+	}
+
+	.font--400{
+		@include font-size(5);
+	}
+
+	.font--600{
+		@include font-size(7);
+	}
+}
+
+
+@mixin details-label{
+	label{
+		display: block;
+		opacity: 0.8;
+		@extend .font--120;
+		margin-bottom: 5px;
+		
+		@include vrampbreakpoint(medium){
+			margin-bottom: 10px;
+		}
+	}
 }

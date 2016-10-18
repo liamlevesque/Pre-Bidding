@@ -16,10 +16,10 @@
 			<div class="lot--title">
 				<div class="lot--number">
 					<label><span class="sale-ring">Ring 1</span>Lot</label>
-					<div rv-text="vrampObject.lotDetail.lotNumber"></div>
+					<div class="font--300" rv-text="vrampObject.lotDetail.lotNumber"></div>
 				</div>
 				<div class="lot--description">
-					<span class="h-valign" rv-text="vrampObject.lotDetail.description"></span>
+					<span class="h-valign font--250" rv-text="vrampObject.lotDetail.description"></span>
 				</div>
 			</div>
 
@@ -28,7 +28,7 @@
 			</div>
 
 			<div class="choice-area" rv-show="vrampObject.choiceGroup">
-				<div class="choice--header">Choice of <span rv-text="vrampObject.choiceGroup | length"></span> Remaining</div>
+				<div class="choice--header font--180">Choice of <span rv-text="vrampObject.choiceGroup | length"></span> Remaining</div>
 				<div class="choice--body">
 					<ul class="choice--lots">
 						<li rv-each-choicelot="vrampObject.choiceGroup" class="choice--lot" rv-soldoroutclass="choicelot.status" rv-class-s-active="choicelot.active"><span rv-text="choicelot.lotNumber"></span><div rv-if="choicelot.status | issold" class="c-brand">SOLD</div><div rv-if="choicelot.status | isout" class="out-text">OUT</div></li>
@@ -52,52 +52,52 @@
 					<div class="h-valign">
 
 						<div class="ask">
-							<label rv-hide="vrampObject.lotDetail.status">ASK</label>
-							<label rv-show="vrampObject.lotDetail.status"><i class="c-brand icon-sold"></i>SOLD</label>
+							<label rv-hide="vrampObject.lotDetail.status" class="font--200">ASK</label>
+							<label rv-show="vrampObject.lotDetail.status" class="font--200"><i class="c-brand icon-sold"></i>SOLD</label>
 							<div class="ask--price ccy CAD">
-								<div class="dollars" rv-html="vrampObject.price | price"></div>
+								<div class="dollars font--400" rv-html="vrampObject.price | price"></div>
 							</div>
 						</div>
 						
 
 						<div class="conversions">
 							<div rv-each-conversion="vrampObject.conversions" class="conversion ccy" rv-addccyclass="conversion.currency" rv-class-s-outofauction="conversion.currency">
-								<span class="dollars" rv-html="conversion.rate | convertedVrampPrice vrampObject.price conversion.currency"></span>
+								<span class="dollars font--200" rv-html="conversion.rate | convertedVrampPrice vrampObject.price conversion.currency"></span>
 							</div>
 						</div>
 					</div>
 
 				</div>
 
-				<div class="high-bid">
+				<div class="high-bidder">
 					<label>
 						HIGH BIDDER
 					</label>
 
-					<div class="h-t-ellipsize"> 
+					<div class="h-t-ellipsize font--200"> 
 						Internet, SK, CAN
 					</div>
 				</div>
 
 				<div class="lot-details">
 					<div class="lot-detail" rv-show="vrampObject.lotDetail.usage">
-						<label for="">Usage</label>
-						<div rv-text="vrampObject.lotDetail.usage"></div>
+						<label>Usage</label>
+						<div class="font--200" rv-text="vrampObject.lotDetail.usage"></div>
 					</div>
 					<div class="lot-detail" rv-show="vrampObject.lotDetail.comeswith" rv-hide="vrampObject.auctioneerMessage">
-						<label for="">Comes With</label>
-						<div rv-text="vrampObject.lotDetail.comeswith"></div>
+						<label>Comes With</label>
+						<div class="font--200" rv-text="vrampObject.lotDetail.comeswith"></div>
 					</div>
 				</div>
 
 				<div class="auctioneers-message" rv-class-s-shown="vrampObject.auctioneerMessage">
 					<label for="">Note</label>
-					<div rv-text="vrampObject.auctioneerMessage"></div>
+					<div class="font--200" rv-text="vrampObject.auctioneerMessage"></div>
 				</div>
 
 				<div class="open-offers" rv-class-s-shown="vrampObject.openOffers">
 					<label for="">Open Offers</label>
-					<div> Choose lots to buy at the current ask price. </div>
+					<div class="font--200"> Choose lots to buy at the current ask price. </div>
 				</div>
 			</div>
 			
@@ -161,10 +161,10 @@
 					<div rv-unless="ring.TAL">
 						<div class="ring--number">
 							<label>RING</label>
-							<span rv-text="ring.number"></span>
+							<span class="font--150" rv-text="ring.number"></span>
 						</div>
 						
-						<div class="ring--progress">
+						<div class="ring--progress font--180">
 							<div rv-if="ring.status | comparison 'inprogress'">
 								Lot <span rv-text="ring.lot"></span>
 							</div>
@@ -179,10 +179,10 @@
 					</div>
 
 					<div rv-if="ring.TAL">
-						<div class="ring--number">
+						<div class="ring--number font--150">
 							TAL
 						</div>
-						<div class="ring--progress">
+						<div class="ring--progress font--180">
 							<div rv-if="ring.status | comparison 'inprogress'">
 								Lot <span rv-text="ring.lot"></span> Closes Next
 							</div>

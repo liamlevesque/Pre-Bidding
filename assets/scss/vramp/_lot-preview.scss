@@ -1,6 +1,9 @@
 
-$width-lot--number: 200px;
-$height-header: 100px;
+$width-lot--number: 160px;
+$width-lot--number_medium: 200px;
+$width-lot--number_xlarge: 225px; 
+$height-header: 80px;
+$height-header_large: 100px;
 
 .lot-preview{
 	position: absolute;
@@ -16,7 +19,11 @@ $height-header: 100px;
 	transition: $transition;
 
 	.s-other-rings_all &{
-		bottom: $footer-height;
+		bottom: $footer-height_small;
+
+		@include vrampbreakpoint(medium){
+			bottom: $footer-height;
+		}
 	}
 
 	.s-auction-paused &, .s-auction-pre &, .s-auction-post &{
@@ -31,13 +38,20 @@ $height-header: 100px;
 		width: 100%;
 		height: $height-header;
 
-		max-width: 1200px;
 		transform: translateX(-50%);
 
 		z-index: 1;
 		box-shadow: $ritchie-shadow;
 
 		background-color: white;
+
+		@include vrampbreakpoint(medium){
+			height: $height-header_large;
+		}
+
+		@include vrampbreakpoint(xlarge){
+			max-width: 1200px;
+		}
 	}
 
 		.lot--number{
@@ -45,20 +59,28 @@ $height-header: 100px;
 			top: 0;
 			left: 0;
 			width: $width-lot--number;
-			height: $height-header;
+			height: 100%;
 
-			padding: $default-padding;
+			padding: $default-padding/1.5;
 
 			background-color: $brand-color;
 			color: white;
-
-			@include font-size(3); 
 
 			@include details-label;
 			label{
 				margin-bottom: 0;
 				opacity: 1;
 			}
+			
+			@include vrampbreakpoint(medium){
+				width: $width-lot--number_medium;
+				padding: $default-padding;
+			}
+
+			@include vrampbreakpoint(xlarge){
+				width: $width-lot--number_xlarge;
+			}
+
 
 			.sale-ring{
 				opacity: 0.8;
@@ -69,14 +91,22 @@ $height-header: 100px;
 		.lot--description{
 			position: absolute;
 			top: 0;
-			height: $height-header;
+			height: 100%;
 			left: $width-lot--number;
 			right: 0;
 
 			padding: $default-padding;
 
-			@include font-size(2.5);
-			line-height: 2.5rem;
+			line-height: 2rem;
+			
+			@include vrampbreakpoint(medium){
+				left: $width-lot--number_medium;
+				line-height: 2.5rem;
+			}
+
+			@include vrampbreakpoint(xlarge){
+				left: $width-lot--number_xlarge;
+			}
 
 			span{
 				padding-right: $default-padding;
@@ -86,12 +116,21 @@ $height-header: 100px;
 
 	.lot--media{
 		position: absolute;
-		top: 0;//$height-header;
 		left: 0;
 		right: 0;
 		bottom: 0;
 
 		overflow: hidden;
+
+		top: $height-header;
+
+		@include vrampbreakpoint(medium){
+			top: $height-header_large;;
+		}
+
+		@include vrampbreakpoint(xlarge){
+			top: 0;
+		}
 
 		img{
 			width: 100%;
