@@ -3672,7 +3672,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   left: 0;
   top: 0;
   height: 53px;
-  width: 125px;
+  width: 85px;
   background-color: #E87722;
   color: white;
   text-transform: uppercase;
@@ -3690,7 +3690,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   display: inline-block;
   height: 53px;
   padding: 7px 10px 7px;
-  margin-left: 125px; }
+  margin-left: 85px; }
   .lot--title span {
     vertical-align: bottom; }
   @media (min-width: 80em) {
