@@ -10,7 +10,11 @@ $height-header_large: 100px;
 	left: 0;
 	top: 0;
 	bottom: 0;
-	right: $details-width;
+	right: $details-width_small;
+
+	@include vrampbreakpoint(medium){
+		right: $details-width;
+	}
 
 	background-color: $grey-900;
 

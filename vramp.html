@@ -24,14 +24,17 @@
 			</div>
 
 			<div class="lot--media"> 
-				<img rv-src="vrampObject.lotDetail.photo"/>
+				<div class="custom--media" rv-if="vrampObject.lotDetail.video">
+		            <iframe src="https://www.youtube.com/embed/hWE7LRojEbQ" frameborder="0" allowfullscreen></iframe>
+		        </div>
+				<img rv-src="vrampObject.lotDetail.photo" rv-else="vrampObject.lotDetail.video"/>
 			</div>
 
 			<div class="choice-area" rv-show="vrampObject.choiceGroup">
 				<div class="choice--header font--180">Choice of <span rv-text="vrampObject.choiceGroup | length"></span> Remaining</div>
 				<div class="choice--body">
 					<ul class="choice--lots">
-						<li rv-each-choicelot="vrampObject.choiceGroup" class="choice--lot" rv-soldoroutclass="choicelot.status" rv-class-s-active="choicelot.active"><span rv-text="choicelot.lotNumber"></span><div rv-if="choicelot.status | issold" class="c-brand">SOLD</div><div rv-if="choicelot.status | isout" class="out-text">OUT</div></li>
+						<li rv-each-choicelot="vrampObject.choiceGroup" class="choice--lot font--300" rv-soldoroutclass="choicelot.status" rv-class-s-active="choicelot.active"><span rv-text="choicelot.lotNumber"></span><!-- <div rv-if="choicelot.status | issold" class="c-brand">SOLD</div><div rv-if="choicelot.status | isout" class="out-text">OUT</div> --></li>
 					</ul>
 				</div>
 			</div>
@@ -39,11 +42,11 @@
 		</div>		
 		
 		<div class="paused-message">
-			<div class="h-valign">We are currently experiencing technical difficulties. The auction will resume shortly.</div>
+			<div class="h-valign font--300">We are currently experiencing technical difficulties. The auction will resume shortly.</div>
 		</div>
 
 		<div class="pre-post-message">
-			<div class="h-valign">Space for Marketing Material</div>
+			<div class="h-valign font--300">Space for Marketing Material</div>
 		</div>
 		
 		<div class="details-area">
@@ -52,13 +55,12 @@
 					<div class="h-valign">
 
 						<div class="ask">
-							<label rv-hide="vrampObject.lotDetail.status" class="font--200">ASK</label>
+							<label rv-hide="vrampObject.lotDetail.status" class="font--200">ASK <span class="auction-ccy CAD"></span></label>
 							<label rv-show="vrampObject.lotDetail.status" class="font--200"><i class="c-brand icon-sold"></i>SOLD</label>
 							<div class="ask--price ccy CAD">
 								<div class="dollars font--400" rv-html="vrampObject.price | price"></div>
 							</div>
 						</div>
-						
 
 						<div class="conversions">
 							<div rv-each-conversion="vrampObject.conversions" class="conversion ccy" rv-addccyclass="conversion.currency" rv-class-s-outofauction="conversion.currency">
@@ -104,13 +106,13 @@
 			<!-- PAUSED RIGHT HAND SIDE AREA -->
 			<div class="paused-details">
 				
-				<div class="ring-detail">
+				<div class="ring-detail font--600">
 					RING 1
 					<label class="font--200">Lots 1 - 290, 8001 - 8099</label>
 				</div>
 
 				<div class="ring-status">
-					<div class="ring-status--content">
+					<div class="ring-status--content font--200">
 						<i class="icon-pause status-icon"></i>
 						Auction Paused
 					</div>
@@ -120,7 +122,7 @@
 
 			<div class="pre-auction-details">
 				
-				<div class="ring-detail">
+				<div class="ring-detail font--600">
 					RING 1
 					<label class="font--200">Lots 1 - 290, 8001 - 8099</label>
 				</div>
@@ -136,7 +138,7 @@
 
 			<div class="post-auction-details">
 				
-				<div class="ring-detail ring-detail_inactive">
+				<div class="ring-detail ring-detail_inactive font--600">
 					RING 1
 					<label class="font--200">Lots 1 - 290, 8001 - 8099</label>
 					<div class="c-brand font--200"> Bidding has ended for the day </div>

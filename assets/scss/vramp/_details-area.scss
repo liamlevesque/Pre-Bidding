@@ -19,7 +19,7 @@ $height-lot-details: 50%;
 	bottom: 0;
 	right: 0;
 
-	width: $details-width;
+	width: $details-width_small;
 
 	background-color: $bg-color-ask;
 	text-align: left;
@@ -28,6 +28,10 @@ $height-lot-details: 50%;
 	overflow: hidden;
 
 	transition: $transition;
+
+	@include vrampbreakpoint(medium){
+		width: $details-width;
+	}
 
 	.s-other-rings_single &{
 		bottom: $footer-height_small;
@@ -40,7 +44,10 @@ $height-lot-details: 50%;
 	.s-auction-paused &, .s-auction-pre &, .s-auction-post &{
 		top: 60px;
 		bottom: 60px;
-		right: 60px;
+
+		@include vrampbreakpoint(medium){
+			right: 60px;
+		}
 	}
 }
 
@@ -132,6 +139,42 @@ $height-lot-details: 50%;
 				}
 			}
 
+			.auction-ccy{
+				&.#{nth($ccy,1)}:after{
+					background-position: 0 -#{nth($ccy,7)*15px};
+				}
+			}
+
+			.auction-ccy{
+				&.#{nth($ccy,1)}:before {
+					content: " - #{nth($ccy,2)} #{nth($ccy,1)} #{nth($ccy,3)}"; 
+				}
+			}
+
+		}
+
+		.auction-ccy{
+			@include vrampbreakpoint(medium){
+				display: none;
+			}
+
+			&:after{
+				content: '';
+				display: inline-block;
+				vertical-align: middle;
+				margin-left: 7px;
+				margin-right: 3px;
+				width: 30px;
+				height: 15px;
+				background-repeat: no-repeat;
+				background-size: 100% auto;
+				background-image: url(../img/ccy-flags.png);
+				box-shadow: $ritchie-shadow;
+			}
+
+			&:before{
+				 
+			}
 		}
 
 		.ccy:after{
@@ -162,6 +205,7 @@ $height-lot-details: 50%;
 				}
 			}
 			
+
 		}
 
 			.ask--price{
@@ -175,9 +219,9 @@ $height-lot-details: 50%;
 
 				&:after{
 					position: absolute;
-					left: 5px;
-					top: 25px;
-					transform: scale(1);
+					// left: 5px;
+					// top: 25px;
+					// transform: scale(1);
 
 					@include vrampbreakpoint(medium){
 						left: 8px;
@@ -195,6 +239,14 @@ $height-lot-details: 50%;
 						top: 40px;
 						transform: scale(1.4);
 					}
+				}
+				
+				&:before, &:after{
+					display: none;
+
+					@include vrampbreakpoint(medium){
+						display: inline-block;
+					}	
 				}
 
 				.dollars{
@@ -319,105 +371,7 @@ $height-lot-details: 50%;
 
 
 
-//PAUSED STYLES
 
-	$paused-upper-height: 30%;
-
-	.paused-details, .pre-auction-details, .post-auction-details{
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		
-		transform: translateX(-100%);
-
-		transition: $transition;
-
-		font-weight: 700;
-	}
-
-		.s-auction-paused .paused-details{
-			transform: translateX(0);
-		}
-
-		.s-auction-pre .pre-auction-details{
-			transform: translateX(0);
-		}
-
-		.s-auction-post .post-auction-details{
-			transform: translateX(0);	
-		}
-
-		.ring-detail{
-			position: absolute;
-			top: 0;
-			bottom: $paused-upper-height;
-			left: 0;
-			right: 0;
-			padding: 30px;
-
-			@include font-size(6);
-
-			label{
-				display: block;
-				
-				line-height: 2rem;
-				opacity: 0.9;
-			}
-		}
-
-			.ring-detail_inactive{
-				background-color: $grey-700;
-				color: rgba(white,0.8);
-			}
-
-		.ring-status{
-			position: absolute;
-			top: $paused-upper-height;
-			bottom: 0;
-			left: 0;
-			right: 0;
-
-			background-color: $bg-color-auctioneer-message;
-
-			@include font-size(3);
-			text-align: center;
-			text-transform: uppercase;
-
-			.ring-status--content{
-				@include vert-align;
-				position: absolute;
-				width: 100%;
-				padding: 40px;
-			}
-
-			.status-icon{
-				display: block;
-				margin-bottom: 30px;
-				font-size: 80px;
-				
-				animation: pulsate 2s ease-in-out infinite;
-			}
-		}
-
-			.ring-status_focus{
-				background-color: $brand-color;
-			}
-
-
-
-			@keyframes pulsate {
-			  	0% {
-			    	transform: scale(1);
-				}
-				50%{
-					transform: scale(1.4);
-				}
-			  	100% {
-				 	transform: scale(1);
-				} 
-			}
 
 
 	

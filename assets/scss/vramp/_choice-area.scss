@@ -41,7 +41,12 @@ $choice-spacing: 10px;
 			padding-top: 28px;
 			vertical-align: top;
 
-			height: $large-height;
+			height: $med-height;
+			
+			@include vrampbreakpoint(medium){
+				height: $large-height;
+			}
+
 			width: calc(100% / 5);
 			
 			background-color: white;
@@ -50,8 +55,7 @@ $choice-spacing: 10px;
 			
 			color: $brand-color;
 			text-align: center;
-			@include font-size(3);
-
+			
 			transition: $transition;
 
 			overflow: hidden;
@@ -100,6 +104,8 @@ $choice-spacing: 10px;
 
 			&.s-out{
 				background-color: $error-colour;
+				text-decoration: line-through;
+				color: rgba(white,0.8);
 
 				.out-text{
 					color: rgba(white, 0.5);

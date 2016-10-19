@@ -3,6 +3,7 @@
 	"allOtherLots": [
 		{
 			"lotNumber" : "2741",
+			"video":false,
 			"status" : null,
 			"description" : "2008 Manitou 4x4 Bucket Lift",
 			"photo" : "assets/img/vramp1.png",
@@ -12,6 +13,7 @@
 		},
 		{
 			"lotNumber" : "2745",
+			"video":true,
 			"status" : null,
 			"description" : "2008 Manitou 4x4 Bucket Lift",
 			"photo" : "assets/img/vramp5.png",
@@ -20,6 +22,7 @@
 		},
 		{
 			"lotNumber" : "2745A",
+			"video":false,
 			"status" : null,
 			"description" : "2008 Manitou 4x4 Bucket Lift",
 			"photo" : "assets/img/vramp5.png",
@@ -29,6 +32,7 @@
 		[
 			{
 				"lotNumber" : "2743",
+				"video":false,
 				"status" : "out",
 				"description" : "2012 Manitou 4x4 Bucket Lift #2",
 				"photo" : "assets/img/vramp2.png",
@@ -39,6 +43,7 @@
 			},
 			{
 				"lotNumber" : "2744",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift #3",
 				"photo" : "assets/img/vramp2.png",
@@ -51,6 +56,7 @@
 		[
 			{
 				"lotNumber" : "2742",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -61,6 +67,7 @@
 			},
 			{
 				"lotNumber" : "2743",
+				"video":false,
 				"status" : "out",
 				"description" : "2012 Manitou 4x4 Bucket Lift #2",
 				"photo" : "assets/img/vramp2.png",
@@ -71,6 +78,7 @@
 			},
 			{
 				"lotNumber" : "2744",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift #3",
 				"photo" : "assets/img/vramp2.png",
@@ -83,6 +91,7 @@
 		[
 			{
 				"lotNumber" : "2742",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -93,6 +102,7 @@
 			},
 			{
 				"lotNumber" : "2743",
+				"video":false,
 				"status" : "out",
 				"description" : "2012 Manitou 4x4 Bucket Lift #2",
 				"photo" : "assets/img/vramp2.png",
@@ -103,6 +113,7 @@
 			},
 			{
 				"lotNumber" : "2744",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift #3",
 				"photo" : "assets/img/vramp2.png",
@@ -113,6 +124,7 @@
 			},
 			{
 				"lotNumber" : "2744",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift #3",
 				"photo" : "assets/img/vramp2.png",
@@ -125,6 +137,7 @@
 		[
 			{
 				"lotNumber" : "2746",
+				"video":false,
 				"status" : "sold",
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -135,6 +148,7 @@
 			},
 			{
 				"lotNumber" : "2747",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -145,6 +159,7 @@
 			},
 			{
 				"lotNumber" : "2748",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -155,6 +170,7 @@
 			},
 			{
 				"lotNumber" : "2749",
+				"video":false,
 				"status" : "out",
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",
@@ -165,6 +181,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -178,6 +195,7 @@
 		[
 			{
 				"lotNumber" : "2746",
+				"video":false,
 				"status" : "sold",
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -188,6 +206,7 @@
 			},
 			{
 				"lotNumber" : "2747",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -198,6 +217,7 @@
 			},
 			{
 				"lotNumber" : "2748",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -208,6 +228,7 @@
 			},
 			{
 				"lotNumber" : "2749",
+				"video":false,
 				"status" : "out",
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",
@@ -218,6 +239,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -228,6 +250,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -240,6 +263,7 @@
 		[
 			{
 				"lotNumber" : "2746",
+				"video":false,
 				"status" : "sold",
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -250,6 +274,7 @@
 			},
 			{
 				"lotNumber" : "2747",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -260,6 +285,7 @@
 			},
 			{
 				"lotNumber" : "2748",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -270,6 +296,7 @@
 			},
 			{
 				"lotNumber" : "2749",
+				"video":false,
 				"status" : "out",
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",
@@ -280,6 +307,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -290,6 +318,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -300,6 +329,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -312,6 +342,7 @@
 		[
 			{
 				"lotNumber" : "2746",
+				"video":false,
 				"status" : "sold",
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -322,6 +353,7 @@
 			},
 			{
 				"lotNumber" : "2747",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -332,6 +364,7 @@
 			},
 			{
 				"lotNumber" : "2748",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -342,6 +375,7 @@
 			},
 			{
 				"lotNumber" : "2749",
+				"video":false,
 				"status" : "out",
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",
@@ -352,6 +386,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -362,6 +397,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -372,6 +408,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -382,6 +419,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -394,6 +432,7 @@
 		[
 			{
 				"lotNumber" : "2746",
+				"video":false,
 				"status" : "sold",
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -404,6 +443,7 @@
 			},
 			{
 				"lotNumber" : "2747",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -414,6 +454,7 @@
 			},
 			{
 				"lotNumber" : "2748",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -424,6 +465,7 @@
 			},
 			{
 				"lotNumber" : "2749",
+				"video":false,
 				"status" : "out",
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",
@@ -434,6 +476,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -444,6 +487,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -454,6 +498,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -464,6 +509,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -474,6 +520,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -486,6 +533,7 @@
 		[
 			{
 				"lotNumber" : "2746",
+				"video":false,
 				"status" : "sold",
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -496,6 +544,7 @@
 			},
 			{
 				"lotNumber" : "2747",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -506,6 +555,7 @@
 			},
 			{
 				"lotNumber" : "2748",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -516,6 +566,7 @@
 			},
 			{
 				"lotNumber" : "2749",
+				"video":false,
 				"status" : "out",
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",
@@ -526,6 +577,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -536,6 +588,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -546,6 +599,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -556,6 +610,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -566,6 +621,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -576,6 +632,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -589,6 +646,7 @@
 		[
 			{
 				"lotNumber" : "2746",
+				"video":false,
 				"status" : "sold",
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -599,6 +657,7 @@
 			},
 			{
 				"lotNumber" : "2747",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -609,6 +668,7 @@
 			},
 			{
 				"lotNumber" : "2748",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -619,6 +679,7 @@
 			},
 			{
 				"lotNumber" : "2749",
+				"video":false,
 				"status" : "out",
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",
@@ -629,6 +690,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -639,6 +701,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -649,6 +712,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -659,6 +723,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -669,6 +734,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -679,6 +745,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -689,6 +756,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -701,6 +769,7 @@
 		[
 			{
 				"lotNumber" : "2746",
+				"video":false,
 				"status" : "sold",
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -711,6 +780,7 @@
 			},
 			{
 				"lotNumber" : "2747",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -721,6 +791,7 @@
 			},
 			{
 				"lotNumber" : "2748",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -731,6 +802,7 @@
 			},
 			{
 				"lotNumber" : "2749",
+				"video":false,
 				"status" : "out",
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",
@@ -741,6 +813,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -751,6 +824,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -761,6 +835,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -771,6 +846,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -781,6 +857,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -791,6 +868,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -801,6 +879,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -811,6 +890,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -823,6 +903,7 @@
 		[
 			{
 				"lotNumber" : "2746",
+				"video":false,
 				"status" : "sold",
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -833,6 +914,7 @@
 			},
 			{
 				"lotNumber" : "2747",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -843,6 +925,7 @@
 			},
 			{
 				"lotNumber" : "2748",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -853,6 +936,7 @@
 			},
 			{
 				"lotNumber" : "2749",
+				"video":false,
 				"status" : "out",
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",
@@ -863,6 +947,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -873,6 +958,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -883,6 +969,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -893,6 +980,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -903,6 +991,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -913,6 +1002,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -923,6 +1013,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -933,6 +1024,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -943,6 +1035,7 @@
 			},
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -955,6 +1048,7 @@
 		[
 			{
 				"lotNumber" : "2750",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -965,6 +1059,7 @@
 			},
 			{
 				"lotNumber" : "2751",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -975,6 +1070,7 @@
 			},
 			{
 				"lotNumber" : "2752",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -985,6 +1081,7 @@
 			},
 			{
 				"lotNumber" : "2753",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",
@@ -995,6 +1092,7 @@
 			},
 			{
 				"lotNumber" : "2754",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp4.png",
@@ -1005,6 +1103,7 @@
 			},
 			{
 				"lotNumber" : "2755",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1015,6 +1114,7 @@
 			},
 			{
 				"lotNumber" : "2756",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1025,6 +1125,7 @@
 			},
 			{
 				"lotNumber" : "2757",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1035,6 +1136,7 @@
 			},
 			{
 				"lotNumber" : "2758",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",
@@ -1045,6 +1147,7 @@
 			},
 			{
 				"lotNumber" : "2759",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1055,6 +1158,7 @@
 			},
 			{
 				"lotNumber" : "2760",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1065,6 +1169,7 @@
 			},
 			{
 				"lotNumber" : "2761",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1075,6 +1180,7 @@
 			},
 			{
 				"lotNumber" : "2762",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",
@@ -1085,6 +1191,7 @@
 			},
 			{
 				"lotNumber" : "2763",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1095,6 +1202,7 @@
 			},
 			{
 				"lotNumber" : "2764",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1105,6 +1213,7 @@
 			},
 			{
 				"lotNumber" : "2765",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1115,6 +1224,7 @@
 			},
 			{
 				"lotNumber" : "2766",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",
@@ -1125,6 +1235,7 @@
 			},
 			{
 				"lotNumber" : "2767",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1135,6 +1246,7 @@
 			},
 			{
 				"lotNumber" : "2768",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1145,6 +1257,7 @@
 			},
 			{
 				"lotNumber" : "2769",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1155,6 +1268,7 @@
 			},
 			{
 				"lotNumber" : "2770",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",
@@ -1165,6 +1279,7 @@
 			},
 			{
 				"lotNumber" : "2771",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1175,6 +1290,7 @@
 			},
 			{
 				"lotNumber" : "2772",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1185,6 +1301,7 @@
 			},
 			{
 				"lotNumber" : "2773",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1195,6 +1312,7 @@
 			},
 			{
 				"lotNumber" : "2774",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",
@@ -1205,6 +1323,7 @@
 			},
 			{
 				"lotNumber" : "2775",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1215,6 +1334,7 @@
 			},
 			{
 				"lotNumber" : "2776",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1225,6 +1345,7 @@
 			},
 			{
 				"lotNumber" : "2777",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1235,6 +1356,7 @@
 			},
 			{
 				"lotNumber" : "2778",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",
@@ -1245,6 +1367,7 @@
 			},
 			{
 				"lotNumber" : "2779",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1255,6 +1378,7 @@
 			},
 			{
 				"lotNumber" : "2780",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1265,6 +1389,7 @@
 			},
 			{
 				"lotNumber" : "2781",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1275,6 +1400,7 @@
 			},
 			{
 				"lotNumber" : "2782",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",
@@ -1285,6 +1411,7 @@
 			},
 			{
 				"lotNumber" : "2783",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1295,6 +1422,7 @@
 			},
 			{
 				"lotNumber" : "2784",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1305,6 +1433,7 @@
 			},
 			{
 				"lotNumber" : "2785",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1315,6 +1444,7 @@
 			},
 			{
 				"lotNumber" : "2786",
+				"video":false,
 				"status" : "out",
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",
@@ -1325,6 +1455,7 @@
 			},
 			{
 				"lotNumber" : "2787",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1335,6 +1466,7 @@
 			},
 			{
 				"lotNumber" : "2788",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1345,6 +1477,7 @@
 			},
 			{
 				"lotNumber" : "2789",
+				"video":false,
 				"status" : null,
 				"description" : "2012 Manitou 4x4 Bucket Lift for Liam",
 				"photo" : "assets/img/vramp2.png",
@@ -1355,6 +1488,7 @@
 			},
 			{
 				"lotNumber" : "2790",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",
@@ -1365,6 +1499,7 @@
 			},
 			{
 				"lotNumber" : "2791",
+				"video":false,
 				"status" : null,
 				"description" : "2008 Manitou 4x4 Bucket Lift",
 				"photo" : "assets/img/vramp3.png",

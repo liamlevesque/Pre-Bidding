@@ -28,6 +28,7 @@
 	$li-header-bg: $grey-900;
 	$li-title: white;
 	$li-text: $grey-900;
+	$lot-number-width: 125px;
 	
 
 .lot-info{
@@ -52,9 +53,9 @@
 }
 
 	.lot--header{
-		padding: 7px 10px 7px;
 		background-color: $li-header-bg;
 		height: $lot-header-height;
+		position: relative;
 		//border-bottom: $ritchie-border;
 
 		@include breakpoint(large){
@@ -63,13 +64,22 @@
 	}
 
 		.lot--number{
-			color: $brand-color;
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: $lot-header-height;
+			width: $lot-number-width;
+			
+			background-color: $brand-color;
+			color: white;
 			text-transform: uppercase;
 			font-weight: 700;
 			margin-bottom: 0;
-			display: inline;
 			
-			@include breakpoint(large){
+			padding: 7px 10px 7px;
+
+			label{
+				color: white;
 				display: block;
 			}
 		}
@@ -78,12 +88,20 @@
 			color: white;
 			font-size: 1rem;
 			margin-bottom: 0;
-			display: inline;
+			display: inline-block;
+			height: $lot-header-height;
+			padding: 7px 10px 7px;
+			margin-left: $lot-number-width;
+			
+			span{
+				vertical-align: bottom;
+			}
 
 			@include breakpoint(large){
-				font-size: 1.2rem;
-				@include ellipsize;
-				display: block;
+				font-size: 1.1rem;
+				line-height: 1.2rem;
+				//@include ellipsize;
+				
 			}
 		}
 
