@@ -953,14 +953,18 @@ body {
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
 
 .ask {
-  padding: 0 20px; }
+  padding: 0 10px; }
+  @media (min-width: 1280px) {
+    .ask {
+      padding: 0 20px; } }
   .ask label {
     opacity: 0.8;
     display: block;
-    margin-bottom: 10px; }
+    margin-bottom: 0;
+    line-height: 1.5rem; }
     @media (min-width: 1280px) {
       .ask label {
-        margin-bottom: 20px; } }
+        margin-bottom: 5px; } }
 
 .ask--price {
   display: inline-block;
@@ -995,16 +999,22 @@ body {
 
 .conversions {
   text-align: left;
-  margin: 20px; }
+  margin: 10px;
+  margin-bottom: 0; }
+  @media (min-width: 1280px) {
+    .conversions {
+      margin: 20px;
+      margin-bottom: 0; } }
 
 .conversion {
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.1);
   position: relative;
-  margin-bottom: 10px; }
+  margin-bottom: 5px; }
   @media (min-width: 1280px) {
     .conversion {
-      padding: 10px; } }
+      padding: 10px;
+      margin-bottom: 10px; } }
   .conversion.ccy:after {
     display: inline-block; }
     @media (min-width: 1280px) {
@@ -1029,12 +1039,8 @@ body {
   width: 100%;
   top: 35%;
   height: 75px;
-  background-color: #c35f14;
-  padding: 20px; }
-  @media (min-width: 1280px) {
-    .high-bidder {
-      top: 40%;
-      height: 90px; } }
+  padding: 15px 10px;
+  background-color: #c35f14; }
   .high-bidder label {
     display: block;
     opacity: 0.8;
@@ -1042,9 +1048,14 @@ body {
     @media (min-width: 1280px) {
       .high-bidder label {
         margin-bottom: 10px; } }
+  @media (min-width: 1280px) {
+    .high-bidder {
+      top: 40%;
+      height: 90px;
+      padding: 20px; } }
 
 .lot-details {
-  padding: 20px;
+  padding: 15px 10px;
   background-color: #ac5412;
   position: absolute;
   bottom: 0;
@@ -1052,7 +1063,8 @@ body {
   height: calc(100% - (35% + 75px)); }
   @media (min-width: 1280px) {
     .lot-details {
-      height: calc(100% - (40% + 90px)); } }
+      height: calc(100% - (40% + 90px));
+      padding: 20px; } }
   .lot-details label {
     display: block;
     opacity: 0.8;
@@ -1113,21 +1125,24 @@ body {
   position: relative;
   display: inline-block;
   margin-right: 10px;
-  padding-top: 28px;
   vertical-align: top;
   height: 60px;
+  line-height: 60px;
   width: calc(100% / 5);
   background-color: white;
   border: 5px solid transparent;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   color: #E87722;
   text-align: center;
-  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
-  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   overflow: hidden; }
   @media (min-width: 1280px) {
     .choice--lot {
-      height: 130px; } }
+      height: 130px;
+      line-height: 130px; } }
+  .choice--lot span {
+    vertical-align: middle;
+    -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+    transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   .choice--lot:before {
     font-family: 'ritchie-icons' !important;
     speak: none;
@@ -1138,14 +1153,12 @@ body {
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 50px;
+    font-size: 40px;
     content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    line-height: 40px;
+    vertical-align: middle;
     opacity: 0;
     -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
     transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
@@ -1153,15 +1166,11 @@ body {
             transition-delay: 0.3s; }
   .choice--lot.s-sold, .choice--lot.s-out {
     background-color: #585858;
-    color: white;
-    font-size: 20px;
-    font-size: 2rem;
-    padding-top: 75px; }
-    .choice--lot.s-sold:before, .choice--lot.s-out:before {
-      opacity: 1;
-      top: 20px; }
+    color: white; }
     .choice--lot.s-sold span, .choice--lot.s-out span {
-      margin-right: 10px; }
+      margin-left: 10px; }
+    .choice--lot.s-sold:before, .choice--lot.s-out:before {
+      opacity: 1; }
     .choice--lot.s-sold div, .choice--lot.s-out div {
       display: inline-block; }
   .choice--lot.s-sold:before {
@@ -1169,8 +1178,9 @@ body {
     color: #E87722; }
   .choice--lot.s-out {
     background-color: #c4483a;
-    text-decoration: line-through;
     color: rgba(255, 255, 255, 0.8); }
+    .choice--lot.s-out span {
+      text-decoration: line-through; }
     .choice--lot.s-out .out-text {
       color: rgba(255, 255, 255, 0.5); }
     .choice--lot.s-out:before {
@@ -1182,30 +1192,20 @@ body {
     width: calc((100% / 2) - 10px); }
   .choice--lot:nth-last-child(n+3), .choice--lot:nth-last-child(n+3) ~ li {
     width: calc((100% / 3) - 10px); }
+    @media (min-width: 1280px) {
+      .choice--lot:nth-last-child(n+3), .choice--lot:nth-last-child(n+3) ~ li {
+        font-size: 15px;
+        font-size: 1.5rem; } }
   .choice--lot:nth-last-child(n+4), .choice--lot:nth-last-child(n+4) ~ li {
     width: calc((100% / 4) - 10px); }
   .choice--lot:nth-last-child(n+5), .choice--lot:nth-last-child(n+5) ~ li {
     height: 60px;
-    width: calc((100% / 5) - 10px);
-    padding-top: 8px;
+    line-height: 60px;
     font-size: 20px;
-    font-size: 2rem; }
+    font-size: 2rem;
+    width: calc((100% / 5) - 10px); }
     .choice--lot:nth-last-child(n+5):before, .choice--lot:nth-last-child(n+5) ~ li:before {
-      left: 6px;
-      top: 0;
-      -webkit-transform: translateY(-50%) translateX(0);
-              transform: translateY(-50%) translateX(0);
-      margin: 0;
-      font-size: 20px; }
-    .choice--lot:nth-last-child(n+5).s-sold, .choice--lot:nth-last-child(n+5).s-out, .choice--lot:nth-last-child(n+5) ~ li.s-sold, .choice--lot:nth-last-child(n+5) ~ li.s-out {
-      padding-left: 28px;
-      padding-top: 5px;
-      text-align: left;
-      font-size: 15px;
-      font-size: 1.5rem;
-      line-height: 1.5rem; }
-      .choice--lot:nth-last-child(n+5).s-sold:before, .choice--lot:nth-last-child(n+5).s-out:before, .choice--lot:nth-last-child(n+5) ~ li.s-sold:before, .choice--lot:nth-last-child(n+5) ~ li.s-out:before {
-        top: 50%; }
+      font-size: 30px; }
   .choice--lot:nth-last-child(n+6), .choice--lot:nth-last-child(n+6) ~ li {
     width: calc((100% / 6) - 10px); }
   .choice--lot:nth-last-child(n+7), .choice--lot:nth-last-child(n+7) ~ li {

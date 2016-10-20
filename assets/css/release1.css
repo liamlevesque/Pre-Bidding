@@ -2386,7 +2386,7 @@ MOST IMPORTANT - LOT TABLE STYLES
       top: 486px; } }
   @media (min-height: 1000px) {
     .client--bottom {
-      top: 506px; } }
+      top: 541px; } }
 
 .bottom-bg {
   max-width: 1400px;
@@ -3660,7 +3660,7 @@ MOST IMPORTANT - LOT TABLE STYLES
       min-height: 395px; } }
   @media (min-height: 1000px) {
     .lot-info {
-      min-height: 415px; } }
+      min-height: 450px; } }
 
 .lot--header {
   background-color: #333333;
@@ -3672,13 +3672,14 @@ MOST IMPORTANT - LOT TABLE STYLES
   left: 0;
   top: 0;
   height: 53px;
-  width: 85px;
+  width: 95px;
+  margin-bottom: 0;
+  padding: 7px 10px 7px;
   background-color: #E87722;
   color: white;
   text-transform: uppercase;
   font-weight: 700;
-  margin-bottom: 0;
-  padding: 7px 10px 7px; }
+  font-size: 1.4rem; }
   .lot--number label {
     color: white;
     display: block; }
@@ -3690,7 +3691,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   display: inline-block;
   height: 53px;
   padding: 7px 10px 7px;
-  margin-left: 85px; }
+  margin-left: 95px; }
   .lot--title span {
     vertical-align: bottom; }
   @media (min-width: 80em) {

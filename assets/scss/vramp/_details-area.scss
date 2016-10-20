@@ -193,15 +193,20 @@ $height-lot-details: 50%;
 
 		.ask{
 			
-			padding: 0 20px;
+			padding: 0 10px;
+
+			@include vrampbreakpoint(medium){
+				padding: 0 $default-padding;
+			}
 
 			label{
 				opacity: 0.8;
 				display: block;
-				margin-bottom: 10px;
+				margin-bottom: 0;
+				line-height: 1.5rem;
 
 				@include vrampbreakpoint(medium){
-					margin-bottom: 20px;
+					margin-bottom: 5px;
 				}
 			}
 			
@@ -257,17 +262,24 @@ $height-lot-details: 50%;
 
 		.conversions{
 			text-align: left;
-			margin: $default-padding;
+			margin: 10px;
+			margin-bottom: 0;
+
+			@include vrampbreakpoint(medium){
+				margin: $default-padding;
+				margin-bottom: 0;
+			}
 		}
 
 			.conversion{
 				padding: 5px;
 				background-color: rgba(0,0,0,0.1);
 				position: relative;
-				margin-bottom: 10px;
+				margin-bottom: 5px;
 
 				@include vrampbreakpoint(medium){
 					padding: 10px;
+					margin-bottom: 10px;
 				}
 
 				&.ccy:after{
@@ -302,21 +314,26 @@ $height-lot-details: 50%;
 
 		top: $height-ask_small;
 		height: $height-high-bid_small;
+
+		padding: 15px 10px;
+
+		background-color: $bg-color-high-bid;
+
+		@include details-label;
 		
 		@include vrampbreakpoint(medium){
 			top: $height-ask;
 			height: $height-high-bid;
+
+			padding: $default-padding;
 		}
-
-		background-color: $bg-color-high-bid;
-		padding: $default-padding;
-
-		@include details-label;
 
 	}
 
 	.lot-details{
-		padding: $default-padding;
+		
+		padding: 15px 10px;
+
 		background-color: $bg-color-details;
 
 		position: absolute;
@@ -326,7 +343,8 @@ $height-lot-details: 50%;
 		height: calc(100% - (#{$height-ask_small} + #{$height-high-bid_small}));
 
 		@include vrampbreakpoint(medium){
-			height: calc(100% - (#{$height-ask} + #{$height-high-bid}));	
+			height: calc(100% - (#{$height-ask} + #{$height-high-bid}));
+			padding: $default-padding;
 		}
 		
 		@include details-label;

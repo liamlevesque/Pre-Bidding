@@ -28,7 +28,7 @@
 	$li-header-bg: $grey-900;
 	$li-title: white;
 	$li-text: $grey-900;
-	$lot-number-width: 85px;
+	$lot-number-width: 95px;
 	
 
 .lot-info{
@@ -69,15 +69,16 @@
 			top: 0;
 			height: $lot-header-height;
 			width: $lot-number-width;
+
+			margin-bottom: 0;
+			padding: 7px 10px 7px;
 			
 			background-color: $brand-color;
 			color: white;
 			text-transform: uppercase;
 			font-weight: 700;
-			margin-bottom: 0;
+			font-size: 1.4rem;
 			
-			padding: 7px 10px 7px;
-
 			label{
 				color: white;
 				display: block;
