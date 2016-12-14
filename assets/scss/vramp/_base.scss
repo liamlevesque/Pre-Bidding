@@ -1,4 +1,4 @@
-$details-width_small: 35%;
+$details-width_small: 30%;
 $details-width: 30%;
 
 $footer-height_small: 40px;
@@ -25,6 +25,10 @@ $default-padding: 20px;
 
   @if $point == small {
     @media (min-width: 960px) { @content; }
+  }
+
+  @if $point == smallmax {
+    @media (max-width: 1280px) { @content; }
   }
 }
 

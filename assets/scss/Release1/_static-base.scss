@@ -49,6 +49,21 @@
 			margin-top: 50px;
 		}
 
+		.auction--enter_not-started{
+			border-radius: 5px;
+			text-align: center;
+			background-color: $grey-100;
+			padding: 20px;
+			margin-top: 50px;
+			color: white;
+			box-shadow: $ritchie-shadow;
+
+			// h1, h3{
+			// 	color:white;
+			// }
+		
+		}
+
 	.custom-area{
 		left: auto;
 		right: 0;

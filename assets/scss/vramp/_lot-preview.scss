@@ -2,7 +2,7 @@
 $width-lot--number: 160px;
 $width-lot--number_medium: 200px;
 $width-lot--number_xlarge: 225px; 
-$height-header: 80px;
+$height-header: 70px;
 $height-header_large: 100px;
 
 .lot-preview{
@@ -101,7 +101,7 @@ $height-header_large: 100px;
 
 			padding: $default-padding;
 
-			line-height: 2rem;
+			line-height: 1.8rem;
 			
 			@include vrampbreakpoint(medium){
 				left: $width-lot--number_medium;
