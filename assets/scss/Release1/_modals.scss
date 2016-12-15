@@ -200,3 +200,49 @@ $setting-label-width: 30%;
 			box-shadow: $ritchie-shadow;
 		}
 	}
+
+
+.kickedout{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 0;
+	overflow: hidden;
+	background-color: rgba($grey-700,1);
+	color: white;
+	z-index: 1000;
+	text-align: center;
+	border-style: solid;
+	border-color: white;
+	border-width: 0;
+
+	.kickedout--img{
+		width: 180px;
+	}
+	
+	.a-fade-in{
+		max-width: 700px;
+		margin: 0 auto;
+
+		transition: $transition;
+		transition-delay: 0.1s;
+		transition-duration: 1s;
+		
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+
+	transition: $transition;
+	transition-duration: 0.5s;
+
+	&.s-visible{
+		height: 100%;
+		border-width: 20px;
+
+		.a-fade-in{
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+}

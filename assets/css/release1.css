@@ -54,6 +54,7 @@ GRID
     vertical-align: top;
     width: 48%;
     margin-right: 1%; } }
+
 @media (min-width: 64em) {
   .g-half-to-third {
     width: 32%;
@@ -103,6 +104,7 @@ GRID
   src: url("../fonts/ritchie-icons.eot?o9cbw0#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?o9cbw0") format("truetype"), url("../fonts/ritchie-icons.woff?o9cbw0") format("woff"), url("../fonts/ritchie-icons.svg?o9cbw0#ritchie-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'ritchie-icons' !important;
@@ -897,6 +899,7 @@ hr {
       display: block;
       width: 100%;
       text-align: left; } }
+
 .details-table .long-field {
   display: inline-block;
   overflow: hidden;
@@ -907,6 +910,7 @@ hr {
   @media (max-width: 800px) {
     .details-table .long-field {
       max-width: 100%; } }
+
 .details-table .calculation {
   display: block;
   position: relative;
@@ -1002,8 +1006,10 @@ hr {
   display: table;
   width: 100%;
   table-layout: fixed; }
+
 .purchases.s-hidden {
   display: none; }
+
 .purchases_empty {
   padding: 60px 15px 130px;
   text-align: center; }
@@ -1117,8 +1123,10 @@ hr {
 *************************/
 .collapsible .default-hidden {
   display: none; }
+
 .collapsible.s-expanded .default-shown {
   display: none; }
+
 .collapsible.s-expanded .default-hidden {
   display: block; }
 
@@ -1680,8 +1688,7 @@ hr {
 .swiper-container-autoheight .swiper-wrapper {
   -webkit-box-align: start;
   -ms-flex-align: start;
-  -ms-grid-row-align: flex-start;
-      align-items: flex-start;
+  align-items: flex-start;
   -webkit-transition-property: -webkit-transform,height;
   -webkit-transition-property: height,-webkit-transform;
   transition-property: height,-webkit-transform;
@@ -2015,10 +2022,12 @@ button.swiper-pagination-bullet {
 @-webkit-keyframes swiper-preloader-spin {
   100% {
     -webkit-transform: rotate(360deg); } }
+
 @keyframes swiper-preloader-spin {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
 header {
   max-width: 1400px;
   margin: 0 auto;
@@ -2171,6 +2180,7 @@ header {
   100% {
     background-color: #fffefe;
     color: #c4483a; } }
+
 .cart-icon {
   display: inline-block;
   position: relative;
@@ -2470,17 +2480,23 @@ MOST IMPORTANT - LOT TABLE STYLES
 
 .col-0 {
   width: 5%; }
+
 .col2a {
   width: 40%;
   text-align: center; }
+
 .col-2b {
   width: 15%; }
+
 .col-2c {
   width: 10%; }
+
 .col-2d {
   width: 5%; }
+
 .col-5 {
   width: 10%; }
+
 .col-5b {
   width: 10%; }
 
@@ -2490,6 +2506,7 @@ MOST IMPORTANT - LOT TABLE STYLES
 .s-viewer-mode .col-5 {
   width: 0;
   display: none; }
+
 .s-viewer-mode .col-5b {
   width: 20%; }
 
@@ -2499,8 +2516,8 @@ MOST IMPORTANT - LOT TABLE STYLES
   -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   /**************
-  STATES FOR LOTS
-  ***************/ }
+				STATES FOR LOTS
+				***************/ }
   .lot [class^="col"] {
     border-bottom: 1px dotted #bdbdbd;
     position: relative;
@@ -2791,6 +2808,7 @@ MOST IMPORTANT - LOT TABLE STYLES
     background-color: #ac5412; }
   100% {
     background-color: #E87722; } }
+
 .bidding--area {
   display: inline-block;
   width: 50%;
@@ -2883,6 +2901,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   100% {
     -webkit-transform: translateX(0);
             transform: translateX(0); } }
+
 .normal, .openoffer, .runnerup, .winner {
   display: none; }
 
@@ -3019,8 +3038,8 @@ MOST IMPORTANT - LOT TABLE STYLES
   padding: 20px 0; }
 
 /************************
-	MESSAGE BOXES
-************************/
+				MESSAGE BOXES
+			************************/
 *[class^="message-box"] {
   border: 1px solid #bfc0be;
   padding: 10px 15px;
@@ -3126,6 +3145,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   100% {
     left: 100%;
     right: 0; } }
+
 .message-box--open-offer {
   border: none;
   background-color: #d06c61;
@@ -3191,6 +3211,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   100% {
     -webkit-transform: scale(70);
             transform: scale(70); } }
+
 @-webkit-keyframes youwin {
   0% {
     left: 50%;
@@ -3203,6 +3224,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   100% {
     left: 0;
     width: 100%; } }
+
 @keyframes youwin {
   0% {
     left: 50%;
@@ -3215,6 +3237,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   100% {
     left: 0;
     width: 100%; } }
+
 @-webkit-keyframes happybounce {
   0% {
     -webkit-transform: translateY(-50%);
@@ -3231,6 +3254,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   100% {
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%); } }
+
 @keyframes happybounce {
   0% {
     -webkit-transform: translateY(-50%);
@@ -3247,6 +3271,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   100% {
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%); } }
+
 .bidding--group {
   display: inline-block;
   width: 50%;
@@ -3705,9 +3730,11 @@ MOST IMPORTANT - LOT TABLE STYLES
     width: 65%;
     max-width: 400px;
     max-height: 300px; } }
+
 @media (min-width: 64em) and (min-height: 800px) {
   .lot--photos {
     margin: 20px 0; } }
+
 @media (min-width: 64em) and (min-height: 1000px) {
   .lot--photos {
     margin-bottom: 40px; } }
@@ -3731,6 +3758,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   width: 100%;
   min-width: 100%;
   vertical-align: bottom; }
+
 .swiper-container:after {
   content: '';
   display: block;
@@ -3742,6 +3770,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   height: 100px;
   background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
   background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 100%); }
+
 .swiper-container .swiper-counter {
   display: block;
   position: absolute;
@@ -3754,6 +3783,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   font-size: 0.8rem;
   font-weight: 700;
   padding: 5px 10px; }
+
 .swiper-container .swiper-pagination-bullet {
   background: white;
   opacity: 0.5;
@@ -3764,12 +3794,14 @@ MOST IMPORTANT - LOT TABLE STYLES
     opacity: 1;
     -webkit-transform: scale(1.2);
             transform: scale(1.2); }
+
 .swiper-container .swiper-button-next, .swiper-container .swiper-container-rtl .swiper-button-prev, .swiper-container .swiper-button-prev, .swiper-container .swiper-container-rtl .swiper-button-next {
   background-color: rgba(255, 255, 255, 0.5);
   padding: 30px 20px;
   opacity: 0.25;
   -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+
 .swiper-container .swiper-button-prev,
 .swiper-container .swiper-container-rtl .swiper-button-next {
   left: 0;
@@ -3779,6 +3811,7 @@ MOST IMPORTANT - LOT TABLE STYLES
     background-color: #E87722;
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
     opacity: 1 !important; }
+
 .swiper-container .swiper-button-next,
 .swiper-container .swiper-container-rtl .swiper-button-prev {
   right: 0;
@@ -3788,6 +3821,7 @@ MOST IMPORTANT - LOT TABLE STYLES
     background-color: #E87722;
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
     opacity: 1 !important; }
+
 .swiper-container:hover .swiper-button-next, .swiper-container:hover .swiper-container-rtl .swiper-button-prev, .swiper-container:hover .swiper-button-prev, .swiper-container:hover .swiper-container-rtl .swiper-button-next {
   opacity: 0.5; }
 
@@ -3901,6 +3935,7 @@ MOST IMPORTANT - LOT TABLE STYLES
 .expander.s-expanded .expander--toggle:before {
   -webkit-transform: rotate(0);
           transform: rotate(0); }
+
 .expander.s-expanded .expander--content {
   display: block; }
 
@@ -3937,10 +3972,13 @@ MOST IMPORTANT - LOT TABLE STYLES
   text-align: right;
   display: inline-block;
   word-wrap: break-word; }
+
 .setting .CCY {
   margin-right: 5px; }
+
 .setting.ccyconversion .setting--result {
   background-color: rgba(32, 87, 158, 0.2); }
+
 .setting.financing-calculation .setting--result {
   background-color: rgba(36, 83, 43, 0.2); }
 
@@ -4025,6 +4063,46 @@ MOST IMPORTANT - LOT TABLE STYLES
     background-size: 100% auto;
     background-image: url(../img/ccy-flags.png);
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
+
+.kickedout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  overflow: hidden;
+  background-color: #585858;
+  color: white;
+  z-index: 1000;
+  text-align: center;
+  border-style: solid;
+  border-color: white;
+  border-width: 0;
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s; }
+  .kickedout .kickedout--img {
+    width: 180px; }
+  .kickedout .a-fade-in {
+    max-width: 700px;
+    margin: 0 auto;
+    -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+    transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+    -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+    -webkit-transition-duration: 1s;
+            transition-duration: 1s;
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%); }
+  .kickedout.s-visible {
+    height: 100%;
+    border-width: 20px; }
+    .kickedout.s-visible .a-fade-in {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+              transform: translateY(0); }
 
 .other-rings {
   width: 100%;
@@ -4186,8 +4264,8 @@ MOST IMPORTANT - LOT TABLE STYLES
 /* GENERAL STRUCTURE RULES (do not edit this section) */
 .tooltipster-base {
   /* this ensures that a constrained height set by functionPosition,
-  if greater that the natural height of the tooltip, will be enforced
-  in browsers that support display:flex */
+	if greater that the natural height of the tooltip, will be enforced
+	in browsers that support display:flex */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4197,7 +4275,7 @@ MOST IMPORTANT - LOT TABLE STYLES
 
 .tooltipster-box {
   /* see .tooltipster-base. flex-shrink 1 is only necessary for IE10-
-  and flex-basis auto for IE11- (at least) */
+	and flex-basis auto for IE11- (at least) */
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto; }
@@ -4317,6 +4395,7 @@ MOST IMPORTANT - LOT TABLE STYLES
     opacity: 0; }
   100% {
     opacity: 1; } }
+
 .tooltipster-update-fade {
   -webkit-animation: tooltipster-fading 400ms;
           animation: tooltipster-fading 400ms; }
@@ -4342,6 +4421,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   100% {
     -webkit-transform: rotate(0);
             transform: rotate(0); } }
+
 .tooltipster-update-rotate {
   -webkit-animation: tooltipster-rotating 600ms;
           animation: tooltipster-rotating 600ms; }
@@ -4361,6 +4441,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   100% {
     -webkit-transform: scale(1);
             transform: scale(1); } }
+
 .tooltipster-update-scale {
   -webkit-animation: tooltipster-scaling 600ms;
           animation: tooltipster-scaling 600ms; }
@@ -4413,7 +4494,7 @@ corresponds to the arrow we want to display */
   margin-top: -10px;
   right: 0;
   /* top 0 to keep the arrow from overflowing .tooltipster-base when it has not
-  been positioned yet */
+	been positioned yet */
   top: 0;
   width: 10px; }
 
@@ -4503,9 +4584,11 @@ corresponds to the arrow we want to display */
 .tooltip_ne {
   top: -12px;
   right: -12px; }
+
 .tooltip_se {
   bottom: 15px;
   right: 5px; }
+
 .tooltip_e {
   right: -27px;
   top: 50%;
@@ -4518,6 +4601,7 @@ corresponds to the arrow we want to display */
   border-radius: 0;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   max-width: 400px; }
+
 .tooltipster-sidetip.ritchie-tooltips_small .tooltipster-content, .tooltipster-sidetip.ritchie-tooltips_full .tooltipster-content {
   font-size: 1rem;
   padding: 7.5px 15px;
@@ -4527,6 +4611,7 @@ corresponds to the arrow we want to display */
     margin: 0; }
   .tooltipster-sidetip.ritchie-tooltips_small .tooltipster-content p + p, .tooltipster-sidetip.ritchie-tooltips_full .tooltipster-content p + p {
     margin-top: 15px; }
+
 .tooltipster-sidetip.ritchie-tooltips_small a, .tooltipster-sidetip.ritchie-tooltips_full a {
   color: #1478BC; }
 
@@ -4535,30 +4620,36 @@ corresponds to the arrow we want to display */
   border: none;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   max-width: 400px; }
+
 .tooltipster-sidetip.ritchie-tooltips_error .tooltipster-content {
   padding: 0; }
   .tooltipster-sidetip.ritchie-tooltips_error .tooltipster-content p {
     margin: 0; }
   .tooltipster-sidetip.ritchie-tooltips_error .tooltipster-content p + p {
     margin-top: 15px; }
+
 .tooltipster-sidetip.ritchie-tooltips_error .tooltipster-arrow:before {
   background-color: #c4483a;
   border-color: transparent; }
 
 .tooltipster-bottom .tooltipster-arrow {
   top: -1px !important; }
+
 .tooltipster-right .tooltipster-arrow {
   left: -1px !important; }
+
 .tooltipster-left .tooltipster-arrow {
   right: -1px !important; }
   .tooltipster-left .tooltipster-arrow:before {
     left: auto;
     right: 5px; }
+
 .tooltipster-top .tooltipster-arrow {
   bottom: -1px !important; }
   .tooltipster-top .tooltipster-arrow:before {
     top: auto;
     bottom: 5px; }
+
 .tooltipster-arrow:before {
   content: "";
   display: block;
@@ -4571,6 +4662,7 @@ corresponds to the arrow we want to display */
   border: 1px solid black;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg); }
+
 .tooltipster-arrow .tooltipster-arrow-border, .tooltipster-arrow .tooltipster-arrow-background {
   display: none; }
 

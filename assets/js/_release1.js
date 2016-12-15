@@ -119,6 +119,11 @@ $(function(){
 		bidObject.bidMode = bidMode[bidModeIndex];
 	});
 
+	$('.js--kickMeOut').click(function(){
+		$('.js--kickedOut').toggleClass('s-visible');
+	});
+	
+
 	//SHOW/HIDE THE PREVIEW IMAGE IN THE LOT TABLE
 	$('.js--lot-preview-hover').mouseover(function(e){
 		var offset = $(e.currentTarget).offset();
