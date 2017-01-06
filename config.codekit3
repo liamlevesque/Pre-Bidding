@@ -7,7 +7,7 @@
 		"uuidString": "D84A76D9-A715-4440-A983-976C97641950"
 		}
 	],
-"creatorBuild": "25444",
+"creatorBuild": "25479",
 "files": {
 	"\/assets\/css\/customizable-grid.css": {
 		"aP": 0,
@@ -316,6 +316,14 @@
 		"iS": 20699,
 		"oA": 0,
 		"oAP": "\/assets\/img\/grader.jpg",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/assets\/img\/logo-square.png": {
+		"ft": 32768,
+		"iS": 760,
+		"oA": 0,
+		"oAP": "\/assets\/img\/logo-square.png",
 		"oF": 0,
 		"opt": 0
 		},
@@ -7041,7 +7049,7 @@
 	"creationDate": 502307792,
 	"displayValue": "20151203-PreBidding",
 	"displayValueWasSetByUser": 1,
-	"iconImageName": "brackets_teal"
+	"iconImageName": "\/assets\/img\/logo-square.png"
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -7485,6 +7493,10 @@
 			"active": 0,
 			"optionString": "{'properties': 'always'}"
 			},
+		"capitalized-comments": {
+			"active": 0,
+			"optionString": "'always', {'ignoreInlineComments': false, 'ignoreConsecutiveComments': false}"
+			},
 		"class-methods-use-this": {
 			"active": 0,
 			"optionString": "{'exceptMethods': []}"
@@ -7648,6 +7660,10 @@
 		"max-statements": {
 			"active": 0,
 			"optionString": "{'max': 10}, {'ignoreTopLevelFunctions': true}"
+			},
+		"max-statements-per-line": {
+			"active": 0,
+			"optionString": "{'max': 1}"
 			},
 		"multiline-ternary": {
 			"active": 0,
@@ -8013,6 +8029,10 @@
 			"active": 0,
 			"optionString": "'except-parens'"
 			},
+		"no-return-await": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-script-url": {
 			"active": 0,
 			"optionString": ""
@@ -8244,6 +8264,10 @@
 		"radix": {
 			"active": 0,
 			"optionString": "'always'"
+			},
+		"require-await": {
+			"active": 0,
+			"optionString": ""
 			},
 		"require-jsdoc": {
 			"active": 0,
@@ -9077,6 +9101,10 @@
 			},
 		"space-colon": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"support-ie8": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"toplevel": {

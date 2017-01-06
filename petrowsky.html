@@ -847,8 +847,11 @@
 
     <script id="currentlot" type="x-tmpl-mustache">
         <div class="lot--header">
-            <h5 class="lot--number">Lot {{ lot }}</h5>
-            <h2 class="lot--title">{{ name }}</h2>
+             <div class="lot--number">
+                <label class="lot--ring-number">Lot</label>
+                {{ lot }}
+            </div>
+            <h2 class="lot--title"><span class="h-valign">{{ name }}</span></h2>
         </div>
         <div class="lot--photos">
             <div class="swiper-container">

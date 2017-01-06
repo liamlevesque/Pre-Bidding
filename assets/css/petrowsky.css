@@ -1,7 +1,7 @@
 .c-brand {
   color: #b22222; }
 
-.lot--number, .bidding--group.s-open-offers .bidding--header {
+.bidding--group.s-open-offers .bidding--header {
   color: #fff200; }
 
 .bidding--header:before, .group--body ul:before {
@@ -23,10 +23,13 @@
   color: #b22222; }
 
 .group--lot.s-preview:not(.s-active-lot) {
-  background-color: rgba(178, 34, 34, 0.3); }
+  background-color: rgba(255, 242, 0, 0.3); }
 
 .group--lot.s-active-lot {
-  background-color: #b22222; }
+  background-color: #fff200; }
+
+.group--lot.s-active-lot .lot--values {
+  color: black; }
 
 .other-rings {
   background-color: black; }
@@ -63,6 +66,13 @@
   background-color: #fff200;
   color: black; }
 
+.lot--number {
+  background-color: #fff200;
+  color: black; }
+
+.lot--number label {
+  color: black; }
+
 .message-box--max-bid {
   background-color: #fff200;
   color: black; }
@@ -70,7 +80,7 @@
     color: black; }
 
 .lot.s-selected [class^="col"] {
-  background-color: rgba(178, 34, 34, 0.3); }
+  background-color: rgba(255, 242, 0, 0.3); }
 
 .lot.s-selected .lot--add-bid {
   color: #b22222; }
@@ -96,6 +106,7 @@
     background-color: #fff200;
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E");
     opacity: 1 !important; }
+
 .swiper-container .swiper-button-next,
 .swiper-container .swiper-container-rtl .swiper-button-prev {
   right: 0;
@@ -105,3 +116,9 @@
     background-color: #fff200;
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E");
     opacity: 1 !important; }
+
+.overflow-arrow.arrow--next:hover {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23fff200'%2F%3E%3C%2Fsvg%3E"); }
+
+.overflow-arrow.arrow--prev:hover {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23fff200'%2F%3E%3C%2Fsvg%3E"); }
