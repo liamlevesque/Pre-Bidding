@@ -4141,7 +4141,7 @@ MOST IMPORTANT - LOT TABLE STYLES
     .disconnected .disconnected--modal i {
       font-size: 40px; }
   .disconnected.s-visible {
-    height: calc(100% - 32px); }
+    height: calc(100% - 31px); }
 
 .other-rings {
   width: 100%;
