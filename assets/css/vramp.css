@@ -16,6 +16,28 @@ label, .label {
   display: inline-block;
   color: #959595; }
 
+@-webkit-keyframes waitingslide {
+  0% {
+    left: 0;
+    right: 100%; }
+  50% {
+    left: 0;
+    right: 0; }
+  100% {
+    left: 100%;
+    right: 0; } }
+
+@keyframes waitingslide {
+  0% {
+    left: 0;
+    right: 100%; }
+  50% {
+    left: 0;
+    right: 0; }
+  100% {
+    left: 100%;
+    right: 0; } }
+
 body {
   font-family: 'Trebuchet MS', Verdana, sans-serif;
   font-size: 18px;

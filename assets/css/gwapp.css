@@ -15,6 +15,17 @@ label, .label, .button_hollow {
   display: inline-block;
   color: #959595; }
 
+@keyframes waitingslide {
+  0% {
+    left: 0;
+    right: 100%; }
+  50% {
+    left: 0;
+    right: 0; }
+  100% {
+    left: 100%;
+    right: 0; } }
+
 /*****************
 GRID
 ******************/

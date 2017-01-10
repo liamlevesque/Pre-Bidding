@@ -122,6 +122,10 @@ $(function(){
 	$('.js--kickMeOut').click(function(){
 		$('.js--kickedOut').toggleClass('s-visible');
 	});
+
+	$('.js--disconnect').click(function(){
+		$('.js--disconnected').toggleClass('s-visible');
+	});
 	
 
 	//SHOW/HIDE THE PREVIEW IMAGE IN THE LOT TABLE

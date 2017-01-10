@@ -202,7 +202,7 @@ $setting-label-width: 30%;
 	}
 
 
-.kickedout{
+.kickedout, .disconnected{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -243,7 +243,7 @@ $setting-label-width: 30%;
 	transition-duration: 0.5s;
 
 	&.s-visible{
-		height: 100%;
+		height: calc(100% - 32px);
 		border-width: 20px;
 
 		.a-fade-in{
@@ -252,3 +252,43 @@ $setting-label-width: 30%;
 		}
 	}
 }
+
+$header-height: 90px;
+
+.disconnected{
+	background-color: rgba(0,0,0,0.7);
+	border-color: $error-colour;
+	//top: $header-height;
+
+	.a-fade-in{
+		max-width: 400px;
+	}
+
+	.disconnected--modal{
+		background-color: $error-colour;
+		padding: 1.6*$default-margin;
+		position: relative;
+		overflow: hidden;
+		font-weight: 700;
+
+		@include loading(rgba(white,0.35));
+
+		i{
+			font-size: 40px;
+		}
+	}
+
+	&.s-visible{
+		height: calc(100% - 32px);
+	}
+
+	// &.s-visible{
+	// 	height: calc(100% - #{$header-height});
+	// } IF WE DON'T WANT THE DISCONNECTED THING TO OVERLAP THE HEADER
+}
+
+
+
+
+
+
