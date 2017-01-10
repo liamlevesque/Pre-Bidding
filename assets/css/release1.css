@@ -4084,9 +4084,13 @@ MOST IMPORTANT - LOT TABLE STYLES
           transition-duration: 0.5s; }
   .kickedout .kickedout--img {
     width: 180px; }
+  .kickedout .header--auction {
+    font-size: 1.5rem;
+    margin-bottom: 15px; }
   .kickedout .a-fade-in {
     max-width: 700px;
     margin: 0 auto;
+    overflow: hidden;
     -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
     transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
     -webkit-transition-delay: 0.1s;
@@ -4101,8 +4105,8 @@ MOST IMPORTANT - LOT TABLE STYLES
     border-width: 20px; }
     .kickedout.s-visible .a-fade-in {
       opacity: 1;
-      -webkit-transform: translateY(0);
-              transform: translateY(0); }
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); }
 
 .other-rings {
   width: 100%;
@@ -4831,6 +4835,9 @@ corresponds to the arrow we want to display */
 
 .h-t-l, .h-t-large {
   font-size: 1.5rem; }
+
+.h-t-xxxl {
+  font-size: 3.5rem; }
 
 .h-ta-center {
   text-align: center; }

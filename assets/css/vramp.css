@@ -103,6 +103,7 @@ hr {
   src: url("../fonts/ritchie-icons.eot?o9cbw0#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?o9cbw0") format("truetype"), url("../fonts/ritchie-icons.woff?o9cbw0") format("woff"), url("../fonts/ritchie-icons.svg?o9cbw0#ritchie-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'ritchie-icons' !important;
@@ -261,12 +262,14 @@ body {
   src: url("../fonts/FrutigerLTStd-BlackCn.eot?#iefix") format("embedded-opentype"), url("../fonts/FrutigerLTStd-BlackCn.woff") format("woff"), url("../fonts/FrutigerLTStd-BlackCn.ttf") format("truetype"), url("../fonts/FrutigerLTStd-BlackCn.svg#FrutigerLTStd-BlackCn") format("svg");
   font-weight: 700;
   font-style: normal; }
+
 @font-face {
   font-family: 'Frutiger LT Std';
   src: url("../fonts/FrutigerLTStd-BoldCn.eot");
   src: url("../fonts/FrutigerLTStd-BoldCn.eot?#iefix") format("embedded-opentype"), url("../fonts/FrutigerLTStd-BoldCn.woff") format("woff"), url("../fonts/FrutigerLTStd-BoldCn.ttf") format("truetype"), url("../fonts/FrutigerLTStd-BoldCn.svg#FrutigerLTStd-BoldCn") format("svg");
   font-weight: 400;
   font-style: normal; }
+
 body {
   font-family: 'Frutiger LT Std', 'Trebuchet MS', Verdana, sans-serif; }
 
@@ -306,90 +309,74 @@ body {
   .font--120, .lot--number label, .high-bidder label, .lot-details label, .auctioneers-message label, .open-offers label {
     font-size: 12px;
     font-size: 1.2rem; }
-
   .font--150 {
     font-size: 15px;
     font-size: 1.5rem; }
-
   .font--180, .ask--price:before {
     font-size: 16px;
     font-size: 1.6rem; }
-
   .font--200 {
     font-size: 18px;
     font-size: 1.8rem; }
-
   .font--250 {
     font-size: 22px;
     font-size: 2.2rem; }
-
   .font--300 {
     font-size: 30px;
     font-size: 3rem; }
-
   .font--400 {
     font-size: 30px;
     font-size: 3rem; }
-
   .font--600 {
     font-size: 40px;
     font-size: 4rem; } }
+
 @media (min-width: 1600px) {
   .font--150 {
     font-size: 15px;
     font-size: 1.5rem; }
-
   .font--180, .ask--price:before {
     font-size: 18px;
     font-size: 1.8rem; }
-
   .font--200 {
     font-size: 20px;
     font-size: 2rem; }
-
   .font--250 {
     font-size: 25px;
     font-size: 2.5rem; }
-
   .font--300 {
     font-size: 30px;
     font-size: 3rem; }
-
   .font--400 {
     font-size: 40px;
     font-size: 4rem; }
-
   .font--600 {
     font-size: 60px;
     font-size: 6rem; } }
+
 @media (min-width: 1920px) {
   .font--150 {
     font-size: 20px;
     font-size: 2rem; }
-
   .font--180, .ask--price:before {
     font-size: 20px;
     font-size: 2rem; }
-
   .font--200 {
     font-size: 25px;
     font-size: 2.5rem; }
-
   .font--250 {
     font-size: 25px;
     font-size: 2.5rem; }
-
   .font--300 {
     font-size: 35px;
     font-size: 3.5rem; }
-
   .font--400 {
     font-size: 50px;
     font-size: 5rem; }
-
   .font--600 {
     font-size: 70px;
     font-size: 7rem; } }
+
 .lot-preview {
   position: absolute;
   left: 0;
@@ -927,6 +914,7 @@ body {
 @media (min-width: 1280px) {
   .auction-ccy {
     display: none; } }
+
 .auction-ccy:after {
   content: '';
   display: inline-block;
@@ -1194,52 +1182,71 @@ body {
       color: rgba(255, 255, 255, 0.5); }
   .choice--lot.s-active {
     border-color: #E87722; }
-  .choice--lot:nth-last-child(n+2), .choice--lot:nth-last-child(n+2) ~ li {
+  .choice--lot:nth-last-child(n+2),
+  .choice--lot:nth-last-child(n+2) ~ li {
     width: calc((100% / 2) - 10px); }
-  .choice--lot:nth-last-child(n+3), .choice--lot:nth-last-child(n+3) ~ li {
+  .choice--lot:nth-last-child(n+3),
+  .choice--lot:nth-last-child(n+3) ~ li {
     width: calc((100% / 3) - 10px); }
-  .choice--lot:nth-last-child(n+4), .choice--lot:nth-last-child(n+4) ~ li {
+  .choice--lot:nth-last-child(n+4),
+  .choice--lot:nth-last-child(n+4) ~ li {
     width: calc((100% / 4) - 10px); }
     @media (max-width: 1280px) {
-      .choice--lot:nth-last-child(n+4), .choice--lot:nth-last-child(n+4) ~ li {
+      .choice--lot:nth-last-child(n+4),
+      .choice--lot:nth-last-child(n+4) ~ li {
         font-size: 17px;
         font-size: 1.7rem; }
-        .choice--lot:nth-last-child(n+4):before, .choice--lot:nth-last-child(n+4) ~ li:before {
+        .choice--lot:nth-last-child(n+4):before,
+        .choice--lot:nth-last-child(n+4) ~ li:before {
           font-size: 30px; } }
-  .choice--lot:nth-last-child(n+5), .choice--lot:nth-last-child(n+5) ~ li {
+  .choice--lot:nth-last-child(n+5),
+  .choice--lot:nth-last-child(n+5) ~ li {
     height: 60px;
     line-height: 60px;
     font-size: 20px;
     font-size: 2rem;
     width: calc((100% / 5) - 10px); }
-    .choice--lot:nth-last-child(n+5):before, .choice--lot:nth-last-child(n+5) ~ li:before {
+    .choice--lot:nth-last-child(n+5):before,
+    .choice--lot:nth-last-child(n+5) ~ li:before {
       font-size: 30px; }
     @media (max-width: 1280px) {
-      .choice--lot:nth-last-child(n+5), .choice--lot:nth-last-child(n+5) ~ li {
+      .choice--lot:nth-last-child(n+5),
+      .choice--lot:nth-last-child(n+5) ~ li {
         font-size: 13px;
         font-size: 1.3rem; }
-        .choice--lot:nth-last-child(n+5):before, .choice--lot:nth-last-child(n+5) ~ li:before {
+        .choice--lot:nth-last-child(n+5):before,
+        .choice--lot:nth-last-child(n+5) ~ li:before {
           font-size: 25px; } }
-  .choice--lot:nth-last-child(n+6), .choice--lot:nth-last-child(n+6) ~ li {
+  .choice--lot:nth-last-child(n+6),
+  .choice--lot:nth-last-child(n+6) ~ li {
     width: calc((100% / 6) - 10px); }
-  .choice--lot:nth-last-child(n+7), .choice--lot:nth-last-child(n+7) ~ li {
+  .choice--lot:nth-last-child(n+7),
+  .choice--lot:nth-last-child(n+7) ~ li {
     width: calc((100% / 7) - 10px); }
-  .choice--lot:nth-last-child(n+8), .choice--lot:nth-last-child(n+8) ~ li {
+  .choice--lot:nth-last-child(n+8),
+  .choice--lot:nth-last-child(n+8) ~ li {
     width: calc((100% / 8) - 10px); }
-  .choice--lot:nth-last-child(n+9), .choice--lot:nth-last-child(n+9) ~ li {
+  .choice--lot:nth-last-child(n+9),
+  .choice--lot:nth-last-child(n+9) ~ li {
     width: calc((100% / 9) - 10px); }
-  .choice--lot:nth-last-child(n+10), .choice--lot:nth-last-child(n+10) ~ li {
+  .choice--lot:nth-last-child(n+10),
+  .choice--lot:nth-last-child(n+10) ~ li {
     width: calc((100% / 10) - 10px); }
-  .choice--lot:nth-last-child(n+11), .choice--lot:nth-last-child(n+11) ~ li {
+  .choice--lot:nth-last-child(n+11),
+  .choice--lot:nth-last-child(n+11) ~ li {
     width: calc((100% / 11) - 10px); }
-  .choice--lot:nth-last-child(n+12), .choice--lot:nth-last-child(n+12) ~ li {
+  .choice--lot:nth-last-child(n+12),
+  .choice--lot:nth-last-child(n+12) ~ li {
     width: calc((100% / 12) - 10px); }
-  .choice--lot:nth-last-child(n+12), .choice--lot:nth-last-child(n+12) ~ li {
+  .choice--lot:nth-last-child(n+12),
+  .choice--lot:nth-last-child(n+12) ~ li {
     height: 40px;
     width: calc((100% / 12) - 10px);
     margin-bottom: 10px;
     padding-top: 0; }
-    .choice--lot:nth-last-child(n+12).s-sold, .choice--lot:nth-last-child(n+12).s-out, .choice--lot:nth-last-child(n+12) ~ li.s-sold, .choice--lot:nth-last-child(n+12) ~ li.s-out {
+    .choice--lot:nth-last-child(n+12).s-sold, .choice--lot:nth-last-child(n+12).s-out,
+    .choice--lot:nth-last-child(n+12) ~ li.s-sold,
+    .choice--lot:nth-last-child(n+12) ~ li.s-out {
       padding-left: 28px;
       padding-top: 0;
       font-size: 12px;
@@ -1278,9 +1285,11 @@ body {
   .ring:only-child {
     width: 30%;
     float: right; }
-  .ring:nth-last-child(n+2), .ring:nth-last-child(n+2) ~ li {
+  .ring:nth-last-child(n+2),
+  .ring:nth-last-child(n+2) ~ li {
     width: 50%; }
-  .ring:nth-last-child(n+3), .ring:nth-last-child(n+3) ~ li {
+  .ring:nth-last-child(n+3),
+  .ring:nth-last-child(n+3) ~ li {
     width: 33.33333%; }
 
 .ring--number {
@@ -1410,6 +1419,7 @@ body {
   100% {
     -webkit-transform: scale(1);
             transform: scale(1); } }
+
 .paused-message, .pre-post-message {
   position: absolute;
   top: 60px;
@@ -1446,6 +1456,7 @@ body {
   -webkit-transform: translateY(-50%) rotate(45deg);
           transform: translateY(-50%) rotate(45deg);
   background-color: white; }
+
 .s-auction-paused .paused-message {
   -webkit-transform: translateX(0);
           transform: translateX(0);
@@ -1473,6 +1484,9 @@ body {
 
 .h-t-l, .h-t-large {
   font-size: 1.5rem; }
+
+.h-t-xxxl {
+  font-size: 3.5rem; }
 
 .h-ta-center {
   text-align: center; }
