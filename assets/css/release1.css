@@ -4087,6 +4087,12 @@ MOST IMPORTANT - LOT TABLE STYLES
   .kickedout .header--auction, .disconnected .header--auction {
     font-size: 1.5rem;
     margin-bottom: 15px; }
+  .kickedout .brand-block, .disconnected .brand-block {
+    position: absolute;
+    top: 25px;
+    left: 100px;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5); }
   .kickedout .a-fade-in, .disconnected .a-fade-in {
     max-width: 700px;
     margin: 0 auto;
