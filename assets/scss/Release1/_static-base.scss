@@ -57,11 +57,23 @@
 			margin-top: 50px;
 			color: white;
 			box-shadow: $ritchie-shadow;
+			margin-bottom: 20px; 
 
-			// h1, h3{
-			// 	color:white;
-			// }
-		
+		}
+
+		.contact-area{
+			h3{
+				margin-bottom: 10px;
+			}
+
+			a{
+				color: $brand-color;
+				text-decoration: underline;
+			}
+			
+			font-size: 1rem;
+			line-height: 1.6rem;
+			text-align: center;
 		}
 
 	.custom-area{
