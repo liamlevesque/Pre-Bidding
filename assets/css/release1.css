@@ -4094,7 +4094,7 @@ MOST IMPORTANT - LOT TABLE STYLES
     -webkit-transform: scale(1.5);
             transform: scale(1.5); }
   .kickedout .a-fade-in, .disconnected .a-fade-in {
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
     overflow: hidden;
     -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
