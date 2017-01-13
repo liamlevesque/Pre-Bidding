@@ -122,3 +122,16 @@
 
 .overflow-arrow.arrow--prev:hover {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23fff200'%2F%3E%3C%2Fsvg%3E"); }
+
+.setting--result .toggle-icon:hover {
+  color: #b22222; }
+  .setting--result .toggle-icon:hover:after {
+    background-color: #b22222; }
+
+.ccy-flag:hover {
+  color: #ff1a1f; }
+
+.ccy-flag.s-active {
+  background-color: rgba(255, 242, 0, 0.2); }
+  .ccy-flag.s-active:after {
+    color: #ff1a1f; }

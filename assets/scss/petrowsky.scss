@@ -41,7 +41,7 @@ $p-grey-500: #555555;
 
 .group--lot.s-active-lot{
 	background-color: $p-yellow;
-}
+}  
 
 	.group--lot.s-active-lot .lot--values{
 		color: black;
@@ -176,5 +176,30 @@ $p-grey-500: #555555;
 }
 
 
+
+.setting--result .toggle-icon:hover{
+	color: $p-deep-red;
+
+	&:after{
+		background-color: $p-deep-red;
+	}
+}
+
+	.ccy-flag{
+		&:hover{
+			color: $p-red;
+		}
+
+		&.s-active{
+			background-color: rgba($p-yellow, 0.2);
+
+			&:after{
+				color: $p-red;
+			}
+		}
+
+	}
+
+	
 
 
