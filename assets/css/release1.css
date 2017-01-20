@@ -4113,6 +4113,8 @@ MOST IMPORTANT - LOT TABLE STYLES
       opacity: 1;
       -webkit-transform: translateY(-50%);
               transform: translateY(-50%); }
+  .s-multi-attend .kickedout.s-visible, .s-multi-attend .disconnected.s-visible {
+    height: calc(100% - 130px); }
 
 .disconnected {
   background-color: rgba(0, 0, 0, 0.7);
@@ -4246,6 +4248,16 @@ MOST IMPORTANT - LOT TABLE STYLES
       line-height: 1; }
     .other-ring .lot--detail label {
       margin-right: 5px; }
+  .other-ring .ring--ended {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #E9E9E9; }
+  .other-ring.s-ended .ring--ended {
+    display: block; }
 
 .overflow-arrow {
   position: absolute;

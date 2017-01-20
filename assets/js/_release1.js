@@ -110,6 +110,7 @@ $(function(){
 
 	$('.js--toggleMultiAttend').click(function(){
 		$('.js--multi-attend').toggleClass('s-hidden');
+		$('body').toggleClass('s-multi-attend');
 		$('.js--lot-table-area').toggleClass('s-multi-attend');
 	});
 
@@ -121,6 +122,7 @@ $(function(){
 
 	$('.js--kickMeOut').click(function(){
 		$('.js--kickedOut').toggleClass('s-visible');
+		$('.other-ring.s-active').toggleClass('s-ended');
 	});
 
 	$('.js--disconnect').click(function(){
