@@ -7,6 +7,13 @@ $(function(){
 		side: 'bottom'
 	});
 
+	$('.js-tooltip-auctioneer').tooltipster({
+		content: $('<p>Current Auctioneer</p>'),
+		theme: 'ritchie-tooltips_small',
+		delay: tooltipDelay,
+		side: 'bottom'
+	});
+
 	$('.js--ppl-tooltip').tooltipster({
 		content: $('.js--tooltip-ppl').detach(),
 		theme: 'ritchie-tooltips_small',
@@ -95,6 +102,20 @@ $(function(){
 
 	$('.js--viewer-toggle').click(function(){
 		$('body').toggleClass('s-viewer-mode');
+	})
+
+	$('.js--toggle-auctioneer').click(function(){
+		switch(user.auctioneer){
+			case "Pat Hicks":
+				user.auctioneer = "Trev Moravec";
+				break;
+			case "Trev Moravec":
+				user.auctioneer = null;
+				break;
+			default:
+				user.auctioneer = "Pat Hicks";
+				break;
+		}
 	})
 
 	$('.js--auctioneer-msg-button').click(function(){

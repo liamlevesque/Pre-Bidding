@@ -303,28 +303,49 @@
 .field--toggle_icon{
 	position: relative;
 	font-size: 15px;
-	padding: 5px;
+	padding: 5px 15px;
+	border-left: $ritchie-border;
+	float: right;
+	position: relative;
 
 	i{
+		position: relative;
+		z-index: 1;
+		color: $grey-100;
+
 		&:after{
 			content: '';
 			display: block;
 			position: absolute;
 			height: 2px;
-			background-color: $grey-500;
+			background-color: $grey-100;
 			top: 40%;
-			left: 0;
-			width: 100%;
+			left: -3px;
+			width: 150%;
 			transform: rotate(-45deg);
 		}
 
 		&:hover{
-			color: lighten($finance-color,10%);
+			color: white;
 
 			&:after{
-				background-color: lighten($finance-color,10%);
+				background-color: white;
 			}
 		}
+	}
+
+	.toggle--bg{
+		background-color: $grey-300;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 0;
+	}
+
+	input:checked ~ .toggle--bg{
+		background-color: transparent;
 	}
 
 	input:checked ~ i{
@@ -332,6 +353,14 @@
 
 		&:after{
 			width: 0;
+		}
+
+		&:hover{
+			color: lighten($finance-color,10%);
+
+			&:after{
+				color: lighten($finance-color,10%);
+			}
 		}
 	}
 

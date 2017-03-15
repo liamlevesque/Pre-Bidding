@@ -54,6 +54,10 @@
 		margin-top: 10px;
 	}
 
+	.h-mt-50{
+		margin-top: 5px;
+	}
+
 	.h-mt-100{
 		margin-top: $default-margin;
 	}
@@ -155,6 +159,10 @@
 
 	.h-va-super{
 		vertical-align: super;
+	}
+
+	.h-va-text{
+		vertical-align: center;
 	}
 
 	.h-ws-nowrap{

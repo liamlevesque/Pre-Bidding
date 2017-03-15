@@ -122,8 +122,8 @@ GRID
 
 @font-face {
   font-family: 'ritchie-icons';
-  src: url("../fonts/ritchie-icons.eot?o9cbw0");
-  src: url("../fonts/ritchie-icons.eot?o9cbw0#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?o9cbw0") format("truetype"), url("../fonts/ritchie-icons.woff?o9cbw0") format("woff"), url("../fonts/ritchie-icons.svg?o9cbw0#ritchie-icons") format("svg");
+  src: url("../fonts/ritchie-icons.eot?apmwp8");
+  src: url("../fonts/ritchie-icons.eot?apmwp8#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?apmwp8") format("truetype"), url("../fonts/ritchie-icons.woff?apmwp8") format("woff"), url("../fonts/ritchie-icons.svg?apmwp8#ritchie-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -144,116 +144,125 @@ GRID
   font-size: 20px;
   vertical-align: middle; }
 
-.icon-pause:before {
-  content: "\e926"; }
-
-.icon-arrow-left:before {
-  content: "\e925"; }
-
-.icon-max-4:before {
-  content: "\e923"; }
-
-.icon-max-1:before {
-  content: "\e922"; }
-
-.icon-max-3:before {
-  content: "\e924"; }
-
-.icon-mail:before {
-  content: "\e921"; }
-
-.icon-sold:before {
-  content: "\e920"; }
-
-.icon-error-1:before {
-  content: "\e91f"; }
-
-.icon-trash:before {
-  content: "\e91e"; }
-
-.icon-ccy:before {
-  content: "\e91a"; }
-
-.icon-calculator:before {
-  content: "\e91b"; }
-
-.icon-unlocked:before {
-  content: "\e918"; }
-
-.icon-lock:before {
-  content: "\e919"; }
-
-.icon-settings:before {
-  content: "\e917"; }
-
-.icon-check-inner:before {
-  content: "\e915"; }
-
-.icon-info:before {
-  content: "\e916"; }
-
-.icon-popout:before {
-  content: "\e90b"; }
-
-.icon-next:before {
-  content: "\e90e"; }
-
-.icon-prev:before {
-  content: "\e914"; }
-
-.icon-arrow-down:before {
+.icon-mic:before {
   content: "\e900"; }
 
-.icon-audio:before {
+.icon-arrow-down:before {
   content: "\e901"; }
 
-.icon-bid:before {
+.icon-audio:before {
   content: "\e902"; }
 
-.icon-cart:before {
+.icon-bid:before {
   content: "\e903"; }
 
-.icon-check:before, .message-box--success:before {
+.icon-cart:before {
   content: "\e904"; }
 
-.icon-clock:before {
+.icon-check:before, .message-box--success:before {
   content: "\e905"; }
 
-.icon-close:before {
+.icon-clock:before {
   content: "\e906"; }
 
-.icon-dei:before {
+.icon-close:before {
   content: "\e907"; }
 
-.icon-eye:before {
+.icon-dei:before {
   content: "\e908"; }
 
-.icon-help:before {
+.icon-eye:before {
   content: "\e909"; }
 
-.icon-loading:before {
+.icon-help:before {
   content: "\e90a"; }
 
-.icon-Photos:before {
+.icon-loading:before {
+  content: "\e90b"; }
+
+.icon-popout:before {
   content: "\e90c"; }
 
-.icon-plus:before {
+.icon-Photos:before {
   content: "\e90d"; }
 
-.icon-sale:before, .message-box--open-offer:before {
+.icon-plus:before {
+  content: "\e90e"; }
+
+.icon-next:before {
   content: "\e90f"; }
 
-.icon-search:before {
+.icon-sale:before, .message-box--open-offer:before {
   content: "\e910"; }
 
-.icon-user:before {
+.icon-search:before {
   content: "\e911"; }
 
-.icon-warning:before, .message-box--error:before, .message-box--warning:before {
+.icon-user:before {
   content: "\e912"; }
 
-.icon-warranty:before {
+.icon-warning:before, .message-box--error:before, .message-box--warning:before {
   content: "\e913"; }
+
+.icon-warranty:before {
+  content: "\e914"; }
+
+.icon-prev:before {
+  content: "\e915"; }
+
+.icon-check-inner:before {
+  content: "\e916"; }
+
+.icon-info:before {
+  content: "\e917"; }
+
+.icon-settings:before {
+  content: "\e918"; }
+
+.icon-unlocked:before {
+  content: "\e919"; }
+
+.icon-lock:before {
+  content: "\e91a"; }
+
+.icon-ccy:before {
+  content: "\e91b"; }
+
+.icon-calculator:before {
+  content: "\e91c"; }
+
+.icon-coin-pound:before {
+  content: "\e91d"; }
+
+.icon-coin-dollar:before {
+  content: "\e91e"; }
+
+.icon-trash:before {
+  content: "\e91f"; }
+
+.icon-error-1:before {
+  content: "\e920"; }
+
+.icon-sold:before {
+  content: "\e921"; }
+
+.icon-mail:before {
+  content: "\e922"; }
+
+.icon-max-1:before {
+  content: "\e923"; }
+
+.icon-max-4:before {
+  content: "\e924"; }
+
+.icon-max-3:before {
+  content: "\e925"; }
+
+.icon-arrow-left:before {
+  content: "\e926"; }
+
+.icon-pause:before {
+  content: "\e927"; }
 
 .field--text, .field--text_innner-label, .field--text_sm, .field--select {
   width: 100%;
@@ -568,7 +577,7 @@ hr {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #d0d0d0;
+  background-color: #d0cfcf;
   border-top: 1px solid #959595;
   vertical-align: bottom; }
 
@@ -1407,26 +1416,47 @@ hr {
 .field--toggle_icon {
   position: relative;
   font-size: 15px;
-  padding: 5px; }
-  .field--toggle_icon i:after {
-    content: '';
-    display: block;
+  padding: 5px 15px;
+  border-left: 1px dotted #bdbdbd;
+  float: right;
+  position: relative; }
+  .field--toggle_icon i {
+    position: relative;
+    z-index: 1;
+    color: #E9E9E9; }
+    .field--toggle_icon i:after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 2px;
+      background-color: #E9E9E9;
+      top: 40%;
+      left: -3px;
+      width: 150%;
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg); }
+    .field--toggle_icon i:hover {
+      color: white; }
+      .field--toggle_icon i:hover:after {
+        background-color: white; }
+  .field--toggle_icon .toggle--bg {
+    background-color: #bfc0be;
     position: absolute;
-    height: 2px;
-    background-color: #959595;
-    top: 40%;
+    top: 0;
     left: 0;
-    width: 100%;
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg); }
-  .field--toggle_icon i:hover {
-    color: #33773d; }
-    .field--toggle_icon i:hover:after {
-      background-color: #33773d; }
+    right: 0;
+    bottom: 0;
+    z-index: 0; }
+  .field--toggle_icon input:checked ~ .toggle--bg {
+    background-color: transparent; }
   .field--toggle_icon input:checked ~ i {
     color: #24532B; }
     .field--toggle_icon input:checked ~ i:after {
       width: 0; }
+    .field--toggle_icon input:checked ~ i:hover {
+      color: #33773d; }
+      .field--toggle_icon input:checked ~ i:hover:after {
+        color: #33773d; }
 
 .CAD .divider:before {
   content: ","; }
@@ -2224,7 +2254,7 @@ header {
   margin-bottom: 15px;
   background-color: black;
   padding: 5px;
-  color: #e6e6e6;
+  color: #e6e5e5;
   text-align: center;
   font-size: 0.9rem;
   line-height: 1.4rem;
@@ -4401,6 +4431,9 @@ body.s-no-financing.s-no-purchases .no-finance--hide {
 .h-mt-80 {
   margin-top: 10px; }
 
+.h-mt-50 {
+  margin-top: 5px; }
+
 .h-mt-100 {
   margin-top: 15px; }
 
@@ -4483,6 +4516,9 @@ body.s-no-financing.s-no-purchases .no-finance--hide {
 
 .h-va-super {
   vertical-align: super; }
+
+.h-va-text {
+  vertical-align: center; }
 
 .h-ws-nowrap {
   white-space: nowrap; }

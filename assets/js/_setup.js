@@ -34,6 +34,7 @@ var user = {
 		message: '',
 		audio: true,
 		photos: true,
+		auctioneer: 'Pat Hicks',
 		cart: [], 
 	},
 	headerController = {

@@ -361,20 +361,35 @@
                     </g>
                 </svg>
             </a>
-            <div class="h-d-inline-block">
+            <div class="header--auction-title">
                 <h1 class="header--auction c-grey">Chilliwack, BC, CAN <span class="h-mr-50">&middot;</span><span class="c-brand">Ring 1</span></h1>
-                <h5 class=""><span class="h-mr-50">Live Auction</span><span class="h-mr-50">&middot;</span><span class="c-price js--auction-attendees h-mr-50 js--ppl-tooltip">12,481 People Online</span>&middot;
-                    <label class="field--toggle_icon js--photo-tooltip">    
-                        <input type="checkbox" class="toggle_input" checked>
-                        <i class="icon-Photos"></i>
-                    </label>&middot;
-                    <label class="field--toggle_icon h-mr-50 js--audio-tooltip">    
-                        <input type="checkbox" class="toggle_input" checked>
-                        <i class="icon-audio"></i>
-                    </label>
-                    
-                    
-                </h5>
+                <!-- <h5 class="">
+                    <span class="h-mr-50">Live Auction</span>
+                    <span class="h-mr-50">&middot;</span><span class="c-price js--auction-attendees h-mr-50 js--ppl-tooltip">12,481 People Online</span>
+                </h5> -->
+                <div class="h-mt-50">
+                    <div class="header--auctioneer"> 
+                        <span rv-contenttransition="user.auctioneer">
+                            <span rv-if="user.auctioneer">
+                                <h5 class="h-d-inline-block js-tooltip-auctioneer"><i class="icon-mic i-size-med h-mr-50 c-price"></i><span class="auctioneer--name h-va-text">{ user.auctioneer }</span></h5>
+                            </span>
+                            <span rv-unless="user.auctioneer">
+                                <h5 class="h-d-inline-block h-mr-50">Live Auction</h5>
+                            </span>
+                        </span>
+                        <label class="field--toggle_icon js--photo-tooltip">    
+                            <input type="checkbox" class="toggle_input" checked>
+                            <div class="toggle--bg"></div>
+                            <i class="icon-Photos"></i>
+                        </label>
+                        <label class="field--toggle_icon js--audio-tooltip">    
+                            <input type="checkbox" class="toggle_input" checked>
+                            <div class="toggle--bg"></div>
+                            <i class="icon-audio"></i>
+                        </label>
+                    </div>
+                    <h5 class="h-d-inline-block c-price js--auction-attendees h-mr-50 js--ppl-tooltip">12,481 People Online</h5>
+                </div>
             </div>
         </div>
         <div class="header--right">
@@ -950,6 +965,8 @@
     <button class="js--toggleMultiAttend">Toggle Multi-Attend</button>
     <button class="js--kickMeOut">Kick Me Out</button>
     <button class="js--disconnect">Disconnect Me</button>
+    <button class="js--toggle-auctioneer">Switch Auctioneer</button>
+    
 </div>
 
     <div class="kickedout js--kickedOut">

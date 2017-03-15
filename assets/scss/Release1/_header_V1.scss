@@ -49,6 +49,7 @@ header{
 	.logo{
 		display: inline-block;
 		width: 200px;
+		overflow: hidden;
     	height: 46px;
     	margin: 10px 5px 10px 10px;
     	transform: scale(1.15) translateX(15px);
@@ -83,6 +84,13 @@ header{
     	}
 	}
 
+		.header--auction-title{
+			display: inline-block;
+			position: relative;
+			z-index: 1;
+			cursor: default;
+		}
+
 	.main-header{
 		margin-bottom: 5px;
 		//z-index: 1000;
@@ -99,6 +107,44 @@ header{
 		.header--auction{
 			margin-bottom: 0;	
 		}
+
+		.header--auctioneer{
+			//background-color: rgba($grey-100,0.5);
+			border: 1px solid rgba($grey-100,0.5);
+			display: inline-block;
+			overflow: hidden;
+			border-radius: 20px;
+			padding: 0px 0 0px 10px;
+			margin-right: 10px;
+			vertical-align: middle;
+		}
+
+			.isold{
+				position: absolute;
+				transition: $transition;
+				transition-duration: 0.5s;
+			}
+
+			.isold-out{
+				transform: translateY(-100%);
+				opacity: 0;
+			}
+
+			.isnew{
+				transform: translateY(100%);
+				opacity: 0;
+			}
+
+			.isnew-in{
+				transition: $transition;
+				transition-duration: 0.5s;
+				transform: translateY(0);
+				opacity: 1;
+			}
+
+			.auctioneer--name{
+				margin-right: 10px;
+			}
 
 	.header--right{
 		position: absolute;

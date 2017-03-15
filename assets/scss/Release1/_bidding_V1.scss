@@ -757,17 +757,6 @@
 			}
 		}
 
-			// &:before{
-			// 	content: '';
-			// 	position: absolute;
-			// 	background-color: $brand-color;
-			// 	top: 0;
-			// 	left: 0;
-			// 	width: 0;
-			// 	height: 100%;
-			// 	transition: $transition;
-			// }
-
 		.lot--watching{
 			vertical-align: middle;
 			margin-right: 5px;
@@ -814,11 +803,6 @@
 				font-size: 0.8rem;
 				line-height: 1.2rem;
 			}
-
-		// .lot--name{
-		// 	display: inline-block;
-		// 	vertical-align: middle;
-		// }
 
 		.lot--selector{
 			.s-viewer-mode &{
@@ -888,13 +872,6 @@
 		}
 
 		&.s-preview:not(.s-active-lot){
-			&:before{
-				//content: "\e908";
-				//color: $grey-500;
-				//font-size: 12px;
-				//left: 4px;
-			}
-
 			background-color: $selected-background;
 		}
 
@@ -913,9 +890,9 @@
 		}
 
 		&.s-sold{
+			@extend .icon-sold;
 
 			&:before{
-				content: "\e920";
 				color: $brand-color;
 
 				@include breakpoint(largemax){
@@ -928,25 +905,13 @@
 				color: white;
 				padding: 0 5px 0 5px;
 			}
-
-			// &:after{
-			// 	position: absolute;
-			// 	display: block;
-			// 	left: 5px;
-			// 	bottom: 0px;
-			// 	content: "SOLD";
-			// 	font-size: 0.7rem;
-			// 	width: 35px;
-			// 	text-align: center;
-			// 	font-weight: 700;
-			// 	color: $grey-500;
-			// }
 		}
 
 		&.s-out{
 			
+			@extend .icon-close;
+
 			&:before{
-				content: "\e906";
 				color: rgba($error-colour,0.5);
 				font-size: 18px;
 			}

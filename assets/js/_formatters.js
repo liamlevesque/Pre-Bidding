@@ -123,6 +123,23 @@ rivets.formatters.bidderoryou = function(value){
 GENERIC BINDERS USED THROUGHOUT
 ********************************/
 
+
+rivets.binders.contenttransition = function(el, value) {
+	var duplicateMarkup = $(el).html();
+	$(el).children().addClass('isnew');
+	$(el).prepend(duplicateMarkup).children().first().addClass('isold');
+
+	setTimeout(function(){
+		$(el).children().first().addClass('isold-out');
+		$(el).find(".isnew").addClass('isnew-in');
+	},1);
+
+	setTimeout(function(){
+		$(el).children().first().remove();
+		$(el).find(".isnew").removeClass('isnew isnew-in');
+	},1000);	
+}
+
 rivets.binders.addclass = function(el, value) {
 	if(value) $(el).addClass('s-active');
 	else $(el).removeClass('s-active');
