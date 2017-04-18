@@ -4027,7 +4027,7 @@ MOST IMPORTANT - LOT TABLE STYLES
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    content: '\e900';
+    content: '\e901';
     display: inline-block;
     -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
     transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
@@ -4122,7 +4122,7 @@ MOST IMPORTANT - LOT TABLE STYLES
       line-height: 1;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      content: "\e915";
+      content: "\e916";
       float: right;
       color: #E87722; }
   .ccy-flag:before {

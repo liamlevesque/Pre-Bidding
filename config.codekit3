@@ -7,7 +7,7 @@
 		"uuidString": "D84A76D9-A715-4440-A983-976C97641950"
 		}
 	],
-"creatorBuild": "25568",
+"creatorBuild": "25813",
 "files": {
 	"\/assets\/css\/customizable-grid.css": {
 		"aP": 0,
@@ -184,7 +184,7 @@
 	"\/assets\/fonts\/icons_bak\/ritchie-icons.ttf": {
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/assets\/fonts\/New Folder With Items\/ritchie-icons.ttf",
+		"oAP": "\/assets\/fonts\/icons_bak\/ritchie-icons.ttf",
 		"oF": 0
 		},
 	"\/assets\/fonts\/icons_bak\/ritchie-icons.woff": {
@@ -233,7 +233,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/arrow.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/attention.png": {
 		"ft": 32768,
@@ -241,7 +244,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/attention.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/bidArea.png": {
 		"ft": 32768,
@@ -249,7 +255,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/bidArea.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/ccy-flags.png": {
 		"ft": 32768,
@@ -257,7 +266,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/ccy-flags.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/ccy-flags.svg": {
 		"ft": 2097152,
@@ -275,7 +287,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/ccy-flags_bak.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/check.gif": {
 		"ft": 4194304,
@@ -291,7 +306,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/check_small.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/close.png": {
 		"ft": 32768,
@@ -299,7 +317,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/close.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/crane.jpg": {
 		"ft": 16384,
@@ -307,7 +328,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/crane.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/img\/defaultbg.jpg": {
 		"ft": 16384,
@@ -315,7 +338,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/defaultbg.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/img\/download.png": {
 		"ft": 32768,
@@ -323,7 +348,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/download.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/empty.png": {
 		"ft": 32768,
@@ -331,7 +359,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/empty.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/favicon.ico": {
 		"ft": 8192,
@@ -345,7 +376,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/grader.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/img\/logo-square.png": {
 		"ft": 32768,
@@ -353,7 +386,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/logo-square.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/logo_petrowsky.png": {
 		"ft": 32768,
@@ -361,7 +397,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/logo_petrowsky.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/lotInfo.png": {
 		"ft": 32768,
@@ -369,7 +408,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/lotInfo.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/MissingCatalog-sad.png": {
 		"ft": 32768,
@@ -377,7 +419,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/MissingCatalog-sad.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/MissingCatalog-w.png": {
 		"ft": 32768,
@@ -385,7 +430,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/MissingCatalog-w.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/MissingCatalog.png": {
 		"ft": 32768,
@@ -393,7 +441,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/MissingCatalog.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/MissingLot.png": {
 		"ft": 32768,
@@ -401,7 +452,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/MissingLot.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/photo.png": {
 		"ft": 32768,
@@ -409,7 +463,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/photo.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/printer.png": {
 		"ft": 32768,
@@ -417,7 +474,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/printer.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/qmark.png": {
 		"ft": 32768,
@@ -425,7 +485,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/qmark.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/refresh.png": {
 		"ft": 32768,
@@ -433,7 +496,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/refresh.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/select-arrow.png": {
 		"ft": 32768,
@@ -441,7 +507,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/select-arrow.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/send.png": {
 		"ft": 32768,
@@ -449,7 +518,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/send.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/up.png": {
 		"ft": 32768,
@@ -457,7 +529,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/up.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/vramp-bg.png": {
 		"ft": 32768,
@@ -465,7 +540,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/vramp-bg.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/vramp-lotImage.png": {
 		"ft": 32768,
@@ -473,7 +551,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/vramp-lotImage.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/vramp1.png": {
 		"ft": 32768,
@@ -481,7 +562,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/vramp1.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/vramp2.png": {
 		"ft": 32768,
@@ -489,7 +573,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/vramp2.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/vramp3.png": {
 		"ft": 32768,
@@ -497,7 +584,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/vramp3.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/vramp4.png": {
 		"ft": 32768,
@@ -505,7 +595,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/vramp4.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/img\/vramp5.png": {
 		"ft": 32768,
@@ -513,7 +606,10 @@
 		"oA": 0,
 		"oAP": "\/assets\/img\/vramp5.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/assets\/js\/_bidding.js": {
 		"ft": 64,
@@ -638,7 +734,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/data\/8666603_1.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/js\/data\/8686158_1.jpg": {
 		"ft": 16384,
@@ -646,7 +744,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/data\/8686158_1.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/js\/data\/8699592_1.jpg": {
 		"ft": 16384,
@@ -654,7 +754,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/data\/8699592_1.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/js\/data\/8699594_1.jpg": {
 		"ft": 16384,
@@ -662,7 +764,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/data\/8699594_1.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/js\/data\/8709802_1.jpg": {
 		"ft": 16384,
@@ -670,7 +774,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/data\/8709802_1.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/js\/data\/8709802_2.jpg": {
 		"ft": 16384,
@@ -678,7 +784,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/data\/8709802_2.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/js\/data\/8709802_3.jpg": {
 		"ft": 16384,
@@ -686,7 +794,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/data\/8709802_3.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/js\/data\/8720400_1.jpg": {
 		"ft": 16384,
@@ -694,7 +804,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/data\/8720400_1.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/js\/data\/8729154_1.jpg": {
 		"ft": 16384,
@@ -702,7 +814,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/data\/8729154_1.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/js\/data\/8733298_1.jpg": {
 		"ft": 16384,
@@ -710,7 +824,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/data\/8733298_1.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/js\/data\/8738289_1.jpg": {
 		"ft": 16384,
@@ -718,7 +834,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/data\/8738289_1.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/js\/data\/8740589_1.jpg": {
 		"ft": 16384,
@@ -726,7 +844,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/data\/8740589_1.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/js\/data\/8746208_1.jpg": {
 		"ft": 16384,
@@ -734,7 +854,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/data\/8746208_1.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/js\/data\/8746209_1.jpg": {
 		"ft": 16384,
@@ -742,7 +864,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/data\/8746209_1.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/js\/data\/8754458_1.jpg": {
 		"ft": 16384,
@@ -750,7 +874,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/data\/8754458_1.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/js\/data\/8754460_1.jpg": {
 		"ft": 16384,
@@ -758,7 +884,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/data\/8754460_1.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/js\/data\/8754600_1.jpg": {
 		"ft": 16384,
@@ -766,7 +894,9 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/data\/8754600_1.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/js\/data\/DEI-Data.json": {
 		"ft": 524288,
@@ -2301,7 +2431,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/intercom\/logo.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/intercom\/makefile": {
 		"ft": 8192,
@@ -5066,7 +5199,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/rivets\/docs\/img\/attendease.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/rivets\/docs\/img\/dell.png": {
 		"ft": 32768,
@@ -5074,7 +5210,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/rivets\/docs\/img\/dell.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/rivets\/docs\/img\/disco.png": {
 		"ft": 32768,
@@ -5082,7 +5221,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/rivets\/docs\/img\/disco.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/rivets\/docs\/img\/kin.png": {
 		"ft": 32768,
@@ -5090,7 +5232,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/rivets\/docs\/img\/kin.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/rivets\/docs\/img\/mikeric.jpg": {
 		"ft": 16384,
@@ -5098,7 +5243,9 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/rivets\/docs\/img\/mikeric.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/bower_components\/rivets\/docs\/img\/vs.png": {
 		"ft": 32768,
@@ -5106,7 +5253,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/rivets\/docs\/img\/vs.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/rivets\/docs\/index.jade": {
 		"cOD": 1,
@@ -5935,7 +6085,9 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tooltipster\/demo\/geometry.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/bower_components\/tooltipster\/demo\/index.html": {
 		"ft": 8192,
@@ -6171,7 +6323,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tooltipster\/doc\/images\/browser-chrome.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/tooltipster\/doc\/images\/browser-firefox.png": {
 		"ft": 32768,
@@ -6179,7 +6334,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tooltipster\/doc\/images\/browser-firefox.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/tooltipster\/doc\/images\/browser-ie.png": {
 		"ft": 32768,
@@ -6187,7 +6345,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tooltipster\/doc\/images\/browser-ie.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/tooltipster\/doc\/images\/browser-opera.png": {
 		"ft": 32768,
@@ -6195,7 +6356,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tooltipster\/doc\/images\/browser-opera.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/tooltipster\/doc\/images\/browser-safari.png": {
 		"ft": 32768,
@@ -6203,7 +6367,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tooltipster\/doc\/images\/browser-safari.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/tooltipster\/doc\/images\/favicon.png": {
 		"ft": 32768,
@@ -6211,7 +6378,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tooltipster\/doc\/images\/favicon.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/tooltipster\/doc\/images\/icons\/icomoon.eot": {
 		"ft": 8192,
@@ -6253,7 +6423,9 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tooltipster\/doc\/images\/large-background.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/bower_components\/tooltipster\/doc\/images\/pattern-navy.png": {
 		"ft": 32768,
@@ -6261,7 +6433,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tooltipster\/doc\/images\/pattern-navy.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/tooltipster\/doc\/images\/social.jpg": {
 		"ft": 16384,
@@ -6269,7 +6444,9 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tooltipster\/doc\/images\/social.jpg",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/bower_components\/tooltipster\/doc\/images\/spiderman.png": {
 		"ft": 32768,
@@ -6277,7 +6454,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tooltipster\/doc\/images\/spiderman.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/tooltipster\/doc\/images\/star.png": {
 		"ft": 32768,
@@ -6285,7 +6465,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tooltipster\/doc\/images\/star.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/tooltipster\/doc\/images\/tooltipster.svg": {
 		"ft": 2097152,
@@ -6312,7 +6495,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_444444_256x240.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_555555_256x240.png": {
 		"ft": 32768,
@@ -6320,7 +6506,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_555555_256x240.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_777620_256x240.png": {
 		"ft": 32768,
@@ -6328,7 +6517,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_777620_256x240.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_777777_256x240.png": {
 		"ft": 32768,
@@ -6336,7 +6528,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_777777_256x240.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_cc0000_256x240.png": {
 		"ft": 32768,
@@ -6344,7 +6539,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_cc0000_256x240.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_ffffff_256x240.png": {
 		"ft": 32768,
@@ -6352,7 +6550,10 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/images\/ui-icons_ffffff_256x240.png",
 		"oF": 0,
-		"opt": 0
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"\/bower_components\/tooltipster\/doc\/js\/jquery-ui-draggable\/index.html": {
 		"ft": 8192,
@@ -7749,6 +7950,10 @@
 			"active": 1,
 			"optionString": ""
 			},
+		"no-compare-neg-zero": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-cond-assign": {
 			"active": 1,
 			"optionString": "'except-parens'"
@@ -8033,6 +8238,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-prototype-builtins": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-redeclare": {
 			"active": 1,
 			"optionString": "{'builtinGlobals': false}"
@@ -8228,6 +8437,10 @@
 		"no-with": {
 			"active": 0,
 			"optionString": ""
+			},
+		"nonblock-statement-body-position": {
+			"active": 0,
+			"optionString": "'beside'"
 			},
 		"object-curly-newline": {
 			"active": 0,
@@ -8828,7 +9041,8 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"quality": 100
 		},
 	"languageDefaultsJS": {
 		"autoOutputAction": 0,
@@ -8851,14 +9065,6 @@
 		"autoOutputPathStyle": 0,
 		"orderOutput": 0,
 		"outputStyle": 1
-		},
-	"languageDefaultsJSX": {
-		"autoOutputAction": 0,
-		"autoOutputPathFilenamePattern": "*.js",
-		"autoOutputPathRelativePath": "",
-		"autoOutputPathReplace1": "jsx",
-		"autoOutputPathReplace2": "js",
-		"autoOutputPathStyle": 0
 		},
 	"languageDefaultsKIT": {
 		"autoOutputAction": 0,
@@ -8921,7 +9127,9 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"optimizerType": 1,
+		"quality": 100
 		},
 	"languageDefaultsPUG": {
 		"autoOutputAction": 0,

@@ -58,7 +58,7 @@
 
 		&:before{
 			@include icon-font;
-			content: '\e900';
+			content: '\e901';
 			display: inline-block;
 			transition: $transition;
 			font-size: 6px;
@@ -181,7 +181,7 @@ $setting-label-width: 30%;
 
 			&:after{
 				@include icon-font;
-				content: "\e915";
+				content: "\e916";
 				float: right;
 				color: $brand-color;
 			}
