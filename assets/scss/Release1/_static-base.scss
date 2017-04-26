@@ -10,6 +10,11 @@
 	}
 }
 
+.l-wrapper{
+	max-width: 600px;
+	margin: 0 auto;
+}
+
 	.auction-details{
 		padding: 50px;
 
@@ -35,6 +40,19 @@
 		.button--enter-auction{
 			font-size: 30px;
 			padding: 15px 30px;
+			display: block;
+			margin-top: 15px;
+			text-align: center;
+
+			&:hover{
+				text-decoration: none;
+				color: black;
+			}
+		}
+
+		.button--recovery-email{
+			font-size: 20px;
+			padding: 10px 30px;
 			display: block;
 			margin-top: 15px;
 			text-align: center;
@@ -151,8 +169,94 @@
 		}
 	}  
 
+.collapsible{
+
+	.default-hidden{
+		display: none;
+	}
+
+	&.s-expanded{
+		.default-shown{
+			display: none;
+		}
+		.default-hidden{
+			display: block;
+		}
+	}
+}
+
+.grey-link{
+	color: $grey-500;
+	cursor: pointer;
+
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
+.phone-link{
+	margin-bottom: $default-margin;
+
+	a{
+		color: $money-color;
+
+		@include breakpoint(medmax){
+			display: block;
+		}
+	}
+}
+
+.box-bordered{
+		border: 1px solid $grey-500;
+		padding: $default-margin;
+		position: relative;
+
+		&_greybg{
+			background-color: darken($grey-100, 5%);
+			padding: $default-margin;
+			margin-top: $default-margin;
+		}
+
+		&_black{
+			border: 1px solid $black;
+			padding: $default-margin;
+			position: relative;
+			
+			@include breakpoint(smallmax){
+				margin-top: $default-margin;
+			}
+		}
+	}
 
 
+.field--text{
+
+	height: 50px;
+
+}
+
+	@mixin uparrow($bgcolor: $error-colour){
+		&:after{
+			content: "";
+			display: block;
+			width: 15px;
+			height: 15px;
+			background-color: $bgcolor;
+			position: absolute;
+			top: 0;
+			left: 15px;
+			transform: translateY(-50%) rotate(45deg);
+		}
+	}
+
+	.field--error-message{
+		color: white;
+		background-color: $error-colour;
+		padding: $default-margin;
+		position: relative;
+
+		@include uparrow;
+	}
 
 
 

@@ -747,6 +747,108 @@ hr {
   -webkit-transform: scale(1.15) translateX(15px);
           transform: scale(1.15) translateX(15px); }
 
+.lb {
+  position: fixed;
+  top: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9000;
+  overflow-y: hidden;
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+  .lb.s-open {
+    top: 0;
+    -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+    transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+    .lb.s-open .lb-window {
+      opacity: 1;
+      -webkit-transform: translateX(-50%) translateY(0);
+              transform: translateX(-50%) translateY(0);
+      -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+      transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
+
+.lb-background {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6); }
+
+.lb-window-scroll {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: auto; }
+
+.lb-window {
+  position: relative;
+  width: 600px;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(50%);
+          transform: translateX(-50%) translateY(50%);
+  opacity: 0;
+  -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  margin: 90px 0; }
+  @media (max-width: 800px) {
+    .lb-window {
+      width: 95%; } }
+
+.lb-window-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: transparent;
+  padding: 15px;
+  z-index: 500; }
+
+.lb-content {
+  padding: 30px;
+  text-align: center; }
+  @media (max-width: 800px) {
+    .lb-content {
+      padding: 20px; }
+      .lb-content h2 {
+        font-size: 1.4rem;
+        margin-bottom: 0; } }
+
+.lb-action-area {
+  padding: 15px;
+  background-color: #E9E9E9;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 0 0 5px 5px; }
+  .lb-action-area button {
+    display: inline-block; }
+  .lb-action-area--secondary {
+    display: inline-block; }
+
+.lb-wizard--top-img {
+  position: relative;
+  display: inline-block;
+  border-radius: 130px;
+  width: 130px;
+  padding: 5px;
+  margin: 0;
+  background-color: #ffffff;
+  margin-top: -65px; }
+  .lb-wizard--top-img img {
+    max-width: 100%;
+    width: 100%; }
+
+.lb-wizard--step {
+  overflow-y: hidden; }
+
 @media (min-width: 48em) {
   .body--half {
     position: absolute;
@@ -754,6 +856,10 @@ hr {
     bottom: 0;
     left: 0;
     width: 50%; } }
+
+.l-wrapper {
+  max-width: 600px;
+  margin: 0 auto; }
 
 .auction-details {
   padding: 50px; }
@@ -782,6 +888,16 @@ hr {
   margin-top: 15px;
   text-align: center; }
   .button--enter-auction:hover {
+    text-decoration: none;
+    color: black; }
+
+.button--recovery-email {
+  font-size: 20px;
+  padding: 10px 30px;
+  display: block;
+  margin-top: 15px;
+  text-align: center; }
+  .button--recovery-email:hover {
     text-decoration: none;
     color: black; }
 
@@ -861,6 +977,65 @@ footer {
   footer.contact-details p {
     margin: 7px 0; }
 
+.collapsible .default-hidden {
+  display: none; }
+
+.collapsible.s-expanded .default-shown {
+  display: none; }
+
+.collapsible.s-expanded .default-hidden {
+  display: block; }
+
+.grey-link {
+  color: #959595;
+  cursor: pointer; }
+  .grey-link:hover {
+    text-decoration: underline; }
+
+.phone-link {
+  margin-bottom: 15px; }
+  .phone-link a {
+    color: #20579E; }
+    @media (max-width: 800px) {
+      .phone-link a {
+        display: block; } }
+
+.box-bordered {
+  border: 1px solid #959595;
+  padding: 15px;
+  position: relative; }
+  .box-bordered_greybg {
+    background-color: gainsboro;
+    padding: 15px;
+    margin-top: 15px; }
+  .box-bordered_black {
+    border: 1px solid #000000;
+    padding: 15px;
+    position: relative; }
+    @media (max-width: 30.0625em) {
+      .box-bordered_black {
+        margin-top: 15px; } }
+
+.field--text {
+  height: 50px; }
+
+.field--error-message {
+  color: white;
+  background-color: #c4483a;
+  padding: 15px;
+  position: relative; }
+  .field--error-message:after {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: #c4483a;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+            transform: translateY(-50%) rotate(45deg); }
+
 /*******************
 	HELPER CLASSES
 ********************/
@@ -917,6 +1092,9 @@ footer {
 
 .h-mb-100 {
   margin-bottom: 15px; }
+
+.h-mb-200 {
+  margin-bottom: 30px; }
 
 .h-mb-50 {
   margin-bottom: 7.5px; }

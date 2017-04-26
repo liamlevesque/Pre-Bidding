@@ -1,0 +1,132 @@
+.lb{
+	position: fixed;
+	top: 100%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 9000;
+	overflow-y: hidden;
+	transition: $transition;
+
+	&.s-open{
+		top: 0;
+		//overflow-y: auto;
+		transition: $transition;
+
+		.lb-window{
+			opacity: 1;
+			transform: translateX(-50%) translateY(0);
+			transition: $transition;
+		}
+	}
+}
+
+.lb-background{
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba($black,0.6);
+}
+
+.lb-window-scroll{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow-y: auto;
+}
+
+.lb-window{
+	position: relative;
+	width: 600px;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%) translateY(50%);
+	opacity: 0;
+	transition: $transition;
+	border-radius: 5px;
+	background-color: $white;
+	box-shadow: $ritchie-shadow;
+	
+	margin: 90px 0;
+
+	@include breakpoint(medmax){
+		width: 95%;
+	}
+	
+}
+	
+	.lb-window-close{
+		position: absolute;
+		right: 0;
+		top: 0;
+		background-color: transparent;
+		padding: $default-margin;
+
+		z-index: 500;
+	}
+
+	.lb-content{
+		padding: 2 * $default-margin;
+		text-align: center;
+		
+		@include breakpoint(medmax){
+			padding: 20px;
+
+			h2{
+				font-size: 1.4rem;
+				margin-bottom: 0;
+			}
+		}
+
+		img{
+			//margin-bottom: $default-margin;
+		}
+	}
+
+	.lb-action-area{
+		padding: $default-margin;
+		background-color: $grey-100;
+		position: relative;
+		overflow: hidden;
+		text-align: center;
+		border-radius: 0 0 $default-border-radius $default-border-radius;
+
+		button{
+			display: inline-block;
+		}
+
+		&--secondary{
+			
+			display: inline-block;
+		}
+	}
+
+	$top-img-size: 130px;
+
+	.lb-wizard--top-img{
+		position: relative;
+	    display: inline-block;
+
+		border-radius: $top-img-size;
+		width: $top-img-size;
+	    padding: 5px;
+	    margin: 0;
+	    background-color: $white;
+	    margin-top: $top-img-size/-2;
+	    
+	    img{
+	    	max-width: 100%;
+	    	width: 100%;
+	    }
+	}
+
+	.lb-wizard--step{
+		overflow-y: hidden;
+	}
+
+
