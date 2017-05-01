@@ -185,14 +185,29 @@
 	}
 }
 
-.grey-link{
-	color: $grey-500;
+@mixin textlink{
 	cursor: pointer;
 
 	&:hover{
 		text-decoration: underline;
 	}
 }
+
+.grey-link, [class^="grey-link_"]{
+	color: $grey-500;
+	@include textlink;
+}
+
+.grey-link_dark{
+	color: $grey-900;
+	@include textlink;
+}
+
+.link_blue{
+	color: $money-color;
+	@include textlink;
+}
+
 
 .phone-link{
 	margin-bottom: $default-margin;

@@ -37,11 +37,12 @@
         <div class="auction--enter">
             Enter the e-mail address used for your Ritchie Bros. account and we will send the links to join the action directly to your inbox.
 
-            <input type="text" class="field--text h-mt-100" placeholder="e-mail address" rv-on-keyup="controller.emailInput" rv-value="dataObject.email">
+            <input type="email" class="field--text h-mt-100" placeholder="e-mail address" rv-on-keyup="controller.emailInput" rv-value="dataObject.email">
             <div class="field--error-message" rv-if="dataObject.emailError">I'm sorry but we can't find that e-mail address in our records. Check your spelling and make sure you're using the right e-mail address for your Ritchie Bros account.</div>
             <button class="button button--recovery-email h-mb-200" rv-enabled="dataObject.validEmail" rv-on-click="controller.send">Send me the access links</button>
-            <div class="h-mb-100 h-mt-100 grey-link" rv-on-click="controller.toggleCantRemember">Forgot you e-mail address?</div>
-        </div> 
+            
+            <div class="h-mb-100 h-mt-100 grey-link" rv-on-click="controller.toggleCantRemember">Need more help? Click here!</div>
+        </div>
     </div>
 
    
@@ -54,9 +55,9 @@
         <div class="lb-window" rv-on-click="controller.stopPropagation">
             <div class="h-ta-center">
                 <div class="lb-content">
-                    <h2 class="c-error">Can't remember which e-mail address you used?</h2>
+                    <h2 class="c-error">Need help?</h2>
                     <div class="h-mw-400">
-                        <div class="h-mb-100">That's cool - these things happen. Let's try doing this the old fashioned way:</div>
+                        <div class="h-mb-100">Can't remember which e-mail address you used? Need to register for an auction? Just need some help? <br/><br/>That's cool - these things happen. Let's try doing this the old fashioned way:</div>
                         <div class="box-bordered">
                             <h4 class="c-brand h-mb-100">Please call Ritchie Bros. customer support at:</h4>
                             <div class="phone-link">USA/Canada - <a href="tel:18553315750">1 855 331 5750 </a></div>

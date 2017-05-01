@@ -986,10 +986,22 @@ footer {
 .collapsible.s-expanded .default-hidden {
   display: block; }
 
-.grey-link {
+.grey-link, [class^="grey-link_"] {
   color: #959595;
   cursor: pointer; }
-  .grey-link:hover {
+  .grey-link:hover, [class^="grey-link_"]:hover {
+    text-decoration: underline; }
+
+.grey-link_dark {
+  color: #333333;
+  cursor: pointer; }
+  .grey-link_dark:hover {
+    text-decoration: underline; }
+
+.link_blue {
+  color: #20579E;
+  cursor: pointer; }
+  .link_blue:hover {
     text-decoration: underline; }
 
 .phone-link {
