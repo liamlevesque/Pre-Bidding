@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'ritchie-icons';
-    src:    url('../fonts/ritchie-icons.eot?apmwp8');
-    src:    url('../fonts/ritchie-icons.eot?apmwp8#iefix') format('embedded-opentype'),
-        url('../fonts/ritchie-icons.ttf?apmwp8') format('truetype'),
-        url('../fonts/ritchie-icons.woff?apmwp8') format('woff'),
-        url('../fonts/ritchie-icons.svg?apmwp8#ritchie-icons') format('svg');
+    src:    url('../fonts/ritchie-icons.eot?m0snvm');
+    src:    url('../fonts/ritchie-icons.eot?m0snvm#iefix') format('embedded-opentype'),
+        url('../fonts/ritchie-icons.ttf?m0snvm') format('truetype'),
+        url('../fonts/ritchie-icons.woff?m0snvm') format('woff'),
+        url('../fonts/ritchie-icons.svg?m0snvm#ritchie-icons') format('svg');
     font-weight: normal;
     font-style: normal;
 } 
@@ -41,6 +41,10 @@
     vertical-align: middle;
 }
 
+
+.icon-gavel:before {
+  content: "\e910";
+}
 .icon-mic:before {
   content: "\e900";
 }
