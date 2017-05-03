@@ -887,7 +887,8 @@ p {
   overflow-y: auto;
   position: absolute;
   top: 40px;
-  bottom: 150px; }
+  bottom: 150px;
+  width: 100%; }
   @media (min-height: 700px) and (min-width: 48em) {
     .auction-details {
       top: calc(50% - 100px);
