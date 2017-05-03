@@ -122,8 +122,8 @@ GRID
 
 @font-face {
   font-family: 'ritchie-icons';
-  src: url("../fonts/ritchie-icons.eot?m0snvm");
-  src: url("../fonts/ritchie-icons.eot?m0snvm#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?m0snvm") format("truetype"), url("../fonts/ritchie-icons.woff?m0snvm") format("woff"), url("../fonts/ritchie-icons.svg?m0snvm#ritchie-icons") format("svg");
+  src: url("../fonts/ritchie-icons.eot?a2cotz");
+  src: url("../fonts/ritchie-icons.eot?a2cotz#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?a2cotz") format("truetype"), url("../fonts/ritchie-icons.woff?a2cotz") format("woff"), url("../fonts/ritchie-icons.svg?a2cotz#ritchie-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -143,6 +143,9 @@ GRID
 .i-size-med {
   font-size: 20px;
   vertical-align: middle; }
+
+.icon-printer:before {
+  content: "\e91d"; }
 
 .icon-gavel:before {
   content: "\e910"; }
@@ -1273,7 +1276,8 @@ hr {
   border: 2px solid #E87722;
   color: #E87722; }
   .button_secondary:hover {
-    background-color: white;
+    background-color: #E87722;
+    color: white;
     text-decoration: none; }
 
 .button_secondary--white {

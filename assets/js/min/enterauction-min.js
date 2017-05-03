@@ -1,0 +1,1 @@
+var dataObject={},controller={};rivets.bind($(".js--body"),{dataObject:dataObject,controller:controller});

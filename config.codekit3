@@ -886,6 +886,24 @@
 		"oO": 0,
 		"oS": 1
 		},
+	"\/assets\/js\/enterauction-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/min\/enterauction-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/assets\/js\/enterauction.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/assets\/js\/enterauction-min.js",
+		"oF": 2,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/assets\/js\/main-min.js": {
 		"ft": 64,
 		"mi": 1,
@@ -901,6 +919,15 @@
 		"oA": 0,
 		"oAP": "\/assets\/js\/main-min.js",
 		"oF": 2,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/assets\/js\/min\/enterauction-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/assets\/js\/min\/min\/enterauction-min-min.js",
+		"oF": 0,
 		"sC": 1,
 		"tS": 0
 		},
@@ -7066,6 +7093,12 @@
 		"oAP": "\/enter-auction.html",
 		"oF": 0
 		},
+	"\/enter-auction_dr.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/enter-auction_dr.html",
+		"oF": 0
+		},
 	"\/enter-auction_not-started.html": {
 		"ft": 8192,
 		"oA": 2,
@@ -7146,6 +7179,20 @@
 "hooks": [
 	],
 "manualImportLinks": {
+	"\/assets\/js\/enterauction.js": [
+		{
+			"followForSyntaxChecking": 0,
+			"linkedFileAbbreviatedPath": "\/bower_components\/jquery\/dist\/jquery.min.js",
+			"position": 0,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 0,
+			"linkedFileAbbreviatedPath": "\/bower_components\/rivets\/dist\/rivets.bundled.min.js",
+			"position": 1,
+			"type": 0
+			}
+		],
 	"\/assets\/js\/main.js": [
 		{
 			"followForSyntaxChecking": 0,

@@ -1,3 +1,8 @@
+p{
+	font-size: 1rem;
+	line-height: 1.6rem;
+}
+
 .body--half{
 	
 	@include breakpoint(medium){
@@ -43,6 +48,9 @@
 			display: block;
 			margin-top: 15px;
 			text-align: center;
+			font-weight: 700;
+			width: 100%;
+			font-family: "Trebuchet MS";
 
 			&:hover{
 				text-decoration: none;
@@ -56,6 +64,7 @@
 			display: block;
 			margin-top: 15px;
 			text-align: center;
+
 
 			&:hover{
 				text-decoration: none;
@@ -185,6 +194,24 @@
 	}
 }
 
+.terms{
+	font-size: 1rem;
+	line-height: 1.6rem;
+
+	strong{
+		font-size: 1.4rem;
+	}
+
+	.list--alhpa{
+		margin-top: $default-margin;
+		margin-left: $default-margin;
+	}
+
+	li{
+		margin-bottom: $default-margin;
+	}
+}
+
 @mixin textlink{
 	cursor: pointer;
 
@@ -273,6 +300,49 @@
 		@include uparrow;
 	}
 
+$checkmark-size: 35px;
+
+.input--check{
+	
+	outline: none;
+	cursor: pointer;
+
+	input{
+		appearance: none;
+		position: absolute;
+		clip: rect(0,0,0,0);
+
+		&:checked + i{
+			background-color: $brand-color;
+			color: rgba(white,1);
+	    }
+	}
+
+	i{
+		display: inline-block;
+		width: $checkmark-size;
+	    height: $checkmark-size;
+	    background-color: white;
+	    border: 3px solid $brand-color;
+		border-radius: $checkmark-size;
+		transition: $transition;
+		line-height: $checkmark-size - 5px;
+		margin-right: $default-margin;
+		vertical-align: middle;
+		font-size: $checkmark-size - 12px;
+		color: rgba($brand-color,0);
+		transition: $transition;
+
+		&:hover{
+			color: rgba($brand-color,0.3);
+		}
+	}
+	
+	span{
+		font-size: initial;
+		color: initial;
+	}    
+}
 
 
 

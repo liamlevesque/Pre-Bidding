@@ -87,9 +87,9 @@
 		color: $brand-color;
 
 		&:hover{
-			background-color: white;
+			background-color: $brand-color;
 			//box-shadow: none;
-			//color: $white;
+			color: white;
 			text-decoration: none;
 		}
 	}

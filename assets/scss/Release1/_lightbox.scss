@@ -13,10 +13,14 @@
 		//overflow-y: auto;
 		transition: $transition;
 
-		.lb-window{
+		.lb-window, [class^='lb-window_']{
 			opacity: 1;
 			transform: translateX(-50%) translateY(0);
 			transition: $transition;
+		}
+
+		.lb-action-area_fixed{
+			position: fixed;
 		}
 	}
 }
@@ -40,7 +44,7 @@
 	overflow-y: auto;
 }
 
-.lb-window{
+.lb-window, [class^='lb-window_']{
 	position: relative;
 	width: 600px;
 	top: 0;
@@ -59,6 +63,10 @@
 	}
 	
 }
+
+.lb-window_wide{
+	width: 800px;
+}
 	
 	.lb-window-close{
 		position: absolute;
@@ -71,7 +79,7 @@
 	}
 
 	.lb-content{
-		padding: 2 * $default-margin;
+		padding: 3 * $default-margin;
 		text-align: center;
 		
 		@include breakpoint(medmax){
@@ -105,6 +113,12 @@
 			display: inline-block;
 		}
 	}
+
+		.lb-action-area_fixed{ 
+			bottom: 0;
+		    width: 800px;
+		    left: calc(((100% - 800px) /2) - 7px);
+		}
 
 	$top-img-size: 130px;
 
