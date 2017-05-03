@@ -13,6 +13,7 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
 
 var dataObject = {
 		tsandCsVisible: false,
+		flashErrorVisible: false,
 	},
 
 	controller = {
@@ -25,7 +26,12 @@ var dataObject = {
 		agreeToTerms: function(e){
 			window.location = 'http://liamlevesque.github.io/Pre-Bidding/lot-preview-2.html'
 		},
-	};
+
+		toggleFlashErrorVisible: function(e){
+			console.log('test');
+			dataObject.flashErrorVisible = !dataObject.flashErrorVisible;
+		},
+	}; 
 
 rivets.bind($('.js--body'),{
 	dataObject: dataObject,

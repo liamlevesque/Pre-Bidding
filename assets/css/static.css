@@ -883,13 +883,18 @@ p {
   margin: 0 auto; }
 
 .auction-details {
-  padding: 50px; }
+  padding: 50px;
+  overflow-y: auto;
+  position: absolute;
+  top: 40px;
+  bottom: 150px; }
   @media (min-height: 700px) and (min-width: 48em) {
     .auction-details {
-      position: absolute;
       top: calc(50% - 100px);
       -webkit-transform: translateY(-50%);
-              transform: translateY(-50%); } }
+              transform: translateY(-50%);
+      bottom: auto;
+      overflow-y: visible; } }
   @media (min-width: 80em) {
     .auction-details {
       position: absolute;
@@ -937,6 +942,29 @@ p {
   color: white;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   margin-bottom: 20px; }
+
+.auction--warning {
+  border-radius: 5px;
+  background-color: #c4483a;
+  color: white;
+  padding: 20px 30px; }
+
+.i-crossed-out {
+  font-size: 40px;
+  position: relative; }
+  .i-crossed-out:after {
+    content: '';
+    background-color: white;
+    display: block;
+    width: 60px;
+    border-radius: 10px;
+    height: 5px;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    top: 13px;
+    left: -10px;
+    position: absolute;
+    border: 2px solid #c4483a; }
 
 .contact-area {
   font-size: 1rem;
@@ -1000,6 +1028,10 @@ footer {
     padding-right: 20px; }
   footer.contact-details p {
     margin: 7px 0; }
+
+.fixed-footer {
+  height: 27px;
+  padding: 0 20px; }
 
 .collapsible .default-hidden {
   display: none; }
