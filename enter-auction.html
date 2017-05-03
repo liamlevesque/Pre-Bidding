@@ -50,7 +50,10 @@
                     <a class="button_secondary--white" href="https://get.adobe.com/flashplayer/">Update Flash Player</a> 
                 </div>
             </div>
-            <a href="http://liamlevesque.github.io/Pre-Bidding/lot-preview-2.html" class="button button--enter-auction">Enter the Auction</a>
+            <button rv-on-click="controller.enterAuction" class="button button--enter-auction">
+                Enter the Auction
+                <label rv-if="dataObject.flashErrorVisible">( Without Audio )</label>
+            </button>
         </div> 
     </div>
 

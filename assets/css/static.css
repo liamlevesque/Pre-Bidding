@@ -920,6 +920,11 @@ p {
   .button--enter-auction:hover {
     text-decoration: none;
     color: black; }
+  .button--enter-auction label {
+    display: block;
+    color: black;
+    font-size: 12px;
+    pointer-events: none; }
 
 .button--recovery-email {
   font-size: 20px;

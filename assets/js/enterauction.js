@@ -10,7 +10,7 @@ var dataObject = {
 		stopPropagation: function(e){
 			e.stopPropagation();
 		},
-		agreeToTerms: function(e){
+		enterAuction: function(e){
 			window.location = 'http://liamlevesque.github.io/Pre-Bidding/lot-preview-2.html'
 		},
 
