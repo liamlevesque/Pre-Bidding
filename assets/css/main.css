@@ -1446,6 +1446,14 @@ hr {
       color: white; }
       .field--toggle_icon i:hover:after {
         background-color: white; }
+  .field--toggle_icon.s-error {
+    cursor: default; }
+    .field--toggle_icon.s-error i {
+      color: white; }
+      .field--toggle_icon.s-error i:after {
+        background-color: white; }
+    .field--toggle_icon.s-error .toggle--bg {
+      background-color: #c4483a; }
   .field--toggle_icon .toggle--bg {
     background-color: #bfc0be;
     position: absolute;

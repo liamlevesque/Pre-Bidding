@@ -81,17 +81,7 @@
 				height: 100px;
 			}
 
-			.bidding--activate{
-				background-color: $brand-color;
-				color: white;
-				@include default-font;
-				padding: $default-margin/2;
-				padding-left: 20px;
-				line-height: 1rem;
-				position: relative;
-				margin-bottom: 10px;
-				margin-right: -$default-margin;
-				
+			@mixin beforeArrow{
 				&:before{
 					content: '';
 					background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%220%200%2010%2020%22%20preserveAspectRatio%3D%22none%22%3E%3Cpolygon%20fill%3D%22%23e8e6e2%22%20points%3D%220%2C0%2010%2C10%200%2C20%22%2F%3E%3C%2Fsvg%3E');
@@ -103,6 +93,33 @@
 					left: 0;
 					width: 10px;
 				}
+			}
+
+			.bidding--warning, .bidding--activate{
+				background-color: $brand-color;
+				color: white;
+				@include default-font;
+				padding: $default-margin/2;
+				padding-left: 20px;
+				line-height: 1rem;
+				position: relative;
+				margin-bottom: 10px;
+				margin-right: -$default-margin;
+				
+				@include beforeArrow;
+			}
+
+				.bidding--warning{
+					background-color: $error-colour;
+					display: none;
+					
+					&.s-shown{
+						display: block;
+						animation: clickwarn 0.5s ease-in-out 3;
+					}
+				}
+
+			.bidding--activate{
 				
 				&.s-winner{
 					background-color: $finance-color;
@@ -569,6 +586,10 @@
 					pointer-events: none;
 					opacity: 0.5;
 				}
+			}
+
+			li:not(.s-active-lot){
+				pointer-events: initial !important;
 			}
 
 			li:not(.s-active-lot){

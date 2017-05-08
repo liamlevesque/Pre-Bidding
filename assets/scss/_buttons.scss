@@ -334,6 +334,22 @@
 		}
 	}
 
+	&.s-error{
+		cursor: default;
+		
+		i{
+			color: white;
+
+			&:after{
+				background-color: white;
+			}
+		}
+
+		.toggle--bg{
+			background-color: $error-colour;
+		}	
+	}
+
 	.toggle--bg{
 		background-color: $grey-300;
 		position: absolute;

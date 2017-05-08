@@ -36,8 +36,11 @@ $(function(){
 		theme: 'ritchie-tooltips_small',
 		delay: tooltipDelay,
 		trigger: 'custom',
+		interactive: true,
+		contentAsHTML: true,
 	    triggerOpen: {
-	        mouseenter: true
+	        mouseenter: true,
+	        click: true, 
 	    },
 	    triggerClose: {
 	        click: true,
@@ -149,6 +152,13 @@ $(function(){
 	$('.js--disconnect').click(function(){
 		$('.js--disconnected').toggleClass('s-visible');
 	});
+
+	$('.js--flashError').click(function(){
+		$('.js--audio-tooltip').toggleClass('s-error');
+		$('.js--audio-tooltip .toggle_input').prop('disabled',true).prop('checked',false); 
+		$('.js--audio-tooltip').tooltipster('content','You have no audio because of a problem with Flash Player. Please <a href="https://get.adobe.com/flashplayer/" target="_blank">enable or update/install Flash</a> in your browser to listen to the auction');
+	});
+	
 	
 
 	//SHOW/HIDE THE PREVIEW IMAGE IN THE LOT TABLE
@@ -430,7 +440,9 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 		"openOffer" : false,
 		"selectAll" : false,
 		"previewLot" : 11,
-		"disabledClickCount" : 0
+		"disabledClickCount" : 0,
+		"disabledLotClickCount": 0,
+		"showLotDeselect": true,
 	}, 
 	bidController = {
 
@@ -452,10 +464,29 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 		},
 
 		changePreview: function(e, model){
+			if(bidObject.lotSelected != 0){
+				bidObject.disabledLotClickCount++;
+				if(bidObject.disabledLotClickCount >= 2) {
+					bidController.flashLotDeselectWarning();
+					bidObject.disabledLotClickCount = 0;
+				};
+				return;
+			}
+
+			bidObject.disabledLotClickCount = 0;
+			$('.js--lotWarning').removeClass('s-shown');
+			
 			var targetLot = ($(e.currentTarget).data('lotnumber')) - 1;
 			if(targetLot === lotObject.lot) return;
 
 			lotObject.lot = bidObject.previewLot = targetLot;
+		},
+
+		flashLotDeselectWarning: function(){
+			$('.js--lotWarning').addClass('s-shown');
+			setTimeout(function(){
+				$('.js--lotWarning').removeClass('s-shown');
+			},10000);
 		},
 
 		onBidClick: function(e, model){

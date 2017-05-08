@@ -655,6 +655,14 @@ input[type=number]::-webkit-outer-spin-button {
       color: white; }
       .field--toggle_icon i:hover:after {
         background-color: white; }
+  .field--toggle_icon.s-error {
+    cursor: default; }
+    .field--toggle_icon.s-error i {
+      color: white; }
+      .field--toggle_icon.s-error i:after {
+        background-color: white; }
+    .field--toggle_icon.s-error .toggle--bg {
+      background-color: #c4483a; }
   .field--toggle_icon .toggle--bg {
     background-color: #bfc0be;
     position: absolute;
@@ -2950,7 +2958,7 @@ MOST IMPORTANT - LOT TABLE STYLES
 .bidding--bid-button {
   height: 100px; }
 
-.bidding--activate {
+.bidding--warning, .bidding--activate {
   background-color: #E87722;
   color: white;
   font-size: 0.9rem;
@@ -2961,7 +2969,7 @@ MOST IMPORTANT - LOT TABLE STYLES
   position: relative;
   margin-bottom: 10px;
   margin-right: -15px; }
-  .bidding--activate:before {
+  .bidding--warning:before, .bidding--activate:before {
     content: '';
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%220%200%2010%2020%22%20preserveAspectRatio%3D%22none%22%3E%3Cpolygon%20fill%3D%22%23e8e6e2%22%20points%3D%220%2C0%2010%2C10%200%2C20%22%2F%3E%3C%2Fsvg%3E");
     background-size: 10px 100%;
@@ -2971,18 +2979,29 @@ MOST IMPORTANT - LOT TABLE STYLES
     bottom: 0;
     left: 0;
     width: 10px; }
-  .bidding--activate.s-winner {
-    background-color: #24532B; }
-  .bidding--activate.s-runnerup {
-    -webkit-animation-name: runnerup;
-            animation-name: runnerup;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-duration: 1s;
-            animation-duration: 1s; }
-  .bidding--activate.s-flash {
+
+.bidding--warning {
+  background-color: #c4483a;
+  display: none; }
+  .bidding--warning.s-shown {
+    display: block;
     -webkit-animation: clickwarn 0.5s ease-in-out 3;
             animation: clickwarn 0.5s ease-in-out 3; }
+
+.bidding--activate.s-winner {
+  background-color: #24532B; }
+
+.bidding--activate.s-runnerup {
+  -webkit-animation-name: runnerup;
+          animation-name: runnerup;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s; }
+
+.bidding--activate.s-flash {
+  -webkit-animation: clickwarn 0.5s ease-in-out 3;
+          animation: clickwarn 0.5s ease-in-out 3; }
 
 @-webkit-keyframes clickwarn {
   0% {
@@ -3368,6 +3387,8 @@ MOST IMPORTANT - LOT TABLE STYLES
     .bidding--group.s-active-lot li:not(.s-active-lot):not(.s-sold):not(.s-out) .lot--selector {
       pointer-events: none;
       opacity: 0.5; }
+  .bidding--group.s-active-lot li:not(.s-active-lot) {
+    pointer-events: initial !important; }
   .bidding--group.s-runnerup:not(.s-active-lot) ul:before, .bidding--group.s-runnerup:not(.s-active-lot) .bidding--header:before {
     -webkit-animation-name: runnerup;
             animation-name: runnerup;
