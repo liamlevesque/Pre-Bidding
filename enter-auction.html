@@ -37,7 +37,7 @@
         <h1>Chilliwack, BC, CAN <span class="h-mr-50">&middot;</span><span class="c-brand">Ring 1</span></h1>
         
         <h4>Lots: 1 - 412, 8000 - 8090</h4>
-        <div class="auction--enter">
+        <div class="auction--enter" rv-if="dataObject.auctionStarted">
             Ready to join?
             <div class="auction--warning h-mt-100" rv-show="dataObject.flashErrorVisible">
                 <div class="h-ta-center">
@@ -54,6 +54,11 @@
                 Enter the Auction
                 <label rv-if="dataObject.flashErrorVisible">( Without Audio )</label>
             </button>
+        </div> 
+         <div class="auction--enter_not-started" rv-unless="dataObject.auctionStarted">
+            <h3 class="c-grey-700 h-mb-100">This sale is not currently running</h3>
+            <p class="c-grey-700 h-mb-100">Contact us to let us know about this problem.<br/> <a class="c-brand" href="https://www.rbauction.com/contactus">Please give us a call!</a></p>
+            <button class="button">Go back</button>            
         </div> 
     </div>
 
@@ -89,6 +94,7 @@
 <footer class="fixed-footer">
     <label>Prototype Controls:</label>
     <button rv-on-click="controller.toggleFlashErrorVisible">Show Flash Error</button>
+    <button rv-on-click="controller.toggleActiveSale">Show Auction Not Started</button>
 </footer>
 
 <script type="text/javascript" src="assets/js/enterauction-min.js"></script>

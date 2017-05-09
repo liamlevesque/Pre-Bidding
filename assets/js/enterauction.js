@@ -1,6 +1,7 @@
 var dataObject = {
 		tsandCsVisible: false,
 		flashErrorVisible: false,
+		auctionStarted: true,
 	},
 
 	controller = {
@@ -15,8 +16,11 @@ var dataObject = {
 		},
 
 		toggleFlashErrorVisible: function(e){
-			console.log('test');
 			dataObject.flashErrorVisible = !dataObject.flashErrorVisible;
+		},
+
+		toggleActiveSale: function(e){
+			dataObject.auctionStarted = !dataObject.auctionStarted;
 		},
 	}; 
 
