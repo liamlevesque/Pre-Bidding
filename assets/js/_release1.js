@@ -156,7 +156,7 @@ $(function(){
 	$('.js--flashError').click(function(){
 		$('.js--audio-tooltip').toggleClass('s-error');
 		$('.js--audio-tooltip .toggle_input').prop('disabled',true).prop('checked',false); 
-		$('.js--audio-tooltip').tooltipster('content','You have no audio because of a problem with Flash Player. Please <a href="https://get.adobe.com/flashplayer/" target="_blank">enable or update/install Flash</a> in your browser to listen to the auction');
+		$('.js--audio-tooltip').tooltipster('content','You have no audio because of a problem with Flash Player. Please <a href="https://helpx.adobe.com/flash-player.html" target="_blank">enable or update/install Flash</a> in your browser to listen to the auction');
 	});
 	
 	
