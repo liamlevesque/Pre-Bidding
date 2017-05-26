@@ -40,14 +40,16 @@
         <div class="auction--enter" rv-if="dataObject.auctionStarted">
             Ready to join?
             <div class="auction--warning h-mt-100" rv-show="dataObject.flashErrorVisible">
+                <div>
+                    <div class="g-fifth h-ta-center">
+                        <i class="icon-audio i-crossed-out"></i>
+                    </div>
+                    <div class="g-four-fifths">
+                        Warning - Flash player is either disabled or hasn't been installed. You can enter the auction but you won't hear any audio unless you install or update your flash player. 
+                    </div>
+                </div>
                 <div class="h-ta-center">
-                    <i class="icon-audio i-crossed-out"></i>
-                </div>
-                <div class="h-mt-100">
-                    Warning - Flash player is either disabled or hasn't been installed. You can enter the auction but you won't hear any audio unless you install or update your flash player. 
-                </div>
-                <div class="h-mt-100 h-ta-center">
-                    <a class="button_secondary--white" href="https://helpx.adobe.com/flash-player.html" target="_blank">Fix Flash Player</a> 
+                    <a class="button_secondary--white h-mt-100" href="https://helpx.adobe.com/flash-player.html" target="_blank">Fix Flash Player</a> 
                 </div>
             </div>
             <button rv-on-click="controller.enterAuction" class="button button--enter-auction">

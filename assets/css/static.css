@@ -40,16 +40,16 @@ label, .label, .button_hollow {
 /*****************
 GRID
 ******************/
-.g-quarter, .g-third, .g-two-thirds, .g-half, .g-three-quarters {
+.g-quarter, .g-third, .g-two-thirds, .g-half, .g-three-quarters, .g-fifth, .g-four-fifths {
   box-sizing: border-box;
   position: relative;
   vertical-align: top;
   display: inline-block;
   vertical-align: top; }
-  .g-quarter:last-of-type, .g-third:last-of-type, .g-two-thirds:last-of-type, .g-half:last-of-type, .g-three-quarters:last-of-type {
+  .g-quarter:last-of-type, .g-third:last-of-type, .g-two-thirds:last-of-type, .g-half:last-of-type, .g-three-quarters:last-of-type, .g-fifth:last-of-type, .g-four-fifths:last-of-type {
     float: right;
     margin-right: 0; }
-  .g-no-space.g-quarter, .g-no-space.g-third, .g-no-space.g-two-thirds, .g-no-space.g-half, .g-no-space.g-three-quarters {
+  .g-no-space.g-quarter, .g-no-space.g-third, .g-no-space.g-two-thirds, .g-no-space.g-half, .g-no-space.g-three-quarters, .g-no-space.g-fifth, .g-no-space.g-four-fifths {
     margin: 0; }
 
 .g-display-table {
@@ -117,6 +117,16 @@ GRID
 @media (min-width: 48em) {
   .g-three-quarters {
     width: 74%;
+    margin-right: 1%; } }
+
+@media (min-width: 48em) {
+  .g-fifth {
+    width: 19%;
+    margin-right: 1%; } }
+
+@media (min-width: 48em) {
+  .g-four-fifths {
+    width: 79%;
     margin-right: 1%; } }
 
 @font-face {
@@ -891,12 +901,14 @@ p {
   margin: 0 auto; }
 
 .auction-details {
-  padding: 50px;
-  overflow-y: auto;
-  position: absolute;
-  top: 40px;
-  bottom: 150px;
-  width: 100%; }
+  padding: 50px; }
+  @media (min-width: 48em) {
+    .auction-details {
+      overflow-y: auto;
+      position: absolute;
+      top: 40px;
+      bottom: 150px;
+      width: 100%; } }
   @media (min-height: 700px) and (min-width: 48em) {
     .auction-details {
       top: calc(50% - 100px);
@@ -944,8 +956,9 @@ p {
     text-decoration: none;
     color: black; }
 
-.auction--enter {
-  margin-top: 50px; }
+@media (min-height: 700px) and (min-width: 48em) {
+  .auction--enter {
+    margin-top: 50px; } }
 
 .auction--enter_not-started {
   border-radius: 5px;
@@ -961,7 +974,10 @@ p {
   border-radius: 5px;
   background-color: #c4483a;
   color: white;
-  padding: 20px 30px; }
+  padding: 20px;
+  overflow: hidden;
+  font-size: 1rem;
+  line-height: 1.4rem; }
 
 .i-crossed-out {
   font-size: 40px;
@@ -997,7 +1013,7 @@ p {
 
 .custom--content {
   padding: 50px; }
-  @media (max-height: 700px) and (min-width: 48em) {
+  @media (max-height: 699px) and (min-width: 48em) {
     .custom--content {
       position: absolute;
       top: 0;

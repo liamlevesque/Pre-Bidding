@@ -124,3 +124,19 @@ GRID
 		margin-right: 1%;
 	}
 }
+
+.g-fifth{
+	@extend %g-cell;
+	@include breakpoint(medium){
+		width: 19%;
+		margin-right: 1%;
+	}
+}
+
+.g-four-fifths{
+	@extend %g-cell;
+	@include breakpoint(medium){
+		width: 79%;
+		margin-right: 1%;
+	}
+}
