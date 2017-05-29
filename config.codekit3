@@ -7128,6 +7128,12 @@
 		"oAP": "\/dremail.html",
 		"oF": 0
 		},
+	"\/dremail_no-registrations.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/dremail_no-registrations.html",
+		"oF": 0
+		},
 	"\/enter-auction.html": {
 		"ft": 8192,
 		"oA": 0,

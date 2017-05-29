@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'ritchie-icons';
-    src:    url('../fonts/ritchie-icons.eot?a2cotz');
-    src:    url('../fonts/ritchie-icons.eot?a2cotz#iefix') format('embedded-opentype'),
-        url('../fonts/ritchie-icons.ttf?a2cotz') format('truetype'),
-        url('../fonts/ritchie-icons.woff?a2cotz') format('woff'),
-        url('../fonts/ritchie-icons.svg?a2cotz#ritchie-icons') format('svg');
+    src:    url('../fonts/ritchie-icons.eot?eh763i');
+    src:    url('../fonts/ritchie-icons.eot?eh763i#iefix') format('embedded-opentype'),
+        url('../fonts/ritchie-icons.ttf?eh763i') format('truetype'),
+        url('../fonts/ritchie-icons.woff?eh763i') format('woff'),
+        url('../fonts/ritchie-icons.svg?eh763i#ritchie-icons') format('svg');
     font-weight: normal;
     font-style: normal;
 } 
@@ -41,7 +41,9 @@
     vertical-align: middle;
 }
 
-
+.icon-globe:before {
+  content: "\e91e";
+}
 .icon-printer:before {
   content: "\e91d";
 }

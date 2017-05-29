@@ -32,7 +32,7 @@
 
 <div class="l-wrapper">
     
-    <div class="h-mt-100">
+    <div class="h-mt-100 h-p-100">
         <h2 class="c-brand">Get your links to participate in the current Ritchie Bros. auctions</h2>
         <div class="auction--enter">
             Enter the e-mail address used for your Ritchie Bros. account and we will send the links to join the action directly to your inbox.
@@ -48,6 +48,39 @@
    
     
 </div>
+
+<footer class="fixed-footer">
+    <div class="">
+        <i class="icon-globe h-va-middle"></i>
+        <ul class="language-selection">
+            <li class="language s-selected"><a href="#en">English</a></li>
+            <li class="language"><a href="#de">Deutsch</a></li>
+            <li class="language"><a href="#fr">Fran&ccedil;ais - Canada</a></li>
+            <li class="language"><a href="#frf">Fran&ccedil;ais - France</a></li>
+            <li class="language"><a href="#es">Espa&ntilde;ol - M&eacute;xico</a></li>
+            <li class="language"><a href="#ess">Espa&ntilde;ol - Espa&ntilde;a</a></li>
+            <li class="language"><a href="#it">Italiano</a></li> 
+            <li class="language"><a href="#ne">Nederlands</a></li>
+        </ul>
+    </div>
+    <div class="language--toggle">
+        <label class="language--toggle-control">
+            <input class="" type="checkbox">
+            <i class="icon-arrow-down"></i>
+            <ul class="language-selection--pop-up">
+                <li class="language s-selected"><a href="#en">English</a></li>
+                <li class="language"><a href="#de">Deutsch</a></li>
+                <li class="language"><a href="#fr">Fran&ccedil;ais - Canada</a></li>
+                <li class="language"><a href="#frf">Fran&ccedil;ais - France</a></li>
+                <li class="language"><a href="#es">Espa&ntilde;ol - M&eacute;xico</a></li>
+                <li class="language"><a href="#ess">Espa&ntilde;ol - Espa&ntilde;a</a></li>
+                <li class="language"><a href="#it">Italiano</a></li> 
+                <li class="language"><a href="#ne">Nederlands</a></li>
+            </ul>
+        </label>
+        
+    </div>
+</footer>
 
 <div class="lb" rv-class-s-open="dataObject.cantRemember">
     <div class="lb-background"></div>
@@ -95,7 +128,8 @@
                 <div class="lb-content">
                     <h2 class="c-brand">Your access links have been sent!</h2>
                     <div class="h-mw-400">
-                        <h4 class="h-mb-200">Go check the e-mail address you entered for a message containing the links to enter all active auctions that you have registered for.</h4>
+                        <div class="h-mb-200">Go check <strong>{dataObject.email}</strong> for a message containing the links to enter all active auctions that you have registered for.</div>
+                        <div class="h-mb-200">If you don't receive a message within the next 20 minutes, check that you entered the correct e-mail address or contact customer support.</div>
                          <div class="box-bordered">
                             <div class="h-mb-100">If you have any other questions, please contact Ritchie Bros. at:</div>
                             <div class="phone-link">USA/Canada - <a href="tel:18553315750">1 855 331 5750 </a></div>

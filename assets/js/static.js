@@ -23,7 +23,6 @@ var controller = {
 			else{
 				dataObject.submitSuccess = true;
 				dataObject.emailError = false;
-				dataObject.email = null;
 			}
 		},
 

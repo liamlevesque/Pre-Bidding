@@ -1,6 +1,11 @@
 p{
 	font-size: 1rem;
 	line-height: 1.6rem;
+
+	@media (max-height: 700px) and (max-width: 80em) {
+		font-size: 0.9rem;
+		line-height: 1.3rem;
+	} 
 }
 
 .body--half{
@@ -18,12 +23,13 @@ p{
 .l-wrapper{
 	max-width: 600px;
 	margin: 0 auto;
+	padding-bottom: 50px;
 }
 
 	.auction-details{
 		padding: 50px;
 
-		@media(min-width: 48em) {
+		@media(min-width: 64em) {
 			overflow-y: auto;
 			position: absolute;
 			top:40px;
@@ -31,14 +37,14 @@ p{
 			width: 100%;
 		}
 
-		@media (min-height: 700px) and (min-width: 48em) {
+		@media (min-height: 700px) and (min-width: 64em) {
 			top: calc(50% - 100px);
 			transform: translateY(-50%);
 			bottom: auto;
 			overflow-y: visible;
 		}
 
-		@media (min-width: 80em){
+		@media (min-height: 700px) and (min-width: 80em){
 			position: absolute;
 			left: 50%;
 			transform: translateX(-50%);
@@ -89,7 +95,7 @@ p{
 		}
 
 		.auction--enter{
-			@media (min-height: 700px) and (min-width: 48em) {
+			@media (min-height: 700px) and (min-width: 64em) {
 				margin-top: 50px;
 			}
 		}
@@ -199,6 +205,15 @@ p{
 			height: 150px;
 		}
 
+		@media (max-height: 700px) and (max-width: 80em) {
+			font-size: 1rem;
+
+			p{
+				font-size: 0.9rem;
+				line-height: 1.3rem;
+			}
+		} 
+
 		overflow: hidden;
 		border-top: 1px solid $grey-300;
 		background-color: $grey-100;
@@ -226,8 +241,16 @@ p{
 	} 
 
 	.fixed-footer{
-		height: 27px;
-		padding: 0 20px;
+		height: 50px;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		padding: 0 10px;
+
+		@include breakpoint(small){
+			height: 30px;
+		}
 	}
 
 .collapsible{
@@ -396,5 +419,93 @@ $checkmark-size: 35px;
 	}    
 }
 
+.language-selection{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	font-size: 1rem;
+	position: absolute;
+	left: 40px;
+	top: 5px;
+	right: 50px;
+	bottom: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	word-wrap: break-word;
+	text-overflow: ellipsis;
+}
 
+	.language{
+		display: inline;
+		margin-right: $default-margin;
+		text-decoration: underline;
+		color: $active-colour;
+		cursor: pointer;
+		padding: 5px 0;
+
+		&.s-selected{
+			color: black;
+			text-decoration: none;
+		}
+	}
+
+.language--toggle{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+	.language--toggle-control{
+		input{
+			position: absolute;
+		  	clip: rect(0,0,0,0);
+
+			&:checked {
+				& ~ .language-selection--pop-up{
+					transform: translateY(0);
+				}
+
+				& ~ i:before{
+					transform: rotate(0deg);
+				}
+			}
+		}
+
+		i{
+			transition: $transition;
+			color: black;
+			padding: 5px 10px;
+
+			&:before{
+				display: inline-block;
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	.language-selection--pop-up{
+		position: fixed;
+		right: 0;
+		bottom: 50px;
+		top: 0;
+		transform: translateY(120%);
+		background-color: $grey-100;
+		padding: $default-margin;
+		font-size: 1rem;
+		overflow-y: auto;
+		text-transform: none;
+
+		transition: $transition;
+
+		@include breakpoint(small){
+			bottom: 30px;
+		}
+
+		.language{
+			display: block;
+			padding: $default-margin/1.5 $default-margin/2;
+			font-size: 1.1rem;
+		}
+	}
 
