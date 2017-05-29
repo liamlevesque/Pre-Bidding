@@ -241,16 +241,12 @@ p{
 	} 
 
 	.fixed-footer{
-		height: 50px;
+		height: 30px;
 		position: fixed;
 		bottom: 0;
 		left: 0;
 		width: 100%;
 		padding: 0 10px;
-
-		@include breakpoint(small){
-			height: 30px;
-		}
 	}
 
 .collapsible{
@@ -420,40 +416,57 @@ $checkmark-size: 35px;
 }
 
 .language-selection{
+	position: absolute;
+	left: 40px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+
+	&:before{
+		content: "";
+		float: left;
+		width: 5px;
+		height: 30px;
+	}
+}
+
+.language-list{
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	display: inline-block;
 	font-size: 1rem;
-	position: absolute;
-	left: 40px;
-	top: 5px;
-	right: 50px;
-	bottom: 0;
-	overflow: hidden;
-	white-space: nowrap;
-	word-wrap: break-word;
-	text-overflow: ellipsis;
+	float: right;
+	width: 100%;
+	margin-left: -5px;
 }
 
 	.language{
-		display: inline;
+		float: left;
 		margin-right: $default-margin;
 		text-decoration: underline;
 		color: $active-colour;
 		cursor: pointer;
 		padding: 5px 0;
+		font-weight: 400;
 
 		&.s-selected{
 			color: black;
 			text-decoration: none;
+			color: $grey-500;
 		}
 	}
 
 .language--toggle{
-	position: absolute;
-	right: 0;
-	top: 0;
+	float: right;
+	position: relative;
+	top: -30px;
+	left: 100%;
+	width: 40px;
+	margin-left: -40px;
+	padding-right: 5px;
+	box-sizing: content-box;
+	background: linear-gradient(to right, rgba($grey-100,0) 0%,rgba($grey-100,1) 20%);
 }
 
 	.language--toggle-control{
@@ -461,33 +474,22 @@ $checkmark-size: 35px;
 			position: absolute;
 		  	clip: rect(0,0,0,0);
 
-			&:checked {
-				& ~ .language-selection--pop-up{
-					transform: translateY(0);
-				}
-
-				& ~ i:before{
-					transform: rotate(0deg);
-				}
-			}
+			&:checked  ~ .language-selection--pop-up{
+				transform: translateY(0);
+			}	
 		}
 
 		i{
-			transition: $transition;
 			color: black;
 			padding: 5px 10px;
-
-			&:before{
-				display: inline-block;
-				transform: rotate(180deg);
-			}
+			font-size: 25px;
 		}
 	}
 
 	.language-selection--pop-up{
 		position: fixed;
 		right: 0;
-		bottom: 50px;
+		bottom: 30px;
 		top: 0;
 		transform: translateY(120%);
 		background-color: $grey-100;
@@ -495,17 +497,21 @@ $checkmark-size: 35px;
 		font-size: 1rem;
 		overflow-y: auto;
 		text-transform: none;
+		z-index: -1;
+		color: black;
 
 		transition: $transition;
 
-		@include breakpoint(small){
-			bottom: 30px;
-		}
+		ul{
+			list-style-type: none;
+			margin: 0;
 
-		.language{
-			display: block;
-			padding: $default-margin/1.5 $default-margin/2;
-			font-size: 1.1rem;
+			.language{
+				display: block;
+				float: none;
+				padding: $default-margin/1.5 $default-margin/2;
+				font-size: 1.1rem;
+			}
 		}
 	}
 
