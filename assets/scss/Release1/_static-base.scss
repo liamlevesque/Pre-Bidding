@@ -205,15 +205,6 @@ p{
 			height: 150px;
 		}
 
-		@media (max-height: 700px) and (max-width: 80em) {
-			font-size: 1rem;
-
-			p{
-				font-size: 0.9rem;
-				line-height: 1.3rem;
-			}
-		} 
-
 		overflow: hidden;
 		border-top: 1px solid $grey-300;
 		background-color: $grey-100;
@@ -415,6 +406,19 @@ $checkmark-size: 35px;
 	}    
 }
 
+$footer-height: 30px;
+$placeholder-width: 5px;
+
+.language-footer{
+	height: $footer-height;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 0 10px;
+	overflow: visible;
+}
+
 .language-selection{
 	position: absolute;
 	left: 40px;
@@ -425,8 +429,8 @@ $checkmark-size: 35px;
 	&:before{
 		content: "";
 		float: left;
-		width: 5px;
-		height: 30px;
+		width: $placeholder-width;
+		height: $footer-height;
 	}
 }
 
@@ -438,7 +442,7 @@ $checkmark-size: 35px;
 	font-size: 1rem;
 	float: right;
 	width: 100%;
-	margin-left: -5px;
+	margin-left: -$placeholder-width;
 }
 
 	.language{
@@ -460,11 +464,11 @@ $checkmark-size: 35px;
 .language--toggle{
 	float: right;
 	position: relative;
-	top: -30px;
+	top: -$footer-height;
 	left: 100%;
 	width: 40px;
 	margin-left: -40px;
-	padding-right: 5px;
+	padding-right: $placeholder-width;
 	box-sizing: content-box;
 	background: linear-gradient(to right, rgba($grey-100,0) 0%,rgba($grey-100,1) 20%);
 }
@@ -489,7 +493,7 @@ $checkmark-size: 35px;
 	.language-selection--pop-up{
 		position: fixed;
 		right: 0;
-		bottom: 30px;
+		bottom: $footer-height;
 		top: 0;
 		transform: translateY(120%);
 		background-color: $grey-100;
