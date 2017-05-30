@@ -1236,6 +1236,8 @@ footer {
     color: black;
     text-decoration: none;
     color: #959595; }
+  .language.cn {
+    font-size: 0.9rem; }
 
 .language--toggle {
   float: right;

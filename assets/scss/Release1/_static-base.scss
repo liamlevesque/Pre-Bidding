@@ -459,6 +459,10 @@ $placeholder-width: 5px;
 			text-decoration: none;
 			color: $grey-500;
 		}
+
+		&.cn{
+			font-size: 0.9rem;
+		}
 	}
 
 .language--toggle{
