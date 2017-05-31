@@ -311,6 +311,16 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/assets\/img\/clock.jpg": {
+		"ft": 16384,
+		"iS": 6034,
+		"oA": 0,
+		"oAP": "\/assets\/img\/clock.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/assets\/img\/close.png": {
 		"ft": 32768,
 		"iS": 700,
@@ -362,6 +372,16 @@
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
+		"q": 100
+		},
+	"\/assets\/img\/error.jpg": {
+		"ft": 16384,
+		"iS": 2927,
+		"oA": 0,
+		"oAP": "\/assets\/img\/error.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
 		"q": 100
 		},
 	"\/assets\/img\/favicon.ico": {
