@@ -132,8 +132,8 @@ GRID
 
 @font-face {
   font-family: 'ritchie-icons';
-  src: url("../fonts/ritchie-icons.eot?e6973e");
-  src: url("../fonts/ritchie-icons.eot?e6973e#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?e6973e") format("truetype"), url("../fonts/ritchie-icons.woff?e6973e") format("woff"), url("../fonts/ritchie-icons.svg?e6973e#ritchie-icons") format("svg");
+  src: url("../fonts/ritchie-icons.eot?w2rx9a");
+  src: url("../fonts/ritchie-icons.eot?w2rx9a#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?w2rx9a") format("truetype"), url("../fonts/ritchie-icons.woff?w2rx9a") format("woff"), url("../fonts/ritchie-icons.svg?w2rx9a#ritchie-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -153,6 +153,9 @@ GRID
 .i-size-med {
   font-size: 20px;
   vertical-align: middle; }
+
+.icon-error:before {
+  content: "\e924"; }
 
 .icon-more_horiz:before {
   content: "\e923"; }

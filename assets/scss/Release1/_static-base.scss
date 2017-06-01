@@ -353,13 +353,28 @@ p{
 		}
 	}
 
+	input[type="email"]{
+		&.s-error{
+			background-color: white;
+			border-color: $error-colour;
+		}
+	}
+
+	.field--error-icon{
+		position: relative;
+		top: -40px;
+		float: right;
+		color: $error-colour;
+		margin-right: 10px;
+	    font-size: 30px;
+	}
+
 	.field--error-message{
 		color: white;
 		background-color: $error-colour;
 		padding: $default-margin;
 		position: relative;
-
-		@include uparrow;
+		margin-top: 5px;
 	}
 
 $checkmark-size: 35px;
