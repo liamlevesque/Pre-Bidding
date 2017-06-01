@@ -354,6 +354,11 @@ p{
 	}
 
 	input[type="email"]{
+		&:focus{
+			border-color: #B7D5E5 !important;
+			border-width: 2px;
+		}
+
 		&.s-error{
 			background-color: white;
 			border-color: $error-colour;
@@ -375,6 +380,7 @@ p{
 		padding: $default-margin;
 		position: relative;
 		margin-top: 5px;
+
 	}
 
 $checkmark-size: 35px;

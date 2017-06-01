@@ -1146,6 +1146,10 @@ footer {
 .field--text {
   height: 50px; }
 
+input[type="email"]:focus {
+  border-color: #B7D5E5 !important;
+  border-width: 2px; }
+
 input[type="email"].s-error {
   background-color: white;
   border-color: #c4483a; }
