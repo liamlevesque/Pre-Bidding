@@ -39,7 +39,6 @@
             Enter the e-mail address used for your Ritchie Bros. account and we will send the links to join the action directly to your inbox.
 
             <input type="email" class="field--text h-mt-100" placeholder="e-mail address" rv-on-keyup="controller.emailInput" rv-value="dataObject.email" rv-class-s-error="dataObject.emailError">
-            <div class="field--error-icon" rv-if="dataObject.emailError"><i class="icon-error"></i></div>
             <div class="field--error-message" rv-if="dataObject.emailError">That doesn't look like a valid e-mail address</div>
             <button class="button button--recovery-email h-mb-200" rv-enabled="dataObject.validEmail" rv-on-click="controller.send">Send me the access links</button>
             
