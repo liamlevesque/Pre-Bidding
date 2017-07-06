@@ -7238,6 +7238,12 @@
 		"oAP": "\/maxbid-email_lost.html",
 		"oF": 0
 		},
+	"\/maxbid-email_outed.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/maxbid-email_outed.html",
+		"oF": 0
+		},
 	"\/maxbid-email_unsold.html": {
 		"ft": 8192,
 		"oA": 2,
