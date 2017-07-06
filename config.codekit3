@@ -7,8 +7,22 @@
 		"uuidString": "D84A76D9-A715-4440-A983-976C97641950"
 		}
 	],
-"creatorBuild": "25813",
+"creatorBuild": "25849",
 "files": {
+	"\/.gitignore": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/.gitignore",
+		"oF": 0
+		},
+	"\/.vscode\/settings.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/.vscode\/settings-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/assets\/css\/customizable-grid.css": {
 		"aP": 0,
 		"bl": 0,
@@ -7218,6 +7232,24 @@
 		"oAP": "\/lot-preview.html",
 		"oF": 0
 		},
+	"\/maxbid-email_lost.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/maxbid-email_lost.html",
+		"oF": 0
+		},
+	"\/maxbid-email_unsold.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/maxbid-email_unsold.html",
+		"oF": 0
+		},
+	"\/maxbid-email_won.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/maxbid-email_won.html",
+		"oF": 0
+		},
 	"\/option2.html": {
 		"ft": 8192,
 		"oA": 0,
@@ -9361,6 +9393,7 @@
 		},
 	"languageDefaultsUserDefined": [
 		],
+	"overrideExternalServerCSS": 0,
 	"previewPathAddition": "",
 	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
 	"sourceFolderName": "source",
