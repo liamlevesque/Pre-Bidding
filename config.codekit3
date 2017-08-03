@@ -557,6 +557,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/assets\/img\/TAL-Icon.png": {
+		"ft": 32768,
+		"iS": 2542,
+		"oA": 0,
+		"oAP": "\/assets\/img\/TAL-Icon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/assets\/img\/up.png": {
 		"ft": 32768,
 		"iS": 255,
@@ -7184,6 +7195,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/enter-auction_not-started.html",
+		"oF": 0
+		},
+	"\/enter-auction_TAL_dr.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/enter-auction_TAL_dr.html",
 		"oF": 0
 		},
 	"\/gwapp-inventory.html": {
