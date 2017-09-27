@@ -571,7 +571,7 @@
                         </span> -->
                         
                         <span class="bidder--option bidder--active">
-                            Bid <span class="dollars" rv-html="bidObject.askPrice | price"></span>
+                            Bid <span class="dollars" rv-html="bidObject.askPrice | price"></span>/{bidObject.lotQuantityUnit}
                             <h5 class="h-mt-50" rv-if="bidObject.lotQuantity | greaterThanToFalse 1">Total x{ bidObject.lotQuantity }{bidObject.lotQuantityUnit} = <span class="dollars" rv-html="bidObject.askPrice | multiply bidObject.lotQuantity"></span></h5>
                         </span>
                     
@@ -1056,9 +1056,13 @@
                         <button class="field--clear" rv-show="maxbidObject.maxbidAmount" rv-on-click="maxbidController.clearWarningClick">CLEAR </button>
                         <label class="field--inner-label"><span class="CCY-dollars"></span></label>
                     </div>
+
+                    <div class="h-mb-50" rv-if="maxbidObject.quantity | greaterThanToFalse 1">
+                        <h5>Total x{ maxbidObject.quantity }{ maxbidObject.quantityUnit } = <span class="dollars" rv-html="maxbidObject.maxbidAmount | multiply maxbidObject.quantity"></span></h5>
+                    </div>
                     
                     <div class="message-box--info h-mb-50" rv-if="maxbidObject.quantity | greaterThanToFalse 1">
-                        Note - this lot will sell at a price per { maxbidObject.quantityUnit }. Enter your pre-bid in $/{ maxbidObject.quantityUnit }.
+                        Note - this lot will sell at a price per { maxbidObject.quantityUnit }.
                     </div>
 
                     <!-- <div class="h-ta-right qualifier">

@@ -257,7 +257,7 @@ function buildMaxBidTooltip(instance, helper){
 	$(instance.elementTooltip()).find('.js--max-bid-field').val(maxbidObject.maxbidAmount).autoNumeric('init',{
 		aSep: ',', 
 		aDec: '.',
-		mDec: 0
+		mDec: 2
 	}).focus().removeClass('s-error');
 
 	tooltipInstance = instance;
@@ -327,7 +327,7 @@ function buildMaxBidTooltip(instance, helper){
 
 	    	maxbidObject.offIncrement = false; //HIDE INCREMENT WARNING WHEN YOU START TO TYPE AGAIN
 	    	
-	    	maxbidObject.maxbidAmount = parseInt($(e.currentTarget).val().split(',').join(''));
+			maxbidObject.maxbidAmount = parseFloat($(e.currentTarget).val().split(',').join(''));
 
 			switch(e.which){
 				case 13://ENTER
