@@ -402,6 +402,19 @@
 				font-size: 0.8rem;
 			}
 
+			.message-box--info{
+				border: 1px solid $money-color;
+				background-color: $money-tint;
+				color: black;
+				@extend .icon-warning;
+				font-weight: 400;
+
+				&:before{
+					color: $money-color;
+					border-right-color: transparent;
+				}
+			}
+
 			.message-box--error{
 				border: none;
 				background-color: $error-colour;

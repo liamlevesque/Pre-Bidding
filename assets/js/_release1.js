@@ -241,6 +241,8 @@ function buildMaxBidTooltip(instance, helper){
 	maxbidObject.lotName = targetLot.name;
 	maxbidObject.lotSerial = targetLot.serial;
 	maxbidObject.lotMeter = targetLot.meter;
+	maxbidObject.quantity = targetLot.quantity;
+	maxbidObject.quantityUnit = targetLot.quantityUnit;
 	maxbidObject.totalMaxBids = user.bid;
 	maxbidObject.showConfirmation = false;
 	maxbidObject.hasMaxBid = (targetLot.bid > 0) ? true : false;
@@ -434,8 +436,10 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 		"bidStatus": 'disabled',
 		"bidder" : 'v10005',
 		"location" : 'TX, USA',
-		"askPrice" : 10000,
-		"bidPrice" : 7500,
+		"askPrice" : 1.25,
+		"bidPrice" : 1.20,
+		"lotQuantity" : 45,
+		"lotQuantityUnit" : 'ft',
 		"bidMode" : 'normal',
 		"openOffer" : false,
 		"selectAll" : false,
@@ -458,6 +462,12 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 			}
 			else bidObject.lotSelected = target;
 			bidObject.bidStatus = 'active'; 
+
+			if(lotTable.lotList[bidObject.lotSelected - 1].quantity){
+				
+				bidObject.lotQuantity = lotTable.lotList[bidObject.lotSelected - 1].quantity;
+				bidObject.lotQuantityUnit = lotTable.lotList[bidObject.lotSelected - 1].quantityUnit;
+			}
 
 			//RESET WARNING TO SELECT A LOT BEFORE BIDDING
 			bidObject.disabledClickCount = 0;

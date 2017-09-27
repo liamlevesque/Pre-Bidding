@@ -195,14 +195,16 @@
 		},
 		{
 			"lot": 10,
-			"name": "2006 KENWORTH T800B T/A Winch Tractor",
+			"name": "Quantity of 30 Ft of Aluminum Fence Panels",
 			"serial": "1XKDDT9X76R130339",
+			"quantity": 30,
+			"quantityUnit": "ft",
 			"meter": "55980 Mi",
-			"photo": "8754458_1.jpg",
+			"photo": "FencePanel.jpg",
 			"photos": [
-				"8754458_1.jpg",
-				"8709802_2.jpg",
-				"8709802_3.jpg"
+				"FencePanel.jpg",
+				"FencePanel.jpg",
+				"FencePanel.jpg"
 			],
 			"warranty": false,
 			"bid":0,
@@ -217,14 +219,16 @@
 		},
 		{
 			"lot": 11,
-			"name": "1998 KENWORTH T800B Winch Tractor",
+			"name": "Quantity of 45 Ft of Aluminum Fence Panels",
 			"serial": "1NKDL99X5WR759713",
+			"quantity": 45,
+			"quantityUnit": "ft",
 			"meter": "210501 Mi",
-			"photo": "8740589_1.jpg",
+			"photo": "FencePanel.jpg",
 			"photos": [
-				"8740589_1.jpg",
-				"8709802_2.jpg",
-				"8709802_3.jpg"
+				"FencePanel.jpg",
+				"FencePanel.jpgg",
+				"FencePanel.jpg"
 			],
 			"warranty": false,
 			"bid":0,
@@ -238,14 +242,16 @@
 		},
 		{
 			"lot": 12,
-			"name": "2005 KENWORTH T800 T/A Winch Tractor",
+			"name": "Quantity of 32 Ft of Aluminum Fence Panels",
 			"serial": "1XKDDT9X85J082041",
+			"quantity": 32,
+			"quantityUnit": "ft",
 			"meter": "132456 Mi",
-			"photo": "8746208_1.jpg",
+			"photo": "FencePanel.jpg",
 			"photos": [
-				"8746208_1.jpg",
-				"8709802_2.jpg",
-				"8709802_3.jpg"
+				"FencePanel.jpg",
+				"FencePanel.jpg",
+				"FencePanel.jpg"
 			],
 			"warranty": false,
 			"bid":0,
@@ -259,14 +265,16 @@
 		},
 		{
 			"lot": 13,
-			"name": "2002 KENWORTH T800 T/A Winch Tractor",
+			"name": "Quantity of 65 Ft of Aluminum Fence Panels",
 			"serial": "1XKDDT9X52J887636",
+			"quantity": 65,
+			"quantityUnit": "ft",
 			"meter": "433942 Mi",
-			"photo": "8699592_1.jpg",
+			"photo": "FencePanel.jpg",
 			"photos": [
-				"8699592_1.jpg",
-				"8709802_2.jpg",
-				"8709802_3.jpg"
+				"FencePanel.jpg",
+				"FencePanel.jpg",
+				"FencePanel.jpg"
 			],
 			"warranty": false,
 			"bid":0,
@@ -280,14 +288,16 @@
 		},
 		{
 			"lot": 14,
-			"name": "2000 KENWORTH T800 T/A Winch Tractor",
+			"name": "Quantity of 28 Ft of Aluminum Fence Panels",
 			"serial": "1NKDLT9X0YR863638",
+			"quantity": 28,
+			"quantityUnit": "ft",
 			"meter": "243806 Mi",
-			"photo": "8746209_1.jpg",
+			"photo": "FencePanel.jpg",
 			"photos": [
-				"8746209_1.jpg",
-				"8709802_2.jpg",
-				"8709802_3.jpg"
+				"FencePanel.jpg",
+				"FencePanel.jpg",
+				"FencePanel.jpg"
 			],
 			"warranty": false,
 			"bid":0,
@@ -301,14 +311,16 @@
 		},
 		{
 			"lot": 15,
-			"name": "1998 KENWORTH T800 T/A Winch Tractor",
+			"name": "Quantity of 45 Ft of Aluminum Fence Panels",
 			"serial": "1NKDL99X9WR759729",
+			"quantity": 45,
+			"quantityUnit": "ft",
 			"meter": "23302 Mi",
-			"photo": "8738289_1.jpg",
+			"photo": "FencePanel.jpg",
 			"photos": [
-				"8738289_1.jpg",
-				"8709802_2.jpg",
-				"8709802_3.jpg"
+				"FencePanel.jpg",
+				"FencePanel.jpg",
+				"FencePanel.jpg"
 			],
 			"warranty": false,
 			"bid":0,

@@ -23,6 +23,11 @@ $ccys: 	"CAD" "$" "" "," "." true 2,
 			content: "#{nth($ccy,4)}";
 		}
 	}
+	.decimal-divider:before{
+		.#{nth($ccy,1)} & {
+			content: "#{nth($ccy,5)}";
+		}
+	}
 	.dollars:before{
 		.#{nth($ccy,1)} & {
 			content: "#{nth($ccy,2)}";

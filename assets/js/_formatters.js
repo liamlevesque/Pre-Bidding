@@ -22,18 +22,32 @@ rivets.formatters.limitprice = function(value, spent, bid){
 }
 
 
-function formatprice(amt){
-	if(amt === 0) return 0;
-	else if(!amt) return null;
+function formatprice(value){
+	if(value === 0) return 0;
+	else if(!value) return null;
 
-	var price;
-
+	var amt, price;
+	amt = value.toString().split('.');
+	console.log(amt[1]);
+	
 	if($('#js--body').hasClass('INR')) 
-		price = amt.toString().replace(/(\d)(?=(\d\d)+\d$)/g, '$1<span class="divider"></span>');
+		price = amt[0].replace(/(\d)(?=(\d\d)+\d$)/g, '$1<span class="divider"></span>');
 	else 
-		price = amt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '<span class="divider"></span>');
-
+		price = amt[0].replace(/\B(?=(\d{3})+(?!\d))/g, '<span class="divider"></span>');
+	
+	if(amt[1] && amt[1].length === 1 ) amt[1] += '0';
+	if(amt[1]) price += '<span class="decimal-divider"></span>' + amt[1];
+	console.log(price);
 	return price;
+
+	// var price;
+
+	// if($('#js--body').hasClass('INR')) 
+	// 	price = amt.toString().replace(/(\d)(?=(\d\d)+\d$)/g, '$1<span class="divider"></span>');
+	// else 
+	// 	price = amt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '<span class="divider"></span>');
+
+	// return price;
 }
 
 function formatpriceInput(amt){
@@ -59,6 +73,9 @@ rivets.formatters.convertPrice = function(value, rate){
 	return "roughly <span class='USD'><span class='CCY'></span><span class='dollars'>" + formatprice(convertedVal.toFixed(0)) + "</span></span>";
 }
 
+rivets.formatters.multiply = function(value,multiple){
+	return value * multiple;
+}
 
 rivets.formatters.greaterThanToFalse = function(value,comparison){
 	if(parseInt(value) > comparison){

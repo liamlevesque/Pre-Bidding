@@ -42,7 +42,8 @@ label, .label, .button_hollow, .header--price-readout, .lot-tables--column-heade
 GRID
 ******************/
 .g-quarter, .g-third, .g-two-thirds, .g-half, .g-three-quarters, .g-fifth, .g-four-fifths {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   position: relative;
   vertical-align: top;
   display: inline-block;
@@ -70,7 +71,8 @@ GRID
 
 @media (min-width: 48em) {
   .g-half-to-third {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     display: inline-block;
     position: relative;
     vertical-align: top;
@@ -298,7 +300,8 @@ GRID
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 2px 8px;
   outline: none;
   position: relative;
@@ -446,7 +449,8 @@ body {
   -moz-osx-font-smoothing: grayscale; }
 
 * {
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
 
 ul {
   list-style-type: none;
@@ -736,7 +740,8 @@ hr {
   .details-table .calculation > div {
     display: inline-block;
     vertical-align: top;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     width: 55%; }
     @media (max-width: 800px) {
       .details-table .calculation > div {
@@ -767,7 +772,6 @@ hr {
     right: 0;
     bottom: -10px;
     height: 9px;
-    background-image: -webkit-radial-gradient(ellipse farthest-side at center top, rgba(0, 0, 0, 0.4), transparent);
     background-image: radial-gradient(ellipse farthest-side at center top, rgba(0, 0, 0, 0.4), transparent);
     opacity: 0;
     -webkit-transition: opacity 0.5s linear;
@@ -1093,7 +1097,8 @@ hr {
   position: relative;
   border-radius: 5px;
   background-color: #ffffff;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
   .lb-wizard.s-step-1 .step-1 {
     max-height: 1000px; }
     .lb-wizard.s-step-1 .step-1 .step-content {
@@ -1257,12 +1262,12 @@ hr {
   -webkit-transition-timing-function: cubic-bezier(0.63, 0.005, 0.365, 1);
           transition-timing-function: cubic-bezier(0.63, 0.005, 0.365, 1);
   background-color: #E87722;
-  background-image: -webkit-linear-gradient(#FAB558, #F69731);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#FAB558), to(#F69731));
   background-image: linear-gradient(#FAB558, #F69731);
   border: 1px solid #E87722; }
   .button:hover, .bidding--bid-button:hover {
     background-color: #c35f14;
-    background-image: -webkit-linear-gradient(#F58D31, #EB6D30);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#F58D31), to(#EB6D30));
     background-image: linear-gradient(#F58D31, #EB6D30);
     color: #ffffff; }
   .button.icon, .icon.bidding--bid-button {
@@ -1314,7 +1319,8 @@ hr {
   background-color: #333333;
   color: white;
   border: 0;
-  box-shadow: none; }
+  -webkit-box-shadow: none;
+          box-shadow: none; }
   .button_select-all:hover {
     background-image: none;
     background-color: #262626;
@@ -1324,7 +1330,8 @@ hr {
   background-image: none;
   background-color: white;
   color: #E87722;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   border: 1px solid #E87722;
   font-size: 0.8rem;
   padding: 5px; }
@@ -1495,6 +1502,9 @@ hr {
 .CAD .divider:before {
   content: ","; }
 
+.CAD .decimal-divider:before {
+  content: "."; }
+
 .CAD .dollars:before {
   content: "$"; }
 
@@ -1522,6 +1532,9 @@ hr {
 
 .USD .divider:before {
   content: ","; }
+
+.USD .decimal-divider:before {
+  content: "."; }
 
 .USD .dollars:before {
   content: "$"; }
@@ -1551,6 +1564,9 @@ hr {
 .SGD .divider:before {
   content: ","; }
 
+.SGD .decimal-divider:before {
+  content: "."; }
+
 .SGD .dollars:before {
   content: "$"; }
 
@@ -1578,6 +1594,9 @@ hr {
 
 .NZD .divider:before {
   content: ","; }
+
+.NZD .decimal-divider:before {
+  content: "."; }
 
 .NZD .dollars:before {
   content: "$"; }
@@ -1607,6 +1626,9 @@ hr {
 .AUD .divider:before {
   content: ","; }
 
+.AUD .decimal-divider:before {
+  content: "."; }
+
 .AUD .dollars:before {
   content: "$"; }
 
@@ -1634,6 +1656,9 @@ hr {
 
 .MXN .divider:before {
   content: ","; }
+
+.MXN .decimal-divider:before {
+  content: "."; }
 
 .MXN .dollars:before {
   content: "$"; }
@@ -1663,6 +1688,9 @@ hr {
 .ZAR .divider:before {
   content: ","; }
 
+.ZAR .decimal-divider:before {
+  content: "."; }
+
 .ZAR .dollars:before {
   content: "R"; }
 
@@ -1690,6 +1718,9 @@ hr {
 
 .PLN .divider:before {
   content: " "; }
+
+.PLN .decimal-divider:before {
+  content: ","; }
 
 .PLN .dollars:before {
   content: ""; }
@@ -1719,6 +1750,9 @@ hr {
 .GBP .divider:before {
   content: ","; }
 
+.GBP .decimal-divider:before {
+  content: "."; }
+
 .GBP .dollars:before {
   content: "£"; }
 
@@ -1746,6 +1780,9 @@ hr {
 
 .EUR .divider:before {
   content: " "; }
+
+.EUR .decimal-divider:before {
+  content: ","; }
 
 .EUR .dollars:before {
   content: "€"; }
@@ -1775,6 +1812,9 @@ hr {
 .CNY .divider:before {
   content: ","; }
 
+.CNY .decimal-divider:before {
+  content: "."; }
+
 .CNY .dollars:before {
   content: "¥"; }
 
@@ -1802,6 +1842,9 @@ hr {
 
 .JPY .divider:before {
   content: ","; }
+
+.JPY .decimal-divider:before {
+  content: "."; }
 
 .JPY .dollars:before {
   content: "¥"; }
@@ -1831,6 +1874,9 @@ hr {
 .INR .divider:before {
   content: ","; }
 
+.INR .decimal-divider:before {
+  content: "."; }
+
 .INR .dollars:before {
   content: " ₹"; }
 
@@ -1858,6 +1904,9 @@ hr {
 
 .AED .divider:before {
   content: ","; }
+
+.AED .decimal-divider:before {
+  content: "."; }
 
 .AED .dollars:before {
   content: ""; }
@@ -1887,6 +1936,9 @@ hr {
 .NOK .divider:before {
   content: ","; }
 
+.NOK .decimal-divider:before {
+  content: "."; }
+
 .NOK .dollars:before {
   content: "kr"; }
 
@@ -1914,6 +1966,9 @@ hr {
 
 .TRY .divider:before {
   content: ","; }
+
+.TRY .decimal-divider:before {
+  content: "."; }
 
 .TRY .dollars:before {
   content: "₺"; }
@@ -1950,7 +2005,8 @@ hr {
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-image: url(../img/ccy-flags.png);
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
 
 .convertCCY {
   font-size: 0.8em; }
@@ -2058,7 +2114,8 @@ header {
   text-align: center;
   padding: 5px;
   color: white;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   opacity: 0;
   pointer-events: none;
   -webkit-transform: translateY(-100%);
@@ -2080,7 +2137,8 @@ header {
   right: 0;
   background-color: white;
   width: 350px;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   font-size: 0.9rem;
   line-height: 1.4rem;
   -webkit-transform: translateX(100%);
@@ -2111,7 +2169,8 @@ header {
   padding: 15px;
   padding-top: 5px;
   width: 350px;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   font-size: 0.9rem;
   line-height: 1.4rem;
   -webkit-transform: translateY(-150%);
@@ -2172,7 +2231,8 @@ header {
 
 .bidding--background {
   background-color: white;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   z-index: 2;
   position: relative;
   overflow: hidden;
@@ -2393,7 +2453,7 @@ header {
     display: none; }
   .bidding--bid-button.s-disabled {
     opacity: 0.5;
-    background-image: -webkit-linear-gradient(#FAB558, #F69731);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FAB558), to(#F69731));
     background-image: linear-gradient(#FAB558, #F69731); }
     .bidding--bid-button.s-disabled .bidder--disabled {
       display: block;
@@ -2403,10 +2463,10 @@ header {
         font-size: 0.9rem;
         display: block; }
   .bidding--bid-button.s-active, .bidding--bid-button.s-open-offer {
-    background-image: -webkit-linear-gradient(#FAB558, #F69731);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FAB558), to(#F69731));
     background-image: linear-gradient(#FAB558, #F69731); }
     .bidding--bid-button.s-active:hover, .bidding--bid-button.s-open-offer:hover {
-      background-image: -webkit-linear-gradient(#F58D31, #EB6D30);
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#F58D31), to(#EB6D30));
       background-image: linear-gradient(#F58D31, #EB6D30);
       color: black; }
   .bidding--bid-button.s-active .bidder--active {
@@ -2740,7 +2800,8 @@ header {
   width: 28%;
   margin: 2%;
   border: 2px solid transparent;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   background-color: white;
   text-align: center;
@@ -2779,7 +2840,8 @@ header {
     top: 0;
     width: 20px;
     height: 20px;
-    box-shadow: inset 1px 1px 5px 0 rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: inset 1px 1px 5px 0 rgba(0, 0, 0, 0.15);
+            box-shadow: inset 1px 1px 5px 0 rgba(0, 0, 0, 0.15);
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     outline: none;
@@ -3061,7 +3123,7 @@ header {
   z-index: 2;
   right: 0;
   height: 100px;
-  background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.5)));
   background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 100%); }
 
 .swiper-container .swiper-pagination-bullet {
@@ -3146,7 +3208,8 @@ header {
   line-height: 1.4rem; }
 
 .other-ring {
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   margin-bottom: 15px;
   padding: 5px 30px 5px 55px;
   position: relative;
@@ -3193,7 +3256,8 @@ header {
   margin-bottom: 100px;
   font-size: 0.9rem;
   line-height: 1.4rem;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
 
 .lot-tables--header {
   background-color: #E9E9E9;
@@ -3252,7 +3316,8 @@ header {
   display: table-cell;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: 100%; }
 
 .col-0 {
@@ -3442,6 +3507,7 @@ header {
   transition-property: -webkit-transform;
   transition-property: transform;
   transition-property: transform, -webkit-transform;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box; }
 
 .swiper-container-android .swiper-slide, .swiper-wrapper {
@@ -3565,7 +3631,8 @@ button.swiper-pagination-bullet {
   border: none;
   margin: 0;
   padding: 0;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   -moz-appearance: none;
   -ms-appearance: none;
   -webkit-appearance: none;
@@ -3660,23 +3727,19 @@ button.swiper-pagination-bullet {
   z-index: 10; }
 
 .swiper-container-3d .swiper-slide-shadow-left {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(transparent));
   background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent); }
 
 .swiper-container-3d .swiper-slide-shadow-right {
-  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(transparent));
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent); }
 
 .swiper-container-3d .swiper-slide-shadow-top {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(transparent));
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent); }
 
 .swiper-container-3d .swiper-slide-shadow-bottom {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(transparent));
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(transparent));
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent); }
 
 .swiper-container-coverflow .swiper-wrapper, .swiper-container-flip .swiper-wrapper {
@@ -3836,7 +3899,8 @@ button.swiper-pagination-bullet {
 
 .tooltipster-content {
   /* prevents an overflow if the user adds padding to the div */
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* these make sure we'll be able to detect any overflow */
   max-height: 100%;
   max-width: 100%;
@@ -4153,7 +4217,8 @@ corresponds to the arrow we want to display */
   background: white;
   border: 1px solid #000000;
   border-radius: 0;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   max-width: 400px; }
 
 .tooltipster-sidetip.ritchie-tooltips_small .tooltipster-content, .tooltipster-sidetip.ritchie-tooltips_full .tooltipster-content {
@@ -4172,7 +4237,8 @@ corresponds to the arrow we want to display */
 .tooltipster-sidetip.ritchie-tooltips_error .tooltipster-box {
   background-color: #c4483a;
   border: none;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   max-width: 400px; }
 
 .tooltipster-sidetip.ritchie-tooltips_error .tooltipster-content {

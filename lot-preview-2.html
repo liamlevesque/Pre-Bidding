@@ -472,12 +472,12 @@
                         <label rv-show="bidObject.bidStatus | equals 'soldYou'">Sold</label>
 
                         <span class="h-t-large">
-                            <span class="bid-value dollars" rv-html="bidObject.askPrice | price"></span>
+                            <span class="bid-value dollars" rv-html="bidObject.askPrice | price"></span><span rv-if="bidObject.lotQuantity | greaterThanToFalse 1">/{bidObject.lotQuantityUnit}</span>
                         </span>
                     </li>
                     <li class="bid-field" rv-hide="bidObject.bidStatus | equals 'soldYou'">
                         <label>High Bid:</label>
-                        <span class="bid-value dollars" rv-html="bidObject.bidPrice | price"></span>
+                        <span class="bid-value dollars" rv-html="bidObject.bidPrice | price"></span><span rv-if="bidObject.lotQuantity | greaterThanToFalse 1">/{bidObject.lotQuantityUnit}</span>
                         
                     </li>
                     <li class="bid-field">
@@ -556,7 +556,7 @@
 
                     <button class="bidding--bid-button" rv-lotbidstate="bidObject.bidStatus" rv-on-click="bidController.onBidClick">
                         <span class="bidder--option bidder--disabled">
-                            Bid <span class="dollars" rv-html="bidObject.askPrice | price"></span>
+                            Bid <span class="dollars" rv-html="bidObject.askPrice | price"></span><span class="" rv-if="bidObject.lotQuantity | greaterThanToFalse 1">/{bidObject.lotQuantityUnit}</span>
                         </span>
                         
                        <!--  <span class="bidder--option bidder--open-offer">
@@ -572,6 +572,7 @@
                         
                         <span class="bidder--option bidder--active">
                             Bid <span class="dollars" rv-html="bidObject.askPrice | price"></span>
+                            <h5 class="h-mt-50" rv-if="bidObject.lotQuantity | greaterThanToFalse 1">Total x{ bidObject.lotQuantity }{bidObject.lotQuantityUnit} = <span class="dollars" rv-html="bidObject.askPrice | multiply bidObject.lotQuantity"></span></h5>
                         </span>
                     
                         <!-- <span class="bidder--option bidder--waiting">
@@ -634,10 +635,10 @@
                                     <i class="icon-check-inner"></i>
                                 </span>
                             </label>
-                            <img class="lot--photo" src="assets/js/data/8754458_1.jpg">
+                            <img class="lot--photo" src="assets/js/data/FencePanel.jpg">
                             <div class="lot--values">
                                 <div class="lot--name">LOT 10</div> 
-                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
+                                <div class="lot--value">Quantity of 30 Ft of Aluminum Fence Panels</div>
                             </div>
                         </li>
                         <li class="group--lot js--group-lot s-out" data-lotnumber="11" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
@@ -647,10 +648,10 @@
                                     <i class="icon-check-inner"></i>
                                 </span>
                             </label>
-                            <img class="lot--photo" src="assets/js/data/8740589_1.jpg">
+                            <img class="lot--photo" src="assets/js/data/FencePanel.jpg">
                             <div class="lot--values">
                                 <div class="lot--name">LOT 11</div>
-                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
+                                <div class="lot--value">Quantity of 45 Ft of Aluminum Fence Panels</div>
                             </div>
                         </li>
                         <li class="group--lot js--group-lot" data-lotnumber="12" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
@@ -660,10 +661,10 @@
                                     <i class="icon-check-inner"></i>
                                 </span>
                             </label>
-                            <img class="lot--photo" src="assets/js/data/8746208_1.jpg">
+                            <img class="lot--photo" src="assets/js/data/FencePanel.jpg">
                             <div class="lot--values">
                                 <div class="lot--name">LOT 12</div>
-                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
+                                <div class="lot--value">Quantity of 32 Ft of Aluminum Fence Panels</div>
                             </div>
                         </li>
                         <li class="group--lot js--group-lot" data-lotnumber="13" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
@@ -673,10 +674,10 @@
                                     <i class="icon-check-inner"></i>
                                 </span>
                             </label>
-                            <img class="lot--photo" src="assets/js/data/8699592_1.jpg">
+                            <img class="lot--photo" src="assets/js/data/FencePanel.jpg">
                             <div class="lot--values">
                                 <div class="lot--name">LOT 13</div>
-                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
+                                <div class="lot--value">Quantity of 65 Ft of Aluminum Fence Panels</div>
                             </div>
                         </li>
                         <li class="group--lot js--group-lot" data-lotnumber="14" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
@@ -686,10 +687,10 @@
                                     <i class="icon-check-inner"></i>
                                 </span>
                             </label>
-                            <img class="lot--photo" src="assets/js/data/8746209_1.jpg">
+                            <img class="lot--photo" src="assets/js/data/FencePanel.jpg">
                             <div class="lot--values">
                                 <div class="lot--name">LOT 14</div>
-                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
+                                <div class="lot--value">Quantity of 28 Ft of Aluminum Fence Panels</div>
                             </div>
                         </li>
                         <li class="group--lot js--group-lot" data-lotnumber="15" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
@@ -699,10 +700,10 @@
                                     <i class="icon-check-inner"></i>
                                 </span>
                             </label>
-                            <img class="lot--photo" src="assets/js/data/8738289_1.jpg">
+                            <img class="lot--photo" src="assets/js/data/FencePanel.jpg">
                             <div class="lot--values">
                                 <div class="lot--name">LOT 15</div>
-                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
+                                <div class="lot--value">Quantity of 45 Ft of Aluminum Fence Panels</div>
                             </div>
                         </li>
                         <li class="group--lot js--group-lot" data-lotnumber="16" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
@@ -1027,11 +1028,12 @@
                 <div class="tooltip--body">
                     <div class="flex-container_columns">
                         <div class="flex-item_quarter">
-                            <img class="tooltip--photo" src="assets/js/data/8666603_1.jpg"/>
+                            <img class="tooltip--photo" src="assets/js/data/FencePanel.jpg"/>
                         </div>
                         <div class="tooltip--lot-details">
                             <h4 class="c-brand flex-item_full h-mb-0">Lot <span rv-text="maxbidObject.lotNumber"></span></h4>
                             <h4 class="c-black flex-item_full h-mb-0" rv-text="maxbidObject.lotName"></h4>
+                            <!-- <p>{maxbidObject.quantity}</p> -->
                             <!-- <div class="flex-item_half" rv-text="maxbidObject.lotSerial"></div>
                             <div class="flex-item_half h-ta-right" rv-text="maxbidObject.lotMeter"></div> -->
                         </div>
@@ -1048,11 +1050,15 @@
                         </div>
                     </div>
                     <div class="h-mb-50 h-pos-relative">
-                        <input type="tel" placeholder="Enter preBid" pattern="[0-9]{2,7}" inputmode="numeric" class="field--text_innner-label js--max-bid-field" rv-on-blur="maxbidController.onMaxBidBlur" rv-on-keyup="maxbidController.onMaxBidChange" autocomplete="off" autocorrect="off" spellcheck="false"/>
+                        <input type="tel" placeholder="Enter preBid ($/ft)" pattern="[0-9]{2,7}" inputmode="numeric" class="field--text_innner-label js--max-bid-field" rv-on-blur="maxbidController.onMaxBidBlur" rv-on-keyup="maxbidController.onMaxBidChange" autocomplete="off" autocorrect="off" spellcheck="false"/>
                         <button class="field--clear" rv-show="maxbidObject.maxbidAmount" rv-on-click="maxbidController.clearWarningClick">CLEAR </button>
                         <label class="field--inner-label"><span class="CCY-dollars"></span></label>
                     </div>
                     
+                    <div class="message-box--info h-mb-50" rv-if="maxbidObject.quantity | greaterThanToFalse 1">
+                        Note - this lot will sell at a price per { maxbidObject.quantityUnit }. Enter your pre-bid in $/{ maxbidObject.quantityUnit }.
+                    </div>
+
                     <!-- <div class="h-ta-right qualifier">
                         <span rv-html="maxbidObject.maxbidAmount | convertPrice maxbidObject.conversion"></span>
                     </div> -->
@@ -1317,6 +1323,12 @@
                     <span class="">{{ meter }}</span>
                 </div>
             </div>
+            {{#quantity}}
+                <div class="lot--field">
+                    <label>Quantity</label>
+                    <span class="">{{ quantity }}{{ quantityUnit }}</span>
+                </div>
+            {{/quantity}}
             {{#warranty}}
                 <div class="lot--field lot--field_warranty">
                     <i class="c-brand icon-warranty h-mr-50"></i>Powertrain Service Warranty Available
