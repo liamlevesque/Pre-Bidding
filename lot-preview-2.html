@@ -813,7 +813,9 @@
                             <div class="col-5b">
                                 <label class="lot--sold-label" rv-show="lotobject.soldPrice">Sold <span rv-show="lotobject.soldToYou">To You</span></label>
                                 <label class="lot--sold-label" rv-show="lotobject.status" rv-text="lotobject.status"></label>
-                                <div class="dollars" rv-html="lotobject.soldPrice | price" rv-show="lotobject.soldPrice"></div>
+                                <div class="dollars" rv-unless="lotobject.quantity | greaterThanToFalse 1" rv-html="lotobject.soldPrice | price" rv-show="lotobject.soldPrice"></div>
+                                <div class="dollars" rv-if="lotobject.quantity | greaterThanToFalse 1" rv-html="lotobject.soldPrice | multiply lotobject.quantity" rv-show="lotobject.soldPrice"></div>
+                                
                             </div>
                             
                         </div>

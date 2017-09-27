@@ -25,14 +25,16 @@
 		},
 		{
 			"lot": 2,
-			"name": "2002 KENWORTH T800 T/A Winch Tractor",
+			"name": "Quantity of 30ft of Aluminum Fence Panel",
 			"serial": "1XKDDT9XX2J885672",
 			"meter": "136414 Mi",
-			"photo": "8754460_1.jpg",
+			"quantity": 45,
+			"quantityUnit": "ft",
+			"photo": "FencePanel.jpg",
 			"photos": [
-				"8754460_1.jpg",
-				"8709802_2.jpg",
-				"8709802_3.jpg"
+				"FencePanel.jpg",
+				"FencePanel.jpg",
+				"FencePanel.jpg"
 			],
 			"warranty": false,
 			"bid":0,
@@ -40,7 +42,7 @@
 			"comeswith": "Cummins ISX, 500 hp, eng brake, Eaton Fuller RTLO18918B, dbl diff lock, 8 bag A/R susp, 13200 lb frt, D46-170HP rears, 238 in. WB, 48 in. sleeper, wet kit, PAS",
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
-			"soldPrice": 18000,
+			"soldPrice": 1.45,
 			"bidder": null,
 			"group":0,
 			"soldToYou" : true
