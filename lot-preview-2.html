@@ -1096,6 +1096,8 @@
                             <h3>
                                 <span class="CCY c-brand"></span>&nbsp;<span class="dollars c-brand" rv-html="maxbidObject.maxbidAmount | price"></span>
                             </h3>
+                            <h5 rv-if="maxbidObject.quantity | greaterThanToFalse 1">Total x{ maxbidObject.quantity }{ maxbidObject.quantityUnit } = <span class="dollars" rv-html="maxbidObject.maxbidAmount | multiply maxbidObject.quantity"></span></h5>
+                            
                         
                         </div>
                         <div class="message-box--mail">
