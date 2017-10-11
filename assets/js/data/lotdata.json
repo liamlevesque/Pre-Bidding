@@ -42,7 +42,8 @@
 			"comeswith": "Cummins ISX, 500 hp, eng brake, Eaton Fuller RTLO18918B, dbl diff lock, 8 bag A/R susp, 13200 lb frt, D46-170HP rears, 238 in. WB, 48 in. sleeper, wet kit, PAS",
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
-			"soldPrice": 1.45,
+			"soldPrice": 105.75,
+			"unitPrice": 2.35,
 			"bidder": null,
 			"group":0,
 			"soldToYou" : true
@@ -201,7 +202,7 @@
 			"serial": "1XKDDT9X76R130339",
 			"quantity": 30,
 			"quantityUnit": "ft",
-			"meter": "55980 Mi",
+			"meter": null,
 			"photo": "FencePanel.jpg",
 			"photos": [
 				"FencePanel.jpg",
@@ -225,7 +226,7 @@
 			"serial": "1NKDL99X5WR759713",
 			"quantity": 45,
 			"quantityUnit": "ft",
-			"meter": "210501 Mi",
+			"meter": null,
 			"photo": "FencePanel.jpg",
 			"photos": [
 				"FencePanel.jpg",
@@ -238,9 +239,11 @@
 			"comeswith": "Cummins ISX, 500 hp, eng brake, Eaton Fuller RTLO18918B, dbl diff lock, 8 bag A/R susp, 13200 lb frt, D46-170HP rears, 238 in. WB, 48 in. sleeper, wet kit, PAS",
 			"catnotes": "FROM THE PROFESSIONALLY MAINTAINED FLEET OF PENSKE NATIONAL TRUCK PROTECTION (\"NTP\") WARRANTY ELIGIBLE CARB COMPLIANT CERTIFIED CLEAN IDLE",
 			"openPrice": 10000,
-			"soldPrice": 0,
+			"soldPrice": 56.25,
+			"unitPrice": 1.25,
 			"bidder": null,
-			"group":1
+			"group":1,
+			"status": null
 		},
 		{
 			"lot": 12,
@@ -248,7 +251,7 @@
 			"serial": "1XKDDT9X85J082041",
 			"quantity": 32,
 			"quantityUnit": "ft",
-			"meter": "132456 Mi",
+			"meter": null,
 			"photo": "FencePanel.jpg",
 			"photos": [
 				"FencePanel.jpg",
@@ -271,7 +274,7 @@
 			"serial": "1XKDDT9X52J887636",
 			"quantity": 65,
 			"quantityUnit": "ft",
-			"meter": "433942 Mi",
+			"meter": null,
 			"photo": "FencePanel.jpg",
 			"photos": [
 				"FencePanel.jpg",
@@ -317,7 +320,7 @@
 			"serial": "1NKDL99X9WR759729",
 			"quantity": 45,
 			"quantityUnit": "ft",
-			"meter": "23302 Mi",
+			"meter": null,
 			"photo": "FencePanel.jpg",
 			"photos": [
 				"FencePanel.jpg",

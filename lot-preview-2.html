@@ -557,6 +557,7 @@
                     <button class="bidding--bid-button" rv-lotbidstate="bidObject.bidStatus" rv-on-click="bidController.onBidClick">
                         <span class="bidder--option bidder--disabled">
                             Bid <span class="dollars" rv-html="bidObject.askPrice | price"></span><span class="" rv-if="bidObject.lotQuantity | greaterThanToFalse 1">/{bidObject.lotQuantityUnit}</span>
+                            <h5 class="h-mt-50" rv-if="bidObject.bidStatus | equals 'soldYou'">({ bidObject.lotQuantity } Total = <span class="dollars" rv-html="bidObject.askPrice | multiply bidObject.lotQuantity"></span>)</h5>
                         </span>
                         
                        <!--  <span class="bidder--option bidder--open-offer">
@@ -572,7 +573,7 @@
                         
                         <span class="bidder--option bidder--active">
                             Bid <span class="dollars" rv-html="bidObject.askPrice | price"></span>/{bidObject.lotQuantityUnit}
-                            <h5 class="h-mt-50" rv-if="bidObject.lotQuantity | greaterThanToFalse 1">Total x{ bidObject.lotQuantity }{bidObject.lotQuantityUnit} = <span class="dollars" rv-html="bidObject.askPrice | multiply bidObject.lotQuantity"></span></h5>
+                            <h5 class="h-mt-50" rv-if="bidObject.lotQuantity | greaterThanToFalse 1">({ bidObject.lotQuantity } Total = <span class="dollars" rv-html="bidObject.askPrice | multiply bidObject.lotQuantity"></span>)</h5>
                         </span>
                     
                         <!-- <span class="bidder--option bidder--waiting">
@@ -814,7 +815,9 @@
                                 <label class="lot--sold-label" rv-show="lotobject.soldPrice">Sold <span rv-show="lotobject.soldToYou">To You</span></label>
                                 <label class="lot--sold-label" rv-show="lotobject.status" rv-text="lotobject.status"></label>
                                 <div class="dollars" rv-unless="lotobject.quantity | greaterThanToFalse 1" rv-html="lotobject.soldPrice | price" rv-show="lotobject.soldPrice"></div>
-                                <div class="dollars" rv-if="lotobject.quantity | greaterThanToFalse 1" rv-html="lotobject.soldPrice | multiply lotobject.quantity" rv-show="lotobject.soldPrice"></div>
+                                <div class="dollars" rv-if="lotobject.quantity | greaterThanToFalse 1" rv-show="lotobject.soldPrice">
+                                    <span rv-html="lotobject.unitPrice | multiply lotobject.quantity"></span>/{lotobject.quantityUnit}
+                                </div>
                                 
                             </div>
                             
@@ -1326,17 +1329,20 @@
                     <label>Serial Number / VIN</label>
                     <span class="">{{ serial }}</span>
                 </div>
-                <div class="lot--field_half">
-                    <label>Meter Reads</label>
-                    <span class="">{{ meter }}</span>
-                </div>
+                {{#quantity}}
+                    <div class="lot--field_half">
+                        <label>Quantity</label>
+                        <span class="">{{ quantity }}{{ quantityUnit }}</span>
+                    </div>
+                {{/quantity}}
+                {{#meter}}
+                    <div class="lot--field_half">
+                        <label>Meter Reads</label>
+                        <span class="">{{ meter }}</span>
+                    </div>
+                {{/meter}}
             </div>
-            {{#quantity}}
-                <div class="lot--field">
-                    <label>Quantity</label>
-                    <span class="">{{ quantity }}{{ quantityUnit }}</span>
-                </div>
-            {{/quantity}}
+           
             {{#warranty}}
                 <div class="lot--field lot--field_warranty">
                     <i class="c-brand icon-warranty h-mr-50"></i>Powertrain Service Warranty Available
