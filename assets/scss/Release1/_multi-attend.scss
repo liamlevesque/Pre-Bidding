@@ -76,6 +76,19 @@
 				padding-bottom: 2px;
 			}
 
+			.ring--ironclad{
+				position: absolute;
+				display: block;
+				top: 2px;
+				right: 2px;
+				background-color: white;
+				width: 15px;
+				height: 15px;
+				border-radius: 50%;
+				padding: -5px;
+				font-size: 15px;
+			}
+
 		.ring--data{
 			width: 77%;
 			margin-left: 23%;

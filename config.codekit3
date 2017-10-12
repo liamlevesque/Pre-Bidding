@@ -213,6 +213,12 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/assets\/fonts\/20171012-UpdatedIcons.zip": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/20171012-UpdatedIcons.zip",
+		"oF": 0
+		},
 	"\/assets\/fonts\/FrutigerLTStd-BlackCn.eot": {
 		"ft": 8192,
 		"oA": 2,
@@ -401,12 +407,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/assets\/fonts\/ritchie-icons.woff",
-		"oF": 0
-		},
-	"\/assets\/fonts\/UpdatedIcons.zip": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/assets\/fonts\/UpdatedIcons.zip",
 		"oF": 0
 		},
 	"\/assets\/img\/arrow.png": {

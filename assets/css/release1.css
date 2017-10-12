@@ -4436,6 +4436,17 @@ MOST IMPORTANT - LOT TABLE STYLES
     left: 0;
     right: 0;
     padding-bottom: 2px; }
+  .other-ring .ring--ironclad {
+    position: absolute;
+    display: block;
+    top: 2px;
+    right: 2px;
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    padding: -5px;
+    font-size: 15px; }
   .other-ring .ring--data {
     width: 77%;
     margin-left: 23%; }
