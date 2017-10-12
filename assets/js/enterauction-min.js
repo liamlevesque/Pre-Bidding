@@ -88,7 +88,7 @@ var dataObject = {
 			e.stopPropagation();
 		},
 		enterAuction: function(e){
-			window.location = 'http://liamlevesque.github.io/Pre-Bidding/lot-preview-2.html'
+			window.location = 'http://liamlevesque.github.io/Pre-Bidding/index.html'
 		},
 
 		toggleFlashErrorVisible: function(e){
