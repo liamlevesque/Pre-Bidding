@@ -37,7 +37,7 @@
 $tooltip-arrow-size: 10px;
 
 
-.tooltipster-sidetip.ritchie-tooltips_small, .tooltipster-sidetip.ritchie-tooltips_full{
+.tooltipster-sidetip.ritchie-tooltips_small, .tooltipster-sidetip.ritchie-tooltips_full, .ritchie-tooltips_medium{
 	.tooltipster-box {
 		background: white;
 		border: 1px solid $black;
@@ -211,6 +211,10 @@ $tooltip-arrow-size: 10px;
 .ritchie-tooltips_small .tooltipster-content{
 	min-width: auto;
 	text-align: center;
+}
+
+.ritchie-tooltips_medium{
+	min-width: 400px;
 }
 
 .tooltipster-sidetip.ritchie-tooltips_full{

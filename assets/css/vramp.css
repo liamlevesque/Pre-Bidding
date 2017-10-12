@@ -46,7 +46,8 @@ body {
   overflow-x: hidden; }
 
 * {
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
 
 ul {
   list-style-type: none;
@@ -121,8 +122,8 @@ hr {
 
 @font-face {
   font-family: 'ritchie-icons';
-  src: url("../fonts/ritchie-icons.eot?w2rx9a");
-  src: url("../fonts/ritchie-icons.eot?w2rx9a#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?w2rx9a") format("truetype"), url("../fonts/ritchie-icons.woff?w2rx9a") format("woff"), url("../fonts/ritchie-icons.svg?w2rx9a#ritchie-icons") format("svg");
+  src: url("../fonts/ritchie-icons.eot?jxnzno");
+  src: url("../fonts/ritchie-icons.eot?jxnzno#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?jxnzno") format("truetype"), url("../fonts/ritchie-icons.woff?jxnzno") format("woff"), url("../fonts/ritchie-icons.svg?jxnzno#ritchie-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -143,32 +144,41 @@ hr {
   font-size: 20px;
   vertical-align: middle; }
 
+.icon-location:before {
+  content: "\e91b"; }
+
+.icon-ironclad:before {
+  content: "\e910"; }
+
+.icon-ccy:before {
+  content: "\e928"; }
+
+.icon-gavel:before {
+  content: "\e929"; }
+
+.icon-globe:before {
+  content: "\e91e"; }
+
+.icon-mic:before {
+  content: "\e900"; }
+
 .icon-error:before {
   content: "\e924"; }
 
 .icon-more_horiz:before {
   content: "\e923"; }
 
-.icon-globe:before {
-  content: "\e91e"; }
+.icon-repeat:before {
+  content: "\e903"; }
 
 .icon-printer:before {
   content: "\e91d"; }
-
-.icon-gavel:before {
-  content: "\e910"; }
-
-.icon-mic:before {
-  content: "\e900"; }
 
 .icon-arrow-down:before {
   content: "\e901"; }
 
 .icon-audio:before {
   content: "\e902"; }
-
-.icon-bid:before {
-  content: "\e903"; }
 
 .icon-cart:before {
   content: "\e904"; }
@@ -206,9 +216,6 @@ hr {
 .icon-next:before {
   content: "\e90f"; }
 
-.icon-sale:before {
-  content: "\e910"; }
-
 .icon-search:before {
   content: "\e911"; }
 
@@ -239,17 +246,8 @@ hr {
 .icon-lock:before {
   content: "\e91a"; }
 
-.icon-ccy:before {
-  content: "\e91b"; }
-
 .icon-calculator:before {
   content: "\e91c"; }
-
-.icon-coin-pound:before {
-  content: "\e91d"; }
-
-.icon-coin-dollar:before {
-  content: "\e91e"; }
 
 .icon-trash:before {
   content: "\e91f"; }
@@ -262,12 +260,6 @@ hr {
 
 .icon-mail:before {
   content: "\e922"; }
-
-.icon-max-1:before {
-  content: "\e923"; }
-
-.icon-max-4:before {
-  content: "\e924"; }
 
 .icon-max-3:before {
   content: "\e925"; }
@@ -296,7 +288,8 @@ body {
   top: 200px;
   left: 0;
   background-color: white;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   padding: 20px;
   z-index: 2; }
   .prototype-controls button {
@@ -455,7 +448,8 @@ body {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   z-index: 1;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   background-color: white; }
   @media (min-width: 1280px) {
     .lot--title {
@@ -972,7 +966,8 @@ body {
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-image: url(../img/ccy-flags.png);
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
 
 .ccy:after {
   content: '';
@@ -984,7 +979,8 @@ body {
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-image: url(../img/ccy-flags.png);
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5); }
 
 .ask {
   padding: 0 10px; }
@@ -1146,7 +1142,7 @@ body {
 .choice--header {
   padding: 20px;
   padding-bottom: 10px;
-  background: -webkit-linear-gradient(top, rgba(51, 51, 51, 0), #333333);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(51, 51, 51, 0)), to(#333333));
   background: linear-gradient(top, rgba(51, 51, 51, 0), #333333);
   text-transform: uppercase;
   color: white; }
@@ -1165,7 +1161,8 @@ body {
   width: calc(100% / 5);
   background-color: white;
   border: 5px solid transparent;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   color: #E87722;
   text-align: center;
   overflow: hidden; }

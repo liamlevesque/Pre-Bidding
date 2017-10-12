@@ -41,7 +41,8 @@ label, .label, .button_hollow {
 GRID
 ******************/
 .g-quarter, .g-third, .g-two-thirds, .g-half, .g-three-quarters, .g-fifth, .g-four-fifths {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   position: relative;
   vertical-align: top;
   display: inline-block;
@@ -69,7 +70,8 @@ GRID
 
 @media (min-width: 48em) {
   .g-half-to-third {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     display: inline-block;
     position: relative;
     vertical-align: top;
@@ -131,8 +133,8 @@ GRID
 
 @font-face {
   font-family: 'ritchie-icons';
-  src: url("../fonts/ritchie-icons.eot?w2rx9a");
-  src: url("../fonts/ritchie-icons.eot?w2rx9a#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?w2rx9a") format("truetype"), url("../fonts/ritchie-icons.woff?w2rx9a") format("woff"), url("../fonts/ritchie-icons.svg?w2rx9a#ritchie-icons") format("svg");
+  src: url("../fonts/ritchie-icons.eot?jxnzno");
+  src: url("../fonts/ritchie-icons.eot?jxnzno#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?jxnzno") format("truetype"), url("../fonts/ritchie-icons.woff?jxnzno") format("woff"), url("../fonts/ritchie-icons.svg?jxnzno#ritchie-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -153,32 +155,41 @@ GRID
   font-size: 20px;
   vertical-align: middle; }
 
+.icon-location:before {
+  content: "\e91b"; }
+
+.icon-ironclad:before {
+  content: "\e910"; }
+
+.icon-ccy:before {
+  content: "\e928"; }
+
+.icon-gavel:before {
+  content: "\e929"; }
+
+.icon-globe:before {
+  content: "\e91e"; }
+
+.icon-mic:before {
+  content: "\e900"; }
+
 .icon-error:before {
   content: "\e924"; }
 
 .icon-more_horiz:before {
   content: "\e923"; }
 
-.icon-globe:before {
-  content: "\e91e"; }
+.icon-repeat:before {
+  content: "\e903"; }
 
 .icon-printer:before {
   content: "\e91d"; }
-
-.icon-gavel:before {
-  content: "\e910"; }
-
-.icon-mic:before {
-  content: "\e900"; }
 
 .icon-arrow-down:before {
   content: "\e901"; }
 
 .icon-audio:before {
   content: "\e902"; }
-
-.icon-bid:before {
-  content: "\e903"; }
 
 .icon-cart:before {
   content: "\e904"; }
@@ -216,9 +227,6 @@ GRID
 .icon-next:before {
   content: "\e90f"; }
 
-.icon-sale:before {
-  content: "\e910"; }
-
 .icon-search:before {
   content: "\e911"; }
 
@@ -249,17 +257,8 @@ GRID
 .icon-lock:before {
   content: "\e91a"; }
 
-.icon-ccy:before {
-  content: "\e91b"; }
-
 .icon-calculator:before {
   content: "\e91c"; }
-
-.icon-coin-pound:before {
-  content: "\e91d"; }
-
-.icon-coin-dollar:before {
-  content: "\e91e"; }
 
 .icon-trash:before {
   content: "\e91f"; }
@@ -272,12 +271,6 @@ GRID
 
 .icon-mail:before {
   content: "\e922"; }
-
-.icon-max-1:before {
-  content: "\e923"; }
-
-.icon-max-4:before {
-  content: "\e924"; }
 
 .icon-max-3:before {
   content: "\e925"; }
@@ -297,7 +290,8 @@ GRID
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 2px 8px;
   outline: none;
   position: relative;
@@ -465,12 +459,12 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-transition-timing-function: cubic-bezier(0.63, 0.005, 0.365, 1);
           transition-timing-function: cubic-bezier(0.63, 0.005, 0.365, 1);
   background-color: #E87722;
-  background-image: -webkit-linear-gradient(#FAB558, #F69731);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#FAB558), to(#F69731));
   background-image: linear-gradient(#FAB558, #F69731);
   border: 1px solid #E87722; }
   .button:hover {
     background-color: #c35f14;
-    background-image: -webkit-linear-gradient(#F58D31, #EB6D30);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#F58D31), to(#EB6D30));
     background-image: linear-gradient(#F58D31, #EB6D30);
     color: #ffffff; }
   .button.icon {
@@ -522,7 +516,8 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: #333333;
   color: white;
   border: 0;
-  box-shadow: none; }
+  -webkit-box-shadow: none;
+          box-shadow: none; }
   .button_select-all:hover {
     background-image: none;
     background-color: #262626;
@@ -532,7 +527,8 @@ input[type=number]::-webkit-outer-spin-button {
   background-image: none;
   background-color: white;
   color: #E87722;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   border: 1px solid #E87722;
   font-size: 0.8rem;
   padding: 5px; }
@@ -708,7 +704,8 @@ body {
   overflow-x: hidden; }
 
 * {
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
 
 ul {
   list-style-type: none;
@@ -833,7 +830,8 @@ hr {
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   border-radius: 5px;
   background-color: #ffffff;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   margin: 90px 0; }
   @media (max-width: 800px) {
     .lb-window, [class^='lb-window_'] {
@@ -981,7 +979,8 @@ p {
   padding: 20px;
   margin-top: 50px;
   color: white;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   margin-bottom: 20px; }
 
 .auction--warning {
@@ -1256,8 +1255,9 @@ input[type="email"].s-error {
   width: 40px;
   margin-left: -40px;
   padding-right: 5px;
-  box-sizing: content-box;
-  background: -webkit-linear-gradient(left, rgba(233, 233, 233, 0) 0%, #e9e9e9 20%);
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(233, 233, 233, 0)), color-stop(20%, #e9e9e9));
   background: linear-gradient(to right, rgba(233, 233, 233, 0) 0%, #e9e9e9 20%); }
 
 .language--toggle-control input {

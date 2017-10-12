@@ -141,6 +141,22 @@ hr{
 	}
 }
 
+.link__external{
+	color: $money-color;
+
+	&:hover{
+		text-decoration: underline;
+
+		&:after{
+			@include icon-font;
+			content: "\e90c";
+			margin-left: 5px;
+			color: $money-color;
+			text-decoration: none;
+		}
+	}
+}
+
 .phone-link{
 	@include boldtext;
 	margin-bottom: $default-margin;

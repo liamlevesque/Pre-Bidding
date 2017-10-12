@@ -1,0 +1,43 @@
+<div class="header--section">
+    <div class="header--full-height">
+        <div class="h-ta-center">
+            <label>Auction Currency</label>
+            <div class="auction-ccy"></div>
+        </div>
+    </div>
+</div> 
+
+
+<div class="header--section h-viewer-hidden">
+    
+    <div class="h-d-inline-block">
+        <div class="header--price">
+            <label>Credit Remaining:</label><span class="header--price-readout dollars c-active" rv-html="user.limit | limitprice user.spent user.bid"></span></div>
+        <div class="header--price">
+            <label>Spent:</label><span class="header--price-readout dollars" rv-html="user.spent | price"></span></div>
+        <div class="header--price js--total-max-bids-tooltip" rv-adderrorclass="user.bid | greaterThanToFalse user.limit">
+            <label>preBids (<span rv-text="user.bidcount"></span>):</label><span class="header--price-readout dollars" rv-html="user.bid | price"></span></div>
+    </div>
+
+    <div class="cart-icon">
+        <a href="http://liamlevesque.github.io/VPP-Prototype2/" target="_blank" class="header--cart-link">
+            <div class="h-va-center js--cart-tooltip">
+                <i class="icon-cart"></i>
+                <div class="cart-count" rv-text="user.cart | lengthtoquantity"></div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="header--section">
+    
+    <div class="header--user">
+        
+            <i class="icon-user"></i>
+            <span class="h-viewer-hidden" rv-text="user.bidder">v7004</span>
+            <span class="h-viewer-shown">GUEST</span>
+        
+        <div>
+            <label class="header--connection">Connected</label>
+        </div>
+    </div>
+</div>

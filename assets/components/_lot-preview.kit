@@ -1,0 +1,90 @@
+<script id="currentlot" type="x-tmpl-mustache">
+    <div class="lot--header">
+        <div class="lot--number">
+            <label class="lot--ring-number">Lot</label>
+            {{ lot }}
+        </div>
+        <h2 class="lot--title"><span class="h-valign">{{ name }}</span></h2>
+    </div>
+    <div class="lot--photos">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                {{#photos}}
+                <div class="swiper-slide">
+                    <img src="assets/js/data/{{ . }}" />
+                </div>
+                {{/photos}}
+            </div>
+            
+            <div class="swiper-pagination"></div>
+            
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            
+            {{#ironclad}}
+                <div class="swiper--ironclad">
+                    <img src="assets/img/IronClad.png" alt="Protected by IronClad Assurance"/>
+                </div>
+            {{/ironclad}}
+
+            <!-- <div class="swiper-counter">
+                <span class="js--swiper-active">1</span> of 3
+            </div> -->
+            <div class="lot--not-in-catalog js--not-in-catalog">
+                <img src="assets/img/MissingCatalog-w.png">
+            </div>
+        </div>
+    </div>
+    <div class="lot--fields">
+        
+        <div class="lot--field_container">
+            <div class="lot--field_half">
+                <label>Serial Number / VIN</label>
+                <span class="">{{ serial }}</span>
+            </div>
+            {{#quantity}}
+                <div class="lot--field_half">
+                    <label>Quantity</label>
+                    <span class="">{{ quantity }}{{ quantityUnit }}</span>
+                </div>
+            {{/quantity}}
+            {{#meter}}
+                <div class="lot--field_half">
+                    <label>Meter Reads</label>
+                    <span class="">{{ meter }}</span>
+                </div>
+            {{/meter}}
+        </div>
+        
+        {{#comeswith}}
+            <div class="lot--field">
+                <label>Comes With</label>
+                <span class="">{{ comeswith }}</span>
+            </div>
+        {{/comeswith}}
+        {{#catnotes}}
+            <div class="lot--field">
+                <label>Catalog Notes</label>
+                <span class="">{{ catnotes }}</span>
+            </div>
+        {{/catnotes}}
+        {{#ironclad}}
+            <div class="lot--field lot--field_warranty">
+                <i class="icon-ironclad h-mr-50"></i>Protected by <a class="link__external">IronClad Assurance</a>
+            </div>
+        {{/ironclad}}
+        {{#offsite}}
+            <div class="lot--field lot--field_warranty">
+                <i class="icon-location h-mr-50"></i><a class="link__external">Item Located Offsite</a>
+            </div>
+        {{/offsite}}
+        {{#warranty}}
+            <div class="lot--field lot--field_warranty">
+                <i class="c-brand icon-warranty h-mr-50"></i><a href="http://www.rbauction.com/warranty" class="link__external">Powertrain Service Warranty Available</a>
+            </div>
+        {{/warranty}}
+        
+    </div>
+</script>
+

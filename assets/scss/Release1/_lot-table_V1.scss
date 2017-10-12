@@ -190,14 +190,6 @@ $ring-right-spacing: 30px;
 				.col-2a{
 					padding:0  10px;
 					@include ellipsize;
-
-					a:hover:after{
-						@include icon-font;
-						content: "\e90b";
-						margin-left: 5px;
-						color: $money-color;
-						text-decoration: none;
-					}
 				}
 
 				.col-5 i{
@@ -396,6 +388,10 @@ $ring-right-spacing: 30px;
 				.icon-warranty{
 					color: $brand-color;
 				}
+
+				.icon-ironclad{
+					color: $ironclad-color;
+				}
  
 				.lot--photo{
 					width: 100%;
@@ -406,11 +402,41 @@ $ring-right-spacing: 30px;
 
 				.lot--name{
 					font-weight: 700;
+					color: black;
 
 					&:hover{
 						color: $money-color;
 					}
 				}
+
+				.lot--guarantees{
+					position: relative;
+					width: 20px;
+					display: inline-block;
+					background-color: white;
+				}
+
+					.s-warranty-ironclad{
+						height: 20px;
+						top: 3px;
+						left: -4px;
+						
+						i{
+							font-size: 12px;
+
+							&:first-child{
+								position: absolute;
+								top: 0;
+								left: 0;
+							}
+
+							&:last-child{
+								position: absolute;
+								bottom: 0;
+								right: 0;
+							}
+						}
+					}
 
 				.lot--details{
 					margin-top: 3px;

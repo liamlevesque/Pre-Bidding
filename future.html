@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ritchie Bros. Live Auction</title>
+    <link href="assets/img/favicon.ico" rel="Shortcut Icon">
+    <link type="text/css" rel="stylesheet" href="assets/css/main.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body id="js--body" class="CAD">
+
+<div class="main-body">
+    <header class="js--header">
+        <div class="header--left">
+            <a href="http://rbauction.com" class="logo js--tooltip-logo" target="_blank" alt="Back to rbauction">
+                <svg version="1.1" id="rba-header-logo-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="46" viewBox="0 0 162 40.25" enable-background="new 0 0 162 40.25" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path fill="#E87511" d="M21.9,10.9c4.9,0,8.9,4,8.9,8.9c0,4.9-4,8.9-8.9,8.9c-4.9,0-8.9-4-8.9-8.9c0-2.3,0-19.8,0-19.8l4.6,0 l0,19.7c0,2.5,2,4.5,4.5,4.5c2.5,0,4.5-2,4.5-4.5c0-2.5-2-4.5-4.5-4.5h-2.3l0-4.4L21.9,10.9z"></path>
+                            <path fill="#E87511" d="M4.5,15.6c0-0.2,0.2-0.3,0.3-0.3l6.1,0l0-4.3c0,0-7.3,0-7.5,0c-1.9,0-3.4,1.5-3.4,3.4c0,0.1,0,14.1,0,14.1 h4.5L4.5,15.6z"></path>
+                        </g>
+                        <g class="logo-hide-small">
+                            <path d="M84.9,34.2c-0.7,0-1.2-0.5-1.2-1.2c0-0.7,0.6-1.2,1.2-1.2c0.7,0,1.2,0.5,1.2,1.2C86.1,33.7,85.6,34.2,84.9,34.2z M84.9,31.9c-0.6,0-1,0.5-1,1.1c0,0.6,0.4,1.1,1,1.1c0.6,0,1-0.5,1-1.1C85.9,32.4,85.5,31.9,84.9,31.9z M85.2,33.7 c0-0.1-0.1-0.1-0.1-0.2c-0.1-0.2-0.1-0.2-0.2-0.3c0,0-0.1-0.1-0.1-0.1v0.6h-0.2v-1.4h0.4c0.2,0,0.3,0,0.3,0.1 c0.1,0.1,0.1,0.1,0.1,0.3c0,0.2-0.1,0.4-0.4,0.4c0.1,0,0.1,0.1,0.1,0.1c0,0,0.1,0.1,0.1,0.2l0.2,0.3H85.2z M85,32.5 c0,0-0.1,0-0.2,0h-0.1v0.5h0.1c0.1,0,0.2,0,0.2-0.1c0,0,0.1-0.1,0.1-0.2C85.1,32.6,85.1,32.5,85,32.5z"></path>
+                            <path d="M80.3,37.8c0.2,0.1,0.7,0.3,1.3,0.3c0.5,0,0.8-0.1,0.8-0.5c0-0.2-0.1-0.4-0.6-0.7l-0.5-0.3c-0.5-0.3-1.1-0.6-1.1-1.5 c0-0.7,0.7-1.5,1.8-1.5c0.7,0,1.2,0.2,1.3,0.2l-0.1,1c-0.3-0.1-0.7-0.2-1.1-0.2c-0.5,0-0.7,0.2-0.7,0.5c0,0.3,0.2,0.4,0.6,0.7 l0.6,0.4c0.7,0.4,1,0.7,1,1.3c0,1-0.8,1.5-1.9,1.5c-0.6,0-1.2-0.2-1.5-0.3L80.3,37.8z M77.1,34.7c0-0.3,0-0.6,0-0.9h1.1 c0,0.3,0,0.6,0,1h0c0.2-0.4,0.6-1,1.3-1c0.1,0,0.1,0,0.2,0v1.2c-0.1,0-0.2,0-0.4,0c-0.5,0-1.1,0.3-1.1,1.3V39h-1.3V34.7z M75.1,36 c0-0.9-0.3-1.4-0.9-1.4c-0.7,0-0.9,0.7-0.9,1.4H75.1z M76,38.8c-0.3,0.1-0.8,0.3-1.6,0.3c-1.7,0-2.4-1.2-2.4-2.6 c0-1.6,0.8-2.8,2.1-2.8c1.1,0,2.1,0.7,2.1,2.8v0.2h-3c0,0.9,0.4,1.4,1.3,1.4c0.8,0,1.1-0.2,1.4-0.4L76,38.8z M70.1,36 c0-0.9-0.3-1.4-0.9-1.4c-0.7,0-0.9,0.7-0.9,1.4H70.1z M71.1,38.8c-0.3,0.1-0.8,0.3-1.6,0.3c-1.7,0-2.4-1.2-2.4-2.6 c0-1.6,0.8-2.8,2.2-2.8c1.1,0,2.1,0.7,2.1,2.8v0.2h-3c0,0.9,0.4,1.4,1.3,1.4c0.8,0,1.1-0.2,1.4-0.4L71.1,38.8z M62.2,34.7 c0-0.3,0-0.6,0-0.9h1.2c0,0.3,0,0.5,0,0.8h0h0c0.2-0.3,0.5-0.9,1.4-0.9c1.2,0,1.5,0.9,1.5,1.9V39H65v-3.1c0-0.8-0.2-1.1-0.7-1.1 c-0.7,0-0.9,0.6-0.9,1.2v3h-1.3V34.7z M59,38.2c0.8,0,1-0.9,1-1.8c0-0.9-0.2-1.8-1-1.8c-0.8,0-1,0.9-1,1.8 C58,37.3,58.2,38.2,59,38.2 M59,33.7c1.1,0,2.3,0.6,2.3,2.7c0,2.2-1.2,2.7-2.3,2.7c-1.1,0-2.3-0.5-2.3-2.7 C56.7,34.3,58,33.7,59,33.7 M54.5,33.8h1.3V39h-1.3V33.8z M54.5,31.6h1.3v1.2h-1.3V31.6z M51.4,32.7l1.3-0.4v1.5h1v0.9h-1v2.7 c0,0.6,0.2,0.7,0.6,0.7c0.2,0,0.4-0.1,0.5-0.1v0.9c-0.2,0.1-0.5,0.2-0.8,0.2c-0.9,0-1.5-0.4-1.5-1.5V32.7z M50.8,38.9 c-0.3,0.1-0.7,0.2-1.2,0.2c-1.7,0-2.5-1.2-2.5-2.7c0-1.5,0.8-2.7,2.5-2.7c0.4,0,0.9,0.1,1.1,0.2l-0.1,1c-0.2-0.1-0.5-0.2-0.9-0.2 c-1,0-1.4,0.6-1.4,1.7c0,1,0.5,1.7,1.4,1.7c0.3,0,0.7-0.1,0.9-0.3L50.8,38.9z M46.2,38.2c0,0.3,0,0.6,0,0.9h-1.2c0-0.3,0-0.5,0-0.8 l0,0l0,0c-0.2,0.4-0.6,0.9-1.4,0.9c-1.2,0-1.5-0.9-1.5-1.9v-3.4h1.3v3.1c0,0.8,0.2,1.1,0.7,1.1c0.7,0,0.9-0.6,0.9-1.3v-3h1.3V38.2z M39.5,36.3L38.6,33h0l-1,3.3H39.5z M39.8,37.3h-2.4L36.8,39h-1.3l2.4-7.1h1.4l2.3,7.1h-1.3L39.8,37.3z M158.4,25.1 c-0.4,0.4-0.6,0.9-0.6,1.5c0,0.6,0.2,1.1,0.6,1.5c0.4,0.4,0.9,0.6,1.5,0.6c0.6,0,1.1-0.2,1.5-0.6c0.4-0.4,0.6-0.9,0.6-1.4 c0-0.6-0.2-1.1-0.6-1.5c-0.4-0.4-0.9-0.6-1.5-0.6C159.3,24.5,158.8,24.7,158.4,25.1 M152.9,10.6c-1.1,0-2.1,0.2-2.8,0.5 c-0.8,0.3-1.4,0.9-2,1.6c-0.8,1-1.2,2.2-1.2,3.5c0,1,0.3,2,0.8,2.8c0.7,1.1,1.9,1.8,3.7,2.3c1,0.2,1.6,0.4,1.9,0.6 c0.6,0.3,0.9,0.8,0.9,1.5c0,0.6-0.2,1.1-0.7,1.5c-0.4,0.4-1,0.6-1.8,0.6c-1.2,0-2.7-0.4-4.5-1.2v3.7c1.7,0.6,3.2,0.9,4.5,0.9 c1.8,0,3.2-0.4,4.3-1.3c1.3-1.1,1.9-2.5,1.9-4.2c0-1.4-0.5-2.7-1.4-3.6c-0.4-0.4-0.8-0.7-1.3-0.9c-0.5-0.2-1.3-0.5-2.4-0.8 c-0.9-0.2-1.5-0.5-1.8-0.8c-0.3-0.3-0.5-0.7-0.5-1.2c0-0.5,0.2-1,0.6-1.4c0.4-0.4,1.1-0.6,1.9-0.6c1,0,2.1,0.3,3.4,0.9v-3.7 C155.1,10.7,154,10.6,152.9,10.6 M131.6,12.8c-2.1,1.8-3.1,4.1-3.1,6.8c0,1.6,0.4,3.1,1.2,4.5c0.8,1.4,2,2.6,3.5,3.4 c1.4,0.8,2.8,1.1,4.4,1.1c1.6,0,3-0.4,4.4-1.1c1.4-0.8,2.5-1.9,3.4-3.2c0.9-1.4,1.3-3,1.3-4.6c0-2.6-0.9-4.7-2.6-6.5 c-1.8-1.8-3.9-2.7-6.4-2.7C135.3,10.6,133.3,11.3,131.6,12.8 M141.3,15.5c1.2,1.1,1.8,2.5,1.8,4.2c0,1.3-0.4,2.5-1.3,3.6 c-1.1,1.3-2.5,2-4.1,2c-1.4,0-2.6-0.5-3.6-1.4c-1.3-1.1-1.9-2.5-1.9-4.2c0-1.4,0.4-2.6,1.4-3.7c1.1-1.3,2.5-1.9,4.2-1.9 C139.1,14.1,140.3,14.6,141.3,15.5 M120.4,28.4v-8.2c0.1,0.5,0.3,0.9,0.6,1.1c0.3,0.2,0.8,0.3,1.4,0.3l0.4,0c0.6,0,1,0.1,1.2,0.3 c0.2,0.2,0.3,0.6,0.3,1.2v5.3h3.6v-5.6c0-1.8-0.6-2.9-1.9-3.2c1.2-1.1,1.7-2.3,1.7-3.7c0-1.7-0.7-3.1-2.1-4.1 c-0.5-0.3-1-0.6-1.5-0.7c-0.5-0.1-1.1-0.2-1.9-0.2h-1.9c-0.8,0-1.4,0-1.7,0.1c-0.3,0.1-0.7,0.3-1,0.5c-0.4,0.3-0.6,0.7-0.7,1.1 c-0.1,0.4-0.2,1-0.2,1.9v13.9H120.4z M122,14.3c0.7,0,1.3,0.2,1.6,0.5c0.4,0.3,0.6,0.8,0.6,1.4c0,0.4-0.1,0.9-0.4,1.2 c-0.3,0.4-0.8,0.6-1.5,0.7c-0.7,0.1-1.2,0.2-1.4,0.4c-0.3,0.2-0.4,0.6-0.5,1.2v-5.4H122z M109.9,14.3c0.6,0,1.1,0.2,1.4,0.4 c0.4,0.3,0.5,0.7,0.5,1.2c0,0.5-0.2,0.9-0.6,1.3c-0.3,0.2-0.7,0.3-1.4,0.3h-1.2v-3.2H109.9z M115,17.2c0.3-0.5,0.4-1.2,0.4-1.8 c0-0.9-0.2-1.7-0.7-2.4c-0.5-0.7-1.1-1.3-1.9-1.6c-0.8-0.3-2-0.5-3.8-0.5c-0.8,0-1.4,0.1-1.8,0.2c-0.4,0.1-0.8,0.3-1.1,0.6 c-0.3,0.3-0.6,0.7-0.7,1.1c-0.1,0.4-0.2,1.1-0.2,1.9v9.6c0,0.9,0.1,1.6,0.2,2.1c0.1,0.5,0.4,0.9,0.7,1.2c0.4,0.3,0.8,0.5,1.2,0.7 c0.5,0.1,1.2,0.2,2.3,0.2c1.4,0,2.4-0.1,2.9-0.2c1.1-0.3,2-0.9,2.8-1.8c0.6-0.9,1-1.8,1-2.9c0-0.7-0.1-1.3-0.4-2 c-0.3-0.6-0.6-1.2-1.1-1.7c-0.3-0.3-0.7-0.6-1.2-0.9C114.3,18.4,114.7,17.8,115,17.2 M109.9,20.9c0.6,0,1,0,1.2,0 c0.2,0,0.4,0.1,0.6,0.2c0.3,0.2,0.6,0.4,0.8,0.7c0.2,0.3,0.3,0.7,0.3,1c0,0.8-0.3,1.4-1,1.7c-0.3,0.1-0.5,0.2-0.7,0.2 c-0.2,0-0.6,0-1.2,0h-1.2v-4H109.9z M95.4,10.9c-1.3,0-2.2,0.3-2.8,0.8c-0.6,0.6-0.8,1.5-0.8,2.9v10.1c0,0.7,0.1,1.2,0.2,1.6 c0.1,0.4,0.3,0.8,0.6,1.1c0.3,0.4,0.7,0.6,1.1,0.8c0.4,0.1,1,0.2,1.8,0.2h5.1V25h-5.2v-4h4.8v-3.3h-4.8v-3.3h5.2v-3.4H95.4z M86.8,28.4h3.6V10.9h-3.6V28.4z M81.9,10.9v6.8h-5.5v-6.8h-3.6v17.5h3.6V21h5.5v7.4h3.6V10.9H81.9z M71.8,10.9h-1.2 c-1,0-1.8,0.1-2.4,0.2c-1.8,0.4-3.4,1.3-4.6,2.6c-1.5,1.7-2.3,3.6-2.3,5.9c0,2,0.6,3.7,1.8,5.3c1.2,1.5,2.7,2.6,4.5,3.1 c0.8,0.2,1.8,0.3,3.2,0.3h1V25h-1c-1.1,0-2-0.2-2.7-0.5c-0.7-0.3-1.4-0.8-2-1.5c-0.8-1-1.2-2.1-1.2-3.4c0-0.9,0.2-1.8,0.7-2.6 c0.4-0.7,0.9-1.3,1.6-1.8c0.5-0.4,1-0.6,1.6-0.8c0.5-0.1,1.2-0.2,2-0.2h1.1V10.9z M52.2,10.9v3.4h3.3v14.1h3.6V14.3h3.3v-3.4H52.2z M47.7,28.4h3.6V10.9h-3.6V28.4z M39.2,28.4v-8.2c0.1,0.5,0.3,0.9,0.6,1.1c0.3,0.2,0.8,0.3,1.4,0.3l0.4,0c0.6,0,1,0.1,1.3,0.3 c0.2,0.2,0.3,0.6,0.3,1.2v5.3h3.6v-5.6c0.1-1.8-0.6-2.9-1.9-3.2c1.2-1.1,1.7-2.3,1.7-3.7c0-1.7-0.7-3.1-2.1-4.1 c-0.5-0.3-1-0.6-1.5-0.7c-0.5-0.1-1.1-0.2-1.9-0.2h-1.9c-0.8,0-1.4,0-1.7,0.1c-0.3,0.1-0.7,0.3-1,0.5c-0.4,0.3-0.6,0.7-0.7,1.1 c-0.1,0.4-0.2,1-0.2,1.9v13.9H39.2z M40.8,14.3c0.7,0,1.3,0.2,1.6,0.5c0.4,0.3,0.6,0.8,0.6,1.4c0,0.4-0.1,0.9-0.4,1.2 c-0.3,0.4-0.8,0.6-1.5,0.7c-0.7,0.1-1.2,0.2-1.4,0.4c-0.3,0.2-0.4,0.6-0.5,1.2v-5.4H40.8z"></path>
+                        </g>
+                    </g>
+                </svg>
+            </a>
+            <div class="h-d-inline-block">
+                <h3 class="c-grey">Chilliwack, BC, CAN</h3>
+                <h5 class=""><span class="h-mr-100">Live Auction</span><i class="icon-user c-price h-mr-50"></i><span class="c-price js--auction-attendees">12,481</span></h5>
+            </div>
+        </div>
+        <div class="header--right">
+            <div class="header--section">
+                <div class="header--full-height">
+                    <div class="h-va-center">
+                        <i class="icon-user"></i>
+                        <span rv-text="user.bidder">v7004</span>
+                    
+                        <div class="">
+                            <label class="c-active">Connected</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header--section">
+                <div class="cart-icon" rv-on-click="headerController.onToggleCartClick">
+                    <div class="h-va-center">
+                        <i class="icon-cart"></i>
+                        <div class="cart-count" rv-text="user.cart | lengthtoquantity"></div>
+                    </div>
+                </div>
+                <div class="h-d-inline-block">
+                    <div class="header--price">
+                        <label>Spent:</label><span class="header--price-readout dollars" rv-html="user.spent | price"></span></div>
+                    <div class="header--price">
+                        <label>Bid:</label><span class="header--price-readout dollars" rv-html="user.bid | price"></span></div>
+                    <div class="header--price">
+                        <label>Remaining:</label><span class="header--price-readout dollars c-active" rv-html="user.limit | limitprice user.spent user.bid"></span></div>
+                </div>
+            </div>
+            <div class="header--section">
+                <button class="button--unbound h-icon--large">
+                    <i class="icon-help"></i>
+                    <!-- <label>HELP</label> -->
+                </button> 
+                <br/>
+                <button class="button--unbound js--settings h-icon--large">
+                    <i class="icon-settings"></i>
+                   <!--  <label>EXIT</label> -->
+                </button>
+            </div>
+            
+        </div>
+
+        <div class="auctioneers-message" rv-addclass="user.message">
+            <span rv-text="user.message"></span>
+            <button class="button--unbound" rv-on-click="headerController.onDismissMSGClick"><i class="icon-close"></i></button>
+        </div>
+
+        <div class="header--cart js--cart">
+            <div class="tooltip--close" rv-on-click="headerController.onCartCloseClick"><i class="icon-close"></i></div>
+            <label>Lots you won (<span rv-text="user.cart | lengthtoquantity"></span>)</label>
+            <hr/>
+            <div class="cart--empty" rv-hide="user.cart | lengthtoquantity">
+                You haven't won any lots yet :(
+                <img src="assets/img/empty.png">
+
+            </div>
+            <ul class="cart--items">
+                <li class="cart--item" rv-each-cartitem="user.cart">
+                    <div class="g-quarter">
+                        <img class="lot--photo" rv-src="cartitem.photo | lotPhotoDirectory"/>
+                    </div>
+                    <div class="g-three-quarters">
+                        <div>
+                            <div class="lot--number h-d-inline-block" rv-text="cartitem.lot"></div>
+                            <div class="lot--name h-d-inline-block" rv-text="cartitem.name"></div>
+                        </div>
+                        <div class="lot--details" rv-text="cartitem.serial"></div>
+
+                        <div class="lot--sold-price dollars" rv-html="cartitem.soldPrice | price"></div>
+                    </div>
+                </li>
+            </ul>
+            <div class="cart--footer" >
+                <div class="cart--summary">
+                    <label> Total Purchases</label><span class="dollars" rv-html="user.spent | price"></span>
+                </div>
+                <div class="cart--summary">
+                    <label> Total Pre-Bids</label><span class="dollars" rv-html="user.bid | price"></span>
+                </div>
+                <div class="cart--summary">
+                    <label> Available Balance</label><span class="dollars" rv-html="user.limit | limitprice user.spent user.bid"></span>
+                </div>
+                <br/>
+                <a href="http://liamlevesque.github.io/VPP-Prototype2/" class="button_positive" target="_blank">Show Purchase Summary</a>
+            </div>
+        </div>
+    </header>
+
+    <!--BIDDING SECTION-->
+    <div class="middle-section js--middle-section">
+        <section class="client--upper js--upper-area">
+            <div class="lot-info js--lot-info" rv-currentlot="lotInfo.currentLot">
+                <!-- THIS IS THE AREA THAT THE MAIN LOT PREVIEW GOES -->
+            </div>
+            <div class="lot-bidding">
+                <div class="bidding--background">
+                
+                    <div class="bidding--group js--group-area" rv-isgroupbidding="group.groupnumber" rv-isopenoffers="group.isOpenOffers" rv-show="group.groupnumber" rv-disableothers="group.currentLot">
+                        <div class="bidding--header">
+                            Choice of <span rv-text="group.length"></span>
+                        </div>
+                        <div class="group--body">
+                            <ul>
+                                <!-- OPTION 2 -->
+                                <!-- <li class="group--lot_a js--group-lot" rv-each-grouplot="group.lotList" rv-itemsold="grouplot.soldPrice" rv-data-lot="grouplot.lot" rv-itemactive="group.currentLot" rv-itempreview="group.previewLot" rv-on-click="groupController.onPreviewClick">
+                                    <i class="lot--watching icon-info"></i>
+                                    <img class="lot--photo" rv-src="grouplot.photo | lotPhotoDirectory"/>
+                                    <div class="lot--name">LOT <span rv-text="grouplot.lot"></span></div>
+                                    <input class="lot--selector" type="checkbox" rv-data-lot="grouplot.lot" rv-on-click="groupController.onActivateClick"/>
+                                    
+                                </li> -->
+
+                                <!-- OPTION 3 -->
+                                <li class="group--lot_c js--group-lot" rv-each-grouplot="group.lotList" rv-itemsold="grouplot.soldPrice" rv-data-lot="grouplot.lot" rv-itemactive="grouplot.isActive" rv-itempreview="group.previewLot" rv-on-click="groupController.onActivateClick">
+                                    <i class="lot--watching icon-info" rv-data-lot="grouplot.lot" rv-on-click="groupController.onPreviewClick"></i>
+                                    <img class="lot--photo" rv-src="grouplot.photo | lotPhotoDirectory"/>
+                                    <div class="lot--name">LOT <span rv-text="grouplot.lot"></span></div>
+                                    <input class="lot--selector" type="checkbox" />
+                                    
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="group--footer">
+                            <button class="button_select-all" rv-show="group.isOpenOffers" rv-on-click="groupController.onSelectAllClick">Select All Remaining Lots</button>
+                        </div>
+                    </div>
+                    <div class="bidding--area js--bidding-area" rv-isgroupbidding="saleItem.isgroup">
+                        <div class="bidding--header">
+                            Lot Bidding
+                        </div>
+                        <div class="bidding--content">
+                            <ul class="bidding--info">
+                                <!--TODO ADD SOCKET.IO AND/OR REACT.JS-->
+                                <li class="bid-field">
+                                    <label>High Bid:</label>
+                                    <span class="c-brand">
+                                        <span class="CCY"></span>
+                                        <span class="bid-value dollars" rv-html="saleItem.highBid | price"></span>
+                                    </span>
+                                </li>
+                                <li class="bid-field">
+                                    <label>High Bidder:</label>
+                                    <span class="bid-value" rv-text="saleItem.bidder | bidderoryou"></span>
+                                    <!-- <button rv-on-click="controller.onOutBid">Outbid me!</button> -->
+                                </li>
+                                <li class="bid-field">
+                                    <label>Ask Price</label>
+
+                                    <span class="h-t-large">
+                                        <span class="CCY"></span>
+                                        <span class="bid-value dollars" rv-html="saleItem.price | price"></span>
+                                    </span>
+                                    
+                                    <div class="js--converter-output">
+                                        <button class="bid-action c-price js--convert-ccy" rv-addclass="ccyconversion.active"> 
+                                            <span class="bid-action--default-text">Convert Currency</span>
+                                            <span class="bid-action--active-text" rv-html="ccyconversion.conversion | priceWithCCY"></span>
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="js--calculator-output">
+                                        <button class="bid-action c-finance js--calc-financing" rv-addclass="finance.active">
+                                            <span class="bid-action--default-text">Calculate Financing</span>
+                                            <span class="bid-action--active-text" rv-html="finance.payment | convertedPrice < finance.ccy"></span>
+                                        </button>
+                                    </div>
+
+                                    <!-- <button rv-on-click="controller.onSellClick">Sell Now</button> -->
+                                </li>
+                            </ul>
+                            <div class="bidding">
+                                
+                                <div class="bidding--activate js--activate-container" rv-hide="saleItem.isgroup" rv-addclass="saleItem.bidactive">
+                                    <label class="input--circle-check">
+                                        <input type="checkbox" class="js--bidding-active" rv-checked="saleItem.bidactive" rv-on-change="controller.onActivateClick"/> 
+                                        <span>Activate bidding for lot <span rv-text="saleItem.currentLot"></span></span>
+                                    </label>
+                                </div>
+                                <div class="bidding--activate_group" rv-show="saleItem.isgroup">
+                                    <span rv-hide="saleItem.bidactive">Choose a lot to activate bidding</span>
+                                    <span rv-show="saleItem.bidactive">Bidding on lot <span rv-text="saleItem.currentLot"></span></span>
+                                </div>
+
+                                <div class="bidding--controls">
+                                    <button class="bidding--bid-button" rv-bidstate="saleItem.bidstatus" rv-on-click="controller.onBidClick" rv-hide="saleItem.prebid">
+                                        <span class="bidder--option bidder--disabled">
+                                            <span class="CCY"></span><span class="dollars" rv-html="saleItem.price | price"></span>
+                                        </span>
+                                        
+                                        <span class="bidder--option bidder--open-offer">
+                                            Buy <span rv-oogroupsize="saleItem.openOffersList"></span> @
+                                            <br/><span class="CCY"></span><span class="dollars" rv-html="saleItem.highBid | price"></span> each
+                                            <br/><label rv-show="saleItem.openOffersList">Total <span class="CCY"></span><span class="dollars" rv-html="saleItem.openOffersList | pricelist"></span></label>
+                                        </span>
+
+                                        <span class="bidder--option bidder--open-offer_disabled">
+                                            <span class="CCY"></span><span class="dollars" rv-html="saleItem.highBid | price"></span> each
+                                            <br/><label rv-show="saleItem.openOffersList">Total <span class="CCY"></span><span class="dollars" rv-html="saleItem.openOffersList | pricelist"></span></label>
+                                        </span>
+                                        
+                                        <span class="bidder--option bidder--active">
+                                            <span class="CCY"></span><span class="dollars" rv-html="saleItem.price | price"></span>
+                                        </span>
+                                    
+                                        <span class="bidder--option bidder--waiting">
+                                            Bid submitted!
+                                            <br/>Waiting for acceptance.
+                                        </span>
+                                        
+                                        <span class="bidder--option bidder--accepted">
+                                           Bid Accepted!<br/>You're on!
+                                        </span>
+                                        
+                                        <span class="bidder--option bidder--won">
+                                            Sold!
+                                            <br/>You won this lot!
+                                        </span>
+                                        
+                                        <span class="bidder--option bidder--lost">
+                                            Sold
+                                            <br/>Bidder <span rv-text="saleItem.bidder"></span> won this lot
+                                        </span>
+                                    </button>
+                                    <div class="bidding--bid-button pre-bid" rv-show="saleItem.prebid">
+                                        Pre-Bidding up to <span class="CCY"></span><span class="dollars" rv-html="saleItem.prebid | price"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bidding--messages">
+                    <div class="bidding--outbid js--outbid">
+                        <div class="message-box--warning">
+                            You've been outbid!<br/>
+                            Bid again now.
+                        </div>
+                    </div>
+                    <div class="bidding--open-offer js--open-offer">
+                        <div class="message-box--open-offer">
+                            OPEN OFFERS! You may now select the lots to buy at the current sold price!
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!--FOOTER SECTION-->
+    <div class="client--bottom">
+        <div class="bottom-bg">
+            <!--LOT TABLE SECTION-->
+            <section class="lot-tables js-lot-tables">
+                <header class="lot-tables--header">
+                    <div class="lot-tables--tab-bar">
+                        <ul class="lot-tables--tabs">
+                            <li class="tab" rv-addclass="lotTable.allActive" data-tab="all" rv-on-click="tablecontroller.changeTab" rv-show="lotTable.allCount">
+                                ALL LOTS
+                                <span class="tab--counter" rv-text="lotTable.allCount"></span>
+                            </li>
+                            
+                            <li class="tab" rv-addclass="lotTable.biddingActive" data-tab="bidding" rv-on-click="tablecontroller.changeTab" rv-show="lotTable.biddingCount">
+                                BIDDING
+                                <span class="tab--counter" rv-text="lotTable.biddingCount"></span>
+                            </li>
+                            <li class="tab" rv-addClass="lotTable.watchingActive" data-tab="watching" rv-on-click="tablecontroller.changeTab" rv-show="lotTable.watchingCount">
+                                WATCHING
+                                <span class="tab--counter" rv-text="lotTable.watchingCount"></span>
+                            </li>
+                        </ul>
+                        <div class="lot-tables--search">
+                            <input type="text" class="field--text" placeholder="search" />
+                        </div>
+                        <div class="lot-tables--follow">
+                            <label class="field--toggle">
+                                <input type="checkbox" class="toggle_input" rv-checked="lotTable.followCurrentLot"/>
+                                <span>Follow Current Lot</span>
+                                <div class="toggle-control"></div>
+                            </label>
+                            
+                        </div>
+                    </div>
+                    <div class="lot-tables--column-headers">
+                        <div class="col-0">Lot</div>
+                        <div class="col-1and2">Description</div>
+                        <div class="col-3">Warranty</div>
+                        <div class="col-4">Price/Status</div>
+                        <div class="col-5">Watch</div>
+                    </div>
+                </header>
+                <div class="lot-table lots_all js--lots-all"  rv-show="lotTable.allActive">
+                    <div class="lot js--prebid-click" rv-each-lot="lotTable.lotList" rv-data-lot="lot.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="lot.bidder" rv-data-group="lot.group">
+                        <div class="col-0" rv-text="lot.lot"></div>
+                        <div class="col-1"><img class="lot--photo" rv-src="lot.photo | lotPhotoDirectory"/></div>
+                        <div class="col-2">
+                            <div class="lot--name" rv-text="lot.name"></div>
+                            <div class="lot--details">
+                                <label>S/N:</label>
+                                <span class="lot--value" rv-text="lot.serial"></span>
+                                <label>METER:</label>
+                                <span class="lot--value" rv-text="lot.meter"></span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <i class="icon-warranty" rv-show="lot.warranty"></i>
+                        </div>
+                        <div class="col-4" rv-data-lot="lot.lot">
+                            <div rv-hide="lot.soldPrice">
+                                <i class="icon-plus" rv-hide="lot.bid"></i>
+                                <div class="bid dollars" rv-show="lot.bid" rv-html="lot.bid | price"></div>
+                            </div>
+                            <div class="dollars" rv-show="lot.soldPrice" rv-html="lot.soldPrice | price"></div>
+                        </div>
+                        <div class="col-5 js--watch" rv-data-lot="lot.lot">
+                            <i class="icon-eye lot--watching" rv-addClass="lot.watching"></i>
+                        </div>
+                    </div>
+                </div> 
+                <div class="lot-table lots_bidding js--lots-bidding" rv-show="lotTable.biddingActive">
+                    <div class="lot js--prebid-click" rv-each-bidded="lotTable.biddingList" rv-data-lot="bidded.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="bidded.bidder" rv-data-group="bidded.group">
+                        <div class="col-0" rv-text="bidded.lot"></div>
+                        <div class="col-1"><img class="lot--photo" rv-src="bidded.photo | lotPhotoDirectory"/></div>
+                        <div class="col-2">
+                            <div class="lot--name" rv-text="bidded.name"></div>
+                            <div class="lot--details">
+                                <label>S/N:</label>
+                                <span class="lot--value" rv-text="bidded.serial"></span>
+                                <label>METER:</label>
+                                <span class="lot--value" rv-text="bidded.meter"></span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <i class="icon-warranty" rv-show="bidded.warranty"></i>
+                        </div>
+                        <div class="col-4" rv-data-lot="bidded.lot">
+                             <div rv-hide="bidded.soldPrice">
+                                <i class="icon-plus" rv-hide="bidded.bid"></i>
+                                <div class="bid dollars" rv-show="bidded.bid" rv-html="bidded.bid | price"></div>
+                            </div>
+                            <div class="dollars" rv-show="lot.soldPrice" rv-html="lot.soldPrice | price"></div>
+                        </div>
+                        <div class="col-5 js--watch" rv-data-lot="bidded.lot">
+                            <i class="icon-eye lot--watching" rv-addClass="bidded.watching"></i> 
+                        </div>
+                    </div>
+                </div>
+                <div class="lot-table lots_watching js--lots-watching" rv-show="lotTable.watchingActive">
+                    <div class="lot js--prebid-click" rv-each-watched="lotTable.watchingList" rv-data-lot="watched.lot" rv-lotstatus="lotTable.currentLot" rv-data-bidder="watched.bidder" rv-data-group="watched.group">
+                        <div class="col-0" rv-text="watched.lot"></div>
+                        <div class="col-1"><img class="lot--photo" rv-src="watched.photo | lotPhotoDirectory"/></div>
+                        <div class="col-2">
+                            <div class="lot--name" rv-text="watched.name"></div>
+                            <div class="lot--details">
+                                <label>S/N:</label>
+                                <span class="lot--value" rv-text="watched.serial"></span>
+                                <label>METER:</label>
+                                <span class="lot--value" rv-text="watched.meter"></span>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <i class="icon-warranty" rv-show="watched.warranty"></i>
+                        </div>
+                        <div class="col-4" rv-data-lot="watched.lot">
+                             <div rv-hide="watched.soldPrice">
+                                <i class="icon-plus" rv-hide="watched.bid"></i>
+                                <div class="bid dollars" rv-show="watched.bid" rv-html="watched.bid | price"></div>
+                            </div>
+                            <div class="dollars" rv-show="lot.soldPrice" rv-html="lot.soldPrice | price"></div>
+                        </div>
+                        <div class="col-5 js--watch" rv-data-lot="watched.lot">
+                            <i class="icon-eye lot--watching" rv-addClass="watched.watching"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--OTHER RINGS SECTION-->
+            <section class="other-rings">
+                <ul class="">
+                    <li class="other-ring">
+                        <header>
+                            <label>Ring</label>
+                            <span class="ring--label">2</span>
+                        </header>
+                        <div class="g-quarter">
+                            <img src="assets/img/crane.jpg"/>
+                            <div class="ring--lot">Lot 3128</div>
+                        </div>
+                        <div class="g-three-quarters">
+                            <div class="lot--name">1995 TADANO TR280XL 28 Ton 4x4x4 Rough Terrain Crane</div>
+                            <div class="g-half">
+                                <label>Ask:</label><span class="dollars">26000</span>
+                            </div>
+                            <div class="g-half">
+                                <label>High Bid:</label><span class="dollars">25000</span>
+                                <br/>
+                                <label>High Bidder:</label><span class="dollars">On-Site</span>
+                            </div>
+                        </div>
+                        <footer>
+                            <button class="button--unbound"><i class="icon-close"></i></button>
+                            <button class="button--unbound"><i class="icon-popout"></i></button>
+                        </footer>
+                    </li>
+                    <li class="other-ring">
+                        <header>
+                            <label>Ring</label>
+                            <span class="ring--label">3</span>
+                        </header>
+                        <div class="g-quarter">
+                            <img src="assets/img/grader.jpg"/>
+                            <div class="ring--lot">Lot 4568</div>
+                        </div>
+                        <div class="g-three-quarters">
+                            <div class="lot--name">2001 CATERPILLAR 16H Motor Grader</div>
+                            <div class="g-half">
+                                <label>Ask:</label><span class="dollars">220000</span>
+                            </div>
+                            <div class="g-half">
+                                <label>High Bid:</label><span class="dollars">215000</span>
+                                <br/>
+                                <label>High Bidder:</label><span class="dollars">On-Site</span>
+                            </div>
+                        </div>
+                        <footer>
+                            <button class="button--unbound"><i class="icon-close"></i></button>
+                            <button class="button--unbound"><i class="icon-popout"></i></button>
+                        </footer>
+                    </li>
+                    <li class="h-ta-center">
+                        <button class="button_secondary"><i class="icon-plus"></i>Add A Ring To Watch</button>
+                    </li>
+                </ul>
+
+            </section>
+        </div>
+    </div>
+</div>
+
+    <div class="counter-bidder js--counter-bidder">
+        
+        <div class="counter--bidding">
+            <div class="h-ta-center">
+                High Bid: <span class="CCY"></span><span class="dollars" rv-html="counterbidderData.highBid | price"></span>
+            </div>
+            <br/>
+
+            <button class="button" rv-on-click="counterbidder.onBidClick">Bid <span class="CCY"></span><span class="dollars" rv-html="counterbidderData.price | price"></button>
+            <br/><br/>
+            <button class="button_positive" rv-on-click="counterbidder.onSellClick">Sell</button>
+        </div>
+        
+        <div class="counter--lots">
+            <div class="h-ta-center">
+                <label>Current Lot: <span rv-text="counterbidderData.currentLot"></span></label>
+                <br/><label>Jump to Lots</label>
+            </div><br/>
+            <div class="g-third"><button class="button_hollow" rv-on-click="counterbidder.onLotClick" data-lot="0">Lot 1</button></div>
+            <div class="g-third"><button class="button_hollow" rv-on-click="counterbidder.onLotClick" data-lot="5">Lot 6</button></div>
+            <div class="g-third"><button class="button_hollow" rv-on-click="counterbidder.onLotClick" data-lot="9">Lot 10</button></div>
+        </div>
+
+        <div class="counter--bidding">
+            <button class="button_negative" rv-on-click="counterbidder.onMessageClick">Send Auctioneer's Message</button>
+        </div>
+    </div>
+
+    <div class="tooltips--content-placeholder">
+
+        <div class="js--settings-content">
+            <ul class="js--settings-object">
+                <li class="bid-field">
+                    <label class="toggle_icon toggle_icon_header">
+                        <input type="checkbox" rv-checked="user.audio">
+                        <span rv-text="user.audio | booltotext 'Audio'"></span><i class="icon-audio"></i> 
+                    </label>
+                </li>
+                <li class="bid-field">
+                    <label class="toggle_icon toggle_icon_header">
+                        <input type="checkbox" rv-checked="user.photos">
+                        <span rv-text="user.photos | booltotext 'Photos'"></span><i class="icon-Photos"></i>
+                    </label>
+                </li>
+            </ul>
+        </div>
+
+        <div class="js--confirmation-content">
+            <div class="header--confirmation js-confirm-object">
+                <div class="message-header">
+                    Success!
+                    <div rv-show="wonItems.listlength">You won <span rv-text="wonItems.listlength"></span> items!</div>
+                    <div rv-hide="wonItems.listlength">You won lot <span rv-text="wonItems.wonItem.lot"></span></div>
+                </div>
+                
+                <!-- SHOW IF YOU DIDN'T WIN MULTIPLES -->
+                <div class="message-body" rv-hide="wonItems.listlength">
+                    <div class="cart--item">
+                        <div class="g-quarter">
+                            <img class="lot--photo" rv-src="wonItems.wonItem.photo | lotPhotoDirectory"/>
+                        </div>
+                        <div class="g-three-quarters">
+                            <div>
+                                <div class="lot--number h-d-inline-block" rv-text="wonItems.wonItem.lot"></div>
+                                <div class="lot--name h-d-inline-block" rv-text="wonItems.wonItem.name"></div>
+                            </div>
+                            <div class="lot--details" rv-text="wonItems.wonItem.serial"></div>
+
+                            <div class="lot--sold-price dollars" rv-html="wonItems.wonItem.soldPrice | price"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CONVERT CURRENCY -->
+        <div class="ccy-converter-control js--convert-ccy--content">
+            <div class="js-ccy-object">
+                <div class="tooltip--close" rv-on-click="ccycontroller.onCloseClick"><i class="icon-close"></i></div>
+                <p>Convert prices to your preferred currency</p>
+                <hr>
+                 
+                <ul>
+                    <li class="bid-field">
+                        <label>Auction Currency</label>
+                        <span>CAD</span>
+                    </li>
+                    <li class="bid-field">
+                        <label>Your Currency</label>
+                        <div>
+                            <select name="select" class="js--ccy-selector field--select" rv-on-change="ccycontroller.onCCYChange">
+                                <option value="CAD">CAD</option>
+                                <option value="USD">USD</option>
+                                <option value="SGD">SGD</option>
+                                <option value="NZD">NZD</option>
+                                <option value="AUD">AUD</option>
+                                <option value="MXN">MXN</option>
+                                <option value="ZAR">ZAR</option>
+                                <option value="PLN">PLN</option>
+                                <option value="GBP">GBP</option>
+                                <option value="EUR">EUR</option>
+                                <option value="JPY">JPY</option>
+                                <option value="CNY">CNY</option>
+                                <option value="INR">INR</option>
+                                <option value="AED">AED</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="bid-field">
+                        <label class="field--toggle">
+                            <input type="checkbox" class="toggle_input" rv-checked="ccyconversion.active" rv-on-change="ccycontroller.onToggleClick"/>
+                            <span rv-text="ccyconversion.active | activeToButtonText"></span>
+                            <div class="toggle-control"></div>
+                        </label>
+                    </li>
+                </ul>
+                <!-- <button class="button_two-state" rv-on-click="ccycontroller.onToggleClick" rv-text="ccyconversion.active | activeToButtonText"></button> -->
+            </div>
+        </div>
+
+        <!-- CALCULATE MONTHLY PAYMENTS CONTROL -->
+        <div class="js--calculate-payments--content">
+            <div class="js-financing-object">
+                <div class="tooltip--close" rv-on-click="calccontroller.onCloseClick"><i class="icon-close"></i></div>
+                <p>Calculate your monthly payments</p>
+                <hr>
+                <ul>
+                    <li class="bid-field">
+                        <label>Interest Rate</label>
+                        <div class="field--w-modifier">
+                            <input type="text" class="field--text js--finance-interest" rv-value="finance.financeRate" rv-on-blur="calccontroller.onInterestBlur" rv-on-keydown="calccontroller.onInterestInput">
+                            <button rv-on-click="calccontroller.onInterestIncrement" data-increment="-0.5">-</button>
+                            <button rv-on-click="calccontroller.onInterestIncrement" data-increment="0.5">+</button>
+                        </div>
+                    </li>
+                    <li class="bid-field">
+                        <label>Payment Period</label>
+                        <div>
+                            <select name="select" class="js--finance-period field--select" rv-value="finance.financePeriod" rv-on-change="calccontroller.onPeriodUpdate">
+                              <option value="3">3 Months</option> 
+                              <option value="6">6 Months</option> 
+                              <option value="12">12 Months</option> 
+                              <option value="24">24 Months</option> 
+                              <option value="36">36 Months</option>
+                              <option value="48" selected>48 Months</option>
+                              <option value="60">60 Months</option>
+                              <option value="72">72 Months</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="bid-field">
+                        <label class="field--toggle">
+                            <input type="checkbox" class="toggle_input" rv-checked="finance.active" rv-on-change="calccontroller.onToggleClick"/>
+                            <span rv-text="finance.active | activeToButtonText"></span>
+                            <div class="toggle-control"></div>
+                        </label>
+                    </li>
+                </ul>
+                <!-- <button class="button_two-state" rv-on-click="calccontroller.onToggleClick" rv-text="finance.active | activeToButtonText"></button> -->
+            </div>
+        </div>
+
+
+        <div class="js--prebid-toggle--content">
+            <div class="h-overflow js--pre-bid-object">
+                <div class="tooltip--close" rv-on-click="prebidController.onCloseClick"><i class="icon-close"></i></div>
+                <div class="tooltip-content ">
+                    <div>
+                        <span class="c-brand" >Lot <span rv-text="prebid.lot.lot"></span></span>
+                        <div class="lot--name" rv-text="prebid.lot.name"></div>
+                    </div>
+                    <div>
+                        <div class="g-half">
+                            <ul>
+                                <li>
+                                    <img class="lot--photo" rv-src="prebid.lot.photo | lotPhotoDirectory"/>
+                                </li>
+                                <li class="lot--field">
+                                    <div class="lot--field_half">
+                                        <label>Serial</label>
+                                        <span rv-text="prebid.lot.serial"></span>
+                                    </div>
+                                    <div class="lot--field_half"> 
+                                        <label>Meter</label>
+                                        <span rv-text="prebid.lot.meter"></span>
+                                    </div> 
+                                </li>
+                                <li class="lot--field">
+                                    <button class="button--unbound">
+                                        <i class="icon-dei"></i><label>View Detailed Equipment Information</label>
+                                    </button>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    
+                        <div class="g-half">
+                            <ul>
+                                <li class="lot--field" rv-show="prebid.lot.comeswith">
+                                    <label>Comes With</label>
+                                    <p rv-text="prebid.lot.comeswith"></p>
+                                </li>
+                                <li class="lot--field" rv-show="prebid.lot.catnotes">
+                                    <label>Catalog Notes</label>
+                                    <p rv-text="prebid.lot.catnotes"></p>
+                                </li>
+                            </ul>
+                            <ul class="bordered-area">
+                                 <li class="bid-field">
+                                    <label>Max Bid</label>
+                                    <div class="input--money">
+                                        <div class="symbols">
+                                            <span class="CCY"></span> <span class="dollars"></span>
+                                        </div>
+                                        <input type="number" class="field--text" rv-value="prebid.bid" rv-on-focus="prebidController.onFocus" rv-on-keypress="prebidController.onKeyPress"/>
+                                    </div>
+                                </li>
+                                <li class="bid-field" rv-show="prebid.conversionActive">
+                                    <label>Local currency</label>
+                                    <span rv-html="prebid.bid | convertedPrebid"></span>
+                                </li>
+                            
+                                <li class="bid-field bid-field_left">
+                                    <button class="button_negative" rv-on-click="prebidController.delete" rv-show="prebid.bidActive">Cancel Bid</button>
+                                    <button class="button h-float-right" rv-on-click="prebidController.bid">Place Bid</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript" src="assets/js/main-min.js"></script>
+    
+    <script id="currentlot" type="x-tmpl-mustache">
+        <h5 class="lot--number">Lot {{ lot }}</h5>
+        <h2 class="lot--title">{{ name }}</h2>
+
+        <div class="lot--photos">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    {{#photos}}
+                    <div class="swiper-slide">
+                        <img src="assets/js/data/{{ . }}" />
+                    </div>
+                    {{/photos}}
+                </div>
+                
+                <div class="swiper-pagination"></div>
+                
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                
+            </div>
+            <div class="lot--bottom">
+                <button class="button--unbound">
+                    <i class="icon-dei"></i><label>View Detailed Equipment Information</label>
+                </button>
+            </div>
+        </div>
+        <div class="lot--fields">
+            <div class="lot--field">
+                <div class="lot--field_half">
+                    <label>Serial Number / VIN</label>
+                    <span class="">{{ serial }}</span>
+                </div>
+                <div class="lot--field_half">
+                    <label>Meter Reads</label>
+                    <span class="">{{ meter }}</span>
+                </div>
+            </div>
+            <div class="lot--field">
+                <label>Comes With</label>
+                <span class="">{{ comeswith }}</span>
+            </div>
+            <div class="lot--field">
+                <label>Catalogue Notes</label>
+                <span class="">{{ catnotes }}</span>
+            </div>
+
+            {{#warranty}}
+                <div class="lot--field_warranty">
+                    <i class="c-brand icon-warranty h-mr-100"></i>Powertrain Service Warranty
+                </div>
+            {{/warranty}}
+        </div>
+    </script>
+</body>
+
+</html>

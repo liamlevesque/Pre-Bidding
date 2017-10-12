@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ritchie Bros. Live Auction</title>
+    <link href="assets/img/favicon.ico" rel="Shortcut Icon">
+    <link type="text/css" rel="stylesheet" href="assets/css/release1.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body id="js--body" class="CAD">
+
+<div class="main-body-2">
+
+    <header class="js--header main-header">
+        <div class="header--left">
+            <a href="http://liamlevesque.github.io/Pre-Bidding/enter-auction.html" class="logo js--logo">
+                <!-- @include '/assets/components/logos' -->
+            </a>
+            <div class="header--auction-title">
+                <h1 class="header--auction c-grey">Chilliwack, BC, CAN <span class="h-mr-50">&middot;</span><span class="c-brand">Ring 1</span></h1>
+                <div class="h-mt-50">
+                    <!-- @include '/assets/components/auctioneer-and-media' -->
+
+                    <h5 class="h-d-inline-block c-price js--auction-attendees h-mr-50 js--ppl-tooltip">12,481 People Online</h5>
+                </div>
+            </div>
+        </div>
+        <div class="header--right">
+            <div class="header--upper h-ta-right">
+                <!-- @include '/assets/components/header-upper' -->
+            </div>
+            <div class="header--right_inner">
+                <!-- @include '/assets/components/header-ccy-credit-user' -->
+            </div>
+            
+        </div>
+
+    </header>
+
+    <div class="client--upper">
+        <div class="lot-info js--lot-info" rv-lotpreviews="lotObject.lot">
+            
+        </div>
+        <div class="lot-bidding js--bid-area">
+            <div class="bidding--area" rv-isgroupbidding="saleItem.isgroup">
+                
+                <ul class="bidding--info">
+                    <li class="bid-field">
+                        <label rv-hide="bidObject.bidStatus | equals 'soldYou'">Ask Price</label>
+                        <label rv-show="bidObject.bidStatus | equals 'soldYou'">Sold</label>
+
+                        <span class="h-t-large">
+                            <span class="bid-value dollars" rv-html="bidObject.askPrice | price"></span><span rv-if="bidObject.lotQuantity | greaterThanToFalse 1">/{bidObject.lotQuantityUnit}</span>
+                        </span>
+                    </li>
+                    <li class="bid-field" rv-hide="bidObject.bidStatus | equals 'soldYou'">
+                        <label>High Bid:</label>
+                        <span class="bid-value dollars" rv-html="bidObject.bidPrice | price"></span><span rv-if="bidObject.lotQuantity | greaterThanToFalse 1">/{bidObject.lotQuantityUnit}</span>
+                        
+                    </li>
+                    <li class="bid-field">
+                        <label>High Bidder:</label>
+                        <span class="bid-value" rv-hide="bidObject.bidStatus | equals 'soldYou'">Internet</span>
+                        <span class="bid-value" rv-text="bidObject.bidder | bidderoryou" rv-show="bidObject.bidStatus | equals 'soldYou'"></span>
+                        <span class="bid-value bid-value_sub" rv-text="bidObject.location">Location</span>
+                    </li>
+                </ul>
+                    
+                <div class="bidding">
+                            
+                    <div class="bidding--activate h-viewer-hidden" rv-hide="bidObject.lotSelected" rv-biddingmode="bidObject.bidMode" rv-activatewarning="bidObject.disabledClickCount">
+                        <span class="normal">Check the circle next to the lot you want to bid on</span>
+                        <span class="openoffer"><b>OPEN OFFER:</b><br/>Check the circle next to the lots you want to buy at this price</span>
+                        <span class="runnerup"><b>RUNNER UP:</b><br/>Check the circle next to the lots you want to buy at this price</span>
+                        <span class="winner"><b>WINNER'S CHOICE:</b><br/>Check the circle next to the lots you want to buy at this price</span>
+                    </div>
+
+                    <div class="bidding--warning js--lotWarning">To pick a different lot, please uncheck the selected lot first.</div>
+                    
+                    <!-- @include '/assets/components/bidding-messages' -->
+
+                    <button class="bidding--bid-button" rv-lotbidstate="bidObject.bidStatus" rv-on-click="bidController.onBidClick">
+                        <span class="bidder--option bidder--disabled">
+                            Bid <span class="dollars" rv-html="bidObject.askPrice | price"></span><span class="" rv-if="bidObject.lotQuantity | greaterThanToFalse 1">/{bidObject.lotQuantityUnit}</span>
+                            <h5 class="h-mt-50" rv-if="bidObject.bidStatus | equals 'soldYou'">({ bidObject.lotQuantity } Total = <span class="dollars" rv-html="bidObject.askPrice | multiply bidObject.lotQuantity"></span>)</h5>
+                        </span>
+
+                        <span class="bidder--option bidder--active">
+                            Bid <span class="dollars" rv-html="bidObject.askPrice | price"></span>/{bidObject.lotQuantityUnit}
+                            <h5 class="h-mt-50" rv-if="bidObject.lotQuantity | greaterThanToFalse 1">({ bidObject.lotQuantity } Total = <span class="dollars" rv-html="bidObject.askPrice | multiply bidObject.lotQuantity"></span>)</h5>
+                        </span>
+                    </button>
+
+                </div>
+
+                <div class="lot-tables--follow">
+                    <label class="field--toggle">
+                        <input type="checkbox" checked="checked" class="toggle_input"/>
+                        <span>Follow Current Lot</span>
+                        <div class="toggle-control"></div>
+                    </label>
+                    
+                </div>
+            </div>
+            <div class="bidding--group" rv-itemactive="bidObject.lotSelected" rv-biddingmode="bidObject.bidMode">
+                <div class="bidding--header">
+                    <span class="normal">Choice of 9</span>
+                    <span class="openoffer">Open Offer: 9 Remaining</span>
+                    <span class="runnerup">Runner Up: 9 Remaining</span> 
+                    <span class="winner">Winner's Choice: 9 Remaining</span>
+
+                    <div class="select-all openoffer runnerup winner">
+                        
+                        Select All Remaining
+
+                        <label class="lot--selector"> 
+                            <input type="checkbox" rv-on-click="bidController.onSelectAllClick">
+                            <span>
+                                <i class="icon-check-inner"></i>
+                            </span>
+                        </label> 
+                    </div>
+
+                </div>
+                <div class="group--body group--body_b"> 
+                    <ul>
+                        <li class="group--lot js--group-lot" rv-each-lotObject="bidObject.groupList" rv-data-lotnumber="lotobject.lot" rv-class-s-sold="lotobject.soldPrice" rv-class-s-out="lotobject.status" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
+                            <label class="lot--selector"> 
+                                <input type="checkbox" rv-on-click="bidController.activate">
+                                <span>
+                                    <i class="icon-check-inner"></i>
+                                </span>
+                            </label>
+                            <div class="lot--photo">
+                                <img class="lot--photo" src="assets/js/data/FencePanel.jpg">
+                                <i class="icon-warranty" rv-if="lotobject.warranty"></i>
+                                <i class="icon-ironclad" rv-if="lotobject.ironclad"></i>
+                            </div>
+                            <div class="lot--values">
+                                <div class="lot--name">LOT { lotobject.lot }</div> 
+                                <div class="lot--value">{ lotobject.name }</div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="client--msg js--main-body">
+        <div class="auctioneers-message js--auctioneer-msg" rv-addclass="user.message">
+            <label>Auctioneer's Message</label>
+            <p rv-text="user.message"></p>
+            <button class="button--unbound" rv-on-click="headerController.onDismissMSGClick"><i class="icon-close"></i></button>
+        </div>
+    </div>
+
+	<div class="client--bottom js--lot-table-area">
+        <div class="bottom-bg">
+            <!--LOT TABLE SECTION-->
+            <section class="lot-tables">
+                <header class="lot-tables--header">
+                    <div class="lot-tables--column-headers">
+                        <div class="col-0">Lot</div>
+                        <div class="col-2a">Description</div>
+                        <div class="col-2b">Serial Number</div>
+						<div class="col-2c">Meter Reads</div>
+						<div class="col-2d">Photo</div>
+						<div class="col-5">preBid <i class="info-icon icon-help"></i></div>
+                        <div class="col-5b">Status</div>
+                    </div>
+                </header>
+                <div class="lot-scroll">
+                    <div class="lot-table lots_all js-lot-tables2">
+                        <div class="lot" rv-each-lotObject="lotObject2.lotList" rv-class-s-sold="lotobject.soldPrice" rv-class-s-outofauction="lotobject.status" rv-class-s-youwon="lotobject.soldToYou" rv-data-lot="lotobject.lot" rv-class-s-currentLot="lotObject2.currentLot | equals lotobject.lot">
+                            <div class="col-0" rv-text="lotobject.lot"></div>
+                            <div class="col-2a">
+                                <span class="lot-guarantees" rv-icwarrantytooltip="lotobject">
+                                    <i class="icon-warranty" rv-if="lotobject.warranty"></i>
+                                    <i class="icon-ironclad" rv-if="lotobject.ironclad"></i>
+                                </span>
+                                <a href="http://rbauction.com" class="lot--name link__external" rv-text="lotobject.name"></a>
+                            </div>
+                            <div class="col-2b">
+                                <span class="lot--value" rv-text="lotobject.serial"></span>
+                            </div>
+                            <div class="col-2c">
+                               <span class="lot--value" rv-text="lotobject.meter"></span>
+                            </div>
+                            <div class="col-2d">
+                                <img class="lot--photo-icon js--lot-preview-hover" src="assets/img/photo.png"/>
+                            </div>
+                            <div class="col-5">
+                                <div data-bid="0" class="lot--add-bid js--max-bid-tooltip" rv-data-lot="lotobject.lot">
+                                    <span class="dollars" rv-html="lotobject.bid | price" rv-show="lotobject.bid"></span>
+                                    <span rv-hide="lotobject.bid"><i class="icon-plus"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-5b">
+                                <label class="lot--sold-label" rv-show="lotobject.soldPrice">Sold <span rv-show="lotobject.soldToYou">To You</span></label>
+                                <label class="lot--sold-label" rv-show="lotobject.status" rv-text="lotobject.status"></label>
+                                <div class="dollars" rv-unless="lotobject.quantity | greaterThanToFalse 1" rv-html="lotobject.soldPrice | price" rv-show="lotobject.soldPrice"></div>
+                                <div class="dollars" rv-if="lotobject.quantity | greaterThanToFalse 1" rv-show="lotobject.soldPrice">
+                                    <span rv-html="lotobject.unitPrice | multiply lotobject.quantity"></span>/{lotobject.quantityUnit}
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div> 
+                </div>
+            </section>
+            
+        </div>
+
+        <!-- @include '/assets/components/tutorial-object' -->
+    </div>
+
+</div>
+
+<div class="stuck--footer">
+    <!-- @include '/assets/components/other-rings' -->
+    <!-- @include '/assets/components/prototype-controls' -->	
+</div>
+
+<!-- @include '/assets/components/kicked-out' -->
+<!-- @include '/assets/components/disconnected' -->
+<!-- @include '/assets/components/tooltips' -->    
+<!-- @include '/assets/components/calculators' -->
+
+<div class="lot--photo-preview js--preview-photo">
+    <img src="assets/img/grader.jpg"/> 
+</div>
+
+<script type="text/javascript" src="assets/js/main-min.js"></script>
+<!-- @include '/assets/components/lot-preview' -->
+</body>

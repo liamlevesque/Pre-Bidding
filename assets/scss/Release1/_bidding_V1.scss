@@ -470,7 +470,7 @@
 				border: none;
 				background-color: lighten($error-colour, 10%);
 				color: white;
-				@extend .icon-sale;
+				@extend .icon-sold;
 
 				&:before{
 					color: darken($error-colour,25%);
@@ -808,6 +808,21 @@
 
 			@include breakpoint(large){
 				width: $lot-photo-width - 10px;
+			}
+
+			i{
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background-color: white;
+				padding: -5px;
+			}
+
+			i + i{
+				right: 17px;
 			}
 
 		}

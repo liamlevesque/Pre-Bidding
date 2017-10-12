@@ -432,6 +432,7 @@ rivets.formatters.validateBid = function(value,offIncrement,bids,credit){
 //SIMPLE BIDDING PROTOTYPE
 	
 	var bidObject = {
+		"groupList" : [],
 		"lotSelected": 0,
 		"bidStatus": 'disabled',
 		"bidder" : 'v10005',
@@ -964,7 +965,7 @@ var lotObject2 = {
 
 	lotObjectController2 = {
 
-	};
+	}; 
 
 rivets.bind($('.js-lot-tables2'),{
 	lotObject2: lotObject2
@@ -985,7 +986,10 @@ $.ajax({
 
 
 function buildLotTable(data){
-	for(var i = 0; i < data[0].lots.length; i++) lotObject2.lotList.push(data[0].lots[i]);
+	for(var i = 0; i < data[0].lots.length; i++){
+		lotObject2.lotList.push(data[0].lots[i]);
+		if(i > 8 && i < 16) bidObject.groupList.push(data[0].lots[i]);
+	} 
 
 	lotObject2.currentLot = 4;
 
@@ -1021,7 +1025,63 @@ function buildLotTable(data){
 		}
 		
 	});
+
+	$('.js--ironclad-tooltip').tooltipster({
+		content: $('.js--tooltip-ironclad').detach(),
+		theme: 'ritchie-tooltips_medium',
+		delay: tooltipDelay,
+		interactive: true,
+		contentAsHTML: true,
+		trigger: 'custom',
+	    triggerOpen: {
+	        mouseenter: true
+	    },
+	    triggerClose: {
+	        click: true,
+	        scroll: true,
+	        mouseleave: true
+	    },
+		side: 'top'
+	});
+
+	$('.js--warranty-tooltip').tooltipster({
+		content: $('.js--tooltip-warranty').detach(),
+		theme: 'ritchie-tooltips_medium',
+		delay: tooltipDelay,
+		interactive: true,
+		contentAsHTML: true,
+		trigger: 'custom',
+	    triggerOpen: {
+	        mouseenter: true
+	    },
+	    triggerClose: {
+	        click: true,
+	        scroll: true,
+	        mouseleave: true
+	    },
+		side: 'top'
+	});
+
+	$('.js--icwarranty-tooltip').tooltipster({
+		content: $('.js--tooltip-icwarranty').detach(),
+		theme: 'ritchie-tooltips_medium',
+		delay: tooltipDelay,
+		interactive: true,
+		contentAsHTML: true,
+		trigger: 'custom',
+	    triggerOpen: {
+	        mouseenter: true
+	    },
+	    triggerClose: {
+	        click: true,
+	        scroll: true,
+	        mouseleave: true
+	    },
+		side: 'top'
+	});
 }
+
+
 
 
 

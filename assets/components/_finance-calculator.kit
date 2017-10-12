@@ -1,0 +1,45 @@
+<div class="expander js--finance-calc">
+    <div class="expander--toggle js-expander-toggle">
+        <label>Finance Calculator</label>
+    </div>
+    <div class="expander--content">
+        <div class="financing-calculation setting js-financing-object2">
+            <div class="setting--result">
+                <label>Estimated Finance Payment</label>
+                <div class="result c-finance">
+                    <div rv-html="finance2.payment | convertedPrice2"></div>
+                    <span class="h-t-xs h-tt-uppercase">On Approved Credit/ <br/>Subject to Financing Approval</span>
+                </div>
+                <i class="icon-settings toggle-icon" rv-on-click="calccontroller2.onToggleClick" rv-activeToggle="finance2.editing"></i>
+            </div>
+            <div class="setting--controls" rv-show="finance2.editing">
+                <div class="setting--row">
+                        <label>Interest Rate</label>
+                    <div class="field--w-modifier">
+                        <input type="text" class="field--text js--finance-interest" rv-value="finance2.financeRate" rv-on-blur="calccontroller2.onInterestBlur" rv-on-keydown="calccontroller2.onInterestInput">
+                        <button class="button" rv-on-click="calccontroller2.onInterestIncrement" data-increment="-0.5">-</button>
+                        <button class="button" rv-on-click="calccontroller2.onInterestIncrement" data-increment="0.5">+</button>
+                    </div>
+                </div>
+                <div class="setting--row">
+                    <label for="">Payment Period</label>
+                    <select name="select" class="js--finance-period field--select" rv-value="finance2.financePeriod" rv-on-change="calccontroller2.onPeriodUpdate">
+                        <option value="3">3 Months</option> 
+                        <option value="6">6 Months</option> 
+                        <option value="12">12 Months</option> 
+                        <option value="24">24 Months</option> 
+                        <option value="36">36 Months</option>
+                        <option value="48" selected>48 Months</option>
+                        <option value="60">60 Months</option>
+                        <option value="72">72 Months</option>
+                    </select>
+                </div>
+                <div class="setting--row">
+                    <label for="">Convert Currency</label>
+                    <button class="button_text button_text--s" rv-on-click="calccontroller2.showCCYConverter">Show Currency Converter</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

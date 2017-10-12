@@ -627,138 +627,26 @@
                     </div>
 
                 </div>
-                <div class="group--body group--body_b">
+                <div class="group--body group--body_b"> 
                     <ul>
-                        <li class="group--lot js--group-lot s-sold" data-lotnumber="10" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
+                        <li class="group--lot js--group-lot" rv-each-lotObject="bidObject.groupList" rv-data-lotnumber="lotobject.lot" rv-class-s-sold="lotobject.soldPrice" rv-class-s-out="lotobject.status" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
                             <label class="lot--selector"> 
                                 <input type="checkbox" rv-on-click="bidController.activate">
                                 <span>
                                     <i class="icon-check-inner"></i>
                                 </span>
                             </label>
-                            <img class="lot--photo" src="assets/js/data/FencePanel.jpg">
+                            <div class="lot--photo">
+                                <img class="lot--photo" src="assets/js/data/FencePanel.jpg">
+                                <i class="icon-warranty" rv-show="lotobject.warranty"></i>
+                                <i class="icon-ironclad" rv-show="lotobject.ironclad"></i>
+                            </div>
                             <div class="lot--values">
-                                <div class="lot--name">LOT 10</div> 
-                                <div class="lot--value">Quantity of 30 Ft of Aluminum Fence Panels</div>
+                                <div class="lot--name">LOT { lotobject.lot }</div> 
+                                <div class="lot--value">{ lotobject.name }</div>
                             </div>
                         </li>
-                        <li class="group--lot js--group-lot s-out" data-lotnumber="11" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
-                            <label class="lot--selector"> 
-                                <input type="checkbox" rv-on-click="bidController.activate">
-                                <span>
-                                    <i class="icon-check-inner"></i>
-                                </span>
-                            </label>
-                            <img class="lot--photo" src="assets/js/data/FencePanel.jpg">
-                            <div class="lot--values">
-                                <div class="lot--name">LOT 11</div>
-                                <div class="lot--value">Quantity of 45 Ft of Aluminum Fence Panels</div>
-                            </div>
-                        </li>
-                        <li class="group--lot js--group-lot" data-lotnumber="12" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
-                            <label class="lot--selector"> 
-                                <input type="checkbox" rv-on-click="bidController.activate">
-                                <span>
-                                    <i class="icon-check-inner"></i>
-                                </span>
-                            </label>
-                            <img class="lot--photo" src="assets/js/data/FencePanel.jpg">
-                            <div class="lot--values">
-                                <div class="lot--name">LOT 12</div>
-                                <div class="lot--value">Quantity of 32 Ft of Aluminum Fence Panels</div>
-                            </div>
-                        </li>
-                        <li class="group--lot js--group-lot" data-lotnumber="13" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
-                            <label class="lot--selector"> 
-                                <input type="checkbox" rv-on-click="bidController.activate">
-                                <span>
-                                    <i class="icon-check-inner"></i>
-                                </span>
-                            </label>
-                            <img class="lot--photo" src="assets/js/data/FencePanel.jpg">
-                            <div class="lot--values">
-                                <div class="lot--name">LOT 13</div>
-                                <div class="lot--value">Quantity of 65 Ft of Aluminum Fence Panels</div>
-                            </div>
-                        </li>
-                        <li class="group--lot js--group-lot" data-lotnumber="14" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
-                            <label class="lot--selector"> 
-                                <input type="checkbox" rv-on-click="bidController.activate">
-                                <span>
-                                    <i class="icon-check-inner"></i>
-                                </span>
-                            </label>
-                            <img class="lot--photo" src="assets/js/data/FencePanel.jpg">
-                            <div class="lot--values">
-                                <div class="lot--name">LOT 14</div>
-                                <div class="lot--value">Quantity of 28 Ft of Aluminum Fence Panels</div>
-                            </div>
-                        </li>
-                        <li class="group--lot js--group-lot" data-lotnumber="15" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
-                            <label class="lot--selector"> 
-                                <input type="checkbox" rv-on-click="bidController.activate">
-                                <span>
-                                    <i class="icon-check-inner"></i>
-                                </span>
-                            </label>
-                            <img class="lot--photo" src="assets/js/data/FencePanel.jpg">
-                            <div class="lot--values">
-                                <div class="lot--name">LOT 15</div>
-                                <div class="lot--value">Quantity of 45 Ft of Aluminum Fence Panels</div>
-                            </div>
-                        </li>
-                        <li class="group--lot js--group-lot" data-lotnumber="16" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
-                            <label class="lot--selector"> 
-                                <input type="checkbox" rv-on-click="bidController.activate">
-                                <span>
-                                    <i class="icon-check-inner"></i>
-                                </span>
-                            </label>
-                            <img class="lot--photo" src="assets/js/data/8729154_1.jpg">
-                            <div class="lot--values">
-                                <div class="lot--name">LOT 16</div>
-                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
-                            </div>
-                        </li>
-                        <li class="group--lot js--group-lot" data-lotnumber="17" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
-                            <label class="lot--selector"> 
-                                <input type="checkbox" rv-on-click="bidController.activate">
-                                <span>
-                                    <i class="icon-check-inner" rv-checked="bidObject.lotSelected"></i>
-                                </span>
-                            </label>
-                            <img class="lot--photo" src="assets/js/data/8720400_1.jpg">
-                            <div class="lot--values">
-                                <div class="lot--name">LOT 17</div>
-                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
-                            </div>
-                        </li>
-                        <li class="group--lot js--group-lot" data-lotnumber="18" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
-                            <label class="lot--selector"> 
-                                <input type="checkbox" rv-on-click="bidController.activate">
-                                <span>
-                                    <i class="icon-check-inner" rv-checked="bidObject.lotSelected"></i>
-                                </span>
-                            </label>
-                            <img class="lot--photo" src="assets/js/data/8733298_1.jpg">
-                            <div class="lot--values">
-                                <div class="lot--name">LOT 18</div>
-                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
-                            </div>
-                        </li>
-                        <li class="group--lot js--group-lot" data-lotnumber="19" rv-lotactive="bidObject.lotSelected" rv-on-click="bidController.changePreview"  rv-lotpreview="bidObject.previewLot">
-                            <label class="lot--selector"> 
-                                <input type="checkbox" rv-on-click="bidController.activate">
-                                <span>
-                                    <i class="icon-check-inner" rv-checked="bidObject.lotSelected"></i>
-                                </span>
-                            </label>
-                            <img class="lot--photo" src="assets/js/data/8733298_1.jpg">
-                            <div class="lot--values">
-                                <div class="lot--name">LOT 19</div>
-                                <div class="lot--value">2008 KENWORTH T800 T/A Winch Tractor</div>
-                            </div>
-                        </li>
+                        
                     </ul>
                 </div>
             </div>
@@ -794,6 +682,7 @@
                             <div class="col-0" rv-text="lotobject.lot"></div>
                             <div class="col-2a">
                                 <i class="icon-warranty" rv-show="lotobject.warranty"></i>
+                                <i class="icon-ironclad" rv-show="lotobject.ironclad"></i>
                                 <a href="http://rbauction.com" class="lot--name" rv-text="lotobject.name"></a>
                             </div>
                             <div class="col-2b">
@@ -845,135 +734,8 @@
 </div>
 
 <div class="stuck--footer">
-        <section class="other-rings js--multi-attend s-hidden">
-                <button class="overflow-arrow arrow--prev"></button>
-                <button class="overflow-arrow arrow--next"></button>
-                <ul class="">
-                    <li class="other-ring s-active">
-                        <div class="ring--photo">
-                            <img src="assets/img/crane.jpg"/>
-                            <div class="ring--lot">Lot 321</div>
-                        </div>
-                        <div class="ring--data">
-                            <header>
-                                <span class="ring--label">Chilliwack, BC, CAN &middot; <span class="c-brand">Ring 1</span></span>
-                                <div class="ring--lots">
-                                    Lots 1 - 419, 8001 - 8097
-                                </div>
-                                <button class="button--unbound"><i class="icon-close"></i></button>
-                            </header>
-                            <div class="data--body">
-                                <div class="lot--name">1995 TADANO TR280XL 28 Ton 4x4x4 Rough Terrain Crane</div>
-                                <div class="lot--detail">
-                                    <label>Offerta:</label><span class="dollars">9,999,000</span>
-                                </div>
-                                <div class="lot--detail">
-                                    <label>Richiedi:</label><span class="dollars h-t-m">9,999,999</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ring--ended">
-                            <div class="ring--photo">
-                                <svg class="kickedout--img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 241.49 173.99"><defs><style>.cls-1{fill:#231f20;}.cls-2{fill:#fff;}.cls-3{fill:#fdef40;}.cls-4{fill:#91d6e3;}.cls-5{fill:#8ec73f;}.cls-6{fill:#b36fae;}.cls-7{fill:#e83f33;}.cls-8{fill:#305dab;}.cls-9{fill:#05060a;}.cls-10{fill:#b76cac;}.cls-11{fill:#91d6e0;}</style></defs><title>BroadcastEnded</title><rect class="cls-1" width="241.49" height="173.99"/><rect class="cls-2" x="14.78" y="15" width="30.43" height="122.15"/><rect class="cls-3" x="45.21" y="15" width="30.43" height="122.15"/><rect class="cls-4" x="75.64" y="15" width="30.43" height="122.15"/><rect class="cls-5" x="106.07" y="15" width="30.43" height="122.15"/><rect class="cls-6" x="136.49" y="15" width="30.43" height="122.15"/><rect class="cls-7" x="166.92" y="15" width="30.43" height="122.15"/><rect class="cls-8" x="197.35" y="15" width="30.43" height="122.15"/><rect class="cls-8" x="14.78" y="138.62" width="30.43" height="20.37"/><rect class="cls-9" x="45.21" y="138.62" width="30.43" height="20.37"/><rect class="cls-10" x="75.64" y="138.62" width="30.43" height="20.37"/><rect class="cls-1" x="106.07" y="138.62" width="30.43" height="20.37"/><rect class="cls-11" x="136.49" y="138.62" width="30.43" height="20.37"/><rect class="cls-1" x="166.92" y="138.62" width="30.43" height="20.37"/><rect class="cls-2" x="197.35" y="138.62" width="30.43" height="20.37"/><circle class="cls-2" cx="90.85" cy="55.15" r="11.27"/><circle class="cls-2" cx="151.71" cy="55.15" r="11.27"/><path class="cls-2" d="M72.45,132.68l-8.7-12.22a113.51,113.51,0,0,1,131.48,0l-8.7,12.22A98.51,98.51,0,0,0,72.45,132.68Z" transform="translate(-8.75 -13.09)"/></svg>
-                            </div>
-                            <div class="ring--data">
-                               <header>
-                                    <span class="ring--label">Chilliwack, BC, CAN &middot; <span class="c-brand">Ring 1</span></span>
-                                    <div class="ring--lots">
-                                        Lots 1 - 419, 8001 - 8097
-                                    </div>
-                                    <button class="button--unbound"><i class="icon-close"></i></button>
-                                </header>
-                                <div class="data--body">
-                                    <strong>This broadcast has ended</strong>
-                                </div>
-
-                            </div>
-                        </div>
-                    </li>
-                    <li class="other-ring">
-                        <div class="ring--photo">
-                            <img src="assets/img/grader.jpg"/>
-                            <div class="ring--lot">Lot 512</div>
-                        </div>
-                        <div class="ring--data">
-                            <header>
-                                <span class="ring--label">Chilliwack, BC, CAN &middot; <span class="c-brand">Ring 2</span></span>
-                                <div class="ring--lots">
-                                    Lots 420 - 891
-                                </div>
-                                <button class="button--unbound"><i class="icon-close"></i></button>
-                            </header>
-                            <div class="data--body">
-                                <div class="lot--name">1995 TADANO TR280XL 28 Ton 4x4x4 Rough Terrain Crane</div>
-                                <div class="lot--detail">
-                                    <label>High Bid:</label><span class="dollars">25,000</span>
-                                </div>
-                                <div class="lot--detail">
-                                    <label>Ask:</label><span class="dollars h-t-m">26,000</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="other-ring">
-                        <div class="ring--photo">
-                            <img src="assets/img/crane.jpg"/>
-                            <div class="ring--lot">Lot 321</div>
-                        </div>
-                        <div class="ring--data">
-                            <header>
-                                <span class="ring--label">Chilliwack, BC, CAN &middot; <span class="c-brand">Ring 1</span></span>
-                                <div class="ring--lots">
-                                    Lots 1 - 419, 8001 - 8097
-                                </div>
-                                <button class="button--unbound"><i class="icon-close"></i></button>
-                            </header>
-                            <div class="data--body">
-                                <div class="lot--name">1995 TADANO TR280XL 28 Ton 4x4x4 Rough Terrain Crane</div>
-                                <div class="lot--detail">
-                                    <label>High Bid:</label><span class="dollars">25,000</span>
-                                </div>
-                                <div class="lot--detail">
-                                    <label>Ask:</label><span class="dollars h-t-m">26,000</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="other-ring">
-                        <div class="ring--photo">
-                            <img src="assets/img/grader.jpg"/>
-                            <div class="ring--lot">Lot 512</div>
-                        </div>
-                        <div class="ring--data">
-                            <header>
-                                <span class="ring--label">Chilliwack, BC, CAN &middot; <span class="c-brand">Ring 2</span></span>
-                                <div class="ring--lots">
-                                    Lots 420 - 891
-                                </div>
-                                <button class="button--unbound"><i class="icon-close"></i></button>
-                            </header>
-                            <div class="data--body">
-                                <div class="lot--name">1995 TADANO TR280XL 28 Ton 4x4x4 Rough Terrain Crane</div>
-                                <div class="lot--detail">
-                                    <label>High Bid:</label><span class="dollars">25,000</span>
-                                </div>
-                                <div class="lot--detail">
-                                    <label>Ask:</label><span class="dollars h-t-m">26,000</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-
-            </section>
-    <button class="js--logo-swap">Swap Logo Language</button>
-    <button class="js--viewer-toggle">Toggle Guest Mode</button>
-    <button class="js--auctioneer-msg-button">Show Random auctioneer's message</button>
-    <button class="js--goToOpenOffers">Toggle Bidding Mode</button>
-    <button class="js--toggleMultiAttend">Toggle Multi-Attend</button>
-    <button class="js--kickMeOut">Kick Me Out</button>
-    <button class="js--disconnect">Disconnect Me</button>
-    <button class="js--flashError">Flash Error</button>
+    <!-- @include '/assets/components/other-rings' -->	    
+    <!-- @include '/assets/components/prototype-controls' -->	
     
 </div>
 
@@ -1343,6 +1105,11 @@
                 {{/meter}}
             </div>
            
+            {{#ironclad}}
+                <div class="lot--field lot--field_warranty">
+                    <i class="c-ironclas icon-ironclad h-mr-50"></i>Protected by <a>IronClad Assurance</a>
+                </div>
+            {{/ironclad}}
             {{#warranty}}
                 <div class="lot--field lot--field_warranty">
                     <i class="c-brand icon-warranty h-mr-50"></i>Powertrain Service Warranty Available

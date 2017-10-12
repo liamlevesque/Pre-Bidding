@@ -28,7 +28,6 @@ function formatprice(value){
 
 	var amt, price;
 	amt = value.toString().split('.');
-	console.log(amt[1]);
 	
 	if($('#js--body').hasClass('INR')) 
 		price = amt[0].replace(/(\d)(?=(\d\d)+\d$)/g, '$1<span class="divider"></span>');
@@ -37,7 +36,7 @@ function formatprice(value){
 	
 	if(amt[1] && amt[1].length === 1 ) amt[1] += '0';
 	if(amt[1]) price += '<span class="decimal-divider"></span>' + amt[1];
-	console.log(price);
+	
 	return price;
 
 	// var price;
@@ -165,4 +164,11 @@ rivets.binders.addclass = function(el, value) {
 rivets.binders.adderrorclass = function(el, value) {
 	if(value) $(el).addClass('s-error');
 	else $(el).removeClass('s-error');
+}
+
+rivets.binders.icwarrantytooltip = function(el, value){
+	$(el).removeClass().addClass('lot--guarantees');
+	if(value.warranty && value.ironclad) $(el).addClass('js--icwarranty-tooltip s-warranty-ironclad');
+	else if(value.ironclad) $(el).addClass('js--ironclad-tooltip');
+	else if(value.warranty) $(el).addClass('js--warranty-tooltip');
 }

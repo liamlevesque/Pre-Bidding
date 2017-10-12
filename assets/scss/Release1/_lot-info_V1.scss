@@ -224,6 +224,17 @@
 				opacity: 0.5;
 			}
 		}
+
+		.swiper--ironclad{
+			position: absolute;
+			top: 5px;
+			right: 5px;
+			width: 55px;
+			height: 55px;
+			background-color: white;
+			border-radius: 50%;
+			z-index: 100;
+		}
 	}
 
 	.lot--fields{
@@ -291,11 +302,11 @@
 			}
 
 			@include breakpoint(large){
-				padding-top: 8px;
-				padding-bottom: 8px;
+				padding-top: 15px;
+				padding-bottom: 15px;
 
 				i{
-					top: 8px;
+					top: 15px;
 				}
 			}
 		}

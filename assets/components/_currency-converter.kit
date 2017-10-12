@@ -1,0 +1,40 @@
+<div class="expander js--ccy-converter">
+        <div class="expander--toggle js-expander-toggle">   
+            <label>Currency Converter</label>
+        </div>
+        <div class="expander--content">
+            <div class="ccyconversion setting js--converter-outputz">
+                <div class="setting--result">
+                    <label>Approximate Equivalent</label>
+                    <div class="result c-price">
+                        <div rv-html="ccyconversion2.conversion | priceWithCCYs"></div>
+                        <span class="h-t-xs h-tt-uppercase">Rate is approximate</span>
+                    </div>
+                    <i class="icon-settings toggle-icon" rv-on-click="ccycontroller2.onToggleClick" rv-activeToggle="ccyconversion2.editing"></i>
+                </div>
+                <div class="setting--controls" rv-show="ccyconversion2.editing">
+                    <div class="setting--row">
+                        <label for="">Convert To</label>
+                        <ul class="ccyconversion--selector" rv-activeccy="ccyconversion2.currentCCY">
+
+                            <li class="ccy-flag CAD" rv-on-click="ccycontroller2.ccyChange" data-ccy="CAD">CAD (1.0000)</li>
+                            <li class="ccy-flag USD" rv-on-click="ccycontroller2.ccyChange" data-ccy="USD">USD (0.6912)</li>
+                            <li class="ccy-flag SGD" rv-on-click="ccycontroller2.ccyChange" data-ccy="SGD">SGD (0.9145)</li>
+                            <li class="ccy-flag NZD" rv-on-click="ccycontroller2.ccyChange" data-ccy="NZD">NZD (1.1523)</li>
+                            <li class="ccy-flag AUD" rv-on-click="ccycontroller2.ccyChange" data-ccy="AUD">AUD (1.0521)</li>
+                            <li class="ccy-flag MXN" rv-on-click="ccycontroller2.ccyChange" data-ccy="MXN">MXN (12.5143)</li>
+                            <li class="ccy-flag ZAR" rv-on-click="ccycontroller2.ccyChange" data-ccy="ZAR">ZAR (11.4861)</li>
+                            <li class="ccy-flag PLN" rv-on-click="ccycontroller2.ccyChange" data-ccy="PLN">PLN (2.9577)</li>
+                            <li class="ccy-flag GBP" rv-on-click="ccycontroller2.ccyChange" data-ccy="GBP">GBP (0.5812)</li>
+                            <li class="ccy-flag EUR" rv-on-click="ccycontroller2.ccyChange" data-ccy="EUR">EUR (0.6299)</li>
+                            <li class="ccy-flag JPY" rv-on-click="ccycontroller2.ccyChange" data-ccy="JPY">JPY (79.5145)</li>
+                            <li class="ccy-flag CNY" rv-on-click="ccycontroller2.ccyChange" data-ccy="CNY">CNY (4.5232)</li>
+                            <li class="ccy-flag INR" rv-on-click="ccycontroller2.ccyChange" data-ccy="INR">INR (46.5677)</li>
+                            <li class="ccy-flag AED" rv-on-click="ccycontroller2.ccyChange" data-ccy="AED">AED (2.5290)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>

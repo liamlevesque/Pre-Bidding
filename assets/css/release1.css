@@ -134,8 +134,8 @@ GRID
 
 @font-face {
   font-family: 'ritchie-icons';
-  src: url("../fonts/ritchie-icons.eot?w2rx9a");
-  src: url("../fonts/ritchie-icons.eot?w2rx9a#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?w2rx9a") format("truetype"), url("../fonts/ritchie-icons.woff?w2rx9a") format("woff"), url("../fonts/ritchie-icons.svg?w2rx9a#ritchie-icons") format("svg");
+  src: url("../fonts/ritchie-icons.eot?jxnzno");
+  src: url("../fonts/ritchie-icons.eot?jxnzno#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?jxnzno") format("truetype"), url("../fonts/ritchie-icons.woff?jxnzno") format("woff"), url("../fonts/ritchie-icons.svg?jxnzno#ritchie-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -156,32 +156,41 @@ GRID
   font-size: 20px;
   vertical-align: middle; }
 
+.icon-location:before {
+  content: "\e91b"; }
+
+.icon-ironclad:before {
+  content: "\e910"; }
+
+.icon-ccy:before {
+  content: "\e928"; }
+
+.icon-gavel:before {
+  content: "\e929"; }
+
+.icon-globe:before {
+  content: "\e91e"; }
+
+.icon-mic:before {
+  content: "\e900"; }
+
 .icon-error:before {
   content: "\e924"; }
 
 .icon-more_horiz:before {
   content: "\e923"; }
 
-.icon-globe:before {
-  content: "\e91e"; }
+.icon-repeat:before {
+  content: "\e903"; }
 
 .icon-printer:before {
   content: "\e91d"; }
-
-.icon-gavel:before {
-  content: "\e910"; }
-
-.icon-mic:before {
-  content: "\e900"; }
 
 .icon-arrow-down:before {
   content: "\e901"; }
 
 .icon-audio:before {
   content: "\e902"; }
-
-.icon-bid:before {
-  content: "\e903"; }
 
 .icon-cart:before {
   content: "\e904"; }
@@ -219,9 +228,6 @@ GRID
 .icon-next:before {
   content: "\e90f"; }
 
-.icon-sale:before, .message-box--open-offer:before {
-  content: "\e910"; }
-
 .icon-search:before {
   content: "\e911"; }
 
@@ -252,17 +258,8 @@ GRID
 .icon-lock:before {
   content: "\e91a"; }
 
-.icon-ccy:before {
-  content: "\e91b"; }
-
 .icon-calculator:before {
   content: "\e91c"; }
-
-.icon-coin-pound:before {
-  content: "\e91d"; }
-
-.icon-coin-dollar:before {
-  content: "\e91e"; }
 
 .icon-trash:before {
   content: "\e91f"; }
@@ -270,17 +267,11 @@ GRID
 .icon-error-1:before {
   content: "\e920"; }
 
-.icon-sold:before, .group--lot.s-sold:before {
+.icon-sold:before, .message-box--open-offer:before, .group--lot.s-sold:before {
   content: "\e921"; }
 
 .icon-mail:before, .message-box--mail:before {
   content: "\e922"; }
-
-.icon-max-1:before {
-  content: "\e923"; }
-
-.icon-max-4:before {
-  content: "\e924"; }
 
 .icon-max-3:before {
   content: "\e925"; }
@@ -810,6 +801,25 @@ hr {
   cursor: pointer; }
   .grey-link:hover {
     text-decoration: underline; }
+
+.link__external {
+  color: #20579E; }
+  .link__external:hover {
+    text-decoration: underline; }
+    .link__external:hover:after {
+      font-family: 'ritchie-icons' !important;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "\e90c";
+      margin-left: 5px;
+      color: #20579E;
+      text-decoration: none; }
 
 .phone-link {
   font-size: 1.1rem;
@@ -2302,14 +2312,6 @@ header {
   font-family: 'Trebuchet MS', Verdana, sans-serif; }
   .header--upper .button--unbound label {
     margin-right: 5px; }
-  .header--upper .icon-ccy {
-    font-size: 30px;
-    line-height: 0;
-    vertical-align: middle;
-    top: -2px;
-    position: relative; }
-    .header--upper .icon-ccy ~ label {
-      margin-left: 10px; }
 
 .header--section {
   border-right: 1px solid #bdbdbd;
@@ -2731,20 +2733,6 @@ MOST IMPORTANT - LOT TABLE STYLES
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis; }
-    .lot .col-2a a:hover:after {
-      font-family: 'ritchie-icons' !important;
-      speak: none;
-      font-style: normal;
-      font-weight: normal;
-      font-variant: normal;
-      text-transform: none;
-      line-height: 1;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      content: "\e90b";
-      margin-left: 5px;
-      color: #20579E;
-      text-decoration: none; }
   .lot .col-5b {
     padding: 0;
     line-height: 1;
@@ -2853,6 +2841,9 @@ MOST IMPORTANT - LOT TABLE STYLES
 .icon-warranty {
   color: #E87722; }
 
+.icon-ironclad {
+  color: #DA461F; }
+
 .lot--photo {
   width: 100%;
   max-width: 100%;
@@ -2860,9 +2851,31 @@ MOST IMPORTANT - LOT TABLE STYLES
   margin: 2px 0; }
 
 .lot--name {
-  font-weight: 700; }
+  font-weight: 700;
+  color: black; }
   .lot--name:hover {
     color: #20579E; }
+
+.lot--guarantees {
+  position: relative;
+  width: 20px;
+  display: inline-block;
+  background-color: white; }
+
+.s-warranty-ironclad {
+  height: 20px;
+  top: 3px;
+  left: -4px; }
+  .s-warranty-ironclad i {
+    font-size: 12px; }
+    .s-warranty-ironclad i:first-child {
+      position: absolute;
+      top: 0;
+      left: 0; }
+    .s-warranty-ironclad i:last-child {
+      position: absolute;
+      bottom: 0;
+      right: 0; }
 
 .lot--details {
   margin-top: 3px; }
@@ -3612,6 +3625,17 @@ MOST IMPORTANT - LOT TABLE STYLES
     @media (min-width: 80em) {
       .group--lot .lot--photo {
         width: 60px; } }
+    .group--lot .lot--photo i {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: white;
+      padding: -5px; }
+    .group--lot .lot--photo i + i {
+      right: 17px; }
   .group--lot .lot--values {
     vertical-align: middle;
     display: inline-block;
@@ -4012,6 +4036,16 @@ MOST IMPORTANT - LOT TABLE STYLES
 .swiper-container:hover .swiper-button-next, .swiper-container:hover .swiper-container-rtl .swiper-button-prev, .swiper-container:hover .swiper-button-prev, .swiper-container:hover .swiper-container-rtl .swiper-button-next {
   opacity: 0.5; }
 
+.swiper-container .swiper--ironclad {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 55px;
+  height: 55px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 100; }
+
 .lot--fields {
   padding: 5px 10px;
   font-size: 0.8rem;
@@ -4065,10 +4099,10 @@ MOST IMPORTANT - LOT TABLE STYLES
     font-size: 16px; }
   @media (min-width: 80em) {
     .lot--field_warranty {
-      padding-top: 8px;
-      padding-bottom: 8px; }
+      padding-top: 15px;
+      padding-bottom: 15px; }
       .lot--field_warranty i {
-        top: 8px; } }
+        top: 15px; } }
 
 .lot--field:first-of-type {
   padding-top: 0; }
@@ -4845,7 +4879,7 @@ corresponds to the arrow we want to display */
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%); }
 
-.tooltipster-sidetip.ritchie-tooltips_small .tooltipster-box, .tooltipster-sidetip.ritchie-tooltips_full .tooltipster-box {
+.tooltipster-sidetip.ritchie-tooltips_small .tooltipster-box, .tooltipster-sidetip.ritchie-tooltips_full .tooltipster-box, .ritchie-tooltips_medium .tooltipster-box {
   background: white;
   border: 1px solid #000000;
   border-radius: 0;
@@ -4853,17 +4887,17 @@ corresponds to the arrow we want to display */
           box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   max-width: 400px; }
 
-.tooltipster-sidetip.ritchie-tooltips_small .tooltipster-content, .tooltipster-sidetip.ritchie-tooltips_full .tooltipster-content {
+.tooltipster-sidetip.ritchie-tooltips_small .tooltipster-content, .tooltipster-sidetip.ritchie-tooltips_full .tooltipster-content, .ritchie-tooltips_medium .tooltipster-content {
   font-size: 1rem;
   padding: 7.5px 15px;
   overflow: visible;
   color: black; }
-  .tooltipster-sidetip.ritchie-tooltips_small .tooltipster-content p, .tooltipster-sidetip.ritchie-tooltips_full .tooltipster-content p {
+  .tooltipster-sidetip.ritchie-tooltips_small .tooltipster-content p, .tooltipster-sidetip.ritchie-tooltips_full .tooltipster-content p, .ritchie-tooltips_medium .tooltipster-content p {
     margin: 0; }
-  .tooltipster-sidetip.ritchie-tooltips_small .tooltipster-content p + p, .tooltipster-sidetip.ritchie-tooltips_full .tooltipster-content p + p {
+  .tooltipster-sidetip.ritchie-tooltips_small .tooltipster-content p + p, .tooltipster-sidetip.ritchie-tooltips_full .tooltipster-content p + p, .ritchie-tooltips_medium .tooltipster-content p + p {
     margin-top: 15px; }
 
-.tooltipster-sidetip.ritchie-tooltips_small a, .tooltipster-sidetip.ritchie-tooltips_full a {
+.tooltipster-sidetip.ritchie-tooltips_small a, .tooltipster-sidetip.ritchie-tooltips_full a, .ritchie-tooltips_medium a {
   color: #1478BC; }
 
 .tooltipster-sidetip.ritchie-tooltips_error .tooltipster-box {
@@ -4936,6 +4970,9 @@ corresponds to the arrow we want to display */
 .ritchie-tooltips_small .tooltipster-content {
   min-width: auto;
   text-align: center; }
+
+.ritchie-tooltips_medium {
+  min-width: 400px; }
 
 .tooltipster-sidetip.ritchie-tooltips_full {
   width: 350px !important;
