@@ -3653,6 +3653,10 @@ MOST IMPORTANT - LOT TABLE STYLES
     font-size: 0.8rem;
     line-height: 1.2rem; }
   .group--lot .lot--selector {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     position: absolute;
     left: 6px;
     top: 50%;
