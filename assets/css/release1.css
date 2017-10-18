@@ -3607,6 +3607,10 @@ MOST IMPORTANT - LOT TABLE STYLES
   border-bottom: 1px dotted #bdbdbd;
   position: relative;
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  -ms-user-select: none;
   -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
   transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
   .s-viewer-mode .group--lot {
