@@ -389,6 +389,8 @@ $checkmark-size: 35px;
 	
 	outline: none;
 	cursor: pointer;
+	display: inline-flex;
+	text-align: left;
 
 	input{
 		appearance: none;
@@ -422,8 +424,13 @@ $checkmark-size: 35px;
 	}
 	
 	span{
+		display: block;
+		flex: 1;
 		font-size: initial;
 		color: initial;
+		align-self: center;
+		line-height: 1.2em;
+		text-transform: none;
 	}    
 }
 

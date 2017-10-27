@@ -798,8 +798,6 @@ hr {
               transform: translateX(-50%) translateY(0);
       -webkit-transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1);
       transition: 0.2s cubic-bezier(0.63, 0.005, 0.365, 1); }
-    .lb.s-open .lb-action-area_fixed {
-      position: fixed; }
 
 .lb-background {
   cursor: pointer;
@@ -832,13 +830,27 @@ hr {
   background-color: #ffffff;
   -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
           box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
-  margin: 90px 0; }
+  margin: 20px 0; }
   @media (max-width: 800px) {
     .lb-window, [class^='lb-window_'] {
       width: 95%; } }
 
 .lb-window_wide {
-  width: 800px; }
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  @media (min-width: 48em) {
+    .lb-window_wide {
+      margin-top: 20px;
+      width: 800px;
+      max-height: calc(100% - 40px); } }
 
 .lb-window-close {
   position: absolute;
@@ -848,15 +860,21 @@ hr {
   padding: 15px;
   z-index: 500; }
 
-.lb-content {
+.lb-content, [class*='lb-content__'] {
   padding: 45px;
   text-align: center; }
   @media (max-width: 800px) {
-    .lb-content {
+    .lb-content, [class*='lb-content__'] {
       padding: 20px; }
-      .lb-content h2 {
+      .lb-content h2, [class*='lb-content__'] h2 {
         font-size: 1.4rem;
         margin-bottom: 0; } }
+
+.lb-content__flex {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  overflow-y: auto; }
 
 .lb-action-area {
   padding: 15px;
@@ -871,9 +889,7 @@ hr {
     display: inline-block; }
 
 .lb-action-area_fixed {
-  bottom: 0;
-  width: 800px;
-  left: calc(((100% - 800px) /2) - 7px); }
+  overflow: visible; }
 
 .lb-wizard--top-img {
   position: relative;
@@ -1170,7 +1186,11 @@ input[type="email"].s-error {
 
 .input--check {
   outline: none;
-  cursor: pointer; }
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  text-align: left; }
   .input--check input {
     -webkit-appearance: none;
        -moz-appearance: none;
@@ -1198,8 +1218,16 @@ input[type="email"].s-error {
     .input--check i:hover {
       color: rgba(232, 119, 34, 0.3); }
   .input--check span {
+    display: block;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     font-size: initial;
-    color: initial; }
+    color: initial;
+    -ms-flex-item-align: center;
+        align-self: center;
+    line-height: 1.2em;
+    text-transform: none; }
 
 .language-footer {
   height: 30px;
