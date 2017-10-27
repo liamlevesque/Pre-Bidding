@@ -9,8 +9,12 @@ p{
 }
 
 .body--half{
+
+	@media (max-height: 700px) and (min-width: 48em) {
+		overflow: auto;
+	}
 	
-	@include breakpoint(medium){
+	@media (min-width:48em){
 		position: absolute;
 		top: 0;
 		bottom: 0;
@@ -27,17 +31,22 @@ p{
 }
 
 	.auction-details{
-		padding: 50px;
+		padding: 25px;
 
-		@media(min-width: 64em) {
-			overflow-y: auto;
-			position: absolute;
-			top:40px;
-			bottom: 150px;
+		@media (min-width: 64em) {
+			padding: 50px;
 			width: 100%;
 		}
 
+		@media (max-height: 700px) and (min-width: 64em) {
+			// position: absolute;
+			// top:40px;
+			// bottom: 150px;
+		}
+
 		@media (min-height: 700px) and (min-width: 64em) {
+			position: absolute;
+			bottom: 150px;
 			top: calc(50% - 100px);
 			transform: translateY(-50%);
 			bottom: auto;
@@ -123,21 +132,32 @@ p{
 		}
 
 			.i-crossed-out{
-			  font-size: 40px;
-			  position: relative;
+				position: relative;
+				font-size: 30px;
+				
+				@media(min-width: 64em) {
+					font-size: 40px;
+				}
 
 			  &:after{
 			    content: '';
 			    background-color: white;
 			    display: block;
-			    width: 60px;
+			    width: 50px;
 			    border-radius: 10px;
-			    height: 5px;
+			    height: 3px;
 			    transform: rotate(-45deg);
-			    top: 13px;
-			    left: -10px;
+			    top: 10px;
+			    left: -12px;
 			    position: absolute;
-			    border: 2px solid $error-colour;
+				border: 2px solid $error-colour;
+				
+				@media(min-width: 64em) {
+					width: 60px;
+					height: 5px;
+					left: -10px;
+					top: 13px
+				}
 			  }
 			}
 
@@ -163,13 +183,17 @@ p{
 	}
 
 		.custom--content{
-			padding: 50px;
+			padding: 25px;
+			
+			@media(min-width: 64em) {
+				padding: 50px;
+			}
 
 			@media (max-height: 699px) and (min-width: 48em){
-				position: absolute;
-				top: 0;
-				bottom: 150px;
-				overflow-y: auto;
+				// position: absolute;
+				// top: 0;
+				// bottom: 150px;
+				// overflow-y: auto;
 			}
 
 			@media (min-height: 700px) and (min-width: 48em) {
@@ -197,7 +221,7 @@ p{
 
 	footer{
 
-		@include breakpoint(medium){
+		@media (min-height: 700px) and (min-width: 48em) {
 			position: absolute;
 			bottom: 0;
 			left: 0;

@@ -39,6 +39,19 @@
         <h4>Lots: 1 - 412, 8000 - 8090</h4>
         <div class="auction--enter">
             Ready to join?
+            <div class="auction--warning h-mt-100" rv-show="dataObject.flashErrorVisible">
+                <div>
+                    <div class="g-fifth h-ta-center">
+                        <i class="icon-audio i-crossed-out"></i>
+                    </div>
+                    <div class="g-four-fifths">
+                        Warning - Flash player is either disabled or hasn't been installed. You can enter the auction but you won't hear any audio unless you install Flash or update your settings. 
+                    </div>
+                </div>
+                <div class="h-ta-center">
+                    <a class="button_secondary--white h-mt-100" href="https://helpx.adobe.com/flash-player.html" target="_blank">Fix Flash Player</a> 
+                </div>
+            </div>
             <button class="button button--enter-auction" rv-on-click="controller.toggleTsandCsVisible">Enter the Auction</button>
         </div> 
     </div>
@@ -288,6 +301,11 @@
     
 </div>
 
+<footer class="fixed-footer">
+    <label>Prototype Controls:</label>
+    <button rv-on-click="controller.toggleFlashErrorVisible">Show Flash Error</button>
+    <button rv-on-click="controller.toggleActiveSale">Show Auction Not Started</button>
+</footer>
 
 <script type="text/javascript" src="assets/js/enterauction-min.js"></script>
 

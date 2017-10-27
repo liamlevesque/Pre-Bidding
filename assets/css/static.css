@@ -915,6 +915,10 @@ p {
       font-size: 0.9rem;
       line-height: 1.3rem; } }
 
+@media (max-height: 700px) and (min-width: 48em) {
+  .body--half {
+    overflow: auto; } }
+
 @media (min-width: 48em) {
   .body--half {
     position: absolute;
@@ -929,16 +933,15 @@ p {
   padding-bottom: 50px; }
 
 .auction-details {
-  padding: 50px; }
+  padding: 25px; }
   @media (min-width: 64em) {
     .auction-details {
-      overflow-y: auto;
-      position: absolute;
-      top: 40px;
-      bottom: 150px;
+      padding: 50px;
       width: 100%; } }
   @media (min-height: 700px) and (min-width: 64em) {
     .auction-details {
+      position: absolute;
+      bottom: 150px;
       top: calc(50% - 100px);
       -webkit-transform: translateY(-50%);
               transform: translateY(-50%);
@@ -1009,21 +1012,30 @@ p {
   line-height: 1.4rem; }
 
 .i-crossed-out {
-  font-size: 40px;
-  position: relative; }
+  position: relative;
+  font-size: 30px; }
+  @media (min-width: 64em) {
+    .i-crossed-out {
+      font-size: 40px; } }
   .i-crossed-out:after {
     content: '';
     background-color: white;
     display: block;
-    width: 60px;
+    width: 50px;
     border-radius: 10px;
-    height: 5px;
+    height: 3px;
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
-    top: 13px;
-    left: -10px;
+    top: 10px;
+    left: -12px;
     position: absolute;
     border: 2px solid #c4483a; }
+    @media (min-width: 64em) {
+      .i-crossed-out:after {
+        width: 60px;
+        height: 5px;
+        left: -10px;
+        top: 13px; } }
 
 .contact-area {
   font-size: 1rem;
@@ -1041,13 +1053,10 @@ p {
   background-color: #E9E9E9; }
 
 .custom--content {
-  padding: 50px; }
-  @media (max-height: 699px) and (min-width: 48em) {
+  padding: 25px; }
+  @media (min-width: 64em) {
     .custom--content {
-      position: absolute;
-      top: 0;
-      bottom: 150px;
-      overflow-y: auto; } }
+      padding: 50px; } }
   @media (min-height: 700px) and (min-width: 48em) {
     .custom--content {
       position: absolute;
@@ -1070,7 +1079,7 @@ footer {
   border-top: 1px solid #bfc0be;
   background-color: #E9E9E9;
   padding: 15px 30px; }
-  @media (min-width: 48em) {
+  @media (min-height: 700px) and (min-width: 48em) {
     footer {
       position: absolute;
       bottom: 0;
