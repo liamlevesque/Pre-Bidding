@@ -134,8 +134,8 @@ GRID
 
 @font-face {
   font-family: 'ritchie-icons';
-  src: url("../fonts/ritchie-icons.eot?jxnzno");
-  src: url("../fonts/ritchie-icons.eot?jxnzno#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?jxnzno") format("truetype"), url("../fonts/ritchie-icons.woff?jxnzno") format("woff"), url("../fonts/ritchie-icons.svg?jxnzno#ritchie-icons") format("svg");
+  src: url("../fonts/ritchie-icons.eot?2sx7jo");
+  src: url("../fonts/ritchie-icons.eot?2sx7jo#iefix") format("embedded-opentype"), url("../fonts/ritchie-icons.ttf?2sx7jo") format("truetype"), url("../fonts/ritchie-icons.woff?2sx7jo") format("woff"), url("../fonts/ritchie-icons.svg?2sx7jo#ritchie-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -4098,19 +4098,19 @@ MOST IMPORTANT - LOT TABLE STYLES
 
 .lot--field_warranty {
   position: relative;
-  padding-left: 25px;
+  padding-left: 30px;
   line-height: 1rem; }
   .lot--field_warranty i {
     position: absolute;
     left: 2px;
     top: 6px;
-    font-size: 16px; }
+    font-size: 20px; }
   @media (min-width: 80em) {
     .lot--field_warranty {
       padding-top: 15px;
       padding-bottom: 15px; }
       .lot--field_warranty i {
-        top: 15px; } }
+        top: 12px; } }
 
 .lot--field:first-of-type {
   padding-top: 0; }

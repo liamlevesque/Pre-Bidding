@@ -291,14 +291,14 @@
 
 		.lot--field_warranty{
 			position: relative;
-			padding-left: 25px;
+			padding-left: 30px;
 			line-height: 1rem;
 
 			i{
 				position: absolute;
 				left: 2px;
 				top: 6px;
-				font-size: 16px;
+				font-size: 20px;
 			}
 
 			@include breakpoint(large){
@@ -306,7 +306,7 @@
 				padding-bottom: 15px;
 
 				i{
-					top: 15px;
+					top: 12px;
 				}
 			}
 		}
