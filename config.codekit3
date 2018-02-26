@@ -7,7 +7,7 @@
 		"uuidString": "D84A76D9-A715-4440-A983-976C97641950"
 		}
 	],
-"creatorBuild": "26097",
+"creatorBuild": "26268",
 "files": {
 	"\/.gitignore": {
 		"cB": 0,
@@ -234,6 +234,13 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/assets\/fonts\/20171012-UpdatedIcons.zip",
+		"oF": 0
+		},
+	"\/assets\/fonts\/20171105-OLR-UpdatedIcons.zip": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/assets\/fonts\/20171105-OLR-UpdatedIcons.zip",
 		"oF": 0
 		},
 	"\/assets\/fonts\/FrutigerLTStd-BlackCn.eot": {
@@ -8213,6 +8220,7 @@
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
+	"autoprefixerEnableIEGrid": 0,
 	"babelAuxiliaryCommentAfter": "",
 	"babelAuxiliaryCommentBefore": "",
 	"babelConfigFileHandlingType": 0,
@@ -8776,6 +8784,10 @@
 		"id-match": {
 			"active": 0,
 			"optionString": "'^[a-z]+([A-Z][a-z]+)*$', {'properties': false, 'onlyDeclarations': true}"
+			},
+		"implicit-arrow-linebreak": {
+			"active": 0,
+			"optionString": "'beside'"
 			},
 		"indent": {
 			"active": 0,
